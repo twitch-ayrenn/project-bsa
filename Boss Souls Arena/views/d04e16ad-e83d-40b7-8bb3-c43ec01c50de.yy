@@ -1,0 +1,31 @@
+{
+    "id": "d04e16ad-e83d-40b7-8bb3-c43ec01c50de",
+    "modelName": "GMFolder",
+    "mvc": "1.1",
+    "name": "d04e16ad-e83d-40b7-8bb3-c43ec01c50de",
+    "children": [
+        "9b86b2dd-0a32-444a-9a37-1d5624734395",
+        "a65a752e-0c6f-4bc6-ad52-b9378c957d49",
+        "568255e3-6a8b-459f-b53e-fe86b5f1aea9",
+        "df4b05ca-20bd-4b90-aa73-3b683aa401dc",
+        "1b569ccb-b776-438c-8a47-48e858e25953",
+        "ace04618-c278-4daa-81df-32eca184d209",
+        "d8b0f927-db1c-4fb3-806e-314256e5598c",
+        "af2949c1-40b0-4a25-9b15-31694c02c31c",
+        "2dad5365-ca6b-4270-b95a-71b0e47370b5",
+        "f4d0ccf7-caf2-4cd5-a315-9e18d07760eb",
+        "c081c5f1-4df5-4ec6-b26e-74ccafc3bbfb",
+        "9df09b10-4dd2-48cd-8d37-cbc5dd79420a",
+        "de824ee7-b994-4f7c-a5c1-7de22adf30c0",
+        "eb32cdc2-e110-48c8-b65f-50054ef3a785",
+        "319fb79a-5d27-4616-8759-5f52c370ea23",
+        "0516b118-aaf4-421c-83ed-15f9b65c81be",
+        "ba544552-aac9-4f0b-9be5-8ca72777922d",
+        "6c80e5b5-01eb-4e59-a1d7-10ffca77f5a6",
+        "0cb16af9-4c42-41c3-9452-38f0a60f3e84"
+    ],
+    "filterType": "GMSprite",
+    "folderName": "grp_theSoulGuards",
+    "isDefaultView": false,
+    "localisedFolderName": ""
+}
