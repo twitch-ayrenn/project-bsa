@@ -1183,6 +1183,14 @@
             }
         },
         {
+            "Key": "22401dfb-1227-4e98-a2cc-71e7dad8ca35",
+            "Value": {
+                "id": "a08d40ae-0b8f-4da9-b468-838541127992",
+                "resourcePath": "sprites\\spr_fight_t4_demonQueensHead1\\spr_fight_t4_demonQueensHead1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "22d647cf-98f3-446d-83a1-b1c76e094e9d",
             "Value": {
                 "id": "e3abf87a-da8b-40cd-8ca1-c3c9bd250443",
@@ -4783,6 +4791,14 @@
             }
         },
         {
+            "Key": "8fcfbc9a-715a-4bb8-b208-ba3002972b2c",
+            "Value": {
+                "id": "693a63aa-261f-466e-b058-29c80464a1bb",
+                "resourcePath": "objects\\obj_fightCard_\\obj_fightCard_.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "8ff60fc5-cf2a-48bf-8f20-e95d0beb0928",
             "Value": {
                 "id": "78cb8940-5b87-4f44-b4ac-b119057ee545",
@@ -4876,6 +4892,14 @@
                 "id": "5ea6d1b4-ade1-4f7e-a832-c7c56c5f5b67",
                 "resourcePath": "sprites\\spr_wispBoss_inRage_red\\spr_wispBoss_inRage_red.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "951e95b4-fd98-41b9-8c4b-b011874024c3",
+            "Value": {
+                "id": "c89366f5-4b26-4e90-a4fb-a5a1480001bf",
+                "resourcePath": "objects\\obj_fightCard_bloodRoyalVarus\\obj_fightCard_bloodRoyalVarus.yy",
+                "resourceType": "GMObject"
             }
         },
         {

@@ -40,9 +40,46 @@ enum Boss
 	TheCorrupter1,
 	BloodRoyalVarus,
 	TheMadWitches,
+	
 	WispSisterAnna,
 	FlameGate,
 	DeathKnight,
+	WispSisterJulia,
+	DemonKnightRekZul1,
+	AngelKnightOscar1,
+	
+	KnightWitchYi,
+	BloodPrinceVarus,
+	TheCorrupter2,
+	BloodKnightDavid,
+	InfenalWisp,
+	DemonLordRekTaar,
+	InfernalGate,
+	AbyssSerpant,
+	Gravekeeper,
+	
+	DemonKnightRekZul2,
+	AngelPaladinOscar2,
+	DeathGeneral1,
+	FrostQueenFalak,
+	TheCorrupter,
+	ShadowClan,
+	wispSisters,
+	StatueOfCorruption,
+	BloodKingVarus,
+	DemonQueensHead1,
+	SlimeKing,
+	
+	DemonKnightRekZul3,
+	AngelPaladinOscar3,
+	AncientAbyssSerpant,
+	GraveLord,
+	HeadLessCorruptWalker,
+	DeathGeneral2,
+	DemonQueensHead2,
+	SlimeQueen,
+	
+	LadyCorruption,
 }
 enum Character
 {
