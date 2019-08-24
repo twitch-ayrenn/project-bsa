@@ -44,9 +44,9 @@ enum Boss
 	WispSisterAnna,
 	FlameGate,
 	DeathKnight,
-	WispSisterJulia,
-	DemonKnightRekZul1,
+	AngelSlayerRekZul1,
 	AngelKnightOscar1,
+	WispSisterJulia,
 	
 	KnightWitchYi,
 	BloodPrinceVarus,
@@ -58,19 +58,19 @@ enum Boss
 	AbyssSerpant,
 	Gravekeeper,
 	
-	DemonKnightRekZul2,
+	AngelSlayerRekZul2,
 	AngelPaladinOscar2,
 	DeathGeneral1,
 	FrostQueenFalak,
-	TheCorrupter,
+	TheCorrupter3,
 	ShadowClan,
-	wispSisters,
+	WispSisters,
 	StatueOfCorruption,
 	BloodKingVarus,
 	DemonQueensHead1,
 	SlimeKing,
 	
-	DemonKnightRekZul3,
+	AngelSlayerRekZul3,
 	AngelPaladinOscar3,
 	AncientAbyssSerpant,
 	GraveLord,
@@ -168,15 +168,15 @@ backSize = 1;
 ////Character progression and select
 //Progress
 assassinProgress = 3;
-bloodKnightProgress = 0;
-pyromancerProgress = 0;
-shopkeeperProgress = 0;
-theRedWarriorProgress = 0;
-plaugeWalkerProgress = 0;
-angelSlayerProgress = 0;
-rainbowSlimeProgress = 0;
-agentOfGodProgress = 0;
-gravelingProgress = 0;
+bloodKnightProgress = 1;
+pyromancerProgress = 1;
+shopkeeperProgress = 1;
+theRedWarriorProgress = 1;
+plaugeWalkerProgress = 1;
+angelSlayerProgress = 1;
+rainbowSlimeProgress = 1;
+agentOfGodProgress = 1;
+gravelingProgress = 1;
 //Unlocks
 assassinUnlocked = true;
 bloodKnightUnlocked = true;
