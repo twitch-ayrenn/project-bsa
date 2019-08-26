@@ -1,3 +1,3 @@
 /// @description Insert description here
 size = 1;
-bossOnThisCard = Boss.AngelPaladinOscar2;
+bossOnThisCard = Boss.AngelKnightOscar2;

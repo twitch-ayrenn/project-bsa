@@ -8,9 +8,11 @@
         "322b42f3-d457-4ac4-a73d-3c0e60d154d8",
         "35e23f43-b719-4df2-ba57-891b576c822f",
         "05b88648-fbea-4252-9910-c67187b1bd58",
+        "96a79830-37a4-429d-8f80-76cb65b0fb34",
         "b24bc9c8-69ec-4565-a880-2e420eb2a81f",
         "40949daa-1c17-40af-8d8a-eea3b320cfe7",
-        "2002d155-e636-48d5-af3d-6ef7a2da9c87"
+        "2002d155-e636-48d5-af3d-6ef7a2da9c87",
+        "21e0f024-fdee-4938-8553-0b072ac1f847"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_menues",

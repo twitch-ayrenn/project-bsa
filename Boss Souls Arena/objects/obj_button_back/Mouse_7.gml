@@ -5,7 +5,7 @@ if (gameMaster.menu == Menues.PlayerSelect)
 }
 if (gameMaster.menu == Menues.BossSelect)
 {
-	gameMaster.menu = Menues.PlayerSelect;
+	gameMaster.menu = Menues.BossLoot;
 }
 if (gameMaster.menu == Menues.Settings)
 {
@@ -13,7 +13,7 @@ if (gameMaster.menu == Menues.Settings)
 }
 if (gameMaster.menu == Menues.BossLoot)
 {
-	gameMaster.menu = Menues.Main;
+	gameMaster.menu = Menues.PlayerSelect;
 }
 if (gameMaster.menu == Menues.BossSlain)
 {

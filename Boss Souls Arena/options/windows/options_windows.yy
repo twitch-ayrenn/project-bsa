@@ -9,6 +9,7 @@
     "option_windows_copy_exe_to_dest": false,
     "option_windows_copyright_info": "(c) 2018 Aregan games",
     "option_windows_description_info": " Covenant of slayers is an arena boss slaying game! Play a variation of fighters that joined the covenant to defeat the evil monsters of the world Eteria. Slay legendary boss monsters. Try unique play styles with the fighters and item sets for different monster hunters. ",
+    "option_windows_disable_sandbox": false,
     "option_windows_display_cursor": false,
     "option_windows_display_name": "Covenant of slayers",
     "option_windows_enable_steam": false,
@@ -26,6 +27,7 @@
     "option_windows_sleep_margin": 10,
     "option_windows_splash_screen": "${options_dir}\\windows\\splash\\splash.png",
     "option_windows_start_fullscreen": false,
+    "option_windows_steam_use_alternative_launcher": false,
     "option_windows_texture_page": "8192x8192",
     "option_windows_use_splash": false,
     "option_windows_version": {

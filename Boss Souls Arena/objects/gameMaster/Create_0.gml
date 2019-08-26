@@ -59,7 +59,7 @@ enum Boss
 	Gravekeeper,
 	
 	AngelSlayerRekZul2,
-	AngelPaladinOscar2,
+	AngelKnightOscar2,
 	DeathGeneral1,
 	FrostQueenFalak,
 	TheCorrupter3,
@@ -71,7 +71,7 @@ enum Boss
 	SlimeKing,
 	
 	AngelSlayerRekZul3,
-	AngelPaladinOscar3,
+	AngelKnightOscar3,
 	AncientAbyssSerpant,
 	GraveLord,
 	Headless,
@@ -167,7 +167,7 @@ backColor = c_maroon;
 backSize = 1;
 ////Character progression and select
 //Progress
-assassinProgress = 2;
+assassinProgress = 40;
 bloodKnightProgress = 1;
 pyromancerProgress = 1;
 shopkeeperProgress = 1;
