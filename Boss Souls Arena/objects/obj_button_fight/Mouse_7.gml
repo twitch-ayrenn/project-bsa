@@ -7,3 +7,7 @@ if (global.soundOn == true)
 {
 	audio_play_sound(snd_buttonClick,Prioity.Normal,false);
 }
+with (par_scrollingThings)
+{
+	x = xstart;	
+}

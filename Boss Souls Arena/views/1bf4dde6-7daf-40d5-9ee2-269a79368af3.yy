@@ -10,7 +10,9 @@
         "5b03ad9d-a362-4f1a-a679-856643611c6a",
         "eb2d2a4a-c572-461f-97da-3ffdf7ac0f5b",
         "3c2e5f73-f8cf-479a-b158-50adb31f44b0",
-        "c4c82cb9-54f7-4733-a75d-1e0a73052bd7"
+        "c4c82cb9-54f7-4733-a75d-1e0a73052bd7",
+        "0da167f0-b542-4047-a096-0f3b1e6cc61e",
+        "54c8845f-476c-4eb9-9aab-44a43904773d"
     ],
     "filterType": "GMObject",
     "folderName": "grp_infoBoxes",

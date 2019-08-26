@@ -74,7 +74,7 @@ enum Boss
 	AngelPaladinOscar3,
 	AncientAbyssSerpant,
 	GraveLord,
-	HeadLessCorruptWalker,
+	Headless,
 	DeathGeneral2,
 	DemonQueensHead2,
 	SlimeQueen,
@@ -167,7 +167,7 @@ backColor = c_maroon;
 backSize = 1;
 ////Character progression and select
 //Progress
-assassinProgress = 3;
+assassinProgress = 2;
 bloodKnightProgress = 1;
 pyromancerProgress = 1;
 shopkeeperProgress = 1;

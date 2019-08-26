@@ -199,6 +199,14 @@
             }
         },
         {
+            "Key": "044e71e1-ef34-441c-bc4a-742993efe61d",
+            "Value": {
+                "id": "3b9ae33b-b5f8-4055-8f4a-ac7d1cc01777",
+                "resourcePath": "objects\\obj_fightCard_headless\\obj_fightCard_headless.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0492722d-9c7e-4197-9cc4-eea0c1136a61",
             "Value": {
                 "id": "66934c0a-9b6d-4cf6-94de-0bc8f25d7e90",
@@ -508,6 +516,14 @@
                 "id": "fded3524-cad7-43d0-a81a-9f4f84501c0a",
                 "resourcePath": "sprites\\spr_playe_angelSlayer_walking\\spr_playe_angelSlayer_walking.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "0da167f0-b542-4047-a096-0f3b1e6cc61e",
+            "Value": {
+                "id": "cbe1a676-60d5-454e-bef1-a1284d1ad1ef",
+                "resourcePath": "objects\\obj_slideRight\\obj_slideRight.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1231,14 +1247,6 @@
             }
         },
         {
-            "Key": "22401dfb-1227-4e98-a2cc-71e7dad8ca35",
-            "Value": {
-                "id": "a08d40ae-0b8f-4da9-b468-838541127992",
-                "resourcePath": "sprites\\spr_fight_t4_demonQueensHead1\\spr_fight_t4_demonQueensHead1.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "22d647cf-98f3-446d-83a1-b1c76e094e9d",
             "Value": {
                 "id": "e3abf87a-da8b-40cd-8ca1-c3c9bd250443",
@@ -1650,7 +1658,7 @@
             "Key": "2f2a41c8-a905-4a8d-9a3e-2dce633d1f55",
             "Value": {
                 "id": "6ee6c7fe-5d6f-4b27-aba1-0d8aa44bc56d",
-                "resourcePath": "objects\\obj_fightCard_angelKnightOscar31\\obj_fightCard_angelKnightOscar31.yy",
+                "resourcePath": "objects\\obj_fightCard_ancientAbyssSerpant\\obj_fightCard_ancientAbyssSerpant.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -2212,6 +2220,14 @@
                 "id": "e27af80b-f466-47a8-9755-e1d398ae1689",
                 "resourcePath": "sprites\\spr_cursor_bloodknight\\spr_cursor_bloodknight.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "3cb40d95-84ca-43fe-a31c-88f7aee6a3d9",
+            "Value": {
+                "id": "06ad3267-9c26-4a9b-8570-ed44781cec86",
+                "resourcePath": "objects\\obj_fightCard_ladyCorruption\\obj_fightCard_ladyCorruption.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -3028,6 +3044,14 @@
                 "id": "cd9a8ce3-496d-4103-ac67-0cee584f9932",
                 "resourcePath": "sprites\\spr_batprojectile_long\\spr_batprojectile_long.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "54c8845f-476c-4eb9-9aab-44a43904773d",
+            "Value": {
+                "id": "9ef5ce83-063b-4a00-8566-44ea747d5dc0",
+                "resourcePath": "objects\\obj_slideLeft\\obj_slideLeft.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -5631,6 +5655,14 @@
             }
         },
         {
+            "Key": "a4894c50-7639-410d-b3cf-526ec0d43d3c",
+            "Value": {
+                "id": "de5938af-3c7e-4630-a8c0-c32f924d473f",
+                "resourcePath": "objects\\obj_fightCard_slimeQueen\\obj_fightCard_slimeQueen.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "a4bfadc4-6bc1-4764-a8ff-897a5886f774",
             "Value": {
                 "id": "7b677448-ef86-456c-93cf-21e9f7969b86",
@@ -5683,6 +5715,14 @@
             "Value": {
                 "id": "fee5dd89-e603-4cc2-b6fe-f39f986aa9c3",
                 "resourcePath": "sprites\\spr_boss_theSoulGuards\\spr_boss_theSoulGuards.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "a67179c6-ac21-498e-9bf9-f943f4dbbb2c",
+            "Value": {
+                "id": "1a2dae5f-73a1-4694-98c6-3b8c73f95281",
+                "resourcePath": "sprites\\spr_fight_t4_demonQueensHead1\\spr_fight_t4_demonQueensHead1.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -6251,6 +6291,14 @@
             "Value": {
                 "id": "499a2144-7cae-4e52-b13a-58d21e241087",
                 "resourcePath": "objects\\obj_selectedSoulWispArrow\\obj_selectedSoulWispArrow.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "b5ce6864-0091-422d-885d-1b374e30d020",
+            "Value": {
+                "id": "8eebde52-1c08-41f4-ad8a-93f65ea27dcb",
+                "resourcePath": "objects\\obj_fightCard_demonQueensHead2\\obj_fightCard_demonQueensHead2.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -7180,6 +7228,14 @@
                 "id": "bf9c3566-e70a-4ee1-a931-6d53c70d17ef",
                 "resourcePath": "views\\d04e16ad-e83d-40b7-8bb3-c43ec01c50de.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "d0a08c00-0e23-40eb-beb0-a1599b349bd6",
+            "Value": {
+                "id": "ed4e7e62-b71b-4fc3-9a1a-f9968a559794",
+                "resourcePath": "objects\\obj_fightCard_deathGeneral2\\obj_fightCard_deathGeneral2.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -8372,6 +8428,14 @@
                 "id": "1d84c612-6427-41a2-b60a-d76f7eb4be46",
                 "resourcePath": "sprites\\sp\\sp.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f179381a-9c61-4e95-b3f8-4d8b03ffe9c4",
+            "Value": {
+                "id": "06b5ee2c-99ba-4fa0-86a5-a9796a3d329d",
+                "resourcePath": "objects\\obj_fightCard_graveLord\\obj_fightCard_graveLord.yy",
+                "resourceType": "GMObject"
             }
         },
         {

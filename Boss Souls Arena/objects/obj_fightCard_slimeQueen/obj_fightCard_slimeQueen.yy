@@ -1,58 +1,58 @@
 {
-    "id": "2f2a41c8-a905-4a8d-9a3e-2dce633d1f55",
+    "id": "a4894c50-7639-410d-b3cf-526ec0d43d3c",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_fightCard_angelKnightOscar31",
+    "name": "obj_fightCard_slimeQueen",
     "eventList": [
         {
-            "id": "6915004b-f445-412f-9281-856ef2c604f4",
+            "id": "2de5d42a-b3d7-46d9-a201-405451fd1823",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "2f2a41c8-a905-4a8d-9a3e-2dce633d1f55"
+            "m_owner": "a4894c50-7639-410d-b3cf-526ec0d43d3c"
         },
         {
-            "id": "a94e7335-5c65-4717-9108-5d1cc4f6a57e",
+            "id": "2df39c3f-f37d-4072-b3ad-a52dbaaeb7a4",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
-            "m_owner": "2f2a41c8-a905-4a8d-9a3e-2dce633d1f55"
+            "m_owner": "a4894c50-7639-410d-b3cf-526ec0d43d3c"
         },
         {
-            "id": "dab7b084-eb48-41d5-b8be-25abbc068ce0",
+            "id": "2267ec69-0f3e-4c3c-929c-3a1d23990a81",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 7,
             "eventtype": 6,
-            "m_owner": "2f2a41c8-a905-4a8d-9a3e-2dce633d1f55"
+            "m_owner": "a4894c50-7639-410d-b3cf-526ec0d43d3c"
         },
         {
-            "id": "e96a51a7-bc3a-4fa3-86dc-3abdbcf1afeb",
+            "id": "dedf5461-c356-494b-9527-ab917b6ef8d4",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 10,
             "eventtype": 6,
-            "m_owner": "2f2a41c8-a905-4a8d-9a3e-2dce633d1f55"
+            "m_owner": "a4894c50-7639-410d-b3cf-526ec0d43d3c"
         },
         {
-            "id": "f1b7d98a-a20f-43cc-aa06-89ebd281fb67",
+            "id": "d1a831a7-6b8d-4dc6-bccb-bbcdf10efcba",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 11,
             "eventtype": 6,
-            "m_owner": "2f2a41c8-a905-4a8d-9a3e-2dce633d1f55"
+            "m_owner": "a4894c50-7639-410d-b3cf-526ec0d43d3c"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -73,6 +73,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "661d652d-9299-4bc3-98b5-84dffc37e19b",
+    "spriteId": "079b4bca-8753-4231-bd3a-dc7fef7cf0c6",
     "visible": true
 }
