@@ -188,7 +188,7 @@ angelSlayerUnlocked = false;
 rainbowSlimeUnlocked = false;
 agentOfGodUnlocked = false;
 gravelingUnlocked = false;
-
+//
 
 //talking stuff
 global.playerLine1 = 0;
