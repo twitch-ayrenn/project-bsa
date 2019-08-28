@@ -20,6 +20,7 @@ sizeX = 1.8;
 sizeY = 1.8;
 bossSize = 1.8;
 chooseAnAttack = true;
+
 global.theGravekeeperReward = 0;
 if (global.musicOn == true)
 {

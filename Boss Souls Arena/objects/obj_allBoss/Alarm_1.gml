@@ -1,0 +1,2 @@
+/// @description Cooldwon
+chooseAnAttack = true;

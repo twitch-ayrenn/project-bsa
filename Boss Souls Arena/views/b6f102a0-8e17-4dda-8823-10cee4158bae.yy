@@ -5,9 +5,7 @@
     "name": "b6f102a0-8e17-4dda-8823-10cee4158bae",
     "children": [
         "f7a75954-bacf-4865-9f3c-b0df928b3a15",
-        "b6bbcb0a-b8d4-4b73-94ef-8d2d7b808da4",
         "f482cc72-465d-4c56-ac48-3b8293d3c229",
-        "e9767b06-417c-41a6-bc5f-98f12f62d57f",
         "0f406a3a-21d5-490e-967c-649c82e4ac1c",
         "10922dbb-0066-42fa-8002-641059a86da7",
         "ec58eb12-4fdc-4d7f-9a11-97e686c29378",
@@ -26,7 +24,7 @@
         "112876b7-954e-4b43-a8f3-d806d318c6d5"
     ],
     "filterType": "GMObject",
-    "folderName": "grp_boss",
+    "folderName": "grp_OldBoss",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

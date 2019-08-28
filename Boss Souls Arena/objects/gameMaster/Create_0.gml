@@ -188,7 +188,21 @@ angelSlayerUnlocked = false;
 rainbowSlimeUnlocked = false;
 agentOfGodUnlocked = false;
 gravelingUnlocked = false;
-//
+//Items
+assassinItems = [];
+bloodKnightItems = [];
+pyromancerItems = [];
+shopkeeperItems = [];
+theRedWarriorItems = [];
+plaugeWalkerItems = [];
+angelSlayerItems = [];
+rainbowSlimeItems = [];
+agentOfGodItems = [];
+gravelingItems = [];
+//for(chosenClassIndex = 0; chosenClassIndex < 13;chosenClassIndex++)
+//{
+//	if (chosenClass[chosenClassIndex])	
+//}
 
 //talking stuff
 global.playerLine1 = 0;

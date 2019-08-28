@@ -8,7 +8,7 @@ if (destroyStacks > 0)
 if (place_meeting(x,y,par_enemy))
 {
 	
-	with (obj_player)
+	with (obj_allPlayer)
 	{
 		pyroPortalAmount += 1;
 	}
@@ -20,7 +20,7 @@ if (place_meeting(x,y,par_enemy))
 }
 if (destroyStacks <= 0)
 {
-	with (obj_player)
+	with (obj_allPlayer)
 	{
 		pyroPortalAmount += 1;
 	}

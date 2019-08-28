@@ -13,8 +13,7 @@
         "ccff8b6c-4d62-4807-b3b3-191f6d26cecb",
         "f272a91a-eb41-4fef-be07-c0f4e293e67b",
         "011847dd-c04a-4449-8a08-ec1510a4e8cd",
-        "965d7cf7-6fce-4568-80f1-65f27ef17f90",
-        "bf99351f-ae82-430a-8bf9-f908119f16a6"
+        "965d7cf7-6fce-4568-80f1-65f27ef17f90"
     ],
     "filterType": "GMObject",
     "folderName": "grp_player",

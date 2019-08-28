@@ -4,13 +4,10 @@
     "mvc": "1.1",
     "name": "7510a8ab-884c-4603-a4e3-0b02b411b47e",
     "children": [
-        "ef38f4c9-2796-4077-ba46-623f3184f181",
-        "9021edba-251b-41b0-969b-b741768ecb52",
-        "6d6b28af-0090-45b2-9540-403e18750669",
-        "d9318266-9c6b-490a-a85a-cb4e78cdfce0",
-        "9ab6257d-66fa-4b5e-94ea-ce860969539c",
-        "8808743a-34c9-4824-9cd5-8b9b81e1740b",
-        "b53c2ef6-0431-42d4-bfe1-e146fc99e283"
+        "26f7d297-223e-43cc-84e7-22c7a23792a8",
+        "25f82b9c-c069-4172-a68e-6b3fd152c01e",
+        "c375e188-29ed-4f7a-95e4-d1c9e8029f06",
+        "c9036a7a-64a4-4f3a-b05b-46b42b8c5ae0"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_theFatZombie",

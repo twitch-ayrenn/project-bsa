@@ -112,10 +112,7 @@ if (hp <= 0)
 		audio_play_sound(snd_theGraveKeeper_death,Prioity.Small,false);
 	}
 	//boss
-	if (instance_exists(obj_scythe)){with(obj_scythe){instance_destroy();}}
-	if (instance_exists(obj_scythe_projectile)){with(obj_scythe_projectile){instance_destroy();}}
-	if (instance_exists(obj_keeperRange)){with(obj_keeperRange){instance_destroy();}}
-	if (instance_exists(obj_keeperRange_in)){with(obj_keeperRange_in){instance_destroy();}}
+	
 	var deadBoss = instance_create_depth(x,y,depth,obj_deadBoss);
 		deadBoss.sprite_index = sprite_index;
 		deadBoss.image_alpha = image_alpha;

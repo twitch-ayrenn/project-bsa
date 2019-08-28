@@ -51,7 +51,7 @@ if (class == Character.ShadowAssassin)
 {
 	hp = 100;
 	moveSpeed = 2;
-	global.damage = 10;
+	global.damage = 1;
 	leftClickCooldown = (10)*30;
 	rightClickCooldown = (10)*30;
 	dashCooldown = (5)*30;
@@ -75,7 +75,7 @@ if (class == Character.Pyromancer)
 {
 	hp = 100;
 	moveSpeed = 3;
-	global.damage = 10;
+	global.damage = 1;
 	leftClickCooldown = (9)*30;
 	rightClickCooldown = (9)*30;
 	dashCooldown = (9)*30;
@@ -95,7 +95,7 @@ if (class == Character.BloodKnight)
 {
 	hp = 100*2;
 	moveSpeed = 3;
-	global.damage = 10;
+	global.damage = 1;
 	leftClickCooldown = (1)*30;
 	rightClickCooldown = (1);
 	dashCooldown = (10)*30;
