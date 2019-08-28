@@ -18,6 +18,13 @@ if (moveType == MovementType.WalkingTowards)
 {
 	move_towards_point(target.x,target.y,actualSpeed);
 }
+if (moveType == MovementType.WalkingAround)
+{
+	if (distance_to_point(obj_allPlayer.x + pointX,obj_allPlayer.y + pointY) > 6)
+	{
+		move_towards_point(obj_allPlayer.x + pointX,obj_allPlayer.y + pointY,actualSpeed);	
+	}
+}
 #endregion
 #region Attacks
 if(chooseAnAttack == true)
@@ -25,7 +32,7 @@ if(chooseAnAttack == true)
 	chooseAnAttack = false;
 	globalvar attack; 
 	if (gameMaster.chosenBoss == Boss.BloodZombie && phase == 1){attack = choose(Atks.NormalShot,Atks.NormalShot,Atks.NormalShot,Atks.CircleAttack);}
-	if (gameMaster.chosenBoss == Boss.BloodZombie && phase == 2){attack = choose(Atks.NormalShot,Atks.SummonTurret,Atks.CircleAttack);}
+	if (gameMaster.chosenBoss == Boss.BloodZombie && phase == 2){attack = choose(Atks.NormalShot,Atks.GooSpawn,Atks.CircleAttack);}
 	if (attack == Atks.NormalShot)
 	{
 		sprite_index = normalSprite;
@@ -36,10 +43,10 @@ if(chooseAnAttack == true)
 		sprite_index = circleSprite;		
 		attackColor = c_fuchsia;
 	}
-	if (attack == Atks.SummonTurret)
+	if (attack == Atks.GooSpawn)
 	{
-		sprite_index = summonSprite;
-		attackColor = c_teal;
+		sprite_index = gooSprite;
+		attackColor = c_blue;
 	}
 	alarm[0] = timeAfterIndicate;
 	alarm[1] = attackCooldown;

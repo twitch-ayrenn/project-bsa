@@ -1154,7 +1154,7 @@
             "Key": "1fc9b692-74fd-49de-a6e7-d6c82e054c91",
             "Value": {
                 "id": "25ce216d-4b71-4ba3-9a63-5eefb082db7a",
-                "resourcePath": "sprites\\spr_boss_theInfernalWisp\\spr_boss_theInfernalWisp.yy",
+                "resourcePath": "sprites\\spr_boss_flameWisp_coneAttack\\spr_boss_flameWisp_coneAttack.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1475,6 +1475,14 @@
             "Value": {
                 "id": "ece97c66-fc5b-4ea0-a87c-29a4c9716700",
                 "resourcePath": "sprites\\spr_deathQueenStatue\\spr_deathQueenStatue.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "27f1c518-4b30-4ff9-9262-b47a51598e64",
+            "Value": {
+                "id": "14c7c5be-7c8a-4ad8-b3b2-d75acb3a9724",
+                "resourcePath": "sprites\\spr_boss_flameWisp_teleport\\spr_boss_flameWisp_teleport.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -4076,6 +4084,14 @@
                 "id": "78f95929-a235-44f3-8007-4a2d1f8259e4",
                 "resourcePath": "objects\\obj_ashy\\obj_ashy.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "71997cdb-7836-40bf-a20d-cf532425fc4a",
+            "Value": {
+                "id": "2e390e36-58f0-41b0-9bfb-b963fe00e4d7",
+                "resourcePath": "sprites\\spr_boss_flameWisp_oneShot\\spr_boss_flameWisp_oneShot.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -6906,7 +6922,7 @@
             "Key": "c375e188-29ed-4f7a-95e4-d1c9e8029f06",
             "Value": {
                 "id": "f379bffa-113a-49f0-8016-5e08a2c7a756",
-                "resourcePath": "sprites\\spr_boss_bloodZombie_sum\\spr_boss_bloodZombie_sum.yy",
+                "resourcePath": "sprites\\spr_boss_bloodZombie_goo\\spr_boss_bloodZombie_goo.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -7779,6 +7795,14 @@
             "Value": {
                 "id": "6e160b78-5c4e-4178-8a01-329717b08321",
                 "resourcePath": "objects\\obj_portalAttackRange\\obj_portalAttackRange.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "dbfb1751-7a8b-4a80-80b7-6248fcaa0914",
+            "Value": {
+                "id": "07d06e53-5f54-4779-b687-7ea4ecd6420a",
+                "resourcePath": "objects\\obj_minion\\obj_minion.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -9011,6 +9035,14 @@
             "Value": {
                 "id": "5fde1ccb-c7db-4592-982c-8aa61ccb9931",
                 "resourcePath": "sprites\\spr_poisonJar_outline_red\\spr_poisonJar_outline_red.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "fa2240c3-2c48-419d-8db3-62b091604e8a",
+            "Value": {
+                "id": "1b4356b5-1566-415c-99e5-9447c4eed0cb",
+                "resourcePath": "sprites\\spr_boss_flameWisp_chase\\spr_boss_flameWisp_chase.yy",
                 "resourceType": "GMSprite"
             }
         },

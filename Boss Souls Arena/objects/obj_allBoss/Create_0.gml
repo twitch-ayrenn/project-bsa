@@ -18,9 +18,10 @@ enum MovementType
 	WalkingTowards = 1,
 	WalkingAround,
 	Snake,
-	
 }
 moveType = 1;
+pointX = choose(60,0,-60);
+pointY = choose(60,-60);
 #endregion
 #region Phases
 tier = 1;
@@ -34,7 +35,11 @@ enum Atks
 {
 	NormalShot,
 	CircleAttack,
+	GooSpawn,
 	SummonTurret,
+	TeleportAttack,
+	ConeAttack,
+	OneShotAttack,
 }
 timeAfterIndicate = (3)*30;
 attackCooldown = (6)*30;
@@ -46,16 +51,21 @@ image_xscale = size;
 image_yscale = size;
 alpha = 1;
 normalSprite = 0;
+oneShotSprite = 0;
 circleSprite = 0;
 summonSprite = 0;
+chaseSprite = 0;
+coneSprite = 0;
+gooSprite = 0;
+teleportSprite = 0;
 #endregion
 #region Bosses
 	#region BloodZombie
 	if (gameMaster.chosenBoss == Boss.BloodZombie) 
 	{
 		//stats
-		phase1Hp = 150; phase1Ms = 1; phase1Dmg = 20;
-		phase2Hp = 250; phase2Ms = 1.5; phase2Dmg = 30;
+		phase1Hp = 200; phase1Ms = 1; phase1Dmg = 20;
+		phase2Hp = 300; phase2Ms = 1.5; phase2Dmg = 30;
 		hp = phase1Hp;
 		global.bossDamage = phase1Dmg;
 		moveSpeed = phase1Ms;
@@ -63,13 +73,36 @@ summonSprite = 0;
 		//attacks and phase
 		tier = 1;
 		phase = 1;
-		maxPhase = 4;
+		maxPhase = 2;
 		//visual
-		size = 1;
+		size = 1.5;
 		alpha = 1;
 		normalSprite = spr_boss_bloodZombie_nA;
 		circleSprite = spr_boss_bloodZombie_cir;
-		summonSprite = spr_boss_bloodZombie_sum;
+		gooSprite = spr_boss_bloodZombie_goo;
+	}
+	#endregion
+	#region FlameWisp
+	if (gameMaster.chosenBoss == Boss.FlameWisp) 
+	{
+		//stats
+		phase1Hp = 200; phase1Ms = 1; phase1Dmg = 20;
+		phase2Hp = 200; phase2Ms = 1.5; phase2Dmg = 30;
+		hp = phase1Hp;
+		global.bossDamage = phase1Dmg;
+		moveSpeed = phase1Ms;
+		moveType = MovementType.WalkingAround;
+		//attacks and phase
+		tier = 1;
+		phase = 1;
+		maxPhase = 2;
+		//visual
+		size = 1.5;
+		alpha = 1;
+		coneSprite = spr_boss_flameWisp_coneAttack
+		teleportSprite = spr_boss_flameWisp_teleport;
+		oneShotSprite = spr_boss_flameWisp_oneShot;
+		chaseSprite = spr_boss_flameWisp_chase;
 	}
 	#endregion
 #endregion

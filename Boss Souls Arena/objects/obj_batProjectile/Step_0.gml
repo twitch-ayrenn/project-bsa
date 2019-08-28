@@ -28,7 +28,7 @@ if (instance_exists(par_enemy))
 		var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
 		healText.color = c_lime;
 		healText.text = amountHealed;
-		with (obj_player)
+		with (obj_allPlayer)
 		{
 			hp += global.damage;
 		}

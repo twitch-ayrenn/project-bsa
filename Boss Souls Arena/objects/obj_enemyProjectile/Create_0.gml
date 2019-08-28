@@ -3,3 +3,4 @@
 destroy = true;
 damage = 0;
 range = 10*30;
+stacks = 0;
