@@ -2,7 +2,7 @@
     "id": "27f1c518-4b30-4ff9-9262-b47a51598e64",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_boss_flameWisp_teleport",
+    "name": "spr_boss_flameWisp_circle",
     "For3D": false,
     "HTile": false,
     "VTile": false,

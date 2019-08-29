@@ -1482,7 +1482,7 @@
             "Key": "27f1c518-4b30-4ff9-9262-b47a51598e64",
             "Value": {
                 "id": "14c7c5be-7c8a-4ad8-b3b2-d75acb3a9724",
-                "resourcePath": "sprites\\spr_boss_flameWisp_teleport\\spr_boss_flameWisp_teleport.yy",
+                "resourcePath": "sprites\\spr_boss_flameWisp_circle\\spr_boss_flameWisp_circle.yy",
                 "resourceType": "GMSprite"
             }
         },

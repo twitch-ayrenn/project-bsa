@@ -91,7 +91,7 @@ teleportSprite = 0;
 		hp = phase1Hp;
 		global.bossDamage = phase1Dmg;
 		moveSpeed = phase1Ms;
-		moveType = MovementType.WalkingAround;
+		moveType = MovementType.WalkingTowards;
 		//attacks and phase
 		tier = 1;
 		phase = 1;
@@ -100,7 +100,7 @@ teleportSprite = 0;
 		size = 1.5;
 		alpha = 1;
 		coneSprite = spr_boss_flameWisp_coneAttack
-		teleportSprite = spr_boss_flameWisp_teleport;
+		circleSprite = spr_boss_flameWisp_circle;
 		oneShotSprite = spr_boss_flameWisp_oneShot;
 		chaseSprite = spr_boss_flameWisp_chase;
 	}

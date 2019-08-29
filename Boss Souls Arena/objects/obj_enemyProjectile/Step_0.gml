@@ -17,6 +17,7 @@ if (place_meeting(x,y,target) && sprite_index != spr_gooGround && global.iFrame 
 	damageText.color = c_maroon;
 	damageText.text = damageToTarget;
 	obj_allPlayer.hp -= damageToTarget;
+	if (sprite_index == spr_fireBall && image_xscale == 2.5){obj_allPlayer.hp -= damageToTarget*2;}
 	if(sprite_index == spr_bloodKlott && gameMaster.chosenBoss == Boss.BloodZombie)
 	{
 		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);

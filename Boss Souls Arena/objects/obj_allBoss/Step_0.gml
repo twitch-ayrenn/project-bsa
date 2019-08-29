@@ -33,6 +33,7 @@ if(chooseAnAttack == true)
 	globalvar attack; 
 	if (gameMaster.chosenBoss == Boss.BloodZombie && phase == 1){attack = choose(Atks.NormalShot,Atks.NormalShot,Atks.NormalShot,Atks.CircleAttack);}
 	if (gameMaster.chosenBoss == Boss.BloodZombie && phase == 2){attack = choose(Atks.NormalShot,Atks.GooSpawn,Atks.CircleAttack);}
+	if (gameMaster.chosenBoss == Boss.FlameWisp && phase == 1){attack = choose(Atks.ConeAttack,Atks.OneShotAttack,Atks.CircleAttack);}
 	if (attack == Atks.NormalShot)
 	{
 		sprite_index = normalSprite;
@@ -47,6 +48,16 @@ if(chooseAnAttack == true)
 	{
 		sprite_index = gooSprite;
 		attackColor = c_blue;
+	}
+	if (attack == Atks.ConeAttack)
+	{
+		sprite_index = coneSprite;		
+		attackColor = c_aqua;
+	}
+	if (attack == Atks.OneShotAttack)
+	{
+		sprite_index = oneShotSprite;
+		attackColor = c_red;
 	}
 	alarm[0] = timeAfterIndicate;
 	alarm[1] = attackCooldown;
