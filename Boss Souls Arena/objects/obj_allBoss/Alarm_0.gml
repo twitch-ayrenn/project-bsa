@@ -23,7 +23,7 @@ if (attack == Atks.CircleAttack)
 {
 	if (gameMaster.chosenBoss == Boss.BloodZombie)
 	{
-		var angleBk = 0;
+		var angleBk = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
 		var circleAmount = 12;
 		repeat(circleAmount)
 		{
@@ -43,7 +43,7 @@ if (attack == Atks.CircleAttack)
 	}
 	if (gameMaster.chosenBoss == Boss.FlameWisp)
 	{
-		var angleFC = 0;
+		var angleFC = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);;
 		var circleAmount = 14;
 		repeat(circleAmount)
 		{
@@ -51,7 +51,7 @@ if (attack == Atks.CircleAttack)
 			//Main
 			fireBolt.direction = angleFC;
 			fireBolt.speed = 5;
-			fireBolt.image_angle = fireBolt.direction;
+			fireBolt.image_angle = fireBolt.direction+90;
 			//Visual
 			fireBolt.image_alpha = 0.85;
 			fireBolt.sprite_index = spr_fireBall;
@@ -88,7 +88,6 @@ if (attack == Atks.OneShotAttack)
 {
 	if (gameMaster.chosenBoss == Boss.FlameWisp)
 	{
-
 		var infernalBall = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
 		//Main
 		infernalBall.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
@@ -100,6 +99,32 @@ if (attack == Atks.OneShotAttack)
 		infernalBall.sprite_index = spr_fireBall;
 		infernalBall.image_xscale = 3;
 		infernalBall.image_yscale = 3;
+	}
+}
+#endregion
+#region Cone Attacks
+if (attack == Atks.ConeAttack)
+{
+	if (gameMaster.chosenBoss == Boss.FlameWisp)
+	{
+		var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-45;
+		var coneWide = 90;
+		var coneAmount = 6;
+		repeat(coneAmount)
+		{
+			var fireBolt = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			fireBolt.direction = coneAtkFW;
+			fireBolt.speed = 5;
+			fireBolt.image_angle = fireBolt.direction+90;
+			//Visual
+			fireBolt.image_alpha = 0.85;
+			fireBolt.sprite_index = spr_fireBall;
+			fireBolt.image_blend = global.orange;
+			fireBolt.image_xscale = 1.2;
+			fireBolt.image_yscale = 1.2;
+			coneAtkFW += (coneWide/coneAmount);
+		}
 	}
 }
 #endregion
