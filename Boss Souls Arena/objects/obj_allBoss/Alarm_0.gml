@@ -91,7 +91,7 @@ if (attack == Atks.OneShotAttack)
 		var infernalBall = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
 		//Main
 		infernalBall.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
-		infernalBall.speed = 3.5;
+		infernalBall.speed = 3.75;
 		infernalBall.image_angle = infernalBall.direction+90;
 		//Visual
 		infernalBall.image_alpha = 0.85;
@@ -129,6 +129,24 @@ if (attack == Atks.ConeAttack)
 }
 #endregion
 #region Chase
-
+if (attack == Atks.ChaseAttack)
+{
+	if (gameMaster.chosenBoss == Boss.FlameWisp)
+	{
+		var infernalBall = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+		//Main
+		infernalBall.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		infernalBall.speed = 3;
+		infernalBall.image_angle = infernalBall.direction+90;
+		//Visual
+		infernalBall.image_alpha = 0.85;
+		infernalBall.image_blend = global.orange;
+		infernalBall.sprite_index = spr_fireBall;
+		infernalBall.image_xscale = 3;
+		infernalBall.image_yscale = 3;
+		infernalBall.chase = true;
+		infernalBall.range = (6.5)*30;
+	}
+}
 #endregion
 

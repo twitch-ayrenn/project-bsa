@@ -130,6 +130,7 @@ global.dD = 1;
 global.orange = make_color_rgb(255,140,0);
 global.goldColor = make_color_rgb(218,165,32);
 global.purple = make_color_rgb(148,0,211);
+global.lightBlue = make_color_rgb(173,216,230);
 //text vars
 global.space = " ";
 global.slash = "/";

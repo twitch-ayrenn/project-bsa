@@ -40,6 +40,9 @@ enum Atks
 	TeleportAttack,
 	ConeAttack,
 	OneShotAttack,
+	ChaseAttack,
+	BeamAttack,
+	RapidFire,
 }
 timeAfterIndicate = (3)*30;
 attackCooldown = (6)*30;
@@ -58,6 +61,8 @@ chaseSprite = 0;
 coneSprite = 0;
 gooSprite = 0;
 teleportSprite = 0;
+beamSprite = 0;
+rapidFireSprite = 0;
 #endregion
 #region Bosses
 	#region BloodZombie
@@ -98,11 +103,33 @@ teleportSprite = 0;
 		maxPhase = 2;
 		//visual
 		size = 1.5;
-		alpha = 1;
+		alpha = 0.9;
 		coneSprite = spr_boss_flameWisp_coneAttack
 		circleSprite = spr_boss_flameWisp_circle;
 		oneShotSprite = spr_boss_flameWisp_oneShot;
 		chaseSprite = spr_boss_flameWisp_chase;
+	}
+	#endregion
+	#region TheCorrupter
+	if (gameMaster.chosenBoss == Boss.TheCorrupter1) 
+	{
+		//stats
+		phase1Hp = 250; phase1Ms = 1; phase1Dmg = 30;
+		phase2Hp = 250; phase2Ms = 1.5; phase2Dmg = 35;
+		hp = phase1Hp;
+		global.bossDamage = phase1Dmg;
+		moveSpeed = phase1Ms;
+		moveType = MovementType.WalkingTowards;
+		//attacks and phase
+		tier = 1;
+		phase = 1;
+		maxPhase = 2;
+		//visual
+		size = 1;
+		alpha = 1;
+		beamSprite = spr_boss_theCorrupter_beam
+		gooSprite = spr_boss_theCorrupter_goo;
+		rapidFireSprite = spr_boss_theCorrupter_rapidFire;
 	}
 	#endregion
 #endregion

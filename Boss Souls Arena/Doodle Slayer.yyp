@@ -623,6 +623,14 @@
             }
         },
         {
+            "Key": "0ffa8956-bf1c-485d-954b-b4075f5dda8e",
+            "Value": {
+                "id": "53064770-4625-45aa-a75f-302a58f8c823",
+                "resourcePath": "views\\0ffa8956-bf1c-485d-954b-b4075f5dda8e.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "10430602-dbda-4d9a-a0d7-a52a18f9d1bb",
             "Value": {
                 "id": "aea372e8-e6b3-4a8b-bb75-0693227a0d2e",
@@ -5783,6 +5791,14 @@
             }
         },
         {
+            "Key": "a3b1a336-9a7c-43de-89e0-d9b8ad1285b9",
+            "Value": {
+                "id": "95f40188-8659-4a72-853c-fe0ad9644dcf",
+                "resourcePath": "sprites\\spr_boss_theCorrupter\\spr_boss_theCorrupter.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a3ef8773-eed4-416d-b6ce-509894ef5ff8",
             "Value": {
                 "id": "554dc435-bf53-406d-a623-8fd2672e54e5",
@@ -7439,6 +7455,14 @@
             }
         },
         {
+            "Key": "cfaa76cb-df9c-4e60-96b8-e6efc1426142",
+            "Value": {
+                "id": "b8f1c833-388b-4fe1-9d39-9182b996fe4e",
+                "resourcePath": "sprites\\spr_boss_theCorrupter_rapidFire\\spr_boss_theCorrupter_rapidFire.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "cfb31959-0da7-4c54-b6dd-c5e0e392a5de",
             "Value": {
                 "id": "a88acf27-7305-495e-8b51-565f313858e8",
@@ -7636,6 +7660,14 @@
                 "id": "1266063e-56ff-4d4e-96f9-ebb820ec1770",
                 "resourcePath": "objects\\obj_bossSelect_deathKingZarok\\obj_bossSelect_deathKingZarok.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "d6ca8905-e8c5-44cc-a6de-1eabb45efa84",
+            "Value": {
+                "id": "5e1c4599-b912-4d2a-89bc-d18d8a117877",
+                "resourcePath": "sprites\\spr_boss_theCorrupter_beam\\spr_boss_theCorrupter_beam.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -8124,6 +8156,14 @@
                 "id": "b068251d-eef5-41db-98be-a2274f09704c",
                 "resourcePath": "objects\\obj_portal_bottom\\obj_portal_bottom.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "e1ffb0a4-dab4-4191-b3d9-ffe2377de404",
+            "Value": {
+                "id": "5537d1c5-5fc4-47a5-828f-7850c66c7002",
+                "resourcePath": "sprites\\spr_beam\\spr_beam.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -9188,6 +9228,14 @@
                 "id": "a4755cfa-47da-4444-8997-3497b1ec2277",
                 "resourcePath": "objects\\obj_soulGraves2\\obj_soulGraves2.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "ff2afa58-3fb2-4229-abc7-b23ab54f64c8",
+            "Value": {
+                "id": "aeaa03f2-7a89-4a7c-99b5-3315b11ae709",
+                "resourcePath": "sprites\\spr_boss_theCorrupter_goo\\spr_boss_theCorrupter_goo.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

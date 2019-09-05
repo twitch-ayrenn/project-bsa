@@ -10,7 +10,7 @@
         "c9036a7a-64a4-4f3a-b05b-46b42b8c5ae0"
     ],
     "filterType": "GMSprite",
-    "folderName": "grp_theFatZombie",
+    "folderName": "grp_theZombie",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

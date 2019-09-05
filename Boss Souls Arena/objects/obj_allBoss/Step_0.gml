@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 #region Visuals
+randomize();
 var sizeX
 if (x < obj_allPlayer.x){sizeX = size;}
 if (x > obj_allPlayer.x){sizeX = -size;}
@@ -26,15 +27,23 @@ if (moveType == MovementType.WalkingAround)
 	}
 }
 #endregion
+#region Ongoing things
+if (gameMaster.chosenBoss == Boss.TheCorrupter1)
+{
+}
+#endregion
 #region Attacks
 if(chooseAnAttack == true)
 {
 	chooseAnAttack = false;
 	globalvar attack; 
+	#region Tier1 Bosses
 	if (gameMaster.chosenBoss == Boss.BloodZombie && phase == 1){attack = choose(Atks.NormalShot,Atks.NormalShot,Atks.NormalShot,Atks.CircleAttack);}
 	if (gameMaster.chosenBoss == Boss.BloodZombie && phase == 2){attack = choose(Atks.NormalShot,Atks.GooSpawn,Atks.CircleAttack);}
 	if (gameMaster.chosenBoss == Boss.FlameWisp && phase == 1){attack = choose(Atks.ConeAttack,Atks.OneShotAttack,Atks.CircleAttack);}
-	if (gameMaster.chosenBoss == Boss.FlameWisp && phase == 2){attack = choose(Atks.ConeAttack,Atks.OneShotAttack,Atks.CircleAttack);}
+	if (gameMaster.chosenBoss == Boss.FlameWisp && phase == 2){attack = choose(Atks.ConeAttack,Atks.CircleAttack,Atks.ChaseAttack);}
+	if (gameMaster.chosenBoss == Boss.TheCorrupter1 ){attack = choose(Atks.BeamAttack,Atks.RapidFire,Atks.GooSpawn);}
+	#endregion
 	if (attack == Atks.NormalShot)
 	{
 		sprite_index = normalSprite;
@@ -60,6 +69,21 @@ if(chooseAnAttack == true)
 		sprite_index = oneShotSprite;
 		attackColor = c_red;
 	}
+	if (attack == Atks.ChaseAttack)
+	{
+		sprite_index = chaseSprite;
+		attackColor = c_yellow;
+	}
+	if (attack == Atks.RapidFire)
+	{
+		sprite_index = rapidFireSprite;
+		attackColor = global.lightBlue;
+	}
+	if (attack == Atks.BeamAttack)
+	{
+		sprite_index = beamSprite;
+		attackColor = global.orange;
+	}
 	alarm[0] = timeAfterIndicate;
 	alarm[1] = attackCooldown;
 }
@@ -71,6 +95,22 @@ if (hp <= 0 && phase == 1 && phase != maxPhase)
 	hp = phase2Hp;
 	moveSpeed = phase2Ms;
 	global.bossDamage = phase2Dmg;
+	if (gameMaster.chosenBoss == Boss.FlameWisp)
+	{
+		var infernalBall = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+		//Main
+		infernalBall.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		infernalBall.speed = 3;
+		infernalBall.image_angle = infernalBall.direction+90;
+		//Visual
+		infernalBall.image_alpha = 0.85;
+		infernalBall.image_blend = global.orange;
+		infernalBall.sprite_index = spr_fireBall;
+		infernalBall.image_xscale = 3;
+		infernalBall.image_yscale = 3;
+		infernalBall.chase = true;
+		infernalBall.range = (6.5)*30;
+	}
 }
 if (hp <= 0 && phase == 2 && phase != maxPhase)
 {
