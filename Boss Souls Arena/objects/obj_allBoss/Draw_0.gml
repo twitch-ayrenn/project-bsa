@@ -1,4 +1,17 @@
-/// @description Notes
+/// @description Note
+if (gameMaster.chosenBoss == Boss.TheCorrupter1 && attack == Atks.BeamAttack && drawArea == true)
+{
+	if (phase == 1)
+	{
+		draw_line_width_color(x-600,y,x+600,y,1,global.orange,global.orange);
+		draw_line_width_color(x,y-600,x,y+600,1,global.orange,global.orange);
+	}
+	if (phase == 2)
+	{
+		draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,global.orange,global.orange);
+	}
+}
+
 draw_self();
 //Tier 1 - 1-3phases, 2-3moves, 2.5 seconds reaction Time, 6 seconds cdr
 //Tier 2 - 2-4 phases, 3-4moves, 2 seconds reaction Time, 5.5seconds cdr

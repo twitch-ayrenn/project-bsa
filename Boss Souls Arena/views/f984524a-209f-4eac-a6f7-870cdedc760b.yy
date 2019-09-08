@@ -7,8 +7,7 @@
         "406f1534-1ace-4133-a4c6-057374187081",
         "cfa20bd7-1794-4fc5-9b26-adf22043b55c",
         "f429ee47-dc53-40e4-9b58-733bdf031840",
-        "f567bb2c-0050-419e-961e-26695656a103",
-        "8432141f-7767-4a03-8d65-ceecf1452b48"
+        "f567bb2c-0050-419e-961e-26695656a103"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_theSoulWisp",

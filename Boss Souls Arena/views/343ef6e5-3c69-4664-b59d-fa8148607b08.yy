@@ -11,8 +11,7 @@
         "d89b6ce0-7b12-4150-9f82-f9a15e8a7ec0",
         "adc0ea1c-091f-4dda-8146-c272e8d3945d",
         "6e419a68-8b34-4580-85a3-d41469f8fc1a",
-        "8c9d6f30-ccac-4426-ade1-c7805bc007c5",
-        "3fb20946-44aa-49f3-bc79-79e6c866f213"
+        "8c9d6f30-ccac-4426-ade1-c7805bc007c5"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_queenZeria",

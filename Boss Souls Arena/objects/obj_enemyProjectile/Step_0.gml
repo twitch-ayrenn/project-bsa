@@ -1,33 +1,40 @@
 /// @description Insert description here
-// You can write your code in this editor
+#region vars
 depth = -y-97;
+if (sprite_index == spr_gooGround){depth = -5;}
+var target = obj_allPlayer;
+var dmg = clamp(global.bossDamage*(clamp((target.hp/target.maxHp),0.5,1)),1,0.8*(target.maxHp));
+stacks++;
+#endregion
+#region Visuals 
+if (sprite_index == spr_bloodKlott){image_angle -= 30;}
+#endregion
+#region movement
 if (chase == true)
 {
-	move_towards_point(obj_allPlayer.x,obj_allPlayer.y,obj_allPlayer.actualSpeed*1.3);
+	move_towards_point(target.x,target.y,target.actualSpeed*1.3);
 	image_angle = direction+90;
 }	
-if (sprite_index == spr_gooGround){depth = -5;}
-if (sprite_index == spr_bloodKlott){image_angle -= 30;}
-stacks++;
+if (sprite_index == spr_beam){x = lockOn.x; y = lockOn.y;depth = lockOn.depth+1;}
+#endregion
 if (destroy == true)
 {
 	destroy = false;
 	alarm[0] = range;
 }
-var target = obj_allPlayer;
-if (place_meeting(x,y,target) && sprite_index != spr_gooGround && global.iFrame == false)
+#region damage
+if (place_meeting(x,y,target) && sprite_index != spr_gooGround && global.iFrame == false && sprite_index != spr_beam)
 {
-	var damageToTarget = clamp(global.bossDamage*(clamp((obj_allPlayer.hp/obj_allPlayer.maxHp),0.5,1)),1,0.85*(obj_allPlayer.hp));
-	var damageText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
+	var damageToTarget = clamp(dmg,1,0.8*(target.maxHp));
+	var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
 	damageText.color = c_maroon;
 	damageText.text = damageToTarget;
-	obj_allPlayer.hp -= damageToTarget;
-	if (sprite_index == spr_fireBall && image_xscale == 3){obj_allPlayer.hp -= damageToTarget*2;}
+	target.hp -= damageToTarget;
 	if(sprite_index == spr_bloodKlott && gameMaster.chosenBoss == Boss.BloodZombie)
 	{
 		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
 		//Main
-		gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		gooGround.direction = point_direction(x,y,target.x,target.y);
 		gooGround.speed = 0;
 		gooGround.image_angle = irandom_range(0,360);
 		//Visual
@@ -45,11 +52,20 @@ if (stacks >= (1)*30)
 {
 	if (place_meeting(x,y,target) && sprite_index == spr_gooGround && global.iFrame == false)
 	{
-		var damageToTarget = clamp(global.bossDamage*(clamp((obj_allPlayer.hp/obj_allPlayer.maxHp),0.5,1)),1,0.85*(obj_allPlayer.hp));
-		var damageText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
+		var damageToTarget = clamp(dmg,1,0.8*(target.maxHp));
+		var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
 		damageText.color = c_maroon;
 		damageText.text = damageToTarget;
-		obj_allPlayer.hp -= damageToTarget;
+		target.hp -= damageToTarget;
+	}
+	if (place_meeting(x,y,target) && sprite_index == spr_beam && global.iFrame == false)
+	{
+		var damageToTarget = clamp(dmg*3,1,0.8*(target.maxHp));
+		var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
+		damageText.color = c_maroon;
+		damageText.text = damageToTarget;
+		target.hp -= damageToTarget;
 	}
 	stacks = 0;
 }
+#endregion

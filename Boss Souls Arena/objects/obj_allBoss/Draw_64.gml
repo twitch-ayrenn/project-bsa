@@ -1,4 +1,5 @@
 /// @description Insert description here
+#region AllBosses
 var darkGray = make_color_rgb(10,10,10);
 draw_healthbar(360,800,760,843,(hp/maxHp)*100,darkGray,c_maroon,c_red,1,true,true);
 draw_healthbar(845,800,1245,843,(hp/maxHp)*100,darkGray,c_maroon,c_red,0,true,true);
@@ -75,4 +76,10 @@ if (maxPhase == 4)
 		draw_sprite_ext(spr_bossLives,0,840+(45*3),875,3.5,3.5,0,c_dkgray,1);
 	}
 }
-
+#endregion
+#region specific bosses
+if (gameMaster.chosenBoss == Boss.BloodRoyalVarus)
+{
+	draw_sprite_ext(spr_blackOut,0,0,0,1,1,0,c_black,blackOutAlpha);
+}
+#endregion

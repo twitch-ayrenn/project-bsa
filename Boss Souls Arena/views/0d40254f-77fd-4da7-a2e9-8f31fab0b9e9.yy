@@ -10,10 +10,7 @@
         "a82c5e43-50cc-4602-8958-d87b801c32dd",
         "dd40ac55-f7ee-44f3-bee4-ec7c332dc78f",
         "66911fe4-cb76-434a-bbaa-ec0790f65471",
-        "44eb7ad1-956c-4038-b1b4-ccc18049387e",
-        "2bf1455d-2178-42a6-8036-3c894102f1ec",
-        "fe8a3ae8-a130-4678-a1cb-9a09bad7477d",
-        "f62c9a0b-2bd8-4974-9b50-141eace9bf38"
+        "44eb7ad1-956c-4038-b1b4-ccc18049387e"
     ],
     "filterType": "GMObject",
     "folderName": "grp_theInfernalWisp",

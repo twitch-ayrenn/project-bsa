@@ -46,7 +46,11 @@ enum Atks
 }
 timeAfterIndicate = (3)*30;
 attackCooldown = (6)*30;
-attackColor = c_white
+attackColor = c_white;
+drawArea = false;
+rapidFireStacks = 0;
+canRapidAttack = true;
+spawnThingOnce = true;
 #endregion
 #region Visuals
 size = 1;
@@ -63,6 +67,7 @@ gooSprite = 0;
 teleportSprite = 0;
 beamSprite = 0;
 rapidFireSprite = 0;
+blackOutAlpha = 0;
 #endregion
 #region Bosses
 	#region BloodZombie
@@ -114,8 +119,8 @@ rapidFireSprite = 0;
 	if (gameMaster.chosenBoss == Boss.TheCorrupter1) 
 	{
 		//stats
-		phase1Hp = 250; phase1Ms = 1; phase1Dmg = 30;
-		phase2Hp = 250; phase2Ms = 1.5; phase2Dmg = 35;
+		phase1Hp = 250; phase1Ms = 1.25; phase1Dmg = 30;
+		phase2Hp = 250; phase2Ms = 1.75; phase2Dmg = 35;
 		hp = phase1Hp;
 		global.bossDamage = phase1Dmg;
 		moveSpeed = phase1Ms;
@@ -127,9 +132,32 @@ rapidFireSprite = 0;
 		//visual
 		size = 1;
 		alpha = 1;
-		beamSprite = spr_boss_theCorrupter_beam
+		beamSprite = spr_boss_theCorrupter_beam;
 		gooSprite = spr_boss_theCorrupter_goo;
 		rapidFireSprite = spr_boss_theCorrupter_rapidFire;
+	}
+	#endregion
+	#region Varus
+	if (gameMaster.chosenBoss == Boss.BloodRoyalVarus) 
+	{
+		//stats
+		phase1Hp = 200; phase1Ms = 1; phase1Dmg = 20;
+		phase2Hp = 200; phase2Ms = 1.5; phase2Dmg = 25;
+		hp = phase1Hp;
+		global.bossDamage = phase1Dmg;
+		moveSpeed = phase1Ms;
+		moveType = MovementType.WalkingTowards;
+		//attacks and phase
+		tier = 1;
+		phase = 1;
+		maxPhase = 2;
+		//visual
+		size = 1;
+		alpha = 0.9;
+		coneSprite = spr_boss_bloodRoyalVarus_cone;
+		teleportSprite = spr_boss_bloodRoyalVarus_teleport;
+		oneShotSprite = spr_boss_bloodRoyalVarus_oneShot;
+		chaseSprite = spr_boss_bloodRoyalVarus_chase;
 	}
 	#endregion
 #endregion
@@ -137,6 +165,7 @@ rapidFireSprite = 0;
 sprite_index = normalSprite;
 actualSpeed = moveSpeed;
 maxHp = hp;
+normalAlpha = alpha;
 image_xscale = size;
 image_yscale = size;
 if (tier == 1){ timeAfterIndicate = (2.5)*30;  attackCooldown = (5)*30;}

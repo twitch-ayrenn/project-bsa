@@ -13,9 +13,7 @@
         "b7b187af-4b65-4837-9fe9-2ff80361942d",
         "acee08f4-e817-47c9-9493-e9e98e6dea8b",
         "924ecfa6-8252-4380-9419-eab64e98a787",
-        "dca8ae97-dcd1-4f80-b38f-e29ec3a9a698",
-        "ff46003d-c6c3-4576-9885-975e177512d9",
-        "d03220d4-2312-49b2-97b9-3a2e415c1db7"
+        "dca8ae97-dcd1-4f80-b38f-e29ec3a9a698"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_theGraveKeeper",

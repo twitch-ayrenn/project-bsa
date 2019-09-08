@@ -10,8 +10,7 @@
         "eabb4a14-02ea-40f5-bd1c-1c4864bf14ec",
         "4dcffcd0-0336-4352-87b9-99940baf5f7c",
         "b8b59823-4775-4cd5-974c-4a6bf7cfa34c",
-        "5a61be60-f877-4bdc-8b55-e842c3f8cd16",
-        "5fe83b0b-10b4-4a06-9b8d-23a29226ea31"
+        "5a61be60-f877-4bdc-8b55-e842c3f8cd16"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_theMadWitches",
