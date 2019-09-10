@@ -68,7 +68,6 @@ gooSprite = 0;
 teleportSprite = 0;
 beamSprite = 0;
 rapidFireSprite = 0;
-
 #endregion
 #region Bosses
 	#region BloodZombie
@@ -155,6 +154,28 @@ rapidFireSprite = 0;
 		//visual
 		size = 1;
 		alpha = 0.9;
+		coneSprite = spr_boss_bloodRoyalVarus_cone;
+		teleportSprite = spr_boss_bloodRoyalVarus_teleport;
+		oneShotSprite = spr_boss_bloodRoyalVarus_oneShot;
+		chaseSprite = spr_boss_bloodRoyalVarus_chase;
+	}
+	#endregion
+	#region Varus
+	if (gameMaster.chosenBoss == Boss.BloodRoyalVarus) 
+	{
+		//stats
+		phase1Hp = 200; phase1Ms = 2; phase1Dmg = 20;
+		hp = phase1Hp;
+		global.bossDamage = phase1Dmg;
+		moveSpeed = phase1Ms;
+		moveType = MovementType.WalkingTowards;
+		//attacks and phase
+		tier = 1;
+		phase = 1;
+		maxPhase = 1;
+		//visual
+		size = 1;
+		alpha = 1;
 		coneSprite = spr_boss_bloodRoyalVarus_cone;
 		teleportSprite = spr_boss_bloodRoyalVarus_teleport;
 		oneShotSprite = spr_boss_bloodRoyalVarus_oneShot;

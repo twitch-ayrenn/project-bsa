@@ -839,6 +839,14 @@
             }
         },
         {
+            "Key": "165d983c-1405-4e29-ac3e-f82437d1d2c4",
+            "Value": {
+                "id": "d5d9dfdb-a517-42dc-993f-e8ff57ee4bd6",
+                "resourcePath": "sprites\\spr_shieldThingy2\\spr_shieldThingy2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "16abadf4-7b05-49e8-a2dd-88d4ce3f5cba",
             "Value": {
                 "id": "c9d42cf8-18f8-4688-9654-cbcd860cfe6f",
@@ -948,22 +956,6 @@
                 "id": "476b2950-6a78-4599-a4a0-16d838c85db0",
                 "resourcePath": "objects\\obj_item_wispSoulWisps\\obj_item_wispSoulWisps.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "1b569ccb-b776-438c-8a47-48e858e25953",
-            "Value": {
-                "id": "0872927e-3731-4af3-8edc-2b4224af463b",
-                "resourcePath": "sprites\\spr_boss_theSoulGuards_blue_2\\spr_boss_theSoulGuards_blue_2.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "1baf439b-27b6-4d67-a99a-b62ef9102d47",
-            "Value": {
-                "id": "20fc012a-46e1-404e-a04f-556c998d6920",
-                "resourcePath": "sprites\\spr_deathGeneral_walking_cone\\spr_deathGeneral_walking_cone.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -1283,14 +1275,6 @@
             "Value": {
                 "id": "e3abf87a-da8b-40cd-8ca1-c3c9bd250443",
                 "resourcePath": "sprites\\spr_prop_jug_empty\\spr_prop_jug_empty.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "236ed30d-fdc9-48df-8c1e-72b098baf9ef",
-            "Value": {
-                "id": "13fad8ff-cf84-4921-9376-3a7612acc65a",
-                "resourcePath": "sprites\\spr_deathGeneral_walking_shooting\\spr_deathGeneral_walking_shooting.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1695,14 +1679,6 @@
             }
         },
         {
-            "Key": "2dad5365-ca6b-4270-b95a-71b0e47370b5",
-            "Value": {
-                "id": "867bd151-a391-45ab-82e9-fea3670031dd",
-                "resourcePath": "sprites\\spr_boss_theSoulGuards_MiniGun_2\\spr_boss_theSoulGuards_MiniGun_2.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "2de4ee30-1044-4c21-82fc-64776fe51044",
             "Value": {
                 "id": "f2468867-7f13-4f8a-91a5-275b30e3905f",
@@ -1851,14 +1827,6 @@
             "Value": {
                 "id": "940a0391-db9b-4ac1-97eb-8ee3f4a18988",
                 "resourcePath": "sprites\\spr_cursor_bloodknight_new\\spr_cursor_bloodknight_new.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "319fb79a-5d27-4616-8759-5f52c370ea23",
-            "Value": {
-                "id": "99cae029-60a9-427f-9725-7584a27f9afe",
-                "resourcePath": "sprites\\spr_boss_theSoulGuards_spin_2\\spr_boss_theSoulGuards_spin_2.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2212,6 +2180,14 @@
                 "id": "933840d6-fbff-448d-81f1-989515e2c561",
                 "resourcePath": "objects\\obj_player_mage\\obj_player_mage.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "3998b74a-4311-40a4-b473-2480e484add3",
+            "Value": {
+                "id": "26ec273f-ca40-4715-88d3-74e3afd069d4",
+                "resourcePath": "sprites\\spr_shieldThingy1\\spr_shieldThingy1.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2607,14 +2583,6 @@
             }
         },
         {
-            "Key": "457c6d6d-59f6-4707-aef2-2bedf4010ff0",
-            "Value": {
-                "id": "79d4ec65-99fc-4f91-8510-1af2c154c439",
-                "resourcePath": "sprites\\spr_deathGeneral_walking_scythe\\spr_deathGeneral_walking_scythe.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "45dd3727-0b01-43f6-ad2c-48c6cb2efd2c",
             "Value": {
                 "id": "cf277856-c3f8-40b0-b25a-7b3e934557ad",
@@ -2911,14 +2879,6 @@
             }
         },
         {
-            "Key": "4dcffcd0-0336-4352-87b9-99940baf5f7c",
-            "Value": {
-                "id": "480912a1-46ff-4cd6-bdbb-fa9d734bef9d",
-                "resourcePath": "sprites\\spr_witchBolt_orange\\spr_witchBolt_orange.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "4df68cbb-5430-4a03-a902-5748e68b475d",
             "Value": {
                 "id": "589ce656-84cc-4c48-b487-900c69425fff",
@@ -3183,14 +3143,6 @@
             }
         },
         {
-            "Key": "568255e3-6a8b-459f-b53e-fe86b5f1aea9",
-            "Value": {
-                "id": "13caaa2c-a1ef-4ec5-815a-c828aecd0b91",
-                "resourcePath": "sprites\\spr_boss_theSoulGuards_2\\spr_boss_theSoulGuards_2.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "56c67451-8978-49ba-9d50-ce1b5394dc76",
             "Value": {
                 "id": "46a07e9e-44f7-442f-85be-50f9a77a2947",
@@ -3287,14 +3239,6 @@
             }
         },
         {
-            "Key": "5a61be60-f877-4bdc-8b55-e842c3f8cd16",
-            "Value": {
-                "id": "4a25515d-5902-4e89-807d-183d71813b22",
-                "resourcePath": "sprites\\spr_witchBolt_yellow\\spr_witchBolt_yellow.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "5a8c1c52-e340-415d-ba48-380422bd74b7",
             "Value": {
                 "id": "9fa24f65-45fc-4abc-9f60-3dc7df8fa780",
@@ -3347,6 +3291,14 @@
             "Value": {
                 "id": "02db34e2-8eb6-4c41-a3c4-b5968cbe6811",
                 "resourcePath": "sprites\\spr_soulSword_outline_red\\spr_soulSword_outline_red.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "5cb3ddcc-afb4-4330-875b-4c9115bc5228",
+            "Value": {
+                "id": "1ea58d7e-9dfe-4a10-8ac4-1d5bc6788be3",
+                "resourcePath": "sprites\\spr_shieldThingy\\spr_shieldThingy.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3959,14 +3911,6 @@
             }
         },
         {
-            "Key": "6e419a68-8b34-4580-85a3-d41469f8fc1a",
-            "Value": {
-                "id": "4d017e89-30fb-4f77-97c2-34d0e016fe03",
-                "resourcePath": "sprites\\spr_deathKinghts_teleport\\spr_deathKinghts_teleport.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "6e4b130a-c16f-49a4-b580-6425001ec9e3",
             "Value": {
                 "id": "94e1d1b3-13b8-4d7b-ada4-3dac6995d903",
@@ -4123,14 +4067,6 @@
             "Value": {
                 "id": "0c625eae-6327-4c39-8f15-419d1adf07a8",
                 "resourcePath": "sprites\\spr_bossInfo\\spr_bossInfo.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "7440d938-eeb2-4af0-8ea0-e442bb7fdda9",
-            "Value": {
-                "id": "a20cd86f-dbf3-45c0-abed-f8003910828d",
-                "resourcePath": "sprites\\spr_deathGeneral_walking_cross\\spr_deathGeneral_walking_cross.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -4927,14 +4863,6 @@
             }
         },
         {
-            "Key": "8c9d6f30-ccac-4426-ade1-c7805bc007c5",
-            "Value": {
-                "id": "1b5da8cb-7e21-4744-91cb-c0dd4cbe798b",
-                "resourcePath": "sprites\\spr_deathKinghts_cirkle\\spr_deathKinghts_cirkle.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "8cadd129-2d06-4c51-b3d8-aa061e7313eb",
             "Value": {
                 "id": "b6c95529-4f18-4c8d-8e70-92cd38827bdf",
@@ -5375,14 +5303,6 @@
             }
         },
         {
-            "Key": "9b86b2dd-0a32-444a-9a37-1d5624734395",
-            "Value": {
-                "id": "9ae81659-60bc-4bb2-98dc-9050b078342d",
-                "resourcePath": "sprites\\spr_soulGuardsStatue\\spr_soulGuardsStatue.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "9bb279aa-00a3-4ab3-8fb2-d70abb9f4092",
             "Value": {
                 "id": "25825f96-af36-4056-b9ca-763deaa1f714",
@@ -5503,14 +5423,6 @@
             }
         },
         {
-            "Key": "9df09b10-4dd2-48cd-8d37-cbc5dd79420a",
-            "Value": {
-                "id": "4eb7bbad-f25a-4eae-b03e-6b9a3aadf935",
-                "resourcePath": "sprites\\spr_boss_theSoulGuards_cirkle\\spr_boss_theSoulGuards_cirkle.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "9e081dd5-5bd3-473b-987e-83bb6e9795e7",
             "Value": {
                 "id": "1d2f8a7d-5e27-4c62-8c22-e408e66f77fb",
@@ -5564,14 +5476,6 @@
                 "id": "259c84a6-35b5-4059-81b2-370a832486f6",
                 "resourcePath": "objects\\obj_scythe_projectile\\obj_scythe_projectile.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "a076954e-5051-4546-965e-2c90a624b19f",
-            "Value": {
-                "id": "fd87f8ce-8d1d-4f21-9709-d158ee980785",
-                "resourcePath": "sprites\\spr_deathGeneral_walking_teleport\\spr_deathGeneral_walking_teleport.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -5831,14 +5735,6 @@
             }
         },
         {
-            "Key": "a65a752e-0c6f-4bc6-ad52-b9378c957d49",
-            "Value": {
-                "id": "fee5dd89-e603-4cc2-b6fe-f39f986aa9c3",
-                "resourcePath": "sprites\\spr_boss_theSoulGuards\\spr_boss_theSoulGuards.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "a67179c6-ac21-498e-9bf9-f943f4dbbb2c",
             "Value": {
                 "id": "1a2dae5f-73a1-4694-98c6-3b8c73f95281",
@@ -6039,14 +5935,6 @@
             }
         },
         {
-            "Key": "ace04618-c278-4daa-81df-32eca184d209",
-            "Value": {
-                "id": "4822484f-cdbd-41ea-a818-e659f501e4a6",
-                "resourcePath": "sprites\\spr_boss_theSoulGuards_Heal\\spr_boss_theSoulGuards_Heal.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "ace2b936-c8a2-4fa9-86c1-5880b742a4fc",
             "Value": {
                 "id": "1c286346-8dcf-4372-ac5f-a2e521748ab8",
@@ -6091,14 +5979,6 @@
             "Value": {
                 "id": "9d10bbb1-f20f-47c5-b993-88132dd3fbd6",
                 "resourcePath": "sprites\\spr_shopkeeperCursor\\spr_shopkeeperCursor.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "adc0ea1c-091f-4dda-8146-c272e8d3945d",
-            "Value": {
-                "id": "82aa0801-1353-496d-bc3e-7297a2f90042",
-                "resourcePath": "sprites\\spr_deathKinghts_cone\\spr_deathKinghts_cone.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -6151,14 +6031,6 @@
             }
         },
         {
-            "Key": "af2949c1-40b0-4a25-9b15-31694c02c31c",
-            "Value": {
-                "id": "d6889e31-53d9-4e0d-820c-9184f41703a8",
-                "resourcePath": "sprites\\spr_boss_theSoulGuards_MiniGun\\spr_boss_theSoulGuards_MiniGun.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "af491cd9-3822-4c26-b077-b353483e5489",
             "Value": {
                 "id": "37915475-4627-4620-ac77-6f6cbfe1b9a9",
@@ -6204,14 +6076,6 @@
                 "id": "2ee471bb-3fe6-4fa5-8285-4e6f42644255",
                 "resourcePath": "objects\\obj_playButton_flameGate\\obj_playButton_flameGate.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "b0c860fd-ddf7-40f4-9574-bde89af2a3b7",
-            "Value": {
-                "id": "a6931468-8240-440e-b21e-c766a357fffb",
-                "resourcePath": "sprites\\spr_deathGeneral_walking_taunt\\spr_deathGeneral_walking_taunt.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -6751,14 +6615,6 @@
             }
         },
         {
-            "Key": "c081c5f1-4df5-4ec6-b26e-74ccafc3bbfb",
-            "Value": {
-                "id": "ca934dd0-7387-4d6e-88c6-32faf5a5595b",
-                "resourcePath": "sprites\\spr_boss_theSoulGuards_Teleport_2\\spr_boss_theSoulGuards_Teleport_2.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "c0905a12-dc98-40f5-815f-5c7d980ee123",
             "Value": {
                 "id": "5f2bf5c1-1d01-487d-b8f1-e78adde0fc02",
@@ -6819,14 +6675,6 @@
             "Value": {
                 "id": "774a8aae-442e-41c8-9126-06dd348aa10d",
                 "resourcePath": "sprites\\spr_contractDone_theSoulWisp\\spr_contractDone_theSoulWisp.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "c2c0dfdd-3c97-407a-9741-7ce4bdb4c6e3",
-            "Value": {
-                "id": "92694ebe-6812-4536-aaad-9c987c850875",
-                "resourcePath": "sprites\\spr_deathGeneral_walking_cirkle\\spr_deathGeneral_walking_cirkle.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -7631,22 +7479,6 @@
             }
         },
         {
-            "Key": "d89b6ce0-7b12-4150-9f82-f9a15e8a7ec0",
-            "Value": {
-                "id": "dbed5bd5-6c89-441a-99b9-50a4965e79d9",
-                "resourcePath": "sprites\\spr_deathKinghts_scythe\\spr_deathKinghts_scythe.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "d8b0f927-db1c-4fb3-806e-314256e5598c",
-            "Value": {
-                "id": "f83d3e13-f564-4ea8-b77b-447ac77aa0e9",
-                "resourcePath": "sprites\\spr_boss_theSoulGuards_Heal_2\\spr_boss_theSoulGuards_Heal_2.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "d8e13ebb-08d7-4fa4-8c35-cff719f58a27",
             "Value": {
                 "id": "b1b524ec-6e99-4ff6-9b1f-61e7623f8c71",
@@ -7863,14 +7695,6 @@
             }
         },
         {
-            "Key": "de824ee7-b994-4f7c-a5c1-7de22adf30c0",
-            "Value": {
-                "id": "2e951b80-3b99-4dca-b469-187b0ced2786",
-                "resourcePath": "sprites\\spr_boss_theSoulGuards_cirkle_2\\spr_boss_theSoulGuards_cirkle_2.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "de8fffec-7cc6-47d0-9531-4ca59b4e46eb",
             "Value": {
                 "id": "d9345386-7640-4691-a8b7-82f497e19ea6",
@@ -7916,14 +7740,6 @@
                 "id": "48ecc202-1fd0-465d-ab95-fee8093969a8",
                 "resourcePath": "objects\\obj_bossSelect_theFatZombie4\\obj_bossSelect_theFatZombie4.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "df4b05ca-20bd-4b90-aa73-3b683aa401dc",
-            "Value": {
-                "id": "f4766616-a7e0-48fd-b9fd-b6ea4123a986",
-                "resourcePath": "sprites\\spr_boss_theSoulGuards_blue\\spr_boss_theSoulGuards_blue.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -8100,14 +7916,6 @@
                 "id": "944ba7e6-0454-40e8-8d1d-782f0f8f68b1",
                 "resourcePath": "objects\\obj_allCursor\\obj_allCursor.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "e34259a6-1d93-4564-bf0e-49162ce84938",
-            "Value": {
-                "id": "b75ebac8-bcd2-4b2d-9e8f-2702318db2de",
-                "resourcePath": "sprites\\spr_madWitchStatue\\spr_madWitchStatue.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -8439,14 +8247,6 @@
             }
         },
         {
-            "Key": "eb32cdc2-e110-48c8-b65f-50054ef3a785",
-            "Value": {
-                "id": "8a01c127-bd63-48d9-82bc-ab1f3aa7f5a8",
-                "resourcePath": "sprites\\spr_boss_theSoulGuards_spin\\spr_boss_theSoulGuards_spin.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "eb48225f-39e6-470b-a64f-f90415cbb362",
             "Value": {
                 "id": "d339fc1c-3428-48b1-82b7-ed9dd7e85a5e",
@@ -8764,14 +8564,6 @@
                 "id": "5556cc20-a01f-4d65-90a3-a41b9a40f95e",
                 "resourcePath": "objects\\obj_controlInfo_wasd\\obj_controlInfo_wasd.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "f4d0ccf7-caf2-4cd5-a315-9e18d07760eb",
-            "Value": {
-                "id": "f54f7a8a-3cc9-4fae-843e-8999bb195c1e",
-                "resourcePath": "sprites\\spr_boss_theSoulGuards_Teleport\\spr_boss_theSoulGuards_Teleport.yy",
-                "resourceType": "GMSprite"
             }
         },
         {

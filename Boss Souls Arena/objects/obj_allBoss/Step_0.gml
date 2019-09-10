@@ -97,9 +97,9 @@ if(chooseAnAttack == true)
 	{
 		sprite_index = chaseSprite;
 		attackColor = c_yellow;
-		if (gameMaster.chosenBoss == Boss.BloodRoyalVarus){moveSpeed = obj_allPlayer.actualSpeed*1.2;}
 		if (gameMaster.chosenBoss == Boss.BloodRoyalVarus)
 		{
+			moveSpeed = obj_allPlayer.actualSpeed*1.3;
 			var chaseDamage = instance_create_depth(x,y,depth-1,obj_enemyProjectile);
 			//Visual
 			chaseDamage.image_alpha = 0;
@@ -108,6 +108,7 @@ if(chooseAnAttack == true)
 			chaseDamage.image_yscale = 0.2;
 			chaseDamage.stickOn = true;
 			chaseDamage.range = (5)*30;
+			chaseDamage.effectType = Effect.NoEffect;
 		}
 	}
 	if (attack == Atks.RapidFire)
