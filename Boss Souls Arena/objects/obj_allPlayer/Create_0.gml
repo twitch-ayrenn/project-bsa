@@ -115,6 +115,9 @@ if (class == Character.BloodKnight)
 #region Items
 
 #endregion
+#region Bosses
+blackOutAlpha = 0;
+#endregion
 #region maxValues
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;

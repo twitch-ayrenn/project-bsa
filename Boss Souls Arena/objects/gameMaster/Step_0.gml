@@ -705,7 +705,7 @@ if (keyboard_check_released(vk_escape))
 //Bossfix
 if (menu == Menues.Main)
 {
-	chosenBoss = Bosses.No_Boss;
+	chosenBoss = Boss.BloodZombie;
 }
 //cursor
 if (room == rm_menu || room == rm_bossSelect)

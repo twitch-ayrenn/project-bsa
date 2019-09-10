@@ -1,4 +1,95 @@
 /// @description Insert description here
+#region Bosses
+if (gameMaster.chosenBoss == Boss.BloodRoyalVarus)
+{
+	draw_sprite_ext(spr_blackOut,0,0,0,0.833,0.833,0,c_black,blackOutAlpha);
+}
+#endregion
+#region AllBosses
+var darkGray = make_color_rgb(10,10,10);
+if (instance_exists(obj_allBoss))
+{
+	var B = obj_allBoss;
+	draw_healthbar(360,800,760,843,(B.hp/B.maxHp)*100,darkGray,c_maroon,c_red,1,true,true);
+	draw_healthbar(845,800,1245,843,(B.hp/B.maxHp)*100,darkGray,c_maroon,c_red,0,true,true);
+	draw_sprite_ext(spr_bossBar,0,800,820,5,5,0,B.attackColor,1);
+	if (B.maxPhase == 1)
+	{
+		if (B.phase == 1)
+		{
+			draw_sprite_ext(spr_bossLives,0,840,875,3.5,3.5,0,c_red,1);
+		}
+	}
+	if (B.maxPhase == 2)
+	{
+		if (B.phase == 1)
+		{
+			draw_sprite_ext(spr_bossLives,0,840,875,3.5,3.5,0,c_red,1);
+			draw_sprite_ext(spr_bossLives,0,840+(45*1),875,3.5,3.5,0,c_red,1);
+		}
+		if (B.phase == 2)
+		{
+			draw_sprite_ext(spr_bossLives,0,840,875,3.5,3.5,0,c_red,1);
+			draw_sprite_ext(spr_bossLives,0,840+(45*1),875,3.5,3.5,0,c_dkgray,1);
+		}
+	}
+	if (B.maxPhase == 3)
+	{
+		if (B.phase == 1)
+		{
+			draw_sprite_ext(spr_bossLives,0,840,875,3.5,3.5,0,c_red,1);
+			draw_sprite_ext(spr_bossLives,0,840+(45*1),875,3.5,3.5,0,c_red,1);
+			draw_sprite_ext(spr_bossLives,0,840+(45*2),875,3.5,3.5,0,c_red,1);
+		}
+		if (B.phase == 2)
+		{
+			draw_sprite_ext(spr_bossLives,0,840,875,3.5,3.5,0,c_red,1);
+			draw_sprite_ext(spr_bossLives,0,840+(45*1),875,3.5,3.5,0,c_red,1);
+			draw_sprite_ext(spr_bossLives,0,840+(45*2),875,3.5,3.5,0,c_dkgray,1);
+		}
+		if (B.phase == 3)
+		{
+			draw_sprite_ext(spr_bossLives,0,840,875,3.5,3.5,0,c_red,1);
+			draw_sprite_ext(spr_bossLives,0,840+(45*1),875,3.5,3.5,0,c_dkgray,1);
+			draw_sprite_ext(spr_bossLives,0,840+(45*2),875,3.5,3.5,0,c_dkgray,1);
+		}
+	}
+	if (B.maxPhase == 4)
+	{
+		if (B.phase == 1)
+		{
+			draw_sprite_ext(spr_bossLives,0,840,875,3.5,3.5,0,c_red,1);
+			draw_sprite_ext(spr_bossLives,0,840+(45*1),875,3.5,3.5,0,c_red,1);
+			draw_sprite_ext(spr_bossLives,0,840+(45*2),875,3.5,3.5,0,c_red,1);
+			draw_sprite_ext(spr_bossLives,0,840+(45*3),875,3.5,3.5,0,c_red,1);
+		}
+		if (B.phase == 2)
+		{
+			draw_sprite_ext(spr_bossLives,0,840,875,3.5,3.5,0,c_red,1);
+			draw_sprite_ext(spr_bossLives,0,840+(45*1),875,3.5,3.5,0,c_red,1);
+			draw_sprite_ext(spr_bossLives,0,840+(45*2),875,3.5,3.5,0,c_red,1);
+			draw_sprite_ext(spr_bossLives,0,840+(45*3),875,3.5,3.5,0,c_dkgray,1);
+		}
+		if (B.phase == 3)
+		{
+			draw_sprite_ext(spr_bossLives,0,840,875,3.5,3.5,0,c_red,1);
+			draw_sprite_ext(spr_bossLives,0,840+(45*1),875,3.5,3.5,0,c_red,1);
+			draw_sprite_ext(spr_bossLives,0,840+(45*2),875,3.5,3.5,0,c_dkgray,1);
+			draw_sprite_ext(spr_bossLives,0,840+(45*3),875,3.5,3.5,0,c_dkgray,1);
+		}
+		if (B.phase == 4)
+		{
+			draw_sprite_ext(spr_bossLives,0,840,875,3.5,3.5,0,c_red,1);
+			draw_sprite_ext(spr_bossLives,0,840+(45*1),875,3.5,3.5,0,c_dkgray,1);
+			draw_sprite_ext(spr_bossLives,0,840+(45*2),875,3.5,3.5,0,c_dkgray,1);
+			draw_sprite_ext(spr_bossLives,0,840+(45*3),875,3.5,3.5,0,c_dkgray,1);
+		}
+	}
+}
+#endregion
+#region specific bosses
+
+#endregion
 #region Shadow Assassin
 if (class == Character.ShadowAssassin)
 {
@@ -69,6 +160,8 @@ if (class == Character.ShadowAssassin)
 		if (canDash == false){draw_sprite_part_ext(spr_newCursor1,0,0,25,41,17,device_mouse_x_to_gui(0)-40,device_mouse_y_to_gui(0)+5,cursorSize,cursorSize,c_dkgray,1);}
 	}
 }
+#endregion
+#region Pryomancer
 if (class == Character.Pyromancer)
 {
 	draw_healthbar(85,47,75+235+maxHp*0.4,60+17,(hp / maxHp) * 100,c_dkgray,c_maroon,c_red,0,false,true);
@@ -119,6 +212,8 @@ if (class == Character.Pyromancer)
 	if (canDash == true){draw_sprite_part_ext(spr_newCursor1,0,0,25,41,17,device_mouse_x_to_gui(0)-40,device_mouse_y_to_gui(0)+5,cursorSize,cursorSize,dashColor,1);}
 	if (canDash == false){draw_sprite_part_ext(spr_newCursor1,0,0,25,41,17,device_mouse_x_to_gui(0)-40,device_mouse_y_to_gui(0)+5,cursorSize,cursorSize,c_dkgray,1);}
 }
+#endregion
+#region BloodKnight
 if (class == Character.BloodKnight)
 {
 	draw_healthbar(85,47,75+235+maxHp*0.4,60+17,(hp / maxHp) * 100,c_dkgray,c_maroon,c_red,0,false,true);

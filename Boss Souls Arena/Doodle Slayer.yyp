@@ -103,14 +103,6 @@
             }
         },
         {
-            "Key": "0165f531-e8c5-4487-93d2-c6aa4cee8ffd",
-            "Value": {
-                "id": "4b24f487-7623-4c5a-b250-3d65cf3fbbe5",
-                "resourcePath": "sprites\\spr_ads_bloodBatReturning\\spr_ads_bloodBatReturning.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "017d540f-1026-41c3-a7d1-235cf885c69a",
             "Value": {
                 "id": "a9ee8262-b514-4d21-8b18-a6503cfd4308",
@@ -1607,6 +1599,14 @@
             }
         },
         {
+            "Key": "2af151d1-cfa0-44a4-aa0f-10fcefb793f5",
+            "Value": {
+                "id": "87dced55-ed61-4625-a2b8-418212874c30",
+                "resourcePath": "sprites\\spr_chaseDamage\\spr_chaseDamage.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "2b4213cf-8793-4f97-8cb1-7a537c2b3f02",
             "Value": {
                 "id": "01160bac-84be-4d44-8b34-bc47003e4374",
@@ -2287,14 +2287,6 @@
             }
         },
         {
-            "Key": "3c615d25-d7f1-4148-9f45-9818d59e3293",
-            "Value": {
-                "id": "f64f7446-ba8d-453b-ab9f-3ef6cefc6bc5",
-                "resourcePath": "sprites\\spr_bloodPrinceStatue\\spr_bloodPrinceStatue.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "3c6497c1-b07d-4465-aa16-78eac08b1476",
             "Value": {
                 "id": "59f5f63b-40cc-4939-8683-ecc8401f420c",
@@ -2347,14 +2339,6 @@
             "Value": {
                 "id": "363f0c34-c359-46d2-97bb-4d7be2824235",
                 "resourcePath": "sprites\\spr_bossSelect_fallOfFlames\\spr_bossSelect_fallOfFlames.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "3d082019-a640-4476-bd26-b01cfb995e91",
-            "Value": {
-                "id": "011fb1b3-7e5e-4262-8687-9ba93361b5d1",
-                "resourcePath": "sprites\\spr_boss_bloodPrince_walking_fase2\\spr_boss_bloodPrince_walking_fase2.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2799,14 +2783,6 @@
             }
         },
         {
-            "Key": "4b280018-af68-424b-ba5d-514407cab306",
-            "Value": {
-                "id": "507391dd-26e8-4831-87cc-884d8ed5a07f",
-                "resourcePath": "sprites\\spr_boss_bloodPrince_walking_fase3\\spr_boss_bloodPrince_walking_fase3.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "4b662a42-2e45-436d-8bd2-edef6f7105cd",
             "Value": {
                 "id": "4dbcc8e8-1c2b-44be-9c51-6dae6cffead2",
@@ -2964,14 +2940,6 @@
                 "id": "d98d3ef5-905b-478f-a4c2-9e78070ee52b",
                 "resourcePath": "views\\4df7d891-6dde-4993-a308-adb489664ed5.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "4e3ff020-6bb1-4ed5-bd3f-ea24d865d5e3",
-            "Value": {
-                "id": "62ba33fb-1eaf-455b-89fa-c60c36f31689",
-                "resourcePath": "sprites\\spr_boss_bloodPrince_normal\\spr_boss_bloodPrince_normal.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -4231,14 +4199,6 @@
             }
         },
         {
-            "Key": "7637c549-090f-4124-8183-86e676dccb6a",
-            "Value": {
-                "id": "88e207eb-6306-4951-ace5-b0a6f0723274",
-                "resourcePath": "sprites\\spr_ads_bloodBatFast\\spr_ads_bloodBatFast.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "7644e010-6093-418a-8780-8c9a4c8902a6",
             "Value": {
                 "id": "3cee3ad6-b799-4284-9752-52fadd760f67",
@@ -5367,14 +5327,6 @@
             }
         },
         {
-            "Key": "9a5887b9-fb53-452b-b3f5-c80db64b4c3e",
-            "Value": {
-                "id": "61e20e89-23ef-4db7-9646-58195ec68190",
-                "resourcePath": "sprites\\spr_ads_bloodBatNormal\\spr_ads_bloodBatNormal.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "9a7699b6-dfd1-40c7-8bc4-1ddb8199df43",
             "Value": {
                 "id": "96fc5112-400e-4ec5-84c5-51aa762f9d9f",
@@ -5663,14 +5615,6 @@
             }
         },
         {
-            "Key": "a160c0de-c9ba-4158-9040-4a2256c1dc2a",
-            "Value": {
-                "id": "bde84cca-5711-4ae6-a8b8-067d8ee60f39",
-                "resourcePath": "sprites\\spr_boss_bloodPrince_walking_fase4\\spr_boss_bloodPrince_walking_fase4.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "a168baef-d287-40d3-84dd-6710f452afe8",
             "Value": {
                 "id": "fea110a1-f5c9-428b-9e69-1b1461a5cb15",
@@ -5756,14 +5700,6 @@
                 "id": "85cd3cae-49df-48f9-8eef-26aba9956592",
                 "resourcePath": "views\\a373f1c2-e794-4328-9c7d-653d2e573a18.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "a3adde40-dc8e-4c57-bdd7-1d974bb1edd0",
-            "Value": {
-                "id": "84fd184b-496a-4f71-9319-501034599c2d",
-                "resourcePath": "sprites\\spr_batTpPlace\\spr_batTpPlace.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -8876,14 +8812,6 @@
                 "id": "d49c09a6-a357-44c0-9ee1-d9b2ad4caedf",
                 "resourcePath": "sprites\\spr_soulShot\\spr_soulShot.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "f57c1e58-e086-4f70-bdd8-289050ceb969",
-            "Value": {
-                "id": "23d8dda6-d800-45c3-a761-a15b1bfff48d",
-                "resourcePath": "views\\f57c1e58-e086-4f70-bdd8-289050ceb969.yy",
-                "resourceType": "GMFolder"
             }
         },
         {

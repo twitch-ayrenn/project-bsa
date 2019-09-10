@@ -2,6 +2,7 @@
 #region Vars
 if (hp > maxHp){hp = maxHp;}
 depth = -y;
+blackOutAlpha += clamp(0.1/30,0,1);//Varus
 randomize();
 #endregion
 #region Movement

@@ -11,6 +11,7 @@ maxHp = hp;
 global.bossDamage = 10;
 moveSpeed = 0;
 actualSpeed = moveSpeed;
+normalMoveSpeed = moveSpeed;
 #endregion
 #region Movement
 enum MovementType
@@ -67,7 +68,7 @@ gooSprite = 0;
 teleportSprite = 0;
 beamSprite = 0;
 rapidFireSprite = 0;
-blackOutAlpha = 0;
+
 #endregion
 #region Bosses
 	#region BloodZombie
@@ -164,6 +165,7 @@ blackOutAlpha = 0;
 #region Finalize
 sprite_index = normalSprite;
 actualSpeed = moveSpeed;
+normalMoveSpeed = moveSpeed;
 maxHp = hp;
 normalAlpha = alpha;
 image_xscale = size;

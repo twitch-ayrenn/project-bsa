@@ -95,26 +95,13 @@ enum Character
 	Graveling,
 	
 }
-enum Bosses 
+enum Effect
 {
-	No_Boss,
-	The_Fat_Zombie,
-	The_Wisp_Mother,
-	The_Blood_Prince,
-	The_Mad_Witches,
-	The_GraveKeeper,
-	The_Fat_Zombie_3,
-	The_Infernal_Wisp,
-	The_Flame_Gate,
-	The_Soul_Wisp,
-	The_Soul_Guards,
-	Death_General_Zarodil,
-	Death_Queen_Zeria,
-	Death_King_Zarok,
-	The_Fat_Zombie_4,
-	Death_Lords,
-	fall_Of_Flames,
-	Dead_Army,
+	NoEffect,
+	Star,
+	Flare,
+	Spark,
+	Smoke,
 }
 chosenClass = 0;
 chosenBoss = 0;
@@ -131,6 +118,8 @@ global.orange = make_color_rgb(255,140,0);
 global.goldColor = make_color_rgb(218,165,32);
 global.purple = make_color_rgb(148,0,211);
 global.lightBlue = make_color_rgb(173,216,230);
+//particles
+
 //text vars
 global.space = " ";
 global.slash = "/";

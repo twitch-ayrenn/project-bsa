@@ -15,6 +15,7 @@ if (attack == Atks.NormalShot)
 		bloodKlot.sprite_index = spr_bloodKlott;
 		bloodKlot.image_xscale = 1.5;
 		bloodKlot.image_yscale = 1.5;
+		bloodKlot.effectType = Effect.Flare;
 	}
 }
 #endregion
@@ -38,6 +39,7 @@ if (attack == Atks.CircleAttack)
 			bloodKlot.image_blend = c_maroon;
 			bloodKlot.image_xscale = 1;
 			bloodKlot.image_yscale = 1;
+			bloodKlot.effectType = Effect.Smoke;
 			angleBk += (360/circleAmount);
 		}
 	}
@@ -58,6 +60,7 @@ if (attack == Atks.CircleAttack)
 			fireBolt.image_blend = global.orange;
 			fireBolt.image_xscale = 1;
 			fireBolt.image_yscale = 1;
+			fireBolt.effectType = Effect.Flare;
 			angleFC += (360/circleAmount);
 		}
 	}
@@ -91,10 +94,10 @@ if (attack == Atks.GooSpawn)
 			//Main
 			gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
 			gooGround.speed = 0;
-			gooGround.image_angle = 0;
+			gooGround.image_angle = 90;
 			//Visual
 			gooGround.image_alpha = 0.75;
-			gooGround.image_blend = c_purple;
+			gooGround.image_blend = global.purple;
 			gooGround.sprite_index = spr_gooGround;
 			gooGround.image_xscale = 1.5;
 			gooGround.image_yscale = 1.5;
@@ -104,7 +107,7 @@ if (attack == Atks.GooSpawn)
 		{
 			with (middleGooSpawn)
 			{
-				image_xscale *= clamp(1.25,0,3);
+				image_xscale += clamp(0.4,0,2.5);
 				image_yscale = image_xscale;
 			}
 		}
@@ -127,20 +130,22 @@ if (attack == Atks.OneShotAttack)
 		infernalBall.sprite_index = spr_fireBall;
 		infernalBall.image_xscale = 3;
 		infernalBall.image_yscale = 3;
+		infernalBall.effectType = Effect.Spark;
 	}
 	if (gameMaster.chosenBoss == Boss.BloodRoyalVarus)
 	{
 		var bigBat = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
 		//Main
 		bigBat.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
-		bigBat.speed = 4;
+		bigBat.speed = 5.25;
 		bigBat.image_angle = 0;
 		//Visual
 		bigBat.image_alpha = 0.85;
 		bigBat.image_blend = c_maroon;
 		bigBat.sprite_index = spr_bat;
 		bigBat.image_xscale = 1*(image_xscale);
-		bigBat.image_yscale = bigBat.image_xscale;
+		bigBat.effectType = Effect.NoEffect;
+		bigBat.image_yscale = abs(bigBat.image_xscale);
 	}
 }
 #endregion
@@ -165,6 +170,7 @@ if (attack == Atks.ConeAttack)
 			fireBolt.image_blend = global.orange;
 			fireBolt.image_xscale = 1.2;
 			fireBolt.image_yscale = 1.2;
+			fireBolt.effectType = Effect.Flare;
 			coneAtkFW += (coneWide/coneAmount);
 		}
 	}
@@ -183,9 +189,10 @@ if (attack == Atks.ConeAttack)
 			//Visual
 			bats.image_alpha = 0.9;
 			bats.sprite_index = spr_bat;
-			bats.image_blend = c_gray;
+			bats.image_blend = c_aqua;
 			bats.image_xscale = 0.5*(image_xscale);
-			bats.image_yscale = bats.image_xscale;
+			bats.image_yscale = abs(bats.image_xscale);
+			bats.effectType = Effect.NoEffect;
 			coneAtkFW += (coneWide/coneAmount);
 		}
 	}
@@ -207,6 +214,7 @@ if (attack == Atks.ChaseAttack)
 		infernalBall.sprite_index = spr_fireBall;
 		infernalBall.image_xscale = 3;
 		infernalBall.image_yscale = 3;
+		infernalBall.effectType = Effect.Smoke;
 		infernalBall.chase = true;
 		infernalBall.range = (6.5)*30;
 	}
@@ -230,10 +238,13 @@ if (attack == Atks.BeamAttack)
 			beam.image_alpha = 0.85;
 			beam.image_blend = global.orange;
 			beam.sprite_index = spr_beam;
-			beam.image_xscale = 1.25;
+			beam.image_xscale = 0.25;
 			beam.image_yscale = 20;
+			beam.maxSize = 2;
+			beam.minSize = 0.25;
 			beam.lockOn = id;
-			beam.range = 2*30;
+			beam.range = 5*30;
+			beam.effectType = Effect.Star;
 			angleBeamPlus += (360/beamCircleAmount)
 		}
 	}
@@ -247,10 +258,13 @@ if (attack == Atks.BeamAttack)
 		beam.image_alpha = 0.85;
 		beam.image_blend = global.orange;
 		beam.sprite_index = spr_beam;
-		beam.image_xscale = 1.5;
+		beam.image_xscale = 0.25;
 		beam.image_yscale = 20;
+		beam.maxSize = 1.5;
+		beam.minSize = 0.25;
 		beam.lockOn = id;
 		beam.range = 2*30;
+		beam.effectType = Effect.Star;
 	}
 }
 #endregion

@@ -11,8 +11,8 @@ image_yscale = size;
 if (hp <= 0){hp = 0;}
 if (hp > maxHp){hp = maxHp;}
 depth = -y;
+if (gameMaster.chosenBoss == Boss.BloodRoyalVarus){depth = obj_allPlayer.depth+1;}
 image_alpha = alpha;
-blackOutAlpha += clamp(0.1/30,0,1);
 #endregion
 #region Movement
 var target = obj_allPlayer
@@ -48,6 +48,7 @@ if (gameMaster.chosenBoss == Boss.TheCorrupter1)
 		corruptKlot.sprite_index = spr_bloodKlott;
 		corruptKlot.image_xscale = 1.5;
 		corruptKlot.image_yscale = 1.5;
+		corruptKlot.effectType = Effect.Flare;
 		
 		alarm[2] = (0.5)*30;
 	}
@@ -96,6 +97,18 @@ if(chooseAnAttack == true)
 	{
 		sprite_index = chaseSprite;
 		attackColor = c_yellow;
+		if (gameMaster.chosenBoss == Boss.BloodRoyalVarus){moveSpeed = obj_allPlayer.actualSpeed*1.2;}
+		if (gameMaster.chosenBoss == Boss.BloodRoyalVarus)
+		{
+			var chaseDamage = instance_create_depth(x,y,depth-1,obj_enemyProjectile);
+			//Visual
+			chaseDamage.image_alpha = 0;
+			chaseDamage.sprite_index = spr_chaseDamage;
+			chaseDamage.image_xscale = 0.2;
+			chaseDamage.image_yscale = 0.2;
+			chaseDamage.stickOn = true;
+			chaseDamage.range = (5)*30;
+		}
 	}
 	if (attack == Atks.RapidFire)
 	{
@@ -117,6 +130,7 @@ if(chooseAnAttack == true)
 		var yTp = obj_allPlayer.y + choose(-150,-100,100,150);
 		if (place_empty(xTp,y,obj_noGoZone)){x = xTp;}
 		if (place_empty(x,yTp,obj_noGoZone)){y = yTp;}
+		if (gameMaster.chosenBoss == Boss.BloodRoyalVarus){moveSpeed = 0.5;}
 	}
 	alarm[0] = timeAfterIndicate;
 	alarm[1] = attackCooldown;
@@ -144,13 +158,14 @@ if (hp <= 0 && phase == 1 && phase != maxPhase)
 		infernalBall.image_yscale = 3;
 		infernalBall.chase = true;
 		infernalBall.range = (6.5)*30;
+		infernalBall.effectType = Effect.Smoke;
 	}
 	if (gameMaster.chosenBoss == Boss.TheCorrupter1)
 	{
 		var middleGooSpawn = instance_nearest(645,590,obj_enemyProjectile);
 		with (middleGooSpawn)
 		{
-			image_xscale = 3;
+			image_xscale = 2.5;
 			image_yscale = image_xscale;
 		}
 	}
