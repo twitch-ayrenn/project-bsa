@@ -161,7 +161,7 @@ rapidFireSprite = 0;
 	}
 	#endregion
 	#region Varus
-	if (gameMaster.chosenBoss == Boss.BloodRoyalVarus) 
+	if (gameMaster.chosenBoss == Boss.TheMadWitches) 
 	{
 		//stats
 		phase1Hp = 200; phase1Ms = 2; phase1Dmg = 20;
@@ -176,10 +176,10 @@ rapidFireSprite = 0;
 		//visual
 		size = 1;
 		alpha = 1;
-		coneSprite = spr_boss_bloodRoyalVarus_cone;
+		beamSprite = spr_boss_bloodRoyalVarus_cone;
 		teleportSprite = spr_boss_bloodRoyalVarus_teleport;
-		oneShotSprite = spr_boss_bloodRoyalVarus_oneShot;
-		chaseSprite = spr_boss_bloodRoyalVarus_chase;
+		rapidFireSprite = spr_boss_bloodRoyalVarus_oneShot;
+		gooSprite = spr_boss_bloodRoyalVarus_chase;
 	}
 	#endregion
 #endregion

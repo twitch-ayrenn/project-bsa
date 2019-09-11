@@ -4,7 +4,6 @@ if (place_meeting(x,y,obj_allBoss) == false){depth = -50;}
 if (sprite_index == spr_gooGround){depth = -5;}
 var target = obj_allPlayer;
 dmg = clamp(global.bossDamage*(clamp((target.hp/target.maxHp),0.5,1)),1,0.8*(target.maxHp));
-
 stacks++;
 #endregion
 #region Visuals 
@@ -12,7 +11,6 @@ if (effectType == Effect.Flare){var party = effect_create_below(ef_flare,x,y,0.0
 if (effectType == Effect.Star){var party = effect_create_below(ef_star,x,y,0.005,image_blend);part_system_depth(party,depth+5);}
 if (effectType == Effect.Spark){var party = effect_create_below(ef_spark,x,y,0.005,image_blend);part_system_depth(party,depth+5);}
 if (effectType == Effect.Smoke){var party = effect_create_below(ef_smoke,x,y,0.005,image_blend);part_system_depth(party,depth+5);}
-
 if (sprite_index == spr_bloodKlott){image_angle -= 30;}
 if (sprite_index == spr_beam)
 {
@@ -101,11 +99,11 @@ if (stacks >= (1)*30 && sprite_index == spr_gooGround ||stacks >= (1)*30 && spri
 	}
 	stacks = 0;
 }
-if (stacks >= (0.5)*30 && sprite_index == spr_beam)
+if (stacks >= (0.25)*30 && sprite_index == spr_beam)
 {
 	if (place_meeting(x,y,target) && sprite_index == spr_beam && global.iFrame == false)
 	{
-		var damageToTarget = clamp(dmg*3,1,0.8*(target.maxHp));
+		var damageToTarget = clamp(dmg*2,1,0.8*(target.maxHp));
 		var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
 		damageText.color = c_maroon;
 		damageText.text = damageToTarget;
