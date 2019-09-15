@@ -1,33 +1,71 @@
 /// @description Note
-if (gameMaster.chosenBoss == Boss.TheCorrupter1 && attack == Atks.BeamAttack && drawArea == true)
+#region beamAttack
+if (attack == Atks.BeamAttack && drawArea == true)
 {
-	if (phase == 1)
+	if (gameMaster.chosenBoss == Boss.TheCorrupter1)
 	{
-		draw_line_width_color(x-600,y,x+600,y,1,global.orange,global.orange);
-		draw_line_width_color(x,y-600,x,y+600,1,global.orange,global.orange);
+		if (phase == 1)
+		{
+			draw_line_width_color(x-600,y,x+600,y,1,global.orange,global.orange);
+			draw_line_width_color(x,y-600,x,y+600,1,global.orange,global.orange);
+		}
+		if (phase == 2)
+		{
+			draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,global.orange,global.orange);
+		}
 	}
-	if (phase == 2)
+	if (gameMaster.chosenBoss == Boss.TheMadWitches)
 	{
-		draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,global.orange,global.orange);
+		if (position == 1)
+		{
+			draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,c_lime,c_lime);
+			draw_line_width_color(topX,topY,obj_allPlayer.x,obj_allPlayer.y,1,c_yellow,c_yellow);
+			draw_line_width_color(rightX,rightY,obj_allPlayer.x,obj_allPlayer.y,1,global.orange,global.orange);
+		}
+		if (position == 2)
+		{
+			draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,c_yellow,c_yellow);
+			draw_line_width_color(leftX,leftY,obj_allPlayer.x,obj_allPlayer.y,1,global.orange,global.orange);
+			draw_line_width_color(rightX,rightY,obj_allPlayer.x,obj_allPlayer.y,1,c_lime,c_lime);
+		}
+		if (position == 3)
+		{
+			draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,global.orange,global.orange);
+			draw_line_width_color(rightX,rightY,obj_allPlayer.x,obj_allPlayer.y,1,c_yellow,c_yellow);
+			draw_line_width_color(leftX,leftY,obj_allPlayer.x,obj_allPlayer.y,1,c_lime,c_lime);
+		}
 	}
 }
-
+#endregion
+if (gameMaster.chosenBoss == Boss.TheMadWitches)
+{
+	var fakeAlpha = 0.65;
+	if (attack == Atks.BeamAttack)
+	{
+		if (position == 1){draw_sprite_ext(spr_theOrangeWitch_beam,image_index,rightX,rightY,-1,size,0,c_white,fakeAlpha);}
+		if (position == 1){draw_sprite_ext(spr_theYellowWitch_beam,image_index,topX,topY,size,size,0,c_white,fakeAlpha);}
+		if (position == 2){draw_sprite_ext(spr_boss_theGreenWitch_beam,image_index,rightX,rightY,-1,size,0,c_white,fakeAlpha);}
+		if (position == 2){draw_sprite_ext(spr_theOrangeWitch_beam,image_index,leftX,leftY,1,size,0,c_white,fakeAlpha);}
+		if (position == 3){draw_sprite_ext(spr_boss_theGreenWitch_beam,image_index,leftX,leftY,1,size,0,c_white,fakeAlpha);}
+		if (position == 3){draw_sprite_ext(spr_theYellowWitch_beam,image_index,rightX,rightY,-1,size,0,c_white,fakeAlpha);}
+	}
+	if (attack == Atks.GooSpawn)
+	{
+		if (position == 1){draw_sprite_ext(spr_theOrangeWitch_goo,image_index,rightX,rightY,-1,size,0,c_white,fakeAlpha);}
+		if (position == 1){draw_sprite_ext(spr_theYellowWitch_goo,image_index,topX,topY,size,size,0,c_white,fakeAlpha);}
+		if (position == 2){draw_sprite_ext(spr_boss_theGreenWitch_goo,image_index,rightX,rightY,-1,size,0,c_white,fakeAlpha);}
+		if (position == 2){draw_sprite_ext(spr_theOrangeWitch_goo,image_index,leftX,leftY,1,size,0,c_white,fakeAlpha);}
+		if (position == 3){draw_sprite_ext(spr_boss_theGreenWitch_goo,image_index,leftX,leftY,1,size,0,c_white,fakeAlpha);}
+		if (position == 3){draw_sprite_ext(spr_theYellowWitch_goo,image_index,rightX,rightY,-1,size,0,c_white,fakeAlpha);}
+	}
+	if (attack == Atks.RapidFire)
+	{
+		if (position == 1){draw_sprite_ext(spr_theOrangeWitch_rapidFire,image_index,rightX,rightY,-1,size,0,c_white,fakeAlpha);}
+		if (position == 1){draw_sprite_ext(spr_theYellowWitch_rapidFire,image_index,topX,topY,size,size,0,c_white,fakeAlpha);}
+		if (position == 2){draw_sprite_ext(spr_boss_theGreenWitch_rapidFire,image_index,rightX,rightY,-1,size,0,c_white,fakeAlpha);}
+		if (position == 2){draw_sprite_ext(spr_theOrangeWitch_rapidFire,image_index,leftX,leftY,1,size,0,c_white,fakeAlpha);}
+		if (position == 3){draw_sprite_ext(spr_boss_theGreenWitch_rapidFire,image_index,leftX,leftY,1,size,0,c_white,fakeAlpha);}
+		if (position == 3){draw_sprite_ext(spr_theYellowWitch_rapidFire,image_index,rightX,rightY,-1,size,0,c_white,fakeAlpha);}
+	}
+}
 draw_self();
-//Tier 1 - 1-3phases, 2-3moves, 2.5 seconds reaction Time, 6 seconds cdr
-//Tier 2 - 2-4 phases, 3-4moves, 2 seconds reaction Time, 5.5seconds cdr
-//Tier 3 - 3-4 phases 4-6 moves, 1.75 seconds reaction Time, 5 seconds cdr
-//Tier 4 - 4 phases 5-7 moves, 1.5 seconds reaction Time, 4.5 seconds cdr
-//Tier 5 -5 phases  6-8 moves, 1 seconds reaction Time, 4 seconds cdr
-//Tier 6 -5 phases but last is hidden 7-9 moves,  0.75 seconds reaction Time, 3.5 seconds cdr
-
-//BOSS COLOR CODING
-//Purple - Teleport
-//neon Red - One shot type ability
-//maroon - normal attacks
-//Magenta -  circle attack
-//Yellow - Chase
-//Lime - Heal self
-//Blue - goo on ground type attack
-//Orange - beam type attack
-//aqua - Cone attack
-//teal - Summoning 

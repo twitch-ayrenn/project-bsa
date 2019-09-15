@@ -1,4 +1,6 @@
 /// @description Attacks
+randomize();
+#region Tier1
 #region NormalAttacks
 if (attack == Atks.NormalShot)
 {
@@ -83,6 +85,7 @@ if (attack == Atks.GooSpawn)
 		gooGround.image_xscale = 2;
 		gooGround.image_yscale = 2;
 		gooGround.destroy = false;
+		gooGround.effectType = Effect.NoEffect;
 	}
 	if (gameMaster.chosenBoss == Boss.TheCorrupter1)
 	{
@@ -90,7 +93,7 @@ if (attack == Atks.GooSpawn)
 		if (spawnThingOnce == true)
 		{
 			spawnThingOnce = false;
-			var gooGround = instance_create_depth(645,590,-5,obj_enemyProjectile);
+			var gooGround = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY,-5,obj_enemyProjectile);
 			//Main
 			gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
 			gooGround.speed = 0;
@@ -102,12 +105,42 @@ if (attack == Atks.GooSpawn)
 			gooGround.image_xscale = 1.5;
 			gooGround.image_yscale = 1.5;
 			gooGround.destroy = false;
+			gooGround.effectType = Effect.NoEffect;
 		}
 		if (spawnThingOnce == false)
 		{
 			with (middleGooSpawn)
 			{
 				image_xscale += clamp(0.4,0,2.5);
+				image_yscale = image_xscale;
+			}
+		}
+	}
+	if (gameMaster.chosenBoss == Boss.TheMadWitches)
+	{
+		var bottomGooSpawn = instance_nearest(global.arenaMiddleX,global.arenaMiddleY+200,obj_enemyProjectile);
+		if (spawnThingOnce == true)
+		{
+			spawnThingOnce = false;
+			var gooGround = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY+200,-5,obj_enemyProjectile);
+			//Main
+			gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+			gooGround.speed = 0;
+			gooGround.image_angle = 90;
+			//Visual
+			gooGround.image_alpha = 0.75;
+			gooGround.image_blend = c_lime;
+			gooGround.sprite_index = spr_gooGround;
+			gooGround.image_xscale = 2;
+			gooGround.image_yscale = 2;
+			gooGround.destroy = false;
+			gooGround.effectType = Effect.NoEffect;
+		}
+		if (spawnThingOnce == false)
+		{
+			with (bottomGooSpawn)
+			{
+				image_xscale += clamp(0.6,0,2.5);
 				image_yscale = image_xscale;
 			}
 		}
@@ -244,7 +277,7 @@ if (attack == Atks.BeamAttack)
 			beam.minSize = 0.25;
 			beam.lockOn = id;
 			beam.range = 5*30;
-			beam.effectType = Effect.Star;
+			beam.effectType = Effect.NoEffect;
 			angleBeamPlus += (360/beamCircleAmount)
 		}
 	}
@@ -264,7 +297,56 @@ if (attack == Atks.BeamAttack)
 		beam.minSize = 0.25;
 		beam.lockOn = id;
 		beam.range = 2*30;
-		beam.effectType = Effect.Star;
+		beam.effectType = Effect.NoEffect;
+	}
+	if (gameMaster.chosenBoss == Boss.TheMadWitches)
+	{
+		drawArea = false;
+		var beam1 = instance_create_depth(topX,topY,depth+1,obj_enemyProjectile);
+		beam1.image_angle = point_direction(topX,topY,obj_allPlayer.x,obj_allPlayer.y)-90;
+		beam1.image_alpha = 0.75;
+		if (position == 1){beam1.image_blend = c_yellow;}
+		if (position == 2){beam1.image_blend = c_yellow;}
+		if (position == 3){beam1.image_blend = global.orange;}
+		beam1.sprite_index = spr_beam;
+		beam1.image_xscale = 0.25;
+		beam1.image_yscale = 20;
+		beam1.maxSize = 1.25;
+		beam1.minSize = 0.25;
+		beam1.range = 2*30;
+		beam1.effectType = Effect.NoEffect;
+		
+		var beam2 = instance_create_depth(leftX,leftY,depth+1,obj_enemyProjectile);
+		beam2.image_angle = point_direction(leftX,leftY,obj_allPlayer.x,obj_allPlayer.y)-90;
+		beam2.image_alpha = 0.85;
+		if (position == 1){beam2.image_blend = c_lime;}
+		if (position == 2){beam2.image_blend = global.orange;}
+		if (position == 3){beam2.image_blend = c_lime;}
+		beam2.sprite_index = spr_beam;
+		beam2.image_xscale = 0.25;
+		beam2.image_yscale = 20;
+		beam2.maxSize = 1.25;
+		beam2.minSize = 0.25;
+		beam2.range = 2*30;
+		beam2.effectType = Effect.NoEffect;
+		
+		var beam3 = instance_create_depth(rightX,rightY,depth+1,obj_enemyProjectile);
+		beam3.image_angle = point_direction(rightX,rightY,obj_allPlayer.x,obj_allPlayer.y)-90;
+		beam3.image_alpha = 0.85;
+		if (position == 1){beam3.image_blend = global.orange;}
+		if (position == 2){beam3.image_blend = c_lime;}
+		if (position == 3){beam3.image_blend = c_yellow;}
+		beam3.sprite_index = spr_beam;
+		beam3.image_xscale = 0.25;
+		beam3.image_yscale = 20;
+		beam3.maxSize = 1.25;
+		beam3.minSize = 0.25;
+		beam3.range = 2*30;
+		beam3.effectType = Effect.NoEffect;
+		//Main
+			
+		//Visual
+		
 	}
 }
 #endregion
@@ -274,6 +356,10 @@ if (attack == Atks.RapidFire)
 	if (gameMaster.chosenBoss == Boss.TheCorrupter1)
 	{
 		rapidFireStacks += 5;
+	}
+	if (gameMaster.chosenBoss == Boss.TheMadWitches)
+	{
+		rapidFireStacks += 4;
 	}
 }
 #endregion
@@ -286,4 +372,104 @@ if (attack == Atks.TeleportAttack)
 		chooseAnAttack = true;
 	}
 }
+#endregion
+#region On all attacks
+
+#endregion
+#endregion
+#region Tier2
+#region NormalAttacks
+#endregion
+#region CircleAttacks
+if (attack == Atks.CircleAttack)
+{
+	if (gameMaster.chosenBoss == Boss.WispSisterAnna)
+	{
+		var angle = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		var circleAmount = 24;
+		repeat(circleAmount)
+		{
+			var fireBolt = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			fireBolt.direction = angle;
+			fireBolt.speed = 5;
+			fireBolt.image_angle = fireBolt.direction+90;
+			//Visual
+			fireBolt.image_alpha = 0.85;
+			fireBolt.sprite_index = spr_fireBall;
+			fireBolt.image_blend = c_aqua;
+			fireBolt.image_xscale = 1;
+			fireBolt.image_yscale = 1;
+			fireBolt.effectType = Effect.Flare;
+			angle += (360/circleAmount);
+		}
+	}
+}
+#endregion
+#region GooSpawn
+if (attack == Atks.GooSpawn)
+{
+	if (gameMaster.chosenBoss == Boss.WispSisterAnna)
+	{
+		
+		var gooGround = instance_create_depth(obj_indicator.x,obj_indicator.y,-5,obj_enemyProjectile);
+		//Main
+		gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		gooGround.speed = 0;
+		gooGround.image_angle = irandom_range(0,360);
+		//Visual
+		gooGround.image_alpha = 1;
+		gooGround.image_blend = c_teal;
+		gooGround.sprite_index = spr_gooGround;
+		gooGround.image_xscale = 4;
+		gooGround.image_yscale = 4;
+		gooGround.destroy = true;
+		gooGround.effectType = Effect.NoEffect;
+		instance_destroy(obj_indicator);
+	}
+}
+#endregion
+#region OneShot
+if (attack == Atks.OneShotAttack)
+{
+	
+}
+#endregion
+#region ConeAttack
+if (attack == Atks.ConeAttack)
+{
+	
+}
+#endregion
+#region ChaseAttack
+if (attack == Atks.ChaseAttack)
+{
+	
+}
+#endregion
+#region BeamAttack
+if (attack == Atks.BeamAttack)
+{
+	
+}
+#endregion
+#region RapidFire
+if (attack == Atks.RapidFire)
+{
+	if (gameMaster.chosenBoss == Boss.WispSisterAnna)
+	{
+		rapidFireStacks += 10;
+	}
+}
+#endregion
+#region Teleport
+if (attack == Atks.TeleportAttack)
+{
+	if (gameMaster.chosenBoss == Boss.WispSisterAnna)
+	{
+		alpha = normalAlpha;
+		chooseAnAttack = true;
+	}
+}
+#endregion
 #endregion

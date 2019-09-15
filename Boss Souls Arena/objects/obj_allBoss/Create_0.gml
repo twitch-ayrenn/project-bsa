@@ -19,6 +19,7 @@ enum MovementType
 	WalkingTowards = 1,
 	WalkingAround,
 	Snake,
+	StandingStill,
 }
 moveType = 1;
 pointX = choose(60,0,-60);
@@ -39,6 +40,7 @@ enum Atks
 	GooSpawn,
 	SummonTurret,
 	TeleportAttack,
+	ChangePosition,
 	ConeAttack,
 	OneShotAttack,
 	ChaseAttack,
@@ -52,12 +54,14 @@ drawArea = false;
 rapidFireStacks = 0;
 canRapidAttack = true;
 spawnThingOnce = true;
+position = 1;
 #endregion
 #region Visuals
 size = 1;
 image_xscale = size;
 image_yscale = size;
 alpha = 1;
+idleSprite = 0;
 normalSprite = 0;
 oneShotSprite = 0;
 circleSprite = 0;
@@ -157,18 +161,18 @@ rapidFireSprite = 0;
 		coneSprite = spr_boss_bloodRoyalVarus_cone;
 		teleportSprite = spr_boss_bloodRoyalVarus_teleport;
 		oneShotSprite = spr_boss_bloodRoyalVarus_oneShot;
-		chaseSprite = spr_boss_bloodRoyalVarus_chase;
+		chaseSprite = spr_boss_bloodRoyalVarus_chase;	
 	}
 	#endregion
-	#region Varus
+	#region The mad witches
 	if (gameMaster.chosenBoss == Boss.TheMadWitches) 
 	{
 		//stats
-		phase1Hp = 200; phase1Ms = 2; phase1Dmg = 20;
+		phase1Hp = 250; phase1Ms = 2; phase1Dmg = 20;
 		hp = phase1Hp;
 		global.bossDamage = phase1Dmg;
 		moveSpeed = phase1Ms;
-		moveType = MovementType.WalkingTowards;
+		moveType = MovementType.StandingStill;
 		//attacks and phase
 		tier = 1;
 		phase = 1;
@@ -176,10 +180,37 @@ rapidFireSprite = 0;
 		//visual
 		size = 1;
 		alpha = 1;
-		beamSprite = spr_boss_bloodRoyalVarus_cone;
-		teleportSprite = spr_boss_bloodRoyalVarus_teleport;
-		rapidFireSprite = spr_boss_bloodRoyalVarus_oneShot;
-		gooSprite = spr_boss_bloodRoyalVarus_chase;
+		beamSprite = spr_boss_theGreenWitch_beam;
+		teleportSprite = spr_boss_theGreenWitch_teleport;
+		rapidFireSprite = spr_boss_theGreenWitch_rapidFire;
+		gooSprite = spr_boss_theGreenWitch_goo;
+		//
+		position = 1;
+	}
+	#endregion
+	#region wisp sisters
+	if (gameMaster.chosenBoss == Boss.WispSisterAnna) 
+	{
+		//stats
+		phase1Hp = 200; phase1Ms = 1; phase1Dmg = 30;
+		phase2Hp = 200; phase2Ms = 1.5; phase2Dmg = 35;
+		phase3Hp = 200; phase3Ms = 2; phase3Dmg = 40;
+		hp = phase1Hp;
+		global.bossDamage = phase1Dmg;
+		moveSpeed = phase1Ms;
+		moveType = MovementType.WalkingTowards;
+		//attacks and phase
+		tier = 2;
+		phase = 1;
+		maxPhase = 3;
+		//visual
+		size = 1.5;
+		alpha = 0.85;
+		circleSprite = spr_boss_wispSisterAnna_circle;
+		gooSprite = spr_boss_wispSisterAnna_goo;
+		teleportSprite = spr_boss_wispSisterAnna_teleport;
+		rapidFireSprite = spr_boss_wispSisterAnna_chase;
+		chaseSprite = spr_boss_wispSisterAnna_chase;
 	}
 	#endregion
 #endregion

@@ -37,7 +37,7 @@ if (stickOn == true && instance_exists(obj_allBoss))
 	x = obj_allBoss.x;	
 	y = obj_allBoss.y;
 }
-if (sprite_index == spr_beam){x = lockOn.x; y = lockOn.y;depth = lockOn.depth+1;}
+if (sprite_index == spr_beam && gameMaster.chosenBoss != Boss.TheMadWitches){x = lockOn.x; y = lockOn.y;depth = lockOn.depth+1;}
 #endregion
 if (destroy == true)
 {

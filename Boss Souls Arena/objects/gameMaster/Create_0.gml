@@ -111,15 +111,12 @@ global.demo = false;
 //save
 //game balance
 global.projectileHit = 0;//trash
-hitStacks = 0;//trash
 global.dD = 1;
 //colors
 global.orange = make_color_rgb(255,140,0);
 global.goldColor = make_color_rgb(218,165,32);
 global.purple = make_color_rgb(148,0,211);
 global.lightBlue = make_color_rgb(173,216,230);
-//particles
-
 //text vars
 global.space = " ";
 global.slash = "/";
@@ -193,7 +190,9 @@ gravelingItems = [];
 //{
 //	if (chosenClass[chosenClassIndex])	
 //}
-
+//arena
+global.arenaMiddleX = 650;
+global.arenaMiddleY = 610;
 //talking stuff
 global.playerLine1 = 0;
 global.playerLine2 = 0;

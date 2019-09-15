@@ -12,7 +12,8 @@
         "41cc651e-11aa-4d24-9515-cdcee574e35d",
         "e1ffb0a4-dab4-4191-b3d9-ffe2377de404",
         "2b4f7ad0-067e-4f71-9186-b505e408cc2e",
-        "2af151d1-cfa0-44a4-aa0f-10fcefb793f5"
+        "2af151d1-cfa0-44a4-aa0f-10fcefb793f5",
+        "2ad59ce4-dfb1-41da-b600-a672871606ad"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_porjetiles",
