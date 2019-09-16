@@ -191,8 +191,8 @@ gravelingItems = [];
 //	if (chosenClass[chosenClassIndex])	
 //}
 //arena
-global.arenaMiddleX = 650;
-global.arenaMiddleY = 610;
+global.arenaMiddleX = 615;
+global.arenaMiddleY = 600;
 //talking stuff
 global.playerLine1 = 0;
 global.playerLine2 = 0;

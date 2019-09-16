@@ -11,6 +11,7 @@ if (effectType == Effect.Flare){var party = effect_create_below(ef_flare,x,y,0.0
 if (effectType == Effect.Star){var party = effect_create_below(ef_star,x,y,0.005,image_blend);part_system_depth(party,depth+5);}
 if (effectType == Effect.Spark){var party = effect_create_below(ef_spark,x,y,0.005,image_blend);part_system_depth(party,depth+5);}
 if (effectType == Effect.Smoke){var party = effect_create_below(ef_smoke,x,y,0.005,image_blend);part_system_depth(party,depth+5);}
+if (gooGroundSizeFix == true && sprite_index == spr_gooGround) {image_xscale = image_xscale*0.75;image_yscale = image_xscale; gooGroundSizeFix = false;}
 if (sprite_index == spr_bloodKlott){image_angle -= 30;}
 if (sprite_index == spr_beam)
 {

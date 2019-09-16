@@ -118,11 +118,11 @@ if (attack == Atks.GooSpawn)
 	}
 	if (gameMaster.chosenBoss == Boss.TheMadWitches)
 	{
-		var bottomGooSpawn = instance_nearest(global.arenaMiddleX,global.arenaMiddleY+200,obj_enemyProjectile);
+		var bottomGooSpawn = instance_nearest(global.arenaMiddleX,global.arenaMiddleY+125,obj_enemyProjectile);
 		if (spawnThingOnce == true)
 		{
 			spawnThingOnce = false;
-			var gooGround = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY+200,-5,obj_enemyProjectile);
+			var gooGround = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY+125,-5,obj_enemyProjectile);
 			//Main
 			gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
 			gooGround.speed = 0;

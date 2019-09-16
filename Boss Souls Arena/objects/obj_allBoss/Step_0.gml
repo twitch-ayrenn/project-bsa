@@ -25,12 +25,12 @@ if (moveType == MovementType.StandingStill)
 {
 	if (gameMaster.chosenBoss == Boss.TheMadWitches)
 	{
-		globalvar leftX; leftX = global.arenaMiddleX - 200;
+		globalvar leftX; leftX = global.arenaMiddleX - 175;
 		globalvar leftY; leftY = global.arenaMiddleY;
-		globalvar rightX; rightX = global.arenaMiddleX + 200;
+		globalvar rightX; rightX = global.arenaMiddleX + 175;
 		globalvar rightY; rightY = global.arenaMiddleY;
 		globalvar topX; topX = global.arenaMiddleX;
-		globalvar topY; topY = global.arenaMiddleY - 150;
+		globalvar topY; topY = global.arenaMiddleY - 145;
 		if (position == 1)
 		{
 			x = leftX;	y = leftY;
@@ -54,6 +54,7 @@ if (moveType == MovementType.WalkingAround)
 }
 #endregion
 #region Ongoing things
+#region The Corrupter
 if (gameMaster.chosenBoss == Boss.TheCorrupter1)
 {
 	if (rapidFireStacks > 0 && canRapidAttack == true)
@@ -77,6 +78,8 @@ if (gameMaster.chosenBoss == Boss.TheCorrupter1)
 		alarm[2] = (0.5)*30;
 	}
 }
+#endregion
+#region The Mad Witches
 if (gameMaster.chosenBoss == Boss.TheMadWitches)
 {
 	if (rapidFireStacks > 0 && canRapidAttack == true)
@@ -132,6 +135,8 @@ if (gameMaster.chosenBoss == Boss.TheMadWitches)
 		alarm[2] = (0.75)*30;
 	}
 }
+#endregion
+#region WispSister anna
 if (gameMaster.chosenBoss == Boss.WispSisterAnna)
 {
 	if (rapidFireStacks > 0 && canRapidAttack == true)
@@ -155,6 +160,7 @@ if (gameMaster.chosenBoss == Boss.WispSisterAnna)
 		alarm[2] = (0.5)*30;
 	}
 }
+#endregion
 #endregion
 #region Attacks
 if(chooseAnAttack == true)

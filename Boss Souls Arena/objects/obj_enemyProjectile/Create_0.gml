@@ -12,3 +12,4 @@ sizeChanger = 5;
 dmg = 0;
 effectType = Effect.Flare;
 if (sprite_index == spr_fireBall && image_xscale == 3){dmg *= 3}
+gooGroundSizeFix = true;
