@@ -117,6 +117,15 @@ global.orange = make_color_rgb(255,140,0);
 global.goldColor = make_color_rgb(218,165,32);
 global.purple = make_color_rgb(148,0,211);
 global.lightBlue = make_color_rgb(173,216,230);
+global.paleRed = make_color_rgb(178,34,34);
+global.yelloworange = make_color_rgb(255,165,0);
+global.yellowGreen = make_color_rgb(154,205,50);
+global.darkGreen = make_color_rgb(0,100,0);
+global.teal = make_color_rgb(32,178,170);
+global.steelBlue = make_color_rgb(70,130,180);
+global.paleViolet = make_color_rgb(138,43,226);
+global.slateGray = make_color_rgb(112,128,144);
+global.skyBlue = make_color_rgb(135,206,235);
 //text vars
 global.space = " ";
 global.slash = "/";

@@ -10,6 +10,6 @@ maxSize = 1;
 minSize = 0.2;
 sizeChanger = 5;
 dmg = 0;
-effectType = Effect.Flare;
+effectType = Effect.NoEffect
 if (sprite_index == spr_fireBall && image_xscale == 3){dmg *= 3}
 gooGroundSizeFix = true;

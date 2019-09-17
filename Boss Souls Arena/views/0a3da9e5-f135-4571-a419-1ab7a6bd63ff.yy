@@ -6,7 +6,8 @@
     "children": [
         "cdf3b100-c9db-4f37-be66-ed4552a962ad",
         "31371762-a364-420f-80a2-0841b4366789",
-        "a9d68357-7082-4c7c-9907-3f0a74119584"
+        "a9d68357-7082-4c7c-9907-3f0a74119584",
+        "376ba58e-cd3e-43a4-bee0-74611c6a0b07"
     ],
     "filterType": "GMObject",
     "folderName": "grp_world",
