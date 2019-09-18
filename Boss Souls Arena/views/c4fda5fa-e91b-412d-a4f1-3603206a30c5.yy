@@ -10,9 +10,7 @@
         "7849ad79-8f9e-4a40-90b0-008f99553800",
         "50971e02-48cd-41b3-9969-8f14b2c4cb78",
         "e6a5cec6-c3b1-44ee-8003-bef13fbc2927",
-        "0709ec9c-8057-435a-8282-36c3cc46c376",
-        "e3d9411d-31b5-4460-8253-d4db1d0f2ef6",
-        "b3b18c07-3316-4645-8f69-3a0ae0bb4467"
+        "0709ec9c-8057-435a-8282-36c3cc46c376"
     ],
     "filterType": "GMObject",
     "folderName": "grp_theSoulGuards",

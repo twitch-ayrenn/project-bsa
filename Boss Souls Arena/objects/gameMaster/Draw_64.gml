@@ -29,19 +29,19 @@ if (menu == Menues.BossLoot)
 {
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(30,30,"Select Loot",1.2,1.2,0,c_yellow,c_yellow,c_white,c_white,1);
+
+	draw_text_transformed_color(65,330,"Stats  |",0.6,0.6,0,c_yellow,c_yellow,c_white,c_white,1);
+	draw_text_transformed_color(350,330,"Item Info",0.6,0.6,0,c_yellow,c_yellow,c_white,c_white,1);
 	
-	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(40,375,"Info",0.6,0.6,0,c_yellow,c_yellow,c_white,c_white,1);
+	var hpText = "Health: " + string(100);
+	draw_text_transformed_color(65,330,"hpText:",0.6,0.6,0,c_yellow,c_yellow,c_white,c_white,1);
 	
-	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);
 	
-	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(300+20,735,"Clear",clearSize/2,clearSize/2,0,c_yellow,c_yellow,clearColor,clearColor,1);
 	draw_text_transformed_color(300-10,785,"selected",clearSize/2,clearSize/2,0,c_yellow,c_yellow,clearColor,clearColor,1);
 	draw_text_transformed_color(300+20,835,"items",clearSize/2,clearSize/2,0,c_yellow,c_yellow,clearColor,clearColor,1);
 	
-	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(1310,760,"Fight!",fightSize,fightSize,0,c_yellow,c_yellow,fightColor,fightColor,1);
 }
 if (menu == Menues.Settings)
