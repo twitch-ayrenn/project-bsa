@@ -259,7 +259,9 @@
         "c5be531f-cfc8-405c-bf85-24424d1660d1",
         "5eda16fa-debe-49dd-b35d-ad81c37cb332",
         "0f10ac1b-a4ec-4d0f-9452-c6e35534ada0",
-        "edcf8c71-823a-49f8-8778-804c9c357997"
+        "edcf8c71-823a-49f8-8778-804c9c357997",
+        "911c84df-2531-497c-8b42-6410b9942cdc",
+        "bb11a528-f4e5-4612-9175-c223958cced9"
     ],
     "IsDnD": false,
     "layers": [
@@ -267,7 +269,7 @@
             "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
             "name": "fightCards",
             "id": "c8ecf9be-eaf5-4b5d-acd3-993d9f1fbcd3",
-            "depth": -110,
+            "depth": -210,
             "grid_x": 4,
             "grid_y": 8,
             "hierarchyFrozen": false,
@@ -373,7 +375,7 @@
             "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
             "name": "blackGround",
             "id": "97608f70-4385-420d-ad59-25fd07813511",
-            "depth": -10,
+            "depth": -110,
             "grid_x": 32,
             "grid_y": 32,
             "hierarchyFrozen": false,
@@ -399,7 +401,7 @@
             "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
             "name": "mainMenuButtons",
             "id": "f6e15fdc-00f0-452c-bc56-564b6f742cf9",
-            "depth": 90,
+            "depth": -10,
             "grid_x": 1,
             "grid_y": 1,
             "hierarchyFrozen": false,
@@ -430,7 +432,7 @@
             "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
             "name": "settingMenuButtons",
             "id": "1df5f1aa-b397-41e6-8117-1828e6c20972",
-            "depth": 190,
+            "depth": 90,
             "grid_x": 1,
             "grid_y": 1,
             "hierarchyFrozen": false,
@@ -461,6 +463,33 @@
             "mvc": "1.0",
             "userdefined_depth": false,
             "visible": false
+        },
+        {
+            "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
+            "name": "Items",
+            "id": "10b86ae4-530f-422a-8124-bb4d98978534",
+            "depth": 190,
+            "grid_x": 1,
+            "grid_y": 1,
+            "hierarchyFrozen": false,
+            "hierarchyVisible": true,
+            "inheritLayerDepth": false,
+            "inheritLayerSettings": false,
+            "inheritSubLayers": false,
+            "inheritVisibility": false,
+            "instances": [
+{"name": "inst_50ABC62","id": "911c84df-2531-497c-8b42-6410b9942cdc","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"imageIndex": 0,"imageSpeed": 1,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_50ABC62","objId": "fde4c8ce-cee4-4453-85b1-cd7cac81f148","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.1","x": 100,"y": 28},
+{"name": "inst_77F1DB51","id": "bb11a528-f4e5-4612-9175-c223958cced9","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"imageIndex": 0,"imageSpeed": 1,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_77F1DB51","objId": "c4c82cb9-54f7-4733-a75d-1e0a73052bd7","properties": null,"rotation": 0,"scaleX": 1.5,"scaleY": 1.5,"mvc": "1.1","x": 65,"y": 27}
+            ],
+            "layers": [
+
+            ],
+            "m_parentID": "00000000-0000-0000-0000-000000000000",
+            "m_serialiseFrozen": false,
+            "modelName": "GMRInstanceLayer",
+            "mvc": "1.0",
+            "userdefined_depth": false,
+            "visible": true
         },
         {
             "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
@@ -576,7 +605,7 @@
             "grid_x": 1,
             "grid_y": 1,
             "hierarchyFrozen": false,
-            "hierarchyVisible": false,
+            "hierarchyVisible": true,
             "inheritLayerDepth": false,
             "inheritLayerSettings": false,
             "inheritSubLayers": false,
@@ -689,7 +718,7 @@
             "modelName": "GMRInstanceLayer",
             "mvc": "1.0",
             "userdefined_depth": false,
-            "visible": false
+            "visible": true
         },
         {
             "__type": "GMRTileLayer_Model:#YoYoStudio.MVCFormat",

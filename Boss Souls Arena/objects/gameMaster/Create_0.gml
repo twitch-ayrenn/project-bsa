@@ -185,20 +185,24 @@ rainbowSlimeUnlocked = false;
 agentOfGodUnlocked = false;
 gravelingUnlocked = false;
 //Items
-assassinItems = [];
-bloodKnightItems = [];
-pyromancerItems = [];
-shopkeeperItems = [];
-theRedWarriorItems = [];
-plaugeWalkerItems = [];
-angelSlayerItems = [];
-rainbowSlimeItems = [];
-agentOfGodItems = [];
-gravelingItems = [];
-//for(chosenClassIndex = 0; chosenClassIndex < 13;chosenClassIndex++)
-//{
-//	if (chosenClass[chosenClassIndex])	
-//}
+assassinItems[100] = false;
+bloodKnightItems[100] = false;
+pyromancerItems[100] = false;
+shopkeeperItems[100] = false;
+theRedWarriorItems[100] = false;
+plaugeWalkerItems[100] = false;
+angelSlayerItems[100] = false;
+rainbowSlimeItems[100] = false;
+agentOfGodItems[100] = false;
+gravelingItems[100] = false;
+global.itemSlots = 0;
+global.itemSelected[100] = false;
+global.slot1 = false;
+global.slot2 = false;
+global.slot3 = false;
+global.slot4 = false;
+global.slot5 = false;
+global.slot6 = false;
 //arena
 global.arenaMiddleX = 615;
 global.arenaMiddleY = 600;

@@ -8,4 +8,5 @@ if (gameMaster.menu == Menues.PlayerSelect)
 	}
 	with (obj_playerInfoBox){playerShowInfoFor = Character.Pyromancer;}
 	with (obj_playerModel){sprite_index = spr_player_theMage_menu;}
+	
 }

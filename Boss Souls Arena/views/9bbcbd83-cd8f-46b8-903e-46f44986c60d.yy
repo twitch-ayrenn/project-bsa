@@ -16,7 +16,8 @@
         "45193d45-c713-4c8e-9673-3ada6045136a",
         "110b0e1c-c1c7-4578-9d4d-53b2e9444072",
         "47dbf424-5084-47b2-ad47-f5d8304738ae",
-        "21e0f024-fdee-4938-8553-0b072ac1f847"
+        "21e0f024-fdee-4938-8553-0b072ac1f847",
+        "1033d00c-d2d1-438d-a5ef-074f38320fdc"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_menues",
