@@ -7,4 +7,5 @@ if (reset == true)
 	reset = false;
 	x = xstart;
 	y = ystart;
+	thisItemSelected = false;
 }

@@ -30,12 +30,71 @@ if (menu == Menues.BossLoot)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(30,30,"Select Loot",1.2,1.2,0,c_yellow,c_yellow,c_white,c_white,1);
 
-	draw_text_transformed_color(65,330,"Stats  |",0.6,0.6,0,c_yellow,c_yellow,c_white,c_white,1);
-	draw_text_transformed_color(350,330,"Item Info",0.6,0.6,0,c_yellow,c_yellow,c_white,c_white,1);
+	draw_text_transformed_color(35,330,"Stats",0.4,0.4,0,c_yellow,c_yellow,c_white,c_white,1);
 	
+	var startY = 340;
+	var yIncreasse = 35;
 	var hpText = "Health: " + string(100);
-	draw_text_transformed_color(65,330,"hpText:",0.6,0.6,0,c_yellow,c_yellow,c_white,c_white,1);
+	draw_text_transformed_color(35,startY+1*40,hpText,0.3,0.3,0,c_lime,c_lime,c_green,c_green,1);
 	
+	var dmgCalc = int64(10);
+	var dmgText = "Damage: " + string(dmgCalc);
+	draw_text_transformed_color(35,startY+2*yIncreasse,dmgText,0.3,0.3,0,c_red,c_red,c_maroon,c_maroon,1);
+	
+	var spdText = "Speed: " + string(30);
+	draw_text_transformed_color(35,startY+3*yIncreasse,spdText,0.3,0.3,0,c_blue,c_blue,c_navy,c_navy,1);
+	
+	var cjText = "Conjuration: " + string(0) + "%";
+	draw_text_transformed_color(35,startY+4*yIncreasse,cjText,0.3,0.3,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	
+	var frText = "Firerate: " + string(0) + "%";
+	draw_text_transformed_color(35,startY+5*yIncreasse,frText,0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	
+	var lsText = "LifeSteal: " + string(75) + "%";
+	draw_text_transformed_color(35,startY+6*yIncreasse,lsText,0.3,0.3,0,c_red,c_red,c_maroon,c_maroon,1);
+	
+	var auraText = "Aura Power: " + string(0) + "%";
+	draw_text_transformed_color(35,startY+7*yIncreasse,auraText,0.3,0.3,0,c_green,c_green,c_olive,c_olive,1);
+	
+	var dlText = "Dash Length: " + string(0) + "%";
+	draw_text_transformed_color(35,startY+8*yIncreasse,dlText,0.3,0.3,0,c_aqua,c_aqua,c_aqu,c_olive,1);
+	
+	var cdText = "Cooldown reduction: " + string(0) + "%";
+	draw_text_transformed_color(35,startY+9*yIncreasse,cdText,0.3,0.3,0,c_green,c_green,c_olive,c_olive,1);
+	
+	
+	
+	#region
+	draw_set_font(fnt_NewNormalText);
+	if (itemShowInfoFor == Boss.BloodZombie)
+	{
+		 draw_text_transformed_color(300,350+1*22,"Using your ultimate attack[R] spawns",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		 draw_text_transformed_color(300,350+2*22,"an area that increases your speed",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		 draw_text_transformed_color(300,350+3*22,"and it damages enemies that stand",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		 draw_text_transformed_color(300,350+4*22,"in the area.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		 var text = "[Area Damage]: " + string(dmgCalc) + "/second";
+		 draw_text_transformed_color(300,350+5*22,text,0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		 draw_text_transformed_color(300,350+6*22,"[Speed Increase]: 20%",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		 draw_text_transformed_color(300,350+7*22,"Item Stats",0.075,0.075,0,global.orange,global.orange,c_yellow,c_yellow,1);
+		 draw_text_transformed_color(300,350+8*22,"+ I Damage",0.075,0.075,0,c_red,c_red,c_maroon,c_maroon,1);
+		 draw_text_transformed_color(300,350+9*22,"+ II Speed",0.075,0.075,0,c_blue,c_blue,c_navy,c_navy,1);
+		draw_text_transformed_color(300,350+10*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+11*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+12*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+13*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+14*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+15*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+16*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		
+		//name
+		draw_set_font(fnt_menu_fill);
+		var ItemName = "Item Info: " + "Zombie Head"
+		draw_text_transformed_color(300,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	}
+	
+	#endregion
+	
+	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);
 	
 	draw_text_transformed_color(300+20,735,"Clear",clearSize/2,clearSize/2,0,c_yellow,c_yellow,clearColor,clearColor,1);

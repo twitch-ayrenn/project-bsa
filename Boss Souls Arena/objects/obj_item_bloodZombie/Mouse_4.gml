@@ -3,6 +3,7 @@ if (global.itemSlots >= 1)
 {
 	global.itemSelected[bossForThisItem] = true;
 	global.itemSlots -= 1;
+	thisItemSelected = true;
 	y = 124
 	if (global.slot1 == false && x == xstart){x = 90;global.slot1 = true;}	
 	if (global.slot2 == false && x == xstart){x = 110;global.slot1 = true;}

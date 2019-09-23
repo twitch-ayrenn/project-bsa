@@ -35,6 +35,7 @@ enum Depths
 //play
 enum Boss
 {
+	NoBoss = 0,
 	BloodZombie = 1,
 	FlameWisp,
 	TheCorrupter1,
@@ -203,6 +204,7 @@ global.slot3 = false;
 global.slot4 = false;
 global.slot5 = false;
 global.slot6 = false;
+itemShowInfoFor = Boss.NoBoss;
 //arena
 global.arenaMiddleX = 615;
 global.arenaMiddleY = 600;
