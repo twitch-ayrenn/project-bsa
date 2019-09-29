@@ -34,33 +34,34 @@ if (menu == Menues.BossLoot)
 	
 	var startY = 340;
 	var yIncreasse = 35;
-	var hpText = "Health: " + string(100);
+	
+	var hpText = "Health: " + string(100 + bonusHealth*10);
 	draw_text_transformed_color(35,startY+1*40,hpText,0.3,0.3,0,c_lime,c_lime,c_green,c_green,1);
 	
-	var dmgCalc = int64(10);
+	var spdText = "Speed: " + string(20 + bonusSpeed);
+	draw_text_transformed_color(35,startY+2*yIncreasse,spdText,0.3,0.3,0,c_lime,c_lime,c_green,c_green,1);
+	
+	var dlText = "Dash Increase: " + string(0+ bonusDash) + "%";
+	draw_text_transformed_color(35,startY+3*yIncreasse,dlText,0.3,0.3,0,c_lime,c_lime,c_green,c_green,1);
+	
+	var dmgCalc = int64(10 + bonusDamage);
 	var dmgText = "Damage: " + string(dmgCalc);
-	draw_text_transformed_color(35,startY+2*yIncreasse,dmgText,0.3,0.3,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(35,startY+4*yIncreasse,dmgText,0.3,0.3,0,c_red,c_red,c_maroon,c_maroon,1);
 	
-	var spdText = "Speed: " + string(30);
-	draw_text_transformed_color(35,startY+3*yIncreasse,spdText,0.3,0.3,0,c_blue,c_blue,c_navy,c_navy,1);
+	var frText = "Firerate: " + string(1) + "/s";// Once per second if it says 2 then its 2 times per second
+	draw_text_transformed_color(35,startY+5*yIncreasse,frText,0.3,0.3,0,c_red,c_red,c_maroon,c_maroon,1);
 	
-	var cjText = "Conjuration: " + string(0) + "%";
-	draw_text_transformed_color(35,startY+4*yIncreasse,cjText,0.3,0.3,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-	
-	var frText = "Firerate: " + string(0) + "%";
-	draw_text_transformed_color(35,startY+5*yIncreasse,frText,0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);
-	
-	var lsText = "LifeSteal: " + string(75) + "%";
+	var lsText = "LifeSteal: " + string(75) + "%";//base is 75% for all damage
 	draw_text_transformed_color(35,startY+6*yIncreasse,lsText,0.3,0.3,0,c_red,c_red,c_maroon,c_maroon,1);
 	
 	var auraText = "Aura Power: " + string(0) + "%";
-	draw_text_transformed_color(35,startY+7*yIncreasse,auraText,0.3,0.3,0,c_green,c_green,c_olive,c_olive,1);
+	draw_text_transformed_color(35,startY+7*yIncreasse,auraText,0.3,0.3,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 	
-	var dlText = "Dash Length: " + string(0) + "%";
-	draw_text_transformed_color(35,startY+8*yIncreasse,dlText,0.3,0.3,0,c_aqua,c_aqua,c_aqu,c_olive,1);
+	var cjText = "Conjur Bonus: " + string(0) + "%";
+	draw_text_transformed_color(35,startY+8*yIncreasse,cjText,0.3,0.3,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 	
 	var cdText = "Cooldown reduction: " + string(0) + "%";
-	draw_text_transformed_color(35,startY+9*yIncreasse,cdText,0.3,0.3,0,c_green,c_green,c_olive,c_olive,1);
+	draw_text_transformed_color(35,startY+9*yIncreasse,cdText,0.3,0.3,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 	
 	
 	

@@ -205,6 +205,25 @@ global.slot4 = false;
 global.slot5 = false;
 global.slot6 = false;
 itemShowInfoFor = Boss.NoBoss;
+bonusHealth = 0;
+bonusSpeed = 0;
+bonusDash = 0;
+bonusDamage = 0;
+bonusFirerate = 0;
+bonusLifeSteal = 0;
+bonusAura = 0;
+bonusConjur = 0;
+bonusCooldown = 0;
+previewHealth = 0;
+previewSpeed = 0;
+previewDash = 0;
+previewDamage = 0;
+previewFirerate = 0;
+previewLifeSteal = 0;
+previewAura = 0;
+previewConjur = 0;
+previewCooldown = 0;
+
 //arena
 global.arenaMiddleX = 615;
 global.arenaMiddleY = 600;

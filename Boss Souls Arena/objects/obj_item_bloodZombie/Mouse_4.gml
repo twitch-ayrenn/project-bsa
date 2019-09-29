@@ -11,4 +11,13 @@ if (global.itemSlots >= 1)
 	if (global.slot6 == false && x == xstart){x = 230;global.slot1 = true;}
 	if (global.slot5 == false && x == xstart){x = 200;global.slot1 = true;}
 	if (global.slot4 == false && x == xstart){x = 170;global.slot1 = true;}
+	gameMaster.bonusHealth = bonusHealth;
+	gameMaster.bonusSpeed = bonusSpeed;
+	gameMaster.bonusDash = bonusDash;
+	gameMaster.bonusDamage = bonusDamage;
+	gameMaster.bonusFirerate = bonusFirerate;
+	gameMaster.bonusLifeSteal = bonusLifeSteal;
+	gameMaster.bonusAura = bonusAura;
+	gameMaster.bonusConjur = bonusConjur;
+	gameMaster.bonusCooldown = bonusCooldown;
 }
