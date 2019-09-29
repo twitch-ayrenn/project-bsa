@@ -30,56 +30,82 @@ if (menu == Menues.BossLoot)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(30,30,"Select Loot",1.2,1.2,0,c_yellow,c_yellow,c_white,c_white,1);
 
-	draw_text_transformed_color(35,330,"Stats",0.4,0.4,0,c_yellow,c_yellow,c_white,c_white,1);
+	draw_text_transformed_color(30,330,"Stats",0.4,0.4,0,c_yellow,c_yellow,c_white,c_white,1);
 	
 	var startY = 340;
 	var yIncreasse = 35;
 	
-	var hpText = "Health: " + string(100 + bonusHealth*10);
-	draw_text_transformed_color(35,startY+1*40,hpText,0.3,0.3,0,c_lime,c_lime,c_green,c_green,1);
+	var hpText = "Health: " + string(100 + bonusHealth + previewHealth);
+	draw_text_transformed_color(30,startY+1*40,hpText,0.3,0.3,0,c_lime,c_lime,c_green,c_green,1);
 	
-	var spdText = "Speed: " + string(20 + bonusSpeed);
-	draw_text_transformed_color(35,startY+2*yIncreasse,spdText,0.3,0.3,0,c_lime,c_lime,c_green,c_green,1);
+	var spdText = "Speed: " + string(20 + bonusSpeed + previewSpeed);
+	draw_text_transformed_color(30,startY+2*yIncreasse,spdText,0.3,0.3,0,c_lime,c_lime,c_green,c_green,1);
 	
-	var dlText = "Dash Increase: " + string(0+ bonusDash) + "%";
-	draw_text_transformed_color(35,startY+3*yIncreasse,dlText,0.3,0.3,0,c_lime,c_lime,c_green,c_green,1);
+	var dlText = "Dash/Tp Bonus: " + string(0 + bonusDash + previewDash) + "%";
+	draw_text_transformed_color(30,startY+3*yIncreasse,dlText,0.3,0.3,0,c_lime,c_lime,c_green,c_green,1);
 	
-	var dmgCalc = int64(10 + bonusDamage);
+	var dmgCalc = int64(10 + bonusDamage + previewDamage);
 	var dmgText = "Damage: " + string(dmgCalc);
-	draw_text_transformed_color(35,startY+4*yIncreasse,dmgText,0.3,0.3,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(30,startY+4*yIncreasse,dmgText,0.3,0.3,0,c_red,c_red,c_maroon,c_maroon,1);
 	
-	var frText = "Firerate: " + string(1) + "/s";// Once per second if it says 2 then its 2 times per second
-	draw_text_transformed_color(35,startY+5*yIncreasse,frText,0.3,0.3,0,c_red,c_red,c_maroon,c_maroon,1);
+	var frText = "Attack Speed: " + string(100 + bonusFirerate + previewFirerate) + "%";
+	draw_text_transformed_color(30,startY+5*yIncreasse,frText,0.3,0.3,0,c_red,c_red,c_maroon,c_maroon,1);
 	
-	var lsText = "LifeSteal: " + string(75) + "%";//base is 75% for all damage
-	draw_text_transformed_color(35,startY+6*yIncreasse,lsText,0.3,0.3,0,c_red,c_red,c_maroon,c_maroon,1);
+	var lsText = "LifeSteal: " + string(75 + bonusLifeSteal + previewLifeSteal) + "%";//base is 75% for all damage
+	draw_text_transformed_color(30,startY+6*yIncreasse,lsText,0.3,0.3,0,c_red,c_red,c_maroon,c_maroon,1);
 	
-	var auraText = "Aura Power: " + string(0) + "%";
-	draw_text_transformed_color(35,startY+7*yIncreasse,auraText,0.3,0.3,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	var auraCalc = (0 + bonusAura + previewAura)/100
+	var auraText = "Aura Power: " + string(int64(auraCalc*100)) + "%";
+	draw_text_transformed_color(30,startY+7*yIncreasse,auraText,0.3,0.3,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 	
-	var cjText = "Conjur Bonus: " + string(0) + "%";
-	draw_text_transformed_color(35,startY+8*yIncreasse,cjText,0.3,0.3,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	var conjureCalc = (0 + bonusConjur + previewConjur)/100
+	var cjText = "Conjur Bonus: " + string(conjureCalc*100) + "%";
+	draw_text_transformed_color(30,startY+8*yIncreasse,cjText,0.3,0.3,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 	
-	var cdText = "Cooldown reduction: " + string(0) + "%";
-	draw_text_transformed_color(35,startY+9*yIncreasse,cdText,0.3,0.3,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	var cdText = "Cooldown reduction: " + string(0 + bonusCooldown + previewCooldown) + "%";
+	draw_text_transformed_color(30,startY+9*yIncreasse,cdText,0.3,0.3,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 	
-	
-	
-	#region
+	#region Item descriptions
 	draw_set_font(fnt_NewNormalText);
+	if (itemShowInfoFor == Boss.NoBoss)
+	{
+		draw_set_font(fnt_NewNormalText);
+		draw_text_transformed_color(300,350+1*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+2*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+3*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+4*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+5*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+6*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+7*22,"Item Stats",0.075,0.075,0,global.orange,global.orange,c_yellow,c_yellow,1);
+		draw_text_transformed_color(300,350+8*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+9*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+10*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+11*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+12*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+13*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+14*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+15*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+16*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		
+		draw_set_font(fnt_menu_fill);
+		var ItemName = "Item Info: " + "Zombie Head"
+		draw_text_transformed_color(300,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1)
+	}
 	if (itemShowInfoFor == Boss.BloodZombie)
 	{
-		 draw_text_transformed_color(300,350+1*22,"Using your ultimate attack[R] spawns",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		 draw_text_transformed_color(300,350+2*22,"an area that increases your speed",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		 draw_text_transformed_color(300,350+3*22,"and it damages enemies that stand",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		 draw_text_transformed_color(300,350+4*22,"in the area.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		 var text = "[Area Damage]: " + string(dmgCalc) + "/second";
-		 draw_text_transformed_color(300,350+5*22,text,0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		 draw_text_transformed_color(300,350+6*22,"[Speed Increase]: 20%",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		 draw_text_transformed_color(300,350+7*22,"Item Stats",0.075,0.075,0,global.orange,global.orange,c_yellow,c_yellow,1);
-		 draw_text_transformed_color(300,350+8*22,"+ I Damage",0.075,0.075,0,c_red,c_red,c_maroon,c_maroon,1);
-		 draw_text_transformed_color(300,350+9*22,"+ II Speed",0.075,0.075,0,c_blue,c_blue,c_navy,c_navy,1);
-		draw_text_transformed_color(300,350+10*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_set_font(fnt_NewNormalText);
+		draw_text_transformed_color(300,350+1*22,"Using your ultimate[R] spawns an",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+2*22,"area that increases your speed and",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+3*22,"damages enemies that stand in the",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+4*22,"area.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		var bztext = "[Area Damage]: " + string(dmgCalc) + "/second";
+		draw_text_transformed_color(300,350+5*22,bztext,0.075,0.075,0,c_red,c_red,c_maroon,c_maroon,1);
+		var bztext2 = "[Speed Increase]: " +  string(20*(1+auraCalc)) + "%";
+		draw_text_transformed_color(300,350+6*22,bztext2,0.075,0.075,0,c_lime,c_lime,c_green,c_green,1);
+		draw_text_transformed_color(300,350+7*22,"Item Stats",0.075,0.075,0,global.orange,global.orange,c_yellow,c_yellow,1);
+		draw_text_transformed_color(300,350+8*22,"+ 10 Health",0.075,0.075,0,c_lime,c_lime,c_green,c_green,1);
+		draw_text_transformed_color(300,350+9*22,"+ 1 Speed",0.075,0.075,0,c_lime,c_lime,c_green,c_green,1);
+		draw_text_transformed_color(300,350+10*22,"+ 5% Aura Power",0.075,0.075,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 		draw_text_transformed_color(300,350+11*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(300,350+12*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(300,350+13*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
@@ -90,6 +116,32 @@ if (menu == Menues.BossLoot)
 		//name
 		draw_set_font(fnt_menu_fill);
 		var ItemName = "Item Info: " + "Zombie Head"
+		draw_text_transformed_color(300,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	}
+	if (itemShowInfoFor == Boss.FlameWisp)
+	{
+		var fText = "Summon Flamie every [" + string(int64(10*(1-conjureCalc))) + "] seconds."
+		draw_text_transformed_color(300,350+1*22,fText,0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+2*22,"Walk to Flamie within a second",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+3*22,"and Flamie will shoot a giant flame",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+4*22,"ball at your enemies. After a",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+5*22,"second Flamie will disapear again.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		var fText2 = "[Projectile Damage]: " + string(dmgCalc*3)
+		draw_text_transformed_color(300,350+6*22,fText2,0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+7*22,"Item Stats",0.075,0.075,0,global.orange,global.orange,c_yellow,c_yellow,1);
+		draw_text_transformed_color(300,350+8*22,"+ 2 Damage",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+9*22,"+ 15% Conjuration Bonus",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+10*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+11*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+12*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+13*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+14*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+15*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(300,350+16*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		
+		//name
+		draw_set_font(fnt_menu_fill);
+		var ItemName = "Item Info: " + "Flamie"
 		draw_text_transformed_color(300,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	}
 	
@@ -338,91 +390,6 @@ if (menu == Menues.BossSlain)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(430,70,"Boss Slayed!",1.5,1.5,0,c_yellow,c_yellow,c_white,c_white,1);
 	
-	if (chosenBoss == Bosses.The_Fat_Zombie)
-	{
-		draw_set_font(fnt_menu_fill);
-		draw_text_transformed_color(590		,700,"Reward:",1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_text_transformed_color(590+350	,700,global.theFatZombieReward,1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_sprite_ext(spr_contractDone_theFatZombie,6,800,450,10,10,0,c_white,1);
-	}
-	if (chosenBoss == Bosses.The_Wisp_Mother)
-	{
-		draw_set_font(fnt_menu_fill);
-		draw_text_transformed_color(590		,700,"Reward:",1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_text_transformed_color(590+350	,700,global.theWispMotherReward,1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_sprite_ext(spr_contractDone_theWispMother,6,800,450,10,10,0,c_white,1);
-	}
-	if (chosenBoss == Bosses.The_Blood_Prince)
-	{
-		draw_set_font(fnt_menu_fill);
-		draw_text_transformed_color(590		,700,"Reward:",1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_text_transformed_color(590+350	,700,global.theBloodPrinceReward,1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_sprite_ext(spr_contractDone_theBloodPrince,6,800,450,10,10,0,c_white,1);
-	}
-	if (chosenBoss == Bosses.The_Mad_Witches)
-	{
-		draw_set_font(fnt_menu_fill);
-		draw_text_transformed_color(590		,700,"Reward:",1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_text_transformed_color(590+350	,700,global.theMadWitchesReward,1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_sprite_ext(spr_contractDone_theMadWitches,6,800,450,10,10,0,c_white,1);
-	}	
-	if (chosenBoss == Bosses.The_GraveKeeper)
-	{
-		draw_set_font(fnt_menu_fill);
-		draw_text_transformed_color(590		,700,"Reward:",1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_text_transformed_color(590+350	,700,global.theGravekeeperReward,1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_sprite_ext(spr_contractDone_theGravekeeper,6,800,450,10,10,0,c_white,1);
-	}
-	if (chosenBoss == Bosses.The_Infernal_Wisp)
-	{
-		draw_set_font(fnt_menu_fill);
-		draw_text_transformed_color(590		,700,"Reward:",1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_text_transformed_color(590+350	,700,global.theInfernalWispReward,1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_sprite_ext(spr_contractDone_theFlameWisp,6,800,450,10,10,0,c_white,1);
-	}	
-	if (chosenBoss == Bosses.The_Flame_Gate)
-	{
-		draw_set_font(fnt_menu_fill);
-		draw_text_transformed_color(590		,700,"Reward:",1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_text_transformed_color(590+350	,700,global.theFlameGateReward,1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_sprite_ext(spr_contractDone_theFlameGate,6,800,450,10,10,0,c_white,1);
-	}
-	if (chosenBoss == Bosses.The_Soul_Wisp)
-	{
-		draw_set_font(fnt_menu_fill);
-		draw_text_transformed_color(590		,700,"Reward:",1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_text_transformed_color(590+350	,700,global.theSoulWispReward,1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_sprite_ext(spr_contractDone_theSoulWisp,6,800,450,10,10,0,c_white,1);
-	}	
-	if (chosenBoss == Bosses.The_Soul_Guards)
-	{
-		draw_set_font(fnt_menu_fill);
-		draw_text_transformed_color(590		,700,"Reward:",1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_text_transformed_color(590+350	,700,global.theSoulGuardsReward,1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_sprite_ext(spr_contractDone_theSoulGuards,6,800,450,10,10,0,c_white,1);
-	}
-	if (chosenBoss == Bosses.Death_General_Zarodil)
-	{
-		draw_set_font(fnt_menu_fill);
-		draw_text_transformed_color(590		,700,"Reward:",1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_text_transformed_color(590+350	,700,global.deathGeneralZarodilReward,1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_sprite_ext(spr_contractDone_deathGeneral,6,800,450,10,10,0,c_white,1);
-	}
-	if (chosenBoss == Bosses.Death_Queen_Zeria)
-	{
-		draw_set_font(fnt_menu_fill);
-		draw_text_transformed_color(590		,700,"Reward:",1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_text_transformed_color(590+350	,700,global.deathQueenZeriaReward,1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_sprite_ext(spr_contractDone_deathQueen,6,800,450,10,10,0,c_white,1);
-	}	
-	if (chosenBoss == Bosses.Death_King_Zarok)
-	{
-		draw_set_font(fnt_menu_fill);
-		draw_text_transformed_color(590		,700,"Reward:",1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_text_transformed_color(590+350	,700,global.deathKingZarokReward,1,1,0,c_yellow,c_yellow,c_white,c_white,1);
-		draw_sprite_ext(spr_contractDone_deathking,6,800,450,10,10,0,c_white,1);
-	}	
-	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);	
 }
@@ -438,16 +405,14 @@ if (menu == Menues.Death)
 if (global.ShowInfo == true && menu == Menues.Play || global.ShowInfo == true && menu == Menues.BossFailed || global.ShowInfo == true && menu == Menues.BossSlain)
 {
 	draw_text_transformed_color(15,140,"Health:    /",0.2,0.2,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(82,140,int64(obj_player.hp*10),0.2,0.2,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(130,140,int64(obj_player.maxHp*10),0.2,0.2,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(82,140,int64(obj_allPlayer.hp),0.2,0.2,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(130,140,int64(obj_allPlayer.maxHp),0.2,0.2,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(15,160,"Damage:",0.2,0.2,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(82,160,int64(global.damage*10),0.2,0.2,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(82,160,int64(global.damage),0.2,0.2,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(15,180,"baseSpeed:",0.2,0.2,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(110,180,int64(obj_player.moveSpeed),0.2,0.2,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(110,180,obj_allPlayer.moveSpeed,0.2,0.2,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(15,200,"realSpeed:",0.2,0.2,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(105,200,int64(obj_player.actualSpeed),0.2,0.2,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(15,220,"AttackSpeed:",0.2,0.2,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(130,220,30/obj_player.firerate,0.2,0.2,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(105,200,obj_allPlayer.actualSpeed,0.2,0.2,0,c_white,c_white,c_white,c_white,1);
 }
 if (global.showDD == true)
 {

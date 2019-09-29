@@ -1,5 +1,25 @@
 /// @description Insert description here
-// You can write your code in this editor
-size = 0.3;
-image_xscale = size;
-image_yscale = size;
+bossForThisItem = Boss.FlameWisp;
+image_blend = c_white;
+reset = false;
+hover = false;
+thisItemSelected = false;
+bonusHealth = 0;
+bonusSpeed = 0;
+bonusDash = 0;
+bonusDamage = 2;
+bonusFirerate = 0;
+bonusLifeSteal = 0;
+bonusAura = 0;
+bonusConjur = 15;
+bonusCooldown = 0;
+previewHealth = bonusHealth;
+previewSpeed = bonusSpeed;
+previewDash = bonusDash;
+previewDamage = bonusDamage;
+previewFirerate = bonusFirerate;
+previewLifeSteal = bonusLifeSteal;
+previewAura = bonusAura;
+previewConjur = bonusConjur;
+previewCooldown = bonusCooldown;
+outline_init()

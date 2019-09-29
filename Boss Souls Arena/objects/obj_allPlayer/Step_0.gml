@@ -7,7 +7,11 @@ image_angle = 0;
 randomize();
 #endregion
 #region Movement
-actualSpeed = moveSpeed;
+actualSpeed = (moveSpeed)*bPSpeed;
+if (keyboard_check(ord("A")) && keyboard_check(ord("S")) || keyboard_check(ord("A")) && keyboard_check(ord("W")) ||  keyboard_check(ord("D")) && keyboard_check(ord("S")) || keyboard_check(ord("D")) && keyboard_check(ord("W")))
+{
+	actualSpeed = actualSpeed*0.85;
+}
 if (keyboard_check(ord("W")) && place_free(x,y-actualSpeed))
 {
 	y -= actualSpeed;
@@ -27,11 +31,6 @@ if (keyboard_check(ord("A")) && place_free(x-actualSpeed,y))
 {
 	x -= actualSpeed;
 	state = States.Walking;
-}
-if (keyboard_check(ord("A")) && keyboard_check(ord("S")) || keyboard_check(ord("A")) && keyboard_check(ord("W"))
-||  keyboard_check(ord("D")) && keyboard_check(ord("S")) || keyboard_check(ord("D")) && keyboard_check(ord("W")))
-{
-	actualSpeed = actualSpeed^0.5;
 }
 #endregion
 #region Visuals
@@ -66,6 +65,8 @@ if (mouse_x < x)
 			{
 				canLeftClick = false;
 				leftClickCooldownLeft = leftClickCooldown;
+				activateLeftClickItem = true;
+				
 				instance_create_depth(x,y,depth,obj_tpEffect);
 				image_alpha = 0;
 				if (global.soundOn == true)
@@ -108,6 +109,7 @@ if (mouse_x < x)
 		{
 			canLeftClick = false;
 			leftClickCooldownLeft = leftClickCooldown;
+			activateLeftClickItem = true;
 			
 			repeat(9)
 			{
@@ -169,6 +171,7 @@ if (mouse_x < x)
 		{
 			canLeftClick = false;
 			leftClickCooldownLeft = leftClickCooldown;
+			activateLeftClickItem = true;
 			
 			if (rightClickMode == 1)
 			{
@@ -239,6 +242,8 @@ if (mouse_x < x)
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
+			activateRightClickItem = true;
+			
 			canLeftClick = true;
 			leftClickCooldownLeft = 0;
 			var angleR = 5;
@@ -263,6 +268,7 @@ if (mouse_x < x)
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
+			activateRightClickItem = true;
 			
 			instance_create_depth(mouse_x,mouse_y,-mouse_y,obj_pyroPortal);
 			instance_create_depth(mouse_x,mouse_y,-mouse_y,obj_portal_bottom);
@@ -310,6 +316,7 @@ if (mouse_x < x)
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
+			activateRightClickItem = true;
 			
 			rightClickMode++;
 			if (rightClickMode > 3){rightClickMode = 1;}
@@ -327,6 +334,8 @@ if (mouse_x < x)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
+			activateUltItem = true;
+			
 			canRightClick = true;
 			rightClickCooldownLeft = 0;
 			canLeftClick = true;
@@ -352,7 +361,8 @@ if (mouse_x < x)
 		if (keyboard_check(ord("E")) && canUlt == true)
 		{
 			canUlt = false;
-			ultCooldownLeft = ultCooldown;	
+			ultCooldownLeft = ultCooldown;
+			activateUltItem = true;
 			
 			var fireBolt = instance_create_depth(x,y+3,depth+1,obj_firebolt);
 			fireBolt.direction = point_direction(x,y,mouse_x,mouse_y);
@@ -414,7 +424,8 @@ if (mouse_x < x)
 		if (keyboard_check(ord("E")) && canUlt == true)
 		{
 			canUlt = false;
-			ultCooldownLeft = ultCooldown;	
+			ultCooldownLeft = ultCooldown;
+			activateUltItem = true;
 			
 			instance_create_depth(x,y,depth+1,obj_bloodBeamEffect);
 			var bloodBeam = instance_create_depth(x,y,depth+2,obj_bloodBeam);
@@ -426,6 +437,28 @@ if (mouse_x < x)
 	}
 	#endregion
 	#region Items
+	if (activateUltItem == true)
+	{
+		activateUltItem = false;
+		if (global.itemSelected[Boss.BloodZombie] == true)
+		{
+			if (instance_exists(obj_equipment_bloodPuddle) == true)
+			{
+				instance_destroy(obj_equipment_bloodPuddle);
+				var bloodPuddle = instance_create_depth(x,y,-6,obj_equipment_bloodPuddle);
+				bloodPuddle.image_xscale = 0.75*auraPower;
+				bloodPuddle.image_yscale = bloodPuddle.image_xscale;
+			}
+			if (instance_exists(obj_equipment_bloodPuddle) == false)
+			{
+				var bloodPuddle = instance_create_depth(x,y,-6,obj_equipment_bloodPuddle);
+				bloodPuddle.image_xscale = 0.75*auraPower;
+				bloodPuddle.image_yscale = bloodPuddle.image_xscale;
+			}
+		}
+	}
+	if (place_meeting(x,y,obj_equipment_bloodPuddle)){bPSpeed = 1 + (20*auraPower)/100;}
+	if (!place_meeting(x,y,obj_equipment_bloodPuddle)){bPSpeed = 1;}
 	#endregion
 #endregion
 #region Dash

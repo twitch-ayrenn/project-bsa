@@ -151,34 +151,10 @@
             }
         },
         {
-            "Key": "02d7b8ee-e8bf-478b-8f09-5fe84256f5c5",
-            "Value": {
-                "id": "91e1ebd1-5d83-40af-89ed-8b5b1dced3ce",
-                "resourcePath": "objects\\obj_bossSelect_theBloodPrince\\obj_bossSelect_theBloodPrince.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "02e845c2-83b1-40ec-93c6-e7a47bea946f",
-            "Value": {
-                "id": "a4cb95b4-3485-46da-b4d6-90ac77b449fa",
-                "resourcePath": "objects\\obj_bossSelect_theWispMother\\obj_bossSelect_theWispMother.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "0325a0e3-3802-49b4-899e-a5c73027c8b3",
             "Value": {
                 "id": "c9795c33-cf78-4cde-8ee8-e99464de6e45",
                 "resourcePath": "sprites\\spr_prop_box_small\\spr_prop_box_small.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "032de2d7-58b4-446d-b364-a2763ed72448",
-            "Value": {
-                "id": "d4377df1-eb76-4d51-b889-327e95a1ae09",
-                "resourcePath": "sprites\\spr_contractDone_theFatZombie\\spr_contractDone_theFatZombie.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -236,14 +212,6 @@
                 "id": "66934c0a-9b6d-4cf6-94de-0bc8f25d7e90",
                 "resourcePath": "sprites\\spr_bloodPortal_bottom\\spr_bloodPortal_bottom.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "04b7377c-0d0f-4621-8a72-d7481f7b6ad8",
-            "Value": {
-                "id": "9832ea6f-737b-4a0c-b5ff-4f9b47ae6d5f",
-                "resourcePath": "objects\\obj_bossSelect_fallOfFlames\\obj_bossSelect_fallOfFlames.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -372,14 +340,6 @@
                 "id": "c0a69b32-498a-4ef8-be79-c4a8cc67c123",
                 "resourcePath": "views\\08cee773-6ace-4495-9397-d1700ce2a7dc.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "09088ee3-9995-432d-b77e-c03a7223722b",
-            "Value": {
-                "id": "c8bc4cb9-ca17-408f-b7ce-523d110de5bb",
-                "resourcePath": "sprites\\spr_contractDone_deathGeneral\\spr_contractDone_deathGeneral.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -695,14 +655,6 @@
             }
         },
         {
-            "Key": "1118127e-fc4e-4d30-853a-026d61e959b8",
-            "Value": {
-                "id": "70818707-7525-45c7-90ff-714cd01bfef6",
-                "resourcePath": "objects\\obj_bossSelect_deathGeneralZarodil\\obj_bossSelect_deathGeneralZarodil.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "112876b7-954e-4b43-a8f3-d806d318c6d5",
             "Value": {
                 "id": "9e8877e3-13e9-40e0-8809-8401d0d8e8fb",
@@ -847,14 +799,6 @@
             }
         },
         {
-            "Key": "1597ec5f-4a0a-4cc6-b3eb-dc35bba7df5b",
-            "Value": {
-                "id": "26f73a58-2fe3-445f-84f6-2b94e4146828",
-                "resourcePath": "objects\\obj_bossSelect_deathLords\\obj_bossSelect_deathLords.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "15ffa3f8-f316-412d-902d-5c58051cb967",
             "Value": {
                 "id": "a520a4ed-eaec-4559-90f2-427d7bf9d980",
@@ -919,6 +863,14 @@
             }
         },
         {
+            "Key": "17958073-e0a3-4498-938e-6508a16386b0",
+            "Value": {
+                "id": "7986c16f-8182-4dd9-9f5e-8b317a5d3016",
+                "resourcePath": "sprites\\spr_\\spr_.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "17bbb3c2-8180-406f-99a8-04266e8ee6af",
             "Value": {
                 "id": "f56049f0-fe2b-4276-949b-d48f6ef5bbe0",
@@ -932,6 +884,14 @@
                 "id": "f4753d45-77bd-4125-a88b-0df646563072",
                 "resourcePath": "objects\\obj_ch_dl_deathKingZarok\\obj_ch_dl_deathKingZarok.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "187f8ddb-33b9-454e-982e-135a12569d85",
+            "Value": {
+                "id": "7e470ee2-1608-4a73-84e0-42c6e207b91b",
+                "resourcePath": "views\\187f8ddb-33b9-454e-982e-135a12569d85.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -1007,6 +967,14 @@
             }
         },
         {
+            "Key": "1c320069-07ab-4dea-b541-b68442e8777a",
+            "Value": {
+                "id": "9dcdd519-3326-4d66-ac07-3791dca1cfc2",
+                "resourcePath": "sprites\\spr_loot_flamy\\spr_loot_flamy.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1c49f220-924a-4ffd-91f8-79ef2ea17952",
             "Value": {
                 "id": "c74b5f98-9936-43a4-8d86-d370c207cf3b",
@@ -1047,11 +1015,11 @@
             }
         },
         {
-            "Key": "1d16f8c7-9a4c-4c85-aa37-22beeed8d32e",
+            "Key": "1d1160f7-c9e3-4f00-bf38-b5efce88fc28",
             "Value": {
-                "id": "b0c67861-aad3-4ad7-af2e-2404c680b423",
-                "resourcePath": "sprites\\spr_bossSelect_theSoulWisp\\spr_bossSelect_theSoulWisp.yy",
-                "resourceType": "GMSprite"
+                "id": "b5b41231-1236-4cd5-9847-06e75f9a6b71",
+                "resourcePath": "views\\1d1160f7-c9e3-4f00-bf38-b5efce88fc28.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -1371,14 +1339,6 @@
             "Value": {
                 "id": "67ae0f89-7550-4080-bfc9-5ed87eefca5b",
                 "resourcePath": "sprites\\spr_boss_bloodZombie_cir\\spr_boss_bloodZombie_cir.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "262189b0-91a8-46de-97e0-01fc63c4725f",
-            "Value": {
-                "id": "00d23b5f-c552-4fd0-a0dc-9450584db208",
-                "resourcePath": "sprites\\spr_bossSelect_deathGeneralZarodil\\spr_bossSelect_deathGeneralZarodil.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1743,6 +1703,14 @@
             }
         },
         {
+            "Key": "2f7d6f28-2db5-42cc-8e81-3115125349e6",
+            "Value": {
+                "id": "9c0ed771-bc9c-4a90-b568-0f10088cb9db",
+                "resourcePath": "objects\\obj_equipment_bloodPuddle\\obj_equipment_bloodPuddle.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "2f8a0277-38da-4a52-a53e-f1e85bb48e96",
             "Value": {
                 "id": "75800fd3-f80b-4c1a-ad0f-c4915d53c473",
@@ -1975,14 +1943,6 @@
             }
         },
         {
-            "Key": "354bd921-5aab-4486-99a9-8e7b7e451270",
-            "Value": {
-                "id": "6eb4823f-b9f4-40b5-9e7c-d224dbcb2548",
-                "resourcePath": "objects\\obj_bossSelect_theFatZombie\\obj_bossSelect_theFatZombie.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "35863402-03b8-481a-a949-56fcc1414c2a",
             "Value": {
                 "id": "5d795a04-907c-40ca-aa4d-f16aaa371d2a",
@@ -2011,14 +1971,6 @@
             "Value": {
                 "id": "9a27bc00-6c09-4ea5-9778-277339c4193f",
                 "resourcePath": "sprites\\spr_lockedCharacter\\spr_lockedCharacter.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "35e8805f-3379-4696-8f44-d8fcca023377",
-            "Value": {
-                "id": "2b96ba52-0d74-448e-9917-d5037c16d96b",
-                "resourcePath": "sprites\\spr_bossSelect_theGraveKeeper\\spr_bossSelect_theGraveKeeper.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2111,19 +2063,19 @@
             }
         },
         {
-            "Key": "37e45c61-bc72-4ff9-9c9e-1e53c7b59109",
-            "Value": {
-                "id": "55da5090-8781-469f-a2d4-5bce5778f7bc",
-                "resourcePath": "objects\\obj_bossSelect_theFlameGate\\obj_bossSelect_theFlameGate.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "381ead6c-a6da-4ce4-90d8-b0f4ba3c69bb",
             "Value": {
                 "id": "c9901173-1c14-4ecc-af72-aa6a129a7a69",
                 "resourcePath": "objects\\obj_bossLoot_batJar\\obj_bossLoot_batJar.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "385d0a17-996d-4cb3-a8fe-3a187447cbf5",
+            "Value": {
+                "id": "98421c2f-16f1-4fb6-b2c0-7bddea37f195",
+                "resourcePath": "sprites\\spr_player_theMage_walking\\spr_player_theMage_walking.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2140,22 +2092,6 @@
                 "id": "4e15c05b-b82c-4ac0-bd7d-1a3b8dc44dda",
                 "resourcePath": "sounds\\snd_scarletsLaugh\\snd_scarletsLaugh.yy",
                 "resourceType": "GMSound"
-            }
-        },
-        {
-            "Key": "38c8179a-3be2-4ad6-9088-790859cb1c94",
-            "Value": {
-                "id": "536485da-a644-4779-a667-c0bec131cf49",
-                "resourcePath": "sprites\\spr_contractDone_deathking\\spr_contractDone_deathking.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "38dc2bfa-bfcb-42b0-a151-02c3e08ce3c1",
-            "Value": {
-                "id": "fd034486-15f9-4c41-aa70-cd851fd6a6d1",
-                "resourcePath": "objects\\obj_item_flameWisp\\obj_item_flameWisp.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -2287,14 +2223,6 @@
             }
         },
         {
-            "Key": "3cf27e41-54e0-4abf-bc26-ecf7bb58653e",
-            "Value": {
-                "id": "363f0c34-c359-46d2-97bb-4d7be2824235",
-                "resourcePath": "sprites\\spr_bossSelect_fallOfFlames\\spr_bossSelect_fallOfFlames.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "3d450972-63b1-42bd-a565-3c870b2504b5",
             "Value": {
                 "id": "9f2b7da2-adf1-4fa9-a2cf-de5d15e56278",
@@ -2348,14 +2276,6 @@
                 "id": "07be971a-0218-45f8-91b5-07714ea4b2c3",
                 "resourcePath": "objects\\obj_shadowAttackRange\\obj_shadowAttackRange.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "3ff5b0ac-7cbc-4af2-9424-d74cdf4fffd3",
-            "Value": {
-                "id": "4ee8177e-3b25-47b3-b399-a1e5fe2a52c1",
-                "resourcePath": "sprites\\spr_bossSelect_theMadWitches\\spr_bossSelect_theMadWitches.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -2491,14 +2411,6 @@
             "Value": {
                 "id": "cd2b327a-293a-4e32-89de-f757f63cdfdf",
                 "resourcePath": "sprites\\spr_speedAsh_outline_green\\spr_speedAsh_outline_green.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "44b06b65-0226-4320-90cb-52b2e156caa1",
-            "Value": {
-                "id": "a20d9348-0e54-4340-a6d7-b4a91333afb1",
-                "resourcePath": "sprites\\spr_contractDone_theMadWitches\\spr_contractDone_theMadWitches.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2727,14 +2639,6 @@
             }
         },
         {
-            "Key": "4bdf41b6-8c5f-4ce5-a403-932961ccc4cd",
-            "Value": {
-                "id": "a16e0373-51e3-475a-8778-db236bebbe9c",
-                "resourcePath": "sprites\\spr_bossSelect_theInfernalWisp\\spr_bossSelect_theInfernalWisp.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "4c0e5bc0-0032-4272-bcd0-7c388bf75332",
             "Value": {
                 "id": "49b0c6ca-cf5d-435f-826f-d847dcecb69c",
@@ -2755,14 +2659,6 @@
             "Value": {
                 "id": "8ccc5a39-08b8-4a90-9273-a6e0c0d689d5",
                 "resourcePath": "sprites\\spr_grass\\spr_grass.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "4c59fbc7-6175-471e-b590-c9d081dec73e",
-            "Value": {
-                "id": "3725c039-cc0c-49d9-8e66-cbe36eb8702a",
-                "resourcePath": "sprites\\spr_bossSelect_theFatZombie\\spr_bossSelect_theFatZombie.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2887,14 +2783,6 @@
             }
         },
         {
-            "Key": "5107198b-b515-4858-a393-0062ed0e4676",
-            "Value": {
-                "id": "de49c01c-a8c3-40c9-9782-4381a5b6819d",
-                "resourcePath": "sprites\\spr_bossSelect_theBloodPrince\\spr_bossSelect_theBloodPrince.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "51526145-9e7d-4df3-8437-cb927b1d48f1",
             "Value": {
                 "id": "1fb3f250-593f-499c-8322-0a80236f872a",
@@ -2919,14 +2807,6 @@
             }
         },
         {
-            "Key": "52187782-888a-4063-8703-7a41d445d955",
-            "Value": {
-                "id": "4d6514cd-f389-4dc9-8a0f-e3583e5888dc",
-                "resourcePath": "sprites\\spr_contractDone_theWispMother\\spr_contractDone_theWispMother.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "525610a1-526d-45cf-97ff-dca40832fd00",
             "Value": {
                 "id": "4e85f396-8b27-435d-9a34-1057dcbce4a0",
@@ -2947,14 +2827,6 @@
             "Value": {
                 "id": "7ddca89a-6a75-40d4-861e-449e5486ba2b",
                 "resourcePath": "sprites\\spr_fight_t5_headlessCorruptWalker\\spr_fight_t5_headlessCorruptWalker.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "54260825-040b-494c-92b3-5527cde1359e",
-            "Value": {
-                "id": "5bf419aa-83cb-46a6-b9c6-f77948ef89e9",
-                "resourcePath": "sprites\\spr_contractDone_theFatZombiePhase4\\spr_contractDone_theFatZombiePhase4.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3271,14 +3143,6 @@
             }
         },
         {
-            "Key": "5f6ffde2-950b-4c19-910c-e6140b4344ca",
-            "Value": {
-                "id": "a47986bd-bba3-4eaf-8b69-e3a64d0538ff",
-                "resourcePath": "sprites\\spr_bossSelect_theFatZombiePhase4\\spr_bossSelect_theFatZombiePhase4.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "5f99da7e-124c-4694-98ea-758f412b0319",
             "Value": {
                 "id": "12dce977-5aba-40d0-8b5c-bfdca679db27",
@@ -3308,14 +3172,6 @@
                 "id": "b4976567-4def-44ee-8553-d36c3e3d2f9b",
                 "resourcePath": "objects\\obj_npc_theGraveling\\obj_npc_theGraveling.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "60748eed-9a8b-4cdd-b858-a097a9873afa",
-            "Value": {
-                "id": "9b845ad2-c659-43d3-a665-dcca8a8f3f5b",
-                "resourcePath": "sprites\\spr_contractDone_theFlameGate\\spr_contractDone_theFlameGate.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -3975,14 +3831,6 @@
             }
         },
         {
-            "Key": "759cce33-ca76-4d5c-92c9-9e9a198be6e2",
-            "Value": {
-                "id": "6f292621-4a09-4b21-bfb6-86413f5e08e9",
-                "resourcePath": "sprites\\spr_bossSelect_deathKingZarok\\spr_bossSelect_deathKingZarok.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "75bc3472-7aed-4e45-8feb-e17e40501fa6",
             "Value": {
                 "id": "02ffa17e-5a7f-4a6a-a53e-a1c54e9e2795",
@@ -4004,6 +3852,14 @@
                 "id": "eb0a9d1f-c245-4185-bfc2-b5da0bec6841",
                 "resourcePath": "objects\\obj_item_soulSword\\obj_item_soulSword.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "772e38d2-5989-45e2-81a2-2c5348ee653a",
+            "Value": {
+                "id": "4ae493f6-d4d4-4f8e-a9d3-bd4e4da88868",
+                "resourcePath": "views\\772e38d2-5989-45e2-81a2-2c5348ee653a.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -4171,6 +4027,14 @@
             "Value": {
                 "id": "3b48a49a-22d4-458f-8378-99dcdead1b26",
                 "resourcePath": "objects\\obj_bossLoot_prupleWisp\\obj_bossLoot_prupleWisp.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "7bcca327-c182-40f5-8eab-1ad8870dc39c",
+            "Value": {
+                "id": "24077d19-c1e2-4063-8fc3-32e696841de4",
+                "resourcePath": "objects\\obj_visual_zombieHead\\obj_visual_zombieHead.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -4471,14 +4335,6 @@
             }
         },
         {
-            "Key": "84dd5516-ab4e-406d-8b56-84d34e95f9fa",
-            "Value": {
-                "id": "4576bd22-85de-4ca7-b64f-35be012a221a",
-                "resourcePath": "sprites\\spr_bossSelect_theWisp\\spr_bossSelect_theWisp.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "8528d454-7a0d-4e31-b906-b9746d6d39ea",
             "Value": {
                 "id": "16b4dc28-3482-44fb-9641-fb0de9f60ce0",
@@ -4711,14 +4567,6 @@
             }
         },
         {
-            "Key": "8cb5c981-cb0b-455e-b0f7-0653adc4d69c",
-            "Value": {
-                "id": "93031dc3-7aaa-4f97-b8a3-3fdf73d05567",
-                "resourcePath": "sprites\\spr_contractDone_deathLords\\spr_contractDone_deathLords.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "8dd24eb6-3a1b-49d4-a0e7-0012b7dcbac9",
             "Value": {
                 "id": "34eed989-0ef4-4fae-acc8-7e1af531b8e5",
@@ -4807,14 +4655,6 @@
             }
         },
         {
-            "Key": "8ff60fc5-cf2a-48bf-8f20-e95d0beb0928",
-            "Value": {
-                "id": "78cb8940-5b87-4f44-b4ac-b119057ee545",
-                "resourcePath": "objects\\obj_bossSelect_theGraveKeeper\\obj_bossSelect_theGraveKeeper.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "9071dbe3-e664-4559-a98e-486f30a2a3d9",
             "Value": {
                 "id": "bdb17747-9648-406c-a96c-8bbe7392c154",
@@ -4827,14 +4667,6 @@
             "Value": {
                 "id": "f5228309-6154-423e-b6f5-1af6b5162541",
                 "resourcePath": "sprites\\spr_fight_t1_bloodRoyalVarus\\spr_fight_t1_bloodRoyalVarus.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "91efdec9-cbf5-497d-87d6-5d8abca9fdaf",
-            "Value": {
-                "id": "5132308b-f9d3-43c0-b086-7ebca020c08a",
-                "resourcePath": "sprites\\spr_bossSelect_deathLords\\spr_bossSelect_deathLords.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5087,14 +4919,6 @@
             }
         },
         {
-            "Key": "99def86a-52ae-41f4-9915-6ae38ce98656",
-            "Value": {
-                "id": "78e830ca-aab2-4159-9768-917b5db9a004",
-                "resourcePath": "objects\\obj_bossSelect_theMadWitches\\obj_bossSelect_theMadWitches.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "9a1401ef-6bc2-40bd-811d-0a838214f78b",
             "Value": {
                 "id": "2efcb061-9f40-46bd-afa0-520eed392b3a",
@@ -5171,14 +4995,6 @@
             "Value": {
                 "id": "b8c8f6ac-f078-4e56-b64d-8c0e386fc769",
                 "resourcePath": "sprites\\spr_graveling_outline_selected\\spr_graveling_outline_selected.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "9c1f5960-f56e-476a-b0dc-69719bd99c13",
-            "Value": {
-                "id": "41fb6813-b406-4ea0-b6c5-51827f370a90",
-                "resourcePath": "sprites\\spr_bossSelect_theSoulGuards\\spr_bossSelect_theSoulGuards.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5415,14 +5231,6 @@
             }
         },
         {
-            "Key": "a319096b-9dab-4baa-b962-9bdbd8bd8b4a",
-            "Value": {
-                "id": "6bc081d8-f668-4753-acb9-f18127b380bb",
-                "resourcePath": "sprites\\spr_contractDone_deadArmy\\spr_contractDone_deadArmy.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "a323dd18-c0be-4810-93f6-c5bdf7663448",
             "Value": {
                 "id": "8ba84ca9-e9b5-4104-9da2-3f65deae6dbd",
@@ -5599,14 +5407,6 @@
             }
         },
         {
-            "Key": "a77f2bc6-e7c0-4585-926c-7f1a34b3f552",
-            "Value": {
-                "id": "68340fa9-d62f-4a1a-9edf-4b4545d332bb",
-                "resourcePath": "sprites\\spr_contractDone_theBloodPrince\\spr_contractDone_theBloodPrince.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "a783d0a5-59d1-4b6d-88a4-214bd6477cc3",
             "Value": {
                 "id": "7786968d-af5a-4bfa-80f8-0aa9bdc73165",
@@ -5695,14 +5495,6 @@
             }
         },
         {
-            "Key": "aa117f94-bb38-473e-9e1a-340f9c8401d2",
-            "Value": {
-                "id": "2f4e8d5d-de03-4318-8609-cf4d234a7bd4",
-                "resourcePath": "sprites\\spr_contractDone_theSoulGuards\\spr_contractDone_theSoulGuards.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "aae8f4ed-6cc5-4e93-ae52-f6df50705124",
             "Value": {
                 "id": "ee16a9ba-d1db-42ff-9e27-02a29c96fe5a",
@@ -5731,14 +5523,6 @@
             "Value": {
                 "id": "3e156c24-4845-4f3d-a9e3-ef12f42b3d3c",
                 "resourcePath": "objects\\obj_deathQueenZeriaStatue\\obj_deathQueenZeriaStatue.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "ab96ea09-34d9-463f-88f7-3420e5f721b0",
-            "Value": {
-                "id": "3a5db833-35fe-4689-be71-512cdc35a51d",
-                "resourcePath": "objects\\obj_bossSelect_deadArmy\\obj_bossSelect_deadArmy.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -5803,14 +5587,6 @@
             "Value": {
                 "id": "478960c2-b052-47c3-9e0e-bd76af1cb209",
                 "resourcePath": "sprites\\spr_plaugeWalker_outline_selected\\spr_plaugeWalker_outline_selected.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "ad51b284-3801-4e9c-8cad-b12c690da349",
-            "Value": {
-                "id": "117538b8-6032-4a45-a708-849f435636e5",
-                "resourcePath": "sprites\\spr_bossSelect_deadArmy\\spr_bossSelect_deadArmy.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5891,14 +5667,6 @@
             "Value": {
                 "id": "37915475-4627-4620-ac77-6f6cbfe1b9a9",
                 "resourcePath": "sprites\\spr_flameGateStatue\\spr_flameGateStatue.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "af589e13-9f82-422f-8de7-40678dad3b27",
-            "Value": {
-                "id": "e9d54c70-8926-45b2-832b-4349a91f140d",
-                "resourcePath": "sprites\\spr_bossSelect_theFlameGate\\spr_bossSelect_theFlameGate.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -6351,14 +6119,6 @@
             }
         },
         {
-            "Key": "bc448924-e46d-41be-af08-21fe7c72b871",
-            "Value": {
-                "id": "59e01d0c-caf0-403a-bf90-5ca395201fba",
-                "resourcePath": "sprites\\spr_contractDone_deathQueen\\spr_contractDone_deathQueen.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "bc544db3-fe89-4f93-a41b-57845f88d7dd",
             "Value": {
                 "id": "c3aa0b39-b302-4720-b76a-44a23bc56e86",
@@ -6427,6 +6187,14 @@
             "Value": {
                 "id": "6914b080-c10e-4186-8b5e-5660f81d8647",
                 "resourcePath": "objects\\par_loot\\par_loot.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "be20ca2e-d424-44a5-ac08-cd00bfba2e6f",
+            "Value": {
+                "id": "4055815d-4f3e-4d80-9b91-066c0c768276",
+                "resourcePath": "objects\\obj_item_flameWisp\\obj_item_flameWisp.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -6519,14 +6287,6 @@
             }
         },
         {
-            "Key": "c27ed86f-619c-49c4-9d34-f993394e2921",
-            "Value": {
-                "id": "774a8aae-442e-41c8-9126-06dd348aa10d",
-                "resourcePath": "sprites\\spr_contractDone_theSoulWisp\\spr_contractDone_theSoulWisp.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "c2f9a827-26a3-4e72-b152-9f0820b4e686",
             "Value": {
                 "id": "31597b1c-207e-4bc2-8ec9-e1695f4831d4",
@@ -6548,6 +6308,14 @@
                 "id": "8909c013-426a-45b9-8bd4-9dc384e60c49",
                 "resourcePath": "sprites\\spr_item_soulWisps\\spr_item_soulWisps.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c4195353-4e8c-43c9-8784-2fb39d0a509f",
+            "Value": {
+                "id": "fc362f66-49ca-4a23-9188-75fe3c4cd6d1",
+                "resourcePath": "views\\c4195353-4e8c-43c9-8784-2fb39d0a509f.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -6759,14 +6527,6 @@
             }
         },
         {
-            "Key": "c9717ab2-7622-4a73-b865-084b6c625572",
-            "Value": {
-                "id": "6633170b-46bb-4711-9b30-b0f69d3c4fb8",
-                "resourcePath": "sprites\\spr_player_theMage_walking\\spr_player_theMage_walking.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "c999978b-fecd-4359-8f4d-5e7cc436e137",
             "Value": {
                 "id": "9f356bc9-4bd8-4eb2-bdff-bce88ca8c03c",
@@ -6971,14 +6731,6 @@
             "Value": {
                 "id": "afd97052-b2c7-4533-b6a8-b44facf8cbd8",
                 "resourcePath": "sprites\\spr_boss_theFlameGate\\spr_boss_theFlameGate.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "ce6053fe-33b9-4fed-91c8-d47fca413b30",
-            "Value": {
-                "id": "7affa277-b2a9-42d8-9735-4acbe8a7a7ba",
-                "resourcePath": "sprites\\spr_contractDone_theFlameWisp\\spr_contractDone_theFlameWisp.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -7211,14 +6963,6 @@
             "Value": {
                 "id": "d0a3561f-d983-419d-a1a4-a671564530ca",
                 "resourcePath": "objects\\obj_player_guardianWisp\\obj_player_guardianWisp.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "d6975e2c-1600-475d-83e4-c4bbbed1e7f8",
-            "Value": {
-                "id": "1266063e-56ff-4d4e-96f9-ebb820ec1770",
-                "resourcePath": "objects\\obj_bossSelect_deathKingZarok\\obj_bossSelect_deathKingZarok.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -7559,14 +7303,6 @@
             }
         },
         {
-            "Key": "debf8172-90cb-4467-afdd-7ed55e9ba3f1",
-            "Value": {
-                "id": "596e192a-ce78-461e-a922-9a6bbc134c2b",
-                "resourcePath": "sprites\\spr_bossSelect_deathQueenZeria\\spr_bossSelect_deathQueenZeria.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "dec2e3db-f31a-4da3-be06-21c7284158bf",
             "Value": {
                 "id": "3503f9e7-2a3c-4aed-9664-34a4d0f065aa",
@@ -7579,14 +7315,6 @@
             "Value": {
                 "id": "6bd91ca2-a9ca-4ab0-9ce0-2dc2050b451c",
                 "resourcePath": "objects\\obj_button_exit\\obj_button_exit.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "defa9e1c-e26d-4ac6-a672-e38b5b30b737",
-            "Value": {
-                "id": "48ecc202-1fd0-465d-ab95-fee8093969a8",
-                "resourcePath": "objects\\obj_bossSelect_theFatZombie4\\obj_bossSelect_theFatZombie4.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -7620,6 +7348,14 @@
                 "id": "8e5d01d9-2de4-41d4-bb33-1361befe93ff",
                 "resourcePath": "objects\\obj_wispShot_weak\\obj_wispShot_weak.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "e05c64a2-b4e5-4a0d-ac51-a8035acd71ef",
+            "Value": {
+                "id": "38f6cddd-5578-4bec-bdd9-8750e4d10b8e",
+                "resourcePath": "views\\e05c64a2-b4e5-4a0d-ac51-a8035acd71ef.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -7695,14 +7431,6 @@
             }
         },
         {
-            "Key": "e1c44078-a00c-4c68-8c85-33810ed7f32a",
-            "Value": {
-                "id": "5bfd1f48-9555-446e-bcb3-796c00386298",
-                "resourcePath": "sprites\\spr_contractDone_theGravekeeper\\spr_contractDone_theGravekeeper.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "e1cb7be4-0652-4188-b85c-243058ed0a1b",
             "Value": {
                 "id": "b068251d-eef5-41db-98be-a2274f09704c",
@@ -7763,14 +7491,6 @@
             "Value": {
                 "id": "944ba7e6-0454-40e8-8d1d-782f0f8f68b1",
                 "resourcePath": "objects\\obj_allCursor\\obj_allCursor.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "e3621d02-64cf-44ac-8d16-88bc4ddaae0e",
-            "Value": {
-                "id": "92507390-8d1e-45e5-b962-0857a7329419",
-                "resourcePath": "objects\\obj_bossSelect_theSoulWisp\\obj_bossSelect_theSoulWisp.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -7967,14 +7687,6 @@
             }
         },
         {
-            "Key": "e8493585-f72c-41bd-80ce-9f2be7a35223",
-            "Value": {
-                "id": "c363189a-539e-4c1f-961a-03bd2fadb7ca",
-                "resourcePath": "sprites\\spr_contractDone_fallOfFlames\\spr_contractDone_fallOfFlames.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "e9767b06-417c-41a6-bc5f-98f12f62d57f",
             "Value": {
                 "id": "d3d0d4ed-37ac-4912-bb0d-af2c86035e08",
@@ -8151,14 +7863,6 @@
             }
         },
         {
-            "Key": "ee3bdfcd-7d10-4ca4-af49-1d2a114c1568",
-            "Value": {
-                "id": "4e74968b-9627-4240-a091-9b170b9d5907",
-                "resourcePath": "objects\\obj_bossSelect_theSoulGuards\\obj_bossSelect_theSoulGuards.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "ef2c2328-e11f-4dff-84bd-a33f6531187a",
             "Value": {
                 "id": "d243f01d-2aec-48fb-8181-b7968d275a25",
@@ -8311,14 +8015,6 @@
             }
         },
         {
-            "Key": "f3acac7e-6f37-4c5e-82d3-32eef485bc54",
-            "Value": {
-                "id": "2681b9f2-6a91-4824-92c9-b3e9e38edd16",
-                "resourcePath": "objects\\obj_bossSelect_theInfernalWisp\\obj_bossSelect_theInfernalWisp.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "f3caa084-813a-453c-84f0-bffcf17e9e41",
             "Value": {
                 "id": "b9466f14-e6ac-4907-81bb-dec086ffa5e0",
@@ -8420,14 +8116,6 @@
                 "id": "40e9b83e-0819-4046-805f-4fb2723b2963",
                 "resourcePath": "views\\f5f6841b-895f-4668-9ef7-75892594552d.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "f629c1e4-c803-430a-bd31-3be14d8cf0b8",
-            "Value": {
-                "id": "a69b83f1-ea8e-4d5c-a32a-9cc7ddde23a0",
-                "resourcePath": "objects\\obj_bossSelect_deathQueenZeria\\obj_bossSelect_deathQueenZeria.yy",
-                "resourceType": "GMObject"
             }
         },
         {

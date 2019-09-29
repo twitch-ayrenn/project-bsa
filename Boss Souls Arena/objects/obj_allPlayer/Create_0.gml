@@ -34,10 +34,13 @@ ultColorCd = c_white;
 #endregion
 #region Stats
 hp = 100;
-moveSpeed = 3;
+moveSpeed = 2;
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
-global.damage = 10;
+global.damage = 1;
+baseLifeSteal = 0.75;
+global.lifeSteal = baseLifeSteal;
+dashSpeed = 5;
 #endregion
 #region visuals and animation
 state = States.Idle;
@@ -49,14 +52,10 @@ playerSize = 1;
 #region class system
 if (class == Character.ShadowAssassin)
 {
-	hp = 100;
-	moveSpeed = 2;
-	global.damage = 1;
 	leftClickCooldown = (10)*30;
 	rightClickCooldown = (10)*30;
 	dashCooldown = (5)*30;
 	ultCooldown = (20)*30;
-	dashSpeed = 5;
 	idleSprite = spr_player_theAssasin;
 	walkSprite = spr_player_theAssasin_walking;
 	leftClickColor = global.purple;
@@ -73,14 +72,10 @@ if (class == Character.ShadowAssassin)
 }
 if (class == Character.Pyromancer)
 {
-	hp = 100;
-	moveSpeed = 2;
-	global.damage = 1;
 	leftClickCooldown = (9)*30;
 	rightClickCooldown = (9)*30;
 	dashCooldown = (9)*30;
 	ultCooldown = (18)*30;
-	dashSpeed = 3;
 	idleSprite = spr_player_theMage;
 	walkSprite = spr_player_theMage_walking;
 	leftClickColor = c_aqua;
@@ -94,13 +89,10 @@ if (class == Character.Pyromancer)
 if (class == Character.BloodKnight)
 {
 	hp = 100*2;
-	moveSpeed = 2;
-	global.damage = 1;
 	leftClickCooldown = (1)*30;
 	rightClickCooldown = (1);
 	dashCooldown = (10)*30;
 	ultCooldown = (30)*30;
-	dashSpeed = 7;
 	idleSprite = spr_player_theBloodKnight;
 	walkSprite = spr_player_theBloodKnight_walking;
 	leftClickColor = c_teal;
@@ -113,7 +105,24 @@ if (class == Character.BloodKnight)
 }
 #endregion
 #region Items
-
+hp += gameMaster.bonusHealth;
+moveSpeed += gameMaster.bonusSpeed/10;
+dashSpeed *= 1+(gameMaster.bonusDash/100);
+global.damage += gameMaster.bonusDamage;
+leftClickCooldown *= 1 - (gameMaster.bonusFirerate/100);
+global.lifeSteal += gameMaster.bonusLifeSteal;
+auraPower = 1 + (gameMaster.bonusAura/100);
+conjurationPower = 1 + (gameMaster.bonusConjur/100);
+rightClickCooldown *= 1 - (gameMaster.bonusCooldown/100);
+ultCooldown *= 1 - (gameMaster.bonusCooldown/100);
+dashCooldown *= 1 - (gameMaster.bonusCooldown/100);
+activateUltItem = false;
+activateDashItem = false;
+activateLeftClickItem = false;
+activateRightClickItem = false;
+//
+if (global.itemSelected[Boss.BloodZombie] == true){instance_create_depth(x,y,depth+1,obj_visual_zombieHead);}
+bPSpeed = 1;
 #endregion
 #region Bosses
 blackOutAlpha = 0;

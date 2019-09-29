@@ -13,6 +13,10 @@ if (hp > maxHp){hp = maxHp;}
 depth = -y;
 if (gameMaster.chosenBoss == Boss.BloodRoyalVarus){depth = obj_allPlayer.depth+1;}
 image_alpha = alpha;
+if (image_blend = c_red)
+{
+	image_blend = c_white;	
+}
 #endregion
 #region Movement
 var target = obj_allPlayer

@@ -2430,7 +2430,7 @@
             "__type": "GMRTileLayer_Model:#YoYoStudio.MVCFormat",
             "name": "groundCarpet2",
             "id": "8548aa6a-d279-4ef2-97e9-033681be7d85",
-            "depth": -7,
+            "depth": -3,
             "grid_x": 32,
             "grid_y": 32,
             "hierarchyFrozen": false,
@@ -2528,7 +2528,7 @@
                 ]
             },
             "tilesetId": "b7d19eb2-2020-4e99-a687-d10697955ffa",
-            "userdefined_depth": false,
+            "userdefined_depth": true,
             "visible": true,
             "x": 0,
             "y": 23
@@ -2537,7 +2537,7 @@
             "__type": "GMRTileLayer_Model:#YoYoStudio.MVCFormat",
             "name": "groundCarpet",
             "id": "416651cb-8a06-45f6-88ea-f759bc090d7a",
-            "depth": -4,
+            "depth": -2,
             "grid_x": 32,
             "grid_y": 32,
             "hierarchyFrozen": false,
@@ -2635,7 +2635,7 @@
                 ]
             },
             "tilesetId": "b7d19eb2-2020-4e99-a687-d10697955ffa",
-            "userdefined_depth": false,
+            "userdefined_depth": true,
             "visible": true,
             "x": 0,
             "y": 9

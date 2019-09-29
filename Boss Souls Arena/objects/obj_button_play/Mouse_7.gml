@@ -1,8 +1,14 @@
 /// @description Insert description here
-with (gameMaster)
-{
-	menu = Menues.PlayerSelect;	
-}
+gameMaster.menu = Menues.PlayerSelect;	
+gameMaster.bonusHealth = 0;
+gameMaster.bonusSpeed = 0;
+gameMaster.bonusDash = 0;
+gameMaster.bonusDamage = 0;
+gameMaster.bonusFirerate = 0;
+gameMaster.bonusLifeSteal = 0;
+gameMaster.bonusAura = 0;
+gameMaster.bonusConjur = 0;
+gameMaster.bonusCooldown = 0;
 if (gameMaster.theRedWarriorUnlocked == true){with (obj_npc_theRedWarrior){sprite_index = spr_theWarrior_outline_unselected}}
 if (gameMaster.theRedWarriorUnlocked == false){with (obj_npc_theRedWarrior){sprite_index = spr_theWarrior_outline_locked}}
 if (gameMaster.assassinUnlocked == true){with (obj_npc_theShadow){sprite_index = spr_theAssasin_outline_unselected}}

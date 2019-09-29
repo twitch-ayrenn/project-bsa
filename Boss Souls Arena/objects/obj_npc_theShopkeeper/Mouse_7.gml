@@ -7,9 +7,19 @@ if (gameMaster.shopkeeperUnlocked== true)
 		if (shopkeeperProgress < 2){menu = Menues.BossSelect;chosenClass = Character.Shopkeeper;}
 		if (shopkeeperProgress > 1){menu = Menues.BossLoot;  chosenClass = Character.Shopkeeper;}
 		global.itemSlots = int64(2 + (shopkeeperProgress/8));
-		with(par_loot){reset = true;}
-		global.slot1 = false; global.slot4 = false;
-		global.slot2 = false; global.slot5 = false;
-		global.slot3 = false; global.slot6 = false;
 	}
+	with(par_loot){reset = true;}
+	global.slot1 = false; global.slot4 = false;
+	global.slot2 = false; global.slot5 = false;
+	global.slot3 = false; global.slot6 = false;
+	gameMaster.bonusHealth = 0;
+	gameMaster.bonusSpeed = 0;
+	gameMaster.bonusDash = 0;
+	gameMaster.bonusDamage = 0;
+	gameMaster.bonusFirerate = 0;
+	gameMaster.bonusLifeSteal = 0;
+	gameMaster.bonusAura = 0;
+	gameMaster.bonusConjur = 0;
+	gameMaster.bonusCooldown = 0;
+	
 }

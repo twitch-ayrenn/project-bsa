@@ -5,7 +5,8 @@
     "name": "bb67ee8e-6a45-479e-9d47-1770d3ee7db5",
     "children": [
         "bd8607bf-d353-453a-b4c8-b421cfce6836",
-        "fde4c8ce-cee4-4453-85b1-cd7cac81f148"
+        "fde4c8ce-cee4-4453-85b1-cd7cac81f148",
+        "be20ca2e-d424-44a5-ac08-cd00bfba2e6f"
     ],
     "filterType": "GMObject",
     "folderName": "grp_items",
