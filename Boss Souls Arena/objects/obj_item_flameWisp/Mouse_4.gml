@@ -1,5 +1,5 @@
 /// @description Insert description here
-if (global.itemSlots >= 1)
+if (global.itemSlots >= 1 && global.itemSelected[bossForThisItem] == false)
 {
 	global.itemSelected[bossForThisItem] = true;
 	global.itemSlots -= 1;

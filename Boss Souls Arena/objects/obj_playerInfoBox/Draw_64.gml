@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
-draw_text_transformed_color(75,215,"Info:",0.4,0.4,0,c_yellow,c_yellow,c_white,c_white,1);
-draw_text_transformed_color(75,415,"Description",0.4,0.4,0,c_yellow,c_yellow,c_white,c_white,1);
-draw_text_transformed_color(340,255,"Stats",0.4,0.4,0,c_yellow,c_yellow,c_white,c_white,1);
+draw_text_transformed_color(75,215,"Info:",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+draw_text_transformed_color(75,415,"Description",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+draw_text_transformed_color(340,255,"Stats",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 //draw_sprite_ext(spr_icons,0,300,332,2,2,0,c_white,1);
 //draw_sprite_ext(spr_icons,1,300,367,2,2,0,c_white,1);
 //draw_sprite_ext(spr_icons,2,300,402,2,2,0,c_white,1);
@@ -52,7 +52,7 @@ if (playerShowInfoFor == Character.Pyromancer)
 	
 	//name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(163,216,"Pyromancer Nina",0.38,0.38,0,c_fuchsia,c_fuchsia,c_purple,c_purple,0.85);
+	draw_text_transformed_color(163,216,"Pyromancer Nina",0.38,0.38,0,global.orange,global.orange,c_orange,c_orange,0.85);
 	//stats
 	draw_text_transformed_color(295,320-15-5,"Health: Low",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
 	draw_text_transformed_color(295,340-15+15-5,"Damage: High",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
@@ -138,7 +138,7 @@ if (playerShowInfoFor == Character.BloodKnight)
 	
 	//name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(163,216,"Bloodknight",0.38,0.38,0,c_fuchsia,c_fuchsia,c_purple,c_purple,0.85);
+	draw_text_transformed_color(163,216,"Bloodknight David",0.38,0.38,0,c_red,c_red,c_maroon,c_maroon,0.85);
 	//stats
 	draw_text_transformed_color(295,320-15-5,"Health: High",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
 	draw_text_transformed_color(295,340-15+15-5,"Damage: Medium",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);

@@ -2,6 +2,7 @@
 // You can write your code in this editor
 with (gameMaster)
 {
-	playColor = c_white;
+	playColor = global.darkYellow;
+	playColorTop = c_orange;
 	playSize = 1;
 }

@@ -8,19 +8,19 @@ if (menu == Menues.Main || menu == Menues.BossLoot || menu == Menues.PlayerSelec
 if (menu == Menues.Main)
 {
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(50,50,"Boss Souls Arena",1.4,1.4,0,c_yellow,c_yellow,c_white,c_white,1);
+	draw_text_transformed_color(50,50,"Boss Souls Arena",1.4,1.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(100,200,"Play",playSize,playSize,0,c_yellow,c_yellow,playColor,playColor,1);
+	draw_text_transformed_color(100,200,"Campaign",playSize,playSize,0,global.orange,global.orange,playColor,playColor,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(100,310,"Boss Loot",bossLootSize,bossLootSize,0,c_yellow,c_yellow,bossLootColor,bossLootColor,1);
+	draw_text_transformed_color(100,310,"Arena",playArenaSize,playArenaSize,0,global.orange,global.orange,playArenaColor,playArenaColor,1);
 	
 	//draw_set_font(fnt_menu_fill);
 	//draw_text_transformed_color(100,660-160,"Stats",statsSize,statsSize,0,c_yellow,c_yellow,statsColor,statsColor,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(100,420,"Settings",settingsSize,settingsSize,0,settingsColor,settingsColor,c_white,c_white,1);
+	draw_text_transformed_color(100,420,"Settings",settingsSize,settingsSize,0,global.orange,global.orange,settingsColor,settingsColor,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Exit",exitSize,exitSize,0,exitColor,exitColor,exitColor,exitColor,1);
@@ -28,121 +28,141 @@ if (menu == Menues.Main)
 if (menu == Menues.BossLoot)
 {
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(30,30,"Select Loot",1.2,1.2,0,c_yellow,c_yellow,c_white,c_white,1);
+	draw_text_transformed_color(30,30,"Select Loot",1.2,1.2,0,global.orange,global.orange,c_yellow,c_yellow,1);
 
-	draw_text_transformed_color(30,330,"Stats",0.4,0.4,0,c_yellow,c_yellow,c_white,c_white,1);
+	
+	
+	draw_text_transformed_color(1075,110,"Items",0.6,0.6,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	
+	var itemXIncrease = 120;
+	draw_text_transformed_color(525,710,"Item Slots",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(435+1*itemXIncrease,855,"Item I",0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(435+2*itemXIncrease,855,"Item II",0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(435+3*itemXIncrease,855,"Item III",0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(435+4*itemXIncrease,855,"Item IV",0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(435+5*itemXIncrease,855,"Item V",0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(435+6*itemXIncrease,855,"Item VI",0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	
 	var startY = 340;
-	var yIncreasse = 35;
-	
+	var yIncreasse = 30;
+	var textSize = 0.25;
+	var infoTextX = 300 + shoveInX;
 	var hpText = "Health: " + string(100 + bonusHealth + previewHealth);
-	draw_text_transformed_color(30,startY+1*40,hpText,0.3,0.3,0,c_lime,c_lime,c_green,c_green,1);
-	
 	var spdText = "Speed: " + string(20 + bonusSpeed + previewSpeed);
-	draw_text_transformed_color(30,startY+2*yIncreasse,spdText,0.3,0.3,0,c_lime,c_lime,c_green,c_green,1);
-	
 	var dlText = "Dash/Tp Bonus: " + string(0 + bonusDash + previewDash) + "%";
-	draw_text_transformed_color(30,startY+3*yIncreasse,dlText,0.3,0.3,0,c_lime,c_lime,c_green,c_green,1);
-	
 	var dmgCalc = int64(10 + bonusDamage + previewDamage);
 	var dmgText = "Damage: " + string(dmgCalc);
-	draw_text_transformed_color(30,startY+4*yIncreasse,dmgText,0.3,0.3,0,c_red,c_red,c_maroon,c_maroon,1);
-	
 	var frText = "Attack Speed: " + string(100 + bonusFirerate + previewFirerate) + "%";
-	draw_text_transformed_color(30,startY+5*yIncreasse,frText,0.3,0.3,0,c_red,c_red,c_maroon,c_maroon,1);
-	
 	var lsText = "LifeSteal: " + string(75 + bonusLifeSteal + previewLifeSteal) + "%";//base is 75% for all damage
-	draw_text_transformed_color(30,startY+6*yIncreasse,lsText,0.3,0.3,0,c_red,c_red,c_maroon,c_maroon,1);
-	
 	var auraCalc = (0 + bonusAura + previewAura)/100
 	var auraText = "Aura Power: " + string(int64(auraCalc*100)) + "%";
-	draw_text_transformed_color(30,startY+7*yIncreasse,auraText,0.3,0.3,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-	
 	var conjureCalc = (0 + bonusConjur + previewConjur)/100
-	var cjText = "Conjur Bonus: " + string(conjureCalc*100) + "%";
-	draw_text_transformed_color(30,startY+8*yIncreasse,cjText,0.3,0.3,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-	
+	var cjText = "Conjuration Power: " + string(conjureCalc*100) + "%";
 	var cdText = "Cooldown reduction: " + string(0 + bonusCooldown + previewCooldown) + "%";
-	draw_text_transformed_color(30,startY+9*yIncreasse,cdText,0.3,0.3,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-	
+	if (global.ShowInfo == true)
+	{
+		shoveInX = 0;
+		itemTextSize = 0.075;
+		itemTextSeparationY = 22;
+		draw_text_transformed_color(30,330,"Stats",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+		draw_text_transformed_color(30,startY+1*yIncreasse,"Defensive & Mobility",textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
+		draw_text_transformed_color(30,startY+2*yIncreasse,hpText,textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
+		draw_text_transformed_color(30,startY+3*yIncreasse,spdText,textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
+		draw_text_transformed_color(30,startY+4*yIncreasse,dlText,textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
+		draw_text_transformed_color(30,startY+5*yIncreasse+10,"Damage & Sustain",textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);	
+		draw_text_transformed_color(30,startY+6*yIncreasse+10,dmgText,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);	
+		draw_text_transformed_color(30,startY+7*yIncreasse+10,frText,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);	
+		draw_text_transformed_color(30,startY+8*yIncreasse+10,lsText,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);
+		draw_text_transformed_color(30,startY+9*yIncreasse+20,"Magic & Misc",textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);	
+		draw_text_transformed_color(30,startY+10*yIncreasse+20,auraText,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);	
+		draw_text_transformed_color(30,startY+11*yIncreasse+20,cjText,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);		
+		draw_text_transformed_color(30,startY+12*yIncreasse+20,cdText,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	}
+	if (global.ShowInfo == false)
+	{
+		shoveInX = -270;
+		itemTextSize = 0.1;
+		itemTextSeparationY = 25;
+	}
 	#region Item descriptions
 	draw_set_font(fnt_NewNormalText);
 	if (itemShowInfoFor == Boss.NoBoss)
 	{
+		infoTextX = 300 + shoveInX;
 		draw_set_font(fnt_NewNormalText);
-		draw_text_transformed_color(300,350+1*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+2*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+3*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+4*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+5*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+6*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+7*22,"Item Stats",0.075,0.075,0,global.orange,global.orange,c_yellow,c_yellow,1);
-		draw_text_transformed_color(300,350+8*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+9*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+10*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+11*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+12*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+13*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+14*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+15*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+16*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Selectan an [Item] to the left by",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"clicking on it.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"Hover over an [Item] to see info",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"about that [Item].",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_set_font(fnt_menu_fill);
+		//draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"Item Stats",itemTextSize*3,itemTextSize*3,0,global.orange,global.orange,c_yellow,c_yellow,1);
+		draw_set_font(fnt_NewNormalText);
+		draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		
 		draw_set_font(fnt_menu_fill);
-		var ItemName = "Item Info: " + "Zombie Head"
-		draw_text_transformed_color(300,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1)
+		var ItemName = "Item Info: " + "No item selected"
+		draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1)
 	}
 	if (itemShowInfoFor == Boss.BloodZombie)
 	{
 		draw_set_font(fnt_NewNormalText);
-		draw_text_transformed_color(300,350+1*22,"Using your ultimate[R] spawns an",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+2*22,"area that increases your speed and",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+3*22,"damages enemies that stand in the",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+4*22,"area.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Using your ultimate[R] spawns an",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"area that increases your speed and",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"damages enemies that stand in the",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"area.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		var bztext = "[Area Damage]: " + string(dmgCalc) + "/second";
-		draw_text_transformed_color(300,350+5*22,bztext,0.075,0.075,0,c_red,c_red,c_maroon,c_maroon,1);
+		draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,bztext,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 		var bztext2 = "[Speed Increase]: " +  string(20*(1+auraCalc)) + "%";
-		draw_text_transformed_color(300,350+6*22,bztext2,0.075,0.075,0,c_lime,c_lime,c_green,c_green,1);
-		draw_text_transformed_color(300,350+7*22,"Item Stats",0.075,0.075,0,global.orange,global.orange,c_yellow,c_yellow,1);
-		draw_text_transformed_color(300,350+8*22,"+ 10 Health",0.075,0.075,0,c_lime,c_lime,c_green,c_green,1);
-		draw_text_transformed_color(300,350+9*22,"+ 1 Speed",0.075,0.075,0,c_lime,c_lime,c_green,c_green,1);
-		draw_text_transformed_color(300,350+10*22,"+ 5% Aura Power",0.075,0.075,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-		draw_text_transformed_color(300,350+11*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+12*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+13*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+14*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+15*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+16*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,bztext2,itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+		draw_set_font(fnt_menu_fill);
+		draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"Item Stats",itemTextSize*3,itemTextSize*3,0,global.orange,global.orange,c_yellow,c_yellow,1);
+		draw_set_font(fnt_NewNormalText);
+		draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"+ 10 Health",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+		draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"+ 1 Speed",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+		draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"+ 5% Aura Power",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+		draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		
 		//name
 		draw_set_font(fnt_menu_fill);
 		var ItemName = "Item Info: " + "Zombie Head"
-		draw_text_transformed_color(300,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+		draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	}
 	if (itemShowInfoFor == Boss.FlameWisp)
 	{
-		var fText = "Summon Flamie every [" + string(int64(10*(1-conjureCalc))) + "] seconds."
-		draw_text_transformed_color(300,350+1*22,fText,0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+2*22,"Walk to Flamie within a second",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+3*22,"and Flamie will shoot a giant flame",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+4*22,"ball at your enemies. After a",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+5*22,"second Flamie will disapear again.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		var fText = "Flamie apears every [" + string(int64(10*(1-conjureCalc))) + "] seconds."
+		draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,fText,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"Walk to Flamie within a second",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"and Flamie will shoot a giant flame",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"ball at your enemies. After a",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"second Flamie will disapear again.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		var fText2 = "[Projectile Damage]: " + string(dmgCalc*3)
-		draw_text_transformed_color(300,350+6*22,fText2,0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+7*22,"Item Stats",0.075,0.075,0,global.orange,global.orange,c_yellow,c_yellow,1);
-		draw_text_transformed_color(300,350+8*22,"+ 2 Damage",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+9*22,"+ 15% Conjuration Bonus",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+10*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+11*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+12*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+13*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+14*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+15*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(300,350+16*22,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,fText2,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+		draw_set_font(fnt_menu_fill);
+		draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"Item Stats",itemTextSize*3,itemTextSize*3,0,global.orange,global.orange,c_yellow,c_yellow,1);
+		draw_set_font(fnt_NewNormalText);
+		draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"+ 2 Damage",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+		draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"+ 15% Conjuration Bonus",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+		draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		
 		//name
 		draw_set_font(fnt_menu_fill);
 		var ItemName = "Item Info: " + "Flamie"
-		draw_text_transformed_color(300,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+		draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	}
 	
 	#endregion
@@ -150,11 +170,11 @@ if (menu == Menues.BossLoot)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);
 	
-	draw_text_transformed_color(300+20,735,"Clear",clearSize/2,clearSize/2,0,c_yellow,c_yellow,clearColor,clearColor,1);
-	draw_text_transformed_color(300-10,785,"selected",clearSize/2,clearSize/2,0,c_yellow,c_yellow,clearColor,clearColor,1);
-	draw_text_transformed_color(300+20,835,"items",clearSize/2,clearSize/2,0,c_yellow,c_yellow,clearColor,clearColor,1);
+	draw_text_transformed_color(300+20,735,"Clear",clearSize/2,clearSize/2,0,c_red,c_red,clearColor,clearColor,1);
+	draw_text_transformed_color(300-10,785,"selected",clearSize/2,clearSize/2,0,c_red,c_red,clearColor,clearColor,1);
+	draw_text_transformed_color(300+20,835,"items",clearSize/2,clearSize/2,0,c_red,c_red,clearColor,clearColor,1);
 	
-	draw_text_transformed_color(1310,760,"Fight!",fightSize,fightSize,0,c_yellow,c_yellow,fightColor,fightColor,1);
+	draw_text_transformed_color(1310,760,"Fight!",fightSize,fightSize,0,c_red,c_red,fightColor,fightColor,1);
 }
 if (menu == Menues.Settings)
 {
@@ -273,7 +293,7 @@ if (menu == Menues.Settings)
 if (menu == Menues.PlayerSelect)
 {
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(30,30,"Select Fighter",1.5,1.5,0,c_yellow,c_yellow,c_white,c_white,1);
+	draw_text_transformed_color(30,30,"Select Fighter",1.5,1.5,0,global.orange,global.orange,c_yellow,c_yellow,1);
 
 
 	draw_set_font(fnt_menu_fill);
@@ -282,7 +302,7 @@ if (menu == Menues.PlayerSelect)
 if (menu == Menues.BossSelect)
 {
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(30,30,"Select Fight",1.5,1.5,0,c_yellow,c_yellow,c_white,c_white,1);
+	draw_text_transformed_color(30,30,"Select Fight",1.5,1.5,0,global.orange,global.orange,c_yellow,c_yellow,1);
 
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);
@@ -388,7 +408,7 @@ if (menu == Menues.Play)
 if (menu == Menues.BossSlain)
 {
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(430,70,"Boss Slayed!",1.5,1.5,0,c_yellow,c_yellow,c_white,c_white,1);
+	draw_text_transformed_color(430,70,"Boss Slayed!",1.5,1.5,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);	

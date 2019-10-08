@@ -21,4 +21,5 @@ if (gameMaster.gravelingUnlocked == true)
 	gameMaster.bonusAura = 0;
 	gameMaster.bonusConjur = 0;
 	gameMaster.bonusCooldown = 0;
+	gameMaster.itemShowInfoFor = Boss.NoBoss;
 }

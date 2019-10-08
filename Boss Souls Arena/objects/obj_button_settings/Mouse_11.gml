@@ -2,6 +2,6 @@
 // You can write your code in this editor
 with (gameMaster)
 {
-	settingsColor = c_yellow;
+	settingsColor = global.darkYellow;
 	settingsSize = 1;
 }

@@ -127,26 +127,22 @@ global.steelBlue = make_color_rgb(70,130,180);
 global.paleViolet = make_color_rgb(138,43,226);
 global.slateGray = make_color_rgb(112,128,144);
 global.skyBlue = make_color_rgb(135,206,235);
+global.darkYellow = make_color_rgb(180,180,0);
 //text vars
 global.space = " ";
 global.slash = "/";
 //mainMenu text vars and settings
-playColor = c_white;
+playColor = global.darkYellow;
 playSize = 1;
-	entranceSize = 0.4;
-	flameSize = 0.4;
-	soulSize = 0.4;
-	royalSize = 0.4;
-	challangeSize = 0.4;
-bossLootColor = c_white;
-bossLootSize = 1;
-clearColor = c_white;
+playArenaColor = global.darkYellow;
+playArenaSize = 1;
+clearColor = c_maroon;
 clearSize = 1;
-fightColor = c_white;
+fightColor = c_maroon;
 fightSize = 1;
-statsColor = c_white;
+statsColor = c_yellow;
 statsSize = 1;
-settingsColor = c_yellow;
+settingsColor = global.darkYellow;
 settingsSize = 1;
 global.musicOn = true;
 global.soundOn = true;
@@ -223,7 +219,9 @@ previewLifeSteal = 0;
 previewAura = 0;
 previewConjur = 0;
 previewCooldown = 0;
-
+shoveInX = 0;// to shove in info text 
+itemTextSize = 0.075;
+itemTextSeparationY = 22;
 //arena
 global.arenaMiddleX = 615;
 global.arenaMiddleY = 600;
