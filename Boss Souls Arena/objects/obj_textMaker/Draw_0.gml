@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+draw_set_font(fnt_menu_fill);
 if (color == c_white)
 {
 	draw_text_transformed_color(x,y+yRise,int64(10*text),0.12,0.12,0,color,color,c_white,c_white,1+(yRise/15));

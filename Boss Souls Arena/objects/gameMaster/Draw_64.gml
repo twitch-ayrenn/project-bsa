@@ -422,17 +422,37 @@ if (menu == Menues.Death)
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);	
 }
 //showInfo
-if (global.ShowInfo == true && menu == Menues.Play || global.ShowInfo == true && menu == Menues.BossFailed || global.ShowInfo == true && menu == Menues.BossSlain)
+if (global.ShowInfo == true && menu == Menues.Play)
 {
-	draw_text_transformed_color(15,140,"Health:    /",0.2,0.2,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(82,140,int64(obj_allPlayer.hp),0.2,0.2,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(130,140,int64(obj_allPlayer.maxHp),0.2,0.2,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(15,160,"Damage:",0.2,0.2,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(82,160,int64(global.damage),0.2,0.2,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(15,180,"baseSpeed:",0.2,0.2,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(110,180,obj_allPlayer.moveSpeed,0.2,0.2,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(15,200,"realSpeed:",0.2,0.2,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(105,200,obj_allPlayer.actualSpeed,0.2,0.2,0,c_white,c_white,c_white,c_white,1);
+	var playerHealth = "[Current/Max Health]: [" + string(obj_allPlayer.hp) + "] | ["  + string(obj_allPlayer.maxHp) +"]";
+	var playerDmg = "[Damage]: [" + string(global.damage) + "]";
+	var playerFireRate = "[Attack Speed]: [" + string(obj_allPlayer.leftClickCooldown/30) + "]";
+	var playerSpeed = "[Base|Current Speed]: [" + string(obj_allPlayer.moveSpeed) + "] | ["  + string(obj_allPlayer.actualSpeed) +"]";
+	var playerDashPower = "[Dash/Tp Power]: [" + string(bonusDash) + "]";
+	var playerLifesteal = "[LifeSteal]: [" + string(global.lifeSteal) + "%]";//base is 75% for all damage
+	var playerAura = "[Aura Power]: [" + string(int64(obj_allPlayer.auraPower*100)) + "%]";
+	var playerConjuration = "[Conjuration Power]: [" + string(obj_allPlayer.conjurationPower*100) + "%]";
+	var playerCDRightClick = "[Right-Click Cooldown]: [" + string(obj_allPlayer.rightClickCooldown/30)+ "]";
+	var playerCDDash = "[Dash Cooldown]: [" + string(obj_allPlayer.dashCooldown/30)+ "]";
+	var playerCDUlt = "[Ultimate Cooldown]: [" + string(obj_allPlayer.ultCooldown/30)+ "]";
+	
+	var yIncreasse = 20;
+	var textSize = 0.075;
+	var xStart = 15;
+	draw_set_font(fnt_NewNormalText);
+	draw_text_transformed_color(xStart,100+1*yIncreasse,"Defensive & Mobility",textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(xStart,100+2*yIncreasse,playerHealth,textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(xStart,100+3*yIncreasse,playerSpeed,textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(xStart,100+4*yIncreasse,playerDashPower,textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(xStart,100+5*yIncreasse+10,"Damage & Sustain",textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);	
+	draw_text_transformed_color(xStart,100+6*yIncreasse+10,playerDmg,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);	
+	draw_text_transformed_color(xStart,100+7*yIncreasse+10,playerFireRate,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);	
+	draw_text_transformed_color(xStart,100+8*yIncreasse+10,playerLifesteal,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(xStart,100+9*yIncreasse+20,"Magic & Misc",textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);	
+	draw_text_transformed_color(xStart,100+10*yIncreasse+20,playerAura,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);	
+	draw_text_transformed_color(xStart,100+11*yIncreasse+20,playerCDRightClick,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);		
+	draw_text_transformed_color(xStart,100+12*yIncreasse+20,playerCDDash,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	draw_text_transformed_color(xStart,100+13*yIncreasse+20,playerCDUlt,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 }
 if (global.showDD == true)
 {
