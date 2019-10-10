@@ -4,6 +4,20 @@ if (hp > maxHp){hp = maxHp;}
 depth = -y;
 blackOutAlpha += clamp(0.1/30,0,1);//Varus
 image_angle = 0;
+#region Speed
+//checkBefore
+if (speed < 0){speed = 0;}
+if (actualDashSpeed < 0){actualDashSpeed = 0;}
+if (actualBKDashSpeed < 0){actualBKDashSpeed = 0;}
+//speed
+speed = actualDashSpeed + actualBKDashSpeed;
+//checkAfter
+if (speed < 0){speed = 0;}
+if (actualDashSpeed < 0){actualDashSpeed = 0;}
+if (actualBKDashSpeed < 0){actualBKDashSpeed = 0;}
+if (speed > 0){global.iFrame = true;}
+if (speed == 0){global.iFrame = false;}
+#endregion
 randomize();
 #endregion
 #region Movement
@@ -59,7 +73,7 @@ if (mouse_x < x)
 	#region ShadowAssassin
 	if (class == Character.ShadowAssassin)
 	{
-		if (mouse_check_button_released(mb_left) && canLeftClick == true)
+		if (mouse_check_button(mb_left) && canLeftClick == true)
 		{
 			if (distance_to_point(mouse_x,mouse_y) <= teleportRange && place_free(mouse_x,mouse_y))
 			{
@@ -90,22 +104,12 @@ if (mouse_x < x)
 				}
 			}
 		}
-		if (mouse_check_button_released(mb_left) && canLeftClick == true)
-		{
-			if (distance_to_point(mouse_x,mouse_y) > teleportRange && place_free(mouse_x,mouse_y))
-			{
-				canLeftClick = false;
-				leftClickCooldownLeft = leftClickCooldown/2;
-				knivesToThrow += 6;
-				throwingDirection = point_direction(x,y,mouse_x,mouse_y);
-			}
-		}
 	}
 	#endregion
 	#region Pyromancer
 	if (class == Character.Pyromancer)
 	{
-		if (mouse_check_button_released(mb_left) && canLeftClick == true)
+		if (mouse_check_button(mb_left) && canLeftClick == true)
 		{
 			canLeftClick = false;
 			leftClickCooldownLeft = leftClickCooldown;
@@ -167,45 +171,21 @@ if (mouse_x < x)
 	#region Bloodknight
 	if (class == Character.BloodKnight)
 	{
-		if (mouse_check_button_released(mb_left) && canLeftClick == true)
+		if (mouse_check_button(mb_left) && canLeftClick == true)
 		{
 			canLeftClick = false;
 			leftClickCooldownLeft = leftClickCooldown;
 			activateLeftClickItem = true;
 			
-			if (rightClickMode == 1)
+			repeat(int64(batAmount))
 			{
-				repeat(int64(batAmount))
-				{
-					var batShot = instance_create_depth(x+irandom_range(-25,25),y+irandom_range(-25,25),depth+1,obj_batProjectile);
-					batShot.speed = 6;
-					batShot.sprite_index = spr_batprojectile_long;
-					batShot.direction = point_direction(x,y,mouse_x,mouse_y);
-					batShot.destroyTime = 1*30;
-				}
+				var batShot = instance_create_depth(x+irandom_range(-25,25),y+irandom_range(-25,25),depth+1,obj_batProjectile);
+				batShot.speed = 6;
+				batShot.sprite_index = spr_batprojectile_long;
+				batShot.direction = point_direction(x,y,mouse_x,mouse_y);
+				batShot.destroyTime = 1*30;
 			}
-			if (rightClickMode == 2)
-			{
-				repeat(int64(batAmount*2))
-				{
-					var batShot = instance_create_depth(x+irandom_range(-25,25),y+irandom_range(-25,25),depth+1,obj_batProjectile);
-					batShot.speed = 6;
-					batShot.sprite_index = spr_batprojectile_baby;
-					batShot.direction = point_direction(x,y,mouse_x,mouse_y);
-					batShot.destroyTime = 0.5*30;
-				}
-			}
-			if (rightClickMode == 3)
-			{
-				repeat(int64(batAmount))
-				{
-					var batShot = instance_create_depth(x+irandom_range(-25,25),y+irandom_range(-25,25),depth+1,obj_batProjectile);
-					batShot.speed = 6;
-					batShot.sprite_index = spr_batprojectile_heal;
-					batShot.direction = point_direction(x,y,mouse_x,mouse_y);
-					batShot.destroyTime = 0.5*30;
-				}
-			}
+			
 			batAmount++;
 			if (batAmount > 3){batAmount = 1;}
 		}
@@ -214,31 +194,13 @@ if (mouse_x < x)
 	#region Items
 	#endregion
 	#region onGoingEffects
-	if (class == Character.ShadowAssassin)
-	{
-		if (knivesToThrow > 0 )
-		{
-			knivesThrownStacks++;	
-		}
-		if (knivesThrownStacks >= (0.333)*30 )
-		{
-			var dagger = instance_create_depth(x,y,depth+1,obj_dashKnife);
-			dagger.direction = throwingDirection;
-			dagger.speed = 7;
-			dagger.image_angle = throwingDirection-90;
-			dagger.image_xscale = 1;
-			dagger.image_yscale = 1;
-			knivesThrownStacks = 0;
-			knivesToThrow -= 1;
-		}
-	}
 	#endregion
 #endregion
 #region RightClick
 	#region ShadowAssassin
 	if (class == Character.ShadowAssassin)
 	{
-		if (mouse_check_button_released(mb_right) && canRightClick == true && canLeftClick == false)
+		if (mouse_check_button(mb_right) && canRightClick == true)
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
@@ -247,15 +209,17 @@ if (mouse_x < x)
 			canLeftClick = true;
 			leftClickCooldownLeft = 0;
 			var angleR = 5;
-			var amountR = int64(12);
+			var amountR = int64(8);
 			repeat(amountR)
 			{
 				var rightDagger = instance_create_depth(x,y,depth+1,obj_daggerProjectile);
 				rightDagger.direction = angleR;
-				rightDagger.speed = 7;
-				rightDagger.image_angle = angleR-90;
-				rightDagger.image_xscale = 0.9;
-				rightDagger.image_yscale = 1.1;
+				rightDagger.speed = 5;
+				rightDagger.sprite_index = sprite_index;
+				rightDagger.image_blend = c_dkgray;
+				rightDagger.image_xscale = 1;
+				rightDagger.image_yscale = 1;
+				rightDagger.destroyTime = (0.7)*30;
 				angleR += 360/amountR;
 			}
 		}
@@ -264,7 +228,7 @@ if (mouse_x < x)
 	#region Pyromancer
 	if (class == Character.Pyromancer)
 	{
-		if (mouse_check_button_released(mb_right) && canRightClick == true && pyroPortalAmount > 0)
+		if (mouse_check_button(mb_right) && canRightClick == true && pyroPortalAmount > 0)
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
@@ -312,25 +276,33 @@ if (mouse_x < x)
 	#region Bloodknight
 	if (class == Character.BloodKnight)
 	{
-		if (mouse_check_button_released(mb_right) && canRightClick == true)
+		if (mouse_check_button(mb_right) && canRightClick == true)
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
 			activateRightClickItem = true;
 			
-			rightClickMode++;
-			if (rightClickMode > 3){rightClickMode = 1;}
+			BKDashStopLeft = BKDashStop;
+			actualBKDashSpeed = dashSpeed*2;
+			direction = point_direction(x,y,mouse_x,mouse_y);
+		}
+		if (BKDashStopLeft > 0){BKDashStopLeft--;}
+		if (BKDashStopLeft <= 0)
+		{
+			actualBKDashSpeed -= dashSpeed*2; 
 		}
 	}
 	#endregion
-#region Items
-#endregion
+	#region Items
+	
+	#endregion
+
 #endregion
 #region Ult
 	#region ShadowAssassin
 	if (class == Character.ShadowAssassin)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true )
+		if (keyboard_check(ord("E")) && canUlt == true)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
@@ -340,18 +312,8 @@ if (mouse_x < x)
 			rightClickCooldownLeft = 0;
 			canLeftClick = true;
 			leftClickCooldownLeft = 0;
-			var amountU = int64(24);
-			var angelU = 20;
-			repeat(amountU)
-			{
-				var ultDagger = instance_create_depth(x,y,depth+1,obj_daggerProjectile);
-				ultDagger.direction = angelU;
-				ultDagger.speed = 7;
-				ultDagger.image_angle = angelU-90;
-				ultDagger.image_xscale = 0.9;
-				ultDagger.image_yscale = 1.1;
-				angelU += 360/amountU;
-			}
+			canDash = true;
+			dashCooldownLeft = 0;
 		}
 	}
 	#endregion
@@ -469,28 +431,22 @@ if (mouse_x < x)
 		{
 			canDash = false;
 			dashCooldownLeft = dashCooldown;
+			activateDashItem = true;
 			dashStopLeft = dashStop;
-			global.iFrame = true;
-			speed = dashSpeed;
+			actualDashSpeed = dashSpeed;
 			direction = point_direction(x,y,mouse_x,mouse_y);
 		
 			canLeftClick = true;
 			leftClickCooldownLeft = 0;
-			var amountD = int64(14);
-			var angelD = 10;
-			repeat(amountD)
+			
+			with(obj_shadowAttackRange)
 			{
-				var dashDagger = instance_create_depth(x,y,depth+1,obj_daggerProjectile);
-				dashDagger.direction = angelD;
-				dashDagger.speed = 5;
-				dashDagger.image_angle = angelD-90;
-				dashDagger.image_xscale = 0.9;
-				dashDagger.image_yscale = 1.1;
-				angelD += 360/amountD;
+				dealDamageTimes += 4;
+				dealDamage = true;
 			}
 		}
 	}
-#endregion
+	#endregion
 	#region Pyromancer
 	if (class == Character.Pyromancer)
 	{
@@ -498,9 +454,10 @@ if (mouse_x < x)
 		{
 			canDash = false;
 			dashCooldownLeft = dashCooldown;
+			activateDashItem = true;
 			dashStopLeft = dashStop;
 			global.iFrame = true;
-			speed = dashSpeed;
+			actualDashSpeed = dashSpeed;
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			
 			with (obj_pyroAttackRange)
@@ -549,9 +506,9 @@ if (mouse_x < x)
 		{
 			canDash = false;
 			dashCooldownLeft = dashCooldown;
+			activateDashItem = true;
 			dashStopLeft = dashStop;
-			global.iFrame = true;
-			speed = dashSpeed;
+			actualDashSpeed = dashSpeed;
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			
 			var batCircleShotAngle = 0;
@@ -573,6 +530,17 @@ if (mouse_x < x)
 	
 	#endregion
 #endregion
+#region Items
+if (summonFlamie == true)
+{
+	summonFlamieStacks++;
+}
+if (summonFlamieStacks >= summonFlamieTime)
+{
+	summonFlamieStacks = 0;
+	instance_create_depth((global.arenaMiddleX-x) + global.arenaMiddleX,(global.arenaMiddleY-y) + global.arenaMiddleY,depth,obj_equipment_flamie);
+}
+#endregion
 #region Cooldowns
 if (leftClickCooldownLeft > 0){leftClickCooldownLeft--;}
 if (leftClickCooldownLeft <= 0){canLeftClick = true;}
@@ -583,9 +551,7 @@ if (dashCooldownLeft <= 0){canDash = true;}
 if (dashStopLeft > 0){dashStopLeft--;}
 if (dashStopLeft <= 0)
 {
-	speed = 0; 
-	direction = 0;
-	global.iFrame = false;
+	actualDashSpeed -= dashSpeed; 
 }
 if (ultCooldownLeft > 0){ultCooldownLeft--;}
 if (ultCooldownLeft <= 0){canUlt = true;}

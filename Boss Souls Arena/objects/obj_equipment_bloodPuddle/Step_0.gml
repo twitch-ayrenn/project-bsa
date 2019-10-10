@@ -29,7 +29,7 @@ if (dealDamage == true)
 			var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
 			healText.color = c_lime;
 			healText.text = amountHealed;
-			with (obj_player)
+			with (global.player)
 			{
 				hp += global.damage*global.lifeSteal;
 			}

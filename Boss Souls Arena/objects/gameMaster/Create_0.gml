@@ -104,9 +104,15 @@ enum Effect
 	Spark,
 	Smoke,
 }
+enum States
+{
+	Idle,
+	Walking,
+}
 chosenClass = 0;
 chosenBoss = 0;
 timeToKill = 0;
+global.player = obj_allPlayer;
 //pricing
 global.demo = false;
 //save
@@ -147,7 +153,7 @@ settingsSize = 1;
 global.musicOn = true;
 global.soundOn = true;
 global.ambientOn = true;
-global.ShowInfo = true;
+global.ShowInfo = false;
 global.deBuggerInfo = true;
 global.showDD = false;
 global.showFps = true;

@@ -3,7 +3,7 @@
 depth = -y-100;
 image_angle -= 45;
 stacks++;
-if (stacks >= 26)
+if (stacks >= destroyTime)
 {
 	instance_destroy();
 }
@@ -18,13 +18,13 @@ if (place_meeting(x,y,enemy))
 	{	
 		hp -= global.damage;
 	}
-	var amountHealed = global.damage*0.75;
+	var amountHealed = global.damage*global.lifeSteal;
 	var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
 	healText.color = c_lime;
 	healText.text = amountHealed;
 	with (obj_allPlayer)
 	{
-		hp += global.damage*0.75;
+		hp += global.damage*global.lifeSteal;
 	}
 	instance_destroy();
 }

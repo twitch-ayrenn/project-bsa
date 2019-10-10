@@ -3,5 +3,6 @@
 destroy = true;
 stacks = 0;
 size = 0.6;
+destroyTime = (1)*30;
 image_xscale = size;
 image_yscale = size;

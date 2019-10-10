@@ -234,24 +234,6 @@ if (class == Character.BloodKnight)
 	draw_healthbar(215,40,220-1,95,(dashCooldownLeft / dashCooldown) * 100,dashColor,c_dkgray,c_dkgray,3,true,false);
 	draw_healthbar(220,70,225-1,95,(dashCooldownLeft / dashCooldown) * 100,dashColor,c_dkgray,c_dkgray,3,true,false);
 	//rightCLick
-	if(rightClickMode == 1)
-	{
-		draw_healthbar(235,45,240-1,95,100,c_red,c_red,c_red,3,true,false);
-		draw_healthbar(240,45,245-1,105,100,c_red,c_red,c_red,3,true,false);
-		draw_healthbar(245,45,250-1,100,100,c_red,c_red,c_red,3,true,false);
-	}
-	if(rightClickMode == 2)
-	{
-		draw_healthbar(235,45,240-1,95,100,c_teal,c_teal,c_teal,3,true,false);
-		draw_healthbar(240,45,245-1,105,100,c_teal,c_teal,c_teal,3,true,false);
-		draw_healthbar(245,45,250-1,100,100,c_teal,c_teal,c_teal,3,true,false);
-	}
-	if(rightClickMode == 3)
-	{
-		draw_healthbar(235,45,240-1,95,100,c_lime,c_lime,c_lime,3,true,false);
-		draw_healthbar(240,45,245-1,105,100,c_lime,c_lime,c_lime,3,true,false);
-		draw_healthbar(245,45,250-1,100,100,c_lime,c_lime,c_lime,3,true,false);
-	}
 	
 	draw_sprite_ext(spr_hpbar,0,50,15,5,5,0,c_white,1);
 	
@@ -272,9 +254,8 @@ if (class == Character.BloodKnight)
 	if (canUlt == true){draw_sprite_part_ext(spr_newCursor1,0,0,0,41,20,device_mouse_x_to_gui(0)-39,device_mouse_y_to_gui(0)-45,cursorSize,cursorSize,ultColor,1);}
 	if (canUlt == false){draw_sprite_part_ext(spr_newCursor1,0,0,0,41,20,device_mouse_x_to_gui(0)-39,device_mouse_y_to_gui(0)-45,cursorSize,cursorSize,c_dkgray,1);}
 	//rightclick
-	if (rightClickMode == 1){draw_sprite_part_ext(spr_newCursor1,1,33,20,8,5,device_mouse_x_to_gui(0)+26,device_mouse_y_to_gui(0)-5,cursorSize,cursorSize,c_red,1);}
-	if (rightClickMode == 2){draw_sprite_part_ext(spr_newCursor1,1,33,20,8,5,device_mouse_x_to_gui(0)+26,device_mouse_y_to_gui(0)-5,cursorSize,cursorSize,c_teal,1);}
-	if (rightClickMode == 3){draw_sprite_part_ext(spr_newCursor1,1,33,20,8,5,device_mouse_x_to_gui(0)+26,device_mouse_y_to_gui(0)-5,cursorSize,cursorSize,c_lime,1);}
+	if (canRightClick == true){draw_sprite_part_ext(spr_newCursor1,1,33,20,8,5,device_mouse_x_to_gui(0)+26,device_mouse_y_to_gui(0)-5,cursorSize,cursorSize,rightClickColor,1);}
+	if (canRightClick == false){draw_sprite_part_ext(spr_newCursor1,1,33,20,8,5,device_mouse_x_to_gui(0)+26,device_mouse_y_to_gui(0)-5,cursorSize,cursorSize,c_dkgray,1);}
 	//dash
 	if (canDash == true){draw_sprite_part_ext(spr_newCursor1,0,0,25,41,17,device_mouse_x_to_gui(0)-40,device_mouse_y_to_gui(0)+5,cursorSize,cursorSize,dashColor,1);}
 	if (canDash == false){draw_sprite_part_ext(spr_newCursor1,0,0,25,41,17,device_mouse_x_to_gui(0)-40,device_mouse_y_to_gui(0)+5,cursorSize,cursorSize,c_dkgray,1);}

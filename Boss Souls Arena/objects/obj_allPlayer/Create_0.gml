@@ -17,6 +17,7 @@ rightClickColorCd = c_white;
 //dash
 canDash = true;
 dashSpeed = 0;
+actualDashSpeed = 0;
 dashStop = (0.25)*30;
 dashStopLeft = 0;
 dashCooldown = 0;
@@ -52,10 +53,10 @@ playerSize = 1;
 #region class system
 if (class == Character.ShadowAssassin)
 {
-	leftClickCooldown = (10)*30;
-	rightClickCooldown = (10)*30;
-	dashCooldown = (5)*30;
-	ultCooldown = (20)*30;
+	leftClickCooldown = (8)*30;
+	rightClickCooldown = (8)*30;
+	dashCooldown = (8)*30;
+	ultCooldown = (16)*30;
 	idleSprite = spr_player_theAssasin;
 	walkSprite = spr_player_theAssasin_walking;
 	leftClickColor = global.purple;
@@ -90,9 +91,9 @@ if (class == Character.BloodKnight)
 {
 	hp = 100*2;
 	leftClickCooldown = (1)*30;
-	rightClickCooldown = (1);
-	dashCooldown = (10)*30;
-	ultCooldown = (30)*30;
+	rightClickCooldown = (7)*30;
+	dashCooldown = (7)*30;
+	ultCooldown = (14)*30;
 	idleSprite = spr_player_theBloodKnight;
 	walkSprite = spr_player_theBloodKnight_walking;
 	leftClickColor = c_teal;
@@ -100,15 +101,20 @@ if (class == Character.BloodKnight)
 	dashColor = c_fuchsia;
 	ultColor = global.orange;
 	//character specific
-	rightClickMode = 1;
 	batAmount = 1;
+	actualBKDashSpeed = 0;
+	BKDashStop = (0.35)*30;
+	BKDashStopLeft = 0;
+	BKDashCooldown = 0;
+	BKDashCooldownLeft = 0;
+	BKDdashDirection = 0;
 }
 #endregion
 #region Items
 hp += gameMaster.bonusHealth;
 moveSpeed += gameMaster.bonusSpeed/10;
 dashSpeed *= 1+(gameMaster.bonusDash/100);
-global.damage += gameMaster.bonusDamage;
+global.damage += gameMaster.bonusDamage/10;
 leftClickCooldown *= 1 - (gameMaster.bonusFirerate/100);
 global.lifeSteal += gameMaster.bonusLifeSteal;
 auraPower = 1 + (gameMaster.bonusAura/100);
@@ -122,12 +128,18 @@ activateLeftClickItem = false;
 activateRightClickItem = false;
 //
 if (global.itemSelected[Boss.BloodZombie] == true){instance_create_depth(x,y,depth+1,obj_visual_zombieHead);}
+summonFlamie = false;
+summonFlamieTime = 10*((1-conjurationPower)+1)*30;
+summonFlamieStacks = 0;
+if (global.itemSelected[Boss.FlameWisp] == true){summonFlamie = true;}
+
 bPSpeed = 1;
 #endregion
 #region Bosses
 blackOutAlpha = 0;
 #endregion
 #region maxValues
+actualBKDashSpeed = 0;//needs to exist or else it crashes 
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
 maxHp = hp;

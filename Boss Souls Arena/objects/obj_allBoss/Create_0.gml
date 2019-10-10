@@ -6,6 +6,8 @@ phase3Hp = 0; phase3Ms = 0; phase3Dmg = 0;
 phase4Hp = 0; phase4Ms = 0; phase4Dmg = 0;
 phase5Hp = 0; phase5Ms = 0; phase5Dmg = 0;
 phase6Hp = 0; phase6Ms = 0; phase6Dmg = 0;
+tier1Hp = 500; tier2Hp = 800; tier3Hp = 1200;
+tier4Hp = 2000; tier5Hp = 3000; tier6Hp = 5000;
 hp = 0;
 maxHp = hp;
 global.bossDamage = 10;
@@ -78,8 +80,8 @@ rapidFireSprite = 0;
 	if (gameMaster.chosenBoss == Boss.BloodZombie) 
 	{
 		//stats
-		phase1Hp = 200; phase1Ms = 1; phase1Dmg = 20;
-		phase2Hp = 300; phase2Ms = 1.5; phase2Dmg = 30;
+		phase1Hp = tier1Hp*0.4; phase1Ms = 1; phase1Dmg = 20;
+		phase2Hp = tier1Hp*0.6; phase2Ms = 1.5; phase2Dmg = 30;
 		hp = phase1Hp;
 		global.bossDamage = phase1Dmg;
 		moveSpeed = phase1Ms;
@@ -100,8 +102,8 @@ rapidFireSprite = 0;
 	if (gameMaster.chosenBoss == Boss.FlameWisp) 
 	{
 		//stats
-		phase1Hp = 200; phase1Ms = 1; phase1Dmg = 20;
-		phase2Hp = 200; phase2Ms = 1.5; phase2Dmg = 30;
+		phase1Hp = tier1Hp*0.5; phase1Ms = 1; phase1Dmg = 20;
+		phase2Hp = tier1Hp*0.5; phase2Ms = 1.5; phase2Dmg = 30;
 		hp = phase1Hp;
 		global.bossDamage = phase1Dmg;
 		moveSpeed = phase1Ms;
@@ -123,8 +125,8 @@ rapidFireSprite = 0;
 	if (gameMaster.chosenBoss == Boss.TheCorrupter1) 
 	{
 		//stats
-		phase1Hp = 250; phase1Ms = 1.25; phase1Dmg = 30;
-		phase2Hp = 250; phase2Ms = 1.75; phase2Dmg = 35;
+		phase1Hp = tier1Hp*0.5; phase1Ms = 1.25; phase1Dmg = 30;
+		phase2Hp = tier1Hp*0.5; phase2Ms = 1.75; phase2Dmg = 35;
 		hp = phase1Hp;
 		global.bossDamage = phase1Dmg;
 		moveSpeed = phase1Ms;
@@ -145,8 +147,8 @@ rapidFireSprite = 0;
 	if (gameMaster.chosenBoss == Boss.BloodRoyalVarus) 
 	{
 		//stats
-		phase1Hp = 200; phase1Ms = 1; phase1Dmg = 20;
-		phase2Hp = 200; phase2Ms = 1.5; phase2Dmg = 25;
+		phase1Hp = tier1Hp*0.2; phase1Ms = 1; phase1Dmg = 20;
+		phase2Hp = tier1Hp*0.8; phase2Ms = 1.5; phase2Dmg = 25;
 		hp = phase1Hp;
 		global.bossDamage = phase1Dmg;
 		moveSpeed = phase1Ms;
@@ -168,7 +170,7 @@ rapidFireSprite = 0;
 	if (gameMaster.chosenBoss == Boss.TheMadWitches) 
 	{
 		//stats
-		phase1Hp = 250; phase1Ms = 2; phase1Dmg = 20;
+		phase1Hp = tier1Hp; phase1Ms = 2; phase1Dmg = 20;
 		hp = phase1Hp;
 		global.bossDamage = phase1Dmg;
 		moveSpeed = phase1Ms;
@@ -192,9 +194,9 @@ rapidFireSprite = 0;
 	if (gameMaster.chosenBoss == Boss.WispSisterAnna) 
 	{
 		//stats
-		phase1Hp = 200; phase1Ms = 1; phase1Dmg = 30;
-		phase2Hp = 200; phase2Ms = 1.5; phase2Dmg = 35;
-		phase3Hp = 200; phase3Ms = 2; phase3Dmg = 40;
+		phase1Hp = tier2Hp*0.125; phase1Ms = 1; phase1Dmg = 30;
+		phase2Hp = tier2Hp*0.5; phase2Ms = 1.5; phase2Dmg = 35;
+		phase3Hp = tier2Hp*0.375; phase3Ms = 2; phase3Dmg = 40;
 		hp = phase1Hp;
 		global.bossDamage = phase1Dmg;
 		moveSpeed = phase1Ms;
@@ -209,7 +211,7 @@ rapidFireSprite = 0;
 		circleSprite = spr_boss_wispSisterAnna_circle;
 		gooSprite = spr_boss_wispSisterAnna_goo;
 		teleportSprite = spr_boss_wispSisterAnna_teleport;
-		rapidFireSprite = spr_boss_wispSisterAnna_chase;
+		rapidFireSprite = spr_boss_wispSisterAnna_rapidFire;
 		chaseSprite = spr_boss_wispSisterAnna_chase;
 	}
 	#endregion
