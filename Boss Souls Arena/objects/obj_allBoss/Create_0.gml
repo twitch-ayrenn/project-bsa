@@ -74,6 +74,7 @@ gooSprite = 0;
 teleportSprite = 0;
 beamSprite = 0;
 rapidFireSprite = 0;
+isHit = false;
 #endregion
 #region Bosses
 	#region BloodZombie
@@ -114,7 +115,7 @@ rapidFireSprite = 0;
 		maxPhase = 2;
 		//visual
 		size = 1.5;
-		alpha = 0.9;
+		alpha = 0.75;
 		coneSprite = spr_boss_flameWisp_coneAttack
 		circleSprite = spr_boss_flameWisp_circle;
 		oneShotSprite = spr_boss_flameWisp_oneShot;
@@ -207,12 +208,34 @@ rapidFireSprite = 0;
 		maxPhase = 3;
 		//visual
 		size = 1.5;
-		alpha = 0.85;
+		alpha = 0.75;
 		circleSprite = spr_boss_wispSisterAnna_circle;
 		gooSprite = spr_boss_wispSisterAnna_goo;
 		teleportSprite = spr_boss_wispSisterAnna_teleport;
 		rapidFireSprite = spr_boss_wispSisterAnna_rapidFire;
 		chaseSprite = spr_boss_wispSisterAnna_chase;
+	}
+	#endregion
+	#region Flame Gate
+	if (gameMaster.chosenBoss == Boss.FlameGate) 
+	{
+		//stats
+		phase1Hp = tier2Hp*1; phase1Ms = 0; phase1Dmg = 40;
+		hp = phase1Hp;
+		global.bossDamage = phase1Dmg;
+		moveSpeed = phase1Ms;
+		moveType = MovementType.StandingStill;
+		//attacks and phase
+		tier = 2;
+		phase = 1;
+		maxPhase = 1;
+		//visual
+		size = 1.5;
+		alpha = 1;
+		rapidFireSprite = spr_boss_theFlameGate_rapidFire;
+		gooSprite = spr_boss_theFlameGate_goo;
+		oneShotSprite = spr_boss_theFlameGate_oneShot;
+		coneSprite = spr_boss_theFlameGate_cone;
 	}
 	#endregion
 #endregion

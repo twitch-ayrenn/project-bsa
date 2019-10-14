@@ -5,7 +5,6 @@
     "name": "7986ecda-b846-4b8f-8854-be7a35378f7b",
     "children": [
         "3e910a9f-0cad-4b1b-9137-c2583586b277",
-        "5f40be8c-c743-45de-adbc-07e9bcb2cd1f",
         "bd08f5a1-611a-4f6e-9be2-272e262d0713",
         "066e7712-d06f-4aa5-b609-56de4d556e9a",
         "9d3536b3-cd1d-4ae5-929b-7c99b22d4ed4",
@@ -15,7 +14,7 @@
         "965d7cf7-6fce-4568-80f1-65f27ef17f90"
     ],
     "filterType": "GMObject",
-    "folderName": "grp_player",
+    "folderName": "grp_oldPlayer",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

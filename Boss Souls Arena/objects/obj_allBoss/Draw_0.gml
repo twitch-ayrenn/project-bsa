@@ -68,4 +68,10 @@ if (gameMaster.chosenBoss == Boss.TheMadWitches)
 		if (position == 3){draw_sprite_ext(spr_theYellowWitch_rapidFire,image_index,rightX,rightY,-1,size,0,c_white,fakeAlpha);}
 	}
 }
-draw_self();
+if (isHit == false){draw_self();}
+if (isHit == true)
+{
+	gpu_set_fog(true,c_white,0,0);
+	draw_self();
+	gpu_set_fog(false,c_white,0,0);
+}

@@ -408,18 +408,18 @@ if (mouse_x < x)
 			{
 				instance_destroy(obj_equipment_bloodPuddle);
 				var bloodPuddle = instance_create_depth(x,y,-6,obj_equipment_bloodPuddle);
-				bloodPuddle.image_xscale = 0.75*auraPower;
+				bloodPuddle.image_xscale = 1.1;
 				bloodPuddle.image_yscale = bloodPuddle.image_xscale;
 			}
 			if (instance_exists(obj_equipment_bloodPuddle) == false)
 			{
 				var bloodPuddle = instance_create_depth(x,y,-6,obj_equipment_bloodPuddle);
-				bloodPuddle.image_xscale = 0.75*auraPower;
+				bloodPuddle.image_xscale = 1.1;
 				bloodPuddle.image_yscale = bloodPuddle.image_xscale;
 			}
 		}
 	}
-	if (place_meeting(x,y,obj_equipment_bloodPuddle)){bPSpeed = 1 + (20*auraPower)/100;}
+	if (place_meeting(x,y,obj_equipment_bloodPuddle)){bPSpeed = 1 + (50)/100;}
 	if (!place_meeting(x,y,obj_equipment_bloodPuddle)){bPSpeed = 1;}
 	#endregion
 #endregion

@@ -632,24 +632,9 @@ if (menu == Menues.Main)
 {
 	chosenBoss = Boss.BloodZombie;
 }
-//cursor
-if (room == rm_menu || room == rm_bossSelect)
-{
-
-	if (instance_exists(obj_cursor_menu) == false)
-	{
-		instance_create_depth(mouse_x,mouse_y,1,obj_cursor_menu);	
-	}
-}
 //optemisation
 
 //stats
-timeStacks++;
-if (timeStacks >= (1)*30)
-{
-	timeStacks = 0;
-	timeSeconds += 1;
-}
 //balance
 if (global.dD > 1.32){global.dD = 1.32;}
 if (global.dD < 0.68){global.dD = 0.68;}

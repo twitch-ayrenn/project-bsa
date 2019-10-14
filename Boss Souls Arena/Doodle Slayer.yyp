@@ -943,6 +943,14 @@
             }
         },
         {
+            "Key": "1baf8ab7-3a57-47a3-bb09-c78e9743f4b2",
+            "Value": {
+                "id": "dcbb2aec-41ed-4a5e-99c0-a04993275ec5",
+                "resourcePath": "sprites\\spr_boss_theFlameGate_goo\\spr_boss_theFlameGate_goo.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1bf119b0-355b-4c6d-bcae-0d6cb0225e62",
             "Value": {
                 "id": "ae299d12-ab1c-43d1-9772-c053a136a21c",
@@ -1783,6 +1791,14 @@
             }
         },
         {
+            "Key": "313fd4b1-a5df-4f88-b5b0-c4d93deb469a",
+            "Value": {
+                "id": "6a032fb4-1491-4f9b-885b-0235e390c69c",
+                "resourcePath": "sprites\\spr_boss_theFlameGate_cone\\spr_boss_theFlameGate_cone.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "31564c1d-994e-4351-9af2-68dea13759eb",
             "Value": {
                 "id": "545c15eb-a542-41a7-9ea6-339b64183008",
@@ -2404,6 +2420,14 @@
                 "id": "cd2b327a-293a-4e32-89de-f757f63cdfdf",
                 "resourcePath": "sprites\\spr_speedAsh_outline_green\\spr_speedAsh_outline_green.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "4428644b-6a7b-496f-9478-95b377470316",
+            "Value": {
+                "id": "cb050d07-a291-42f7-ad67-acd5734836bc",
+                "resourcePath": "views\\4428644b-6a7b-496f-9478-95b377470316.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -3135,14 +3159,6 @@
             }
         },
         {
-            "Key": "5f40be8c-c743-45de-adbc-07e9bcb2cd1f",
-            "Value": {
-                "id": "fc3500b0-9a31-40ad-861f-3e649b20bba4",
-                "resourcePath": "objects\\obj_screenShake\\obj_screenShake.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "5f99da7e-124c-4694-98ea-758f412b0319",
             "Value": {
                 "id": "12dce977-5aba-40d0-8b5c-bfdca679db27",
@@ -3863,6 +3879,14 @@
             }
         },
         {
+            "Key": "77561c4e-6bdc-47e8-ae35-42e6a65f510b",
+            "Value": {
+                "id": "8e19597b-20a4-4853-9b48-00b74dad7f58",
+                "resourcePath": "sprites\\spr_allBosses\\spr_allBosses.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "77c18167-bfc2-4113-92a7-68dc6dcaebe4",
             "Value": {
                 "id": "44fa3c3f-7d4d-40da-bda5-9f1a61cc9e16",
@@ -3883,14 +3907,6 @@
             "Value": {
                 "id": "37a1fc61-6f77-43d0-b56a-3cfe9f749717",
                 "resourcePath": "objects\\obj_soulGuardSword_right_2\\obj_soulGuardSword_right_2.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "78683ef6-8b66-46e3-bff0-c7aab27a92f0",
-            "Value": {
-                "id": "9214a3f2-0a73-49c4-85a8-60122b5eec50",
-                "resourcePath": "objects\\obj_cursor_menu\\obj_cursor_menu.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -3988,6 +4004,14 @@
                 "id": "af935ec4-637a-4306-ba01-3a1536eaee00",
                 "resourcePath": "objects\\obj_ads_zombie\\obj_ads_zombie.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "7a87f070-646f-4d75-aa42-edb39d88927c",
+            "Value": {
+                "id": "4795181f-85cb-41be-b1e6-d14a1e2edb93",
+                "resourcePath": "sprites\\spr_boss_theFlameGate_oneShot\\spr_boss_theFlameGate_oneShot.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -4652,6 +4676,14 @@
                 "id": "693a63aa-261f-466e-b058-29c80464a1bb",
                 "resourcePath": "objects\\obj_fightCard_theMadWitches\\obj_fightCard_theMadWitches.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "906c20f8-648b-4e6e-97b3-77ed7196f74a",
+            "Value": {
+                "id": "839eb1a0-e117-4fb9-a8e8-45b6159f65bc",
+                "resourcePath": "scripts\\scr_freeze\\scr_freeze.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -6847,6 +6879,14 @@
             }
         },
         {
+            "Key": "d1340eed-6ff6-48ac-b094-9aeda22c27b4",
+            "Value": {
+                "id": "64496785-69d7-42e3-95b3-5f609188f5d1",
+                "resourcePath": "sprites\\spr_boss_theFlameGate_rapidFire\\spr_boss_theFlameGate_rapidFire.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "d14481ef-0766-46af-b33c-31d1163f5a47",
             "Value": {
                 "id": "16979be4-cf9f-47a5-bc73-5103244619d6",
@@ -8436,7 +8476,8 @@
         "b545f798-3391-409f-bf1a-819032e8aa95",
         "028a5c78-f2cd-4144-bfe2-19e227344076",
         "d3de394c-79c0-4c01-a27b-cbd4adbed761",
-        "fe53928b-b172-47df-9f24-ae3a037a8aa4"
+        "fe53928b-b172-47df-9f24-ae3a037a8aa4",
+        "906c20f8-648b-4e6e-97b3-77ed7196f74a"
     ],
     "tutorial": ""
 }

@@ -113,6 +113,7 @@ chosenClass = 0;
 chosenBoss = 0;
 timeToKill = 0;
 global.player = obj_allPlayer;
+global.arena = rm_arena;
 //pricing
 global.demo = false;
 //save

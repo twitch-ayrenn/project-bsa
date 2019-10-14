@@ -86,6 +86,7 @@ if (attack == Atks.GooSpawn)
 		gooGround.image_yscale = 2;
 		gooGround.destroy = false;
 		gooGround.effectType = Effect.NoEffect;
+		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
 	}
 	if (gameMaster.chosenBoss == Boss.TheCorrupter1)
 	{
@@ -187,8 +188,9 @@ if (attack == Atks.ConeAttack)
 {
 	if (gameMaster.chosenBoss == Boss.FlameWisp)
 	{
-		var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-45;
+		
 		var coneWide = 90;
+		var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-90*0.5;
 		var coneAmount = 6;
 		repeat(coneAmount)
 		{
@@ -209,8 +211,9 @@ if (attack == Atks.ConeAttack)
 	}
 	if (gameMaster.chosenBoss == Boss.BloodRoyalVarus)
 	{
-		var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-45;
+		
 		var coneWide = 120;
+		var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.5;
 		var coneAmount = 7;
 		repeat(coneAmount)
 		{
@@ -425,20 +428,85 @@ if (attack == Atks.GooSpawn)
 		gooGround.image_yscale = 4;
 		gooGround.destroy = true;
 		gooGround.effectType = Effect.NoEffect;
-		instance_destroy(obj_indicator);
+		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
+	}
+	if (gameMaster.chosenBoss == Boss.FlameGate)
+	{
+		var bottomGooSpawn = instance_nearest(global.arenaMiddleX,global.arenaMiddleY+135,obj_enemyProjectile);
+		if (spawnThingOnce == true)
+		{
+			spawnThingOnce = false;
+			var gooGround = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY+135,-5,obj_enemyProjectile);
+			//Main
+			gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+			gooGround.speed = 0;
+			gooGround.image_angle = 90;
+			//Visual
+			gooGround.image_alpha = 0.75;
+			gooGround.image_blend = c_orange;
+			gooGround.sprite_index = spr_gooGround;
+			gooGround.image_xscale = 2;
+			gooGround.image_yscale = 2;
+			gooGround.destroy = false;
+			gooGround.effectType = Effect.NoEffect;
+		}
+		if (spawnThingOnce == false)
+		{
+			with (bottomGooSpawn)
+			{
+				image_xscale += clamp(0.75,0,2.5);
+				image_yscale = image_xscale;
+			}
+		}
 	}
 }
 #endregion
 #region OneShot
 if (attack == Atks.OneShotAttack)
 {
-	
+	if (gameMaster.chosenBoss == Boss.FlameGate)
+	{
+		var infernalBall = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+		//Main
+		infernalBall.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		infernalBall.speed = 3.75;
+		infernalBall.image_angle = infernalBall.direction+90;
+		//Visual
+		infernalBall.image_alpha = 0.85;
+		infernalBall.image_blend = global.orange;
+		infernalBall.sprite_index = spr_fireBall;
+		infernalBall.image_xscale = 3.5;
+		infernalBall.image_yscale = 3.5;
+		infernalBall.effectType = Effect.Spark;
+	}
 }
 #endregion
 #region ConeAttack
 if (attack == Atks.ConeAttack)
 {
-	
+	if (gameMaster.chosenBoss == Boss.FlameGate)
+	{
+		
+		var coneWide = 45;
+		var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.5;
+		var coneAmount = 15;
+		repeat(coneAmount)
+		{
+			var fireBolt = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			fireBolt.direction = coneAtkFW;
+			fireBolt.speed = 5;
+			fireBolt.image_angle = fireBolt.direction+90;
+			//Visual
+			fireBolt.image_alpha = 0.85;
+			fireBolt.sprite_index = spr_fireBall;
+			fireBolt.image_blend = global.orange;
+			fireBolt.image_xscale = 1.2;
+			fireBolt.image_yscale = 1.2;
+			fireBolt.effectType = Effect.Flare;
+			coneAtkFW += (coneWide/coneAmount);
+		}
+	}
 }
 #endregion
 #region ChaseAttack
@@ -459,6 +527,10 @@ if (attack == Atks.RapidFire)
 	if (gameMaster.chosenBoss == Boss.WispSisterAnna)
 	{
 		rapidFireStacks += 10;
+	}
+	if (gameMaster.chosenBoss == Boss.FlameGate)
+	{
+		rapidFireStacks += 8;
 	}
 }
 #endregion

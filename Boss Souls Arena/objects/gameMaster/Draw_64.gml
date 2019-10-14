@@ -118,16 +118,16 @@ if (menu == Menues.BossLoot)
 		draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"area that increases your speed and",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"damages enemies that stand in the",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"area.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-		var bztext = "[Area Damage]: " + string(dmgCalc) + "/second";
+		var bztext = "[Area Damage]: " + string(dmgCalc*0.5) + "/second";
 		draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,bztext,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
-		var bztext2 = "[Speed Increase]: " +  string(20*(1+auraCalc)) + "%";
+		var bztext2 = "[Speed Increase]: " +  string(50) + "%";
 		draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,bztext2,itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
 		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"Item Stats",itemTextSize*3,itemTextSize*3,0,global.orange,global.orange,c_yellow,c_yellow,1);
 		draw_set_font(fnt_NewNormalText);
-		draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"+ 10 Health",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
-		draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"+ 1 Speed",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
-		draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"+ 5% Aura Power",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+		draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"+ 30 Health",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+		draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"+ 2 Speed",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+		draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -146,7 +146,7 @@ if (menu == Menues.BossLoot)
 		draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"and Flamie will shoot a giant flame",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"ball at your enemies. After a",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"second Flamie will disapear again.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-		var fText2 = "[Projectile Damage]: " + string(dmgCalc*3)
+		var fText2 = "[Projectile Damage]: " + string(dmgCalc*5)
 		draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,fText2,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"Item Stats",itemTextSize*3,itemTextSize*3,0,global.orange,global.orange,c_yellow,c_yellow,1);
