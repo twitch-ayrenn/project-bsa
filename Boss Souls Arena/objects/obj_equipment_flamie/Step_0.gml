@@ -6,7 +6,7 @@ if (destroy == true)
 	
 	alarm[0] = (3)*30;
 }
-if (place_meeting(x,y,global.player) || distance_to_object(global.player) <= 10)
+if (distance_to_object(global.player) <= 10 && instance_exists(par_enemy))
 {
 	var target = instance_nearest(x,y,par_enemy)
 	var dagger = instance_create_depth(x,y,depth+1,obj_flamieBolt);

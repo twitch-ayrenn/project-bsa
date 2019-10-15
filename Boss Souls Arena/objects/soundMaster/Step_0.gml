@@ -35,10 +35,6 @@ if (instance_exists(obj_boss_theWispMother) == false)
 {
 	audio_stop_sound(snd_boss_theWispMother);
 }
-if (instance_exists(obj_boss_bloodPrince) == false && instance_exists(obj_ads_bloodBatBig) == false && gameMaster.menu != Menues.Play)
-{
-	audio_stop_sound(snd_boss_theBloodPrince);
-}
 if (instance_exists(obj_boss_theOrangeWitch) == false && instance_exists(obj_boss_theYellowWitch) == false && instance_exists(obj_boss_theGreenWitch) == false)
 {
 	audio_stop_sound(snd_boss_theMadWitches);

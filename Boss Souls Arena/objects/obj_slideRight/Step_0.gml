@@ -15,7 +15,7 @@ if (gameMaster.menu == Menues.BossSelect && hover == true && obj_fightCard_ladyC
 	depth = obj_fightCard_abyssSerpant.depth-1;
 	with(par_scrollingThings)
 	{
-		x -= 1.5;	
+		x -= global.slidingSpeed;	
 	}
 }
 if (keyboard_check(vk_right) && obj_fightCard_ladyCorruption.x > 136 || keyboard_check(ord("D")) && obj_fightCard_ladyCorruption.x > 136)
@@ -24,7 +24,7 @@ if (keyboard_check(vk_right) && obj_fightCard_ladyCorruption.x > 136 || keyboard
 	{
 		with(par_scrollingThings)
 		{
-			x -= 2;	
+			x -= global.slidingSpeed;	
 		}
 	}
 }

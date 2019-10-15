@@ -222,6 +222,10 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.WispSisterAnna && phase == 2){attack = choose(Atks.CircleAttack,Atks.ChaseAttack,Atks.GooSpawn,Atks.TeleportAttack);}
 	if (gameMaster.chosenBoss == Boss.WispSisterAnna && phase == 3){attack = choose(Atks.RapidFire);}
 	if (gameMaster.chosenBoss == Boss.FlameGate && phase == 1){attack = choose(Atks.RapidFire,Atks.RapidFire,Atks.ConeAttack,Atks.OneShotAttack,Atks.GooSpawn);}
+	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 1){attack = choose(Atks.NormalShot,Atks.ChaseAttack,Atks.TeleportAttack);}
+	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 2){attack = choose(Atks.NormalShot,Atks.ChaseAttack,Atks.TeleportAttack);}
+	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 3){attack = choose(Atks.ChaseAttack);}
+	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 4){attack = choose(Atks.NormalShot,Atks.ChaseAttack,Atks.TeleportAttack);}
 	#endregion
 	if (attack == Atks.NormalShot)
 	{
@@ -319,6 +323,7 @@ if(chooseAnAttack == true)
 	{
 		sprite_index = teleportSprite;
 		attackColor = global.purple;
+		if (gameMaster.chosenBoss == Boss.WispSisterAnna || gameMaster.chosenBoss == Boss.BloodPrinceVarus)
 		alpha = 0;
 		var xTp = obj_allPlayer.x + choose(-200,-150,-100,100,150,200);
 		var yTp = obj_allPlayer.y + choose(-150,-100,100,150);

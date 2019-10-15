@@ -15,7 +15,7 @@ if (gameMaster.menu == Menues.BossSelect && hover == true && obj_fightCard_theBl
 	depth = obj_fightCard_abyssSerpant.depth-1;
 	with(par_scrollingThings)
 	{
-		x += 1.5;	
+		x += global.slidingSpeed;	
 	}
 }
 if (keyboard_check(vk_left) && obj_fightCard_theBloodZombie.x < 34 || keyboard_check(ord("A")) && obj_fightCard_theBloodZombie.x < 34)
@@ -24,7 +24,7 @@ if (keyboard_check(vk_left) && obj_fightCard_theBloodZombie.x < 34 || keyboard_c
 	{
 		with(par_scrollingThings)
 		{
-			x += 2;	
+			x += global.slidingSpeed;	
 		}
 	}
 }

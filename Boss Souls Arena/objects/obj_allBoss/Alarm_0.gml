@@ -9,7 +9,7 @@ if (attack == Atks.NormalShot)
 		var bloodKlot = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
 		//Main
 		bloodKlot.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
-		bloodKlot.speed = 6;
+		bloodKlot.speed = 6 ;
 		bloodKlot.image_angle = bloodKlot.direction;
 		//Visual
 		bloodKlot.image_alpha = 0.85;
@@ -382,6 +382,16 @@ if (attack == Atks.TeleportAttack)
 #endregion
 #region Tier2
 #region NormalAttacks
+if (attack == Atks.NormalShot)
+{
+	if (gameMaster.chosenBoss == Boss.DeathKnight)
+	{
+		if	(phase == 1)
+		{
+				
+		}
+	}
+}
 #endregion
 #region CircleAttacks
 if (attack == Atks.CircleAttack)

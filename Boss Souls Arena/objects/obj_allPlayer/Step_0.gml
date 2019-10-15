@@ -402,7 +402,7 @@ if (mouse_x < x)
 	if (activateUltItem == true)
 	{
 		activateUltItem = false;
-		if (global.itemSelected[Boss.BloodZombie] == true)
+		if (global.itemSelected[Boss.BloodZombie] == true && instance_exists(par_enemy))
 		{
 			if (instance_exists(obj_equipment_bloodPuddle) == true)
 			{

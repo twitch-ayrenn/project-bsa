@@ -238,6 +238,33 @@ isHit = false;
 		coneSprite = spr_boss_theFlameGate_cone;
 	}
 	#endregion
+	#region DeathKnight
+	if (gameMaster.chosenBoss == Boss.DeathKnight) 
+	{
+		//stats
+		phase1Hp = tier2Hp*0.20; phase1Ms = 2; phase1Dmg = 45;
+		phase2Hp = tier2Hp*0.20; phase2Ms = 2; phase2Dmg = 50;
+		phase3Hp = tier2Hp*0.20; phase3Ms = 2; phase3Dmg = 55;
+		phase4Hp = tier2Hp*0.4; phase4Ms = 2; phase4Dmg = 60;
+		hp = phase1Hp;
+		global.bossDamage = phase1Dmg;
+		moveSpeed = phase1Ms;
+		moveType = MovementType.WalkingTowards;
+		//attacks and phase
+		tier = 2;
+		phase = 1;
+		maxPhase = 4;
+		//visual
+		size = 1;
+		alpha = 0.95;
+		normalSprite = spr_boss_deathKinght_normalAttack;
+		chaseSprite = spr_boss_deathKinght_chase;
+		teleportSprite = spr_boss_deathKinght_teleport;
+		//boss Specfic
+		var scythe = instance_create_depth(x,y,depth,obj_bossMeleeWeapon);
+		scythe.sprite_index = spr_deathKnightScythe_spin;
+	}
+	#endregion
 #endregion
 #region Finalize
 sprite_index = normalSprite;

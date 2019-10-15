@@ -165,6 +165,7 @@ exitColor = c_maroon;
 exitSize = 1;
 backColor = c_maroon;
 backSize = 1;
+global.slidingSpeed = 1.75;
 ////Character progression and select
 //Progress
 assassinProgress = 40;
