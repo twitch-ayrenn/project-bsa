@@ -1,5 +1,6 @@
 /// @description Cooldwon
 if (chooseAnAttack == false){chooseAnAttack = true;}
+speed = 0; 
 moveSpeed = normalMoveSpeed;
 pointX = choose(60,0,-60);
 pointY = choose(60,-60);
@@ -29,5 +30,12 @@ if (gameMaster.chosenBoss == Boss.TheMadWitches)
 		teleportSprite = spr_theOrangeWitch_teleport;
 		rapidFireSprite = spr_theOrangeWitch_rapidFire;
 		gooSprite = spr_theOrangeWitch_goo;
+	}
+}
+if (gameMaster.chosenBoss == Boss.DeathKnight)
+{
+	with(obj_bossMeleeWeapon)
+	{
+		state = MeleeWeaponStates.idle;
 	}
 }

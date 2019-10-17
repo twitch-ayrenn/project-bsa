@@ -2,7 +2,7 @@
 #region vars
 if (place_meeting(x,y,obj_allBoss) == false){depth = -50;}
 if (sprite_index == spr_gooGround){depth = -7;}
-var target = obj_allPlayer;
+var target = global.player;
 dmg = clamp(global.bossDamage*(clamp((target.hp/target.maxHp),0.5,1)),1,0.8*(target.maxHp));
 stacks++;
 #endregion

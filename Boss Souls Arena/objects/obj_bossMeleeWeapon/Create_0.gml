@@ -1,5 +1,4 @@
 /// @description Insert description here
-spinAmount = 0;
 enum MeleeWeaponStates
 {
 	idle,
@@ -7,3 +6,10 @@ enum MeleeWeaponStates
 	SpinChase,
 }
 state = 0;
+spinTimes = 0;
+canSpin = true;
+doSpin = false;
+spinSpeed = 30;
+currentAngle = 0;
+canDealDamage = true;
+timeBeforeNextSpin = 0.15;

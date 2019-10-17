@@ -2879,6 +2879,14 @@
             }
         },
         {
+            "Key": "558056f5-0f40-4881-a49f-8ac9f65b7898",
+            "Value": {
+                "id": "d20c26e0-3cd5-4660-80e6-88340ed43ff3",
+                "resourcePath": "sprites\\spr_deathKnightScythe\\spr_deathKnightScythe.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5585e2ce-160d-4e9e-9de9-54269241fd94",
             "Value": {
                 "id": "24549a49-cdd1-4a24-a585-21e941726674",

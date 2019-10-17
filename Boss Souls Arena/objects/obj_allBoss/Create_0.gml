@@ -14,11 +14,13 @@ global.bossDamage = 10;
 moveSpeed = 0;
 actualSpeed = moveSpeed;
 normalMoveSpeed = moveSpeed;
+startUpVars = true;
 #endregion
 #region Movement
 enum MovementType
 {
 	WalkingTowards = 1,
+	WalkingTowardsWDirection,
 	WalkingAround,
 	Snake,
 	StandingStill,
@@ -57,6 +59,7 @@ rapidFireStacks = 0;
 canRapidAttack = true;
 spawnThingOnce = true;
 position = 1;
+dashSpeed = 0;
 #endregion
 #region Visuals
 size = 1;
@@ -242,14 +245,14 @@ isHit = false;
 	if (gameMaster.chosenBoss == Boss.DeathKnight) 
 	{
 		//stats
-		phase1Hp = tier2Hp*0.20; phase1Ms = 2; phase1Dmg = 45;
-		phase2Hp = tier2Hp*0.20; phase2Ms = 2; phase2Dmg = 50;
-		phase3Hp = tier2Hp*0.20; phase3Ms = 2; phase3Dmg = 55;
-		phase4Hp = tier2Hp*0.4; phase4Ms = 2; phase4Dmg = 60;
+		phase1Hp = tier2Hp*0.20; phase1Ms = 1; phase1Dmg = 30;
+		phase2Hp = tier2Hp*0.30; phase2Ms = 1; phase2Dmg = 30;
+		phase3Hp = tier2Hp*0.35; phase3Ms = 1; phase3Dmg = 30;
+		phase4Hp = tier2Hp*0.15; phase4Ms = 1; phase4Dmg = 30;
 		hp = phase1Hp;
 		global.bossDamage = phase1Dmg;
 		moveSpeed = phase1Ms;
-		moveType = MovementType.WalkingTowards;
+		moveType = MovementType.WalkingTowardsWDirection;
 		//attacks and phase
 		tier = 2;
 		phase = 1;
@@ -262,7 +265,8 @@ isHit = false;
 		teleportSprite = spr_boss_deathKinght_teleport;
 		//boss Specfic
 		var scythe = instance_create_depth(x,y,depth,obj_bossMeleeWeapon);
-		scythe.sprite_index = spr_deathKnightScythe_spin;
+		scythe.sprite_index = spr_deathKnightScythe;
+		dashSpeed = 6;
 	}
 	#endregion
 #endregion

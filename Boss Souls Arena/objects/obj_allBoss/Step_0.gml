@@ -1,7 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 globalvar attack;
-var target = global.player;
+if (startUpVars == true)
+{
+	startUpVars = false;
+	attack = 0;
+}
 #region Visuals
 randomize();
 var sizeX = size;
@@ -24,9 +28,24 @@ if (image_blend = c_red)
 #endregion
 #region Movement
 actualSpeed = moveSpeed;
-if (moveType == MovementType.WalkingTowards)
+if (moveType == MovementType.WalkingTowards && gameMaster.chosenBoss != Boss.DeathKnight)
 {
-	move_towards_point(target.x,target.y,actualSpeed);
+	move_towards_point(global.player.x,global.player.y,actualSpeed);
+}
+if (moveType == MovementType.WalkingTowardsWDirection)
+{
+	if (attack == Atks.NormalShot)
+	{
+		if (x <= global.player.x){x += actualSpeed;}
+		if (x > global.player.x){x -= actualSpeed;}
+		if (y <= global.player.y){y += actualSpeed;}
+		if (y > global.player.y){y -= actualSpeed;}
+		direction = point_direction(x,y,global.player.x,global.player.y);
+	}
+	if (attack != Atks.NormalShot)
+	{
+		move_towards_point(global.player.x,global.player.y,actualSpeed);
+	}
 }
 if (moveType == MovementType.StandingStill)
 {
@@ -222,15 +241,25 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.WispSisterAnna && phase == 2){attack = choose(Atks.CircleAttack,Atks.ChaseAttack,Atks.GooSpawn,Atks.TeleportAttack);}
 	if (gameMaster.chosenBoss == Boss.WispSisterAnna && phase == 3){attack = choose(Atks.RapidFire);}
 	if (gameMaster.chosenBoss == Boss.FlameGate && phase == 1){attack = choose(Atks.RapidFire,Atks.RapidFire,Atks.ConeAttack,Atks.OneShotAttack,Atks.GooSpawn);}
-	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 1){attack = choose(Atks.NormalShot,Atks.ChaseAttack,Atks.TeleportAttack);}
-	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 2){attack = choose(Atks.NormalShot,Atks.ChaseAttack,Atks.TeleportAttack);}
-	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 3){attack = choose(Atks.ChaseAttack);}
-	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 4){attack = choose(Atks.NormalShot,Atks.ChaseAttack,Atks.TeleportAttack);}
+	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 1){attack = choose(Atks.NormalShot);}
+	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 2){attack = choose(Atks.NormalShot,Atks.TeleportAttack);}
+	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 3){attack = choose(Atks.ChaseAttack,Atks.ChaseAttack,Atks.TeleportAttack);}
+	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 4){attack = choose(Atks.ChaseAttack,Atks.ChaseAttack,Atks.TeleportAttack);}
+	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 4 && gameMaster.chosenClass != Character.ShadowAssassin){attack = choose(Atks.ChaseAttack);}
+	
 	#endregion
 	if (attack == Atks.NormalShot)
 	{
 		sprite_index = normalSprite;
 		attackColor = c_maroon;
+		#region Death Knight
+		if (gameMaster.chosenBoss == Boss.DeathKnight)
+		{
+			speed = dashSpeed;
+			
+			alarm[4] = (0.35)*30;
+		}
+		#endregion
 	}
 	if (attack == Atks.CircleAttack)
 	{
@@ -280,7 +309,7 @@ if(chooseAnAttack == true)
 		#region Blood Royal Varus
 		if (gameMaster.chosenBoss == Boss.BloodRoyalVarus)
 		{
-			moveSpeed = obj_allPlayer.actualSpeed*1.3;
+			moveSpeed = 2.6;
 			var chaseDamage = instance_create_depth(x,y,depth-1,obj_enemyProjectile);
 			//Visual
 			chaseDamage.image_alpha = 0;
@@ -295,7 +324,7 @@ if(chooseAnAttack == true)
 		#region Wisp Sister Anna
 		if (gameMaster.chosenBoss == Boss.WispSisterAnna)
 		{
-			moveSpeed = obj_allPlayer.actualSpeed*1.35;
+			moveSpeed = 2.65;
 			var chaseDamage = instance_create_depth(x,y,depth-1,obj_enemyProjectile);
 			//Visual
 			chaseDamage.image_alpha = 0;
@@ -305,6 +334,16 @@ if(chooseAnAttack == true)
 			chaseDamage.stickOn = true;
 			chaseDamage.range = (6.5)*30;
 			chaseDamage.effectType = Effect.NoEffect;
+		}
+		#endregion
+		#region Death Knight
+		if (gameMaster.chosenBoss == Boss.DeathKnight)
+		{
+			moveSpeed = 2.35;
+			with(obj_bossMeleeWeapon)
+			{
+				state = MeleeWeaponStates.SpinChase;
+			}
 		}
 		#endregion
 	}
@@ -324,11 +363,22 @@ if(chooseAnAttack == true)
 		sprite_index = teleportSprite;
 		attackColor = global.purple;
 		if (gameMaster.chosenBoss == Boss.WispSisterAnna || gameMaster.chosenBoss == Boss.BloodPrinceVarus)
-		alpha = 0;
-		var xTp = obj_allPlayer.x + choose(-200,-150,-100,100,150,200);
-		var yTp = obj_allPlayer.y + choose(-150,-100,100,150);
-		if (place_empty(xTp,y,obj_noGoZone)){x = xTp;}
-		if (place_empty(x,yTp,obj_noGoZone)){y = yTp;}
+		{
+			alpha = 0;
+			var xTp = obj_allPlayer.x + choose(-200,-150,-100,100,150,200);
+			var yTp = obj_allPlayer.y + choose(-150,-100,100,150);
+			if (place_empty(xTp,y,obj_noGoZone)){x = xTp;}
+			if (place_empty(x,yTp,obj_noGoZone)){y = yTp;}
+		}
+		if (gameMaster.chosenBoss == Boss.DeathKnight)
+		{
+			var indicator = instance_create_depth(global.player.x+40,global.player.y,-5,obj_indicator)
+			indicator.sprite_index = spr_damageCircle;
+			indicator.image_xscale = 0.08;
+			indicator.image_yscale = 0.08;
+			indicator.image_blend = c_maroon;
+			indicator.followPlayer = true;
+		}
 	}
 	alarm[0] = timeAfterIndicate;
 	alarm[1] = attackCooldown*choose(1,1,1,1,2);

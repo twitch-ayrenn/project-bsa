@@ -386,10 +386,8 @@ if (attack == Atks.NormalShot)
 {
 	if (gameMaster.chosenBoss == Boss.DeathKnight)
 	{
-		if	(phase == 1)
-		{
-				
-		}
+		obj_bossMeleeWeapon.state = MeleeWeaponStates.SpinOnce;
+		obj_bossMeleeWeapon.spinTimes = phase;
 	}
 }
 #endregion
@@ -551,6 +549,15 @@ if (attack == Atks.TeleportAttack)
 	{
 		alpha = normalAlpha;
 		chooseAnAttack = true;
+	}
+	if (gameMaster.chosenBoss == Boss.DeathKnight)
+	{
+		if(instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
+		obj_bossMeleeWeapon.image_angle = 270;
+		x = global.player.x+40;
+		y = global.player.y;
+		obj_bossMeleeWeapon.state = MeleeWeaponStates.SpinOnce;
+		obj_bossMeleeWeapon.spinTimes = phase;	
 	}
 }
 #endregion
