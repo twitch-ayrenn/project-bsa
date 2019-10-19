@@ -75,32 +75,81 @@ if (mouse_x < x)
 	{
 		if (mouse_check_button(mb_left) && canLeftClick == true)
 		{
-			if (distance_to_point(mouse_x,mouse_y) <= teleportRange && place_free(mouse_x,mouse_y))
+			if (instance_exists(obj_shadow))
 			{
-				canLeftClick = false;
-				leftClickCooldownLeft = leftClickCooldown;
-				activateLeftClickItem = true;
+				if (distance_to_point(mouse_x,mouse_y) <= teleportRange && place_free(mouse_x,mouse_y) || point_distance(obj_shadow.x,obj_shadow.y,mouse_x,mouse_y) <= teleportRange && place_free(mouse_x,mouse_y))
+				{
+					canLeftClick = false;
+					leftClickCooldownLeft = leftClickCooldown;
+					activateLeftClickItem = true;
 				
-				instance_create_depth(x,y,depth,obj_tpEffect);
-				image_alpha = 0;
-				if (global.soundOn == true)
-				{
-					audio_play_sound(snd_teleport,Prioity.Low,false);
-				}
+					instance_create_depth(x,y,depth,obj_tpEffect);
+					image_alpha = 0;
+					if (global.soundOn == true)
+					{
+						audio_play_sound(snd_teleport,Prioity.Low,false);
+					}
 		
-				x = mouse_x;
-				y = mouse_y;
-				var angleL = 0;
-				var amountL = int64(16);
-				repeat(amountL)
+					x = mouse_x;
+					y = mouse_y;
+					var angleL = 0;
+					var amountL = int64(20);
+					repeat(amountL)
+					{
+						var dagger = instance_create_depth(x,y,depth+1,obj_daggerProjectile);
+						dagger.direction = angleL;
+						dagger.speed = 7;
+						dagger.image_angle = angleL-90;
+						dagger.image_xscale = 0.9;
+						dagger.image_yscale = 1.1;
+						angleL += 360/amountL;
+					}
+					with (obj_shadow)
+					{
+						var angleL = 0;
+						var amountL = int64(20);
+						repeat(amountL)
+						{
+							var dagger = instance_create_depth(x,y,depth+1,obj_daggerProjectile);
+							dagger.direction = angleL;
+							dagger.speed = 7;
+							dagger.image_angle = angleL-90;
+							dagger.image_xscale = 0.9;
+							dagger.image_yscale = 1.1;
+							angleL += 360/amountL;
+						}
+					}
+				}
+			}
+			if (instance_exists(obj_shadow) == false)
+			{
+				if (distance_to_point(mouse_x,mouse_y) <= teleportRange && place_free(mouse_x,mouse_y))
 				{
-					var dagger = instance_create_depth(x,y,depth+1,obj_daggerProjectile);
-					dagger.direction = angleL;
-					dagger.speed = 7;
-					dagger.image_angle = angleL-90;
-					dagger.image_xscale = 0.9;
-					dagger.image_yscale = 1.1;
-					angleL += 360/amountL;
+					canLeftClick = false;
+					leftClickCooldownLeft = leftClickCooldown;
+					activateLeftClickItem = true;
+				
+					instance_create_depth(x,y,depth,obj_tpEffect);
+					image_alpha = 0;
+					if (global.soundOn == true)
+					{
+						audio_play_sound(snd_teleport,Prioity.Low,false);
+					}
+		
+					x = mouse_x;
+					y = mouse_y;
+					var angleL = 0;
+					var amountL = int64(20);
+					repeat(amountL)
+					{
+						var dagger = instance_create_depth(x,y,depth+1,obj_daggerProjectile);
+						dagger.direction = angleL;
+						dagger.speed = 7;
+						dagger.image_angle = angleL-90;
+						dagger.image_xscale = 0.9;
+						dagger.image_yscale = 1.1;
+						angleL += 360/amountL;
+					}
 				}
 			}
 		}
@@ -109,61 +158,33 @@ if (mouse_x < x)
 	#region Pyromancer
 	if (class == Character.Pyromancer)
 	{
-		if (mouse_check_button(mb_left) && canLeftClick == true)
+		if (canLeftClick == true)
 		{
-			canLeftClick = false;
-			leftClickCooldownLeft = leftClickCooldown;
-			activateLeftClickItem = true;
+			if (mouse_check_button(mb_left))
+			{
+				charge++;
+				moveSpeed = 0;
+			}
+			if (mouse_check_button_released(mb_left) || charge >= maxCharge)
+			{
+				canLeftClick = false;
+				leftClickCooldownLeft = leftClickCooldown;
+				activateLeftClickItem = true;	
+				
+				var infernalBall = instance_create_depth(x,y,depth+1,obj_firebolt)
+				infernalBall.speed = 4 + charge/45;
+				infernalBall.direction = point_direction(x,y,mouse_x,mouse_y);
+				infernalBall.image_angle = infernalBall.direction+90;
+				infernalBall.image_xscale = 0.5 + charge/30;
+				infernalBall.image_yscale = infernalBall.image_xscale;
+				infernalBall.charge = 1 + ((charge/3)-1);
 			
-			repeat(9)
-			{
-				var fireBolt = instance_create_depth(x,y+3,depth+1,obj_firebolt);
-				fireBolt.direction = point_direction(x,y,mouse_x,mouse_y) + irandom_range(-35,35);
-				fireBolt.image_angle = fireBolt.direction+90;
-				fireBolt.speed = 5;
-				fireBolt.image_xscale = 1;
-				fireBolt.image_yscale = fireBolt.image_xscale;
-			}
-			var fbPAngleL = 0;
-			var fbPAmountL = 9;
-			repeat(fbPAmountL)
-			{
-				var fireBolt = instance_create_depth(x,y+3,depth+1,obj_firebolt);
-				fireBolt.direction = fbPAngleL;
-				fireBolt.image_angle = fireBolt.direction+90;
-				fireBolt.speed = 4;
-				fireBolt.image_xscale = 0.75;
-				fireBolt.image_yscale = fireBolt.image_xscale;
-				fireBolt.timeToDestroy = 18;
-				fbPAngleL += 360/fbPAmountL;
-			}
-			if (instance_exists(obj_pyroPortal))
-			{
-				with (obj_pyroPortal)
-				{
-					repeat(9)
-					{
-						var fireBolt = instance_create_depth(x,y+3,depth+1,obj_firebolt);
-						fireBolt.direction = point_direction(x,y,mouse_x,mouse_y) + irandom_range(-35,35);
-						fireBolt.image_angle = fireBolt.direction+90;
-						fireBolt.speed = 5;
-						fireBolt.image_xscale = 1;
-						fireBolt.image_yscale = fireBolt.image_xscale;
-					}
-					var fbPAngleL = 0;
-					var fbPAmountL = 9;
-					repeat(fbPAmountL)
-					{
-						var fireBolt = instance_create_depth(x,y+3,depth+1,obj_firebolt);
-						fireBolt.direction = fbPAngleL;
-						fireBolt.image_angle = fireBolt.direction+90;
-						fireBolt.speed = 4;
-						fireBolt.image_xscale = 0.75;
-						fireBolt.image_yscale = fireBolt.image_xscale;
-						fireBolt.timeToDestroy = 18;
-						fbPAngleL += 360/fbPAmountL;
-					}
-				}
+				charge = 0;
+				moveSpeed = normalSpeed;
+				
+				instance_create_depth(x,y,-y,obj_pyroPortal);
+				instance_create_depth(x,y,-y,obj_portal_bottom);
+				
 			}
 		}
 	}
@@ -181,7 +202,7 @@ if (mouse_x < x)
 			{
 				var batShot = instance_create_depth(x+irandom_range(-25,25),y+irandom_range(-25,25),depth+1,obj_batProjectile);
 				batShot.speed = 6;
-				batShot.sprite_index = spr_batprojectile_long;
+				batShot.sprite_index = spr_batprojectile_heal;
 				batShot.direction = point_direction(x,y,mouse_x,mouse_y);
 				batShot.destroyTime = 1*30;
 			}
@@ -200,7 +221,8 @@ if (mouse_x < x)
 	#region ShadowAssassin
 	if (class == Character.ShadowAssassin)
 	{
-		if (mouse_check_button(mb_right) && canRightClick == true)
+		if (mouse_check_button(mb_right) && canRightClick == true && distance_to_point(mouse_x,mouse_y) <= teleportRange && place_free(mouse_x,mouse_y)||
+			mouse_check_button(mb_right) && canRightClick == true && point_distance(obj_shadow.x,obj_shadow.y,mouse_x,mouse_y) <= teleportRange && place_free(mouse_x,mouse_y))
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
@@ -208,27 +230,19 @@ if (mouse_x < x)
 			
 			canLeftClick = true;
 			leftClickCooldownLeft = 0;
-			var angleR = 5;
-			var amountR = int64(8);
-			repeat(amountR)
-			{
-				var rightDagger = instance_create_depth(x,y,depth+1,obj_daggerProjectile);
-				rightDagger.direction = angleR;
-				rightDagger.speed = 5;
-				rightDagger.sprite_index = sprite_index;
-				rightDagger.image_blend = c_dkgray;
-				rightDagger.image_xscale = 1;
-				rightDagger.image_yscale = 1;
-				rightDagger.destroyTime = (0.7)*30;
-				angleR += 360/amountR;
-			}
+			var shadow = instance_create_depth(mouse_x,mouse_y,-mouse_y,obj_shadow);
+			shadow.image_alpha = image_alpha-0.2;
+			shadow.image_xscale = image_xscale;
+			shadow.image_yscale = image_yscale;
+			var shadowRange = instance_create_depth(mouse_y,mouse_x,depth,obj_shadowAttackRange);
+			shadowRange.objectToFollow = shadow.id;
 		}
 	}
 	#endregion
 	#region Pyromancer
 	if (class == Character.Pyromancer)
 	{
-		if (mouse_check_button(mb_right) && canRightClick == true && pyroPortalAmount > 0)
+		if (mouse_check_button(mb_right) && canRightClick == true)
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
@@ -236,7 +250,6 @@ if (mouse_x < x)
 			
 			instance_create_depth(mouse_x,mouse_y,-mouse_y,obj_pyroPortal);
 			instance_create_depth(mouse_x,mouse_y,-mouse_y,obj_portal_bottom);
-			instance_create_depth(mouse_x,mouse_y,-mouse_y,obj_portalAttackRange);
 			
 			var fbPAngleL = 0;
 			var fbPAmountL = 9;
@@ -282,6 +295,8 @@ if (mouse_x < x)
 			rightClickCooldownLeft = rightClickCooldown;
 			activateRightClickItem = true;
 			
+			instance_create_depth(x,y,depth-1,obj_bloodKnightDash);
+			
 			BKDashStopLeft = BKDashStop;
 			actualBKDashSpeed = dashSpeed*2;
 			direction = point_direction(x,y,mouse_x,mouse_y);
@@ -290,6 +305,7 @@ if (mouse_x < x)
 		if (BKDashStopLeft <= 0)
 		{
 			actualBKDashSpeed -= dashSpeed*2; 
+			instance_destroy(obj_bloodKnightDash);
 		}
 	}
 	#endregion
@@ -314,6 +330,7 @@ if (mouse_x < x)
 			leftClickCooldownLeft = 0;
 			canDash = true;
 			dashCooldownLeft = 0;
+			hp = maxHp;
 		}
 	}
 	#endregion
@@ -512,13 +529,13 @@ if (mouse_x < x)
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			
 			var batCircleShotAngle = 0;
-			var batCricleShotAmountL = 12;
+			var batCricleShotAmountL = 24;
 			repeat(batCricleShotAmountL)
 			{
 				var batShot = instance_create_depth(x,y+3,depth+1,obj_batProjectile);
 				batShot.direction = batCircleShotAngle;
 				batShot.speed = 6;
-				batShot.sprite_index = spr_batprojectile_baby;
+				batShot.sprite_index = spr_batprojectile_long;
 				batShot.destroyTime = (0.5)*30;
 				batCircleShotAngle += 360/batCricleShotAmountL;
 				batShot.follow = false;

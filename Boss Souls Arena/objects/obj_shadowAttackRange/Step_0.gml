@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 depth = -5;
-x = obj_allPlayer.x;
-y = obj_allPlayer.y;
+x = objectToFollow.x;
+y = objectToFollow.y;
 var enemy = instance_nearest(x,y,par_enemy);
 if (dealDamageTimes > 0){image_index = 1;}
 if (dealDamageTimes == 0){image_index = 0;}

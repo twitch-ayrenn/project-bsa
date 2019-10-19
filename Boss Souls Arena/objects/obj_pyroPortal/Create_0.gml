@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
-portalLength = (4)*30;
+portalLength = (6)*30;
 destroyStacks = portalLength;
-canAttack = false;
+canAttack = true;
 size = 1;
 image_xscale = size;
 image_yscale = size;

@@ -53,9 +53,9 @@ playerSize = 1;
 #region class system
 if (class == Character.ShadowAssassin)
 {
-	leftClickCooldown = (8)*30;
-	rightClickCooldown = (8)*30;
-	dashCooldown = (8)*30;
+	leftClickCooldown = (7)*30;
+	rightClickCooldown = (12)*30;
+	dashCooldown = (7)*30;
 	ultCooldown = (16)*30;
 	idleSprite = spr_player_theAssasin;
 	walkSprite = spr_player_theAssasin_walking;
@@ -84,8 +84,8 @@ if (class == Character.Pyromancer)
 	dashColor = c_fuchsia;
 	ultColor = c_red;
 	//character specific
-	pyroPortalAmount = int64(1);
-	instance_create_depth(x,y,1,obj_pyroAttackRange);	
+	charge = 0;
+	maxCharge = (3)*30;
 }
 if (class == Character.BloodKnight)
 {

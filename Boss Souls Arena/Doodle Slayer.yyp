@@ -1103,14 +1103,6 @@
             }
         },
         {
-            "Key": "1f80f36b-60dc-41e4-bd4a-d31b14ff2ea5",
-            "Value": {
-                "id": "2d3abf5c-69c8-449d-b1be-f20241fd28e3",
-                "resourcePath": "sprites\\spr_assasin_cursor\\spr_assasin_cursor.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "1fa9b976-0411-47ca-90a8-10406039ffc4",
             "Value": {
                 "id": "fa71bd3f-5b1b-4147-a979-34753eba167d",
@@ -1707,14 +1699,6 @@
             "Value": {
                 "id": "9c0ed771-bc9c-4a90-b568-0f10088cb9db",
                 "resourcePath": "objects\\obj_equipment_bloodPuddle\\obj_equipment_bloodPuddle.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "2f8a0277-38da-4a52-a53e-f1e85bb48e96",
-            "Value": {
-                "id": "75800fd3-f80b-4c1a-ad0f-c4915d53c473",
-                "resourcePath": "objects\\obj_pyroAttackRange\\obj_pyroAttackRange.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -3711,6 +3695,14 @@
             }
         },
         {
+            "Key": "727c2ec7-628f-4db9-947c-82d1d47f379a",
+            "Value": {
+                "id": "67f1b361-5fc9-4d9f-98d5-d0825dfb53b2",
+                "resourcePath": "objects\\obj_shadow\\obj_shadow.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "72e162d2-229d-4d14-a94f-58c4d45708f5",
             "Value": {
                 "id": "91919cdf-e3f6-4315-9f5c-b338347372fc",
@@ -4943,6 +4935,14 @@
             }
         },
         {
+            "Key": "994100af-bb79-4cd3-ba7e-c71905b9f16f",
+            "Value": {
+                "id": "851a95af-e11f-4a41-87b0-c1bf807de0a3",
+                "resourcePath": "sprites\\spr_bloodKnightDash\\spr_bloodKnightDash.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "9a1401ef-6bc2-40bd-811d-0a838214f78b",
             "Value": {
                 "id": "2efcb061-9f40-46bd-afa0-520eed392b3a",
@@ -5236,14 +5236,6 @@
                 "id": "00502fcd-72a4-445c-a27a-3f9b973aa60a",
                 "resourcePath": "objects\\obj_keeperRange\\obj_keeperRange.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "a208967f-9064-497f-a40b-d85fff7a5e78",
-            "Value": {
-                "id": "8a0a2e06-cfc0-4135-98b2-ea2152361d90",
-                "resourcePath": "sprites\\spr_warriorcursor\\spr_warriorcursor.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -6823,6 +6815,14 @@
             }
         },
         {
+            "Key": "cfd35168-8d48-475b-9fec-fff5b080d445",
+            "Value": {
+                "id": "f9847aa6-c013-472e-82db-195db0d344b2",
+                "resourcePath": "objects\\obj_bloodKnightDash\\obj_bloodKnightDash.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "d01ceb86-a78b-4a4c-9b54-600f7100ae42",
             "Value": {
                 "id": "936a6edb-ec17-4aa9-b551-88e160e20ef0",
@@ -7164,14 +7164,6 @@
                 "id": "98720631-fe9f-49a5-b92c-97ec930d34eb",
                 "resourcePath": "sprites\\spr_deathKnightScythe_spin\\spr_deathKnightScythe_spin.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "dbef9529-0d55-4461-ab39-d877af8499d2",
-            "Value": {
-                "id": "6e160b78-5c4e-4178-8a01-329717b08321",
-                "resourcePath": "objects\\obj_portalAttackRange\\obj_portalAttackRange.yy",
-                "resourceType": "GMObject"
             }
         },
         {

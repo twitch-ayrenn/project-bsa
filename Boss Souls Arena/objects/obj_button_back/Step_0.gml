@@ -11,8 +11,8 @@ if (gameMaster.menu == Menues.BossSlain)
 {
 	if (instance_exists(global.player))
 	{
-		x = global.player.x-100-50-15;
-		y = global.player.y+50+25+15;
+		x = global.player.x-100-50-15-15;
+		y = global.player.y+50+25+15+15;
 	}
 }
 if (gameMaster.menu == Menues.Death)

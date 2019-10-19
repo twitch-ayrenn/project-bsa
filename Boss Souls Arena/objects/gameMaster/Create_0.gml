@@ -169,8 +169,8 @@ global.slidingSpeed = 1.75;
 ////Character progression and select
 //Progress
 assassinProgress = 40;
-bloodKnightProgress = 1;
-pyromancerProgress = 1;
+bloodKnightProgress = 40;
+pyromancerProgress = 40;
 shopkeeperProgress = 1;
 theRedWarriorProgress = 1;
 plaugeWalkerProgress = 1;

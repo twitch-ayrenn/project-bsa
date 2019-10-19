@@ -4,5 +4,5 @@ depth = -5;
 if (destroy == true)
 {
 	destroy = false;
-	alarm[0] = (3)*30;
+	alarm[0] = (6)*30;
 }

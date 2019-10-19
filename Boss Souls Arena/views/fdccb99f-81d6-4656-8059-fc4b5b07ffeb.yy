@@ -10,8 +10,7 @@
         "00975579-fe2b-4867-8adb-4436c5864db9",
         "8a1374a6-3aa9-42ba-a214-3db1f589321e",
         "6c77f702-0f75-4e54-b2be-881a8d5c74b2",
-        "74849474-86f2-4510-9db9-0d4406b7a154",
-        "a208967f-9064-497f-a40b-d85fff7a5e78"
+        "74849474-86f2-4510-9db9-0d4406b7a154"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_theRedWarrior",

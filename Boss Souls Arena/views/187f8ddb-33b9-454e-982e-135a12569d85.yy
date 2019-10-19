@@ -7,7 +7,8 @@
         "3fe9e66c-8d18-4d7a-aaaf-e33f1047e0f5",
         "7f22d3e5-e70e-4707-a90a-cfa9ba99510a",
         "b5d3c6da-b12b-4a9d-8809-40f4afbdf2e3",
-        "4aecb1e5-2ab4-49d0-afd6-09f7b7732e0d"
+        "4aecb1e5-2ab4-49d0-afd6-09f7b7732e0d",
+        "727c2ec7-628f-4db9-947c-82d1d47f379a"
     ],
     "filterType": "GMObject",
     "folderName": "grp_shadowAssassin",
