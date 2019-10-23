@@ -6,3 +6,4 @@ if (destroy == true)
 	destroy = false;
 	alarm[0] = (6)*30;
 }
+var lol = instance_nearest(x,y,obj_noGoZone);
