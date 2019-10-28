@@ -88,7 +88,7 @@ if (attack == Atks.GooSpawn)
 		gooGround.effectType = Effect.NoEffect;
 		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
 	}
-	if (gameMaster.chosenBoss == Boss.TheCorrupter1)
+	if (gameMaster.chosenBoss == Boss.TheCorrupter)
 	{
 		var middleGooSpawn = instance_nearest(645,590,obj_enemyProjectile);
 		if (spawnThingOnce == true)
@@ -166,21 +166,6 @@ if (attack == Atks.OneShotAttack)
 		infernalBall.image_yscale = 3;
 		infernalBall.effectType = Effect.Spark;
 	}
-	if (gameMaster.chosenBoss == Boss.BloodRoyalVarus)
-	{
-		var bigBat = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
-		//Main
-		bigBat.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
-		bigBat.speed = 5.25;
-		bigBat.image_angle = 0;
-		//Visual
-		bigBat.image_alpha = 0.85;
-		bigBat.image_blend = c_maroon;
-		bigBat.sprite_index = spr_bat;
-		bigBat.image_xscale = 1*(image_xscale);
-		bigBat.effectType = Effect.NoEffect;
-		bigBat.image_yscale = abs(bigBat.image_xscale);
-	}
 }
 #endregion
 #region Cone Attacks
@@ -206,29 +191,6 @@ if (attack == Atks.ConeAttack)
 			fireBolt.image_xscale = 1.2;
 			fireBolt.image_yscale = 1.2;
 			fireBolt.effectType = Effect.Flare;
-			coneAtkFW += (coneWide/coneAmount);
-		}
-	}
-	if (gameMaster.chosenBoss == Boss.BloodRoyalVarus)
-	{
-		
-		var coneWide = 120;
-		var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.5;
-		var coneAmount = 7;
-		repeat(coneAmount)
-		{
-			var bats = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
-			//Main
-			bats.direction = coneAtkFW;
-			bats.speed = 5;
-			bats.image_angle = 0;
-			//Visual
-			bats.image_alpha = 0.9;
-			bats.sprite_index = spr_bat;
-			bats.image_blend = c_aqua;
-			bats.image_xscale = 0.5*(image_xscale);
-			bats.image_yscale = abs(bats.image_xscale);
-			bats.effectType = Effect.NoEffect;
 			coneAtkFW += (coneWide/coneAmount);
 		}
 	}
@@ -284,7 +246,7 @@ if (attack == Atks.BeamAttack)
 			angleBeamPlus += (360/beamCircleAmount)
 		}
 	}
-	if (gameMaster.chosenBoss == Boss.TheCorrupter1 && phase == 2)
+	if (gameMaster.chosenBoss == Boss.TheCorrupter && phase == 2)
 	{
 		drawArea = false;
 		var beam = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
@@ -356,7 +318,7 @@ if (attack == Atks.BeamAttack)
 #region RapidFire
 if (attack == Atks.RapidFire)
 {
-	if (gameMaster.chosenBoss == Boss.TheCorrupter1)
+	if (gameMaster.chosenBoss == Boss.TheCorrupter)
 	{
 		rapidFireStacks += 5;
 	}
@@ -369,11 +331,7 @@ if (attack == Atks.RapidFire)
 #region Teleport
 if (attack == Atks.TeleportAttack)
 {
-	if (gameMaster.chosenBoss == Boss.BloodRoyalVarus)
-	{
-		alpha = normalAlpha;
-		chooseAnAttack = true;
-	}
+	
 }
 #endregion
 #region On all attacks
@@ -384,11 +342,7 @@ if (attack == Atks.TeleportAttack)
 #region NormalAttacks
 if (attack == Atks.NormalShot)
 {
-	if (gameMaster.chosenBoss == Boss.DeathKnight)
-	{
-		obj_bossMeleeWeapon.state = MeleeWeaponStates.SpinOnce;
-		obj_bossMeleeWeapon.spinTimes = phase;
-	}
+
 }
 #endregion
 #region CircleAttacks
@@ -550,11 +504,70 @@ if (attack == Atks.TeleportAttack)
 		alpha = normalAlpha;
 		chooseAnAttack = true;
 	}
+}
+#endregion
+#endregion
+#region Tier3
+#region NormalAttacks
+if (attack == Atks.NormalShot)
+{
+	if (gameMaster.chosenBoss == Boss.DeathKnight)
+	{
+		obj_bossMeleeWeapon.state = MeleeWeaponStates.SpinOnce;
+		obj_bossMeleeWeapon.spinTimes = phase;
+	}
+}
+#endregion
+#region CircleAttacks
+if (attack == Atks.CircleAttack)
+{
+	
+}
+#endregion
+#region GooSpawn
+if (attack == Atks.GooSpawn)
+{
+
+}
+#endregion
+#region OneShot
+if (attack == Atks.OneShotAttack)
+{
+
+}
+#endregion
+#region ConeAttack
+if (attack == Atks.ConeAttack)
+{
+
+}
+#endregion
+#region ChaseAttack
+if (attack == Atks.ChaseAttack)
+{
+	
+}
+#endregion
+#region BeamAttack
+if (attack == Atks.BeamAttack)
+{
+	
+}
+#endregion
+#region RapidFire
+if (attack == Atks.RapidFire)
+{
+
+}
+#endregion
+#region Teleport
+if (attack == Atks.TeleportAttack)
+{
 	if (gameMaster.chosenBoss == Boss.DeathKnight)
 	{
 		if(instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
 		obj_bossMeleeWeapon.image_angle = 270;
-		x = global.player.x+40;
+		x = global.player.x+45;
 		y = global.player.y;
 		obj_bossMeleeWeapon.state = MeleeWeaponStates.SpinOnce;
 		obj_bossMeleeWeapon.spinTimes = phase;	

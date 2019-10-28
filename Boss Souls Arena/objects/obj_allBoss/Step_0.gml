@@ -372,7 +372,7 @@ if(chooseAnAttack == true)
 		}
 		if (gameMaster.chosenBoss == Boss.DeathKnight)
 		{
-			var indicator = instance_create_depth(global.player.x+40,global.player.y,-5,obj_indicator)
+			var indicator = instance_create_depth(global.player.x+45,global.player.y,-5,obj_indicator)
 			indicator.sprite_index = spr_damageCircle;
 			indicator.image_xscale = 0.08;
 			indicator.image_yscale = 0.08;

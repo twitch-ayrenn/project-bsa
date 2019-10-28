@@ -36,49 +36,35 @@ enum Depths
 enum Boss
 {
 	NoBoss = 0,
-	BloodZombie = 1,
-	FlameWisp,
-	TheCorrupter1,
-	BloodRoyalVarus,
-	TheMadWitches,
 	
-	WispSisterAnna,
+	BloodZombie = 1,//3
+	FlameWisp, // this is new wisp sister anna
+	TheCorrupter,
+	
+	TheMadWitches,//4
 	FlameGate,
-	DeathKnight,
-	AngelSlayerRekZul1,
-	AngelKnightOscar1,
 	WispSisterJulia,
+	DeathKnight,
 	
+	AngelSlayerRekZul,//5
 	KnightWitchYi,
-	BloodPrinceVarus,
-	TheCorrupter2,
-	BloodKnightDavid,
-	InfenalWisp,
+	AngelKnightOscar,
 	DemonLordRekTaar,
-	InfernalGate,
-	AbyssSerpant,
-	Gravekeeper,
-	
-	AngelSlayerRekZul2,
-	AngelKnightOscar2,
-	DeathGeneral1,
-	FrostQueenFalak,
-	TheCorrupter3,
-	ShadowClan,
 	WispSisters,
-	StatueOfCorruption,
-	BloodKingVarus,
-	DemonQueensHead1,
-	SlimeKing,
 	
-	AngelSlayerRekZul3,
-	AngelKnightOscar3,
-	AncientAbyssSerpant,
-	GraveLord,
-	Headless,
-	DeathGeneral2,
-	DemonQueensHead2,
-	SlimeQueen,
+	Gravekeeper,//5
+    BloodKnightDavid,
+	DeathGeneral,
+	ShadowClan,
+	StatueOfCorruption,
+
+	FrostQueenFalak,//6
+	DemonQueensHead,
+	BloodKingVarus,
+	SlimeKing, 
+	DeathKing,
+	QueenSerpant,
+	VoidLordHeadless,
 	
 	LadyCorruption,
 }

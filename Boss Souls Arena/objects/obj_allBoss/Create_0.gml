@@ -80,194 +80,206 @@ rapidFireSprite = 0;
 isHit = false;
 #endregion
 #region Bosses
-	#region BloodZombie
-	if (gameMaster.chosenBoss == Boss.BloodZombie) 
-	{
-		//stats
-		phase1Hp = tier1Hp*0.4; phase1Ms = 1; phase1Dmg = 20;
-		phase2Hp = tier1Hp*0.6; phase2Ms = 1.5; phase2Dmg = 30;
-		hp = phase1Hp;
-		global.bossDamage = phase1Dmg;
-		moveSpeed = phase1Ms;
-		moveType = MovementType.WalkingTowards;
-		//attacks and phase
-		tier = 1;
-		phase = 1;
-		maxPhase = 2;
-		//visual
-		size = 1.5;
-		alpha = 1;
-		normalSprite = spr_boss_bloodZombie_nA;
-		circleSprite = spr_boss_bloodZombie_cir;
-		gooSprite = spr_boss_bloodZombie_goo;
-	}
+	#region Tier 1 Done
+		#region BloodZombie
+		if (gameMaster.chosenBoss == Boss.BloodZombie) 
+		{
+			//stats
+			phase1Hp = tier1Hp*0.4; phase1Ms = 1; phase1Dmg = 20;
+			phase2Hp = tier1Hp*0.6; phase2Ms = 1.5; phase2Dmg = 30;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.WalkingTowards;
+			//attacks and phase
+			tier = 1;
+			phase = 1;
+			maxPhase = 2;
+			//visual
+			size = 1.5;
+			alpha = 1;
+			normalSprite = spr_boss_bloodZombie_nA;
+			circleSprite = spr_boss_bloodZombie_cir;
+			gooSprite = spr_boss_bloodZombie_goo;
+		}
+		#endregion
+		#region FlameWisp
+		if (gameMaster.chosenBoss == Boss.FlameWisp) 
+		{
+			//stats
+			phase1Hp = tier1Hp*0.5; phase1Ms = 1; phase1Dmg = 20;
+			phase2Hp = tier1Hp*0.5; phase2Ms = 1.5; phase2Dmg = 30;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.WalkingTowards;
+			//attacks and phase
+			tier = 1;
+			phase = 1;
+			maxPhase = 2;
+			//visual
+			size = 1.5;
+			alpha = 0.75;
+			coneSprite = spr_boss_flameWisp_coneAttack
+			circleSprite = spr_boss_flameWisp_circle;
+			oneShotSprite = spr_boss_flameWisp_oneShot;
+			chaseSprite = spr_boss_flameWisp_chase;
+		}
+		#endregion
+		#region TheCorrupter
+		if (gameMaster.chosenBoss == Boss.TheCorrupter) 
+		{
+			//stats
+			phase1Hp = tier1Hp*0.5; phase1Ms = 1.25; phase1Dmg = 30;
+			phase2Hp = tier1Hp*0.5; phase2Ms = 1.75; phase2Dmg = 35;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.WalkingTowards;
+			//attacks and phase
+			tier = 1;
+			phase = 1;
+			maxPhase = 2;
+			//visual
+			size = 1;
+			alpha = 1;
+			beamSprite = spr_boss_theCorrupter_beam;
+			gooSprite = spr_boss_theCorrupter_goo;
+			rapidFireSprite = spr_boss_theCorrupter_rapidFire;
+		}
+		#endregion
 	#endregion
-	#region FlameWisp
-	if (gameMaster.chosenBoss == Boss.FlameWisp) 
-	{
-		//stats
-		phase1Hp = tier1Hp*0.5; phase1Ms = 1; phase1Dmg = 20;
-		phase2Hp = tier1Hp*0.5; phase2Ms = 1.5; phase2Dmg = 30;
-		hp = phase1Hp;
-		global.bossDamage = phase1Dmg;
-		moveSpeed = phase1Ms;
-		moveType = MovementType.WalkingTowards;
-		//attacks and phase
-		tier = 1;
-		phase = 1;
-		maxPhase = 2;
-		//visual
-		size = 1.5;
-		alpha = 0.75;
-		coneSprite = spr_boss_flameWisp_coneAttack
-		circleSprite = spr_boss_flameWisp_circle;
-		oneShotSprite = spr_boss_flameWisp_oneShot;
-		chaseSprite = spr_boss_flameWisp_chase;
-	}
+	#region Tier 2 Done
+		#region The Mad witches
+		if (gameMaster.chosenBoss == Boss.TheMadWitches) 
+		{
+			//stats
+			phase1Hp = tier1Hp; phase1Ms = 2; phase1Dmg = 20;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.StandingStill;
+			//attacks and phase
+			tier = 1;
+			phase = 1;
+			maxPhase = 1;
+			//visual
+			size = 1;
+			alpha = 1;
+			beamSprite = spr_boss_theGreenWitch_beam;
+			teleportSprite = spr_boss_theGreenWitch_teleport;
+			rapidFireSprite = spr_boss_theGreenWitch_rapidFire;
+			gooSprite = spr_boss_theGreenWitch_goo;
+			//
+			position = 1;
+		}
+		#endregion
+		#region Wisp Sister Anna
+		if (gameMaster.chosenBoss == Boss.WispSisterAnna) 
+		{
+			//stats
+			phase1Hp = tier2Hp*0.125; phase1Ms = 1; phase1Dmg = 30;
+			phase2Hp = tier2Hp*0.5; phase2Ms = 1.5; phase2Dmg = 35;
+			phase3Hp = tier2Hp*0.375; phase3Ms = 2; phase3Dmg = 40;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.WalkingTowards;
+			//attacks and phase
+			tier = 2;
+			phase = 1;
+			maxPhase = 3;
+			//visual
+			size = 1.5;
+			alpha = 0.75;
+			circleSprite = spr_boss_wispSisterAnna_circle;
+			gooSprite = spr_boss_wispSisterAnna_goo;
+			teleportSprite = spr_boss_wispSisterAnna_teleport;
+			rapidFireSprite = spr_boss_wispSisterAnna_rapidFire;
+			chaseSprite = spr_boss_wispSisterAnna_chase;
+		}
+		#endregion
+		#region Flame Gate
+		if (gameMaster.chosenBoss == Boss.FlameGate) 
+		{
+			//stats
+			phase1Hp = tier2Hp*1; phase1Ms = 0; phase1Dmg = 40;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.StandingStill;
+			//attacks and phase
+			tier = 2;
+			phase = 1;
+			maxPhase = 1;
+			//visual
+			size = 1.5;
+			alpha = 1;
+			rapidFireSprite = spr_boss_theFlameGate_rapidFire;
+			gooSprite = spr_boss_theFlameGate_goo;
+			oneShotSprite = spr_boss_theFlameGate_oneShot;
+			coneSprite = spr_boss_theFlameGate_cone;
+		}
+		#endregion
+		#region DeathKnight
+		if (gameMaster.chosenBoss == Boss.DeathKnight) 
+		{
+			//stats
+			phase1Hp = tier2Hp*0.20; phase1Ms = 1; phase1Dmg = 30;
+			phase2Hp = tier2Hp*0.30; phase2Ms = 1; phase2Dmg = 30;
+			phase3Hp = tier2Hp*0.35; phase3Ms = 1; phase3Dmg = 30;
+			phase4Hp = tier2Hp*0.15; phase4Ms = 1; phase4Dmg = 30;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.WalkingTowardsWDirection;
+			//attacks and phase
+			tier = 2;
+			phase = 1;
+			maxPhase = 4;
+			//visual
+			size = 1;
+			alpha = 0.95;
+			normalSprite = spr_boss_deathKinght_normalAttack;
+			chaseSprite = spr_boss_deathKinght_chase;
+			teleportSprite = spr_boss_deathKinght_teleport;
+			//boss Specfic
+			var scythe = instance_create_depth(x,y,depth,obj_bossMeleeWeapon);
+			scythe.sprite_index = spr_deathKnightScythe;
+			dashSpeed = 6;
+		}
+		#endregion
 	#endregion
-	#region TheCorrupter
-	if (gameMaster.chosenBoss == Boss.TheCorrupter1) 
-	{
-		//stats
-		phase1Hp = tier1Hp*0.5; phase1Ms = 1.25; phase1Dmg = 30;
-		phase2Hp = tier1Hp*0.5; phase2Ms = 1.75; phase2Dmg = 35;
-		hp = phase1Hp;
-		global.bossDamage = phase1Dmg;
-		moveSpeed = phase1Ms;
-		moveType = MovementType.WalkingTowards;
-		//attacks and phase
-		tier = 1;
-		phase = 1;
-		maxPhase = 2;
-		//visual
-		size = 1;
-		alpha = 1;
-		beamSprite = spr_boss_theCorrupter_beam;
-		gooSprite = spr_boss_theCorrupter_goo;
-		rapidFireSprite = spr_boss_theCorrupter_rapidFire;
-	}
+	#region Tier 3
+	
 	#endregion
-	#region Varus
-	if (gameMaster.chosenBoss == Boss.BloodRoyalVarus) 
-	{
-		//stats
-		phase1Hp = tier1Hp*0.2; phase1Ms = 1; phase1Dmg = 20;
-		phase2Hp = tier1Hp*0.8; phase2Ms = 1.5; phase2Dmg = 25;
-		hp = phase1Hp;
-		global.bossDamage = phase1Dmg;
-		moveSpeed = phase1Ms;
-		moveType = MovementType.WalkingTowards;
-		//attacks and phase
-		tier = 1;
-		phase = 1;
-		maxPhase = 2;
-		//visual
-		size = 1;
-		alpha = 0.9;
-		coneSprite = spr_boss_bloodRoyalVarus_cone;
-		teleportSprite = spr_boss_bloodRoyalVarus_teleport;
-		oneShotSprite = spr_boss_bloodRoyalVarus_oneShot;
-		chaseSprite = spr_boss_bloodRoyalVarus_chase;	
-	}
-	#endregion
-	#region The mad witches
-	if (gameMaster.chosenBoss == Boss.TheMadWitches) 
-	{
-		//stats
-		phase1Hp = tier1Hp; phase1Ms = 2; phase1Dmg = 20;
-		hp = phase1Hp;
-		global.bossDamage = phase1Dmg;
-		moveSpeed = phase1Ms;
-		moveType = MovementType.StandingStill;
-		//attacks and phase
-		tier = 1;
-		phase = 1;
-		maxPhase = 1;
-		//visual
-		size = 1;
-		alpha = 1;
-		beamSprite = spr_boss_theGreenWitch_beam;
-		teleportSprite = spr_boss_theGreenWitch_teleport;
-		rapidFireSprite = spr_boss_theGreenWitch_rapidFire;
-		gooSprite = spr_boss_theGreenWitch_goo;
-		//
-		position = 1;
-	}
-	#endregion
-	#region wisp sisters
-	if (gameMaster.chosenBoss == Boss.WispSisterAnna) 
-	{
-		//stats
-		phase1Hp = tier2Hp*0.125; phase1Ms = 1; phase1Dmg = 30;
-		phase2Hp = tier2Hp*0.5; phase2Ms = 1.5; phase2Dmg = 35;
-		phase3Hp = tier2Hp*0.375; phase3Ms = 2; phase3Dmg = 40;
-		hp = phase1Hp;
-		global.bossDamage = phase1Dmg;
-		moveSpeed = phase1Ms;
-		moveType = MovementType.WalkingTowards;
-		//attacks and phase
-		tier = 2;
-		phase = 1;
-		maxPhase = 3;
-		//visual
-		size = 1.5;
-		alpha = 0.75;
-		circleSprite = spr_boss_wispSisterAnna_circle;
-		gooSprite = spr_boss_wispSisterAnna_goo;
-		teleportSprite = spr_boss_wispSisterAnna_teleport;
-		rapidFireSprite = spr_boss_wispSisterAnna_rapidFire;
-		chaseSprite = spr_boss_wispSisterAnna_chase;
-	}
-	#endregion
-	#region Flame Gate
-	if (gameMaster.chosenBoss == Boss.FlameGate) 
-	{
-		//stats
-		phase1Hp = tier2Hp*1; phase1Ms = 0; phase1Dmg = 40;
-		hp = phase1Hp;
-		global.bossDamage = phase1Dmg;
-		moveSpeed = phase1Ms;
-		moveType = MovementType.StandingStill;
-		//attacks and phase
-		tier = 2;
-		phase = 1;
-		maxPhase = 1;
-		//visual
-		size = 1.5;
-		alpha = 1;
-		rapidFireSprite = spr_boss_theFlameGate_rapidFire;
-		gooSprite = spr_boss_theFlameGate_goo;
-		oneShotSprite = spr_boss_theFlameGate_oneShot;
-		coneSprite = spr_boss_theFlameGate_cone;
-	}
-	#endregion
-	#region DeathKnight
-	if (gameMaster.chosenBoss == Boss.DeathKnight) 
-	{
-		//stats
-		phase1Hp = tier2Hp*0.20; phase1Ms = 1; phase1Dmg = 30;
-		phase2Hp = tier2Hp*0.30; phase2Ms = 1; phase2Dmg = 30;
-		phase3Hp = tier2Hp*0.35; phase3Ms = 1; phase3Dmg = 30;
-		phase4Hp = tier2Hp*0.15; phase4Ms = 1; phase4Dmg = 30;
-		hp = phase1Hp;
-		global.bossDamage = phase1Dmg;
-		moveSpeed = phase1Ms;
-		moveType = MovementType.WalkingTowardsWDirection;
-		//attacks and phase
-		tier = 2;
-		phase = 1;
-		maxPhase = 4;
-		//visual
-		size = 1;
-		alpha = 0.95;
-		normalSprite = spr_boss_deathKinght_normalAttack;
-		chaseSprite = spr_boss_deathKinght_chase;
-		teleportSprite = spr_boss_deathKinght_teleport;
-		//boss Specfic
-		var scythe = instance_create_depth(x,y,depth,obj_bossMeleeWeapon);
-		scythe.sprite_index = spr_deathKnightScythe;
-		dashSpeed = 6;
-	}
+	#region Tier 4
+	
+	#endregion 
+	#region Tier 5
+		#region Varus
+		if (gameMaster.chosenBoss == Boss.BloodKingVarus) 
+		{
+			//stats
+			phase1Hp = tier5Hp*0.2; phase1Ms = 1; phase1Dmg = 20;
+			phase2Hp = tier5Hp*0.8; phase2Ms = 1.5; phase2Dmg = 25;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.WalkingTowards;
+			//attacks and phase
+			tier = 5;
+			phase = 1;
+			maxPhase = 2;
+			//visual
+			size = 1;
+			alpha = 0.9;
+			coneSprite = spr_boss_bloodRoyalVarus_cone;
+			teleportSprite = spr_boss_bloodRoyalVarus_teleport;
+			oneShotSprite = spr_boss_bloodRoyalVarus_oneShot;
+			chaseSprite = spr_boss_bloodRoyalVarus_chase;	
+		}
+		#endregion
 	#endregion
 #endregion
 #region Finalize
