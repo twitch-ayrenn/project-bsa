@@ -54,7 +54,7 @@ enum Boss
 	
 	Gravekeeper,//5
     BloodKnightDavid,
-	DeathGeneral,
+	StoneSerpant,
 	ShadowClan,
 	StatueOfCorruption,
 

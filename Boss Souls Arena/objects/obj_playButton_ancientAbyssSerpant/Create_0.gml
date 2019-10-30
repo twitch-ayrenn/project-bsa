@@ -3,4 +3,4 @@
 selectedColor = make_color_rgb(254,255,219);
 image_blend = selectedColor;
 size = 1;
-bossOnThisCard = Boss.AncientAbyssSerpant;
+bossOnThisCard = Boss.QueenSerpant;

@@ -1,8 +1,9 @@
 /// @description Note
-#region beamAttack
-if (attack == Atks.BeamAttack && drawArea == true)
+#region beamAttacks
+if (drawArea == true)
 {
-	if (gameMaster.chosenBoss == Boss.TheCorrupter1)
+	#region The Corrupter
+	if (gameMaster.chosenBoss == Boss.TheCorrupter && attack == Atks.BeamAttack)
 	{
 		if (phase == 1)
 		{
@@ -14,7 +15,9 @@ if (attack == Atks.BeamAttack && drawArea == true)
 			draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,global.orange,global.orange);
 		}
 	}
-	if (gameMaster.chosenBoss == Boss.TheMadWitches)
+	#endregion
+	#region The Mad Witches
+	if (gameMaster.chosenBoss == Boss.TheMadWitches && attack == Atks.BeamAttack)
 	{
 		if (position == 1)
 		{
@@ -35,6 +38,32 @@ if (attack == Atks.BeamAttack && drawArea == true)
 			draw_line_width_color(leftX,leftY,obj_allPlayer.x,obj_allPlayer.y,1,c_lime,c_lime);
 		}
 	}
+	#endregion
+	#region Angel Slayer
+	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
+	{
+		if (attack == Atks.BeamAttack)
+		{
+			draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,global.orange,global.orange);
+		}
+		if (attack == Atks.CircleAttack)
+		{
+			draw_line_width_color(x,y,x+600,y,1,global.orange,global.orange);
+			draw_line_width_color(x,y,x+600,y-346,1,global.orange,global.orange);//30
+			draw_line_width_color(x,y,x+600,y-1040,1,global.orange,global.orange);//60
+			draw_line_width_color(x,y,x,y-600,1,global.orange,global.orange);//90
+			draw_line_width_color(x,y,x-600,y-346,1,global.orange,global.orange);//120
+			draw_line_width_color(x,y,x-600,y-1040,1,global.orange,global.orange);//150
+			draw_line_width_color(x,y,x-600,y,1,global.orange,global.orange);//180
+			draw_line_width_color(x,y,x-600,y+346,1,global.orange,global.orange);//210
+			draw_line_width_color(x,y,x-600,y+1040,1,global.orange,global.orange);//240
+			draw_line_width_color(x,y,x,y+600,1,global.orange,global.orange);//270
+			draw_line_width_color(x,y,x+600,y+346,1,global.orange,global.orange);//300
+			draw_line_width_color(x,y,x+600,y+1040,1,global.orange,global.orange);//330
+			draw_line_width_color(x,y,x+600,y,1,global.orange,global.orange);//360
+		}
+	}
+	#endregion
 }
 #endregion
 if (gameMaster.chosenBoss == Boss.TheMadWitches)

@@ -19,7 +19,7 @@ image_yscale = size;
 if (hp <= 0){hp = 0;}
 if (hp > maxHp){hp = maxHp;}
 depth = -y;
-if (gameMaster.chosenBoss == Boss.BloodRoyalVarus){depth = obj_allPlayer.depth+1;}
+if (gameMaster.chosenBoss == Boss.BloodKingVarus){depth = obj_allPlayer.depth+1;}
 image_alpha = alpha;
 if (image_blend = c_red)
 {
@@ -79,7 +79,7 @@ if (moveType == MovementType.StandingStill)
 #endregion
 #region Ongoing things
 	#region The Corrupter
-	if (gameMaster.chosenBoss == Boss.TheCorrupter1)
+	if (gameMaster.chosenBoss == Boss.TheCorrupter)
 	{
 		if (rapidFireStacks > 0 && canRapidAttack == true)
 		{
@@ -161,7 +161,7 @@ if (moveType == MovementType.StandingStill)
 	}
 	#endregion
 	#region WispSister anna
-	if (gameMaster.chosenBoss == Boss.WispSisterAnna)
+	if (gameMaster.chosenBoss == Boss.WispSisterJulia)
 	{
 		if (rapidFireStacks > 0 && canRapidAttack == true)
 		{
@@ -228,25 +228,27 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.BloodZombie && phase == 2){attack = choose(Atks.NormalShot,Atks.GooSpawn,Atks.CircleAttack);}
 	if (gameMaster.chosenBoss == Boss.FlameWisp && phase == 1){attack = choose(Atks.ConeAttack,Atks.OneShotAttack,Atks.CircleAttack);}
 	if (gameMaster.chosenBoss == Boss.FlameWisp && phase == 2){attack = choose(Atks.ConeAttack,Atks.CircleAttack,Atks.ChaseAttack);}
-	if (gameMaster.chosenBoss == Boss.TheCorrupter1 && phase == 1){attack = choose(Atks.BeamAttack,Atks.RapidFire,Atks.GooSpawn);}
-	if (gameMaster.chosenBoss == Boss.TheCorrupter1 && phase == 2){attack = choose(Atks.BeamAttack,Atks.RapidFire);}
-	if (gameMaster.chosenBoss == Boss.BloodRoyalVarus && phase == 1){attack = choose(Atks.ConeAttack,Atks.OneShotAttack,Atks.TeleportAttack);}
-	if (gameMaster.chosenBoss == Boss.BloodRoyalVarus && phase == 2){attack = choose(Atks.ChaseAttack,Atks.OneShotAttack,Atks.TeleportAttack);}
+	if (gameMaster.chosenBoss == Boss.TheCorrupter && phase == 1){attack = choose(Atks.BeamAttack,Atks.RapidFire,Atks.GooSpawn);}
+	if (gameMaster.chosenBoss == Boss.TheCorrupter && phase == 2){attack = choose(Atks.BeamAttack,Atks.RapidFire);}
+	#endregion
+	#region Tier2 Bosses
 	if (gameMaster.chosenBoss == Boss.TheMadWitches){attack = choose(Atks.BeamAttack,Atks.GooSpawn,Atks.RapidFire);}
 	var bottomGooSpawn = instance_nearest(global.arenaMiddleX,global.arenaMiddleY+200,obj_enemyProjectile);
 	if (instance_exists(obj_enemyProjectile) && bottomGooSpawn.image_xscale == 2.5){if (gameMaster.chosenBoss == Boss.TheMadWitches){attack = choose(Atks.BeamAttack,Atks.RapidFire);}}
-	#endregion
-	#region Tier2 Bosses
-	if (gameMaster.chosenBoss == Boss.WispSisterAnna && phase == 1){attack = choose(Atks.CircleAttack,Atks.ChaseAttack,Atks.GooSpawn);}
-	if (gameMaster.chosenBoss == Boss.WispSisterAnna && phase == 2){attack = choose(Atks.CircleAttack,Atks.ChaseAttack,Atks.GooSpawn,Atks.TeleportAttack);}
-	if (gameMaster.chosenBoss == Boss.WispSisterAnna && phase == 3){attack = choose(Atks.RapidFire);}
+	if (gameMaster.chosenBoss == Boss.WispSisterJulia && phase == 1){attack = choose(Atks.CircleAttack,Atks.ChaseAttack,Atks.GooSpawn);}
+	if (gameMaster.chosenBoss == Boss.WispSisterJulia && phase == 2){attack = choose(Atks.CircleAttack,Atks.ChaseAttack,Atks.GooSpawn,Atks.TeleportAttack);}
+	if (gameMaster.chosenBoss == Boss.WispSisterJulia && phase == 3){attack = choose(Atks.RapidFire);}
 	if (gameMaster.chosenBoss == Boss.FlameGate && phase == 1){attack = choose(Atks.RapidFire,Atks.RapidFire,Atks.ConeAttack,Atks.OneShotAttack,Atks.GooSpawn);}
 	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 1){attack = choose(Atks.NormalShot);}
 	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 2){attack = choose(Atks.NormalShot,Atks.TeleportAttack);}
 	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 3){attack = choose(Atks.ChaseAttack,Atks.ChaseAttack,Atks.TeleportAttack);}
 	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 4){attack = choose(Atks.NormalShot,Atks.ChaseAttack,Atks.TeleportAttack);}
 	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 4 && gameMaster.chosenClass != Character.ShadowAssassin){attack = choose(Atks.ChaseAttack);}
-	
+	#endregion
+	#region Tier3 Bosses
+	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul && phase == 1){attack = choose(Atks.CircleAttack,Atks.BeamAttack,Atks.TeleportAttack);}
+	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul && phase == 2){attack = choose(Atks.CircleAttack,Atks.BeamAttack,Atks.ZoneAttack,Atks.TeleportAttack);}
+	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul && phase == 3){attack = choose(Atks.CircleAttack,Atks.ZoneAttack,Atks.TeleportAttack,Atks.ChaseAttack);}
 	#endregion
 	if (attack == Atks.NormalShot)
 	{
@@ -265,6 +267,12 @@ if(chooseAnAttack == true)
 	{
 		sprite_index = circleSprite;		
 		attackColor = c_fuchsia;
+		#region AngelSlayerRekZul
+		if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
+		{
+			drawArea = true;
+		}
+		#endregion
 	}
 	if (attack == Atks.GooSpawn)
 	{
@@ -282,7 +290,7 @@ if(chooseAnAttack == true)
 		}
 		#endregion
 		#region WispSisterAnna
-		if (gameMaster.chosenBoss == Boss.WispSisterAnna)
+		if (gameMaster.chosenBoss == Boss.WispSisterJulia)
 		{
 			var indicator = instance_create_depth(global.player.x,global.player.y,-5,obj_indicator)
 			indicator.sprite_index = spr_damageCircle;
@@ -307,7 +315,7 @@ if(chooseAnAttack == true)
 		sprite_index = chaseSprite;
 		attackColor = c_yellow;
 		#region Blood Royal Varus
-		if (gameMaster.chosenBoss == Boss.BloodRoyalVarus)
+		if (gameMaster.chosenBoss == Boss.BloodKingVarus)
 		{
 			moveSpeed = 2.6;
 			var chaseDamage = instance_create_depth(x,y,depth-1,obj_enemyProjectile);
@@ -322,7 +330,7 @@ if(chooseAnAttack == true)
 		}
 		#endregion
 		#region Wisp Sister Anna
-		if (gameMaster.chosenBoss == Boss.WispSisterAnna)
+		if (gameMaster.chosenBoss == Boss.WispSisterJulia)
 		{
 			moveSpeed = 2.65;
 			var chaseDamage = instance_create_depth(x,y,depth-1,obj_enemyProjectile);
@@ -346,6 +354,12 @@ if(chooseAnAttack == true)
 			}
 		}
 		#endregion
+		#region AngelSlayerRekZul
+		if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
+		{
+			drawArea = true;
+		}
+		#endregion
 	}
 	if (attack == Atks.RapidFire)
 	{
@@ -362,7 +376,7 @@ if(chooseAnAttack == true)
 	{
 		sprite_index = teleportSprite;
 		attackColor = global.purple;
-		if (gameMaster.chosenBoss == Boss.WispSisterAnna || gameMaster.chosenBoss == Boss.BloodPrinceVarus)
+		if (gameMaster.chosenBoss == Boss.WispSisterJulia || gameMaster.chosenBoss == Boss.BloodKingVarus)
 		{
 			alpha = 0;
 			var xTp = obj_allPlayer.x + choose(-200,-150,-100,100,150,200);
@@ -379,6 +393,23 @@ if(chooseAnAttack == true)
 			indicator.image_blend = c_maroon;
 			indicator.followPlayer = true;
 		}
+		#region AngelSlayerRekZul
+		if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
+		{
+			drawArea = true;
+		}
+		#endregion
+	}
+	if (attack == Atks.ZoneAttack)
+	{
+		sprite_index = zoneSprite;		
+		attackColor = c_green;
+		#region AngelSlayerRekZul
+		if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
+		{
+			drawArea = true;
+		}
+		#endregion
 	}
 	alarm[0] = timeAfterIndicate;
 	alarm[1] = attackCooldown*choose(1,1,1,1,2);
@@ -411,7 +442,7 @@ if (hp <= 0 && phase == 1 && phase != maxPhase)
 	}
 	#endregion
 	#region The Corrupter 1
-	if (gameMaster.chosenBoss == Boss.TheCorrupter1)
+	if (gameMaster.chosenBoss == Boss.TheCorrupter)
 	{
 		var middleGooSpawn = instance_nearest(645,590,obj_enemyProjectile);
 		with (middleGooSpawn)

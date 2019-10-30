@@ -12,7 +12,7 @@ if (gameMaster.menu == Menues.BossSelect)
 }
 if (gameMaster.menu == Menues.BossSelect && hover == true && obj_fightCard_ladyCorruption.x > 136)
 {
-	depth = obj_fightCard_abyssSerpant.depth-1;
+	depth = obj_fightCard_theBloodZombie.depth-1;
 	with(par_scrollingThings)
 	{
 		x -= global.slidingSpeed;	

@@ -50,6 +50,7 @@ enum Atks
 	ChaseAttack,
 	BeamAttack,
 	RapidFire,
+	ZoneAttack,
 }
 timeAfterIndicate = (3)*30;
 attackCooldown = (6)*30;
@@ -77,6 +78,7 @@ gooSprite = 0;
 teleportSprite = 0;
 beamSprite = 0;
 rapidFireSprite = 0;
+zoneSprite = 0;
 isHit = false;
 #endregion
 #region Bosses
@@ -174,8 +176,8 @@ isHit = false;
 			position = 1;
 		}
 		#endregion
-		#region Wisp Sister Anna
-		if (gameMaster.chosenBoss == Boss.WispSisterAnna) 
+		#region Wisp Sister Julia
+		if (gameMaster.chosenBoss == Boss.WispSisterJulia) 
 		{
 			//stats
 			phase1Hp = tier2Hp*0.125; phase1Ms = 1; phase1Dmg = 30;
@@ -192,11 +194,11 @@ isHit = false;
 			//visual
 			size = 1.5;
 			alpha = 0.75;
-			circleSprite = spr_boss_wispSisterAnna_circle;
-			gooSprite = spr_boss_wispSisterAnna_goo;
-			teleportSprite = spr_boss_wispSisterAnna_teleport;
-			rapidFireSprite = spr_boss_wispSisterAnna_rapidFire;
-			chaseSprite = spr_boss_wispSisterAnna_chase;
+			circleSprite = spr_boss_wispSisterJulia_circle;
+			gooSprite = spr_boss_wispSisterJulia_goo;
+			teleportSprite = spr_boss_wispSisterJulia_teleport;
+			rapidFireSprite = spr_boss_wispSisterJulia_rapidFire;
+			chaseSprite = spr_boss_wispSisterJulia_chase;
 		}
 		#endregion
 		#region Flame Gate
@@ -251,7 +253,31 @@ isHit = false;
 		#endregion
 	#endregion
 	#region Tier 3
-	
+		#region Wisp Sister Julia
+		if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul) 
+		{
+			//stats
+			phase1Hp = tier3Hp*0.125; phase1Ms = 1; phase1Dmg = 40;
+			phase2Hp = tier3Hp*0.375; phase2Ms = 1.25; phase2Dmg = 45;
+			phase3Hp = tier3Hp*0.5; phase3Ms = 1.5; phase3Dmg = 55;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.WalkingTowards;
+			//attacks and phase
+			tier = 3;
+			phase = 1;
+			maxPhase = 3;
+			//visual
+			size = 1.5;
+			alpha = 1;
+			circleSprite = spr_angelSlayerRekZul_circle;
+			beamSprite = spr_angelSlayerRekZul_beam;
+			teleportSprite = spr_angelSlayerRekZul_teleport;
+			zoneSprite = spr_angelSlayerRekZul_zone;
+			chaseSprite = spr_angelSlayerRekZul_chase;
+		}
+		#endregion
 	#endregion
 	#region Tier 4
 	

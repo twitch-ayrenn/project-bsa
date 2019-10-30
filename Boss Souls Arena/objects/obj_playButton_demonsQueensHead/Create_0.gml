@@ -3,4 +3,4 @@
 selectedColor = make_color_rgb(34,34,34);
 image_blend = selectedColor;
 size = 1;
-bossOnThisCard = Boss.DemonQueensHead1;
+bossOnThisCard = Boss.DemonQueensHead;

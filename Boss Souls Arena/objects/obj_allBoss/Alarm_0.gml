@@ -222,7 +222,7 @@ if (attack == Atks.ChaseAttack)
 if (attack == Atks.BeamAttack)
 {
 	drawArea = false;
-	if (gameMaster.chosenBoss == Boss.TheCorrupter1 && phase == 1)
+	if (gameMaster.chosenBoss == Boss.TheCorrupter && phase == 1)
 	{
 		drawArea = false;
 		var angleBeamPlus = 0;
@@ -342,13 +342,17 @@ if (attack == Atks.TeleportAttack)
 #region NormalAttacks
 if (attack == Atks.NormalShot)
 {
-
+	if (gameMaster.chosenBoss == Boss.DeathKnight)
+	{
+		obj_bossMeleeWeapon.state = MeleeWeaponStates.SpinOnce;
+		obj_bossMeleeWeapon.spinTimes = phase;
+	}
 }
 #endregion
 #region CircleAttacks
 if (attack == Atks.CircleAttack)
 {
-	if (gameMaster.chosenBoss == Boss.WispSisterAnna)
+	if (gameMaster.chosenBoss == Boss.WispSisterJulia)
 	{
 		var angle = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
 		var circleAmount = 24;
@@ -374,7 +378,7 @@ if (attack == Atks.CircleAttack)
 #region GooSpawn
 if (attack == Atks.GooSpawn)
 {
-	if (gameMaster.chosenBoss == Boss.WispSisterAnna)
+	if (gameMaster.chosenBoss == Boss.WispSisterJulia)
 	{
 		
 		var gooGround = instance_create_depth(obj_indicator.x,obj_indicator.y,-5,obj_enemyProjectile);
@@ -486,7 +490,7 @@ if (attack == Atks.BeamAttack)
 #region RapidFire
 if (attack == Atks.RapidFire)
 {
-	if (gameMaster.chosenBoss == Boss.WispSisterAnna)
+	if (gameMaster.chosenBoss == Boss.WispSisterJulia)
 	{
 		rapidFireStacks += 10;
 	}
@@ -499,10 +503,19 @@ if (attack == Atks.RapidFire)
 #region Teleport
 if (attack == Atks.TeleportAttack)
 {
-	if (gameMaster.chosenBoss == Boss.WispSisterAnna)
+	if (gameMaster.chosenBoss == Boss.WispSisterJulia)
 	{
 		alpha = normalAlpha;
 		chooseAnAttack = true;
+	}
+	if (gameMaster.chosenBoss == Boss.DeathKnight)
+	{
+		if(instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
+		obj_bossMeleeWeapon.image_angle = 270;
+		x = global.player.x+45;
+		y = global.player.y;
+		obj_bossMeleeWeapon.state = MeleeWeaponStates.SpinOnce;
+		obj_bossMeleeWeapon.spinTimes = phase;	
 	}
 }
 #endregion
@@ -511,17 +524,36 @@ if (attack == Atks.TeleportAttack)
 #region NormalAttacks
 if (attack == Atks.NormalShot)
 {
-	if (gameMaster.chosenBoss == Boss.DeathKnight)
-	{
-		obj_bossMeleeWeapon.state = MeleeWeaponStates.SpinOnce;
-		obj_bossMeleeWeapon.spinTimes = phase;
-	}
+
 }
 #endregion
 #region CircleAttacks
 if (attack == Atks.CircleAttack)
 {
-	
+	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
+	{
+		drawArea = false;
+		var beamCircleAngle = 0;
+		var circleBeams = 12;
+		repeat(circleBeams)
+		{
+			var beam = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			beam.image_angle = beamCircleAngle+90;
+			//Visual
+			beam.image_alpha = 0.85;
+			beam.image_blend = global.orange;
+			beam.sprite_index = spr_beam;
+			beam.image_xscale = 0.2;
+			beam.image_yscale = 20;
+			beam.maxSize = 1.5;
+			beam.minSize = 0.2;
+			beam.lockOn = id;
+			beam.range = 1*30;
+			beam.effectType = Effect.NoEffect;
+			beamCircleAngle += 360/circleBeams;
+		}
+	}
 }
 #endregion
 #region GooSpawn
@@ -551,7 +583,24 @@ if (attack == Atks.ChaseAttack)
 #region BeamAttack
 if (attack == Atks.BeamAttack)
 {
-	
+	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
+	{
+		drawArea = false;
+		var beam = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+		//Main
+		beam.image_angle = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-90;
+		//Visual
+		beam.image_alpha = 0.85;
+		beam.image_blend = global.orange;
+		beam.sprite_index = spr_beam;
+		beam.image_xscale = 0.25;
+		beam.image_yscale = 20;
+		beam.maxSize = 2;
+		beam.minSize = 0.25;
+		beam.lockOn = id;
+		beam.range = 2.5*30;
+		beam.effectType = Effect.NoEffect;
+	}
 }
 #endregion
 #region RapidFire
@@ -563,15 +612,7 @@ if (attack == Atks.RapidFire)
 #region Teleport
 if (attack == Atks.TeleportAttack)
 {
-	if (gameMaster.chosenBoss == Boss.DeathKnight)
-	{
-		if(instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
-		obj_bossMeleeWeapon.image_angle = 270;
-		x = global.player.x+45;
-		y = global.player.y;
-		obj_bossMeleeWeapon.state = MeleeWeaponStates.SpinOnce;
-		obj_bossMeleeWeapon.spinTimes = phase;	
-	}
+	
 }
 #endregion
 #endregion
