@@ -159,6 +159,14 @@
             }
         },
         {
+            "Key": "0385a3ae-b198-4535-a2db-1316aca2513f",
+            "Value": {
+                "id": "0d2688ac-5e32-4dbb-8be9-3af83430417a",
+                "resourcePath": "objects\\obj_point\\obj_point.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "038e04d3-e665-46f8-a67f-2a74edf7af5f",
             "Value": {
                 "id": "ee71d5e9-ddb7-48d1-9fb0-ba251bffd3ba",
@@ -2972,6 +2980,14 @@
                 "id": "9649e6c0-7716-470e-98e0-a82e1defeca6",
                 "resourcePath": "objects\\obj_keeperRange_in\\obj_keeperRange_in.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "6235b2f0-2628-4bdd-8b92-a2ccdebe59c0",
+            "Value": {
+                "id": "bc1acd03-f56d-4869-88ca-f8d0cd9b3624",
+                "resourcePath": "sprites\\spr_fight_angelSlayer\\spr_fight_angelSlayer.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

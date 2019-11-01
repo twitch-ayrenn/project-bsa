@@ -61,6 +61,8 @@ canRapidAttack = true;
 spawnThingOnce = true;
 position = 1;
 dashSpeed = 0;
+alarm5Timer = 0;
+activateAlarm5 = false;
 #endregion
 #region Visuals
 size = 1;
@@ -276,6 +278,10 @@ isHit = false;
 			teleportSprite = spr_angelSlayerRekZul_teleport;
 			zoneSprite = spr_angelSlayerRekZul_zone;
 			chaseSprite = spr_angelSlayerRekZul_chase;
+			//boss specifc
+			alarm5Timer = (0.15)*30;
+			xBeamSpawn = 0;
+			beamsToSpawn = 0;
 		}
 		#endregion
 	#endregion

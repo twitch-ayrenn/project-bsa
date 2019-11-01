@@ -4,6 +4,17 @@ speed = 0;
 moveSpeed = normalMoveSpeed;
 pointX = choose(60,0,-60);
 pointY = choose(60,-60);
+if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
+{
+	if (instance_exists(obj_enemyProjectile))
+	{
+		var destroyBeam = instance_nearest(x,y,obj_enemyProjectile);
+		if (destroyBeam.sprite_index == spr_beam)
+		{
+			instance_destroy(destroyBeam);	
+		}
+	}
+}
 if (gameMaster.chosenBoss == Boss.TheMadWitches)
 {
 	var doOnce = true;

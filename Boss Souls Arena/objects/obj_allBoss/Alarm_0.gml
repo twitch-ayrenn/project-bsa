@@ -240,7 +240,7 @@ if (attack == Atks.BeamAttack)
 			beam.image_yscale = 20;
 			beam.maxSize = 2;
 			beam.minSize = 0.25;
-			beam.lockOn = id;
+			beam.stickOn = true;
 			beam.range = 5*30;
 			beam.effectType = Effect.NoEffect;
 			angleBeamPlus += (360/beamCircleAmount)
@@ -260,7 +260,7 @@ if (attack == Atks.BeamAttack)
 		beam.image_yscale = 20;
 		beam.maxSize = 1.5;
 		beam.minSize = 0.25;
-		beam.lockOn = id;
+		beam.stickOn = true;
 		beam.range = 2*30;
 		beam.effectType = Effect.NoEffect;
 	}
@@ -542,13 +542,13 @@ if (attack == Atks.CircleAttack)
 			beam.image_angle = beamCircleAngle+90;
 			//Visual
 			beam.image_alpha = 0.85;
-			beam.image_blend = global.orange;
+			beam.image_blend = c_fuchsia;
 			beam.sprite_index = spr_beam;
 			beam.image_xscale = 0.2;
 			beam.image_yscale = 20;
 			beam.maxSize = 1.5;
 			beam.minSize = 0.2;
-			beam.lockOn = id;
+			beam.stickOn = true;
 			beam.range = 1*30;
 			beam.effectType = Effect.NoEffect;
 			beamCircleAngle += 360/circleBeams;
@@ -597,7 +597,7 @@ if (attack == Atks.BeamAttack)
 		beam.image_yscale = 20;
 		beam.maxSize = 2;
 		beam.minSize = 0.25;
-		beam.lockOn = id;
+		beam.stickOn = true;
 		beam.range = 2.5*30;
 		beam.effectType = Effect.NoEffect;
 	}
@@ -612,7 +612,39 @@ if (attack == Atks.RapidFire)
 #region Teleport
 if (attack == Atks.TeleportAttack)
 {
-	
+	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
+	{
+		var xTp = obj_allPlayer.x + choose(-200,-150,-100,100,150,200);
+		var yTp = obj_allPlayer.y + choose(-150,-100,100,150);
+		if (place_empty(xTp,y,obj_noGoZone)){x = xTp;}
+		if (place_empty(x,yTp,obj_noGoZone)){y = yTp;}
+		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
+		//Main
+		gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		gooGround.speed = 0;
+		gooGround.image_angle = irandom_range(0,360);
+		//Visual
+		gooGround.image_alpha = 1;
+		gooGround.image_blend = c_maroon;
+		gooGround.sprite_index = spr_gooGround;
+		gooGround.image_xscale = 1.5;
+		gooGround.image_yscale = 1.5;
+		gooGround.destroy = false;
+		gooGround.effectType = Effect.NoEffect;
+	}
+}
+#endregion
+#region ZoneAttack
+if (attack == Atks.ZoneAttack)
+{
+	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
+	{
+		drawArea = false;		
+		xBeamSpawn = global.arenaMiddleX-200;
+		activateAlarm5 = true;
+		beamsToSpawn = 15;
+	}
+
 }
 #endregion
 #endregion

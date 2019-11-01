@@ -16,15 +16,15 @@ if (sprite_index == spr_bloodKlott){image_angle -= 30;}
 if (sprite_index == spr_beam)
 {
 	image_xscale += sizeChanger/30;
-	if (image_xscale >= maxSize)
+	if (image_xscale >= maxSize && beamChase == false)
 	{
 		sizeChanger *= -1;	
 	}
-	if (image_xscale <= minSize)
+	if (image_xscale <= minSize && beamChase == false)
 	{
 		instance_destroy();	
 	}
-	
+	image_xscale = clamp(image_xscale,minSize,maxSize);
 }
 #endregion
 #region movement
@@ -33,12 +33,17 @@ if (chase == true && instance_exists(target))
 	move_towards_point(target.x,target.y,target.actualSpeed*1.3);
 	image_angle = direction+90;
 }
-if (stickOn == true && instance_exists(obj_allBoss))
+if (stickOn == true)
 {
 	x = obj_allBoss.x;	
 	y = obj_allBoss.y;
+	depth = obj_allBoss.depth+1;
 }
-if (sprite_index == spr_beam && gameMaster.chosenBoss != Boss.TheMadWitches){x = lockOn.x; y = lockOn.y;depth = lockOn.depth+1;}
+if (beamChase == true)
+{
+		image_angle -= turningSpeed/30;	
+}
+
 #endregion
 if (destroy == true)
 {

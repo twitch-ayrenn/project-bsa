@@ -217,6 +217,33 @@ if (moveType == MovementType.StandingStill)
 		}
 	}
 	#endregion
+	#region Angel Slayer
+	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
+	{
+		if (activateAlarm5 == true && beamsToSpawn > 0)
+		{
+			activateAlarm5 = false;
+			beamsToSpawn--;
+			
+			var beam = instance_create_depth(xBeamSpawn,global.arenaMiddleY-300,depth+1,obj_enemyProjectile);
+			//Main
+			beam.image_angle = 270-90;
+			//Visual
+			beam.image_alpha = 0.85;
+			beam.image_blend = c_green;
+			beam.sprite_index = spr_beam;
+			beam.image_xscale = 0.5;
+			beam.image_yscale = 100;
+			beam.maxSize = 2;
+			beam.minSize = 0.25;
+			beam.range = 2.5*30;
+			beam.effectType = Effect.NoEffect;
+			xBeamSpawn += 25;
+			
+			alarm[5] = alarm5Timer;	
+		}
+	}
+	#endregion
 	
 #endregion
 #region Attacks
@@ -357,7 +384,22 @@ if(chooseAnAttack == true)
 		#region AngelSlayerRekZul
 		if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
 		{
-			drawArea = true;
+			var beam = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			beam.image_angle = -90;
+			//Visual
+			beam.image_alpha = 0.85;
+			beam.image_blend = global.orange;
+			beam.sprite_index = spr_beam;
+			beam.image_xscale = 0.5;
+			beam.image_yscale = 20;
+			beam.maxSize = 2;
+			beam.minSize = 0.25;
+			beam.stickOn = true;
+			beam.beamChase = true;
+			beam.turningSpeed = 85;
+			beam.destroy = false;
+			beam.effectType = Effect.NoEffect;
 		}
 		#endregion
 	}
@@ -394,10 +436,7 @@ if(chooseAnAttack == true)
 			indicator.followPlayer = true;
 		}
 		#region AngelSlayerRekZul
-		if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
-		{
-			drawArea = true;
-		}
+		
 		#endregion
 	}
 	if (attack == Atks.ZoneAttack)

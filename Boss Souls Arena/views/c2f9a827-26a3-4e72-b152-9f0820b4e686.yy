@@ -11,7 +11,8 @@
         "20a57c4d-7c9a-42c2-ad36-6d6aa52da292",
         "e9767b06-417c-41a6-bc5f-98f12f62d57f",
         "7b72cc62-df96-4de3-a10e-847a50418347",
-        "a1c3cd15-7a6c-4326-82ae-d64339866070"
+        "a1c3cd15-7a6c-4326-82ae-d64339866070",
+        "0385a3ae-b198-4535-a2db-1316aca2513f"
     ],
     "filterType": "GMObject",
     "folderName": "grp_bosses",

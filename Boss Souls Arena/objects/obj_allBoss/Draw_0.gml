@@ -48,20 +48,39 @@ if (drawArea == true)
 		}
 		if (attack == Atks.CircleAttack)
 		{
-			draw_line_width_color(x,y,x+600,y,1,global.orange,global.orange);
-			draw_line_width_color(x,y,x+600,y-346,1,global.orange,global.orange);//30
-			draw_line_width_color(x,y,x+600,y-1040,1,global.orange,global.orange);//60
-			draw_line_width_color(x,y,x,y-600,1,global.orange,global.orange);//90
-			draw_line_width_color(x,y,x-600,y-346,1,global.orange,global.orange);//120
-			draw_line_width_color(x,y,x-600,y-1040,1,global.orange,global.orange);//150
-			draw_line_width_color(x,y,x-600,y,1,global.orange,global.orange);//180
-			draw_line_width_color(x,y,x-600,y+346,1,global.orange,global.orange);//210
-			draw_line_width_color(x,y,x-600,y+1040,1,global.orange,global.orange);//240
-			draw_line_width_color(x,y,x,y+600,1,global.orange,global.orange);//270
-			draw_line_width_color(x,y,x+600,y+346,1,global.orange,global.orange);//300
-			draw_line_width_color(x,y,x+600,y+1040,1,global.orange,global.orange);//330
-			draw_line_width_color(x,y,x+600,y,1,global.orange,global.orange);//360
+			draw_line_width_color(x,y,x+600,y,1,c_fuchsia,c_fuchsia);
+			draw_line_width_color(x,y,x+600,y-346,1,c_fuchsia,c_fuchsia);//30
+			draw_line_width_color(x,y,x+600,y-1040,1,c_fuchsia,c_fuchsia);//60
+			draw_line_width_color(x,y,x,y-600,1,c_fuchsia,c_fuchsia);//90
+			draw_line_width_color(x,y,x-600,y-346,1,c_fuchsia,c_fuchsia);//120
+			draw_line_width_color(x,y,x-600,y-1040,1,c_fuchsia,c_fuchsia);//150
+			draw_line_width_color(x,y,x-600,y,1,c_fuchsia,c_fuchsia);//180
+			draw_line_width_color(x,y,x-600,y+346,1,c_fuchsia,c_fuchsia);//210
+			draw_line_width_color(x,y,x-600,y+1040,1,c_fuchsia,c_fuchsia);//240
+			draw_line_width_color(x,y,x,y+600,1,c_fuchsia,c_fuchsia);//270
+			draw_line_width_color(x,y,x+600,y+346,1,c_fuchsia,c_fuchsia);//300
+			draw_line_width_color(x,y,x+600,y+1040,1,c_fuchsia,c_fuchsia);//330
+			draw_line_width_color(x,y,x+600,y,1,c_fuchsia,c_fuchsia);//360
 		}
+		if (attack == Atks.ZoneAttack)
+		{
+			draw_line_width_color(global.arenaMiddleX-200,y+1000,global.arenaMiddleX-200,y-1000,1,c_green,c_green);
+			draw_line_width_color(global.arenaMiddleX-175,y+1000,global.arenaMiddleX-175,y-1000,1,c_green,c_green);
+			draw_line_width_color(global.arenaMiddleX-150,y+1000,global.arenaMiddleX-150,y-1000,1,c_green,c_green);
+			draw_line_width_color(global.arenaMiddleX-125,y+1000,global.arenaMiddleX-125,y-1000,1,c_green,c_green);
+			draw_line_width_color(global.arenaMiddleX-100,y+1000,global.arenaMiddleX-100,y-1000,1,c_green,c_green);
+			draw_line_width_color(global.arenaMiddleX-75,y+1000,global.arenaMiddleX-75,y-1000,1,c_green,c_green);
+			draw_line_width_color(global.arenaMiddleX-50,y+1000,global.arenaMiddleX-50,y-1000,1,c_green,c_green);
+			draw_line_width_color(global.arenaMiddleX-25,y+1000,global.arenaMiddleX-25,y-1000,1,c_green,c_green);
+			draw_line_width_color(global.arenaMiddleX,y+1000,global.arenaMiddleX,y-1000,1,c_green,c_green);
+			draw_line_width_color(global.arenaMiddleX+150,y+1000,global.arenaMiddleX+150,y-1000,1,c_green,c_green);
+			draw_line_width_color(global.arenaMiddleX+125,y+1000,global.arenaMiddleX+125,y-1000,1,c_green,c_green);
+			draw_line_width_color(global.arenaMiddleX+100,y+1000,global.arenaMiddleX+100,y-1000,1,c_green,c_green);
+			draw_line_width_color(global.arenaMiddleX+75,y+1000,global.arenaMiddleX+75,y-1000,1,c_green,c_green);
+			draw_line_width_color(global.arenaMiddleX+50,y+1000,global.arenaMiddleX+50,y-1000,1,c_green,c_green);
+			draw_line_width_color(global.arenaMiddleX+25,y+1000,global.arenaMiddleX+25,y-1000,1,c_green,c_green);
+		}
+		
 	}
 	#endregion
 }
