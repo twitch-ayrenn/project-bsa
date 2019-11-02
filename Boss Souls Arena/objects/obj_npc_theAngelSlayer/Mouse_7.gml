@@ -6,7 +6,8 @@ if (gameMaster.angelSlayerUnlocked == true)
 	{
 		if (angelSlayerProgress < 2){menu = Menues.BossSelect;chosenClass = Character.AngelSlayer;}
 		if (angelSlayerProgress > 1){menu = Menues.BossLoot;  chosenClass = Character.AngelSlayer;}
-		global.itemSlots = int64(2 + (angelSlayerProgress/8));
+		global.itemSlots = int64(1 + (angelSlayerProgress/3));
+		global.maxItemSlots = global.itemSlots;
 	}
 	with(par_loot){reset = true;}
 	global.slot1 = false; global.slot4 = false;

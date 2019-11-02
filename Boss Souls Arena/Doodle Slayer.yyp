@@ -255,6 +255,14 @@
             }
         },
         {
+            "Key": "06336a7e-9ed5-47c0-8e2a-77cac343fbcc",
+            "Value": {
+                "id": "d192fbec-e74c-439e-adf8-a25bc70ab83e",
+                "resourcePath": "sprites\\spr_boss_knightWitch_taunt\\spr_boss_knightWitch_taunt.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "066e7712-d06f-4aa5-b609-56de4d556e9a",
             "Value": {
                 "id": "53737506-4575-4ad5-91a2-0269e6b9a2d1",
@@ -379,6 +387,14 @@
             "Value": {
                 "id": "55c875ce-094f-4126-8f52-7224b6c2fcdd",
                 "resourcePath": "sprites\\spr_fight_t4_statueOfCorruption\\spr_fight_t4_statueOfCorruption.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "0b6d4fa6-c93a-48b8-b3f2-2b000f50fe42",
+            "Value": {
+                "id": "4e4f0457-9a0f-4c80-b863-a9a4c67c02ee",
+                "resourcePath": "sprites\\spr_boss_knightWitch_beam\\spr_boss_knightWitch_beam.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -639,6 +655,14 @@
             }
         },
         {
+            "Key": "11ed6a7f-02aa-4519-9f72-1c8925855be6",
+            "Value": {
+                "id": "330af67d-e434-4955-8fe4-37fe3711d8e2",
+                "resourcePath": "sprites\\spr_boss_knightWitch_\\spr_boss_knightWitch_.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "12353323-b931-46c6-b7c4-23d828e9a396",
             "Value": {
                 "id": "a182dc99-d505-4f3d-832a-f238128464b5",
@@ -843,6 +867,14 @@
             "Value": {
                 "id": "ba26d3f5-9a72-4d42-8c5e-bacad3165fb7",
                 "resourcePath": "sprites\\spr_wispJar_flameOrange\\spr_wispJar_flameOrange.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "1ae60d53-7e96-4404-88d2-dfc36eafa068",
+            "Value": {
+                "id": "e764ab11-aad9-4a2a-a31e-c4c50679f208",
+                "resourcePath": "sprites\\spr_boss_knightWitch_goo\\spr_boss_knightWitch_goo.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1068,6 +1100,14 @@
                 "id": "21861187-b216-4a02-b411-f647cce29fa8",
                 "resourcePath": "sprites\\spr_boss_theGreenWitch_goo\\spr_boss_theGreenWitch_goo.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "2111200f-c4fd-4cc7-a482-0bdadb2c3dcd",
+            "Value": {
+                "id": "590d9835-1553-4abf-ad8a-7d539d668ba3",
+                "resourcePath": "views\\2111200f-c4fd-4cc7-a482-0bdadb2c3dcd.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -3439,6 +3479,14 @@
             }
         },
         {
+            "Key": "703fb25d-864f-40e7-98d7-ac8a09834caf",
+            "Value": {
+                "id": "0310b770-2222-4071-a3a7-2b8bc1f36a43",
+                "resourcePath": "sprites\\spr_boss_knightWitch_rapidFire\\spr_boss_knightWitch_rapidFire.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "704b221a-965c-4ce7-95cf-6876a5436195",
             "Value": {
                 "id": "95ff37e9-1812-4ab8-a5df-7d8702a56ab4",
@@ -4083,6 +4131,14 @@
             "Value": {
                 "id": "c25a178d-3bf2-46f5-ac4d-7e8f5fabc798",
                 "resourcePath": "sprites\\spr_player_theMage_menu\\spr_player_theMage_menu.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "82da932d-1e02-42a4-8fd5-099022b48333",
+            "Value": {
+                "id": "01f22d46-84b0-4ccb-a41c-4f61d670dd0c",
+                "resourcePath": "sprites\\spr_boss_knightWitch_circle\\spr_boss_knightWitch_circle.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5979,6 +6035,14 @@
             "Value": {
                 "id": "94c93bb6-7618-4b76-8254-19017d103280",
                 "resourcePath": "sprites\\spr_prop_woodWall1\\spr_prop_woodWall1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c22e8a9a-2bf0-41dc-9b19-e3dc4b80baf0",
+            "Value": {
+                "id": "7da90af2-08bd-4c98-80a7-f17b3a6fc142",
+                "resourcePath": "sprites\\spr_boss_knightWitch_cone\\spr_boss_knightWitch_cone.yy",
                 "resourceType": "GMSprite"
             }
         },

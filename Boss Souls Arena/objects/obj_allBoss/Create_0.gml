@@ -51,6 +51,7 @@ enum Atks
 	BeamAttack,
 	RapidFire,
 	ZoneAttack,
+	TauntAttack,
 }
 timeAfterIndicate = (3)*30;
 attackCooldown = (6)*30;
@@ -81,6 +82,7 @@ teleportSprite = 0;
 beamSprite = 0;
 rapidFireSprite = 0;
 zoneSprite = 0;
+tauntSprite = 0;
 isHit = false;
 #endregion
 #region Bosses
@@ -278,6 +280,34 @@ isHit = false;
 			teleportSprite = spr_angelSlayerRekZul_teleport;
 			zoneSprite = spr_angelSlayerRekZul_zone;
 			chaseSprite = spr_angelSlayerRekZul_chase;
+			//boss specifc
+			alarm5Timer = (0.15)*30;
+			xBeamSpawn = 0;
+			beamsToSpawn = 0;
+		}
+		#endregion
+		#region KnightWitch Yi
+		if (gameMaster.chosenBoss == Boss.KnightWitchYi) 
+		{
+			//stats
+			phase1Hp = tier3Hp*1; phase1Ms = 1.5; phase1Dmg = 50;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.WalkingTowards;
+			//attacks and phase
+			tier = 3;
+			phase = 1;
+			maxPhase = 1;
+			//visual
+			size = 1.5;
+			alpha = 1;
+			circleSprite = spr_boss_knightWitch_circle;
+			beamSprite = spr_boss_knightWitch_beam;
+			gooSprite = spr_boss_knightWitch_goo;
+			rapidFireSprite = spr_boss_knightWitch_rapidFire;
+			tauntSprite = spr_boss_knightWitch_taunt;
+			coneSprite = spr_boss_knightWitch_cone;
 			//boss specifc
 			alarm5Timer = (0.15)*30;
 			xBeamSpawn = 0;

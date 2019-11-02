@@ -6,7 +6,9 @@ if (gameMaster.assassinUnlocked == true)
 	{
 		if (assassinProgress < 2){menu = Menues.BossSelect;chosenClass = Character.ShadowAssassin;}
 		if (assassinProgress > 1){menu = Menues.BossLoot;  chosenClass = Character.ShadowAssassin;}
-		global.itemSlots = int64(2 + (assassinProgress/8));
+		global.itemSlots = int64(1 + (assassinProgress/3));
+		global.maxItemSlots = global.itemSlots;
+
 	}
 	with(par_loot){reset = true;}
 	global.slot1 = false; global.slot4 = false;

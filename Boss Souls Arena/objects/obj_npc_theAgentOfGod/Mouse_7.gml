@@ -6,7 +6,8 @@ if (gameMaster.agentOfGodUnlocked == true)
 	{
 		if (agentOfGodProgress < 2){menu = Menues.BossSelect;chosenClass = Character.PlaugeWalker;}
 		if (agentOfGodProgress > 1){menu = Menues.BossLoot;  chosenClass = Character.PlaugeWalker;}
-		global.itemSlots = int64(2 + (agentOfGodProgress/8));
+		global.itemSlots = int64(1 + (agentOfGodProgress/3));
+		global.maxItemSlots = global.itemSlots;
 	}
 	with(par_loot){reset = true;}
 	global.slot1 = false; global.slot4 = false;

@@ -243,8 +243,7 @@ if (moveType == MovementType.StandingStill)
 			alarm[5] = alarm5Timer;	
 		}
 	}
-	#endregion
-	
+	#endregion	
 #endregion
 #region Attacks
 if(chooseAnAttack == true)
@@ -276,6 +275,7 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul && phase == 1){attack = choose(Atks.CircleAttack,Atks.BeamAttack,Atks.TeleportAttack);}
 	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul && phase == 2){attack = choose(Atks.CircleAttack,Atks.BeamAttack,Atks.ZoneAttack,Atks.TeleportAttack);}
 	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul && phase == 3){attack = choose(Atks.CircleAttack,Atks.ZoneAttack,Atks.TeleportAttack,Atks.ChaseAttack);}
+	if (gameMaster.chosenBoss == Boss.KnightWitchYi && phase == 1){attack = choose(Atks.CircleAttack,Atks.BeamAttack,Atks.ConeAttack,Atks.GooSpawn,Atks.RapidFire,Atks.TauntAttack);}
 	#endregion
 	if (attack == Atks.NormalShot)
 	{
@@ -449,6 +449,11 @@ if(chooseAnAttack == true)
 			drawArea = true;
 		}
 		#endregion
+	}
+	if (attack == Atks.TauntAttack)
+	{
+		sprite_index = tauntSprite;		
+		attackColor = c_dkgray;
 	}
 	alarm[0] = timeAfterIndicate;
 	alarm[1] = attackCooldown*choose(1,1,1,1,2);

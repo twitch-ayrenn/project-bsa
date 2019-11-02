@@ -68,6 +68,7 @@ enum Boss
 	
 	LadyCorruption,
 }
+global.bossAmount = 25;
 enum Character
 {
 	ShadowAssassin,
@@ -154,9 +155,9 @@ backSize = 1;
 global.slidingSpeed = 1.75;
 ////Character progression and select
 //Progress
-assassinProgress = 40;
-bloodKnightProgress = 40;
-pyromancerProgress = 40;
+assassinProgress = 25;
+bloodKnightProgress = 25;
+pyromancerProgress = 12;
 shopkeeperProgress = 1;
 theRedWarriorProgress = 1;
 plaugeWalkerProgress = 1;
@@ -187,6 +188,7 @@ rainbowSlimeItems[100] = false;
 agentOfGodItems[100] = false;
 gravelingItems[100] = false;
 global.itemSlots = 0;
+global.maxItemSlots = 0;
 global.itemSelected[100] = false;
 global.slot1 = false;
 global.slot2 = false;

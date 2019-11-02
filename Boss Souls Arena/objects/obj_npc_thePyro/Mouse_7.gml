@@ -6,7 +6,8 @@ if (gameMaster.pyromancerUnlocked== true)
 	{
 		if (pyromancerProgress < 2){menu = Menues.BossSelect;chosenClass = Character.Pyromancer;}
 		if (pyromancerProgress > 1){menu = Menues.BossLoot;  chosenClass = Character.Pyromancer;}
-		global.itemSlots = int64(2 + (pyromancerProgress/8));
+		global.itemSlots = int64(1 + (pyromancerProgress/3));
+		global.maxItemSlots = global.itemSlots;
 	}
 	with(par_loot){reset = true;}
 	global.slot1 = false; global.slot4 = false;
