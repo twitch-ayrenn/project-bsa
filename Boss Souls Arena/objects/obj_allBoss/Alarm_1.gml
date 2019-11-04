@@ -15,6 +15,12 @@ if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
 		}
 	}
 }
+#region KnightWitch yi
+if (gameMaster.chosenBoss == Boss.KnightWitchYi)
+{
+	global.playerBossSlow = 1;
+}
+#endregion
 if (gameMaster.chosenBoss == Boss.TheMadWitches)
 {
 	var doOnce = true;

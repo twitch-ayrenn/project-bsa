@@ -6,8 +6,8 @@ phase3Hp = 0; phase3Ms = 0; phase3Dmg = 0;
 phase4Hp = 0; phase4Ms = 0; phase4Dmg = 0;
 phase5Hp = 0; phase5Ms = 0; phase5Dmg = 0;
 phase6Hp = 0; phase6Ms = 0; phase6Dmg = 0;
-tier1Hp = 500; tier2Hp = 800; tier3Hp = 1200;
-tier4Hp = 2000; tier5Hp = 3000; tier6Hp = 5000;
+tier1Hp = 400; tier2Hp = 700; tier3Hp = 1000;
+tier4Hp = 1300; tier5Hp = 1600; tier6Hp = 2500;
 hp = 0;
 maxHp = hp;
 global.bossDamage = 10;
@@ -64,6 +64,8 @@ position = 1;
 dashSpeed = 0;
 alarm5Timer = 0;
 activateAlarm5 = false;
+//DEBUFFS on player
+global.playerBossSlow = 1;
 #endregion
 #region Visuals
 size = 1;
@@ -290,7 +292,7 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.KnightWitchYi) 
 		{
 			//stats
-			phase1Hp = tier3Hp*1; phase1Ms = 1.5; phase1Dmg = 50;
+			phase1Hp = tier3Hp*1; phase1Ms = 1.4; phase1Dmg = 45;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -300,7 +302,7 @@ isHit = false;
 			phase = 1;
 			maxPhase = 1;
 			//visual
-			size = 1.5;
+			size = 1.35;
 			alpha = 1;
 			circleSprite = spr_boss_knightWitch_circle;
 			beamSprite = spr_boss_knightWitch_beam;
@@ -309,9 +311,7 @@ isHit = false;
 			tauntSprite = spr_boss_knightWitch_taunt;
 			coneSprite = spr_boss_knightWitch_cone;
 			//boss specifc
-			alarm5Timer = (0.15)*30;
-			xBeamSpawn = 0;
-			beamsToSpawn = 0;
+			knightWitchGooSize = 1;
 		}
 		#endregion
 	#endregion

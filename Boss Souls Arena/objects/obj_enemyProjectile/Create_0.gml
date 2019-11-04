@@ -13,5 +13,4 @@ beamChase = false;
 turningSpeed = 10;
 dmg = 0;
 effectType = Effect.NoEffect
-if (sprite_index == spr_fireBall && image_xscale == 3){dmg *= 3}
 gooGroundSizeFix = true;

@@ -83,6 +83,12 @@ if (drawArea == true)
 		
 	}
 	#endregion
+	#region Knight witch yi
+	if (gameMaster.chosenBoss == Boss.KnightWitchYi && attack == Atks.BeamAttack)
+	{
+		draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,global.orange,global.orange);
+	}
+	#endregion
 }
 #endregion
 if (gameMaster.chosenBoss == Boss.TheMadWitches)

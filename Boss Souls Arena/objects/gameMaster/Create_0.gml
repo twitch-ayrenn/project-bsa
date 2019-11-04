@@ -18,7 +18,6 @@ enum Menues
 	Main,
 	PlayerSelect,
 	BossLoot,
-	State,
 	Settings,
 	BossSelect,
 	Play,
@@ -95,6 +94,7 @@ enum States
 {
 	Idle,
 	Walking,
+	Dead,
 }
 chosenClass = 0;
 chosenBoss = 0;

@@ -90,7 +90,7 @@ if (menu == Menues.BossLoot)
 	{
 		infoTextX = 300 + shoveInX;
 		draw_set_font(fnt_NewNormalText);
-		draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Selectan an [Item] to the left by",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Select an [Item] to the left by",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"clicking on it.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"Hover over an [Item] to see info",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"about that [Item].",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -408,7 +408,7 @@ if (menu == Menues.Play)
 if (menu == Menues.BossSlain)
 {
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(430,70,"Boss Slayed!",1.5,1.5,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(430,70,"Victory!",1.5,1.5,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);	

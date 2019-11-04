@@ -658,7 +658,7 @@
             "Key": "11ed6a7f-02aa-4519-9f72-1c8925855be6",
             "Value": {
                 "id": "330af67d-e434-4955-8fe4-37fe3711d8e2",
-                "resourcePath": "sprites\\spr_boss_knightWitch_\\spr_boss_knightWitch_.yy",
+                "resourcePath": "sprites\\spr_boss_knightWitch_walking\\spr_boss_knightWitch_walking.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1423,6 +1423,14 @@
             }
         },
         {
+            "Key": "2a47d9ab-943e-4f2a-912e-2cd12a3d0750",
+            "Value": {
+                "id": "d03d0b42-d591-4d07-ac63-b8a9b7d6f539",
+                "resourcePath": "sprites\\spr_player_theAssasin_dead\\spr_player_theAssasin_dead.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "2a969c40-d2aa-412c-b2c0-8f45624d4266",
             "Value": {
                 "id": "e5e1ad59-2920-4fd3-8040-001fe5d1413c",
@@ -1612,14 +1620,6 @@
                 "id": "e59a4af9-30b2-480a-89db-7ff73010bf77",
                 "resourcePath": "views\\30ade4fe-e7de-4d31-968c-0dbf03bcc02b.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "30bf2156-bd13-4cee-9bf0-6d84672fc568",
-            "Value": {
-                "id": "a458077e-9afd-482f-91c6-70996ae88b75",
-                "resourcePath": "sprites\\spr_player_theAssasin_dead\\spr_player_theAssasin_dead.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -5803,14 +5803,6 @@
             "Value": {
                 "id": "b927e40f-7daa-453d-89cf-2fa7d2ca8bcb",
                 "resourcePath": "sprites\\spr_player_plaugeWalker_walking\\spr_player_plaugeWalker_walking.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "b8b59823-4775-4cd5-974c-4a6bf7cfa34c",
-            "Value": {
-                "id": "dca7c76f-a281-4563-9ebd-a3dc0555d6a6",
-                "resourcePath": "sprites\\spr_witchBolt_green\\spr_witchBolt_green.yy",
                 "resourceType": "GMSprite"
             }
         },

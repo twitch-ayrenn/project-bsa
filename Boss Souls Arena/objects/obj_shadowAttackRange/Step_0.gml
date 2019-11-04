@@ -14,21 +14,21 @@ if (dealDamage == true && dealDamageTimes > 0)
 	{
 		if (place_meeting(x,y,obj_shadowAttackRange))
 		{
-			var damageDealt = global.damage;
+			var damageDealt = global.damage*2;
 			var damageText = instance_create_depth(enemy.x+irandom_range(-8,8),enemy.y+irandom_range(-5,5),enemy.depth-10,obj_textMaker);
 			damageText.color = c_white;
 			damageText.text = damageDealt;
-			hp -= global.damage;
+			hp -= global.damage*2;
 			
 			image_blend = c_red;
 			
-			var amountHealed = global.damage*global.lifeSteal;
+			var amountHealed = global.damage*global.lifeSteal*2;
 			var healText = instance_create_depth(global.player.x+irandom_range(-8,8),global.player.y+irandom_range(-5,5),global.player.depth-10,obj_textMaker);
 			healText.color = c_lime;
 			healText.text = amountHealed;
 			with (global.player)
 			{
-				hp += global.damage*global.lifeSteal;
+				hp += global.damage*global.lifeSteal*2;
 			}
 		}
 	}

@@ -99,7 +99,7 @@ if (moveType == MovementType.StandingStill)
 			corruptKlot.image_yscale = 1.5;
 			corruptKlot.effectType = Effect.Flare;
 		
-			alarm[2] = (0.5)*30;
+			alarm[2] = (0.75)*30;
 		}
 	}
 	#endregion
@@ -156,11 +156,11 @@ if (moveType == MovementType.StandingStill)
 			fireBalls3.image_yscale = 1;
 			fireBalls3.effectType = Effect.Flare;
 		
-			alarm[2] = (0.75)*30;
+			alarm[2] = (0.8)*30;
 		}
 	}
 	#endregion
-	#region WispSister anna
+	#region WispSister Julia
 	if (gameMaster.chosenBoss == Boss.WispSisterJulia)
 	{
 		if (rapidFireStacks > 0 && canRapidAttack == true)
@@ -175,13 +175,13 @@ if (moveType == MovementType.StandingStill)
 			fireball.image_angle = fireball.direction+90;
 			//Visual
 			fireball.image_alpha = 0.85;
-			fireball.image_blend = c_purple;
+			fireball.image_blend = c_aqua;
 			fireball.sprite_index = spr_fireBall;
 			fireball.image_xscale = 1;
 			fireball.image_yscale = 1;
 			fireball.effectType = Effect.Flare;
 		
-			alarm[2] = (0.5)*30;
+			alarm[2] = (0.65)*30;
 		}
 	}
 	#endregion
@@ -213,7 +213,7 @@ if (moveType == MovementType.StandingStill)
 				coneAtkFW += (coneWide/coneAmount);
 			}
 		
-			alarm[2] = (0.5)*30;
+			alarm[2] = (0.65)*30;
 		}
 	}
 	#endregion
@@ -244,6 +244,31 @@ if (moveType == MovementType.StandingStill)
 		}
 	}
 	#endregion	
+	#region Knight witch yi
+	if (gameMaster.chosenBoss == Boss.KnightWitchYi)
+	{
+		if (rapidFireStacks > 0 && canRapidAttack == true)
+		{
+			canRapidAttack = false;
+			rapidFireStacks -= 1;
+		
+			var corruptKlot = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			corruptKlot.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+			corruptKlot.speed = 6;
+			corruptKlot.image_angle = corruptKlot.direction;
+			//Visual
+			corruptKlot.image_alpha = 0.85;
+			corruptKlot.image_blend = c_fuchsia;
+			corruptKlot.sprite_index = spr_swordShot;
+			corruptKlot.image_xscale = 1.25;
+			corruptKlot.image_yscale = 1.25;
+			corruptKlot.effectType = Effect.NoEffect;
+		
+			alarm[2] = (0.55)*30;
+		}
+	}
+	#endregion
 #endregion
 #region Attacks
 if(chooseAnAttack == true)
@@ -300,6 +325,17 @@ if(chooseAnAttack == true)
 			drawArea = true;
 		}
 		#endregion
+		#region KnightWitch yi
+		if (gameMaster.chosenBoss == Boss.KnightWitchYi)
+		{
+			var indicator = instance_create_depth(x,y,-5,obj_indicator)
+			indicator.sprite_index = spr_damageCircle;
+			indicator.image_xscale = 0.085;
+			indicator.image_yscale = 0.085;
+			indicator.image_blend = c_maroon;
+			indicator.follow = true;
+		}
+		#endregion
 	}
 	if (attack == Atks.GooSpawn)
 	{
@@ -326,11 +362,33 @@ if(chooseAnAttack == true)
 			indicator.image_blend = c_maroon;
 		}
 		#endregion
+		#region KnightWitch yi
+		if (gameMaster.chosenBoss == Boss.KnightWitchYi)
+		{
+			var indicator = instance_create_depth(x,y,-5,obj_indicator)
+			indicator.sprite_index = spr_damageCircle;
+			indicator.image_xscale = 0.085;
+			indicator.image_yscale = 0.085;
+			indicator.image_blend = c_maroon;
+			indicator.follow = true;
+		}
+		#endregion
 	}
 	if (attack == Atks.ConeAttack)
 	{
 		sprite_index = coneSprite;		
 		attackColor = c_aqua;
+		#region KnightWitch yi
+		if (gameMaster.chosenBoss == Boss.KnightWitchYi)
+		{
+			var indicator = instance_create_depth(x,y,-5,obj_indicator)
+			indicator.sprite_index = spr_damageCircle;
+			indicator.image_xscale = 0.085;
+			indicator.image_yscale = 0.085;
+			indicator.image_blend = c_maroon;
+			indicator.follow = true;
+		}
+		#endregion
 	}
 	if (attack == Atks.OneShotAttack)
 	{
@@ -407,12 +465,34 @@ if(chooseAnAttack == true)
 	{
 		sprite_index = rapidFireSprite;
 		attackColor = global.lightBlue;
+		#region KnightWitch yi
+		if (gameMaster.chosenBoss == Boss.KnightWitchYi)
+		{
+			var indicator = instance_create_depth(x,y,-5,obj_indicator)
+			indicator.sprite_index = spr_damageCircle;
+			indicator.image_xscale = 0.085;
+			indicator.image_yscale = 0.085;
+			indicator.image_blend = c_maroon;
+			indicator.follow = true;
+		}
+		#endregion
 	}
 	if (attack == Atks.BeamAttack)
 	{
 		sprite_index = beamSprite;
 		attackColor = global.orange;
 		drawArea = true;
+		#region KnightWitch yi
+		if (gameMaster.chosenBoss == Boss.KnightWitchYi)
+		{
+			var indicator = instance_create_depth(x,y,-5,obj_indicator)
+			indicator.sprite_index = spr_damageCircle;
+			indicator.image_xscale = 0.085;
+			indicator.image_yscale = 0.085;
+			indicator.image_blend = c_maroon;
+			indicator.follow = true;
+		}
+		#endregion
 	}
 	if (attack == Atks.TeleportAttack)
 	{
@@ -454,6 +534,18 @@ if(chooseAnAttack == true)
 	{
 		sprite_index = tauntSprite;		
 		attackColor = c_dkgray;
+		#region KnightWitch yi
+		if (gameMaster.chosenBoss == Boss.KnightWitchYi)
+		{
+			var indicator = instance_create_depth(x,y,-5,obj_indicator)
+			indicator.sprite_index = spr_damageCircle;
+			indicator.image_xscale = 0.085;
+			indicator.image_yscale = 0.085;
+			indicator.image_blend = c_maroon;
+			indicator.follow = true;
+			global.playerBossSlow = 0.8;
+		}
+		#endregion
 	}
 	alarm[0] = timeAfterIndicate;
 	alarm[1] = attackCooldown*choose(1,1,1,1,2);

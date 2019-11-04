@@ -1,9 +1,16 @@
 /// @description Insert description here
 #region vars
+//depth
 if (place_meeting(x,y,obj_allBoss) == false){depth = -50;}
 if (sprite_index == spr_gooGround){depth = -7;}
 var target = global.player;
-dmg = clamp(global.bossDamage*(clamp((target.hp/target.maxHp),0.5,1)),1,0.8*(target.maxHp));
+//damage
+if (sprite_index == spr_gooGround){dmg = clamp(global.bossDamage*(clamp((target.hp/target.maxHp),0.5,1)),1,0.8*(target.maxHp));}
+if (sprite_index == spr_beam){dmg = clamp(global.bossDamage*3*(clamp((target.hp/target.maxHp),0.5,1)),1,0.8*(target.maxHp));}
+if (sprite_index == spr_fireBall ||sprite_index == spr_bat || sprite_index == spr_swordShot || sprite_index == spr_bloodKlott)
+{
+	dmg = clamp(global.bossDamage*image_xscale*image_xscale*(clamp((target.hp/target.maxHp),0.5,1)),1,0.8*(target.maxHp));
+}
 stacks++;
 #endregion
 #region Visuals 
@@ -41,7 +48,7 @@ if (stickOn == true)
 }
 if (beamChase == true)
 {
-		image_angle -= turningSpeed/30;	
+	image_angle -= turningSpeed/30;	
 }
 
 #endregion
@@ -51,14 +58,14 @@ if (destroy == true)
 	alarm[0] = range;
 }
 #region damage
-if (place_meeting(x,y,target) && sprite_index != spr_gooGround && global.iFrame == false 
-&& sprite_index != spr_beam && sprite_index != spr_chaseDamage)
+if (place_meeting(x,y,target) && sprite_index != spr_gooGround && global.iFrame == false && sprite_index != spr_beam && sprite_index != spr_chaseDamage)
 {
-	var damageToTarget = clamp(dmg,1,0.8*(target.maxHp));
+	var damageToTarget = dmg;
 	var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
 	damageText.color = c_maroon;
 	damageText.text = damageToTarget;
 	target.hp -= damageToTarget;
+	#region BloodZombie Pool
 	if(sprite_index == spr_bloodKlott && gameMaster.chosenBoss == Boss.BloodZombie)
 	{
 		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
@@ -74,47 +81,26 @@ if (place_meeting(x,y,target) && sprite_index != spr_gooGround && global.iFrame 
 		gooGround.image_yscale = 0.5;
 		gooGround.destroy = false;
 	}
+	#endregion
 	with (obj_camera){shake_remain += 2;}
 	instance_destroy();
 }
-if (stacks >= (1)*30 && sprite_index == spr_gooGround ||stacks >= (1)*30 && sprite_index == spr_chaseDamage)
+if (stacks >= (1)*30 && sprite_index == spr_gooGround && place_meeting(x,y,target) && global.iFrame == false|| stacks >= (1)*30 && sprite_index == spr_chaseDamage && place_meeting(x,y,target) && global.iFrame == false)
 {
-	if (place_meeting(x,y,target) && sprite_index == spr_gooGround && global.iFrame == false)
-	{
-		var damageToTarget = clamp(dmg,1,0.8*(target.maxHp));
-		var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
-		damageText.color = c_maroon;
-		damageText.text = damageToTarget;
-		target.hp -= damageToTarget;
-	}
-	if (place_meeting(x,y,target) && sprite_index == spr_chaseDamage && global.iFrame == false)
-	{
-		var damageToTarget = clamp(dmg*2,1,0.8*(target.maxHp));
-		var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
-		damageText.color = c_maroon;
-		damageText.text = damageToTarget;
-		target.hp -= damageToTarget;
-	}
-	if (place_meeting(x,y,target) && sprite_index == spr_beam && global.iFrame == false)
-	{
-		var damageToTarget = clamp(dmg*3,1,0.8*(target.maxHp));
-		var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
-		damageText.color = c_maroon;
-		damageText.text = damageToTarget;
-		target.hp -= damageToTarget;
-	}
+	var damageToTarget = dmg;
+	var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
+	damageText.color = c_maroon;
+	damageText.text = damageToTarget;
+	target.hp -= damageToTarget;
 	stacks = 0;
 }
-if (stacks >= (0.25)*30 && sprite_index == spr_beam)
+if (stacks >= (0.25)*30 && sprite_index == spr_beam && place_meeting(x,y,target) && global.iFrame == false)
 {
-	if (place_meeting(x,y,target) && sprite_index == spr_beam && global.iFrame == false)
-	{
-		var damageToTarget = clamp(dmg*2,1,0.8*(target.maxHp));
-		var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
-		damageText.color = c_maroon;
-		damageText.text = damageToTarget;
-		target.hp -= damageToTarget;
-	}
+	var damageToTarget = dmg;
+	var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
+	damageText.color = c_maroon;
+	damageText.text = damageToTarget;
+	target.hp -= damageToTarget;
 	stacks = 0;
 }
 #endregion

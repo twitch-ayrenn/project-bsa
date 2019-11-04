@@ -16,31 +16,7 @@ if (menu == Menues.PlayerSelect)
 //game spawn
 if (menu == Menues.Play)
 {
-	//if death happens
-	if (obj_allPlayer.hp <= 0)
-	{
-		menu = Menues.Death;
-		global.dD -= 0.08;
-		var deadX = obj_player.x;
-		var deadY = obj_player.y;
-		var deadSize = obj_player.image_xscale;
-		var deadSprite = 0;
-		if (obj_player.class == Class.The_Assasin){deadSprite = spr_player_theAssasin_dead;}
-		if (obj_player.class == Class.The_Warrior){deadSprite = spr_player_theWarrior_death;}
-		if (obj_player.class == Class.The_Mage){deadSprite = spr_player_theMage_death;}
-		if (obj_player.class == Class.The_Shopkeeper){deadSprite = spr_player_theShopkeeper_death;}
-		if (obj_player.class == Class.The_BloodKnight){deadSprite = spr_player_theBloodKnight_death;}
-		if (obj_player.class == Class.The_GuardianWisp){deadSprite = spr_item_guardianWisp;}
-		instance_destroy(par_cursor);
-		instance_destroy(par_items);
-		instance_create_depth(mouse_x,mouse_y,-y,obj_cursor_menu);
-		instance_destroy(obj_player);
-		var deadPlayer = instance_create_depth(deadX,deadY,-y,obj_deadPlayer);
-		deadPlayer.sprite_index = deadSprite;
-		deadPlayer.image_xscale = abs(deadSize);
-		deadPlayer.image_yscale = abs(deadSize);
-		if (deadSprite == spr_player_theAssasin_dead){deadPlayer.image_alpha = 0.65;}
-	}
+
 }
 //proggresion
 if (falseAllBosses == true)

@@ -574,13 +574,37 @@ if (attack == Atks.CircleAttack)
 			swordShot.effectType = Effect.NoEffect;
 			angleBk += (360/circleAmount);
 		}
+		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
+		//Main
+		gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		gooGround.speed = 0;
+		gooGround.image_angle = irandom_range(0,360);
+		//Visual
+		gooGround.image_alpha = 1;
+		gooGround.image_blend = c_maroon;
+		gooGround.sprite_index = spr_gooGround;
+		gooGround.image_xscale = knightWitchGooSize;
+		gooGround.image_yscale = knightWitchGooSize;
+		gooGround.destroy = false;
+		gooGround.effectType = Effect.NoEffect;
+		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
 	}
 }
 #endregion
 #region GooSpawn
 if (attack == Atks.GooSpawn)
 {
-
+	if (gameMaster.chosenBoss == Boss.KnightWitchYi)
+	{
+		with (obj_enemyProjectile)
+		{
+			if (sprite_index == spr_gooGround)
+			{
+				image_xscale += 0.2;
+				image_yscale += 0.2;
+			}
+		}
+	}
 }
 #endregion
 #region OneShot
@@ -592,7 +616,44 @@ if (attack == Atks.OneShotAttack)
 #region ConeAttack
 if (attack == Atks.ConeAttack)
 {
-
+	if (gameMaster.chosenBoss == Boss.KnightWitchYi)
+	{
+		
+		var coneWide = 120;
+		var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.5;
+		var coneAmount = 18;
+		repeat(coneAmount)
+		{
+			var fireBolt = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			fireBolt.direction = coneAtkFW;
+			fireBolt.speed = 5;
+			fireBolt.image_angle = fireBolt.direction+90;
+			//Visual
+			fireBolt.image_alpha = 0.85;
+			fireBolt.sprite_index = spr_fireBall;
+			fireBolt.image_blend = global.orange;
+			fireBolt.image_xscale = 1.2;
+			fireBolt.image_yscale = 1.2;
+			fireBolt.effectType = Effect.Flare;
+			coneAtkFW += (coneWide/coneAmount);
+		}
+		
+		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
+		//Main
+		gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		gooGround.speed = 0;
+		gooGround.image_angle = irandom_range(0,360);
+		//Visual
+		gooGround.image_alpha = 1;
+		gooGround.image_blend = c_maroon;
+		gooGround.sprite_index = spr_gooGround;
+		gooGround.image_xscale = knightWitchGooSize;
+		gooGround.image_yscale = knightWitchGooSize;
+		gooGround.destroy = false;
+		gooGround.effectType = Effect.NoEffect;
+		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
+	}
 }
 #endregion
 #region ChaseAttack
@@ -622,12 +683,62 @@ if (attack == Atks.BeamAttack)
 		beam.range = 2.5*30;
 		beam.effectType = Effect.NoEffect;
 	}
+	if (gameMaster.chosenBoss == Boss.KnightWitchYi)
+	{
+		drawArea = false;
+		var beam = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+		//Main
+		beam.image_angle = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-90;
+		//Visual
+		beam.image_alpha = 0.85;
+		beam.image_blend = global.orange;
+		beam.sprite_index = spr_beam;
+		beam.image_xscale = 0.25;
+		beam.image_yscale = 20;
+		beam.maxSize = 2.5;
+		beam.minSize = 0.25;
+		beam.stickOn = true;
+		beam.range = 2*30;
+		beam.effectType = Effect.NoEffect;
+		
+		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
+		//Main
+		gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		gooGround.speed = 0;
+		gooGround.image_angle = irandom_range(0,360);
+		//Visual
+		gooGround.image_alpha = 1;
+		gooGround.image_blend = c_maroon;
+		gooGround.sprite_index = spr_gooGround;
+		gooGround.image_xscale = knightWitchGooSize;
+		gooGround.image_yscale = knightWitchGooSize;
+		gooGround.destroy = false;
+		gooGround.effectType = Effect.NoEffect;
+		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
+	}
 }
 #endregion
 #region RapidFire
 if (attack == Atks.RapidFire)
 {
-
+	if (gameMaster.chosenBoss == Boss.KnightWitchYi)
+	{
+		rapidFireStacks += 1;
+		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
+		//Main
+		gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		gooGround.speed = 0;
+		gooGround.image_angle = irandom_range(0,360);
+		//Visual
+		gooGround.image_alpha = 1;
+		gooGround.image_blend = c_maroon;
+		gooGround.sprite_index = spr_gooGround;
+		gooGround.image_xscale = knightWitchGooSize;
+		gooGround.image_yscale = knightWitchGooSize;
+		gooGround.destroy = false;
+		gooGround.effectType = Effect.NoEffect;
+		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
+	}
 }
 #endregion
 #region Teleport
@@ -665,7 +776,29 @@ if (attack == Atks.ZoneAttack)
 		activateAlarm5 = true;
 		beamsToSpawn = 15;
 	}
-
+	
+}
+#endregion
+#region TauntAttack
+if (attack == Atks.TauntAttack)
+{
+	if (gameMaster.chosenBoss == Boss.KnightWitchYi)
+	{
+		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
+		//Main
+		gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		gooGround.speed = 0;
+		gooGround.image_angle = irandom_range(0,360);
+		//Visual
+		gooGround.image_alpha = 1;
+		gooGround.image_blend = c_maroon;
+		gooGround.sprite_index = spr_gooGround;
+		gooGround.image_xscale = knightWitchGooSize;
+		gooGround.image_yscale = knightWitchGooSize;
+		gooGround.destroy = false;
+		gooGround.effectType = Effect.NoEffect;
+		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
+	}
 }
 #endregion
 #endregion

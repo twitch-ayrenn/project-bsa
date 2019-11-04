@@ -1,6 +1,8 @@
 /// @description Vars
 randomize();
 class = gameMaster.chosenClass;
+#region
+#endregion
 #region Attacks and cooldown
 //left
 canLeftClick = true;
@@ -47,6 +49,7 @@ dashSpeed = 5;
 state = States.Idle;
 idleSprite = 0;
 walkSprite = 0;
+deadSprite = 0;
 instance_create_depth(x,y,1,obj_allCursor);
 playerSize = 1;
 #endregion
@@ -59,6 +62,7 @@ if (class == Character.ShadowAssassin)
 	ultCooldown = (16)*30;
 	idleSprite = spr_player_theAssasin;
 	walkSprite = spr_player_theAssasin_walking;
+	deadSprite = spr_player_theAssasin_dead;
 	leftClickColor = global.purple;
 	rightClickColor = c_fuchsia;
 	dashColor = c_fuchsia;
@@ -132,7 +136,6 @@ summonFlamie = false;
 summonFlamieTime = 10*((1-conjurationPower)+1)*30;
 summonFlamieStacks = 0;
 if (global.itemSelected[Boss.FlameWisp] == true){summonFlamie = true;}
-
 bPSpeed = 1;
 #endregion
 #region Bosses

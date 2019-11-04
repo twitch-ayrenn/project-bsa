@@ -20,8 +20,11 @@ if (speed == 0){global.iFrame = false;}
 #endregion
 randomize();
 #endregion
+#region Alive
+if (state == States.Idle || state == States.Walking)
+{
 #region Movement
-actualSpeed = (moveSpeed)*bPSpeed;
+actualSpeed = (moveSpeed)*bPSpeed*global.playerBossSlow;
 if (keyboard_check(ord("A")) && keyboard_check(ord("S")) || keyboard_check(ord("A")) && keyboard_check(ord("W")) ||  keyboard_check(ord("D")) && keyboard_check(ord("S")) || keyboard_check(ord("D")) && keyboard_check(ord("W")))
 {
 	actualSpeed = actualSpeed*0.85;
@@ -45,6 +48,10 @@ if (keyboard_check(ord("A")) && place_free(x-actualSpeed,y))
 {
 	x -= actualSpeed;
 	state = States.Walking;
+}
+if (!place_free(x+speed+1,y) ||! place_free(x-speed-1,y) || !place_free(x,y+speed+1) || !place_free(x,y-speed-1))
+{
+	speed = 0;
 }
 #endregion
 #region Visuals
@@ -477,10 +484,6 @@ if (mouse_x < x)
 			actualDashSpeed = dashSpeed;
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			
-			with (obj_pyroAttackRange)
-			{
-				dealDamage = true;
-			}
 			var fbPAngleL = 0;
 			var fbPAmountL = 9;
 			repeat(fbPAmountL)
@@ -572,4 +575,21 @@ if (dashStopLeft <= 0)
 }
 if (ultCooldownLeft > 0){ultCooldownLeft--;}
 if (ultCooldownLeft <= 0){canUlt = true;}
+#endregion
+}
+#endregion
+#region dead
+if (hp <= 0)
+{
+	state = States.Dead;
+	menu = Menues.Death;
+}
+if (state == States.Dead)
+{
+	image_angle += clamp(1,0,90);
+	if (image_angle >= 90)
+	{
+		sprite_index = deadSprite;
+	}
+}
 #endregion
