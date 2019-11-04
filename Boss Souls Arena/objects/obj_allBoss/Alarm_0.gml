@@ -524,7 +524,7 @@ if (attack == Atks.TeleportAttack)
 #region NormalAttacks
 if (attack == Atks.NormalShot)
 {
-
+	
 }
 #endregion
 #region CircleAttacks
@@ -552,6 +552,27 @@ if (attack == Atks.CircleAttack)
 			beam.range = 1*30;
 			beam.effectType = Effect.NoEffect;
 			beamCircleAngle += 360/circleBeams;
+		}
+	}
+	if (gameMaster.chosenBoss == Boss.KnightWitchYi)
+	{
+		var angleBk = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		var circleAmount = 24;
+		repeat(circleAmount)
+		{
+			var swordShot = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			swordShot.direction = angleBk;
+			swordShot.speed = 5;
+			swordShot.image_angle = swordShot.direction;
+			//Visual
+			swordShot.image_alpha = 0.85;
+			swordShot.sprite_index = spr_swordShot;
+			swordShot.image_blend = c_fuchsia;
+			swordShot.image_xscale = 1.25;
+			swordShot.image_yscale = 1.25;
+			swordShot.effectType = Effect.NoEffect;
+			angleBk += (360/circleAmount);
 		}
 	}
 }

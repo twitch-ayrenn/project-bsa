@@ -930,7 +930,7 @@
             "Key": "1c49f220-924a-4ffd-91f8-79ef2ea17952",
             "Value": {
                 "id": "c74b5f98-9936-43a4-8d86-d370c207cf3b",
-                "resourcePath": "sprites\\spr_deathSwordProjectile\\spr_deathSwordProjectile.yy",
+                "resourcePath": "sprites\\spr_swordShot\\spr_swordShot.yy",
                 "resourceType": "GMSprite"
             }
         },
