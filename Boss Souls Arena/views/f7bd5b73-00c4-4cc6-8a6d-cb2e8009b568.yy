@@ -11,7 +11,12 @@
         "7a87f070-646f-4d75-aa42-edb39d88927c",
         "af491cd9-3822-4c26-b077-b353483e5489",
         "6cd6d7e7-5165-4710-84d3-d0fe40b9edb3",
-        "de8fffec-7cc6-47d0-9531-4ca59b4e46eb"
+        "de8fffec-7cc6-47d0-9531-4ca59b4e46eb",
+        "a00b6a69-292e-4d9a-9548-f7e4ec7512d9",
+        "01844c00-7482-4473-a745-4ec712667d43",
+        "7526861e-71ba-4e61-8999-64175e219674",
+        "cc2fd750-747d-45c8-bc05-fcff4f46cd29",
+        "a24bfe2e-4f49-485c-ad46-1533cca6fd73"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_theFlameGate",

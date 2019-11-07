@@ -9,11 +9,8 @@ if (startUpVars == true)
 #region Visuals
 randomize();
 var sizeX = size;
-if (moveType != MovementType.StandingStill)
-{
-	if (x < obj_allPlayer.x){sizeX = size;}
-	if (x > obj_allPlayer.x){sizeX = -size;}
-}
+if (x < obj_allPlayer.x){sizeX = size;}
+if (x > obj_allPlayer.x){sizeX = -size;}
 image_xscale = sizeX;
 image_yscale = size;
 if (hp <= 0){hp = 0;}
@@ -73,7 +70,7 @@ if (moveType == MovementType.StandingStill)
 	if (gameMaster.chosenBoss == Boss.FlameGate)
 	{
 		x = global.arenaMiddleX;
-		y = global.arenaMiddleY-175;
+		y = global.arenaMiddleY-140;
 	}
 }
 #endregion

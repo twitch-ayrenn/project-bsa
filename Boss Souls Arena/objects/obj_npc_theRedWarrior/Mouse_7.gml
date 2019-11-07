@@ -6,7 +6,7 @@ if (gameMaster.theRedWarriorUnlocked == true)
 	{
 		if (theRedWarriorProgress < 2){menu = Menues.BossSelect;chosenClass = Character.TheRedWarrior;}
 		if (theRedWarriorProgress > 1){menu = Menues.BossLoot;  chosenClass = Character.TheRedWarrior;}
-		global.itemSlots = int64(1 + (theRedWarriorProgress/3));
+		global.itemSlots = int64(1 + ((theRedWarriorProgress-1)/3));
 		global.maxItemSlots = global.itemSlots;
 	}
 	with(par_loot){reset = true;}

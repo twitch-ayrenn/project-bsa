@@ -723,7 +723,7 @@ if (attack == Atks.RapidFire)
 {
 	if (gameMaster.chosenBoss == Boss.KnightWitchYi)
 	{
-		rapidFireStacks += 1;
+		rapidFireStacks += 10;
 		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
 		//Main
 		gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);

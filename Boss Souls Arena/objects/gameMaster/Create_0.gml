@@ -142,6 +142,14 @@ global.musicOn = true;
 global.soundOn = true;
 global.ambientOn = true;
 global.ShowInfo = false;
+global.moveUpKey = ord("W");
+global.moveDownKey = ord("S");
+global.moveLeftKey = ord("A");
+global.moveRightKey = ord("D");
+global.basicAttackKey = mb_left;
+global.abilityAttackKey = mb_right;
+global.dashAttackKey = vk_space;
+global.ultimateAttackKey = ord("E");
 global.deBuggerInfo = true;
 global.showDD = false;
 global.showFps = true;
@@ -154,10 +162,10 @@ backColor = c_maroon;
 backSize = 1;
 global.slidingSpeed = 1.75;
 ////Character progression and select
-//Progress
+//Progress // for a boss its its number -1
 assassinProgress = 25;
 bloodKnightProgress = 25;
-pyromancerProgress = 12;
+pyromancerProgress = 4;
 shopkeeperProgress = 1;
 theRedWarriorProgress = 1;
 plaugeWalkerProgress = 1;

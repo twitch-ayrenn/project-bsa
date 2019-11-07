@@ -37,7 +37,7 @@ if (sprite_index == spr_beam)
 #region movement
 if (chase == true && instance_exists(target))
 {
-	move_towards_point(target.x,target.y,target.actualSpeed*1.3);
+	move_towards_point(target.x,target.y,target.moveSpeed);
 	image_angle = direction+90;
 }
 if (stickOn == true)

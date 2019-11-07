@@ -221,12 +221,12 @@ isHit = false;
 			phase = 1;
 			maxPhase = 1;
 			//visual
-			size = 1.5;
+			size = 2;
 			alpha = 1;
-			rapidFireSprite = spr_boss_theFlameGate_rapidFire;
-			gooSprite = spr_boss_theFlameGate_goo;
-			oneShotSprite = spr_boss_theFlameGate_oneShot;
-			coneSprite = spr_boss_theFlameGate_cone;
+			rapidFireSprite = spr_boss_demonGate_rapidFire;
+			gooSprite = spr_boss_demonGate_goo;
+			oneShotSprite = spr_boss_demonGate_oneShot;
+			coneSprite = spr_boss_demonGate_cone;
 		}
 		#endregion
 		#region DeathKnight

@@ -220,6 +220,24 @@ if (mouse_x < x)
 	}
 	#endregion
 	#region Items
+	if (activateLeftClickItem == true)
+	{
+		activateLeftClickItem = false;
+		if (instance_exists(obj_equipment_madHat))
+		{
+			with (obj_equipment_madHat)
+			{
+				var projectile = instance_create_depth(x,y,depth+1,obj_madBolt);
+				projectile.direction = point_direction(x,y,mouse_x,mouse_y);
+				projectile.speed = 6;
+				projectile.image_angle = projectile.direction+90;
+				projectile.image_xscale = 1;
+				projectile.image_yscale = 1;
+				projectile.image_alpha = 0.85;
+				projectile.image_blend = c_green;
+			}
+		}
+	}
 	#endregion
 	#region onGoingEffects
 	#endregion
@@ -228,8 +246,7 @@ if (mouse_x < x)
 	#region ShadowAssassin
 	if (class == Character.ShadowAssassin)
 	{
-		if (mouse_check_button(mb_right) && canRightClick == true && distance_to_point(mouse_x,mouse_y) <= teleportRange && place_free(mouse_x,mouse_y)||
-			mouse_check_button(mb_right) && canRightClick == true && point_distance(obj_shadow.x,obj_shadow.y,mouse_x,mouse_y) <= teleportRange && place_free(mouse_x,mouse_y))
+		if (mouse_check_button(mb_right) && canRightClick == true && place_free(mouse_x,mouse_y))
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
@@ -317,9 +334,17 @@ if (mouse_x < x)
 	}
 	#endregion
 	#region Items
-	
+	if (activateRightClickItem == true)
+	{
+		activateRightClickItem = false;
+		#region MadHat
+		if (global.itemSelected[Boss.TheMadWitches] == true && place_free(mouse_x,mouse_y))
+		{
+			instance_create_depth(mouse_x,mouse_y,-mouse_y,obj_equipment_madHat);
+		}
+		#endregion
+	}
 	#endregion
-
 #endregion
 #region Ult
 	#region ShadowAssassin
@@ -426,6 +451,7 @@ if (mouse_x < x)
 	if (activateUltItem == true)
 	{
 		activateUltItem = false;
+		#region Zombie Head
 		if (global.itemSelected[Boss.BloodZombie] == true && instance_exists(par_enemy))
 		{
 			if (instance_exists(obj_equipment_bloodPuddle) == true)
@@ -443,8 +469,7 @@ if (mouse_x < x)
 			}
 		}
 	}
-	if (place_meeting(x,y,obj_equipment_bloodPuddle)){bPSpeed = 1 + (50)/100;}
-	if (!place_meeting(x,y,obj_equipment_bloodPuddle)){bPSpeed = 1;}
+	#endregion
 	#endregion
 #endregion
 #region Dash
@@ -547,19 +572,57 @@ if (mouse_x < x)
 	}
 	#endregion
 	#region Items
-	
+	if (activateDashItem == true)
+	{
+		activateDashItem = false;
+		#region DemonHorn
+		if (global.itemSelected[Boss.FlameGate] == true)
+		{
+			var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
+			horn.destroyTime = (maxHp/50)*30;
+		}
+		#endregion
+	}
 	#endregion
 #endregion
 #region Items
-if (summonFlamie == true)
-{
-	summonFlamieStacks++;
-}
-if (summonFlamieStacks >= summonFlamieTime)
-{
-	summonFlamieStacks = 0;
-	instance_create_depth((global.arenaMiddleX-x) + global.arenaMiddleX,(global.arenaMiddleY-y) + global.arenaMiddleY,depth,obj_equipment_flamie);
-}
+	#region Flamie
+	if (summonFlamie == true)
+	{
+		summonFlamieStacks++;
+	}
+	if (summonFlamieStacks >= summonFlamieTime)
+	{
+		summonFlamieStacks = 0;
+		instance_create_depth((global.arenaMiddleX-x) + global.arenaMiddleX,(global.arenaMiddleY-y) + global.arenaMiddleY,depth,obj_equipment_flamie);
+	}
+	#endregion
+	#region EdgeOfCorruption
+	if (!keyboard_check(global.moveDownKey) && !keyboard_check(global.moveLeftKey)  && !keyboard_check(global.moveRightKey) && !keyboard_check(global.moveUpKey) && speed == 0 && global.itemSelected[Boss.TheCorrupter] == true)
+	{
+		edgeOfCorruptionCharge += 1;
+	}
+	else
+	{
+		edgeOfCorruptionCharge -= 2;	
+	}
+	if (edgeOfCorruptionCharge >= edgeOfCorruptionChargeTime)
+	{
+		instance_create_depth(x,y,depth+1,obj_bloodBeamEffect);
+		var bloodBeam = instance_create_depth(x,y,depth+2,obj_equipment_corruptionBeam);
+		bloodBeam.image_angle = point_direction(x,y,mouse_x,mouse_y)+270;
+		bloodBeam.image_yscale = 20;
+		bloodBeam.image_xscale = 1.8;
+		bloodBeam.image_blend = c_fuchsia;
+		with (obj_camera){shake_remain += 15;}
+		edgeOfCorruptionCharge = 0;
+	} 
+	if (edgeOfCorruptionCharge < 0){edgeOfCorruptionCharge = 0;}
+	#endregion
+	#region Zombie Head
+	if (place_meeting(x,y,obj_equipment_bloodPuddle)){bPSpeed = 1 + (50)/100;}
+	if (!place_meeting(x,y,obj_equipment_bloodPuddle)){bPSpeed = 1;}
+	#endregion
 #endregion
 #region Cooldowns
 if (leftClickCooldownLeft > 0){leftClickCooldownLeft--;}
@@ -583,6 +646,8 @@ if (hp <= 0)
 {
 	state = States.Dead;
 	menu = Menues.Death;
+	speed = 0;
+	moveSpeed = 0;
 }
 if (state == States.Dead)
 {

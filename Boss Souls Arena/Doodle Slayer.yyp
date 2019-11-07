@@ -103,6 +103,14 @@
             }
         },
         {
+            "Key": "01844c00-7482-4473-a745-4ec712667d43",
+            "Value": {
+                "id": "d17c6253-aa77-4f7c-99d8-075cdca86c80",
+                "resourcePath": "sprites\\spr_boss_demonGate_cone\\spr_boss_demonGate_cone.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "01c8a5fc-d710-4f41-856e-1bb786cf216e",
             "Value": {
                 "id": "136d6f78-9ad4-4ef6-91a8-16613f780ef8",
@@ -116,6 +124,14 @@
                 "id": "52750466-f388-4194-838d-96c9f0049113",
                 "resourcePath": "objects\\obj_deathShot\\obj_deathShot.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "0255b2c9-0d3d-4ae7-b9b3-8975cb458f3e",
+            "Value": {
+                "id": "282699d0-6e3c-4435-9285-d4cd6e88aa58",
+                "resourcePath": "sprites\\spr_equipment_demonClaw_down\\spr_equipment_demonClaw_down.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -492,6 +508,14 @@
                 "id": "3a00171c-03b8-442d-ae9c-0cae1701687d",
                 "resourcePath": "objects\\obj_ads_spectralHead_left\\obj_ads_spectralHead_left.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "0e0e03fa-6ada-47c9-aed8-38560dc1400b",
+            "Value": {
+                "id": "36cfbea2-1372-48f3-ab8e-cb1fc0a041ba",
+                "resourcePath": "sprites\\spr_equipment_demonClaw\\spr_equipment_demonClaw.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -914,7 +938,7 @@
             "Key": "1c227436-ea6a-403e-80ac-48c25315f9ca",
             "Value": {
                 "id": "a8911892-9318-431b-8590-32d53aa146be",
-                "resourcePath": "sprites\\spr_fight_t2_flameGate\\spr_fight_t2_flameGate.yy",
+                "resourcePath": "sprites\\spr_fight_demonGate\\spr_fight_demonGate.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -922,7 +946,7 @@
             "Key": "1c320069-07ab-4dea-b541-b68442e8777a",
             "Value": {
                 "id": "9dcdd519-3326-4d66-ac07-3791dca1cfc2",
-                "resourcePath": "sprites\\spr_loot_flamy\\spr_loot_flamy.yy",
+                "resourcePath": "sprites\\spr_loot_flamie\\spr_loot_flamie.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1575,6 +1599,14 @@
             }
         },
         {
+            "Key": "2f52883c-1fb2-4a0a-b02c-b3b823baf5d1",
+            "Value": {
+                "id": "7364398f-5d92-4cf6-99a9-2aafb30f87bf",
+                "resourcePath": "objects\\obj_equipment_madHat\\obj_equipment_madHat.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "2f7d6f28-2db5-42cc-8e81-3115125349e6",
             "Value": {
                 "id": "9c0ed771-bc9c-4a90-b568-0f10088cb9db",
@@ -2135,6 +2167,14 @@
             }
         },
         {
+            "Key": "40d0bea7-435e-49f5-b20c-1cc69bf2634c",
+            "Value": {
+                "id": "3dc85c39-3fd2-4d2e-9bac-4d96347d75b7",
+                "resourcePath": "sprites\\spr_loot_EdgeOfCorruption\\spr_loot_EdgeOfCorruption.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "40d0f16f-a8e5-4b1d-86bd-e390e9abc2da",
             "Value": {
                 "id": "a6d14ac5-44db-4e73-8616-d26022542e0f",
@@ -2379,6 +2419,14 @@
             "Value": {
                 "id": "a6cc1084-8b52-40bf-8421-6aed07764d9a",
                 "resourcePath": "objects\\obj_button_settings_soundTrue\\obj_button_settings_soundTrue.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "4987dc1b-db54-4c50-8a80-85e9371a5b1c",
+            "Value": {
+                "id": "c5ccdafc-22ec-449f-8d19-71600ed1ac70",
+                "resourcePath": "objects\\obj_item_madHat\\obj_item_madHat.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -3615,6 +3663,14 @@
             }
         },
         {
+            "Key": "7526861e-71ba-4e61-8999-64175e219674",
+            "Value": {
+                "id": "0cc3ca98-1f6a-428c-a057-046d199a1431",
+                "resourcePath": "sprites\\spr_boss_demonGate_goo\\spr_boss_demonGate_goo.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7560a367-318a-4ef5-a1a8-16d30b9dd136",
             "Value": {
                 "id": "71c87dea-96af-4303-b573-a8b59e291ac0",
@@ -4519,6 +4575,14 @@
             }
         },
         {
+            "Key": "93026977-3c10-4a4a-a7a5-22948d61ea37",
+            "Value": {
+                "id": "3f135d72-d83e-479d-b44f-93634c942d58",
+                "resourcePath": "objects\\obj_item_edgeOfCorruption\\obj_item_edgeOfCorruption.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "9307dbf9-1358-4915-af06-1451f4400481",
             "Value": {
                 "id": "239d910b-fe0b-4776-94af-504948a81cb9",
@@ -4531,6 +4595,14 @@
             "Value": {
                 "id": "0f3ac008-0659-4e0d-8f78-3b8b16e6ae55",
                 "resourcePath": "objects\\obj_item_lifeWisp\\obj_item_lifeWisp.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "932959c0-4083-443a-b420-0714c51de46d",
+            "Value": {
+                "id": "724b87b8-d7fc-46a2-b466-eb50ee7d85b0",
+                "resourcePath": "objects\\obj_equipment_corruptionBeam\\obj_equipment_corruptionBeam.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -4895,6 +4967,14 @@
             }
         },
         {
+            "Key": "9e07079d-3f46-4136-9a80-03cc1c2c977f",
+            "Value": {
+                "id": "f04f6037-9220-44f4-b563-e026accc4d72",
+                "resourcePath": "sprites\\spr_equipment_madHat\\spr_equipment_madHat.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "9e104fa9-25e9-4acf-833f-efbca97b6309",
             "Value": {
                 "id": "0651b13b-0bc6-4c57-9982-ef6b519e41cd",
@@ -4923,6 +5003,22 @@
             "Value": {
                 "id": "65216025-f66d-4d67-965e-5b3f21fe38b4",
                 "resourcePath": "sprites\\spr_player_theBloodKnight\\spr_player_theBloodKnight.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "9f4ddaff-160c-40f4-9cb3-fb18ec3724e1",
+            "Value": {
+                "id": "407f4282-f567-49ac-af85-28e2eb729a12",
+                "resourcePath": "sprites\\spr_equipment_edgeOfCorruption\\spr_equipment_edgeOfCorruption.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "a00b6a69-292e-4d9a-9548-f7e4ec7512d9",
+            "Value": {
+                "id": "2885d273-5950-4101-acaa-bc5f0db16d69",
+                "resourcePath": "sprites\\spr_boss_demonGate\\spr_boss_demonGate.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5020,6 +5116,14 @@
                 "id": "00502fcd-72a4-445c-a27a-3f9b973aa60a",
                 "resourcePath": "objects\\obj_keeperRange\\obj_keeperRange.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "a24bfe2e-4f49-485c-ad46-1533cca6fd73",
+            "Value": {
+                "id": "abb51f55-b0ed-4b18-b589-074d1a77e9c1",
+                "resourcePath": "sprites\\spr_boss_demonGate_oneShot\\spr_boss_demonGate_oneShot.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -5759,6 +5863,14 @@
             }
         },
         {
+            "Key": "b7b562a9-c254-4c08-8478-12bed44a0b69",
+            "Value": {
+                "id": "648fd18e-db51-4e12-970c-a7a275c740e3",
+                "resourcePath": "objects\\obj_equipment_demonClaw\\obj_equipment_demonClaw.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "b7d19eb2-2020-4e99-a687-d10697955ffa",
             "Value": {
                 "id": "fbaa7c76-c304-4b77-955c-c0c45c2321fd",
@@ -6351,11 +6463,27 @@
             }
         },
         {
+            "Key": "cc2fd750-747d-45c8-bc05-fcff4f46cd29",
+            "Value": {
+                "id": "04b8d21c-016c-4fb3-8720-35cb5a0ea82a",
+                "resourcePath": "sprites\\spr_boss_demonGate_rapidFire\\spr_boss_demonGate_rapidFire.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "cc3aaf29-d561-4f16-9d08-1dc5c3f1142c",
             "Value": {
                 "id": "89e42f36-b181-4a9a-bbba-19cbf01827d2",
                 "resourcePath": "sprites\\spr_bookOf_pheonix_otuline_red\\spr_bookOf_pheonix_otuline_red.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "cc948dae-b77b-420b-be8f-109271f12b47",
+            "Value": {
+                "id": "1d79c862-e71b-4577-ae11-2f9bf4770635",
+                "resourcePath": "objects\\obj_item_demonHorn\\obj_item_demonHorn.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -6475,6 +6603,14 @@
             "Value": {
                 "id": "5bf4bb77-e9ff-4b03-b679-328a0b5182e4",
                 "resourcePath": "sprites\\spr_npc_rhino\\spr_npc_rhino.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ceb8fe71-7671-40ba-b5fc-48cc7f381d9a",
+            "Value": {
+                "id": "2f385c3a-8587-4fb1-876a-aeb8fa6712a0",
+                "resourcePath": "sprites\\spr_loot_demonHorn\\spr_loot_demonHorn.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -7228,6 +7364,14 @@
                 "id": "1b0df63a-eb64-4c20-b114-d3f39c8c7dcd",
                 "resourcePath": "objects\\obj_fightCard_graveKeeper\\obj_fightCard_graveKeeper.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "e5cfeec3-3f66-47e4-8a33-d0190a16f7d7",
+            "Value": {
+                "id": "fb9df91a-7dc4-49a5-8800-02261d628241",
+                "resourcePath": "sprites\\spr_loot_madHat\\spr_loot_madHat.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -8036,6 +8180,14 @@
                 "id": "ea9a6582-6c02-42c9-99bb-76d6adbfe824",
                 "resourcePath": "scripts\\outline_end\\outline_end.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "fe937166-c926-43ed-88af-927bf3a4f9d9",
+            "Value": {
+                "id": "0bfae110-1ab9-4e41-b678-32149f50cdab",
+                "resourcePath": "objects\\obj_madBolt\\obj_madBolt.yy",
+                "resourceType": "GMObject"
             }
         },
         {

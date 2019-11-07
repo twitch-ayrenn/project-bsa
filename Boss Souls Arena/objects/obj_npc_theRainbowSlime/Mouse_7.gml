@@ -6,7 +6,7 @@ if (gameMaster.rainbowSlimeUnlocked == true)
 	{
 		if (rainbowSlimeProgress < 2){menu = Menues.BossSelect;chosenClass = Character.RainbowSlime;}
 		if (rainbowSlimeProgress > 1){menu = Menues.BossLoot;  chosenClass = Character.RainbowSlime;}
-		global.itemSlots = int64(1 + (rainbowSlimeProgress/3));
+		global.itemSlots = int64(1 + ((rainbowSlimeProgress-1)/3));
 		global.maxItemSlots = global.itemSlots;
 	}
 	with(par_loot){reset = true;}

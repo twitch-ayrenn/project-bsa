@@ -131,12 +131,14 @@ activateDashItem = false;
 activateLeftClickItem = false;
 activateRightClickItem = false;
 //
+bPSpeed = 1;
 if (global.itemSelected[Boss.BloodZombie] == true){instance_create_depth(x,y,depth+1,obj_visual_zombieHead);}
 summonFlamie = false;
 summonFlamieTime = 10*((1-conjurationPower)+1)*30;
 summonFlamieStacks = 0;
 if (global.itemSelected[Boss.FlameWisp] == true){summonFlamie = true;}
-bPSpeed = 1;
+edgeOfCorruptionCharge = 0;
+edgeOfCorruptionChargeTime = (3)*30;
 #endregion
 #region Bosses
 blackOutAlpha = 0;
