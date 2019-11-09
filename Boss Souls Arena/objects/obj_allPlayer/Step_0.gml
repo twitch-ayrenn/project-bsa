@@ -205,7 +205,7 @@ if (mouse_x < x)
 			leftClickCooldownLeft = leftClickCooldown;
 			activateLeftClickItem = true;
 			
-			repeat(int64(batAmount))
+			repeat(int64(batAmount*conjurationPower))
 			{
 				var batShot = instance_create_depth(x+irandom_range(-25,25),y+irandom_range(-25,25),depth+1,obj_batProjectile);
 				batShot.speed = 6;
@@ -324,6 +324,13 @@ if (mouse_x < x)
 			BKDashStopLeft = BKDashStop;
 			actualBKDashSpeed = dashSpeed*2;
 			direction = point_direction(x,y,mouse_x,mouse_y);
+			#region DemonHorn
+			if (global.itemSelected[Boss.FlameGate] == true)
+			{
+				var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
+				horn.destroyTime = (maxHp/50)*30;
+			}
+			#endregion
 		}
 		if (BKDashStopLeft > 0){BKDashStopLeft--;}
 		if (BKDashStopLeft <= 0)
@@ -340,7 +347,18 @@ if (mouse_x < x)
 		#region MadHat
 		if (global.itemSelected[Boss.TheMadWitches] == true && place_free(mouse_x,mouse_y))
 		{
-			instance_create_depth(mouse_x,mouse_y,-mouse_y,obj_equipment_madHat);
+			if (madHatAmount == 1){instance_create_depth(mouse_x,mouse_y,-mouse_y,obj_equipment_madHat);}
+			if (madHatAmount == 2)
+			{
+				instance_create_depth(mouse_x+5,mouse_y,-mouse_y,obj_equipment_madHat);
+				instance_create_depth(mouse_x-5,mouse_y,-mouse_y,obj_equipment_madHat);
+			}
+			if (madHatAmount == 3)
+			{
+				instance_create_depth(mouse_x+4,mouse_y+4,-mouse_y,obj_equipment_madHat);
+				instance_create_depth(mouse_x-4,mouse_y+4,-mouse_y,obj_equipment_madHat);
+				instance_create_depth(mouse_x,mouse_y+6,-mouse_y,obj_equipment_madHat);
+			}
 		}
 		#endregion
 	}

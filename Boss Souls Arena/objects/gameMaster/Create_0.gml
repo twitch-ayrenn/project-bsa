@@ -138,6 +138,7 @@ statsColor = c_yellow;
 statsSize = 1;
 settingsColor = global.darkYellow;
 settingsSize = 1;
+//controlls
 global.musicOn = true;
 global.soundOn = true;
 global.ambientOn = true;
@@ -213,6 +214,7 @@ bonusFirerate = 0;
 bonusLifeSteal = 0;
 bonusAura = 0;
 bonusConjur = 0;
+global.conjurScaling = 15;
 bonusCooldown = 0;
 previewHealth = 0;
 previewSpeed = 0;

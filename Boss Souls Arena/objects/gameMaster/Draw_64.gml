@@ -55,10 +55,8 @@ if (menu == Menues.BossLoot)
 	var dmgText = "Damage: " + string(dmgCalc);
 	var frText = "Attack Speed: " + string(100 + bonusFirerate + previewFirerate) + "%";
 	var lsText = "LifeSteal: " + string(75 + bonusLifeSteal + previewLifeSteal) + "%";//base is 75% for all damage
-	var auraCalc = (0 + bonusAura + previewAura)/100
-	var auraText = "Aura Power: " + string(int64(auraCalc*100)) + "%";
-	var conjureCalc = (0 + bonusConjur + previewConjur)/100
-	var cjText = "Conjuration Power: " + string(conjureCalc*100) + "%";
+	var conjureCalc = 1 + (bonusConjur + previewConjur)/100;
+	var cjText = "Conjuration Power: " + string((conjureCalc-1)*100) + "%";
 	var cdText = "Cooldown reduction: " + string(0 + bonusCooldown + previewCooldown) + "%";
 	if (global.ShowInfo == true)
 	{
@@ -75,9 +73,8 @@ if (menu == Menues.BossLoot)
 		draw_text_transformed_color(30,startY+7*yIncreasse+10,frText,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);	
 		draw_text_transformed_color(30,startY+8*yIncreasse+10,lsText,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);
 		draw_text_transformed_color(30,startY+9*yIncreasse+20,"Magic & Misc",textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);	
-		draw_text_transformed_color(30,startY+10*yIncreasse+20,auraText,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);	
-		draw_text_transformed_color(30,startY+11*yIncreasse+20,cjText,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);		
-		draw_text_transformed_color(30,startY+12*yIncreasse+20,cdText,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+		draw_text_transformed_color(30,startY+10*yIncreasse+20,cjText,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);		
+		draw_text_transformed_color(30,startY+11*yIncreasse+20,cdText,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 	}
 	if (global.ShowInfo == false)
 	{
@@ -123,7 +120,7 @@ if (menu == Menues.BossLoot)
 			var bztext = "[Area Damage]: " + string(dmgCalc) + "/second";
 			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,bztext,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			var bztext2 = "[Speed Increase]: " +  string(50) + "%";
-			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,bztext2,itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,bztext2,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_set_font(fnt_menu_fill);
 			draw_text_transformed_color(infoTextX,350+7.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
@@ -144,7 +141,7 @@ if (menu == Menues.BossLoot)
 		#region Flame Wisp
 		if (itemShowInfoFor == Boss.FlameWisp)
 		{
-			var fText = "Flamie apears every [" + string(int64(10*(1-conjureCalc))) + "] seconds."
+			var fText = "Flamie apears every [" + string(int64(clamp(24*(2-conjureCalc),1,24))) + "] seconds."
 			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,fText,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"Walk to Flamie within a second",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"and Flamie will shoot a giant flame",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -204,10 +201,11 @@ if (menu == Menues.BossLoot)
 		{
 			draw_set_font(fnt_NewNormalText);
 			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Using your [Right-Click] ability",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"summons a witch for 3 seconds that ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"shoots a projectile twoards your ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"mouse cursor when you use your ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"[Left-Click] ability.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			var witchAmountT = "summons [" + string(int64(1*conjureCalc)) + "] witches that last for";
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,witchAmountT,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"3 seconds. They shoot a projectile",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"twoards your mouse cursor when ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"you use your [Left-Click] ability.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			var cbtext = "[Projectile Damage]: " + string(dmgCalc);
 			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,cbtext,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_set_font(fnt_menu_fill);

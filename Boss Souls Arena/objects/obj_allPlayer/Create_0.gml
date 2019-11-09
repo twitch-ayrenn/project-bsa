@@ -110,7 +110,6 @@ if (class == Character.BloodKnight)
 	BKDashStop = (0.35)*30;
 	BKDashStopLeft = 0;
 	BKDashCooldown = 0;
-	BKDashCooldownLeft = 0;
 	BKDdashDirection = 0;
 }
 #endregion
@@ -134,11 +133,12 @@ activateRightClickItem = false;
 bPSpeed = 1;
 if (global.itemSelected[Boss.BloodZombie] == true){instance_create_depth(x,y,depth+1,obj_visual_zombieHead);}
 summonFlamie = false;
-summonFlamieTime = 10*((1-conjurationPower)+1)*30;
+summonFlamieTime = clamp(24*((2-conjurationPower)),1,24)*30;
 summonFlamieStacks = 0;
 if (global.itemSelected[Boss.FlameWisp] == true){summonFlamie = true;}
 edgeOfCorruptionCharge = 0;
 edgeOfCorruptionChargeTime = (3)*30;
+madHatAmount = int64(1*conjurationPower);
 #endregion
 #region Bosses
 blackOutAlpha = 0;
