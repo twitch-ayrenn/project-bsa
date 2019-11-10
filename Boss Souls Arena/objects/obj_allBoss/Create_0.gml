@@ -6,8 +6,8 @@ phase3Hp = 0; phase3Ms = 0; phase3Dmg = 0;
 phase4Hp = 0; phase4Ms = 0; phase4Dmg = 0;
 phase5Hp = 0; phase5Ms = 0; phase5Dmg = 0;
 phase6Hp = 0; phase6Ms = 0; phase6Dmg = 0;
-tier1Hp = 400; tier2Hp = 700; tier3Hp = 1000;
-tier4Hp = 1300; tier5Hp = 1600; tier6Hp = 2500;
+tier1Hp = 400; tier2Hp = 700; tier3Hp = 1100;
+tier4Hp = 1600; tier5Hp = 2100; tier6Hp = 2500;
 hp = 0;
 maxHp = hp;
 global.bossDamage = 10;
@@ -292,7 +292,7 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.KnightWitchYi) 
 		{
 			//stats
-			phase1Hp = tier3Hp*1; phase1Ms = 1.4; phase1Dmg = 45;
+			phase1Hp = tier3Hp*1; phase1Ms = 1.4; phase1Dmg = 40;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;

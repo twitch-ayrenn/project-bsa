@@ -133,12 +133,25 @@ activateRightClickItem = false;
 bPSpeed = 1;
 if (global.itemSelected[Boss.BloodZombie] == true){instance_create_depth(x,y,depth+1,obj_visual_zombieHead);}
 summonFlamie = false;
-summonFlamieTime = clamp(24*((2-conjurationPower)),1,24)*30;
+summonFlamieTime = clamp(24*((2-conjurationPower)),3,24)*30;
 summonFlamieStacks = 0;
 if (global.itemSelected[Boss.FlameWisp] == true){summonFlamie = true;}
 edgeOfCorruptionCharge = 0;
 edgeOfCorruptionChargeTime = (3)*30;
 madHatAmount = int64(1*conjurationPower);
+if (global.itemSelected[Boss.WispSisterJulia] == true)
+{
+	repeat(int64(2*conjurationPower))
+	{
+		instance_create_depth(x+irandom_range(-5,5),y+irandom_range(-5,5),-y,obj_equipment_futuristicSoldier);	
+	}
+}
+global.portalTime = 8*(1 - (gameMaster.bonusCooldown*2/100));
+if (global.itemSelected[Boss.AngelSlayerRekZul] == true)
+{
+	instance_create_depth(x,y,depth,obj_equipment_leftPortal);
+	instance_create_depth(x,y,depth,obj_equipment_rightPortal);
+}
 #endregion
 #region Bosses
 blackOutAlpha = 0;

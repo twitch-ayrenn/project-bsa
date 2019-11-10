@@ -11,7 +11,13 @@
         "932959c0-4083-443a-b420-0714c51de46d",
         "2f52883c-1fb2-4a0a-b02c-b3b823baf5d1",
         "fe937166-c926-43ed-88af-927bf3a4f9d9",
-        "b7b562a9-c254-4c08-8478-12bed44a0b69"
+        "b7b562a9-c254-4c08-8478-12bed44a0b69",
+        "2712cc6a-115c-450e-8c0c-c0fbe50ed572",
+        "11a744f6-b3a2-47c4-9a01-7b3bb33ebaa8",
+        "d49d2a5b-0f36-4baf-be62-a87cb9355a69",
+        "b91ce347-42c1-4ccb-a5d3-7b8e6a43b51a",
+        "0fbef760-d55d-44f9-8944-33c877022ca5",
+        "c357ca9c-6a2a-47b4-868d-c26757643dca"
     ],
     "filterType": "GMObject",
     "folderName": "grp_items",

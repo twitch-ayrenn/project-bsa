@@ -361,6 +361,12 @@ if (mouse_x < x)
 			}
 		}
 		#endregion
+		#region Futuristic Soldier
+		if (global.itemSelected[Boss.WispSisterJulia] == true)
+		{
+			global.fSFireRate *= clamp(0.75,0.1*30,1);
+		}
+		#endregion
 	}
 	#endregion
 #endregion
@@ -488,6 +494,12 @@ if (mouse_x < x)
 		}
 	}
 	#endregion
+		#region Futuristic Soldier
+		if (global.itemSelected[Boss.WispSisterJulia] == true)
+		{
+			global.fSFireRate *= clamp(0.75,0.1*30,1);
+		}
+		#endregion
 	#endregion
 #endregion
 #region Dash
@@ -598,6 +610,12 @@ if (mouse_x < x)
 		{
 			var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
 			horn.destroyTime = (maxHp/50)*30;
+		}
+		#endregion
+		#region Futuristic Soldier
+		if (global.itemSelected[Boss.WispSisterJulia] == true)
+		{
+			global.fSFireRate *= clamp(0.75,0.1*30,1);
 		}
 		#endregion
 	}

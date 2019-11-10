@@ -575,6 +575,14 @@
             }
         },
         {
+            "Key": "0fbef760-d55d-44f9-8944-33c877022ca5",
+            "Value": {
+                "id": "b1bffd48-20d5-4501-8b5e-a9929fc09de1",
+                "resourcePath": "objects\\obj_equipment_leftPortal\\obj_equipment_leftPortal.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0fc7b01d-8ef1-4a31-b7c5-eab3b4ebb5a4",
             "Value": {
                 "id": "620b6614-2470-47d7-8f7d-f880fd23b442",
@@ -667,6 +675,14 @@
             "Value": {
                 "id": "36f243fd-8240-402a-957e-e6815d36b5b6",
                 "resourcePath": "objects\\obj_bossLoot_queensHead\\obj_bossLoot_queensHead.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "11a744f6-b3a2-47c4-9a01-7b3bb33ebaa8",
+            "Value": {
+                "id": "d0ce9960-48ff-41c7-bd57-4dca97d3fd2c",
+                "resourcePath": "objects\\obj_fsBolt\\obj_fsBolt.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1263,6 +1279,14 @@
             }
         },
         {
+            "Key": "2667c302-5779-465e-99fa-4ebb00452153",
+            "Value": {
+                "id": "83f4272e-1f39-4e5c-bd3c-58112ec7d9ab",
+                "resourcePath": "objects\\par_player_projectile\\par_player_projectile.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "2680698d-4e1f-49b7-93b7-cf28cb4a1658",
             "Value": {
                 "id": "6f0bda9d-d0a5-4d6e-9bc9-b1b3d1553fcc",
@@ -1292,6 +1316,14 @@
                 "id": "4e44cc1b-b1ae-4131-840b-4eac6abfca01",
                 "resourcePath": "sprites\\spr_boss_bloodZombie_nA\\spr_boss_bloodZombie_nA.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "2712cc6a-115c-450e-8c0c-c0fbe50ed572",
+            "Value": {
+                "id": "da488867-1d95-4265-8a87-24ceb57fd033",
+                "resourcePath": "objects\\obj_equipment_futuristicSoldier\\obj_equipment_futuristicSoldier.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1380,6 +1412,14 @@
                 "id": "cf81984e-69ab-4347-9812-bd7e200fe5f5",
                 "resourcePath": "sprites\\spr_prop_fruit\\spr_prop_fruit.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "287cf80b-de9f-461d-a5e4-3a1c034577a6",
+            "Value": {
+                "id": "e2dc1ebd-02d4-45f3-a981-9c8ba45443bf",
+                "resourcePath": "objects\\obj_item_futuristicSoldier\\obj_item_futuristicSoldier.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -2367,6 +2407,14 @@
             }
         },
         {
+            "Key": "4795b12b-5ba6-44bb-8dab-57e8e8f91e35",
+            "Value": {
+                "id": "ce28ba55-b11b-46ef-870c-8a20efae5f73",
+                "resourcePath": "sprites\\spr_equipment_futuristicSoldier_idle\\spr_equipment_futuristicSoldier_idle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "47b2aa70-c192-4f77-8cfc-03de94b27e36",
             "Value": {
                 "id": "677a25d5-0870-4e08-a4d5-bf2078eede31",
@@ -2967,6 +3015,14 @@
             }
         },
         {
+            "Key": "5cec53b7-4e49-4f16-9acb-7e221b55b405",
+            "Value": {
+                "id": "b76b5d9c-261a-4088-b6a4-8c51c0a5f602",
+                "resourcePath": "sprites\\spr_loot_deathScythe\\spr_loot_deathScythe.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5cf747e1-9657-45d6-8895-5a1f94b8b694",
             "Value": {
                 "id": "ac62aef4-a437-48c7-921a-28070b8d8073",
@@ -3060,6 +3116,14 @@
                 "id": "abfd6197-ad29-4f86-b546-57eba4958c04",
                 "resourcePath": "sounds\\snd_startgame\\snd_startgame.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "61f7d528-0583-4fe0-ad3c-47c998ab37d2",
+            "Value": {
+                "id": "61127aaf-805c-4e65-801f-4a221214f3d2",
+                "resourcePath": "sprites\\spr_loot_futuristic_soldier\\spr_loot_futuristic_soldier.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -3268,6 +3332,14 @@
                 "id": "7a0c817d-984d-437d-90d9-b67cc9cd9efb",
                 "resourcePath": "objects\\obj_bossLoot_soulSword\\obj_bossLoot_soulSword.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "68385c80-a01f-4518-a9a4-f71e6c81b572",
+            "Value": {
+                "id": "859e756e-90de-476a-a2e7-5cadde11288d",
+                "resourcePath": "sprites\\spr_equipment_netherPortal_bottom\\spr_equipment_netherPortal_bottom.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -3555,6 +3627,14 @@
             "Value": {
                 "id": "0faf7a8d-1563-4e83-adc2-cb3f7b6d201d",
                 "resourcePath": "sprites\\spr_bossBar\\spr_bossBar.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "70c13035-57a1-4355-a1d8-e6afea5d66f9",
+            "Value": {
+                "id": "fc6bc596-580d-4124-85e3-691b1b0309f2",
+                "resourcePath": "sprites\\spr_equipment_futuristicSoldier2_idle\\spr_equipment_futuristicSoldier2_idle.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -4807,6 +4887,14 @@
             }
         },
         {
+            "Key": "9986de5d-53a1-4480-a352-0bdeba4dc339",
+            "Value": {
+                "id": "391b8f9d-0875-4267-bf21-27e63a442cae",
+                "resourcePath": "sprites\\spr_equipment_netherPortal_right\\spr_equipment_netherPortal_right.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "9a1401ef-6bc2-40bd-811d-0a838214f78b",
             "Value": {
                 "id": "2efcb061-9f40-46bd-afa0-520eed392b3a",
@@ -5927,6 +6015,14 @@
             }
         },
         {
+            "Key": "b91ce347-42c1-4ccb-a5d3-7b8e6a43b51a",
+            "Value": {
+                "id": "8d1160f9-3c4e-4f7e-b001-25c137aec037",
+                "resourcePath": "objects\\obj_equipment_rightPortal\\obj_equipment_rightPortal.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "b99af336-bbba-469e-8171-0b976701bc06",
             "Value": {
                 "id": "1d1520bf-08d4-4970-84a8-c27b4f61c26a",
@@ -6095,11 +6191,27 @@
             }
         },
         {
+            "Key": "bf9384c6-599c-44ce-abbe-dabc8ad0b74d",
+            "Value": {
+                "id": "334b21ff-1184-4518-94d7-bf941de3b0b8",
+                "resourcePath": "objects\\obj_item_netherPortal\\obj_item_netherPortal.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "bfdb8fbd-2bac-4c54-a17d-dc1366ce94c8",
             "Value": {
                 "id": "43db3108-da92-462e-9398-e4ab585c0598",
                 "resourcePath": "sounds\\snd_anniesLaugh\\snd_anniesLaugh.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "bffd1077-47c5-4064-8e30-b2cfd376c619",
+            "Value": {
+                "id": "ccbc28c5-a403-4e09-af7f-2c0d5848ebc5",
+                "resourcePath": "sprites\\spr_equipment_futuristicSoldier2_walking\\spr_equipment_futuristicSoldier2_walking.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -6164,6 +6276,14 @@
                 "id": "31597b1c-207e-4bc2-8ec9-e1695f4831d4",
                 "resourcePath": "views\\c2f9a827-26a3-4e72-b152-9f0820b4e686.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "c357ca9c-6a2a-47b4-868d-c26757643dca",
+            "Value": {
+                "id": "fb3b7769-20d5-4790-8d4a-344c83b6d556",
+                "resourcePath": "objects\\obj_portalBottom\\obj_portalBottom.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -6451,6 +6571,14 @@
             "Value": {
                 "id": "02b86585-8159-45c4-b300-84777159c143",
                 "resourcePath": "sprites\\spr_poisonJar_outline_green\\spr_poisonJar_outline_green.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "cbff5c74-ecbe-4f82-a236-e80f6b0c1111",
+            "Value": {
+                "id": "ebc54d96-2fc2-4b59-8f1c-ea0a5f321eef",
+                "resourcePath": "sprites\\spr_equipment_futuristicSoldier_walking\\spr_equipment_futuristicSoldier_walking.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -6743,11 +6871,27 @@
             }
         },
         {
+            "Key": "d3759a2c-f21a-4c51-af5d-bfa636e19a77",
+            "Value": {
+                "id": "1506b0c9-b315-4384-a646-c7684e288601",
+                "resourcePath": "sprites\\spr_loot_netherPortal\\spr_loot_netherPortal.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "d388de02-9537-4f38-a1f4-e07ca3e150d5",
             "Value": {
                 "id": "009f78b4-4bbf-4ef6-8fd2-73ee3adeec08",
                 "resourcePath": "sounds\\snd_boss_theSoulWisp\\snd_boss_theSoulWisp.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "d391d51b-245f-46e5-8607-cf608f071c92",
+            "Value": {
+                "id": "6ea78c57-0955-427d-9800-da8d705372d2",
+                "resourcePath": "sprites\\spr_equipment_netherPortal_left\\spr_equipment_netherPortal_left.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -6780,6 +6924,14 @@
                 "id": "ab99af31-3ed5-4748-b8b9-ea6bdbaa6ae5",
                 "resourcePath": "sprites\\spr_item_lifeWisp\\spr_item_lifeWisp.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "d49d2a5b-0f36-4baf-be62-a87cb9355a69",
+            "Value": {
+                "id": "a9171a9f-9d04-415e-87cd-d130e7eddbed",
+                "resourcePath": "objects\\par_portal\\par_portal.yy",
+                "resourceType": "GMObject"
             }
         },
         {
