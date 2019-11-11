@@ -74,6 +74,7 @@ if (class == Character.ShadowAssassin)
 	knivesThrownStacks = 0;
 	throwingDirection = 0;
 	instance_create_depth(x,y,1,obj_shadowAttackRange);
+	daggerAmount = 18;
 }
 if (class == Character.Pyromancer)
 {
@@ -89,7 +90,7 @@ if (class == Character.Pyromancer)
 	ultColor = c_red;
 	//character specific
 	charge = 0;
-	maxCharge = (3)*30;
+	maxCharge = (leftClickCooldown/3)*30;//3
 }
 if (class == Character.BloodKnight)
 {
@@ -114,6 +115,8 @@ if (class == Character.BloodKnight)
 }
 #endregion
 #region Items
+preLCCD = 0;
+if (global.itemSelected[Boss.DeathKnight] == true){preLCCD = leftClickCooldown;}
 hp += gameMaster.bonusHealth;
 moveSpeed += gameMaster.bonusSpeed/10;
 dashSpeed *= 1+(gameMaster.bonusDash/100);
@@ -152,15 +155,28 @@ if (global.itemSelected[Boss.AngelSlayerRekZul] == true)
 	instance_create_depth(x,y,depth,obj_equipment_leftPortal);
 	instance_create_depth(x,y,depth,obj_equipment_rightPortal);
 }
+if (global.itemSelected[Boss.DeathKnight] == true)
+{
+	instance_create_depth(x,y,depth+1,obj_equipment_deathScythe);
+	var extraDamage = (1+(abs(preLCCD/30-3)/10))*global.damage*2*(1+(gameMaster.bonusFirerate/100));
+	global.deathScyhteDamage = extraDamage;
+	leftClickCooldown = (3)*30;
+}
 #endregion
 #region Bosses
 blackOutAlpha = 0;
 #endregion
 #region maxValues
+if (class == Character.Pyromancer)
+{
+	maxCharge = (leftClickCooldown/3)*30;//3
+	leftClickCooldown = (9)*30;
+}
 actualBKDashSpeed = 0;//needs to exist or else it crashes 
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
 maxHp = hp;
 sprite_index = idleSprite;
 ultCooldownLeft = ultCooldown
+if (global.itemSelected[Boss.DeathKnight] == true){leftClickCooldown = (3)*30;}
 #endregion

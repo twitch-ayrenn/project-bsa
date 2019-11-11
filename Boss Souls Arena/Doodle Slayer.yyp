@@ -911,6 +911,14 @@
             }
         },
         {
+            "Key": "1a1942e9-502a-473f-a323-4f3dee980cd9",
+            "Value": {
+                "id": "7b264dab-c666-452f-a1b6-dd9d14f44e29",
+                "resourcePath": "objects\\obj_item_deathScythe\\obj_item_deathScythe.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "1ae60d53-7e96-4404-88d2-dfc36eafa068",
             "Value": {
                 "id": "e764ab11-aad9-4a2a-a31e-c4c50679f208",
@@ -2116,6 +2124,14 @@
                 "id": "06ad3267-9c26-4a9b-8570-ed44781cec86",
                 "resourcePath": "objects\\obj_fightCard_ladyCorruption\\obj_fightCard_ladyCorruption.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "3cda78c5-9fa2-4be2-a7d1-f305637d44fd",
+            "Value": {
+                "id": "153b6bc3-1f7b-4748-a76e-4605c8434cf7",
+                "resourcePath": "sprites\\spr_equipment_deathScythe\\spr_equipment_deathScythe.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -4636,6 +4652,14 @@
                 "id": "f5228309-6154-423e-b6f5-1af6b5162541",
                 "resourcePath": "sprites\\spr_fight_t1_bloodRoyalVarus\\spr_fight_t1_bloodRoyalVarus.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "91deb132-bfd4-4db4-8687-b8bec4961575",
+            "Value": {
+                "id": "16ef9093-f46c-4d42-a54b-8aa2e2a56c13",
+                "resourcePath": "objects\\obj_equipment_deathScythe\\obj_equipment_deathScythe.yy",
+                "resourceType": "GMObject"
             }
         },
         {

@@ -1,5 +1,6 @@
 /// @description Code
 #region Vars
+if (global.itemSelected[Boss.DeathKnight] == true){direction = point_direction(x,y,mouse_x,mouse_y);}
 if (hp > maxHp){hp = maxHp;}
 depth = -y;
 blackOutAlpha += clamp(0.1/30,0,1);//Varus
@@ -80,7 +81,7 @@ if (mouse_x < x)
 	#region ShadowAssassin
 	if (class == Character.ShadowAssassin)
 	{
-		if (mouse_check_button(mb_left) && canLeftClick == true)
+		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false)
 		{
 			if (instance_exists(obj_shadow))
 			{
@@ -96,11 +97,11 @@ if (mouse_x < x)
 					{
 						audio_play_sound(snd_teleport,Prioity.Low,false);
 					}
-		
+					
 					x = mouse_x;
 					y = mouse_y;
 					var angleL = 0;
-					var amountL = int64(20);
+					var amountL = int64(daggerAmount);
 					repeat(amountL)
 					{
 						var dagger = instance_create_depth(x,y,depth+1,obj_daggerProjectile);
@@ -114,7 +115,7 @@ if (mouse_x < x)
 					with (obj_shadow)
 					{
 						var angleL = 0;
-						var amountL = int64(20);
+						var amountL = int64(global.player.daggerAmount);
 						repeat(amountL)
 						{
 							var dagger = instance_create_depth(x,y,depth+1,obj_daggerProjectile);
@@ -165,7 +166,7 @@ if (mouse_x < x)
 	#region Pyromancer
 	if (class == Character.Pyromancer)
 	{
-		if (canLeftClick == true)
+		if (canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false)
 		{
 			if (mouse_check_button(mb_left))
 			{
@@ -199,7 +200,7 @@ if (mouse_x < x)
 	#region Bloodknight
 	if (class == Character.BloodKnight)
 	{
-		if (mouse_check_button(mb_left) && canLeftClick == true)
+		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false)
 		{
 			canLeftClick = false;
 			leftClickCooldownLeft = leftClickCooldown;
@@ -220,6 +221,38 @@ if (mouse_x < x)
 	}
 	#endregion
 	#region Items
+	#region Death Scythe
+	if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == true)
+	{
+		obj_equipment_deathScythe.state = MeleeWeaponStates.SpinOnce;
+		obj_equipment_deathScythe.spinTimes = 1;
+		
+		canLeftClick = false;
+		leftClickCooldownLeft = leftClickCooldown;
+		activateLeftClickItem = true;
+		if (class == Character.ShadowAssassin)
+		{
+			if (instance_exists(obj_shadow))
+			{
+				with (obj_shadow)
+				{
+					var angleL = 0;
+					var amountL = int64(global.player.daggerAmount);
+					repeat(amountL)
+					{
+						var dagger = instance_create_depth(x,y,depth+1,obj_daggerProjectile);
+						dagger.direction = angleL;
+						dagger.speed = 7;
+						dagger.image_angle = angleL-90;
+						dagger.image_xscale = 0.9;
+						dagger.image_yscale = 1.1;
+						angleL += 360/amountL;
+					}
+				}
+			}
+		}
+	}
+	#endregion
 	if (activateLeftClickItem == true)
 	{
 		activateLeftClickItem = false;

@@ -7,6 +7,8 @@ global.fSFireRate = (1)*30;
 shoot = true;
 xExtra = choose(-28,-21,-14,-7,0,7,14,21,28);
 yExtra = choose(-28,-21,-14,-7,0,7,14,21,28);
+xExtra += choose(-2,-1,1,2);
+yExtra += choose(-2,-1,1,2);
 soldierType = choose(0,1);
 if (soldierType == 0)
 {

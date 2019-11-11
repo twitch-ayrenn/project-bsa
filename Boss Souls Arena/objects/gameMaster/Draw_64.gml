@@ -229,9 +229,9 @@ if (menu == Menues.BossLoot)
 		if (itemShowInfoFor == Boss.FlameGate)
 		{
 			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Dashing causes a demon claw to burst",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"from the ground. While erupting",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"from the ground. When erupting",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"it deals massive damage to enemies.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"The demon claw blocks all projectiles",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"The demon claw blocks all projectiles.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			var dhText = "It lasts for [" + string(hpCalc/50) + "] seconds." 
 			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,dhText,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			
@@ -264,8 +264,8 @@ if (menu == Menues.BossLoot)
 			var soldierAmount = "Summon [" + string(int64(2*conjureCalc)) +"] futuristic soldiers."
 			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,soldierAmount,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"They shoot where you aim.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"Every time you use your [Ultimate]",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"or [Right-Click] or [Dash] they",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"Every time you use your [Ultimate],",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"[Right-Click] or [Dash] they",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"shoot faster.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			var bztext = "[Projectile Damage]: " + string(dmgCalc*0.1);
 			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,bztext,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
@@ -287,18 +287,17 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 		}
 		#endregion
-		#region Angel Slayer
-		if (itemShowInfoFor == Boss.AngelSlayerRekZul)
+		#region Death Knight
+		if (itemShowInfoFor == Boss.DeathKnight)
 		{
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"2 Portals will apear in the arena.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"You or your oppenent or any",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"projectiles can travel between",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			var portalCd = "these 2 portals once every [" + string(8*(1-cdCalc*2)) + "]";
-			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,portalCd,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"seconds. You gain a 10% movement",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,"speed boost for 5 seconds if you",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"enter the portal.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Your [Left-Click] ability is replaced",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"with the Death Scythe.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"It spins around you and deals damage",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"to enemies hit.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"It always has a attack speed of 1 ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,"attack every 3 seconds. All extra",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"firetate is converted to % damage.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_set_font(fnt_menu_fill);
 			draw_text_transformed_color(infoTextX,350+8.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
@@ -306,8 +305,41 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"+ 5% Cooldown Reduction",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 			if (global.ShowInfo == true)
 			{
-			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"#Note Time scales 2X with cooldown",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"reduction.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"#Note Portal coooldown scales 2X",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"with cooldown reduction.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			}
+			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			
+			
+		
+			//name
+			draw_set_font(fnt_menu_fill);
+			var ItemName = "Item Info: " + "Death Scythe";
+			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+		}
+		#endregion
+		#region Angel Slayer
+		if (itemShowInfoFor == Boss.AngelSlayerRekZul)
+		{
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"2 Portals will apear in the arena.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"You, your oppenent or any",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"projectiles can travel between",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			var portalCd = "these 2 portals once every [" + string(8*(1-cdCalc*2)) + "]";
+			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,portalCd,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"seconds. After teleporting you",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,"gain a 10% movement speed increase",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"for 3 seconds.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_set_font(fnt_menu_fill);
+			draw_text_transformed_color(infoTextX,350+8.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"+ 3 Speed",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"+ 5% Cooldown Reduction",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+			if (global.ShowInfo == true)
+			{
+			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"#Note Portal coooldown scales 2X",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"with cooldown reduction.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			}
 			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
