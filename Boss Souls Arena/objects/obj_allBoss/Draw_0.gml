@@ -89,6 +89,17 @@ if (drawArea == true)
 		draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,global.orange,global.orange);
 	}
 	#endregion
+	#region Angel Knight Oscar
+	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && attack == Atks.RapidFire)
+	{
+		draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,c_aqua,c_aqua);
+	}
+	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && attack == Atks.BeamAttack)
+	{
+		draw_line_width_color(x-600,y,x+600,y,1,global.orange,global.orange);
+		draw_line_width_color(x,y-600,x,y+600,1,global.orange,global.orange);
+	}
+	#endregion
 }
 #endregion
 if (gameMaster.chosenBoss == Boss.TheMadWitches)

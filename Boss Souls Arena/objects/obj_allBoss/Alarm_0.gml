@@ -258,7 +258,7 @@ if (attack == Atks.BeamAttack)
 		beam.sprite_index = spr_beam;
 		beam.image_xscale = 0.25;
 		beam.image_yscale = 20;
-		beam.maxSize = 1.5;
+		beam.maxSize = 2;
 		beam.minSize = 0.25;
 		beam.stickOn = true;
 		beam.range = 2*30;
@@ -589,6 +589,27 @@ if (attack == Atks.CircleAttack)
 		gooGround.effectType = Effect.NoEffect;
 		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
 	}
+	if (gameMaster.chosenBoss == Boss.AngelKnightOscar)
+	{
+		var angleBk = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		var circleAmount = 50;
+		repeat(circleAmount)
+		{
+			var swordShot = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			swordShot.direction = angleBk;
+			swordShot.speed = 2.5;
+			swordShot.image_angle = swordShot.direction+90;
+			//Visual
+			swordShot.image_alpha = 0.85;
+			swordShot.sprite_index = spr_fireBall;
+			swordShot.image_blend = c_fuchsia;
+			swordShot.image_xscale = 1;
+			swordShot.image_yscale = 1;
+			swordShot.effectType = Effect.Flare;
+			angleBk += (360/circleAmount);
+		}
+	}
 }
 #endregion
 #region GooSpawn
@@ -632,7 +653,7 @@ if (attack == Atks.ConeAttack)
 			//Visual
 			fireBolt.image_alpha = 0.85;
 			fireBolt.sprite_index = spr_fireBall;
-			fireBolt.image_blend = global.orange;
+			fireBolt.image_blend = c_aqua;
 			fireBolt.image_xscale = 1.2;
 			fireBolt.image_yscale = 1.2;
 			fireBolt.effectType = Effect.Flare;
@@ -653,6 +674,28 @@ if (attack == Atks.ConeAttack)
 		gooGround.destroy = false;
 		gooGround.effectType = Effect.NoEffect;
 		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
+	}
+	if (gameMaster.chosenBoss == Boss.AngelKnightOscar)
+	{	
+		var coneWide = 180;
+		var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.5;
+		var coneAmount = 36;
+		repeat(coneAmount)
+		{
+			var fireBolt = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			fireBolt.direction = coneAtkFW;
+			fireBolt.speed = 3;
+			fireBolt.image_angle = fireBolt.direction+90;
+			//Visual
+			fireBolt.image_alpha = 0.85;
+			fireBolt.sprite_index = spr_fireBall;
+			fireBolt.image_blend = c_aqua;
+			fireBolt.image_xscale = 1;
+			fireBolt.image_yscale = 1;
+			fireBolt.effectType = Effect.Flare;
+			coneAtkFW += (coneWide/coneAmount);
+		}
 	}
 }
 #endregion
@@ -716,6 +759,62 @@ if (attack == Atks.BeamAttack)
 		gooGround.effectType = Effect.NoEffect;
 		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
 	}
+	if (gameMaster.chosenBoss == Boss.AngelKnightOscar)
+	{
+		var whichWay = choose(0,1);
+		if (whichWay == 0)
+		{
+			var angle = 0;
+			var amount = 4;
+			repeat(amount)
+			{
+				var beam = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+				//Main
+				beam.image_angle = angle;
+				//Visual
+				beam.image_alpha = 0.85;
+				beam.image_blend = global.orange;
+				beam.sprite_index = spr_beam;
+				beam.image_xscale = 0.25;
+				beam.image_yscale = 20;
+				beam.maxSize = 1.5;
+				beam.minSize = 0.25;
+				beam.stickOn = true;
+				beam.beamChase = true;
+				beam.turningSpeed = 45;
+				beam.destroy = true;
+				beam.range = (2)*30; 
+				beam.effectType = Effect.NoEffect;
+				angle += 360/amount;
+			}
+		}
+		if (whichWay == 1)
+		{
+			var angle = 0;
+			var amount = 4;
+			repeat(amount)
+			{
+				var beam = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+				//Main
+				beam.image_angle = angle;
+				//Visual
+				beam.image_alpha = 0.85;
+				beam.image_blend = global.orange;
+				beam.sprite_index = spr_beam;
+				beam.image_xscale = 0.25;
+				beam.image_yscale = 20;
+				beam.maxSize = 1.5;
+				beam.minSize = 0.25;
+				beam.stickOn = true;
+				beam.beamChase = true;
+				beam.turningSpeed = -45;
+				beam.destroy = true;
+				beam.range = (2)*30; 
+				beam.effectType = Effect.NoEffect;
+				angle += 360/amount;
+			}
+		}
+	}
 }
 #endregion
 #region RapidFire
@@ -738,6 +837,10 @@ if (attack == Atks.RapidFire)
 		gooGround.destroy = false;
 		gooGround.effectType = Effect.NoEffect;
 		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
+	}
+	if (gameMaster.chosenBoss == Boss.AngelKnightOscar)
+	{
+		rapidFireStacks += 6;
 	}
 }
 #endregion
@@ -799,6 +902,12 @@ if (attack == Atks.TauntAttack)
 		gooGround.effectType = Effect.NoEffect;
 		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
 	}
+}
+#endregion
+#region Heal Attack
+if (attack == Atks.HealAttack)
+{
+	
 }
 #endregion
 #endregion

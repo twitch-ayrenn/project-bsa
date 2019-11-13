@@ -237,7 +237,7 @@ if (moveType == MovementType.StandingStill)
 			beam.effectType = Effect.NoEffect;
 			xBeamSpawn += 25;
 			
-			alarm[5] = alarm5Timer;	
+			alarm[5] = alarm5Timer
 		}
 	}
 	#endregion	
@@ -263,6 +263,19 @@ if (moveType == MovementType.StandingStill)
 			corruptKlot.effectType = Effect.NoEffect;
 		
 			alarm[2] = (0.55)*30;
+		}
+	}
+	#endregion
+	#region Angel Knight Oscar
+	if (gameMaster.chosenBoss == Boss.AngelKnightOscar)
+	{
+		if (rapidFireStacks > 0 && canRapidAttack == true)
+		{
+			canRapidAttack = false;
+			rapidFireStacks -= 1;
+			drawArea = true;
+			
+			alarm[2] = (0.65)*30;
 		}
 	}
 	#endregion
@@ -298,6 +311,9 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul && phase == 2){attack = choose(Atks.CircleAttack,Atks.BeamAttack,Atks.ZoneAttack,Atks.TeleportAttack);}
 	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul && phase == 3){attack = choose(Atks.CircleAttack,Atks.ZoneAttack,Atks.TeleportAttack,Atks.ChaseAttack);}
 	if (gameMaster.chosenBoss == Boss.KnightWitchYi && phase == 1){attack = choose(Atks.CircleAttack,Atks.BeamAttack,Atks.ConeAttack,Atks.GooSpawn,Atks.RapidFire,Atks.TauntAttack);}
+	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && phase == 1){attack = choose(Atks.ConeAttack,Atks.CircleAttack,Atks.BeamAttack);}
+	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && phase == 2){attack = choose(Atks.ConeAttack,Atks.CircleAttack,Atks.BeamAttack,Atks.HealAttack);}
+	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && phase == 3){attack = choose(Atks.ConeAttack,Atks.CircleAttack,Atks.BeamAttack,Atks.HealAttack,Atks.RapidFire);}
 	#endregion
 	if (attack == Atks.NormalShot)
 	{
@@ -541,6 +557,20 @@ if(chooseAnAttack == true)
 			indicator.image_blend = c_maroon;
 			indicator.follow = true;
 			global.playerBossSlow = 0.8;
+		}
+		#endregion
+	}
+	if (attack == Atks.HealAttack)
+	{
+		sprite_index = healSprite;		
+		attackColor = c_lime;
+		#region Angel Knight Oscar
+		if (gameMaster.chosenBoss == Boss.AngelKnightOscar)
+		{
+			instance_create_depth(global.arenaMiddleX-250,global.arenaMiddleY,depth,obj_healSlime);
+			instance_create_depth(global.arenaMiddleX+250,global.arenaMiddleY,depth,obj_healSlime);
+			instance_create_depth(global.arenaMiddleX,global.arenaMiddleY+200,depth,obj_healSlime);
+			instance_create_depth(global.arenaMiddleX,global.arenaMiddleY-200,depth,obj_healSlime);
 		}
 		#endregion
 	}

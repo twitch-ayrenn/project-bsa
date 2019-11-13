@@ -28,7 +28,7 @@ if (state == MeleeWeaponStates.SpinOnce)
 	}
 	if (image_angle < currentAngle+360)
 	{
-		alarm[0] = (0.15)*30;
+		alarm[0] = (0.10)*30;
 		image_index = 0;
 	}
 	if (spinTimes <= 0 && canSpin == true)

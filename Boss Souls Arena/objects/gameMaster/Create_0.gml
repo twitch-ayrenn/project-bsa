@@ -39,33 +39,34 @@ enum Boss
 	BloodZombie = 1,//3
 	FlameWisp, // this is new wisp sister anna
 	TheCorrupter,
-	
-	TheMadWitches,//4
-	FlameGate,
+
+	FlameGate,//3
 	WispSisterJulia,
 	DeathKnight,
 	
-	AngelSlayerRekZul,//5
+	AngelSlayerRekZul,//4
 	KnightWitchYi,
 	AngelKnightOscar,
 	DemonLordRekTaar,
-	WispSisters,
 	
-	Gravekeeper,//5
+	Gravekeeper,//4
     BloodKnightDavid,
-	StoneSerpant,
-	ShadowClan,
 	StatueOfCorruption,
+	WispSisters,
 
 	FrostQueenFalak,//6
 	DemonQueensHead,
 	BloodKingVarus,
 	SlimeKing, 
 	DeathKing,
-	QueenSerpant,
 	VoidLordHeadless,
 	
 	LadyCorruption,
+	//canceld Bosses
+	TheMadWitches,//4
+	QueenSerpant,
+	StoneSerpant,
+	ShadowClan,
 }
 global.bossAmount = 25;
 enum Character

@@ -52,6 +52,7 @@ enum Atks
 	RapidFire,
 	ZoneAttack,
 	TauntAttack,
+	HealAttack,
 }
 timeAfterIndicate = (3)*30;
 attackCooldown = (6)*30;
@@ -85,6 +86,7 @@ beamSprite = 0;
 rapidFireSprite = 0;
 zoneSprite = 0;
 tauntSprite = 0;
+healSprite = 0;
 isHit = false;
 #endregion
 #region Bosses
@@ -259,7 +261,7 @@ isHit = false;
 		#endregion
 	#endregion
 	#region Tier 3
-		#region Wisp Sister Julia
+		#region Angel Slayer RekZul
 		if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul) 
 		{
 			//stats
@@ -312,6 +314,34 @@ isHit = false;
 			coneSprite = spr_boss_knightWitch_cone;
 			//boss specifc
 			knightWitchGooSize = 1;
+		}
+		#endregion
+		#region AngelKnight
+		if (gameMaster.chosenBoss == Boss.AngelKnightOscar) 
+		{
+			//stats
+			phase1Hp = tier3Hp*0.20; phase1Ms = 1.5; phase1Dmg = 40;
+			phase2Hp = tier3Hp*0.30; phase2Ms = 1.5; phase2Dmg = 40;
+			phase3Hp = tier3Hp*0.5; phase3Ms = 1.5; phase3Dmg = 40;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.WalkingTowards;
+			//attacks and phase
+			tier = 3;
+			phase = 1;
+			maxPhase = 4;
+			//visual
+			size = 1;
+			alpha = 1;
+			circleSprite = spr_boss_angelKnightOscar_circle;
+			beamSprite = spr_boss_angelKnightOscar_beam;
+			coneSprite = spr_boss_angelKnightOscar_cone;
+			rapidFireSprite = spr_boss_angelKnightOscar_rapidFire;
+			healSprite = spr_boss_angelKnightOscar_heal;
+			oneShotSprite = spr_boss_angelKnightOscar_oneShot;
+			//boss specifc
+			
 		}
 		#endregion
 	#endregion

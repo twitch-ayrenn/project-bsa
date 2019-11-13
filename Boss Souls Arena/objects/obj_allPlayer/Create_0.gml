@@ -74,7 +74,7 @@ if (class == Character.ShadowAssassin)
 	knivesThrownStacks = 0;
 	throwingDirection = 0;
 	instance_create_depth(x,y,1,obj_shadowAttackRange);
-	daggerAmount = 18;
+	daggerAmount = 12;
 }
 if (class == Character.Pyromancer)
 {
