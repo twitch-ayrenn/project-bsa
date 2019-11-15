@@ -25,7 +25,7 @@ randomize();
 if (state == States.Idle || state == States.Walking)
 {
 #region Movement
-actualSpeed = (moveSpeed)*bPSpeed*global.playerBossSlow;
+actualSpeed = (moveSpeed)*bPSpeed*global.playerBossSlow*meteorStun;
 if (keyboard_check(ord("A")) && keyboard_check(ord("S")) || keyboard_check(ord("A")) && keyboard_check(ord("W")) ||  keyboard_check(ord("D")) && keyboard_check(ord("S")) || keyboard_check(ord("D")) && keyboard_check(ord("W")))
 {
 	actualSpeed = actualSpeed*0.85;
@@ -170,7 +170,7 @@ if (mouse_x < x)
 		{
 			if (mouse_check_button(mb_left))
 			{
-				charge++;
+				charge += 1*(1+(gameMaster.bonusFirerate/100));
 				moveSpeed = 0;
 			}
 			if (mouse_check_button_released(mb_left) || charge >= maxCharge)
@@ -273,6 +273,7 @@ if (mouse_x < x)
 	}
 	#endregion
 	#region onGoingEffects
+	
 	#endregion
 #endregion
 #region RightClick
@@ -299,48 +300,65 @@ if (mouse_x < x)
 	#region Pyromancer
 	if (class == Character.Pyromancer)
 	{
+		var coneWide = 45;
+		var coneAmount = 6;
 		if (mouse_check_button(mb_right) && canRightClick == true)
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
 			activateRightClickItem = true;
 			
+			doConeShot = true;
+			coneShotTimes = coneShotAmount;
+			
+			var coneAtkFW = point_direction(x,y,mouse_x,mouse_y)-coneWide*0.5;
+			repeat(coneAmount)
+			{
+				var fireBolt = instance_create_depth(x,y,depth+1,obj_firebolt);
+				//Main
+				fireBolt.direction = coneAtkFW;
+				fireBolt.speed = 7;
+				fireBolt.image_angle = fireBolt.direction+90;
+				//Visual
+				fireBolt.image_alpha = 0.85;
+				fireBolt.image_xscale = 1.75;
+				fireBolt.image_yscale = 1.75;
+				fireBolt.effectType = Effect.Flare;
+				fireBolt.charge = 1;
+				coneAtkFW += (coneWide/coneAmount);
+			}
+			
 			instance_create_depth(mouse_x,mouse_y,-mouse_y,obj_pyroPortal);
 			instance_create_depth(mouse_x,mouse_y,-mouse_y,obj_portal_bottom);
 			
-			var fbPAngleL = 0;
-			var fbPAmountL = 9;
-			repeat(fbPAmountL)
-			{
-				var fireBolt = instance_create_depth(x,y+3,depth+1,obj_firebolt);
-				fireBolt.direction = fbPAngleL;
-				fireBolt.image_angle = fireBolt.direction+90;
-				fireBolt.speed = 4;
-				fireBolt.image_xscale = 0.75;
-				fireBolt.image_yscale = fireBolt.image_xscale;
-				fireBolt.timeToDestroy = 18;
-				fbPAngleL += 360/fbPAmountL;
-			}
-			if (instance_exists(obj_pyroPortal))
-			{
-				with (obj_pyroPortal)
-				{
-					var fbPAngleL = 0;
-					var fbPAmountL = 9;
-					repeat(fbPAmountL)
-					{
-						var fireBolt = instance_create_depth(x,y+3,depth+1,obj_firebolt);
-						fireBolt.direction = fbPAngleL;
-						fireBolt.image_angle = fireBolt.direction+90;
-						fireBolt.speed = 4;
-						fireBolt.image_xscale = 0.75;
-						fireBolt.image_yscale = fireBolt.image_xscale;
-						fireBolt.timeToDestroy = 18;
-						fbPAngleL += 360/fbPAmountL;
-					}
-				}
-			}
 		}	
+		if (doConeShot == true && coneShotTimes > 0)
+		{
+			coneShotStacks++;	
+		}
+		if (coneShotStacks >= coneShotTime)
+		{
+			coneShotStacks = 0;
+			coneShotTimes--;
+			doConeShot = true;
+		
+			var coneAtkFW = point_direction(x,y,mouse_x,mouse_y)-coneWide*0.5;
+			repeat(coneAmount)
+			{
+				var fireBolt = instance_create_depth(x,y,depth+1,obj_firebolt);
+				//Main
+				fireBolt.direction = coneAtkFW;
+				fireBolt.speed = 7;
+				fireBolt.image_angle = fireBolt.direction+90;
+				//Visual
+				fireBolt.image_alpha = 0.85;
+				fireBolt.image_xscale = 1.75;
+				fireBolt.image_yscale = 1.75;
+				fireBolt.effectType = Effect.Flare;
+				fireBolt.charge = 1;
+				coneAtkFW += (coneWide/coneAmount);
+			}
+		}
 	}
 	#endregion
 	#region Bloodknight
@@ -426,63 +444,46 @@ if (mouse_x < x)
 	#region Pyromancer
 	if (class == Character.Pyromancer)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true)
+		if (keyboard_check(ord("E")) && canUlt == true && place_free(mouse_x,mouse_y))
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
 			activateUltItem = true;
 			
-			var fireBolt = instance_create_depth(x,y+3,depth+1,obj_firebolt);
-			fireBolt.direction = point_direction(x,y,mouse_x,mouse_y);
-			fireBolt.image_angle = fireBolt.direction+90;
-			fireBolt.speed = 5;
-			fireBolt.image_xscale = 1;
-			fireBolt.image_yscale = fireBolt.image_xscale;
-			fireBolt.grow = true;
-			fireBolt.destroy = false;
+			meteorStun = 0;
+			targetX = mouse_x;
+			targetY = mouse_y;
+			lastAbilityUsed = 3;
 			
-			var fbPAngleL = 0;
-			var fbPAmountL = 9;
-			repeat(fbPAmountL)
+			meteor = instance_create_depth(targetX+50,targetY-200,-1000,obj_firebolt);
+			meteor.direction = 255;
+			meteor.image_angle = meteor.direction+90;
+			meteor.image_alpha = 0.75;
+			meteor.speed = 3;
+			meteor.image_xscale = 5;
+			meteor.image_yscale = meteor.image_xscale;
+			meteor.charge = 15;
+			meteor.isMeteor = true;
+			
+			instance_create_depth(x,y,-y,obj_pyroPortal);
+			instance_create_depth(x,y,-y,obj_portal_bottom);
+		}
+		if (meteorStun == 0 && instance_exists(meteor))
+		{
+			x = meteor.x;
+			y = meteor.y;
+			global.iFrame = true;
+			image_alpha = 0;
+			if (x < targetX)
 			{
-				var fireBolt = instance_create_depth(x,y+3,depth+1,obj_firebolt);
-				fireBolt.direction = fbPAngleL;
-				fireBolt.image_angle = fireBolt.direction+90;
-				fireBolt.speed = 4;
-				fireBolt.image_xscale = 0.75;
-				fireBolt.image_yscale = fireBolt.image_xscale;
-				fireBolt.timeToDestroy = 18;
-				fbPAngleL += 360/fbPAmountL;
+				meteorStun = 1;
+				image_alpha = 1;
 			}
-				
-			if (instance_exists(obj_pyroPortal))
-			{
-				with (obj_pyroPortal)
-				{
-					var fireBolt = instance_create_depth(x,y+3,depth+1,obj_firebolt);
-					fireBolt.direction = point_direction(x,y,mouse_x,mouse_y);
-					fireBolt.image_angle = fireBolt.direction+90;
-					fireBolt.speed = 5;
-					fireBolt.image_xscale = 1;
-					fireBolt.image_yscale = fireBolt.image_xscale;
-					fireBolt.grow = true;
-					fireBolt.destroy = false;
-				
-					var fbPAngleL = 0;
-					var fbPAmountL = 9;
-					repeat(fbPAmountL)
-					{
-						var fireBolt = instance_create_depth(x,y+3,depth+1,obj_firebolt);
-						fireBolt.direction = fbPAngleL;
-						fireBolt.image_angle = fireBolt.direction+90;
-						fireBolt.speed = 4;
-						fireBolt.image_xscale = 0.75;
-						fireBolt.image_yscale = fireBolt.image_xscale;
-						fireBolt.timeToDestroy = 18;
-						fbPAngleL += 360/fbPAmountL;
-					}
-				}
-			}
+		}
+		if (instance_exists(meteor) == false)
+		{
+			meteorStun = 1;	
+			image_alpha = 1;
 		}
 	}
 	#endregion
@@ -569,41 +570,11 @@ if (mouse_x < x)
 			activateDashItem = true;
 			dashStopLeft = dashStop;
 			global.iFrame = true;
-			actualDashSpeed = dashSpeed;
+			actualDashSpeed = dashSpeed*2;
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			
-			var fbPAngleL = 0;
-			var fbPAmountL = 9;
-			repeat(fbPAmountL)
-			{
-				var fireBolt = instance_create_depth(x,y+3,depth+1,obj_firebolt);
-				fireBolt.direction = fbPAngleL;
-				fireBolt.image_angle = fireBolt.direction+90;
-				fireBolt.speed = 4;
-				fireBolt.image_xscale = 0.75;
-				fireBolt.image_yscale = fireBolt.image_xscale;
-				fireBolt.timeToDestroy = 18;
-				fbPAngleL += 360/fbPAmountL;
-			}
-			if (instance_exists(obj_pyroPortal))
-			{
-				with (obj_pyroPortal)
-				{
-					var fbPAngleL = 0;
-					var fbPAmountL = 9;
-					repeat(fbPAmountL)
-					{
-						var fireBolt = instance_create_depth(x,y+3,depth+1,obj_firebolt);
-						fireBolt.direction = fbPAngleL;
-						fireBolt.image_angle = fireBolt.direction+90;
-						fireBolt.speed = 4;
-						fireBolt.image_xscale = 0.75;
-						fireBolt.image_yscale = fireBolt.image_xscale;
-						fireBolt.timeToDestroy = 18;
-						fbPAngleL += 360/fbPAmountL;
-					}
-				}
-			}
+			instance_create_depth(x,y,-y,obj_pyroPortal);
+			instance_create_depth(x,y,-y,obj_portal_bottom);
 		}
 	}
 	#endregion

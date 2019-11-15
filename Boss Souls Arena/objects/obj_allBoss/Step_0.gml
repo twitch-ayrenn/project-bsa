@@ -567,10 +567,10 @@ if(chooseAnAttack == true)
 		#region Angel Knight Oscar
 		if (gameMaster.chosenBoss == Boss.AngelKnightOscar)
 		{
-			instance_create_depth(global.arenaMiddleX-250,global.arenaMiddleY,depth,obj_healSlime);
-			instance_create_depth(global.arenaMiddleX+250,global.arenaMiddleY,depth,obj_healSlime);
-			instance_create_depth(global.arenaMiddleX,global.arenaMiddleY+200,depth,obj_healSlime);
-			instance_create_depth(global.arenaMiddleX,global.arenaMiddleY-200,depth,obj_healSlime);
+			instance_create_depth(global.arenaMiddleX-200,global.arenaMiddleY,depth,obj_healSlime);
+			instance_create_depth(global.arenaMiddleX+200,global.arenaMiddleY,depth,obj_healSlime);
+			instance_create_depth(global.arenaMiddleX,global.arenaMiddleY+175,depth,obj_healSlime);
+			instance_create_depth(global.arenaMiddleX,global.arenaMiddleY-175,depth,obj_healSlime);
 		}
 		#endregion
 	}
@@ -649,16 +649,58 @@ if (hp <= 0 && phase == maxPhase)
 	//boss
 	if (instance_exists(par_bossStuff)){with(par_bossStuff){instance_destroy();}}
 	gameMaster.menu = Menues.BossSlain;
-	if (gameMaster.chosenClass == Character.ShadowAssassin){assassinItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;}
-	if (gameMaster.chosenClass == Character.TheRedWarrior){assassinItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;}
-	if (gameMaster.chosenClass == Character.Pyromancer){assassinItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;}
-	if (gameMaster.chosenClass == Character.Shopkeeper){assassinItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;}
-	if (gameMaster.chosenClass == Character.BloodKnight){assassinItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;}
-	if (gameMaster.chosenClass == Character.AgentOfGod){assassinItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;}
-	if (gameMaster.chosenClass == Character.AngelSlayer){assassinItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;}
-	if (gameMaster.chosenClass == Character.Graveling){assassinItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;}
-	if (gameMaster.chosenClass == Character.PlaugeWalker){assassinItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;}
-	if (gameMaster.chosenClass == Character.RainbowSlime){assassinItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;}
+	#region Items
+	if (gameMaster.chosenClass == Character.ShadowAssassin && assassinItems[gameMaster.chosenBoss] == false)
+	{
+		assassinItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;
+		gameMaster.assassinProgress += global.progressAmount;
+	}
+	if (gameMaster.chosenClass == Character.TheRedWarrior && theRedWarriorItems[gameMaster.chosenBoss] == false)
+	{
+		theRedWarriorItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;
+		gameMaster.theRedWarriorProgress += global.progressAmount;
+	}
+	if (gameMaster.chosenClass == Character.Pyromancer && pyromancerItems[gameMaster.chosenBoss] == false)
+	{
+		pyromancerItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;
+		gameMaster.pyromancerProgress += global.progressAmount;
+	}
+	if (gameMaster.chosenClass == Character.Shopkeeper && shopkeeperItems[gameMaster.chosenBoss] == false)
+	{
+		shopkeeperItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;
+		gameMaster.shopkeeperProgress += global.progressAmount;
+	}
+	if (gameMaster.chosenClass == Character.BloodKnight && bloodKnightItems[gameMaster.chosenBoss] == false)
+	{
+		bloodKnightItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;
+		gameMaster.bloodKnightProgress += global.progressAmount;
+	}
+	if (gameMaster.chosenClass == Character.RainbowSlime && rainbowSlimeItems[gameMaster.chosenBoss] == false)
+	{
+		rainbowSlimeItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;
+		gameMaster.rainbowSlimeProgress += global.progressAmount;
+	}
+	if (gameMaster.chosenClass == Character.PlaugeWalker && plaugeWalkerItems[gameMaster.chosenBoss] == false)
+	{
+		plaugeWalkerItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;
+		gameMaster.plaugeWalkerProgress += global.progressAmount;
+	}
+	if (gameMaster.chosenClass == Character.AgentOfGod && agentOfGodItems[gameMaster.chosenBoss] == false)
+	{
+		agentOfGodItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;
+		gameMaster.agentOfGodProgress += global.progressAmount;
+	}
+	if (gameMaster.chosenClass == Character.Graveling && gravelingItems[gameMaster.chosenBoss] == false)
+	{
+		gravelingItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;
+		gameMaster.gravelingProgress += global.progressAmount;
+	}
+	if (gameMaster.chosenClass == Character.AngelSlayer && angelSlayerItems[gameMaster.chosenBoss] == false)
+	{
+		angelSlayerItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;
+		gameMaster.angelSlayerProgress += global.progressAmount;
+	}
+	#endregion
 	game_save(global.saveFile);
 	instance_destroy();
 }

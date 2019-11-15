@@ -1,6 +1,6 @@
 /// @description Insert description here
 image_alpha = 0.8;
-depth = -y-100;
+depth = -y;
 if (destroy == true)
 {
 	destroy = false;
@@ -25,5 +25,9 @@ if (place_meeting(x,y,enemy))
 	{
 		hp += global.damage*global.lifeSteal;
 	}
+	if (isMeteor == true)
+	{
+		instance_create_depth(x,y,depth,obj_meteorGround);
+	}	
 	instance_destroy();
 }

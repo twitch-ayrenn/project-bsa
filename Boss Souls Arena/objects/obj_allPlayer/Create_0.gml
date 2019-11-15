@@ -44,6 +44,7 @@ global.damage = 1;
 baseLifeSteal = 0.75;
 global.lifeSteal = baseLifeSteal;
 dashSpeed = 5;
+meteorStun = 1;
 #endregion
 #region visuals and animation
 state = States.Idle;
@@ -52,6 +53,19 @@ walkSprite = 0;
 deadSprite = 0;
 instance_create_depth(x,y,1,obj_allCursor);
 playerSize = 1;
+#endregion
+#region Stats
+hp += gameMaster.bonusHealth;
+moveSpeed += gameMaster.bonusSpeed/10;
+dashSpeed *= 1+(gameMaster.bonusDash/100);
+global.damage += gameMaster.bonusDamage/10;
+leftClickCooldown *= 1 - (gameMaster.bonusFirerate/100);
+global.lifeSteal += gameMaster.bonusLifeSteal;
+auraPower = 1 + (gameMaster.bonusAura/100);
+conjurationPower = 1 + (gameMaster.bonusConjur/100);
+rightClickCooldown *= 1 - (gameMaster.bonusCooldown/100);
+ultCooldown *= 1 - (gameMaster.bonusCooldown/100);
+dashCooldown *= 1 - (gameMaster.bonusCooldown/100);
 #endregion
 #region class system
 if (class == Character.ShadowAssassin)
@@ -78,10 +92,10 @@ if (class == Character.ShadowAssassin)
 }
 if (class == Character.Pyromancer)
 {
-	leftClickCooldown = (9)*30;
-	rightClickCooldown = (9)*30;
-	dashCooldown = (9)*30;
-	ultCooldown = (18)*30;
+	leftClickCooldown = (8)*30;
+	rightClickCooldown = (12)*30;
+	dashCooldown = (3)*30;
+	ultCooldown = (16)*30;
 	idleSprite = spr_player_theMage;
 	walkSprite = spr_player_theMage_walking;
 	leftClickColor = c_aqua;
@@ -90,7 +104,15 @@ if (class == Character.Pyromancer)
 	ultColor = c_red;
 	//character specific
 	charge = 0;
-	maxCharge = (leftClickCooldown/3)*30;//3
+	maxCharge = (3)*30;//3
+	doConeShot = false;
+	coneShotAmount = int64(global.damage*2);
+	coneShotTimes = 0;
+	coneShotTime = (0.4)*30;
+	coneShotStacks = 0;
+	meteorSprite = spr_fireBall;
+	meteorStun = 1;
+	meteor = 0;
 }
 if (class == Character.BloodKnight)
 {
@@ -117,17 +139,6 @@ if (class == Character.BloodKnight)
 #region Items
 preLCCD = 0;
 if (global.itemSelected[Boss.DeathKnight] == true){preLCCD = leftClickCooldown;}
-hp += gameMaster.bonusHealth;
-moveSpeed += gameMaster.bonusSpeed/10;
-dashSpeed *= 1+(gameMaster.bonusDash/100);
-global.damage += gameMaster.bonusDamage/10;
-leftClickCooldown *= 1 - (gameMaster.bonusFirerate/100);
-global.lifeSteal += gameMaster.bonusLifeSteal;
-auraPower = 1 + (gameMaster.bonusAura/100);
-conjurationPower = 1 + (gameMaster.bonusConjur/100);
-rightClickCooldown *= 1 - (gameMaster.bonusCooldown/100);
-ultCooldown *= 1 - (gameMaster.bonusCooldown/100);
-dashCooldown *= 1 - (gameMaster.bonusCooldown/100);
 activateUltItem = false;
 activateDashItem = false;
 activateLeftClickItem = false;
@@ -167,11 +178,7 @@ if (global.itemSelected[Boss.DeathKnight] == true)
 blackOutAlpha = 0;
 #endregion
 #region maxValues
-if (class == Character.Pyromancer)
-{
-	maxCharge = (leftClickCooldown/3)*30;//3
-	leftClickCooldown = (9)*30;
-}
+if (class == Character.Pyromancer){leftClickCooldown = (9)*30;}
 actualBKDashSpeed = 0;//needs to exist or else it crashes 
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;

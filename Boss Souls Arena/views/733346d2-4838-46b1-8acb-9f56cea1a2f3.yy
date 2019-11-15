@@ -17,7 +17,8 @@
         "825e6471-802f-48f8-8c67-31a90ee7abec",
         "6a164dd9-df7d-4820-bbef-3288f046edc7",
         "02c45c00-d6ef-4860-a119-f5aad6e55cfb",
-        "96032e86-3282-4508-8569-cfd0b162463f"
+        "96032e86-3282-4508-8569-cfd0b162463f",
+        "d0809e88-d49d-44fc-b3e1-2db648642c71"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_thePyromancer",

@@ -20,8 +20,6 @@ if (dealDamage == true && dealDamageTimes > 0)
 			damageText.text = damageDealt;
 			hp -= global.damage*3;
 			
-			image_blend = c_red;
-			
 			var amountHealed = global.damage*global.lifeSteal*3;
 			var healText = instance_create_depth(global.player.x+irandom_range(-8,8),global.player.y+irandom_range(-5,5),global.player.depth-10,obj_textMaker);
 			healText.color = c_lime;

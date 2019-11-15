@@ -175,6 +175,8 @@ angelSlayerProgress = 1;
 rainbowSlimeProgress = 1;
 agentOfGodProgress = 1;
 gravelingProgress = 1;
+totalProgress = 0;
+global.progressAmount = 1.5;
 //Unlocks
 assassinUnlocked = true;
 bloodKnightUnlocked = true;

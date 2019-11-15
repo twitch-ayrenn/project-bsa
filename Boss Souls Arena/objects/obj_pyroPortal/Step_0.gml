@@ -18,6 +18,7 @@ if (canAttack == true)
 	fireBolt.speed = 5;
 	fireBolt.image_xscale = 1;
 	fireBolt.image_yscale = fireBolt.image_xscale;
+	fireBolt.charge = 1;
 	
 	alarm[0] = (1)*30;
 	

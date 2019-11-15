@@ -6,7 +6,8 @@
     "children": [
         "e845299f-af65-4904-aec3-21724fdcaebb",
         "c8fef349-4b7b-4167-8281-e1938b27b851",
-        "e1cb7be4-0652-4188-b85c-243058ed0a1b"
+        "e1cb7be4-0652-4188-b85c-243058ed0a1b",
+        "8173d6ec-f236-4f7a-be7e-804eb5212ed5"
     ],
     "filterType": "GMObject",
     "folderName": "grp_pyro",

@@ -4303,6 +4303,14 @@
             }
         },
         {
+            "Key": "8173d6ec-f236-4f7a-be7e-804eb5212ed5",
+            "Value": {
+                "id": "137324ca-935e-4db5-b706-b6b99dc9770d",
+                "resourcePath": "objects\\obj_meteorGround\\obj_meteorGround.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "817ed325-7c8f-402e-b14e-8d52538682b0",
             "Value": {
                 "id": "efabe9b5-6d8c-4686-928a-250f5ca8e5c5",
@@ -6923,6 +6931,14 @@
             "Value": {
                 "id": "936a6edb-ec17-4aa9-b551-88e160e20ef0",
                 "resourcePath": "sprites\\sprite1611\\sprite1611.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "d0809e88-d49d-44fc-b3e1-2db648642c71",
+            "Value": {
+                "id": "0a403d24-0cb1-40f7-953d-b94f54190707",
+                "resourcePath": "sprites\\spr_meteorGlow\\spr_meteorGlow.yy",
                 "resourceType": "GMSprite"
             }
         },

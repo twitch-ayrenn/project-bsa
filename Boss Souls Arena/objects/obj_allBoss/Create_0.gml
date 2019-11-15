@@ -320,9 +320,9 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.AngelKnightOscar) 
 		{
 			//stats
-			phase1Hp = tier3Hp*0.20; phase1Ms = 1.5; phase1Dmg = 40;
-			phase2Hp = tier3Hp*0.30; phase2Ms = 1.5; phase2Dmg = 40;
-			phase3Hp = tier3Hp*0.5; phase3Ms = 1.5; phase3Dmg = 40;
+			phase1Hp = tier3Hp*0.20; phase1Ms = 1.4; phase1Dmg = 35;
+			phase2Hp = tier3Hp*0.30; phase2Ms = 1.4; phase2Dmg = 35;
+			phase3Hp = tier3Hp*0.5; phase3Ms = 1.4; phase3Dmg = 35;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -330,7 +330,7 @@ isHit = false;
 			//attacks and phase
 			tier = 3;
 			phase = 1;
-			maxPhase = 4;
+			maxPhase = 3;
 			//visual
 			size = 1;
 			alpha = 1;
@@ -339,9 +339,7 @@ isHit = false;
 			coneSprite = spr_boss_angelKnightOscar_cone;
 			rapidFireSprite = spr_boss_angelKnightOscar_rapidFire;
 			healSprite = spr_boss_angelKnightOscar_heal;
-			oneShotSprite = spr_boss_angelKnightOscar_oneShot;
 			//boss specifc
-			
 		}
 		#endregion
 	#endregion

@@ -1,7 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
-hp = 25;
-image_blend = c_lime;
-size = 0.75;
+outline_init();
+image_blend = global.orange;
+dealDamage = true;
+damageTimer = (1)*30;
+destroy = true;
+size = 2;
 image_xscale = size;
 image_yscale = size;

@@ -10,7 +10,7 @@ if (place_meeting(x,y,nearestEnemy))
 {
 	with (nearestEnemy)
 	{
-		nearestEnemy.hp += 250;
+		nearestEnemy.hp += 50;
 	}
 	instance_destroy();
 }
