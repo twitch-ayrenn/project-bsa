@@ -2,6 +2,7 @@
 outline_init();
 bossForThisItem = Boss.BloodZombie;
 image_blend = c_white;
+visible = false;
 reset = false;
 hover = false;
 thisItemSelected = false;

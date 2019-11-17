@@ -472,6 +472,7 @@ if (mouse_x < x)
 		{
 			x = meteor.x;
 			y = meteor.y;
+			
 			global.iFrame = true;
 			image_alpha = 0;
 			if (x < targetX)

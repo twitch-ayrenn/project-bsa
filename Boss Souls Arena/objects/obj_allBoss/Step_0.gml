@@ -648,59 +648,59 @@ if (hp <= 0 && phase == maxPhase)
 {
 	//boss
 	if (instance_exists(par_bossStuff)){with(par_bossStuff){instance_destroy();}}
-	gameMaster.menu = Menues.BossSlain;
 	#region Items
-	if (gameMaster.chosenClass == Character.ShadowAssassin && assassinItems[gameMaster.chosenBoss] == false)
+	if (gameMaster.chosenClass == Character.ShadowAssassin)
 	{
-		assassinItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;
+		assassinItems[gameMaster.chosenBoss] = true;
 		gameMaster.assassinProgress += global.progressAmount;
 	}
-	if (gameMaster.chosenClass == Character.TheRedWarrior && theRedWarriorItems[gameMaster.chosenBoss] == false)
+	if (gameMaster.chosenClass == Character.TheRedWarrior && gameMaster.theRedWarriorItems[gameMaster.chosenBoss] == false)
 	{
-		theRedWarriorItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;
+		theRedWarriorItems[gameMaster.chosenBoss] = true;
 		gameMaster.theRedWarriorProgress += global.progressAmount;
 	}
-	if (gameMaster.chosenClass == Character.Pyromancer && pyromancerItems[gameMaster.chosenBoss] == false)
+	if (gameMaster.chosenClass == Character.Pyromancer && gameMaster.pyromancerItems[gameMaster.chosenBoss] == false)
 	{
-		pyromancerItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;
+		pyromancerItems[gameMaster.chosenBoss] = true;
 		gameMaster.pyromancerProgress += global.progressAmount;
 	}
-	if (gameMaster.chosenClass == Character.Shopkeeper && shopkeeperItems[gameMaster.chosenBoss] == false)
+	if (gameMaster.chosenClass == Character.Shopkeeper && gameMaster.shopkeeperItems[gameMaster.chosenBoss] == false)
 	{
-		shopkeeperItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;
+		shopkeeperItems[gameMaster.chosenBoss] = true;
 		gameMaster.shopkeeperProgress += global.progressAmount;
 	}
-	if (gameMaster.chosenClass == Character.BloodKnight && bloodKnightItems[gameMaster.chosenBoss] == false)
+	if (gameMaster.chosenClass == Character.BloodKnight && gameMaster.bloodKnightItems[gameMaster.chosenBoss] == false)
 	{
-		bloodKnightItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;
+		bloodKnightItems[gameMaster.chosenBoss] = true;
 		gameMaster.bloodKnightProgress += global.progressAmount;
 	}
-	if (gameMaster.chosenClass == Character.RainbowSlime && rainbowSlimeItems[gameMaster.chosenBoss] == false)
+	if (gameMaster.chosenClass == Character.RainbowSlime && gameMaster.rainbowSlimeItems[gameMaster.chosenBoss] == false)
 	{
-		rainbowSlimeItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;
+		rainbowSlimeItems[gameMaster.chosenBoss] = true;
 		gameMaster.rainbowSlimeProgress += global.progressAmount;
 	}
-	if (gameMaster.chosenClass == Character.PlaugeWalker && plaugeWalkerItems[gameMaster.chosenBoss] == false)
+	if (gameMaster.chosenClass == Character.PlaugeWalker && gameMaster.plaugeWalkerItems[gameMaster.chosenBoss] == false)
 	{
-		plaugeWalkerItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;
+		plaugeWalkerItems[gameMaster.chosenBoss] = true;
 		gameMaster.plaugeWalkerProgress += global.progressAmount;
 	}
-	if (gameMaster.chosenClass == Character.AgentOfGod && agentOfGodItems[gameMaster.chosenBoss] == false)
+	if (gameMaster.chosenClass == Character.AgentOfGod && gameMaster.agentOfGodItems[gameMaster.chosenBoss] == false)
 	{
-		agentOfGodItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;
+		agentOfGodItems[gameMaster.chosenBoss] = true;
 		gameMaster.agentOfGodProgress += global.progressAmount;
 	}
-	if (gameMaster.chosenClass == Character.Graveling && gravelingItems[gameMaster.chosenBoss] == false)
+	if (gameMaster.chosenClass == Character.Graveling && gameMaster.gravelingItems[gameMaster.chosenBoss] == false)
 	{
-		gravelingItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;
+		gravelingItems[gameMaster.chosenBoss] = true;
 		gameMaster.gravelingProgress += global.progressAmount;
 	}
-	if (gameMaster.chosenClass == Character.AngelSlayer && angelSlayerItems[gameMaster.chosenBoss] == false)
+	if (gameMaster.chosenClass == Character.AngelSlayer && gameMaster.angelSlayerItems[gameMaster.chosenBoss] == false)
 	{
-		angelSlayerItems[gameMaster.chosenBoss] = gameMaster.chosenBoss;
+		angelSlayerItems[gameMaster.chosenBoss] = true;
 		gameMaster.angelSlayerProgress += global.progressAmount;
 	}
 	#endregion
+	gameMaster.menu = Menues.BossSlain;
 	game_save(global.saveFile);
 	instance_destroy();
 }
