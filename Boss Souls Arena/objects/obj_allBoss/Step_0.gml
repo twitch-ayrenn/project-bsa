@@ -649,55 +649,65 @@ if (hp <= 0 && phase == maxPhase)
 	//boss
 	if (instance_exists(par_bossStuff)){with(par_bossStuff){instance_destroy();}}
 	#region Items
-	if (gameMaster.chosenClass == Character.ShadowAssassin)
+	if (gameMaster.chosenClass == Character.ShadowAssassin && gameMaster.assassinItems[gameMaster.chosenBoss] == false)
 	{
-		assassinItems[gameMaster.chosenBoss] = true;
+		gameMaster.assassinItems[gameMaster.chosenBoss] = true;
 		gameMaster.assassinProgress += global.progressAmount;
+		gameMaster.totalProgress += 1;
 	}
 	if (gameMaster.chosenClass == Character.TheRedWarrior && gameMaster.theRedWarriorItems[gameMaster.chosenBoss] == false)
 	{
-		theRedWarriorItems[gameMaster.chosenBoss] = true;
+		gameMaster.theRedWarriorItems[gameMaster.chosenBoss] = true;
 		gameMaster.theRedWarriorProgress += global.progressAmount;
+		gameMaster.totalProgress += 1;
 	}
 	if (gameMaster.chosenClass == Character.Pyromancer && gameMaster.pyromancerItems[gameMaster.chosenBoss] == false)
 	{
-		pyromancerItems[gameMaster.chosenBoss] = true;
+		gameMaster.pyromancerItems[gameMaster.chosenBoss] = true;
 		gameMaster.pyromancerProgress += global.progressAmount;
+		gameMaster.totalProgress += 1;
 	}
 	if (gameMaster.chosenClass == Character.Shopkeeper && gameMaster.shopkeeperItems[gameMaster.chosenBoss] == false)
 	{
-		shopkeeperItems[gameMaster.chosenBoss] = true;
+		gameMaster.shopkeeperItems[gameMaster.chosenBoss] = true;
 		gameMaster.shopkeeperProgress += global.progressAmount;
+		gameMaster.totalProgress += 1;
 	}
 	if (gameMaster.chosenClass == Character.BloodKnight && gameMaster.bloodKnightItems[gameMaster.chosenBoss] == false)
 	{
-		bloodKnightItems[gameMaster.chosenBoss] = true;
+		gameMaster.bloodKnightItems[gameMaster.chosenBoss] = true;
 		gameMaster.bloodKnightProgress += global.progressAmount;
+		gameMaster.totalProgress += 1;
 	}
 	if (gameMaster.chosenClass == Character.RainbowSlime && gameMaster.rainbowSlimeItems[gameMaster.chosenBoss] == false)
 	{
-		rainbowSlimeItems[gameMaster.chosenBoss] = true;
+		gameMaster.rainbowSlimeItems[gameMaster.chosenBoss] = true;
 		gameMaster.rainbowSlimeProgress += global.progressAmount;
+		gameMaster.totalProgress += 1;
 	}
 	if (gameMaster.chosenClass == Character.PlaugeWalker && gameMaster.plaugeWalkerItems[gameMaster.chosenBoss] == false)
 	{
-		plaugeWalkerItems[gameMaster.chosenBoss] = true;
+		gameMaster.plaugeWalkerItems[gameMaster.chosenBoss] = true;
 		gameMaster.plaugeWalkerProgress += global.progressAmount;
+		gameMaster.totalProgress += 1;
 	}
 	if (gameMaster.chosenClass == Character.AgentOfGod && gameMaster.agentOfGodItems[gameMaster.chosenBoss] == false)
 	{
-		agentOfGodItems[gameMaster.chosenBoss] = true;
+		gameMaster.agentOfGodItems[gameMaster.chosenBoss] = true;
 		gameMaster.agentOfGodProgress += global.progressAmount;
+		gameMaster.totalProgress += 1;
 	}
 	if (gameMaster.chosenClass == Character.Graveling && gameMaster.gravelingItems[gameMaster.chosenBoss] == false)
 	{
-		gravelingItems[gameMaster.chosenBoss] = true;
+		gameMaster.gravelingItems[gameMaster.chosenBoss] = true;
 		gameMaster.gravelingProgress += global.progressAmount;
+		gameMaster.totalProgress += 1;
 	}
 	if (gameMaster.chosenClass == Character.AngelSlayer && gameMaster.angelSlayerItems[gameMaster.chosenBoss] == false)
 	{
-		angelSlayerItems[gameMaster.chosenBoss] = true;
+		gameMaster.angelSlayerItems[gameMaster.chosenBoss] = true;
 		gameMaster.angelSlayerProgress += global.progressAmount;
+		gameMaster.totalProgress += 1;
 	}
 	#endregion
 	gameMaster.menu = Menues.BossSlain;

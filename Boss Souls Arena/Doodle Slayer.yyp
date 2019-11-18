@@ -495,6 +495,14 @@
             }
         },
         {
+            "Key": "0d1d72c3-285f-4365-a61f-d0aeb20305f7",
+            "Value": {
+                "id": "6ab9cf41-ebf6-4516-9952-106f2e6c1b52",
+                "resourcePath": "sprites\\sprite499\\sprite499.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0d40254f-77fd-4da7-a2e9-8f31fab0b9e9",
             "Value": {
                 "id": "fd5c28f2-28c8-43d3-81fc-1c4d389294b0",
@@ -1707,6 +1715,14 @@
             "Value": {
                 "id": "247dcd5e-aabb-466e-ba52-98d914f4dc0c",
                 "resourcePath": "sprites\\spr_bookOf_sacrefices_outline_green\\spr_bookOf_sacrefices_outline_green.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "3045e688-e380-4f5b-ad35-cd323d38b66e",
+            "Value": {
+                "id": "08ce79b5-b80b-4f8a-9057-f8dbb6e288f7",
+                "resourcePath": "sprites\\spr_loot_ultraRapidFireTime\\spr_loot_ultraRapidFireTime.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5011,6 +5027,14 @@
             "Value": {
                 "id": "2efcb061-9f40-46bd-afa0-520eed392b3a",
                 "resourcePath": "objects\\obj_prop_drinks\\obj_prop_drinks.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "9a38c031-2b97-429b-8198-963f290c353b",
+            "Value": {
+                "id": "809010f0-2819-4724-9185-267d9918a325",
+                "resourcePath": "objects\\obj_item_ultraRapidFireHourglass\\obj_item_ultraRapidFireHourglass.yy",
                 "resourceType": "GMObject"
             }
         },

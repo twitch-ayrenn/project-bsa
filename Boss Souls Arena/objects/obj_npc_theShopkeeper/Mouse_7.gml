@@ -6,7 +6,7 @@ if (gameMaster.shopkeeperUnlocked== true)
 	{
 		if (shopkeeperProgress < 2){menu = Menues.BossSelect;chosenClass = Character.Shopkeeper;}
 		if (shopkeeperProgress > 1){menu = Menues.BossLoot;  chosenClass = Character.Shopkeeper;}
-		global.itemSlots = int64(1 + (shopkeeperProgress/2.4));
+		global.itemSlots = int64(1 + (shopkeeperProgress/3));
 		global.maxItemSlots = global.itemSlots;
 	}
 	with(par_loot){reset = true;}

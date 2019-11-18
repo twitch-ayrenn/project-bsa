@@ -165,9 +165,9 @@ backSize = 1;
 global.slidingSpeed = 1.75;
 ////Character progression and select
 //Progress // for a boss its its number -1
-assassinProgress = 25;
-bloodKnightProgress = 25;
-pyromancerProgress = 4;
+assassinProgress = 1;
+bloodKnightProgress = 1;
+pyromancerProgress = 1;
 shopkeeperProgress = 1;
 theRedWarriorProgress = 1;
 plaugeWalkerProgress = 1;
@@ -176,7 +176,7 @@ rainbowSlimeProgress = 1;
 agentOfGodProgress = 1;
 gravelingProgress = 1;
 totalProgress = 0;
-global.progressAmount = 1.5;
+global.progressAmount = 1.35;
 //Unlocks
 assassinUnlocked = true;
 bloodKnightUnlocked = true;
@@ -228,7 +228,7 @@ previewLifeSteal = 0;
 previewAura = 0;
 previewConjur = 0;
 previewCooldown = 0;
-shoveInX = 0;// to shove in info text 
+shoveInX = 0;// to shove in info text
 itemTextSize = 0.075;
 itemTextSeparationY = 22;
 //arena

@@ -657,10 +657,10 @@ if (global.showFps == true)
 		fpsShowTimerStacks = 0;
 	}
 	draw_text_transformed_color(110,900-25,fpsShow,0.2,0.2,0,c_white,c_white,c_white,c_white,1);
-	
+	draw_text_transformed_color(200,900-25,(1 + ((assassinProgress-1)/4)),0.2,0.2,0,c_white,c_white,c_white,c_white,1);
 }
 //cursor
-if (room == rm_menu || room == rm_bossSelect || room == rm_theGreatCementary && instance_exists(par_cursor) == false)
+if (room == rm_menu || room == rm_bossSelect)
 {
 	draw_sprite_ext(spr_cursor,0,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),5,5,0,c_white,1,);
 }
