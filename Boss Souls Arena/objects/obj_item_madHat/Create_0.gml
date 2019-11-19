@@ -1,5 +1,5 @@
 /// @description Insert description here
-bossForThisItem = Boss.TheMadWitches;
+bossForThisItem = Boss.KnightWitchYi;
 image_blend = c_white;
 reset = false;
 hover = false;

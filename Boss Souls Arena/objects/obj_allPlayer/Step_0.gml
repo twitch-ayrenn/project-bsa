@@ -166,14 +166,15 @@ if (mouse_x < x)
 	#region Pyromancer
 	if (class == Character.Pyromancer)
 	{
-		if (canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false)
+		if (canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && meteorStun != 0)
 		{
 			if (mouse_check_button(mb_left))
 			{
 				charge += 1*(1+(gameMaster.bonusFirerate/100));
 				moveSpeed = 0;
 			}
-			if (mouse_check_button_released(mb_left) || charge >= maxCharge)
+			if (mouse_check_button_released(mb_left) || charge >= maxCharge || mouse_check_button(mb_left) && mouse_check_button(mb_right) ||
+			mouse_check_button(mb_left) && keyboard_check(vk_space) || mouse_check_button(mb_left) && keyboard_check(ord("E")))
 			{
 				canLeftClick = false;
 				leftClickCooldownLeft = leftClickCooldown;
@@ -302,7 +303,7 @@ if (mouse_x < x)
 	{
 		var coneWide = 45;
 		var coneAmount = 6;
-		if (mouse_check_button(mb_right) && canRightClick == true)
+		if (mouse_check_button(mb_right) && canRightClick == true && meteorStun != 0)
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
@@ -444,7 +445,7 @@ if (mouse_x < x)
 	#region Pyromancer
 	if (class == Character.Pyromancer)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true && place_free(mouse_x,mouse_y))
+		if (keyboard_check(ord("E")) && canUlt == true && place_free(mouse_x,mouse_y) )
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
@@ -453,7 +454,6 @@ if (mouse_x < x)
 			meteorStun = 0;
 			targetX = mouse_x;
 			targetY = mouse_y;
-			lastAbilityUsed = 3;
 			
 			meteor = instance_create_depth(targetX+50,targetY-200,-1000,obj_firebolt);
 			meteor.direction = 255;
@@ -564,7 +564,7 @@ if (mouse_x < x)
 	#region Pyromancer
 	if (class == Character.Pyromancer)
 	{
-		if (keyboard_check(vk_space) && canDash == true)
+		if (keyboard_check(vk_space) && canDash == true && meteorStun != 0)
 		{
 			canDash = false;
 			dashCooldownLeft = dashCooldown;

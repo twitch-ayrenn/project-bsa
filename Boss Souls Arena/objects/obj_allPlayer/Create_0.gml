@@ -40,7 +40,7 @@ hp = 100;
 moveSpeed = 2;
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
-global.damage = 10;
+global.damage = 1;
 baseLifeSteal = 0.75;
 global.lifeSteal = baseLifeSteal;
 dashSpeed = 5;
@@ -53,19 +53,6 @@ walkSprite = 0;
 deadSprite = 0;
 instance_create_depth(x,y,1,obj_allCursor);
 playerSize = 1;
-#endregion
-#region Stats
-hp += gameMaster.bonusHealth;
-moveSpeed += gameMaster.bonusSpeed/10;
-dashSpeed *= 1+(gameMaster.bonusDash/100);
-global.damage += gameMaster.bonusDamage/10;
-leftClickCooldown *= 1 - (gameMaster.bonusFirerate/100);
-global.lifeSteal += gameMaster.bonusLifeSteal;
-auraPower = 1 + (gameMaster.bonusAura/100);
-conjurationPower = 1 + (gameMaster.bonusConjur/100);
-rightClickCooldown *= 1 - (gameMaster.bonusCooldown/100);
-ultCooldown *= 1 - (gameMaster.bonusCooldown/100);
-dashCooldown *= 1 - (gameMaster.bonusCooldown/100);
 #endregion
 #region class system
 if (class == Character.ShadowAssassin)
@@ -136,6 +123,19 @@ if (class == Character.BloodKnight)
 	BKDdashDirection = 0;
 }
 #endregion
+#region Stats
+hp += gameMaster.bonusHealth;
+moveSpeed += gameMaster.bonusSpeed/10;
+dashSpeed *= 1+(gameMaster.bonusDash/100);
+global.damage += gameMaster.bonusDamage/10;
+leftClickCooldown *= 1 - (gameMaster.bonusFirerate/100);
+global.lifeSteal += gameMaster.bonusLifeSteal;
+auraPower = 1 + (gameMaster.bonusAura/100);
+conjurationPower = 1 + (gameMaster.bonusConjur/100);
+rightClickCooldown *= 1 - (gameMaster.bonusCooldown/100);
+ultCooldown *= 1 - (gameMaster.bonusCooldown/100);
+dashCooldown *= 1 - (gameMaster.bonusCooldown/100);
+#endregion
 #region Items
 preLCCD = 0;
 if (global.itemSelected[Boss.DeathKnight] == true){preLCCD = leftClickCooldown;}
@@ -160,7 +160,7 @@ if (global.itemSelected[Boss.WispSisterJulia] == true)
 		instance_create_depth(x+irandom_range(-5,5),y+irandom_range(-5,5),-y,obj_equipment_futuristicSoldier);	
 	}
 }
-global.portalTime = 8*(1 - (gameMaster.bonusCooldown*2/100));
+global.portalTime = clamp(7*(1 - (clamp(gameMaster.bonusCooldown*1,0,99)/100)),2,7);
 if (global.itemSelected[Boss.AngelSlayerRekZul] == true)
 {
 	instance_create_depth(x,y,depth,obj_equipment_leftPortal);
@@ -173,12 +173,18 @@ if (global.itemSelected[Boss.DeathKnight] == true)
 	global.deathScyhteDamage = extraDamage;
 	leftClickCooldown = (3)*30;
 }
+#region ultra Rapid Fire Hourglass
+if (global.itemSelected[Boss.AngelKnightOscar] == true)
+{
+	global.damage *= 0.35;
+}
+#endregion
 #endregion
 #region Bosses
 blackOutAlpha = 0;
 #endregion
 #region maxValues
-if (class == Character.Pyromancer){leftClickCooldown = (9)*30;}
+if (class == Character.Pyromancer){leftClickCooldown = (9)*30; coneShotAmount = int64(global.damage*2);}
 actualBKDashSpeed = 0;//needs to exist or else it crashes 
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;

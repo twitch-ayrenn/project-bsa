@@ -155,6 +155,7 @@ global.ultimateAttackKey = ord("E");
 global.deBuggerInfo = true;
 global.showDD = false;
 global.showFps = true;
+global.deBugg = true;
 fpsShowTimerStacks = 0;
 fpsShow = "";
 fullscreen = true;
@@ -165,9 +166,9 @@ backSize = 1;
 global.slidingSpeed = 1.75;
 ////Character progression and select
 //Progress // for a boss its its number -1
-assassinProgress = 1;
-bloodKnightProgress = 1;
-pyromancerProgress = 1;
+assassinProgress = 150;
+bloodKnightProgress = 50;
+pyromancerProgress = 10;
 shopkeeperProgress = 1;
 theRedWarriorProgress = 1;
 plaugeWalkerProgress = 1;

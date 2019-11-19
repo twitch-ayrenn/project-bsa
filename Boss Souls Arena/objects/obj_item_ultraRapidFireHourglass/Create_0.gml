@@ -1,5 +1,5 @@
 /// @description Insert description here
-bossForThisItem = Boss.AngelSlayerRekZul;
+bossForThisItem = Boss.AngelKnightOscar;
 image_blend = c_white;
 reset = false;
 hover = false;
@@ -12,7 +12,7 @@ bonusFirerate = 3;
 bonusLifeSteal = 0;
 bonusAura = 0;
 bonusConjur = 0;
-bonusCooldown = 0;
+bonusCooldown = 50;
 previewHealth = bonusHealth;
 previewSpeed = bonusSpeed;
 previewDash = bonusDash;

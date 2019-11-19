@@ -6471,6 +6471,14 @@
             }
         },
         {
+            "Key": "c4646607-f3cf-4cfa-ae63-a29f29382d2e",
+            "Value": {
+                "id": "e48e3c06-4b82-49d2-a48e-7eb65f3f7dde",
+                "resourcePath": "sprites\\spr_healthBarNew\\spr_healthBarNew.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c4c82cb9-54f7-4733-a75d-1e0a73052bd7",
             "Value": {
                 "id": "ea87d627-f4a4-45a3-a354-67e71ba7ea90",
