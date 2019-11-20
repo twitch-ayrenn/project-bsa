@@ -91,24 +91,24 @@ if (instance_exists(obj_allBoss))
 
 #endregion
 #region Player Ui
-draw_healthbar(130,40,75+235+maxHp*0.4,66,(hp / maxHp) * 100,c_dkgray,c_maroon,c_red,0,false,true);
+draw_healthbar(130,40,75+275+maxHp*0.5,66,(hp / maxHp) * 100,c_dkgray,c_maroon,c_red,0,false,true);
 //ult
-draw_healthbar(125,75,175-1,125,(ultCooldownLeft / ultCooldown) * 100,ultColor,c_dkgray,c_dkgray,3,true,false);
+draw_healthbar(125,75,185-1,135,(ultCooldownLeft / ultCooldown) * 100,ultColor,c_dkgray,c_dkgray,3,true,false);
 //leftClick
-draw_healthbar(185,75,215-1,105,(leftClickCooldownLeft / leftClickCooldown) * 100,leftClickColor,c_dkgray,c_dkgray,3,true,false);
+draw_healthbar(195,75,235-1,115,(leftClickCooldownLeft / leftClickCooldown) * 100,leftClickColor,c_dkgray,c_dkgray,3,true,false);
 //dash
-draw_healthbar(225,75,270-1,95,(dashCooldownLeft / dashCooldown) * 100,dashColor,c_dkgray,c_dkgray,3,true,false);
+draw_healthbar(245,75,305-1,105,(dashCooldownLeft / dashCooldown) * 100,dashColor,c_dkgray,c_dkgray,3,true,false);
 //rightCLick
-draw_healthbar(280,75,310-1,105,(rightClickCooldownLeft / rightClickCooldown) * 100,rightClickColor,c_dkgray,c_dkgray,3,true,false);
-	
+draw_healthbar(315,75,355-1,115,(rightClickCooldownLeft / rightClickCooldown) * 100,rightClickColor,c_dkgray,c_dkgray,3,true,false);
+
 draw_sprite_ext(spr_healthBarNew,0,85,30,5,5,0,c_white,1);
-draw_sprite_ext(spr_player_theAssasin,0,75,75,7.5,7.5,0,c_white,1);
+draw_sprite_ext(spr_player_theAssasin,0,77,75,7.5,7.5,0,c_white,1);
 
 draw_set_font(fnt_menu_fill);
-draw_text_transformed_color(144,90,"E",0.3,0.3,0,c_black,c_black,c_black,c_black,1);
-draw_text_transformed_color(193,82,"M1",0.2,0.2,0,c_black,c_black,c_black,c_black,1);
-draw_text_transformed_color(235,81,"Space",0.15,0.15,0,c_black,c_black,c_black,c_black,1);
-draw_text_transformed_color(287,82,"M2",0.2,0.2,0,c_black,c_black,c_black,c_black,1);
+draw_text_transformed_color(146,90,"E",0.3,0.3,0,c_black,c_black,c_black,c_black,1);
+draw_text_transformed_color(208,86,"M1",0.2,0.2,0,c_black,c_black,c_black,c_black,1);
+draw_text_transformed_color(255,83,"Space",0.175,0.175,0,c_black,c_black,c_black,c_black,1);
+draw_text_transformed_color(325,86,"M2",0.2,0.2,0,c_black,c_black,c_black,c_black,1);
 
 //cursor
 var cursorSize = 2;

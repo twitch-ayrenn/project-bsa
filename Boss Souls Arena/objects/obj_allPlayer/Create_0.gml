@@ -65,8 +65,8 @@ if (class == Character.ShadowAssassin)
 	walkSprite = spr_player_theAssasin_walking;
 	deadSprite = spr_player_theAssasin_dead;
 	leftClickColor = global.purple;
-	rightClickColor = c_fuchsia;
-	dashColor = c_fuchsia;
+	rightClickColor = global.purple;
+	dashColor = global.purple;
 	ultColor = c_fuchsia;
 	//character specific
 	teleportRange = 96;
@@ -85,10 +85,10 @@ if (class == Character.Pyromancer)
 	ultCooldown = (16)*30;
 	idleSprite = spr_player_theMage;
 	walkSprite = spr_player_theMage_walking;
-	leftClickColor = c_aqua;
-	rightClickColor = c_teal;
-	dashColor = c_fuchsia;
-	ultColor = c_red;
+	leftClickColor = global.orange;
+	rightClickColor = global.orange;
+	dashColor = global.orange;
+	ultColor = c_yellow;
 	//character specific
 	charge = 0;
 	maxCharge = (3)*30;//3
