@@ -4,7 +4,6 @@ if (global.itemSelected[Boss.DeathKnight] == true){direction = point_direction(x
 if (hp > maxHp){hp = maxHp;}
 depth = -y;
 blackOutAlpha += clamp(0.1/30,0,1);//Varus
-image_angle = 0;
 #region Speed
 //checkBefore
 if (speed < 0){speed = 0;}
@@ -19,11 +18,14 @@ if (actualBKDashSpeed < 0){actualBKDashSpeed = 0;}
 if (speed > 0){global.iFrame = true;}
 if (speed == 0){global.iFrame = false;}
 #endregion
+if (global.noDamage == true){noDamageStacks++;}
+if (noDamageStacks >= noDamageTime){global.noDamage = false; noDamageStacks = 0;}
 randomize();
 #endregion
 #region Alive
 if (state == States.Idle || state == States.Walking)
 {
+image_angle = 0;
 #region Movement
 actualSpeed = (moveSpeed)*bPSpeed*global.playerBossSlow*meteorStun;
 if (keyboard_check(ord("A")) && keyboard_check(ord("S")) || keyboard_check(ord("A")) && keyboard_check(ord("W")) ||  keyboard_check(ord("D")) && keyboard_check(ord("S")) || keyboard_check(ord("D")) && keyboard_check(ord("W")))
@@ -683,19 +685,18 @@ if (ultCooldownLeft <= 0){canUlt = true;}
 }
 #endregion
 #region dead
-if (hp <= 0)
+if (hp <= 0 && state != States.Dead)
 {
 	state = States.Dead;
-	menu = Menues.Death;
+	gameMaster.menu = Menues.Death;
+	gameMaster.deathAlpha = 0;
 	speed = 0;
 	moveSpeed = 0;
+	sprite_index = deadSprite;
 }
-if (state == States.Dead)
+if (gameMaster.menu == Menues.Death)
 {
-	image_angle += clamp(1,0,90);
-	if (image_angle >= 90)
-	{
-		sprite_index = deadSprite;
-	}
+	image_angle += 10;
+	image_angle = clamp(image_angle,0,90);
 }
 #endregion

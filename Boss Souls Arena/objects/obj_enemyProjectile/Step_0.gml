@@ -58,7 +58,7 @@ if (destroy == true)
 	alarm[0] = range;
 }
 #region damage
-if (place_meeting(x,y,target) && sprite_index != spr_gooGround && global.iFrame == false && sprite_index != spr_beam && sprite_index != spr_chaseDamage)
+if (place_meeting(x,y,target) && sprite_index != spr_gooGround && global.iFrame == false && sprite_index != spr_beam && sprite_index != spr_chaseDamage && global.noDamage == false)
 {
 	var damageToTarget = dmg;
 	var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
@@ -83,6 +83,7 @@ if (place_meeting(x,y,target) && sprite_index != spr_gooGround && global.iFrame 
 	}
 	#endregion
 	with (obj_camera){shake_remain += 2;}
+	global.noDamage = true;
 	instance_destroy();
 }
 if (stacks >= (1)*30 && sprite_index == spr_gooGround && place_meeting(x,y,target) && global.iFrame == false|| stacks >= (1)*30 && sprite_index == spr_chaseDamage && place_meeting(x,y,target) && global.iFrame == false)

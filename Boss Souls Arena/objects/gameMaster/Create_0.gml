@@ -164,6 +164,7 @@ exitSize = 1;
 backColor = c_maroon;
 backSize = 1;
 global.slidingSpeed = 1.75;
+deathAlpha = 0;
 ////Character progression and select
 //Progress // for a boss its its number -1
 assassinProgress = 150;

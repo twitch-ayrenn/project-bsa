@@ -2415,14 +2415,6 @@
             }
         },
         {
-            "Key": "45fd4c73-82f0-4316-b58b-228b2f6287ef",
-            "Value": {
-                "id": "36d894d3-83bc-4a1f-81e9-aa9d610f8232",
-                "resourcePath": "sprites\\spr_player_theMage_death\\spr_player_theMage_death.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "461379dc-18c8-437f-a381-bd7831059901",
             "Value": {
                 "id": "6068f7d9-d430-4acf-b644-4c196ef15f51",
@@ -4567,6 +4559,14 @@
             }
         },
         {
+            "Key": "89be3246-8b80-41e0-a4d8-81dc05de77ff",
+            "Value": {
+                "id": "6a253db9-05c4-4a97-8dce-5c8227b0247b",
+                "resourcePath": "sprites\\spr_player_theBloodKnight_dead\\spr_player_theBloodKnight_dead.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "89decfa6-144a-48c6-9dd0-411e7cd9556b",
             "Value": {
                 "id": "a2b22f15-d629-4054-b94d-f9d516b637e4",
@@ -4695,14 +4695,6 @@
             }
         },
         {
-            "Key": "8f9734e8-6d35-4874-93c5-500c11d1ea67",
-            "Value": {
-                "id": "dc3ad07f-535f-4676-a2e4-de61b9613f66",
-                "resourcePath": "sprites\\spr_player_theBloodKnight_death\\spr_player_theBloodKnight_death.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "8f99f2da-ea6d-43e6-b435-d81053a29f69",
             "Value": {
                 "id": "ee6d2308-fec9-46b7-9173-025ecf5caf5b",
@@ -4724,6 +4716,14 @@
                 "id": "693a63aa-261f-466e-b058-29c80464a1bb",
                 "resourcePath": "objects\\obj_fightCard_theMadWitches\\obj_fightCard_theMadWitches.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "90257032-bfc9-4ee3-b750-a99184faa016",
+            "Value": {
+                "id": "47c95034-6419-489d-8733-449563265ba8",
+                "resourcePath": "sprites\\spr_player_theMage_dead\\spr_player_theMage_dead.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

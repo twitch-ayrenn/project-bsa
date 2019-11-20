@@ -7,17 +7,8 @@ if (gameMaster.menu == Menues.Main || gameMaster.menu == Menues.PlayerSelect || 
 	image_xscale = 1;
 	image_yscale = 1;
 }
-if (gameMaster.menu == Menues.BossSlain)
+if (gameMaster.menu == Menues.BossSlain || gameMaster.menu == Menues.Death)
 {
-	if (instance_exists(global.player))
-	{
-		x = global.player.x-100-50-15-15;
-		y = global.player.y+50+25+15+15;
-	}
+	x = global.player.x-100-50-15-15;
+	y = global.player.y+50+25+15+15;
 }
-if (gameMaster.menu == Menues.Death)
-{
-	x = obj_deadPlayer.x-100-50-15;
-	y = obj_deadPlayer.y+50+25+15;
-}
-

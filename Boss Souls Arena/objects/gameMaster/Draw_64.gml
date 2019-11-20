@@ -524,101 +524,7 @@ if (menu == Menues.BossSelect)
 }
 if (menu == Menues.Play)
 {
-//	if (chosenBoss == Bosses.The_Fat_Zombie)
-//	{
-//		draw_set_font(fnt_menu_fill);
-//		//draw_text_transformed_color(1185,30,"/////////////////////////////",0.45,0.45,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1185,15,":Objectives:",0.45,0.45,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,60,"1: Find the Zombie statue in",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,95,"the main court.",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,130,"2: Summon the Zombie and",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,165,"behead the zombie.",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//	}
-//	if (chosenBoss == Bosses.The_Wisp_Mother)
-//	{
-//		draw_set_font(fnt_menu_fill);
-//		//draw_text_transformed_color(1185,30,"/////////////////////////////",0.45,0.45,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1185,15,":Objectives:",0.45,0.45,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,60,"1: Find The Wisp Mothers yard",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,95,"near the main court.",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,130,"2: Summon the grand wisp and",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,165,"stop her!",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//	}
-//	if (chosenBoss == Bosses.The_Blood_Prince)
-//	{
-//		draw_set_font(fnt_menu_fill);
-//		//draw_text_transformed_color(1185,30,"/////////////////////////////",0.45,0.45,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1185,5,":Objectives:",0.45,0.45,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,60,"1: Find the blood court, north-",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,95,"west from the main court.",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,130,"2: Call upon the vampire and",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,165,"kill the night stalker.",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//	}
-//	if (chosenBoss == Bosses.The_Mad_Witches)
-//	{
-//		draw_set_font(fnt_menu_fill);
-//		//draw_text_transformed_color(1185,30,"/////////////////////////////",0.45,0.45,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1185,15,":Objectives:",0.45,0.45,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,60,"1: Find the Witch court east",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,95,"of the main court.",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,130,"2: Summon the witches and put",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,165,"an end to their terror.",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//	}
-//	if (chosenBoss == Bosses.The_GraveKeeper)
-//	{
-//		draw_set_font(fnt_menu_fill);
-//		//draw_text_transformed_color(1185,30,"/////////////////////////////",0.45,0.45,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1185,15,":Objectives:",0.45,0.45,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,60,"1: The Gravekeeper's statue lies",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,95,"in the main court.",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,130,"2: Call upon the the gravekeeper",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,165,"and tell him you cleansed the",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,200,"the great cementary.",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//	}
-//	if (chosenBoss == Bosses.The_Infernal_Wisp)
-//	{
-//		draw_set_font(fnt_menu_fill);
-//		//draw_text_transformed_color(1185,30,"/////////////////////////////",0.45,0.45,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1185,15,":Objectives:",0.45,0.45,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,60,"1: Find the grave of flames south",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,95,"of the main court.",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,130,"2: Summon the Infernal and tame",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,165,"the flame.",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//	}
-//	if (chosenBoss == Bosses.The_Flame_Gate)
-//	{
-//		draw_set_font(fnt_menu_fill);
-//		//draw_text_transformed_color(1185,30,"/////////////////////////////",0.45,0.45,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1185,15,":Objectives:",0.45,0.45,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,60,"1: In the grave of flames you will",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,95,"find the gate statue.",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,130,"2: Burn the gate and cleanse it",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,165,"from demonic presence.",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//	}
-//	if (chosenBoss == Bosses.The_Soul_Wisp)
-//	{
-//		draw_set_font(fnt_menu_fill);
-//		//draw_text_transformed_color(1185,30,"/////////////////////////////",0.45,0.45,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1185,15,":Objectives:",0.45,0.45,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,60,"1: Find The Court of Souls located",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,95,"north of the main court.",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,130,"2: Slay the Wisp Summoner.",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,165,"",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//	}
-//	if (chosenBoss == Bosses.The_Soul_Guards)
-//	{
-//		draw_set_font(fnt_menu_fill);
-//		//draw_text_transformed_color(1185,30,"/////////////////////////////",0.45,0.45,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1185,15,":Objectives:",0.45,0.45,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,60,"1: The Soul Guard statue lies in",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,95,"the Court Of Soul.",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,130,"2: Slay the Soul Guard.",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//		draw_text_transformed_color(1080,165,"",0.35,0.35,0,c_white,c_white,c_yellow,c_yellow,1);
-//	}
-	if (global.selectedWitchItem == WitchBossItems.AnniesDeathCap)
-	{
-		effect_create_above(ef_rain,x,y,0.1,c_lime);
-	}
+	
 }
 if (menu == Menues.BossSlain)
 {
@@ -630,11 +536,16 @@ if (menu == Menues.BossSlain)
 }
 if (menu == Menues.Death)
 {
-	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(430,70,"Mission Failed!",1.5,1.5,0,c_red,c_red,c_maroon,c_maroon,1);
+	deathAlpha += clamp(0.5/30,0,1);
+	draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,deathAlpha);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);	
+	draw_text_transformed_color(400,100,"Defeat",3,3,0,c_red,c_red,c_maroon,c_maroon,deathAlpha);
+	
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,deathAlpha);	
+	
+	draw_sprite_ext(spr_cursor,0,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),2.5,2.5,0,c_white,1,);
 }
 //showInfo
 if (global.ShowInfo == true && menu == Menues.Play)
@@ -690,8 +601,8 @@ if (global.showFps == true)
 	draw_text_transformed_color(200,900-25,(1 + ((assassinProgress-1)/4)),0.2,0.2,0,c_white,c_white,c_white,c_white,1);
 }
 //cursor
-if (room == rm_menu || room == rm_bossSelect)
+if (room == rm_menu)
 {
-	draw_sprite_ext(spr_cursor,0,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),5,5,0,c_white,1,);
+	draw_sprite_ext(spr_cursor,0,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),2.5,2.5,0,c_white,1,);
 }
 

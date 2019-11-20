@@ -104,11 +104,11 @@ draw_healthbar(315,75,355-1,115,(rightClickCooldownLeft / rightClickCooldown) * 
 draw_sprite_ext(spr_healthBarNew,0,85,30,5,5,0,c_white,1);
 draw_sprite_ext(spr_player_theAssasin,0,77,75,7.5,7.5,0,c_white,1);
 
-draw_set_font(fnt_menu_fill);
-draw_text_transformed_color(146,90,"E",0.3,0.3,0,c_black,c_black,c_black,c_black,1);
-draw_text_transformed_color(208,86,"M1",0.2,0.2,0,c_black,c_black,c_black,c_black,1);
-draw_text_transformed_color(255,83,"Space",0.175,0.175,0,c_black,c_black,c_black,c_black,1);
-draw_text_transformed_color(325,86,"M2",0.2,0.2,0,c_black,c_black,c_black,c_black,1);
+draw_set_font(fnt_NewNormalText);
+draw_text_transformed_color(145,87,"E",0.3*0.35,0.3*0.35,0,c_black,c_black,c_black,c_black,0.35);
+draw_text_transformed_color(203,84,"M1",0.2*0.35,0.2*0.35,0,c_black,c_black,c_black,c_black,0.35);
+draw_text_transformed_color(250,81,"Space",0.175*0.35,0.175*0.35,0,c_black,c_black,c_black,c_black,0.35);
+draw_text_transformed_color(320,84,"M2",0.2*0.35,0.2*0.35,0,c_black,c_black,c_black,c_black,0.35);
 
 //cursor
 var cursorSize = 2;

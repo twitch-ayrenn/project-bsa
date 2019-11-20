@@ -13,3 +13,7 @@ if (gameMaster.menu != Menues.BossSelect && gameMaster.menu != Menues.Settings &
 {
 	if (image_alpha > 0){image_alpha -= 1.3/30;}
 }
+if (gameMaster.menu == Menues.Death)
+{
+	if (image_alpha > 0){image_alpha += 1.3/30;}
+}

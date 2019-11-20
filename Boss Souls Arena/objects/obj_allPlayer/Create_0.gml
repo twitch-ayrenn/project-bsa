@@ -45,6 +45,9 @@ baseLifeSteal = 0.75;
 global.lifeSteal = baseLifeSteal;
 dashSpeed = 5;
 meteorStun = 1;
+global.noDamage = false;
+noDamageStacks = 0;
+noDamageTime = (0.1)*30;
 #endregion
 #region visuals and animation
 state = States.Idle;
@@ -85,6 +88,7 @@ if (class == Character.Pyromancer)
 	ultCooldown = (16)*30;
 	idleSprite = spr_player_theMage;
 	walkSprite = spr_player_theMage_walking;
+	deadSprite = spr_player_theMage_dead;
 	leftClickColor = global.orange;
 	rightClickColor = global.orange;
 	dashColor = global.orange;
@@ -110,6 +114,7 @@ if (class == Character.BloodKnight)
 	ultCooldown = (14)*30;
 	idleSprite = spr_player_theBloodKnight;
 	walkSprite = spr_player_theBloodKnight_walking;
+	deadSprite = spr_player_theBloodKnight_dead;
 	leftClickColor = c_teal;
 	rightClickColor = c_teal;
 	dashColor = c_fuchsia;
