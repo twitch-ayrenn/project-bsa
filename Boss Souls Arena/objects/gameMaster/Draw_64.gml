@@ -518,12 +518,30 @@ if (menu == Menues.BossSelect)
 {
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(30,30,"Select Fight",1.5,1.5,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	
 
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);
+	
+	if (queFight == true)
+	{
+		if (fightTransitionAlpha < 1){fightTransitionAlpha += clamp(0.3/30,0,1)}
+		draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,fightTransitionAlpha);
+		if (fightTransitionAlpha == 1){room_goto(rm_arena);	menu = Menues.Play;}
+	}
 }
 if (menu == Menues.Play)
 {
+	if (transitionAlpha > 0){transitionAlpha -= clamp(0.25/30,0,1)}
+	draw_set_font(fnt_menu_fill);
+	draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,transitionAlpha);
+	if (transitionAlpha == 0)
+	{
+		obj_allBoss.state = BossStates.Fighting;
+		obj_camera.state = CameraStates.PlayerView;
+		if (fightAlpha > 0){fightAlpha -= clamp(0.3/30,0,1)}
+		draw_text_transformed_color(150,145,"The Blood Harvester!",1.5,1.5,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);
+	}
 	
 }
 if (menu == Menues.BossSlain)

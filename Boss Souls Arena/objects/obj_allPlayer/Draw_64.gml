@@ -102,7 +102,10 @@ draw_healthbar(245,75,305-1,105,(dashCooldownLeft / dashCooldown) * 100,dashColo
 draw_healthbar(315,75,355-1,115,(rightClickCooldownLeft / rightClickCooldown) * 100,rightClickColor,c_dkgray,c_dkgray,3,true,false);
 
 draw_sprite_ext(spr_healthBarNew,0,85,30,5,5,0,c_white,1);
-draw_sprite_ext(spr_player_theAssasin,0,77,75,7.5,7.5,0,c_white,1);
+if (gameMaster.chosenClass == Character.ShadowAssassin){draw_sprite_ext(spr_player_theAssasin,0,77,75,7.5,7.5,0,c_white,1);}
+if (gameMaster.chosenClass == Character.Pyromancer){draw_sprite_ext(spr_player_theMage_menu,0,77,75,7,7.,0,c_white,1);}
+if (gameMaster.chosenClass == Character.BloodKnight){draw_sprite_ext(spr_player_theBloodKnight,0,68,60,7.5,7.5,0,c_white,1);}
+
 
 draw_set_font(fnt_NewNormalText);
 draw_text_transformed_color(145,87,"E",0.3*0.35,0.3*0.35,0,c_black,c_black,c_black,c_black,0.35);

@@ -1,4 +1,13 @@
 /// @description Vars
+#region States
+enum BossStates
+{
+	BeforeFight,
+	Fighting,
+	Dead,
+}
+state = BossStates.BeforeFight;
+#endregion
 #region Stats
 phase1Hp = 0; phase1Ms = 0; phase1Dmg = 0;
 phase2Hp = 0; phase2Ms = 0; phase2Dmg = 0;
@@ -108,12 +117,13 @@ isHit = false;
 			//visual
 			size = 1.5;
 			alpha = 1;
+			idleSprite = spr_boss_bloodZombie_idle;
 			normalSprite = spr_boss_bloodZombie_nA;
 			circleSprite = spr_boss_bloodZombie_cir;
 			gooSprite = spr_boss_bloodZombie_goo;
 		}
 		#endregion
-		#region FlameWisp
+		#region Wisp Sister Anna / Old Flame Wisp
 		if (gameMaster.chosenBoss == Boss.FlameWisp) 
 		{
 			//stats
@@ -130,6 +140,7 @@ isHit = false;
 			//visual
 			size = 1.5;
 			alpha = 0.75;
+			idleSprite = spr_boss_flameWisp_idle;
 			coneSprite = spr_boss_flameWisp_coneAttack
 			circleSprite = spr_boss_flameWisp_circle;
 			oneShotSprite = spr_boss_flameWisp_oneShot;
@@ -153,6 +164,7 @@ isHit = false;
 			//visual
 			size = 1;
 			alpha = 1;
+			idleSprite = spr_boss_theCorrupter_idle;
 			beamSprite = spr_boss_theCorrupter_beam;
 			gooSprite = spr_boss_theCorrupter_goo;
 			rapidFireSprite = spr_boss_theCorrupter_rapidFire;
@@ -202,6 +214,7 @@ isHit = false;
 			//visual
 			size = 1.5;
 			alpha = 0.75;
+			idleSprite = spr_boss_wispSisterJulia_idle;
 			circleSprite = spr_boss_wispSisterJulia_circle;
 			gooSprite = spr_boss_wispSisterJulia_goo;
 			teleportSprite = spr_boss_wispSisterJulia_teleport;
@@ -225,6 +238,7 @@ isHit = false;
 			//visual
 			size = 2;
 			alpha = 1;
+			idleSprite = spr_boss_demonGate_idle;
 			rapidFireSprite = spr_boss_demonGate_rapidFire;
 			gooSprite = spr_boss_demonGate_goo;
 			oneShotSprite = spr_boss_demonGate_oneShot;
@@ -235,9 +249,9 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.DeathKnight) 
 		{
 			//stats
-			phase1Hp = tier2Hp*0.20; phase1Ms = 1; phase1Dmg = 30;
+			phase1Hp = tier2Hp*0.15; phase1Ms = 1; phase1Dmg = 30;
 			phase2Hp = tier2Hp*0.30; phase2Ms = 1; phase2Dmg = 30;
-			phase3Hp = tier2Hp*0.35; phase3Ms = 1; phase3Dmg = 30;
+			phase3Hp = tier2Hp*0.40; phase3Ms = 1; phase3Dmg = 30;
 			phase4Hp = tier2Hp*0.15; phase4Ms = 1; phase4Dmg = 30;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
@@ -249,7 +263,8 @@ isHit = false;
 			maxPhase = 4;
 			//visual
 			size = 1;
-			alpha = 0.95;
+			alpha = 0.85;
+			idleSprite = spr_deathKinght_idle;
 			normalSprite = spr_boss_deathKinght_normalAttack;
 			chaseSprite = spr_boss_deathKinght_chase;
 			teleportSprite = spr_boss_deathKinght_teleport;
@@ -279,6 +294,7 @@ isHit = false;
 			//visual
 			size = 1.5;
 			alpha = 1;
+			idleSprite = spr_angelSlayerRekZul_idle;
 			circleSprite = spr_angelSlayerRekZul_circle;
 			beamSprite = spr_angelSlayerRekZul_beam;
 			teleportSprite = spr_angelSlayerRekZul_teleport;
@@ -306,6 +322,7 @@ isHit = false;
 			//visual
 			size = 1.35;
 			alpha = 1;
+			idleSprite = spr_boss_knightWitch_idle;
 			circleSprite = spr_boss_knightWitch_circle;
 			beamSprite = spr_boss_knightWitch_beam;
 			gooSprite = spr_boss_knightWitch_goo;
@@ -334,6 +351,7 @@ isHit = false;
 			//visual
 			size = 1;
 			alpha = 1;
+			idleSprite = spr_boss_angelKnightOscar_idle;
 			circleSprite = spr_boss_angelKnightOscar_circle;
 			beamSprite = spr_boss_angelKnightOscar_beam;
 			coneSprite = spr_boss_angelKnightOscar_cone;

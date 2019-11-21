@@ -9,7 +9,8 @@
         "6cfd1398-6c3c-4e79-90f0-57466cb3e849",
         "67024165-4e07-4040-aac5-0800d936f093",
         "60ad328a-e561-4c00-9423-8ed41e9e70ba",
-        "4806c8e3-0a9d-4799-a24d-2387f5e87191"
+        "4806c8e3-0a9d-4799-a24d-2387f5e87191",
+        "3b92665d-f3eb-4860-a33b-cd1c9f63e365"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_angelSlayer",

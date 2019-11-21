@@ -1,7 +1,11 @@
 /// @description Insert description here
 with (gameMaster)
 {
-	menu = Menues.BossSelect;	
+	menu = Menues.BossSelect;
+	transitionAlpha = 1;
+	fightAlpha = 1;
+	queFight = false;
+	fightTransitionAlpha = 0;
 }
 if (global.soundOn == true)
 {

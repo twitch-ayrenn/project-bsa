@@ -738,7 +738,7 @@
             "Key": "11ed6a7f-02aa-4519-9f72-1c8925855be6",
             "Value": {
                 "id": "330af67d-e434-4955-8fe4-37fe3711d8e2",
-                "resourcePath": "sprites\\spr_boss_knightWitch_walking\\spr_boss_knightWitch_walking.yy",
+                "resourcePath": "sprites\\spr_boss_knightWitch_idle\\spr_boss_knightWitch_idle.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2135,6 +2135,14 @@
             }
         },
         {
+            "Key": "3b92665d-f3eb-4860-a33b-cd1c9f63e365",
+            "Value": {
+                "id": "415848ea-eb09-4967-b89e-98f34fa1f272",
+                "resourcePath": "sprites\\spr_angelSlayerRekZul_idle\\spr_angelSlayerRekZul_idle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3b9ebb41-dc8c-45a9-8a8a-8933b2e68a09",
             "Value": {
                 "id": "b531b9a0-14d7-4d6c-88b1-4cfbd384ea8b",
@@ -2527,6 +2535,14 @@
             }
         },
         {
+            "Key": "49309148-b6c5-46aa-9e4f-7becf9a248f2",
+            "Value": {
+                "id": "a86e075e-9626-4bed-ac46-cce8bf1c4bfb",
+                "resourcePath": "sprites\\spr_deathKinght_idle\\spr_deathKinght_idle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "49850e45-b076-4d7d-b099-a0eb9c7cc5e8",
             "Value": {
                 "id": "a6cc1084-8b52-40bf-8421-6aed07764d9a",
@@ -2627,6 +2643,14 @@
             "Value": {
                 "id": "4a0b6deb-6a15-4c6e-8d40-a00ef1d68bbb",
                 "resourcePath": "sprites\\spr_coinProjectile\\spr_coinProjectile.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "4d29538b-e761-4b9e-97ba-c49fa53d5255",
+            "Value": {
+                "id": "8e713ce5-3ac7-4052-95fc-e67c887c042d",
+                "resourcePath": "sprites\\spr_boss_angelKnightOscar_idle\\spr_boss_angelKnightOscar_idle.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -4399,6 +4423,14 @@
             }
         },
         {
+            "Key": "8427047f-9ef8-4c77-89f3-9c20623d07b6",
+            "Value": {
+                "id": "641f9d07-4834-490f-9a8b-30cf8edc3dbb",
+                "resourcePath": "options\\ios\\options_ios.yy",
+                "resourceType": "GMiOSOptions"
+            }
+        },
+        {
             "Key": "8427d32e-f169-4f7f-8bd2-6a003ea67ce9",
             "Value": {
                 "id": "e54dc17f-446b-45cc-89ed-2bc60d77f39b",
@@ -4812,6 +4844,14 @@
                 "id": "724b87b8-d7fc-46a2-b466-eb50ee7d85b0",
                 "resourcePath": "objects\\obj_equipment_corruptionBeam\\obj_equipment_corruptionBeam.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "93566aad-c3b3-48a9-8fa7-9c5ee19f74ac",
+            "Value": {
+                "id": "05dc166a-aee0-4833-aa07-69a596c12620",
+                "resourcePath": "options\\tvos\\options_tvos.yy",
+                "resourceType": "GMtvOSOptions"
             }
         },
         {
@@ -5242,7 +5282,7 @@
             "Key": "a00b6a69-292e-4d9a-9548-f7e4ec7512d9",
             "Value": {
                 "id": "2885d273-5950-4101-acaa-bc5f0db16d69",
-                "resourcePath": "sprites\\spr_boss_demonGate\\spr_boss_demonGate.yy",
+                "resourcePath": "sprites\\spr_boss_demonGate_idle\\spr_boss_demonGate_idle.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5308,6 +5348,14 @@
                 "id": "b74f8fe5-0ef1-4079-bf57-6b2638b3d2af",
                 "resourcePath": "sprites\\spr_randomBody_5_idle\\spr_randomBody_5_idle.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "a128950b-5063-4876-b4a6-b99dbd2ea6d1",
+            "Value": {
+                "id": "db95523d-eea2-4815-bff7-c995de04de41",
+                "resourcePath": "options\\amazonfire\\options_amazonfire.yy",
+                "resourceType": "GMAmazonFireOptions"
             }
         },
         {
@@ -5410,7 +5458,7 @@
             "Key": "a3b1a336-9a7c-43de-89e0-d9b8ad1285b9",
             "Value": {
                 "id": "95f40188-8659-4a72-853c-fe0ad9644dcf",
-                "resourcePath": "sprites\\spr_boss_theCorrupter\\spr_boss_theCorrupter.yy",
+                "resourcePath": "sprites\\spr_boss_theCorrupter_idle\\spr_boss_theCorrupter_idle.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -6922,7 +6970,7 @@
             "Key": "cfa20bd7-1794-4fc5-9b26-adf22043b55c",
             "Value": {
                 "id": "b4a26bd2-70ce-4257-bb58-6f06f8fb61d8",
-                "resourcePath": "sprites\\spr_boss_wispSisterJulia\\spr_boss_wispSisterJulia.yy",
+                "resourcePath": "sprites\\spr_boss_wispSisterJulia_idle\\spr_boss_wispSisterJulia_idle.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -7655,6 +7703,14 @@
             }
         },
         {
+            "Key": "e42bf5cc-3f46-4d67-a6d0-a4885a11ac3f",
+            "Value": {
+                "id": "269e8aad-063d-45b7-abcb-3e98d0ebbab0",
+                "resourcePath": "options\\android\\options_android.yy",
+                "resourceType": "GMAndroidOptions"
+            }
+        },
+        {
             "Key": "e48b4cbc-b164-4d66-87d1-aba2f5e171cc",
             "Value": {
                 "id": "90503071-16b8-4b0c-ad8a-af9d6e6c057a",
@@ -7727,6 +7783,14 @@
             }
         },
         {
+            "Key": "e69a7bf1-937e-4d75-a40a-785a44de8915",
+            "Value": {
+                "id": "20950f1f-2ff8-4f65-9dfd-3b4e01d23f6a",
+                "resourcePath": "sprites\\spr_boss_bloodZombie_idle\\spr_boss_bloodZombie_idle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e6a5cec6-c3b1-44ee-8003-bef13fbc2927",
             "Value": {
                 "id": "108e19f9-27f7-4d28-aae8-e99d34360dd3",
@@ -7795,6 +7859,14 @@
             "Value": {
                 "id": "e774d4d8-b362-474a-a9a3-847ead4744eb",
                 "resourcePath": "sprites\\spr_prop_drinkable\\spr_prop_drinkable.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e7dbb852-3288-4115-8d9a-1f8d7efaddb5",
+            "Value": {
+                "id": "541d60c8-12cd-4700-9571-1f4150e2f9bb",
+                "resourcePath": "sprites\\spr_boss_flameWisp_idle\\spr_boss_flameWisp_idle.yy",
                 "resourceType": "GMSprite"
             }
         },

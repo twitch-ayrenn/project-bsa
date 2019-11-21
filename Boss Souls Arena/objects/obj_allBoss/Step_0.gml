@@ -6,7 +6,7 @@ if (startUpVars == true)
 	startUpVars = false;
 	attack = 0;
 }
-#region Visuals
+#region Visuals & Variables
 randomize();
 var sizeX = size;
 if (x < obj_allPlayer.x){sizeX = size;}
@@ -22,7 +22,14 @@ if (image_blend = c_red)
 {
 	image_blend = c_white;	
 }
+if (state == BossStates.BeforeFight)
+{
+	sprite_index = idleSprite;
+}
 #endregion
+#region Fighting
+if (state == BossStates.Fighting)
+{
 #region Movement
 actualSpeed = moveSpeed;
 if (moveType == MovementType.WalkingTowards && gameMaster.chosenBoss != Boss.DeathKnight)
@@ -528,8 +535,7 @@ if(chooseAnAttack == true)
 			indicator.image_blend = c_maroon;
 			indicator.followPlayer = true;
 		}
-		#region AngelSlayerRekZul
-		
+		#region AngelSlayerRekZul	
 		#endregion
 	}
 	if (attack == Atks.ZoneAttack)
@@ -578,7 +584,9 @@ if(chooseAnAttack == true)
 	alarm[1] = attackCooldown*choose(1,1,1,1,2);
 }
 #endregion
-#region Phases
+}
+#endregion
+#region Phases & Death
 if (hp <= 0 && phase == 1 && phase != maxPhase)
 {
 	phase = 2;

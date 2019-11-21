@@ -1,19 +1,18 @@
 /// @description Insert description here
-// You can write your code in this editor
-state = 0;
 //new camera
-camera = camera_create();
-enum Follow
+enum CameraStates
 {
-	Player,
-	WispMother,
-	TheBloodPrinceFase2
-	
+	preFightView,
+	PlayerView,
 }
-camLength = 1920/4;
-camHeight = 1080/4;
-var vm = matrix_build_lookat(x,y,-1000,x,y,0,0,1,0);
-var pm = matrix_build_projection_ortho(camLength,camHeight,1,10000);
+state = CameraStates.preFightView;
+camera = camera_create();
+camSize = 4;
+cameraSpeed = 50;
+playerCameraSpeed = 1;
+
+var vm = matrix_build_lookat(x,y,-10000,x,y,0,0,1,0);
+var pm = matrix_build_projection_ortho(1920/camSize,1080/camSize,1,10000);
 
 camera_set_view_mat(camera,vm);
 camera_set_proj_mat(camera,pm);
