@@ -83,6 +83,7 @@ if (menu == Menues.BossLoot)
 		itemTextSize = 0.1;
 		itemTextSeparationY = 25;
 	}
+	
 	#region Item descriptions
 	draw_set_font(fnt_NewNormalText);
 	if (itemShowInfoFor == Boss.NoBoss)
@@ -110,6 +111,7 @@ if (menu == Menues.BossLoot)
 		var ItemName = "Item Info: " + "No item selected"
 		draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1)
 	}
+	
 		#region Blood Zombie
 		if (itemShowInfoFor == Boss.BloodZombie)
 		{
@@ -532,22 +534,38 @@ if (menu == Menues.BossSelect)
 }
 if (menu == Menues.Play)
 {
-	if (transitionAlpha > 0){transitionAlpha -= clamp(0.25/30,0,1)}
+	if (transitionAlpha > 0){transitionAlpha -= clamp(0.3/30,0,1)}
 	draw_set_font(fnt_menu_fill);
 	draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,transitionAlpha);
 	if (transitionAlpha == 0)
 	{
 		obj_allBoss.state = BossStates.Fighting;
 		obj_camera.state = CameraStates.PlayerView;
-		if (fightAlpha > 0){fightAlpha -= clamp(0.3/30,0,1)}
-		draw_text_transformed_color(150,145,"The Blood Harvester!",1.5,1.5,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);
+		if (fightAlpha > 0){fightAlpha -= clamp(0.15/30,0,1)}
+		draw_set_halign(fa_center);
+		var cX = display_get_gui_width()/2;//center x
+		var cY = display_get_gui_height()/2-100;
+		if(chosenBoss == Boss.BloodZombie){draw_text_transformed_color(cX,cY,"The Blood Harvester",1.5,1.5,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);}
+		if(chosenBoss == Boss.FlameWisp){draw_text_transformed_color(cX,cY,"Wisp Sister Anna",1.5,1.5,0,global.orange,global.orange,c_orange,c_orange,fightAlpha);}
+		if(chosenBoss == Boss.TheCorrupter){draw_text_transformed_color(cX,cY,"The Corrupter",1.5,1.5,0,c_purple,c_purple,c_black,c_black,fightAlpha);}
+		if(chosenBoss == Boss.FlameGate){draw_text_transformed_color(cX,cY,"Eye of Hell",1.5,1.5,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);}
+		if(chosenBoss == Boss.WispSisterJulia){draw_text_transformed_color(cX,cY,"Wisp Sister Julia",1.5,1.5,0,c_aqua,c_aqua,c_teal,c_teal,fightAlpha);}
+		if(chosenBoss == Boss.DeathKnight){draw_text_transformed_color(cX,cY,"Death Knight",1.5,1.5,0,c_silver,c_silver,c_gray,c_gray,fightAlpha);}
+		if(chosenBoss == Boss.AngelSlayerRekZul){draw_text_transformed_color(cX,cY,"Angel Slayer Rekzul",1.5,1.5,0,c_maroon,c_maroon,c_black,c_black,fightAlpha);}
+		if(chosenBoss == Boss.KnightWitchYi){draw_text_transformed_color(cX,cY,"Knight Witch Gi",1.5,1.5,0,c_red,c_red,c_black,c_black,fightAlpha);}
+		if(chosenBoss == Boss.AngelKnightOscar){draw_text_transformed_color(cX,cY,"Angel Knight Oscar",1.5,1.5,0,c_aqua,c_aqua,c_silver,c_silver,fightAlpha);}
+		draw_set_halign(fa_left);
 	}
 	
 }
 if (menu == Menues.BossSlain)
 {
+	draw_set_halign(fa_center);
+	var cX = display_get_gui_width()/2;//center x
+	var cY = display_get_gui_height()/2-350;
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(430,70,"Victory!",1.5,1.5,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(cX,cY,"Victory!",2.5,2.5,0,global.goldColor,global.goldColor,c_yellow,c_yellow,1);
+	draw_set_halign(fa_left);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);	
@@ -557,8 +575,12 @@ if (menu == Menues.Death)
 	deathAlpha += clamp(0.5/30,0,1);
 	draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,deathAlpha);
 	
+	draw_set_halign(fa_center);
+	var cX = display_get_gui_width()/2;//center x
+	var cY = display_get_gui_height()/2-350;
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(400,100,"Defeat",3,3,0,c_red,c_red,c_maroon,c_maroon,deathAlpha);
+	draw_text_transformed_color(cX,cY,"Defeat",3,3,0,c_red,c_red,c_maroon,c_maroon,deathAlpha);
+	draw_set_halign(fa_left);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,deathAlpha);	
@@ -621,6 +643,6 @@ if (global.showFps == true)
 //cursor
 if (room == rm_menu)
 {
-	draw_sprite_ext(spr_cursor,0,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),2.5,2.5,0,c_white,1,);
+	draw_sprite_ext(spr_cursorMenu,0,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),3.5,3.5,0,global.goldColor,1,);
 }
 

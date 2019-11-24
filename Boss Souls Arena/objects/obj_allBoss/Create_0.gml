@@ -243,6 +243,9 @@ isHit = false;
 			gooSprite = spr_boss_demonGate_goo;
 			oneShotSprite = spr_boss_demonGate_oneShot;
 			coneSprite = spr_boss_demonGate_cone;
+			
+			x = global.arenaMiddleX;
+			y = global.arenaMiddleY-140;
 		}
 		#endregion
 		#region DeathKnight

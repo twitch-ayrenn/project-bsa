@@ -19,10 +19,11 @@
         "33caec37-dc5b-482d-87a3-07786f3a8946",
         "a7ce1f91-02a0-4f60-b582-6a8dccb4edfc",
         "acfb5c6a-e663-47d7-b5bb-3384450e7ff8",
-        "5933461c-1594-4857-bec6-39e8393acd07"
+        "5933461c-1594-4857-bec6-39e8393acd07",
+        "0ff1d05c-c492-4e7d-ba21-14c95e3b29ea"
     ],
     "filterType": "GMSprite",
-    "folderName": "grp_randomViewers",
+    "folderName": "grp_crowd",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
