@@ -199,6 +199,14 @@
             }
         },
         {
+            "Key": "052b90e1-0b62-4ade-b964-63b00d744084",
+            "Value": {
+                "id": "137c6519-fd1b-472e-a823-5f115a735ae1",
+                "resourcePath": "scripts\\scr_screenShake\\scr_screenShake.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "052d6ab4-bfd4-4c15-b0c7-ed4c8a755387",
             "Value": {
                 "id": "052f7059-1472-4216-b1c0-813feb6a34a3",
@@ -2335,14 +2343,6 @@
             }
         },
         {
-            "Key": "575d533e-b2e7-4ef1-bb3d-2a92208e218a",
-            "Value": {
-                "id": "502c268a-f42b-4915-9a43-88291031d180",
-                "resourcePath": "sprites\\spr_item_bloodBatFrinedly\\spr_item_bloodBatFrinedly.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "578ec7d0-befd-49db-bc85-c68402772c4a",
             "Value": {
                 "id": "b435b3d6-c319-48d2-8298-fde9ac6369e5",
@@ -3260,14 +3260,6 @@
                 "id": "efc75445-39de-4297-a421-cb815da24c44",
                 "resourcePath": "views\\7cb80c78-cfa9-49da-aac1-91a66bf913b7.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "7cbbf1b1-3034-4b80-be7c-53e5f4c5c64e",
-            "Value": {
-                "id": "632f8df1-3725-4f78-a1f4-fba8c6af564f",
-                "resourcePath": "sprites\\spr_item_bloodMask\\spr_item_bloodMask.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -4719,6 +4711,14 @@
             }
         },
         {
+            "Key": "b35e1c54-98e8-4724-ba64-8b92191ada75",
+            "Value": {
+                "id": "77f84a8c-02d2-424c-b445-b1eb054dc6b1",
+                "resourcePath": "sprites\\sprite426\\sprite426.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b46e1f09-0d7a-4031-a923-5f9bb0da0244",
             "Value": {
                 "id": "870efd0c-2c51-4285-bf5d-4ed72f2bd9e0",
@@ -6106,7 +6106,7 @@
             "Key": "e5cfeec3-3f66-47e4-8a33-d0190a16f7d7",
             "Value": {
                 "id": "fb9df91a-7dc4-49a5-8800-02261d628241",
-                "resourcePath": "sprites\\spr_loot_madHat\\spr_loot_madHat.yy",
+                "resourcePath": "sprites\\spr_loot_deathCap\\spr_loot_deathCap.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -6821,7 +6821,8 @@
         "028a5c78-f2cd-4144-bfe2-19e227344076",
         "d3de394c-79c0-4c01-a27b-cbd4adbed761",
         "fe53928b-b172-47df-9f24-ae3a037a8aa4",
-        "906c20f8-648b-4e6e-97b3-77ed7196f74a"
+        "906c20f8-648b-4e6e-97b3-77ed7196f74a",
+        "052b90e1-0b62-4ade-b964-63b00d744084"
     ],
     "tutorial": ""
 }

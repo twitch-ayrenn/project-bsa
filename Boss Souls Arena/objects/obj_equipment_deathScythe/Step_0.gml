@@ -53,6 +53,7 @@ if (state == MeleeWeaponStates.SpinOnce || state == MeleeWeaponStates.SpinChase)
 		damageText.color = c_white;
 		damageText.text = damageToTarget;
 		target.hp -= damageToTarget;
+		with(obj_camera){shake_remain += 2;}
 		
 		var amountHealed = global.damage*global.lifeSteal;
 		var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);

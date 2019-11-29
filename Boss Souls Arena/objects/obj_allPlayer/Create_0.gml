@@ -40,7 +40,7 @@ hp = 100;
 moveSpeed = 2;
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
-global.damage = 1*10;
+global.damage = 1*20;
 baseLifeSteal = 0.75;
 global.lifeSteal = baseLifeSteal;
 dashSpeed = 5;
@@ -95,7 +95,7 @@ if (class == Character.Pyromancer)
 	ultColor = c_yellow;
 	//character specific
 	charge = 0;
-	maxCharge = (3)*30;//3
+	maxCharge = (2.5)*30;//3
 	doConeShot = false;
 	coneShotAmount = int64(global.damage*2);
 	coneShotTimes = 0;
@@ -156,7 +156,7 @@ summonFlamieTime = clamp(24*((2-conjurationPower)),3,24)*30;
 summonFlamieStacks = 0;
 if (global.itemSelected[Boss.FlameWisp] == true){summonFlamie = true;}
 edgeOfCorruptionCharge = 0;
-edgeOfCorruptionChargeTime = (3)*30;
+edgeOfCorruptionChargeTime = (2.5)*30;
 madHatAmount = int64(1*conjurationPower);
 if (global.itemSelected[Boss.WispSisterJulia] == true)
 {
@@ -174,7 +174,7 @@ if (global.itemSelected[Boss.AngelSlayerRekZul] == true)
 if (global.itemSelected[Boss.DeathKnight] == true)
 {
 	instance_create_depth(x,y,depth+1,obj_equipment_deathScythe);
-	var extraDamage = (1+(abs(preLCCD/30-3)/10))*global.damage*2*(1+(gameMaster.bonusFirerate/100));
+	var extraDamage = (1+(abs(preLCCD/30-3)/10))*global.damage*5*(1+(gameMaster.bonusFirerate/100));
 	global.deathScyhteDamage = extraDamage;
 	leftClickCooldown = (3)*30;
 }

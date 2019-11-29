@@ -183,12 +183,12 @@ if (mouse_x < x)
 				activateLeftClickItem = true;	
 				
 				var infernalBall = instance_create_depth(x,y,depth+1,obj_firebolt)
-				infernalBall.speed = 4 + charge/45;
+				infernalBall.speed = 4 + charge/35;
 				infernalBall.direction = point_direction(x,y,mouse_x,mouse_y);
 				infernalBall.image_angle = infernalBall.direction+90;
-				infernalBall.image_xscale = 0.5 + charge/30;
+				infernalBall.image_xscale = 0.5 + charge/25;
 				infernalBall.image_yscale = infernalBall.image_xscale;
-				infernalBall.charge = 1 + ((charge/3)-1);
+				infernalBall.charge = 1 + ((charge/2.5)-1);
 			
 				charge = 0;
 				moveSpeed = normalSpeed;
@@ -265,12 +265,12 @@ if (mouse_x < x)
 			{
 				var projectile = instance_create_depth(x,y,depth+1,obj_madBolt);
 				projectile.direction = point_direction(x,y,mouse_x,mouse_y);
-				projectile.speed = 6;
+				projectile.speed = 7;
 				projectile.image_angle = projectile.direction+90;
-				projectile.image_xscale = 1;
-				projectile.image_yscale = 1;
+				projectile.image_xscale = 1.25;
+				projectile.image_yscale = 1.25;
 				projectile.image_alpha = 0.85;
-				projectile.image_blend = c_green;
+				projectile.image_blend = c_red;
 			}
 		}
 	}
@@ -399,7 +399,7 @@ if (mouse_x < x)
 	{
 		activateRightClickItem = false;
 		#region MadHat
-		if (global.itemSelected[Boss.TheMadWitches] == true && place_free(mouse_x,mouse_y))
+		if (global.itemSelected[Boss.KnightWitchYi] == true && place_free(mouse_x,mouse_y))
 		{
 			if (madHatAmount == 1){instance_create_depth(mouse_x,mouse_y,-mouse_y,obj_equipment_madHat);}
 			if (madHatAmount == 2)
@@ -499,12 +499,13 @@ if (mouse_x < x)
 			ultCooldownLeft = ultCooldown;
 			activateUltItem = true;
 			
+			
 			instance_create_depth(x,y,depth+1,obj_bloodBeamEffect);
 			var bloodBeam = instance_create_depth(x,y,depth+2,obj_bloodBeam);
 			bloodBeam.image_angle = point_direction(x,y,mouse_x,mouse_y)+270;
 			bloodBeam.image_yscale = 20;
 			bloodBeam.image_xscale = 1.8;
-			with (obj_camera){shake_remain += 15;}
+			with(obj_camera){shake_remain += 10;}
 		}
 	}
 	#endregion
@@ -657,7 +658,7 @@ if (mouse_x < x)
 		bloodBeam.image_yscale = 20;
 		bloodBeam.image_xscale = 1.8;
 		bloodBeam.image_blend = c_fuchsia;
-		with (obj_camera){shake_remain += 15;}
+		with(obj_camera){shake_remain += 5;}
 		edgeOfCorruptionCharge = 0;
 	} 
 	if (edgeOfCorruptionCharge < 0){edgeOfCorruptionCharge = 0;}

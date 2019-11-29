@@ -28,6 +28,7 @@ if (place_meeting(x,y,enemy))
 	if (isMeteor == true)
 	{
 		instance_create_depth(x,y,depth,obj_meteorGround);
-	}	
+	}
+	if (image_xscale >= 2.5){with(obj_camera){shake_remain += 7*image_xscale;}}
 	instance_destroy();
 }

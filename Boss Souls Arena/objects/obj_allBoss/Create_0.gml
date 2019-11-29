@@ -151,8 +151,8 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.TheCorrupter) 
 		{
 			//stats
-			phase1Hp = tier1Hp*0.5; phase1Ms = 1.25; phase1Dmg = 30;
-			phase2Hp = tier1Hp*0.5; phase2Ms = 1.75; phase2Dmg = 35;
+			phase1Hp = tier1Hp*0.4; phase1Ms = 1.25; phase1Dmg = 25;
+			phase2Hp = tier1Hp*0.6; phase2Ms = 1.75; phase2Dmg = 30;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;

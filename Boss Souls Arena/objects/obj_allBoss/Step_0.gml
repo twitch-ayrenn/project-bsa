@@ -300,13 +300,11 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.TheCorrupter && phase == 2){attack = choose(Atks.BeamAttack,Atks.RapidFire);}
 	#endregion
 	#region Tier2 Bosses
-	if (gameMaster.chosenBoss == Boss.TheMadWitches){attack = choose(Atks.BeamAttack,Atks.GooSpawn,Atks.RapidFire);}
-	var bottomGooSpawn = instance_nearest(global.arenaMiddleX,global.arenaMiddleY+200,obj_enemyProjectile);
-	if (instance_exists(obj_enemyProjectile) && bottomGooSpawn.image_xscale == 2.5){if (gameMaster.chosenBoss == Boss.TheMadWitches){attack = choose(Atks.BeamAttack,Atks.RapidFire);}}
 	if (gameMaster.chosenBoss == Boss.WispSisterJulia && phase == 1){attack = choose(Atks.CircleAttack,Atks.ChaseAttack,Atks.GooSpawn);}
 	if (gameMaster.chosenBoss == Boss.WispSisterJulia && phase == 2){attack = choose(Atks.CircleAttack,Atks.ChaseAttack,Atks.GooSpawn,Atks.TeleportAttack);}
 	if (gameMaster.chosenBoss == Boss.WispSisterJulia && phase == 3){attack = choose(Atks.RapidFire);}
-	if (gameMaster.chosenBoss == Boss.FlameGate && phase == 1){attack = choose(Atks.RapidFire,Atks.RapidFire,Atks.ConeAttack,Atks.OneShotAttack,Atks.GooSpawn);}
+	if (gameMaster.chosenBoss == Boss.FlameGate && phase == 1){attack = choose(Atks.RapidFire,Atks.RapidFire,Atks.ConeAttack,Atks.OneShotAttack,Atks.GooSpawn);
+	with(obj_enemyProjectile){if (sprite_index == gooSprite && image_xscale >= 2.5){with(obj_allBoss){attack = choose(Atks.RapidFire,Atks.RapidFire,Atks.ConeAttack,Atks.OneShotAttack);}}}}
 	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 1){attack = choose(Atks.NormalShot);}
 	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 2){attack = choose(Atks.NormalShot,Atks.TeleportAttack);}
 	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 3){attack = choose(Atks.ChaseAttack,Atks.ChaseAttack,Atks.TeleportAttack);}
@@ -718,6 +716,7 @@ if (hp <= 0 && phase == maxPhase)
 		gameMaster.totalProgress += 1;
 	}
 	#endregion
+	instance_create_depth(global.arenaMiddleX,-156,depth,obj_rewardChest);
 	gameMaster.menu = Menues.BossSlain;
 	game_save(global.saveFile);
 	instance_destroy();

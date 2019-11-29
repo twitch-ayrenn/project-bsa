@@ -17,13 +17,13 @@ if (gameMaster.menu == Menues.BossLoot)
 }
 if (gameMaster.menu == Menues.BossSlain)
 {
-	room_goto(rm_menu);
-	gameMaster.menu = Menues.Main;
+	gameMaster.queLeave = true;
+	gameMaster.leaveTranistionAlpha = 0;
 }
 if (gameMaster.menu == Menues.Death)
 {
-	room_goto(rm_menu);
-	gameMaster.menu = Menues.Main;
+	gameMaster.queLeave = true;
+	gameMaster.leaveTranistionAlpha = 0;
 }
 //sound
 if (global.soundOn == true)

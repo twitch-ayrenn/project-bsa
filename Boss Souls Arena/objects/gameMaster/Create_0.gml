@@ -169,6 +169,9 @@ transitionAlpha = 0;
 fightAlpha = 1;
 fightTransitionAlpha = 0;
 queFight = false;
+queLeave = false;
+leaveTranistionAlpha = 0;
+backToMenuAlpha = 0;
 ////Character progression and select
 //Progress // for a boss its its number -1
 assassinProgress = 150;

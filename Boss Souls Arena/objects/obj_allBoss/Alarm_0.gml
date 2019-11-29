@@ -1,5 +1,9 @@
 /// @description Attacks
 randomize();
+#region ScreenShake
+if (attack == Atks.BeamAttack || attack == Atks.OneShotAttack){with(obj_camera){shake_remain = 5;}}
+if (attack == Atks.CircleAttack && gameMaster.chosenBoss == Boss.AngelSlayerRekZul){with(obj_camera){shake_remain = 5;}}
+#endregion
 #region Tier1
 #region NormalAttacks
 if (attack == Atks.NormalShot)
@@ -398,7 +402,6 @@ if (attack == Atks.GooSpawn)
 	}
 	if (gameMaster.chosenBoss == Boss.FlameGate)
 	{
-		var bottomGooSpawn = instance_nearest(global.arenaMiddleX,global.arenaMiddleY+135,obj_enemyProjectile);
 		if (spawnThingOnce == true)
 		{
 			spawnThingOnce = false;
@@ -418,10 +421,13 @@ if (attack == Atks.GooSpawn)
 		}
 		if (spawnThingOnce == false)
 		{
-			with (bottomGooSpawn)
+			with (obj_enemyProjectile)
 			{
-				image_xscale += clamp(0.75,0,2.5);
-				image_yscale = image_xscale;
+				if (sprite_index == gooSprite)
+				{
+					image_xscale += clamp(0.75,0,2.5);
+					image_yscale = image_xscale;
+				}
 			}
 		}
 	}

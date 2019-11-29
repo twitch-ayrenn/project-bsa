@@ -45,7 +45,8 @@
         "e7d0dd9f-a113-47a1-b2a6-0d273edc5b4f",
         "6ec8dda2-70d0-4652-bac4-493c81b0cbe5",
         "33927986-0bcb-4efb-a108-fd4f907d8c3a",
-        "76b17657-9b51-4e00-9c52-71234d03cf36"
+        "76b17657-9b51-4e00-9c52-71234d03cf36",
+        "b35e1c54-98e8-4724-ba64-8b92191ada75"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_props",

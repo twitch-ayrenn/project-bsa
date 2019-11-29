@@ -18,6 +18,7 @@ if (place_meeting(x,y,enemy))
 	{	
 		hp -= global.damage*5;
 	}
+	with(obj_camera){shake_remain += 5;}
 	var amountHealed = global.damage*5*global.lifeSteal;
 	var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
 	healText.color = c_lime;
