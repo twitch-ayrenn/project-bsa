@@ -3,9 +3,7 @@
 draw_text_transformed_color(75,215,"Info:",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 draw_text_transformed_color(75,415,"Description",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 draw_text_transformed_color(340,255,"Stats",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
-//draw_sprite_ext(spr_icons,0,300,332,2,2,0,c_white,1);
-//draw_sprite_ext(spr_icons,1,300,367,2,2,0,c_white,1);
-//draw_sprite_ext(spr_icons,2,300,402,2,2,0,c_white,1);
+#region The Red Warrior
 if (playerShowInfoFor == Character.TheRedWarrior)
 {
 	//description
@@ -37,6 +35,8 @@ if (playerShowInfoFor == Character.TheRedWarrior)
 	draw_text_transformed_color(295,360-15+30-5,"Mobility: ",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
 	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: ",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 }
+#endregion
+#region The Pyromancer
 if (playerShowInfoFor == Character.Pyromancer)
 {
 	//description
@@ -48,7 +48,7 @@ if (playerShowInfoFor == Character.Pyromancer)
 	draw_text_transformed_color(65,450+17.5*4,"charge for up to 3 seconds. Charging the ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*5,"fireball increases size and damage.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*6,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*7,"[Right-Click]: Shoot 3 waves of fireballs",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*7,"[Right-Click]: Shoot waves of fireballs",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450 +17.5*8,"in a cone. Cone amoumt increases with",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*9,"damage stat.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
@@ -67,8 +67,9 @@ if (playerShowInfoFor == Character.Pyromancer)
 	draw_text_transformed_color(295,340-15+15-5,"Damage: High",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
 	draw_text_transformed_color(295,360-15+30-5,"Mobility: Medium",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
 	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: High",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-	
 }
+#endregion
+#region The Shadow Assassin
 if (playerShowInfoFor == Character.ShadowAssassin)
 {
 	//description
@@ -101,6 +102,8 @@ if (playerShowInfoFor == Character.ShadowAssassin)
 	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: Low",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 	
 }
+#endregion
+#region The Shopkeeper
 if (playerShowInfoFor == Character.Shopkeeper)
 {
 	//description
@@ -132,6 +135,8 @@ if (playerShowInfoFor == Character.Shopkeeper)
 	draw_text_transformed_color(295,360-15+30-5,"Mobility: ",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
 	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: ",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 }
+#endregion
+#region The Bloodknight
 if (playerShowInfoFor == Character.BloodKnight)
 {
 	//description
@@ -162,5 +167,172 @@ if (playerShowInfoFor == Character.BloodKnight)
 	draw_text_transformed_color(295,340-15+15-5,"Damage: Medium",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
 	draw_text_transformed_color(295,360-15+30-5,"Mobility: High",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
 	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: Medium",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-	
 }
+#endregion
+#region The Rainbow Slime
+if (playerShowInfoFor == Character.RainbowSlime)
+{
+	//description
+	draw_set_font(fnt_NewNormalText);
+	draw_text_transformed_color(65,450,		  "Locked for Alpha Build",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*1,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*2,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*3,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*4,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*5,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*6,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*7,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450 +17.5*8,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*9,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*11,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*12,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*13,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*14,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*15,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*16,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	
+	//name
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(163,216,"The Rainbow Slime",0.38,0.38,0,c_silver,c_silver,c_white,c_white,1);
+	//stats
+	draw_text_transformed_color(295,320-15-5,"Sustain: ",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(295,340-15+15-5,"Damage: ",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(295,360-15+30-5,"Mobility: ",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
+	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: ",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+}
+#endregion
+#region The Plaugewalker
+if (playerShowInfoFor == Character.PlaugeWalker)
+{
+	//description
+	draw_set_font(fnt_NewNormalText);
+	draw_text_transformed_color(65,450,		  "Locked for Alpha Build",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*1,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*2,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*3,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*4,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*5,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*6,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*7,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450 +17.5*8,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*9,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*11,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*12,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*13,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*14,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*15,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*16,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	
+	//name
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(163,216,"The Plaugewalker",0.38,0.38,0,c_lime,c_lime,c_green,c_green,1);
+	//stats
+	draw_text_transformed_color(295,320-15-5,"Sustain: ",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(295,340-15+15-5,"Damage: ",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(295,360-15+30-5,"Mobility: ",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
+	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: ",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+}
+#endregion
+#region The Agent of God
+if (playerShowInfoFor == Character.AgentOfGod)
+{
+	//description
+	draw_set_font(fnt_NewNormalText);
+	draw_text_transformed_color(65,450,		  "Locked for Alpha Build",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*1,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*2,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*3,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*4,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*5,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*6,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*7,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450 +17.5*8,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*9,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*11,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*12,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*13,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*14,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*15,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*16,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	
+	//name
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(163,216,"The Agent of God",0.38,0.38,0,c_aqua,c_aqua,c_silver,c_silver,1);
+	//stats
+	draw_text_transformed_color(295,320-15-5,"Sustain: ",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(295,340-15+15-5,"Damage: ",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(295,360-15+30-5,"Mobility: ",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
+	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: ",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+}
+#endregion
+#region The Graveling
+if (playerShowInfoFor == Character.Graveling)
+{
+	//description
+	draw_set_font(fnt_NewNormalText);
+	draw_text_transformed_color(65,450,		  "Locked for Alpha Build",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*1,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*2,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*3,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*4,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*5,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*6,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*7,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450 +17.5*8,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*9,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*11,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*12,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*13,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*14,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*15,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*16,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	
+	//name
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(163,216,"The Graveling",0.38,0.38,0,c_gray,c_gray,c_dkgray,c_black,1);
+	//stats
+	draw_text_transformed_color(295,320-15-5,"Sustain: ",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(295,340-15+15-5,"Damage: ",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(295,360-15+30-5,"Mobility: ",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
+	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: ",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+}
+#endregion
+#region The Angel Slayer
+if (playerShowInfoFor == Character.AngelSlayer)
+{
+	//description
+	draw_set_font(fnt_NewNormalText);
+	draw_text_transformed_color(65,450,		  "Locked for Alpha Build",0.075,0.075,0,c_dkgray,c_dkgray,c_black,c_black,1);
+	draw_text_transformed_color(65,450+17.5*1,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*2,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*3,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*4,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*5,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*6,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*7,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450 +17.5*8,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*9,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*11,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*12,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*13,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*14,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*15,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*16,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	
+	//name
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(163,216,"The Angel Slayer",0.38,0.38,0,c_red,c_red,c_black,c_black,1);
+	//stats
+	draw_text_transformed_color(295,320-15-5,"Sustain: ",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(295,340-15+15-5,"Damage: ",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(295,360-15+30-5,"Mobility: ",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
+	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: ",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+}
+#endregion
+
+

@@ -3,5 +3,5 @@
 destroy = true;
 timeToDestroy = (5)*30;
 charge = 0;
-isMeteor = false;; 
+isMeteor = false;
 //sound

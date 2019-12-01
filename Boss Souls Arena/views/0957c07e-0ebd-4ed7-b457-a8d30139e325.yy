@@ -16,7 +16,6 @@
         "f4d2a277-55e6-4b26-b792-b98dd50676b1",
         "939e22a5-91e1-42c5-87c1-9dec3bdbf71f",
         "1d920317-a741-4c47-ac84-c8e45db626cb",
-        "31390738-84ac-4865-b343-daaaabbcd7b9",
         "8b0fee51-ab66-4930-88e0-929550fa9e67",
         "14acead3-3f1a-4093-87f8-34d1474394d3",
         "868c676f-efae-4949-8db1-7ac89587bc32",
@@ -41,10 +40,8 @@
         "fc46e69a-a6dd-402c-bb39-721d53b22862",
         "2d2d76d5-24d0-4dc3-beac-3e254177a9ff",
         "1154927e-52de-4bc3-add7-52c2f542451a",
-        "e21259cd-496a-48f5-9a76-fc55224a1869",
         "38dcfd09-2f5e-4e5c-99ab-76e3e083e6eb",
-        "d728da4d-c26b-44ce-9760-7161a63c4ae7",
-        "35d6e1cb-bc81-4e49-b6a1-7d2ea77915fe"
+        "d728da4d-c26b-44ce-9760-7161a63c4ae7"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_oldMenues",

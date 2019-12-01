@@ -67,6 +67,15 @@ enum Boss
 	QueenSerpant,
 	StoneSerpant,
 	ShadowClan,
+	//Info
+	Health = 400,
+	Speed = 401,
+	DashLength = 402,
+	AttackSpeed = 403,
+	Damage = 404,
+	Lifesteal = 405,
+	CDR = 406,
+	SummoningPower = 407,
 }
 global.bossAmount = 25;
 enum Character

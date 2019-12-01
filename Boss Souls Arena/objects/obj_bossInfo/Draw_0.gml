@@ -38,7 +38,7 @@ if(showBossInfo == Boss.BloodZombie)
 {
 	//Name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(x+2,y+2,"The Blood Harvester",0.08,0.08,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(x+2,y+2,"The Blood Harvester",0.08,0.08,0,c_lime,c_lime,c_green,c_green,1);
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
@@ -69,7 +69,7 @@ if(showBossInfo == Boss.FlameWisp)
 {
 	//Name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(x+2,y+2,"Wisp Sister Anna",0.08,0.08,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(x+2,y+2,"Wisp Sister Anna",0.08,0.08,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
@@ -100,7 +100,7 @@ if(showBossInfo == Boss.TheCorrupter)
 {
 	//Name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(x+2,y+2,"The Corrupter",0.08,0.08,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(x+2,y+2,"The Corrupter",0.08,0.08,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
@@ -162,7 +162,7 @@ if(showBossInfo == Boss.WispSisterJulia)
 {
 	//Name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(x+2,y+2,"Wisp Sister Julia",0.08,0.08,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(x+2,y+2,"Wisp Sister Julia",0.08,0.08,0,c_aqua,c_aqua,c_teal,c_teal,1);
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
@@ -193,7 +193,7 @@ if(showBossInfo == Boss.DeathKnight)
 {
 	//Name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(x+2,y+2,"Death Knight",0.08,0.08,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(x+2,y+2,"Death Knight",0.08,0.08,0,c_silver,c_silver,c_gray,c_gray,1);
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
@@ -255,7 +255,7 @@ if(showBossInfo == Boss.KnightWitchYi)
 {
 	//Name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(x+2,y+2,"Knight Witch Yi",0.08,0.08,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(x+2,y+2,"Knight Witch Yi",0.08,0.08,0,c_red,c_red,c_black,c_black,1);
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
@@ -286,7 +286,7 @@ if(showBossInfo == Boss.AngelKnightOscar)
 {
 	//Name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(x+2,y+2,"Angel Knight Oscar",0.08,0.08,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(x+2,y+2,"Angel Knight Oscar",0.08,0.08,0,c_aqua,c_aqua,c_silver,c_silver,1);
 	
 	//description
 	draw_set_font(fnt_NewNormalText);

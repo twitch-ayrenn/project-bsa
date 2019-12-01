@@ -5,23 +5,23 @@
     "name": "obj_angelKnightOscar",
     "eventList": [
         {
-            "id": "6d8ea0dc-f716-49b2-8d5d-802f0b804397",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "58a83b37-0b0d-47b6-a379-7a29ea921c98"
-        },
-        {
-            "id": "b69cfa87-2d4f-43e1-bf94-19694f037f65",
+            "id": "776d20ba-1600-48cb-a70c-55e549fb3916",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
+            "m_owner": "58a83b37-0b0d-47b6-a379-7a29ea921c98"
+        },
+        {
+            "id": "43810227-2a1e-4a03-a83b-3df9b8dc154f",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
             "m_owner": "58a83b37-0b0d-47b6-a379-7a29ea921c98"
         }
     ],

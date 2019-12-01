@@ -4,4 +4,4 @@ shake = 0;
 image_index = 1;
 blowRoofUp = true;
 phase = 3;
-with(obj_camera){shake_remain += 5;}
+with(obj_camera){shake_remain += 4;}

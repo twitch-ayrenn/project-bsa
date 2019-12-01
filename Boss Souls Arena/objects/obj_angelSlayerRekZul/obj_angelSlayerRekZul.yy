@@ -5,23 +5,23 @@
     "name": "obj_angelSlayerRekZul",
     "eventList": [
         {
-            "id": "8d9f4a02-67e0-4f2b-8f6f-090579b357ce",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "eda23762-2b73-445f-a384-f860ad7b621f"
-        },
-        {
-            "id": "0654b279-09c0-44f4-a173-6871f52061df",
+            "id": "57e910ad-2185-4585-a82f-6e34bb2382bb",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
+            "m_owner": "eda23762-2b73-445f-a384-f860ad7b621f"
+        },
+        {
+            "id": "a78782aa-ece2-4fc9-b9aa-273301a07021",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
             "m_owner": "eda23762-2b73-445f-a384-f860ad7b621f"
         }
     ],

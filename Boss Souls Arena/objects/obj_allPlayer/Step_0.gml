@@ -52,9 +52,21 @@ if (keyboard_check(ord("A")) && place_free(x-actualSpeed,y))
 	x -= actualSpeed;
 	state = States.Walking;
 }
-if (!place_free(x+speed+1,y) ||! place_free(x-speed-1,y) || !place_free(x,y+speed+1) || !place_free(x,y-speed-1))
+if (direction >= 90 && direction < 270 && !place_free(x-speed-1,y))
 {
-	speed = 0;
+	speed = 0;	
+}
+if (direction >= 180 && direction < 360 && !place_free(x,y+speed+1))
+{
+	speed = 0;	
+}
+if (direction >= 0 && direction < 180 && !place_free(x,y-speed-1))
+{
+	speed = 0;	
+}
+if (direction >= 270 && !place_free(x-speed-1,y) || direction < 90 && !place_free(x+speed-1,y))
+{
+	speed = 0;	
 }
 #endregion
 #region Visuals
@@ -457,11 +469,11 @@ if (mouse_x < x)
 			targetX = mouse_x;
 			targetY = mouse_y;
 			
-			meteor = instance_create_depth(targetX+50,targetY-200,-1000,obj_firebolt);
-			meteor.direction = 255;
+			meteor = instance_create_depth(targetX+50,targetY-400,-1000,obj_firebolt);
+			meteor.direction = 260;
 			meteor.image_angle = meteor.direction+90;
 			meteor.image_alpha = 0.75;
-			meteor.speed = 3;
+			meteor.speed = 6;
 			meteor.image_xscale = 5;
 			meteor.image_yscale = meteor.image_xscale;
 			meteor.charge = 15;
@@ -474,6 +486,8 @@ if (mouse_x < x)
 		{
 			x = meteor.x;
 			y = meteor.y;
+			var meteorNear = instance_nearest(x,y,obj_firebolt);
+			meteorNear.depth = -10000;
 			
 			global.iFrame = true;
 			image_alpha = 0;
@@ -487,6 +501,7 @@ if (mouse_x < x)
 		{
 			meteorStun = 1;	
 			image_alpha = 1;
+			
 		}
 	}
 	#endregion

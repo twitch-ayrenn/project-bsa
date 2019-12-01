@@ -77,8 +77,8 @@ if (place_meeting(x,y,target) && sprite_index != spr_gooGround && global.iFrame 
 		gooGround.image_alpha = 1;
 		gooGround.image_blend = c_maroon;
 		gooGround.sprite_index = spr_gooGround;
-		gooGround.image_xscale = 0.5;
-		gooGround.image_yscale = 0.5;
+		gooGround.image_xscale = 1;
+		gooGround.image_yscale = 1;
 		gooGround.destroy = false;
 	}
 	#endregion

@@ -364,8 +364,8 @@ if(chooseAnAttack == true)
 		{
 			var indicator = instance_create_depth(x,y,-5,obj_indicator)
 			indicator.sprite_index = spr_damageCircle;
-			indicator.image_xscale = 0.125;
-			indicator.image_yscale = 0.125;
+			indicator.image_xscale = 0.2;
+			indicator.image_yscale = 0.2;
 			indicator.image_blend = c_maroon;
 			indicator.follow = true;
 		}

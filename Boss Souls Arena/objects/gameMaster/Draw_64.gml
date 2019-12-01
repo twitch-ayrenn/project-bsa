@@ -160,12 +160,12 @@ if (menu == Menues.BossLoot)
 			draw_set_font(fnt_NewNormalText);
 			draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"+ 2 Damage",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"+ 45% Conjuration Bonus",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			if (global.ShowInfo == true)
 			{
-				draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"[Note] Spawn time scales with",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-				draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"Conjuration Bonus.",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+				draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"[Note] Spawn time scales with",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+				draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"Conjuration Bonus.",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 			}
 			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		
@@ -191,8 +191,8 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"+ 10% Cooldown reduction",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 			draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"+ 1 Damage",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"Quote: A horrible chill goes  ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"down your spine..",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"\" A horrible chill goes down",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"your spine...\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		
@@ -221,8 +221,8 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"+ 20% Dash/Teleport Length",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
 			if (global.ShowInfo == true)
 			{
-				draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"#Note the time it lasts scales with",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
-				draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"[Max Health].",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+				draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"#Note the time the claw stays up ",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+				draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"scales with your [Max Health].",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
 			}			
 			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -252,8 +252,8 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"+ 30% Conjuration Bonus",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"+ 7.5% Cooldown reduction",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"Quote: I know we are losing...",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"...I want to know if we lost.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"\"I know we are losing...",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"...I want to know if we lost.\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		
@@ -312,11 +312,11 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"+ 5% Cooldown Reduction",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 			if (global.ShowInfo == true)
 			{
-			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"#Note Thr portals coooldown scales ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"#Note The portals coooldown scales ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"with cooldown reduction.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"#Note Minimum cooldown is 2 seconds",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			}
-			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"Quote: hmmm huuu huhhuuu?",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"\"hmmm huuu huhhuuu?\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			
 			
 		
@@ -344,8 +344,8 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"+ 15% Attack Speed",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"+ 30% Conjuration Bonus",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"Quotes: Doubt is the greatest ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"enemy.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"\"Doubt is the greatest enemy.\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY," ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		
 			//name
@@ -371,8 +371,8 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"+ 15% Attack Speed",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"+ 2 Damage",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"Quotes: Perfectly balanced as",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"all things should be...",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"\"Perfectly balanced as all",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"things should be...\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			
 			
@@ -389,9 +389,11 @@ if (menu == Menues.BossLoot)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);
 	
-	draw_text_transformed_color(300+20,735,"Clear",clearSize/2,clearSize/2,0,c_red,c_red,clearColor,clearColor,1);
-	draw_text_transformed_color(300-10,785,"selected",clearSize/2,clearSize/2,0,c_red,c_red,clearColor,clearColor,1);
-	draw_text_transformed_color(300+20,835,"items",clearSize/2,clearSize/2,0,c_red,c_red,clearColor,clearColor,1);
+	draw_set_halign(fa_middle);
+	draw_text_transformed_color(385,735,"Clear",clearSize/2,clearSize/2,0,c_red,c_red,clearColor,clearColor,1);
+	draw_text_transformed_color(385,785,"selected",clearSize/2,clearSize/2,0,c_red,c_red,clearColor,clearColor,1);
+	draw_text_transformed_color(385,835,"items",clearSize/2,clearSize/2,0,c_red,c_red,clearColor,clearColor,1);
+	draw_set_halign(fa_left);
 	
 	draw_text_transformed_color(1310,760,"Fight!",fightSize,fightSize,0,c_red,c_red,fightColor,fightColor,1);
 }
@@ -547,7 +549,7 @@ if (menu == Menues.Play)
 		draw_set_halign(fa_center);
 		var cX = display_get_gui_width()/2;//center x
 		var cY = display_get_gui_height()/2-100;
-		if(chosenBoss == Boss.BloodZombie){draw_text_transformed_color(cX,cY,"The Blood Harvester",1.5,1.5,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);}
+		if(chosenBoss == Boss.BloodZombie){draw_text_transformed_color(cX,cY,"The Blood Harvester",1.5,1.5,0,c_lime,c_lime,c_green,c_green,fightAlpha);}
 		if(chosenBoss == Boss.FlameWisp){draw_text_transformed_color(cX,cY,"Wisp Sister Anna",1.5,1.5,0,global.orange,global.orange,c_orange,c_orange,fightAlpha);}
 		if(chosenBoss == Boss.TheCorrupter){draw_text_transformed_color(cX,cY,"The Corrupter",1.5,1.5,0,c_purple,c_purple,c_black,c_black,fightAlpha);}
 		if(chosenBoss == Boss.FlameGate){draw_text_transformed_color(cX,cY,"Eye of Hell",1.5,1.5,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);}

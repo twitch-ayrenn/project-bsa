@@ -5,23 +5,23 @@
     "name": "obj_knightWitchYi",
     "eventList": [
         {
-            "id": "6951a444-4d32-4ed9-981c-26a101e9f8c5",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "3f1971fa-269f-4f09-a71e-b9c546d0d0b3"
-        },
-        {
-            "id": "1097a21e-1e83-4da3-83cf-3385765560b5",
+            "id": "4fa8fdce-8c81-4cf2-abad-cb747f68ce5e",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
+            "m_owner": "3f1971fa-269f-4f09-a71e-b9c546d0d0b3"
+        },
+        {
+            "id": "93da7c38-cd08-48e7-9b8d-3649bb9d931b",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
             "m_owner": "3f1971fa-269f-4f09-a71e-b9c546d0d0b3"
         }
     ],

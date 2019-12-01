@@ -86,8 +86,8 @@ if (attack == Atks.GooSpawn)
 		gooGround.image_alpha = 1;
 		gooGround.image_blend = c_maroon;
 		gooGround.sprite_index = spr_gooGround;
-		gooGround.image_xscale = 2;
-		gooGround.image_yscale = 2;
+		gooGround.image_xscale = 3.1;
+		gooGround.image_yscale = 3.1;
 		gooGround.destroy = false;
 		gooGround.effectType = Effect.NoEffect;
 		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
@@ -441,7 +441,7 @@ if (attack == Atks.OneShotAttack)
 		var infernalBall = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
 		//Main
 		infernalBall.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
-		infernalBall.speed = 3.75;
+		infernalBall.speed = 4.25;
 		infernalBall.image_angle = infernalBall.direction+90;
 		//Visual
 		infernalBall.image_alpha = 0.85;

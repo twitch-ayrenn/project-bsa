@@ -43,3 +43,14 @@ if (gameMaster.chosenBoss == bossForThisCrowd)
 {
 	visible = false;	
 }
+if (instance_exists(followEyeObject))
+{
+	if (x < followEyeObject.x)
+	{
+		image_xscale = size;
+	}
+	if (x >= followEyeObject.x)
+	{
+		image_xscale = -size;	
+	}
+}

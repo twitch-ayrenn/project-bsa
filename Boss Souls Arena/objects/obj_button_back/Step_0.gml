@@ -7,6 +7,7 @@ if (gameMaster.menu == Menues.Main || gameMaster.menu == Menues.PlayerSelect || 
 	image_xscale = 1;
 	image_yscale = 1;
 }
+
 if (gameMaster.menu == Menues.BossSlain || gameMaster.menu == Menues.Death)
 {
 	x = global.player.x-100-50-15-15;

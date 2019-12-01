@@ -6,9 +6,9 @@ y = clamp(y, 0,588);
 if (y == 588 && shakeOnce == true)
 {
 	shakeOnce = false;
-	with(obj_camera){shake_remain += 10;}
+	with(obj_camera){shake_remain += 8;}
 }
-if (distance_to_object(global.player) < 25 && doOpen == true)
+if (distance_to_object(global.player) < 20 && doOpen == true && y == 588)
 {
 	doOpen = false
 	open = true;

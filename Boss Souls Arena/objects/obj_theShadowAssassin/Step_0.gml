@@ -1,5 +1,6 @@
 /// @description Insert description here
 depth = -900-y;
+image_alpha = 0.9;
 if (gameMaster.chosenClass != characterOfThisCrowd)
 {
 	visible = true;	

@@ -5,23 +5,23 @@
     "name": "obj_wispSisterAnna",
     "eventList": [
         {
-            "id": "d79d6db8-5dc1-4eac-a0e0-8bf9f7a1afca",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "8f004638-4f7b-467f-9fc3-2161f37d1ff2"
-        },
-        {
-            "id": "e33a76f2-7eb0-4ce6-8849-eb99311e0624",
+            "id": "b8fec8b5-3364-4b39-8475-5eadaa65c289",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
+            "m_owner": "8f004638-4f7b-467f-9fc3-2161f37d1ff2"
+        },
+        {
+            "id": "7692ed54-b0bd-4340-8921-eae72789e3a1",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
             "m_owner": "8f004638-4f7b-467f-9fc3-2161f37d1ff2"
         }
     ],
