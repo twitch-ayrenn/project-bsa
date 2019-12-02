@@ -14,10 +14,10 @@ if (menu == Menues.Main)
 	draw_text_transformed_color(100,200,"Campaign",playSize,playSize,0,global.orange,global.orange,playColor,playColor,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(100,310,"Arena",playArenaSize,playArenaSize,0,global.orange,global.orange,playArenaColor,playArenaColor,1);
+	draw_text_transformed_color(100,310,"Credits",playArenaSize,playArenaSize,0,global.orange,global.orange,playArenaColor,playArenaColor,1);
 	
-	//draw_set_font(fnt_menu_fill);
-	//draw_text_transformed_color(100,660-160,"Stats",statsSize,statsSize,0,c_yellow,c_yellow,statsColor,statsColor,1);
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(100,660-160,"",statsSize,statsSize,0,c_yellow,c_yellow,statsColor,statsColor,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(100,420,"Settings",settingsSize,settingsSize,0,global.orange,global.orange,settingsColor,settingsColor,1);
@@ -33,8 +33,6 @@ if (menu == Menues.BossLoot)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(30,30,"Select Loot",1.2,1.2,0,global.orange,global.orange,c_yellow,c_yellow,1);
 
-	
-	
 	draw_text_transformed_color(1075,110,"Items",0.6,0.6,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	
 	var itemXIncrease = 120;
@@ -86,7 +84,6 @@ if (menu == Menues.BossLoot)
 		itemTextSize = 0.1;
 		itemTextSeparationY = 25;
 	}
-	
 	#region Item descriptions
 	draw_set_font(fnt_NewNormalText);
 	if (itemShowInfoFor == Boss.NoBoss)
@@ -164,8 +161,8 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			if (global.ShowInfo == true)
 			{
-				draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"[Note] Spawn time scales with",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-				draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"Conjuration Bonus.",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+				draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"[Note] Spawn time scales with",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+				draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"Conjuration Bonus.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			}
 			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		
@@ -221,7 +218,7 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"+ 20% Dash/Teleport Length",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
 			if (global.ShowInfo == true)
 			{
-				draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"#Note the time the claw stays up ",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+				draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"[Note] the time the claw stays up ",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
 				draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"scales with your [Max Health].",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
 			}			
 			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -312,7 +309,7 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"+ 5% Cooldown Reduction",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 			if (global.ShowInfo == true)
 			{
-			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"#Note The portals coooldown scales ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"[Note] The portals coooldown scales ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"with cooldown reduction.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"#Note Minimum cooldown is 2 seconds",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			}
@@ -541,9 +538,10 @@ if (menu == Menues.Play)
 	if (transitionAlpha > 0){transitionAlpha -= clamp(0.3/30,0,1)}
 	draw_set_font(fnt_menu_fill);
 	draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,transitionAlpha);
-	if (transitionAlpha == 0)
+	if (transitionAlpha == 0 && instance_exists(obj_allBoss) && instance_exists(global.player) && instance_exists(obj_camera))
 	{
 		obj_allBoss.state = BossStates.Fighting;
+		global.player.state = States.Idle;
 		obj_camera.state = CameraStates.PlayerView;
 		if (fightAlpha > 0){fightAlpha -= clamp(0.15/30,0,1)}
 		draw_set_halign(fa_center);
@@ -606,7 +604,7 @@ if (menu == Menues.Death)
 	
 	if (queLeave == true)
 	{
-		if (leaveTranistionAlpha < 1){leaveTranistionAlpha += clamp(0.4/30,0,1)}
+		if (leaveTranistionAlpha < 1){leaveTranistionAlpha += clamp(0.65/30,0,1)}
 		draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,leaveTranistionAlpha);
 		if (leaveTranistionAlpha == 1)
 		{

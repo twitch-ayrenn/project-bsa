@@ -1,8 +1,6 @@
 /// @description Vars
 randomize();
 class = gameMaster.chosenClass;
-#region
-#endregion
 #region Attacks and cooldown
 //left
 canLeftClick = true;
@@ -29,7 +27,7 @@ global.iFrame = false;
 dashColor = c_white;
 dashColorCd = c_white;
 //ult
-canUlt = true;//false default
+canUlt = false;//false default
 ultCooldown = 0;
 ultCooldownLeft = 0;
 ultColor = c_white;
@@ -40,8 +38,8 @@ hp = 100;
 moveSpeed = 2;
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
-global.damage = 1*20;
-baseLifeSteal = 0.75;
+global.damage = 1;
+baseLifeSteal = 0.8;
 global.lifeSteal = baseLifeSteal;
 dashSpeed = 5;
 meteorStun = 1;
@@ -50,7 +48,7 @@ noDamageStacks = 0;
 noDamageTime = (0.1)*30;
 #endregion
 #region visuals and animation
-state = States.Idle;
+state = States.BeforeFight;
 idleSprite = 0;
 walkSprite = 0;
 deadSprite = 0;

@@ -4,7 +4,7 @@
 //dont use Save.dat, always use a new verisor//Save.dat.full0.3
 //Save.dat.Demo0.3
 menu = 0;
-global.saveFile = "Save.dat.Test0.4";
+global.saveFile = "Save.alpha.0.5";
 //if (file_exists(global.saveFile) == true)
 //{
 //	game_load(global.saveFile);
@@ -105,6 +105,7 @@ enum States
 	Idle,
 	Walking,
 	Dead,
+	BeforeFight,
 }
 chosenClass = 0;
 chosenBoss = 0;
@@ -163,8 +164,8 @@ global.dashAttackKey = vk_space;
 global.ultimateAttackKey = ord("E");
 global.deBuggerInfo = true;
 global.showDD = false;
-global.showFps = true;
-global.deBugg = true;
+global.showFps = false;
+global.deBugg = false;
 fpsShowTimerStacks = 0;
 fpsShow = "";
 fullscreen = true;
@@ -183,9 +184,9 @@ leaveTranistionAlpha = 0;
 backToMenuAlpha = 0;
 ////Character progression and select
 //Progress // for a boss its its number -1
-assassinProgress = 150;
-bloodKnightProgress = 50;
-pyromancerProgress = 10;
+assassinProgress = 1;
+bloodKnightProgress = 1;
+pyromancerProgress = 1;
 shopkeeperProgress = 1;
 theRedWarriorProgress = 1;
 plaugeWalkerProgress = 1;

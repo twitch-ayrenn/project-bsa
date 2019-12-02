@@ -1687,6 +1687,14 @@
             }
         },
         {
+            "Key": "3cbf60a9-28d4-4b6b-81a5-03ae7e8ec2e9",
+            "Value": {
+                "id": "afc8ab73-6e56-47b6-aa9b-4066d3697842",
+                "resourcePath": "objects\\obj_wasd\\obj_wasd.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "3cda78c5-9fa2-4be2-a7d1-f305637d44fd",
             "Value": {
                 "id": "153b6bc3-1f7b-4748-a76e-4605c8434cf7",
@@ -2179,6 +2187,14 @@
             "Value": {
                 "id": "4e85f396-8b27-435d-9a34-1057dcbce4a0",
                 "resourcePath": "sprites\\spr_healthOrb\\spr_healthOrb.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "5259a3b9-c401-4d8e-97ed-5f4bf7227573",
+            "Value": {
+                "id": "31c779b7-f0ac-49ac-a291-7721bbe4ed47",
+                "resourcePath": "sprites\\sprite415\\sprite415.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -4431,6 +4447,14 @@
             }
         },
         {
+            "Key": "acfc38b3-7152-4f65-ae31-7ef7812a587a",
+            "Value": {
+                "id": "4b681dd9-fe95-4f1a-ac68-184fd9805c9b",
+                "resourcePath": "sprites\\spr_controls_movement\\spr_controls_movement.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ad441c5f-66fb-4415-8ed2-426c8ef472a5",
             "Value": {
                 "id": "478960c2-b052-47c3-9e0e-bd76af1cb209",
@@ -4523,6 +4547,14 @@
             "Value": {
                 "id": "f0460f0f-deb3-4d96-a01b-83991adc7e96",
                 "resourcePath": "objects\\obj_rewardChest\\obj_rewardChest.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "b0034787-9cf8-4a50-9e9e-3415c9611de3",
+            "Value": {
+                "id": "fe99db9c-4f5f-49ba-b17b-bb54abbcfebf",
+                "resourcePath": "objects\\obj_button_clearItems\\obj_button_clearItems.yy",
                 "resourceType": "GMObject"
             }
         },

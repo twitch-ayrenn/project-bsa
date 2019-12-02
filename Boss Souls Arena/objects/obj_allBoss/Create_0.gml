@@ -127,8 +127,8 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.FlameWisp) 
 		{
 			//stats
-			phase1Hp = tier1Hp*0.5; phase1Ms = 1; phase1Dmg = 20;
-			phase2Hp = tier1Hp*0.5; phase2Ms = 1.5; phase2Dmg = 30;
+			phase1Hp = tier1Hp*0.6; phase1Ms = 1; phase1Dmg = 15;
+			phase2Hp = tier1Hp*0.4; phase2Ms = 1.5; phase2Dmg = 25;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -139,7 +139,7 @@ isHit = false;
 			maxPhase = 2;
 			//visual
 			size = 1.5;
-			alpha = 0.75;
+			alpha = 0.85;
 			idleSprite = spr_boss_flameWisp_idle;
 			coneSprite = spr_boss_flameWisp_coneAttack
 			circleSprite = spr_boss_flameWisp_circle;
@@ -200,9 +200,9 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.WispSisterJulia) 
 		{
 			//stats
-			phase1Hp = tier2Hp*0.125; phase1Ms = 1; phase1Dmg = 30;
-			phase2Hp = tier2Hp*0.5; phase2Ms = 1.5; phase2Dmg = 35;
-			phase3Hp = tier2Hp*0.375; phase3Ms = 2; phase3Dmg = 40;
+			phase1Hp = tier2Hp*0.20; phase1Ms = 1; phase1Dmg = 25;
+			phase2Hp = tier2Hp*0.6; phase2Ms = 1.5; phase2Dmg = 27.5;
+			phase3Hp = tier2Hp*0.375; phase3Ms = 2; phase3Dmg = 30;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -213,7 +213,7 @@ isHit = false;
 			maxPhase = 3;
 			//visual
 			size = 1.5;
-			alpha = 0.75;
+			alpha = 0.85;
 			idleSprite = spr_boss_wispSisterJulia_idle;
 			circleSprite = spr_boss_wispSisterJulia_circle;
 			gooSprite = spr_boss_wispSisterJulia_goo;
@@ -226,7 +226,7 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.FlameGate) 
 		{
 			//stats
-			phase1Hp = tier2Hp*1; phase1Ms = 0; phase1Dmg = 40;
+			phase1Hp = tier2Hp*0.9; phase1Ms = 0; phase1Dmg = 35;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
