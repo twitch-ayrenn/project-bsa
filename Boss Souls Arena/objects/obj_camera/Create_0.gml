@@ -18,7 +18,7 @@ camera_set_view_mat(camera,vm);
 camera_set_proj_mat(camera,pm);
 
 view_camera[0] = camera;
-follow = obj_allPlayer;
+follow = obj_allBoss;
 xTo = x;
 yTo = y;
 //screenshake

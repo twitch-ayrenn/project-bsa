@@ -35,12 +35,12 @@ if (gameMaster.menu == Menues.Settings)
 {
 	gameMaster.menu = Menues.Main;
 }
-if (gameMaster.menu == Menues.BossSlain)
+if (gameMaster.menu == Menues.BossSlain && gameMaster.queLeave == false)
 {
 	gameMaster.queLeave = true;
 	gameMaster.leaveTranistionAlpha = 0;
 }
-if (gameMaster.menu == Menues.Death)
+if (gameMaster.menu == Menues.Death && gameMaster.queLeave == false)
 {
 	gameMaster.queLeave = true;
 	gameMaster.leaveTranistionAlpha = 0;

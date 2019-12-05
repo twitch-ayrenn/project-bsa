@@ -1,7 +1,7 @@
 /// @description Insert description here
 if (state == CameraStates.preFightView)
 {
-	if (instance_exists(obj_allBoss)){follow = obj_allBoss;}
+	follow = obj_allBoss;
 	cameraSpeed = 50;
 }
 if (state == CameraStates.PlayerView)

@@ -25,7 +25,7 @@ if (menu == Menues.Main)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Exit",exitSize,exitSize,0,exitColor,exitColor,exitColor,exitColor,1);
 	
-	if (backToMenuAlpha > 0){backToMenuAlpha -= clamp(0.4/30,0,1)}
+	if (backToMenuAlpha > 0){backToMenuAlpha -= clamp(0.45/30,0,1);}
 	draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,backToMenuAlpha);
 }
 if (menu == Menues.BossLoot)
@@ -530,7 +530,7 @@ if (menu == Menues.BossSelect)
 	{
 		if (fightTransitionAlpha < 1){fightTransitionAlpha += clamp(0.3/30,0,1)}
 		draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,fightTransitionAlpha);
-		if (fightTransitionAlpha == 1){room_goto(rm_arena);	menu = Menues.Play;}
+		if (fightTransitionAlpha == 1){room_goto(rm_arena);	menu = Menues.Play; transitionAlpha = 1;queFight = false;}
 	}
 }
 if (menu == Menues.Play)
@@ -538,25 +538,25 @@ if (menu == Menues.Play)
 	if (transitionAlpha > 0){transitionAlpha -= clamp(0.3/30,0,1)}
 	draw_set_font(fnt_menu_fill);
 	draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,transitionAlpha);
+	if (fightAlpha > 0 && transitionAlpha < 0.75){fightAlpha -= clamp(0.2/30,0,1)}
+	draw_set_halign(fa_center);
+	var cX = display_get_gui_width()/2;//center x
+	var cY = display_get_gui_height()/2-100;
+	if(chosenBoss == Boss.BloodZombie){draw_text_transformed_color(cX,cY,"The Blood Harvester",1.5,1.5,0,c_lime,c_lime,c_green,c_green,fightAlpha);}
+	if(chosenBoss == Boss.FlameWisp){draw_text_transformed_color(cX,cY,"Wisp Sister Anna",1.5,1.5,0,global.orange,global.orange,c_orange,c_orange,fightAlpha);}
+	if(chosenBoss == Boss.TheCorrupter){draw_text_transformed_color(cX,cY,"The Corrupter",1.5,1.5,0,c_purple,c_purple,c_black,c_black,fightAlpha);}
+	if(chosenBoss == Boss.FlameGate){draw_text_transformed_color(cX,cY,"Eye of Hell",1.5,1.5,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);}
+	if(chosenBoss == Boss.WispSisterJulia){draw_text_transformed_color(cX,cY,"Wisp Sister Julia",1.5,1.5,0,c_aqua,c_aqua,c_teal,c_teal,fightAlpha);}
+	if(chosenBoss == Boss.DeathKnight){draw_text_transformed_color(cX,cY,"Death Knight",1.5,1.5,0,c_silver,c_silver,c_gray,c_gray,fightAlpha);}
+	if(chosenBoss == Boss.AngelSlayerRekZul){draw_text_transformed_color(cX,cY,"Angel Slayer Rekzul",1.5,1.5,0,c_maroon,c_maroon,c_black,c_black,fightAlpha);}
+	if(chosenBoss == Boss.KnightWitchYi){draw_text_transformed_color(cX,cY,"Knight Witch Gi",1.5,1.5,0,c_red,c_red,c_black,c_black,fightAlpha);}
+	if(chosenBoss == Boss.AngelKnightOscar){draw_text_transformed_color(cX,cY,"Angel Knight Oscar",1.5,1.5,0,c_aqua,c_aqua,c_silver,c_silver,fightAlpha);}
+	draw_set_halign(fa_left);
 	if (transitionAlpha == 0 && instance_exists(obj_allBoss) && instance_exists(global.player) && instance_exists(obj_camera))
 	{
 		obj_allBoss.state = BossStates.Fighting;
 		global.player.state = States.Idle;
 		obj_camera.state = CameraStates.PlayerView;
-		if (fightAlpha > 0){fightAlpha -= clamp(0.15/30,0,1)}
-		draw_set_halign(fa_center);
-		var cX = display_get_gui_width()/2;//center x
-		var cY = display_get_gui_height()/2-100;
-		if(chosenBoss == Boss.BloodZombie){draw_text_transformed_color(cX,cY,"The Blood Harvester",1.5,1.5,0,c_lime,c_lime,c_green,c_green,fightAlpha);}
-		if(chosenBoss == Boss.FlameWisp){draw_text_transformed_color(cX,cY,"Wisp Sister Anna",1.5,1.5,0,global.orange,global.orange,c_orange,c_orange,fightAlpha);}
-		if(chosenBoss == Boss.TheCorrupter){draw_text_transformed_color(cX,cY,"The Corrupter",1.5,1.5,0,c_purple,c_purple,c_black,c_black,fightAlpha);}
-		if(chosenBoss == Boss.FlameGate){draw_text_transformed_color(cX,cY,"Eye of Hell",1.5,1.5,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);}
-		if(chosenBoss == Boss.WispSisterJulia){draw_text_transformed_color(cX,cY,"Wisp Sister Julia",1.5,1.5,0,c_aqua,c_aqua,c_teal,c_teal,fightAlpha);}
-		if(chosenBoss == Boss.DeathKnight){draw_text_transformed_color(cX,cY,"Death Knight",1.5,1.5,0,c_silver,c_silver,c_gray,c_gray,fightAlpha);}
-		if(chosenBoss == Boss.AngelSlayerRekZul){draw_text_transformed_color(cX,cY,"Angel Slayer Rekzul",1.5,1.5,0,c_maroon,c_maroon,c_black,c_black,fightAlpha);}
-		if(chosenBoss == Boss.KnightWitchYi){draw_text_transformed_color(cX,cY,"Knight Witch Gi",1.5,1.5,0,c_red,c_red,c_black,c_black,fightAlpha);}
-		if(chosenBoss == Boss.AngelKnightOscar){draw_text_transformed_color(cX,cY,"Angel Knight Oscar",1.5,1.5,0,c_aqua,c_aqua,c_silver,c_silver,fightAlpha);}
-		draw_set_halign(fa_left);
 	}
 	
 }
@@ -576,13 +576,14 @@ if (menu == Menues.BossSlain)
 	{
 		if (leaveTranistionAlpha < 1){leaveTranistionAlpha += clamp(0.4/30,0,1)}
 		draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,leaveTranistionAlpha);
-		if (leaveTranistionAlpha == 1)
-		{
-			backToMenuAlpha = 1;
-			queLeave = false;
-			room_goto(rm_menu);
-			menu = Menues.Main;
-		}
+	}
+	if (leaveTranistionAlpha == 1)
+	{
+		leaveTranistionAlpha = 0;
+		backToMenuAlpha = 1;
+		queLeave = false;
+		room_goto(rm_menu);
+		menu = Menues.Main;
 	}
 }
 if (menu == Menues.Death)
@@ -600,19 +601,18 @@ if (menu == Menues.Death)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,deathAlpha);	
 	
-	draw_sprite_ext(spr_cursor,0,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),2.5,2.5,0,c_white,1,);
-	
 	if (queLeave == true)
 	{
-		if (leaveTranistionAlpha < 1){leaveTranistionAlpha += clamp(0.65/30,0,1)}
+		if (leaveTranistionAlpha < 1){leaveTranistionAlpha += clamp(0.5/30,0,1)}
 		draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,leaveTranistionAlpha);
-		if (leaveTranistionAlpha == 1)
-		{
-			backToMenuAlpha = 1;
-			queLeave = false;
-			room_goto(rm_menu);
-			menu = Menues.Main;
-		}
+	}
+	if (leaveTranistionAlpha == 1)
+	{
+		leaveTranistionAlpha = 0;
+		backToMenuAlpha = 1;
+		queLeave = false;
+		room_goto(rm_menu);
+		menu = Menues.Main;
 	}
 }
 //showInfo
@@ -666,10 +666,10 @@ if (global.showFps == true)
 		fpsShowTimerStacks = 0;
 	}
 	draw_text_transformed_color(110,900-25,fpsShow,0.2,0.2,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(200,900-25,(1 + ((assassinProgress-1)/4)),0.2,0.2,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(200,900-25,menu,0.2,0.2,0,c_white,c_white,c_white,c_white,1);
 }
 //cursor
-if (room == rm_menu)
+if (room == rm_menu || menu == Menues.Death)
 {
 	draw_sprite_ext(spr_cursorMenu,0,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),3,3,0,global.goldColor,1,);
 }

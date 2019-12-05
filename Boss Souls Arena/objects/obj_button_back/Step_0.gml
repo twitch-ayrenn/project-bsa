@@ -10,6 +10,6 @@ if (gameMaster.menu == Menues.Main || gameMaster.menu == Menues.PlayerSelect || 
 
 if (gameMaster.menu == Menues.BossSlain || gameMaster.menu == Menues.Death)
 {
-	x = global.player.x-100-50-15-15;
-	y = global.player.y+50+25+15+15;
+	x = global.player.x-100-50-15-15-15;
+	y = global.player.y+50+25+15+15+5;
 }

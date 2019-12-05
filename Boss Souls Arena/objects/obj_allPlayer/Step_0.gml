@@ -706,6 +706,7 @@ if (hp <= 0 && state != States.Dead)
 	state = States.Dead;
 	gameMaster.menu = Menues.Death;
 	gameMaster.deathAlpha = 0;
+	gameMaster.backToMenuAlpha = 1;
 	speed = 0;
 	moveSpeed = 0;
 	sprite_index = deadSprite;

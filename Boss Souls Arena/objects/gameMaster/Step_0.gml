@@ -33,6 +33,14 @@ if (keyboard_check_released(ord("F")) && fullscreen == true)
 }
 if (keyboard_check_released(vk_escape))
 {	
+	deathAlpha = 0;
+	transitionAlpha = 0;
+	fightAlpha = 1;
+	fightTransitionAlpha = 0;
+	queFight = false;
+	queLeave = false;
+	leaveTranistionAlpha = 0;
+	backToMenuAlpha = 1;
 	menu = Menues.Main;
 	room_goto(rm_menu);
 }

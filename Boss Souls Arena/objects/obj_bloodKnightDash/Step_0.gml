@@ -20,12 +20,10 @@ image_alpha = 1;
 if (destroy == true)
 {
 	destroy = false;
-	
 	alarm[1] = (2)*30;
 }
-if (dealDamage == true && place_meeting(x,y,par_enemy))
+if (dealDamage == true)
 {
-	dealDamage = false;
 	with(par_enemy)
 	{
 		if (place_meeting(x,y,obj_bloodKnightDash))
@@ -48,5 +46,12 @@ if (dealDamage == true && place_meeting(x,y,par_enemy))
 			}
 		}
 	}
+}
+if (place_meeting(x,y,par_enemy) && dealDamage == true)
+{
+	dealDamage = false;	
+	
 	alarm[0] = damageTimer;
 }
+
+	

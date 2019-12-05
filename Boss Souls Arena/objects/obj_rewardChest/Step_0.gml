@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-depth = -y;
+depth = -y+1;
 y += 25;
 y = clamp(y, 0,588);
 if (y == 588 && shakeOnce == true)
