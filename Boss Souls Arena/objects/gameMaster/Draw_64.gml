@@ -541,7 +541,7 @@ if (menu == Menues.Play)
 	if (fightAlpha > 0 && transitionAlpha < 0.75){fightAlpha -= clamp(0.2/30,0,1)}
 	draw_set_halign(fa_center);
 	var cX = display_get_gui_width()/2;//center x
-	var cY = display_get_gui_height()/2-100;
+	var cY = display_get_gui_height()/2-225;
 	if(chosenBoss == Boss.BloodZombie){draw_text_transformed_color(cX,cY,"The Blood Harvester",1.5,1.5,0,c_lime,c_lime,c_green,c_green,fightAlpha);}
 	if(chosenBoss == Boss.FlameWisp){draw_text_transformed_color(cX,cY,"Wisp Sister Anna",1.5,1.5,0,global.orange,global.orange,c_orange,c_orange,fightAlpha);}
 	if(chosenBoss == Boss.TheCorrupter){draw_text_transformed_color(cX,cY,"The Corrupter",1.5,1.5,0,c_purple,c_purple,c_black,c_black,fightAlpha);}

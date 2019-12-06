@@ -17,16 +17,16 @@ if (bodySprite == spr_crowd_body_3){dontDrawEye = true;}
 image_index = choose(0,1);
 chanceToCome = 1;
 probability = irandom_range(0,100);
-if (gameMaster.chosenClass == Character.TheRedWarrior){chanceToCome = gameMaster.theRedWarriorProgress*3;}
-if (gameMaster.chosenClass == Character.ShadowAssassin){chanceToCome = gameMaster.assassinProgress*3;}
-if (gameMaster.chosenClass == Character.Pyromancer){chanceToCome = gameMaster.pyromancerProgress*3;}
-if (gameMaster.chosenClass == Character.Shopkeeper){chanceToCome = gameMaster.shopkeeperProgress*3;}
-if (gameMaster.chosenClass == Character.BloodKnight){chanceToCome = gameMaster.bloodKnightProgress*3;}
-if (gameMaster.chosenClass == Character.RainbowSlime){chanceToCome = gameMaster.rainbowSlimeProgress*3;}
-if (gameMaster.chosenClass == Character.AgentOfGod){chanceToCome = gameMaster.agentOfGodProgress*3;}
-if (gameMaster.chosenClass == Character.AngelSlayer){chanceToCome = gameMaster.angelSlayerProgress*3;}
-if (gameMaster.chosenClass == Character.PlaugeWalker){chanceToCome = gameMaster.plaugeWalkerProgress*3;}
-if (gameMaster.chosenClass == Character.Graveling){chanceToCome = gameMaster.gravelingProgress*3;}
+if (gameMaster.chosenClass == Character.TheRedWarrior){chanceToCome = gameMaster.theRedWarriorProgress*4;}
+if (gameMaster.chosenClass == Character.ShadowAssassin){chanceToCome = gameMaster.assassinProgress*4;}
+if (gameMaster.chosenClass == Character.Pyromancer){chanceToCome = gameMaster.pyromancerProgress*4;}
+if (gameMaster.chosenClass == Character.Shopkeeper){chanceToCome = gameMaster.shopkeeperProgress*4;}
+if (gameMaster.chosenClass == Character.BloodKnight){chanceToCome = gameMaster.bloodKnightProgress*4;}
+if (gameMaster.chosenClass == Character.RainbowSlime){chanceToCome = gameMaster.rainbowSlimeProgress*4;}
+if (gameMaster.chosenClass == Character.AgentOfGod){chanceToCome = gameMaster.agentOfGodProgress*4;}
+if (gameMaster.chosenClass == Character.AngelSlayer){chanceToCome = gameMaster.angelSlayerProgress*4;}
+if (gameMaster.chosenClass == Character.PlaugeWalker){chanceToCome = gameMaster.plaugeWalkerProgress*4;}
+if (gameMaster.chosenClass == Character.Graveling){chanceToCome = gameMaster.gravelingProgress*4;}
 if (probability >= chanceToCome)
 {
 	instance_destroy();
