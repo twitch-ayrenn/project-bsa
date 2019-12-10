@@ -522,7 +522,12 @@ if (menu == Menues.BossSelect)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(30,30,"Select Fight",1.5,1.5,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	
-
+	draw_set_halign(fa_center);
+	var cX = display_get_gui_width()/2;//center x
+	var cY = display_get_gui_height()/2+375;
+	draw_text_transformed_color(cX,cY,"Press A or D to scroll in this menu",0.5,0.5,0,global.orange,global.orange,c_yellow,c_yellow,0.65);
+	draw_set_halign(fa_left);
+	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);
 	

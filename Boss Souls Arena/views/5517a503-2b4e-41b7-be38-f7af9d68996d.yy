@@ -12,8 +12,7 @@
         "f0344c54-09ca-4cf9-a4e2-08a35550dffd",
         "a031c2ad-2524-467e-b544-a56e51d3bb0b",
         "0cc62426-e104-40d3-85a4-bed14e081e25",
-        "01b83e2f-a8b1-4eb1-960e-70ac27cc527f",
-        "543d030d-67d8-4b77-99c6-ec28fc6bf58b"
+        "01b83e2f-a8b1-4eb1-960e-70ac27cc527f"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_angelKnightOskar",
