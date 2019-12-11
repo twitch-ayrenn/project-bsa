@@ -17,6 +17,10 @@ if (menu == Menues.Play && room == rm_arena)
 {
 	x = global.arenaMiddleX;
 	y = global.arenaMiddleY;
+	if (global.tutorialBoss == true && keyboard_check(vk_anykey) || global.tutorialBoss == true && mouse_check_button(mb_any))
+	{
+		global.tutorialBoss = false;
+	}
 }
 //proggresion
 //settings
@@ -41,6 +45,7 @@ if (keyboard_check_released(vk_escape))
 	queLeave = false;
 	leaveTranistionAlpha = 0;
 	backToMenuAlpha = 1;
+	tutorialAlpha = 1;
 	menu = Menues.Main;
 	room_goto(rm_menu);
 }

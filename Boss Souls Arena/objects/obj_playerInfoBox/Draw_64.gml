@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 draw_text_transformed_color(75,215,"Info:",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
-draw_text_transformed_color(75,415,"Description",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+draw_text_transformed_color(105,415,"Abilites",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 draw_text_transformed_color(340,255,"Stats",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 #region The Red Warrior
 if (playerShowInfoFor == Character.TheRedWarrior)

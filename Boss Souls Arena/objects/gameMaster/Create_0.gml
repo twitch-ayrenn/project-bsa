@@ -149,11 +149,15 @@ statsColor = c_yellow;
 statsSize = 1;
 settingsColor = global.darkYellow;
 settingsSize = 1;
-//controlls
+//settings
 global.musicOn = true;
 global.soundOn = true;
 global.ambientOn = true;
 global.ShowInfo = false;
+global.tutorial = true;
+global.tutorialBoss = true;
+global.tutorialPlayer = false;
+//controlls
 global.moveUpKey = ord("W");
 global.moveDownKey = ord("S");
 global.moveLeftKey = ord("A");
@@ -162,6 +166,7 @@ global.basicAttackKey = mb_left;
 global.abilityAttackKey = mb_right;
 global.dashAttackKey = vk_space;
 global.ultimateAttackKey = ord("E");
+//
 global.deBuggerInfo = false;
 global.showDD = false;
 global.showFps = false;
@@ -178,6 +183,7 @@ deathAlpha = 0;
 transitionAlpha = 0;
 fightAlpha = 1;
 fightTransitionAlpha = 0;
+tutorialAlpha = 1;
 queFight = false;
 queLeave = false;
 leaveTranistionAlpha = 0;

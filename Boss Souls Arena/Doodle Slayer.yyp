@@ -351,6 +351,14 @@
             }
         },
         {
+            "Key": "0c8359e4-3343-46a9-8806-a5b9a76a5e83",
+            "Value": {
+                "id": "031b9f88-5639-43f5-bce1-229b9a189b82",
+                "resourcePath": "objects\\obj_showCharacterAbilities\\obj_showCharacterAbilities.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0ca885c9-910a-4e3c-b41c-3751fa7e1594",
             "Value": {
                 "id": "79c6aa20-809e-4c3a-9e30-29fb8a6db6d3",
@@ -5615,6 +5623,14 @@
             }
         },
         {
+            "Key": "d0feb575-abd4-4c42-b916-dbc1a1bba172",
+            "Value": {
+                "id": "21408aff-ba59-4418-9137-3a146c5293f9",
+                "resourcePath": "objects\\obj_showCharacterAbilities_gui\\obj_showCharacterAbilities_gui.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "d1340eed-6ff6-48ac-b094-9aeda22c27b4",
             "Value": {
                 "id": "64496785-69d7-42e3-95b3-5f609188f5d1",
@@ -6228,6 +6244,14 @@
                 "id": "d4c595e6-c160-4231-bcf4-586545ac48eb",
                 "resourcePath": "objects\\obj_player_theBloodKnight\\obj_player_theBloodKnight.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "e7aabfb2-e82a-4360-87e4-2ec884327ecc",
+            "Value": {
+                "id": "21055b85-f6b3-4400-80e2-c19b21febf89",
+                "resourcePath": "sprites\\spr_tutorial_boss\\spr_tutorial_boss.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

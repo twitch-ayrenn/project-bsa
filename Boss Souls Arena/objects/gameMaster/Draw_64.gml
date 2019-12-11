@@ -511,7 +511,7 @@ if (menu == Menues.Settings)
 if (menu == Menues.PlayerSelect)
 {
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(30,30,"Select Fighter",1.5,1.5,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(30,30,"Select a Fighter",1.5,1.5,0,global.orange,global.orange,c_yellow,c_yellow,1);
 
 
 	draw_set_font(fnt_menu_fill);
@@ -523,8 +523,8 @@ if (menu == Menues.BossSelect)
 	draw_text_transformed_color(30,30,"Select Fight",1.5,1.5,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	
 	draw_set_halign(fa_center);
-	var cX = display_get_gui_width()/2;//center x
-	var cY = display_get_gui_height()/2+375;
+	var cX = 800;//center x
+	var cY = 450+375;
 	draw_text_transformed_color(cX,cY,"Press A or D to scroll in this menu",0.5,0.5,0,global.orange,global.orange,c_yellow,c_yellow,0.65);
 	draw_set_halign(fa_left);
 	
@@ -540,13 +540,24 @@ if (menu == Menues.BossSelect)
 }
 if (menu == Menues.Play)
 {
-	if (transitionAlpha > 0){transitionAlpha -= clamp(0.3/30,0,1)}
+	if (transitionAlpha > 0 && global.tutorialBoss == false){transitionAlpha -= clamp(0.5/30,0,1)}
+	if (global.tutorial == true)
+	{
+		draw_sprite_ext(spr_tutorial_boss,0,0,0,0.8333*10,0.8333*10,0,c_white,transitionAlpha-0.25);
+		draw_set_halign(fa_center);
+		draw_text_transformed_color(800,275,"This is your opponent",0.4,0.4,0,c_lime,c_lime,c_green,c_green,transitionAlpha);
+		draw_text_transformed_color(800,585,"Bellow is its health bar. The Crystal in the middle and your opponents ",0.4,0.4,0,c_lime,c_lime,c_green,c_green,transitionAlpha);
+		draw_text_transformed_color(800,625,"eyes indicate what attack your opponent will Do.",0.4,0.4,0,c_lime,c_lime,c_green,c_green,transitionAlpha);
+		draw_set_halign(fa_left);
+		if (tutorialAlpha > 0){tutorialAlpha -= clamp(0.5/30,0,1)}
+		draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,tutorialAlpha);
+	}
+	if (global.tutorial == false){draw_sprite_ext(spr_blackGround,0,0,0,0.8333,0.8333,0,c_white,transitionAlpha);}
 	draw_set_font(fnt_menu_fill);
-	draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,transitionAlpha);
 	if (fightAlpha > 0 && transitionAlpha < 0.75){fightAlpha -= clamp(0.2/30,0,1)}
 	draw_set_halign(fa_center);
-	var cX = display_get_gui_width()/2;//center x
-	var cY = display_get_gui_height()/2-225;
+	var cX = 800;//center x
+	var cY = 450-350;
 	if(chosenBoss == Boss.BloodZombie){draw_text_transformed_color(cX,cY,"The Blood Harvester",1.5,1.5,0,c_lime,c_lime,c_green,c_green,fightAlpha);}
 	if(chosenBoss == Boss.FlameWisp){draw_text_transformed_color(cX,cY,"Wisp Sister Anna",1.5,1.5,0,global.orange,global.orange,c_orange,c_orange,fightAlpha);}
 	if(chosenBoss == Boss.TheCorrupter){draw_text_transformed_color(cX,cY,"The Corrupter",1.5,1.5,0,c_purple,c_purple,c_black,c_black,fightAlpha);}
@@ -568,8 +579,8 @@ if (menu == Menues.Play)
 if (menu == Menues.BossSlain)
 {
 	draw_set_halign(fa_center);
-	var cX = display_get_gui_width()/2;//center x
-	var cY = display_get_gui_height()/2-350;
+	var cX = 800;//center x
+	var cY = 450-350;
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(cX,cY,"Victory!",2.5,2.5,0,global.goldColor,global.goldColor,c_yellow,c_yellow,1);
 	draw_set_halign(fa_left);
@@ -597,8 +608,8 @@ if (menu == Menues.Death)
 	draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,deathAlpha);
 	
 	draw_set_halign(fa_center);
-	var cX = display_get_gui_width()/2;//center x
-	var cY = display_get_gui_height()/2-350;
+	var cX = 800;//center x
+	var cY = 450-350;
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(cX,cY,"Defeat",3,3,0,c_red,c_red,c_maroon,c_maroon,deathAlpha);
 	draw_set_halign(fa_left);
