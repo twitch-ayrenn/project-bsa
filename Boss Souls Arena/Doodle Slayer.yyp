@@ -1383,14 +1383,6 @@
             }
         },
         {
-            "Key": "31135606-056f-46e0-b974-6f8c497034bb",
-            "Value": {
-                "id": "e7836ae9-d34c-4343-8c30-ad2a177aaee4",
-                "resourcePath": "objects\\obj_fightCard_stoneSerpant\\obj_fightCard_stoneSerpant.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "31371762-a364-420f-80a2-0841b4366789",
             "Value": {
                 "id": "65be208b-84e2-416f-8f8e-a9ad7dba9a82",
@@ -2508,14 +2500,6 @@
                 "id": "18114130-5155-4ed3-b928-33aab837d6b3",
                 "resourcePath": "sprites\\spr_angelSlayerRekZul\\spr_angelSlayerRekZul.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "5f99da7e-124c-4694-98ea-758f412b0319",
-            "Value": {
-                "id": "12dce977-5aba-40d0-8b5c-bfdca679db27",
-                "resourcePath": "objects\\obj_playButton_stoneSerpant\\obj_playButton_stoneSerpant.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -4743,14 +4727,6 @@
             }
         },
         {
-            "Key": "b2f87edb-ef3e-4480-8930-3484b34ab593",
-            "Value": {
-                "id": "1fcad2dd-22d4-41f9-8284-e5211cc7b741",
-                "resourcePath": "objects\\obj_TheInnKeeper\\obj_TheInnKeeper.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "b35e1c54-98e8-4724-ba64-8b92191ada75",
             "Value": {
                 "id": "77f84a8c-02d2-424c-b445-b1eb054dc6b1",
@@ -5059,6 +5035,14 @@
             "Value": {
                 "id": "07aa7a44-772e-474e-b396-6fb7e714b349",
                 "resourcePath": "sprites\\spr_crowd_demon_horn_2\\spr_crowd_demon_horn_2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "bf6fee9a-c795-45bf-9104-3ad030601ea0",
+            "Value": {
+                "id": "428adc40-7940-40e6-a706-4e6d0e7df35b",
+                "resourcePath": "sprites\\spr_tutorial_player\\spr_tutorial_player.yy",
                 "resourceType": "GMSprite"
             }
         },

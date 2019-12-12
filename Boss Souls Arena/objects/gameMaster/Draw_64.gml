@@ -546,13 +546,14 @@ if (menu == Menues.Play)
 		draw_sprite_ext(spr_tutorial_boss,0,0,0,0.8333*10,0.8333*10,0,c_white,transitionAlpha-0.25);
 		draw_set_halign(fa_center);
 		draw_text_transformed_color(800,275,"This is your opponent",0.4,0.4,0,c_lime,c_lime,c_green,c_green,transitionAlpha);
-		draw_text_transformed_color(800,585,"Bellow is its health bar. The Crystal in the middle and your opponents ",0.4,0.4,0,c_lime,c_lime,c_green,c_green,transitionAlpha);
-		draw_text_transformed_color(800,625,"eyes indicate what attack your opponent will Do.",0.4,0.4,0,c_lime,c_lime,c_green,c_green,transitionAlpha);
+		draw_text_transformed_color(800,580,"Below is its health bar. The small red circles below it indicate ",0.35,0.35,0,c_lime,c_lime,c_green,c_green,transitionAlpha);
+		draw_text_transformed_color(800,615,"how many phases the boss has. The Crystal in the middle and your",0.35,0.35,0,c_lime,c_lime,c_green,c_green,transitionAlpha);
+		draw_text_transformed_color(800,650,"opponents eyes indicate which attack your opponent will Do.",0.35,0.35,0,c_lime,c_lime,c_green,c_green,transitionAlpha);
 		draw_set_halign(fa_left);
 		if (tutorialAlpha > 0){tutorialAlpha -= clamp(0.5/30,0,1)}
 		draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,tutorialAlpha);
 	}
-	if (global.tutorial == false){draw_sprite_ext(spr_blackGround,0,0,0,0.8333,0.8333,0,c_white,transitionAlpha);}
+	if (global.tutorial == false){draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,transitionAlpha);}
 	draw_set_font(fnt_menu_fill);
 	if (fightAlpha > 0 && transitionAlpha < 0.75){fightAlpha -= clamp(0.2/30,0,1)}
 	draw_set_halign(fa_center);

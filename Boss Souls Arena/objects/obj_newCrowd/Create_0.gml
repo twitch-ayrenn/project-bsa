@@ -22,6 +22,7 @@ if (type = CrowdType.Demon)
 	eyeColor = choose(c_green,c_blue,c_teal,c_purple,c_maroon,c_blue,c_silver,c_orange);
 	horns = choose(spr_crowd_demon_horn_1,spr_crowd_demon_horn_2);
 }
+//ooga booga
 if (type = CrowdType.DoodleWithPants)
 {
 	sprite_index = spr_crowd_body_new_1;

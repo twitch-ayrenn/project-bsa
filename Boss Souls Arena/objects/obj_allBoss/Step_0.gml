@@ -696,6 +696,10 @@ if (hp <= 0 && phase == maxPhase)
 		gameMaster.angelSlayerProgress += global.progressAmount;
 		gameMaster.totalProgress += 1;
 	}
+	if (gameMaster.chosenBoss == Boss.BloodZombie)
+	{
+		global.tutorial = false;	
+	}
 	#endregion
 	instance_create_depth(global.arenaMiddleX,-156,depth,obj_rewardChest);
 	gameMaster.menu = Menues.BossSlain;

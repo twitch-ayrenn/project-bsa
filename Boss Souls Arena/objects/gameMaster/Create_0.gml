@@ -179,6 +179,7 @@ exitSize = 1;
 backColor = c_maroon;
 backSize = 1;
 global.slidingSpeed = 1.75;
+//Alpha 
 deathAlpha = 0;
 transitionAlpha = 0;
 fightAlpha = 1;

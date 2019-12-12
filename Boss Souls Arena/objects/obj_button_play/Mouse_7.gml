@@ -9,6 +9,18 @@ gameMaster.bonusLifeSteal = 0;
 gameMaster.bonusAura = 0;
 gameMaster.bonusConjur = 0;
 gameMaster.bonusCooldown = 0;
+with (gameMaster)
+{
+	transitionAlpha = 1;
+	fightAlpha = 1;
+	fightTransitionAlpha = 0;
+	tutorialAlpha = 1;
+	if (global.tutorial == true)
+	{
+		global.tutorialBoss = true;
+		global.tutorialPlayer = true;
+	}
+}
 if (gameMaster.theRedWarriorUnlocked == true){with (obj_npc_theRedWarrior){sprite_index = spr_theWarrior_outline_unselected}}
 if (gameMaster.theRedWarriorUnlocked == false){with (obj_npc_theRedWarrior){sprite_index = spr_theWarrior_outline_locked}}
 if (gameMaster.assassinUnlocked == true){with (obj_npc_theShadow){sprite_index = spr_theAssasin_outline_unselected}}

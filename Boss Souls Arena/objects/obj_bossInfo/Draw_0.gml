@@ -11,25 +11,25 @@ if(showBossInfo == Boss.NoBoss)
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(x+3,y+startY+4*1,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*2,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*3,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*4,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*1,"The boss crystal in the ",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*2,"middleand your opponents",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*3,"eyesindicate  which attack your ",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*4,"eyes opponent will Do. ",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
 	draw_text_transformed_color(x+3,y+startY+4*5,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*6,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*7,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*8,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*9,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*10,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(x+3,y+startY+4*11,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*12,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*13,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*14,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*15,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*16,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*17,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*18,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*19,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*6,"Maroon: Standard Attack.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*7,"Magenta: Circle Attack.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*8,"Blue: Area Denial.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*9,"Aqua Blue: Cone Attack.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*10,"Red: Massive projectile.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*11,"Yellow: Chase Attack\"Run\".",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*12,"Light Blue: Multiple",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*13,"Sucsesive Attacks.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*14,"Orange: Beam Attack",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*15,"Purple: Teleport Attack.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*16,"Green: Stand in Area to",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*17,"survive.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*18,"Lime Green: Summons Healing",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*19,"orbs. Destory them.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
 	draw_text_transformed_color(x+3,y+startY+4*20,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
 }
 #endregion

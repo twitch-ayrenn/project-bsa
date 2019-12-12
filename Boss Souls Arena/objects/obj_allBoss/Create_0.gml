@@ -104,8 +104,8 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.BloodZombie) 
 		{
 			//stats
-			phase1Hp = tier1Hp*0.4; phase1Ms = 1; phase1Dmg = 20;
-			phase2Hp = tier1Hp*0.6; phase2Ms = 1.5; phase2Dmg = 30;
+			phase1Hp = tier1Hp*0.35; phase1Ms = 1; phase1Dmg = 10;
+			phase2Hp = tier1Hp*0.55; phase2Ms = 1.5; phase2Dmg = 20;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
