@@ -7,10 +7,14 @@ with (gameMaster)
 	queFight = false;
 	fightTransitionAlpha = 0;
 	tutorialAlpha = 1;
+	playerTutorialAlpha = 0;
+	quePlayerTutorial = false;
+	tutorialFadeOut = false;
+	checkOnce = true;
 	if (global.tutorial == true)
 	{
 		global.tutorialBoss = true;
-		global.tutorialPlayer = true;
+		global.tutorialPlayer = false;
 	}
 }
 if (global.soundOn == true)

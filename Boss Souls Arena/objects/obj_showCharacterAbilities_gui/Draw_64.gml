@@ -1,10 +1,10 @@
 /// @description Insert description here
-var xText = 35;
+var xText = 10;
 var yText = 200;
 if (hover == true)
 {
 	draw_set_alpha(0.65)
-	draw_rectangle_color(xText-5,yText-5,500,500,c_black,c_black,c_black,c_black,false);
+	draw_rectangle_color(xText-5,yText-5,475,500,c_black,c_black,c_black,c_black,false);
 	draw_set_alpha(1)
 	draw_text_transformed_color(xText+40,yText+17.5*-2,"Abilites",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	#region The Red Warrior

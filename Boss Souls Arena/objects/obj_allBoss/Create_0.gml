@@ -5,6 +5,7 @@ enum BossStates
 	BeforeFight,
 	Fighting,
 	Dead,
+	Tutorial,
 }
 state = BossStates.BeforeFight;
 #endregion

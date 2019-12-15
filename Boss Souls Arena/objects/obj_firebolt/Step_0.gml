@@ -1,4 +1,4 @@
-/// @description Insert description here
+	/// @description Insert description here
 image_alpha = 0.8;
 depth = -y;
 if (isMeteor == true) {depth = -2000;}

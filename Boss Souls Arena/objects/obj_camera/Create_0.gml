@@ -11,6 +11,8 @@ camSize = 4;
 cameraSpeed = 50;
 playerCameraSpeed = 1;
 
+quedTutorial = false;
+
 var vm = matrix_build_lookat(x,y,-10000,x,y,0,0,1,0);
 var pm = matrix_build_projection_ortho(1920/camSize,1080/camSize,1,10000);
 

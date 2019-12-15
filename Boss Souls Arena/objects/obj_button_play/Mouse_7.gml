@@ -15,10 +15,14 @@ with (gameMaster)
 	fightAlpha = 1;
 	fightTransitionAlpha = 0;
 	tutorialAlpha = 1;
+	playerTutorialAlpha = 0;
+	quePlayerTutorial = false;
+	tutorialFadeOut = false;
+	checkOnce = true;
 	if (global.tutorial == true)
 	{
 		global.tutorialBoss = true;
-		global.tutorialPlayer = true;
+		global.tutorialPlayer = false;
 	}
 }
 if (gameMaster.theRedWarriorUnlocked == true){with (obj_npc_theRedWarrior){sprite_index = spr_theWarrior_outline_unselected}}

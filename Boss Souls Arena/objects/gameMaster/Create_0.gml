@@ -106,6 +106,7 @@ enum States
 	Walking,
 	Dead,
 	BeforeFight,
+	Tutorial,
 }
 chosenClass = 0;
 chosenBoss = 0;
@@ -154,6 +155,11 @@ global.musicOn = true;
 global.soundOn = true;
 global.ambientOn = true;
 global.ShowInfo = false;
+global.colorBlindIcons = false;
+global.colorBlindText = false;
+global.dashTowardsMove = false;
+global.seeAbilitiesInGame = true;
+//tutorial
 global.tutorial = true;
 global.tutorialBoss = true;
 global.tutorialPlayer = false;
@@ -189,6 +195,10 @@ queFight = false;
 queLeave = false;
 leaveTranistionAlpha = 0;
 backToMenuAlpha = 0;
+playerTutorialAlpha = 0;
+quePlayerTutorial = false;
+tutorialFadeOut = false;
+checkOnce = true;
 ////Character progression and select
 //Progress // for a boss its its number -1
 assassinProgress = 1;

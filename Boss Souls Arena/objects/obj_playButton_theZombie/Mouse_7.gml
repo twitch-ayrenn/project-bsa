@@ -48,3 +48,16 @@ if (gameMaster.chosenClass == Character.Graveling && gameMaster.gravelingProgres
 	gameMaster.chosenBoss = bossOnThisCard;
 	gameMaster.queFight = true;
 }
+transitionAlpha = 1;
+fightAlpha = 1;
+fightTransitionAlpha = 0;
+tutorialAlpha = 1;
+playerTutorialAlpha = 0;
+quePlayerTutorial = false;
+tutorialFadeOut = false;
+checkOnce = true;
+if (global.tutorial == true)
+{
+	global.tutorialBoss = true;
+	global.tutorialPlayer = false;
+}

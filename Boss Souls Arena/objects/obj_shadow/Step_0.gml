@@ -1,8 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (destroy == true)
+if (destroyStacks > 0)
 {
-	destroy = false;
-	
-	alarm[0] = destroyTime;
+	destroyStacks--;
+}
+if (destroyStacks <= 0)
+{
+	instance_destroy();
 }

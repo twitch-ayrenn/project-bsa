@@ -9,6 +9,11 @@ if (state == CameraStates.PlayerView)
 	follow = global.player;
 	if(cameraSpeed > 1){cameraSpeed -= clamp(2/30,playerCameraSpeed,50);}
 }
+if (distance_to_object(global.player) < 1 && global.tutorial == true && quedTutorial == false)
+{
+ 	quedTutorial = true;
+	gameMaster.quePlayerTutorial = true;
+}
 //
 x += (xTo - x)/cameraSpeed;
 y += (yTo - y)/cameraSpeed;

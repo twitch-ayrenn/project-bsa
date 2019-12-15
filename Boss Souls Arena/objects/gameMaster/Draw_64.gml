@@ -540,22 +540,104 @@ if (menu == Menues.BossSelect)
 }
 if (menu == Menues.Play)
 {
+	//Tutorial
 	if (transitionAlpha > 0 && global.tutorialBoss == false){transitionAlpha -= clamp(0.5/30,0,1)}
 	if (global.tutorial == true)
 	{
-		draw_sprite_ext(spr_tutorial_boss,0,0,0,0.8333*10,0.8333*10,0,c_white,transitionAlpha-0.25);
+		draw_sprite_ext(spr_tutorial_boss,0,0,0,0.8333*10,0.8333*10,0,c_white,transitionAlpha-0.15);
 		draw_set_halign(fa_center);
-		draw_text_transformed_color(800,275,"This is your opponent",0.4,0.4,0,c_lime,c_lime,c_green,c_green,transitionAlpha);
-		draw_text_transformed_color(800,580,"Below is its health bar. The small red circles below it indicate ",0.35,0.35,0,c_lime,c_lime,c_green,c_green,transitionAlpha);
-		draw_text_transformed_color(800,615,"how many phases the boss has. The Crystal in the middle and your",0.35,0.35,0,c_lime,c_lime,c_green,c_green,transitionAlpha);
-		draw_text_transformed_color(800,650,"opponents eyes indicate which attack your opponent will Do.",0.35,0.35,0,c_lime,c_lime,c_green,c_green,transitionAlpha);
+		var textSize = 0.1;
+		draw_text_transformed_color(800,275,"This is your opponent",0.6,0.6,0,c_lime,c_lime,c_green,c_green,transitionAlpha);
+		draw_set_font(fnt_NewNormalText)
+		draw_text_transformed_color(800,580,"Below is its health bar. The small red circles below it indicate ",textSize,textSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
+		draw_text_transformed_color(800,615,"how many phases the boss has. The Crystal in the middle and your",textSize,textSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
+		draw_text_transformed_color(800,650,"opponents eyes indicate which attack your opponent will do.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
+		draw_text_transformed_color(150,800,"Click Any Key",textSize,textSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
+		draw_text_transformed_color(150,830,"To Continue",textSize,textSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
 		draw_set_halign(fa_left);
 		if (tutorialAlpha > 0){tutorialAlpha -= clamp(0.5/30,0,1)}
 		draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,tutorialAlpha);
 	}
+	if (instance_exists(global.player))
+	{
+		if (global.player.state == States.Tutorial && obj_allBoss.state == BossStates.Tutorial && global.tutorialPlayer == true)
+		{
+			if (playerTutorialAlpha < 1 && tutorialFadeOut == false){playerTutorialAlpha += clamp(0.3/30,0,1);}
+			if (tutorialFadeOut == true && playerTutorialAlpha > 0){playerTutorialAlpha -= clamp(0.5/30,0,1);}
+			draw_sprite_ext(spr_tutorial_player,0,0,0,0.8333*10,0.8333*10,0,c_white,playerTutorialAlpha - 0.15);
+			draw_set_halign(fa_center);
+			#region The Shadow Assassin
+			if (chosenClass == Character.ShadowAssassin)
+			{
+				var xText = 800;
+				var yText = 50;
+				var textSize = 0.1;
+				draw_set_font(fnt_menu_fill)
+				draw_text_transformed_color(800,550,"The Shadow Assassin",0.4,0.4,0,c_fuchsia,c_fuchsia,c_purple,c_purple,playerTutorialAlpha);
+				//
+				draw_set_font(fnt_NewNormalText)
+				draw_text_transformed_color(xText,yText+30*0,"To the left is the hud. Hover over the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+30*1,"hud with your mouse to see your abilities.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+30*2,"Using an ability puts that ability on",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+30*3,"cooldown. The Shadow Assassin is an",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+30*4,"assassin and all abilities reset the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+30*5,"cooldown of the [Left-Click] Ability.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			}
+			#endregion
+			#region The Pyromancer
+			if (chosenClass == Character.Pyromancer)
+			{
+				var xText = 800;
+				var yText = 50;
+				var textSize = 0.1;
+				draw_set_font(fnt_menu_fill)
+				draw_text_transformed_color(800,550,"The Pryomancer",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,playerTutorialAlpha);
+				//
+				draw_set_font(fnt_NewNormalText)
+				draw_text_transformed_color(xText,yText+30*0,"To the left is the hud. Hover over the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+30*1,"hud with your mouse to see your abilities.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+30*2,"Using an ability puts that ability on",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+30*3,"cooldown. The Pyromancer is a spellcaster",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+30*4,"which has powerful spells but with high",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+30*5,"cooldowns exept the dash.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			}
+			#endregion
+			#region The Blood Knight
+			if (chosenClass == Character.BloodKnight)
+			{
+				var xText = 800;
+				var yText = 50;
+				var textSize = 0.1;
+				draw_set_font(fnt_menu_fill)
+				draw_text_transformed_color(800,550,"The Pryomancer",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,playerTutorialAlpha);
+				//
+				draw_set_font(fnt_NewNormalText)
+				draw_text_transformed_color(xText,yText+30*0,"To the left is the hud. Hover over the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+30*1,"hud with your mouse to see your abilities.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+30*2,"Using an ability puts that ability on",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+30*3,"cooldown. However the Blood Knight",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+30*4,"has a short cooldown on the [Left click]",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+30*5,"so you use it all the time.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			}
+			#endregion
+			draw_set_halign(fa_left);
+			draw_set_halign(fa_center);
+			draw_text_transformed_color(150,800,"Click Any Key",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			draw_text_transformed_color(150,830,"To Continue",0.1,0.1,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			draw_set_halign(fa_left);
+		}
+		if (tutorialFadeOut == true && playerTutorialAlpha == 0)
+		{
+			global.tutorialPlayer = false;
+			obj_allBoss.state = BossStates.Fighting;
+			global.player.state = States.Idle;
+		}
+	}
+	//Fade
 	if (global.tutorial == false){draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,transitionAlpha);}
+	//Boss Text
 	draw_set_font(fnt_menu_fill);
-	if (fightAlpha > 0 && transitionAlpha < 0.75){fightAlpha -= clamp(0.2/30,0,1)}
+	if (fightAlpha > 0 && transitionAlpha < 0.75){fightAlpha -= clamp(0.3/30,0,1)}
 	draw_set_halign(fa_center);
 	var cX = 800;//center x
 	var cY = 450-350;
@@ -569,13 +651,19 @@ if (menu == Menues.Play)
 	if(chosenBoss == Boss.KnightWitchYi){draw_text_transformed_color(cX,cY,"Knight Witch Gi",1.5,1.5,0,c_red,c_red,c_black,c_black,fightAlpha);}
 	if(chosenBoss == Boss.AngelKnightOscar){draw_text_transformed_color(cX,cY,"Angel Knight Oscar",1.5,1.5,0,c_aqua,c_aqua,c_silver,c_silver,fightAlpha);}
 	draw_set_halign(fa_left);
-	if (transitionAlpha == 0 && instance_exists(obj_allBoss) && instance_exists(global.player) && instance_exists(obj_camera))
+	if (transitionAlpha == 0 && instance_exists(obj_allBoss) && instance_exists(global.player) && instance_exists(obj_camera) && checkOnce == true)
 	{
+		checkOnce = false;
 		obj_allBoss.state = BossStates.Fighting;
 		global.player.state = States.Idle;
 		obj_camera.state = CameraStates.PlayerView;
+		if (global.tutorial == true)
+		{
+			global.player.state = States.Tutorial;
+			obj_allBoss.state = BossStates.Tutorial;
+			global.tutorialPlayer = true;
+		}
 	}
-	
 }
 if (menu == Menues.BossSlain)
 {

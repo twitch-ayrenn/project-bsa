@@ -17,6 +17,12 @@ if (menu == Menues.Play && room == rm_arena)
 {
 	x = global.arenaMiddleX;
 	y = global.arenaMiddleY;
+	if (global.tutorialPlayer == true && keyboard_check(vk_anykey) && tutorialFadeOut == false && playerTutorialAlpha == 1  
+	||  global.tutorialPlayer == true && mouse_check_button(mb_any) && tutorialFadeOut == false && playerTutorialAlpha == 1)
+	{
+		global.tutorial = false;
+		tutorialFadeOut = true;
+	}
 	if (global.tutorialBoss == true && keyboard_check(vk_anykey) || global.tutorialBoss == true && mouse_check_button(mb_any))
 	{
 		global.tutorialBoss = false;
@@ -46,6 +52,9 @@ if (keyboard_check_released(vk_escape))
 	leaveTranistionAlpha = 0;
 	backToMenuAlpha = 1;
 	tutorialAlpha = 1;
+	playerTutorialAlpha = 0;
+	quePlayerTutorial = false;
+	checkOnce = true;
 	menu = Menues.Main;
 	room_goto(rm_menu);
 }

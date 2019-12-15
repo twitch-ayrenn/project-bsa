@@ -2,6 +2,7 @@
 // You can write your code in this editor
 draw_self();
 var startY = 5;
+var textScale = 0.0125;
 #region No Boss
 if(showBossInfo == Boss.NoBoss)
 {
@@ -11,26 +12,26 @@ if(showBossInfo == Boss.NoBoss)
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(x+3,y+startY+4*1,"The boss crystal in the ",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*2,"middleand your opponents",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*3,"eyesindicate  which attack your ",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*4,"eyes opponent will Do. ",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*5,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*6,"Maroon: Standard Attack.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*7,"Magenta: Circle Attack.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*8,"Blue: Area Denial.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*9,"Aqua Blue: Cone Attack.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*10,"Red: Massive projectile.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(x+3,y+startY+4*11,"Yellow: Chase Attack\"Run\".",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*12,"Light Blue: Multiple",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*13,"Sucsesive Attacks.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*14,"Orange: Beam Attack",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*15,"Purple: Teleport Attack.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*16,"Green: Stand in Area to",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*17,"survive.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*18,"Lime Green: Summons Healing",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*19,"orbs. Destory them.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*20,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*1,"The boss crystal in the middle and",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*2,"your opponents eyes indicate which",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*3,"attack your opponent will Do.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*4," ",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*5,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*6,"Maroon: Standard Attack.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*7,"Magenta: Circle Attack.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*8,"Blue: Area Denial.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*9,"Aqua Blue: Cone Attack.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*10,"Red: Massive projectile.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*11,"Yellow: Chase Attack\"Run\".",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*12,"Light Blue: Multiple",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*13,"Sucsesive Attacks.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*14,"Orange: Beam Attack",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*15,"Purple: Teleport Attack.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*16,"Green: Stand in Area to",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*17,"survive.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*18,"Lime Green: Summons Healing",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*19,"orbs. Destory them.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*20,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
 }
 #endregion
 #region The Blood Harvester
@@ -42,26 +43,26 @@ if(showBossInfo == Boss.BloodZombie)
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(x+3,y+startY+4*1,"A giant zombie that wrecked",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*2,"havoc upon villages and",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*3,"cities.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*4,"The Blood Harvesters",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*5,"attacks causes his enemies",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*6,"to bleed out toxic blood.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*7,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*8,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*9,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*10,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(x+3,y+startY+4*11,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*12,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*13,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*14,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*15,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*16,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*17,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*18,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*19,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*20,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*1,"A giant zombie that wrecked havoc",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*2,"upon villages and cities.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*3,"The Blood Harvesters attacks causes",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*4,"his enemies to bleed out toxic blood.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*5," ",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*6,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*7,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*8,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*9,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*10,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*11,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*12,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*13,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*14,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*15,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*16,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*17,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*18,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*19,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*20,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
 }
 #endregion
 #region Wisp Sister Anna
@@ -73,26 +74,26 @@ if(showBossInfo == Boss.FlameWisp)
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(x+3,y+startY+4*1,"An elemental of pure",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*2,"fire and rage, she burns",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*3,"anything in her way.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*4,"Anna shoots massive",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*5,"fireballs that seek their",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*6,"targets so be ready to run.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*7,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*8,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*9,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*10,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(x+3,y+startY+4*11,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*12,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*13,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*14,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*15,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*16,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*17,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*18,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*19,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*20,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*1,"An elemental of pure fire andrage,",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*2,"she burns anything in her way.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*3,"Anna shoots massive fireballs that",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*4,"seek their targets so be ready to run.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*5,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*6,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*7,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*8,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*9,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*10,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*11,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*12,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*13,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*14,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*15,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*16,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*17,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*18,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*19,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*20,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
 }
 #endregion
 #region The Corrupter
@@ -104,26 +105,26 @@ if(showBossInfo == Boss.TheCorrupter)
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(x+3,y+startY+4*1,"The Corrupter is a minion",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*2,"of Lady Corruption. ",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*3,"There were thousands of",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*4,"Corrupters but this one ",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*5,"killed all his brethren to",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*6,"become the only servant of",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*7,"the Queen, Lady Corruption.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*8,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*9,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*10,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(x+3,y+startY+4*11,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*12,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*13,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*14,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*15,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*16,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*17,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*18,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*19,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*20,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*1,"The Corrupter is a minion of Lady",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*2,"Corruption.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*3,"There were thousands of Corrupters but",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*4,"this one killed all his brethren to",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*5,"become the only servant of the Queen,",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*6,"Lady Corruption.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*7,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*8,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*9,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*10,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*11,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*12,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*13,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*14,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*15,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*16,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*17,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*18,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*19,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*20,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
 }
 #endregion
 #region Eye of Hell
@@ -135,26 +136,26 @@ if(showBossInfo == Boss.FlameGate)
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(x+3,y+startY+4*1,"On top of the Dead Tower",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*2,"he observes all of hell",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*3,"watching from east to west.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*4,"The Demonic eye attacks ",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*5,"fast with little rest",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*6,"inbetween attacks.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*7,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*8,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*9,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*10,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(x+3,y+startY+4*11,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*12,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*13,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*14,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*15,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*16,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*17,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*18,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*19,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*20,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*1,"On top of the Dead Tower he observes",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*2,"all of hell watching from east to west.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*3,"The Demonic eye attacks fast with" ,textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*4,"little rest inbetween attacks.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*5,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*6,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*7,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*8,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*9,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*10,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*11,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*12,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*13,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*14,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*15,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*16,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*17,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*18,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*19,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*20,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
 }
 #endregion
 #region Wisp Sister Julia
@@ -166,26 +167,26 @@ if(showBossInfo == Boss.WispSisterJulia)
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(x+3,y+startY+4*1,"A Soul Wisp containing all",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*2,"the souls of her fallen",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*3,"enemies. When at risk of",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*4,"dying the Soul Wisp enrages",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*5,"and attacks rapidly.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*6,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*7,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*8,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*9,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*10,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(x+3,y+startY+4*11,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*12,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*13,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*14,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*15,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*16,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*17,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*18,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*19,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*20,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*1,"A Soul Wisp containing all the souls",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*2,"of her fallen enemies. When at risk ",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*3,"of dying the Soul Wisp enrages and",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*4,"attacks rapidly.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*5,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*6,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*7,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*8,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*9,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*10,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*11,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*12,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*13,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*14,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*15,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*16,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*17,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*18,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*19,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*20,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
 }
 #endregion
 #region Death Knight
@@ -197,26 +198,26 @@ if(showBossInfo == Boss.DeathKnight)
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(x+3,y+startY+4*1,"Death Knights are soldiers",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*2,"of the Dead Army but even",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*3,"though they are considerd",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*4,"foder whitin the Army, They",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*5,"can be formidable opponents.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*6,"Death Knight fight with",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*7,"a deadly scythe that can",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*8,"combo up to 3 times.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*9,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*10,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(x+3,y+startY+4*11,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*12,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*13,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*14,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*15,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*16,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*17,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*18,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*19,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*20,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*1,"Death Knights are soldiers of the",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*2,"Dead Army but even though they are",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*3,"considerd foder whitin the Army,",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*4,"They can be formidable opponents.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*5,"Death Knight fight with a deadly",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*6,"scythe that can combo up to 3 times.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*7,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*8,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*9,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*10,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*11,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*12,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*13,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*14,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*15,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*16,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*17,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*18,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*19,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*20,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
 }
 #endregion
 #region Angel Slayer Rekzul
@@ -228,26 +229,26 @@ if(showBossInfo == Boss.AngelSlayerRekZul)
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(x+3,y+startY+4*1,"This demon has earned the",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*2,"title of Angel Slayer. He",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*3,"has slain over a thousand",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*4,"angels. Demonic beams of",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*5,"destruction is his specialty.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*6,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*7,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*8,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*9,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*10,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(x+3,y+startY+4*11,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*12,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*13,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*14,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*15,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*16,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*17,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*18,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*19,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*20,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*1,"This demon has earned the title of",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*2,"Angel Slayer. He has slain over a",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*3,"thousand angels. Demonic beams of",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*4,"destruction is his specialty.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*5,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*6,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*7,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*8,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*9,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*10,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*11,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*12,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*13,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*14,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*15,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*16,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*17,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*18,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*19,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*20,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
 }
 #endregion
 #region Witch Knight Yi
@@ -259,26 +260,26 @@ if(showBossInfo == Boss.KnightWitchYi)
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(x+3,y+startY+4*1,"The Knight Witch is a bounty",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(x+3,y+startY+4*2,"hunter that only takes",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(x+3,y+startY+4*3,"contracts from himself.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(x+3,y+startY+4*4,"He sacrefices his blood to",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*5,"lay down blood puddels that",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*6,"damage his enemies.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*7,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*8,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*9,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*10,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(x+3,y+startY+4*11,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*12,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*13,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*14,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*15,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*16,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*17,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*18,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*19,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*20,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*1,"The Knight Witch is a bounty",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*2,"hunter that only takes contracts",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*3,"from himself. He sacrefices his",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*4,"blood to lay down blood puddels",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*5,"that damage his enemies.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*6,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*7,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*8,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*9,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*10,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*11,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*12,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*13,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*14,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*15,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*16,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*17,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*18,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*19,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*20,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
 }
 #endregion
 #region Angel Knight Oscar
@@ -290,25 +291,25 @@ if(showBossInfo == Boss.AngelKnightOscar)
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(x+3,y+startY+4*1,"A Knight of heaven, Oscar ",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*2,"serves the good and will",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*3,"repent anyone that stands",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*4,"in his way. He summons",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*5,"slimes that heal him if",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*6,"they reach him.",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*7,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*8,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*9,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*10,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(x+3,y+startY+4*11,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*12,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*13,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*14,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*15,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*16,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*17,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*18,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*19,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*20,"",0.017,0.017,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*1,"A Knight of heaven, Oscar serves",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*2,"the good and will repent anyone",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*3,"that stands in his way.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*4,"He summons slimes that heal him if",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*5,"they reach him.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*6,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*7,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*8,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*9,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*10,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*11,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*12,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*13,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*14,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*15,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*16,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*17,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*18,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*19,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*20,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
 }
 #endregion

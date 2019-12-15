@@ -17,6 +17,10 @@ if (color == c_red)
 {
 	draw_text_transformed_color(x,y+yRise,int64(10*text),0.15,0.15,0,color,color,color,color,1+(yRise/10));
 }
+if (color == c_yellow)
+{
+	draw_text_transformed_color(x,y+yRise,string(text),0.20,0.20,0,c_yellow,c_yellow,global.goldColor,global.goldColor,1+(yRise/10));
+}
 if (color == c_gray)
 {
 	draw_text_transformed_color(x,y,string(text),0.15,0.15,0,color,color,color,color,1+(yRise/10));

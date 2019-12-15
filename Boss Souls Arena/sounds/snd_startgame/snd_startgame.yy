@@ -1,5 +1,5 @@
 {
-    "id": "615a322c-cbb6-4614-8869-685b203b5f1e",
+    "id": "ec6f35c7-8328-4127-a75a-00b8d6e8e451",
     "modelName": "GMSound",
     "mvc": "1.0",
     "name": "snd_startgame",
@@ -10,5 +10,5 @@
     "preload": false,
     "sampleRate": 44100,
     "type": 0,
-    "volume": 0.4
+    "volume": 1
 }
