@@ -5,7 +5,7 @@ if (place_meeting(x,y,obj_allBoss) == false){depth = -50;}
 if (sprite_index == spr_gooGround){depth = -7;}
 var target = global.player;
 //damage
-if (sprite_index == spr_gooGround){dmg = clamp(global.bossDamage*(clamp((target.hp/target.maxHp),0.5,1)),1,0.8*(target.maxHp));}
+if (sprite_index == spr_gooGround || sprite_index == spr_chaseDamage){dmg = clamp(global.bossDamage*(clamp((target.hp/target.maxHp),0.5,1)),1,0.8*(target.maxHp));}
 if (sprite_index == spr_beam){dmg = clamp(global.bossDamage*3*(clamp((target.hp/target.maxHp),0.5,1)),1,0.8*(target.maxHp));}
 if (sprite_index == spr_fireBall ||sprite_index == spr_bat || sprite_index == spr_swordShot || sprite_index == spr_bloodKlott)
 {

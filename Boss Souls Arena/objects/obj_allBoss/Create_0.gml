@@ -255,8 +255,8 @@ isHit = false;
 			//stats
 			phase1Hp = tier2Hp*0.15; phase1Ms = 1; phase1Dmg = 30;
 			phase2Hp = tier2Hp*0.30; phase2Ms = 1; phase2Dmg = 30;
-			phase3Hp = tier2Hp*0.40; phase3Ms = 1; phase3Dmg = 30;
-			phase4Hp = tier2Hp*0.15; phase4Ms = 1; phase4Dmg = 30;
+			phase3Hp = tier2Hp*0.40; phase3Ms = 1; phase3Dmg = 25;
+			phase4Hp = tier2Hp*0.15; phase4Ms = 1; phase4Dmg = 27.5;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -284,9 +284,9 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul) 
 		{
 			//stats
-			phase1Hp = tier3Hp*0.125; phase1Ms = 1; phase1Dmg = 40;
-			phase2Hp = tier3Hp*0.375; phase2Ms = 1.25; phase2Dmg = 45;
-			phase3Hp = tier3Hp*0.5; phase3Ms = 1.5; phase3Dmg = 55;
+			phase1Hp = tier3Hp*0.125; phase1Ms = 1; phase1Dmg = 35;
+			phase2Hp = tier3Hp*0.375; phase2Ms = 1.25; phase2Dmg = 40;
+			phase3Hp = tier3Hp*0.5; phase3Ms = 1.5; phase3Dmg = 45;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -341,8 +341,8 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.AngelKnightOscar) 
 		{
 			//stats
-			phase1Hp = tier3Hp*0.20; phase1Ms = 1.4; phase1Dmg = 35;
-			phase2Hp = tier3Hp*0.30; phase2Ms = 1.4; phase2Dmg = 35;
+			phase1Hp = tier3Hp*0.20; phase1Ms = 1.2; phase1Dmg = 25;
+			phase2Hp = tier3Hp*0.30; phase2Ms = 1.4; phase2Dmg = 30;
 			phase3Hp = tier3Hp*0.5; phase3Ms = 1.4; phase3Dmg = 35;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;

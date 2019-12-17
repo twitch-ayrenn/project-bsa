@@ -573,7 +573,6 @@ if(chooseAnAttack == true)
 		{
 			instance_create_depth(global.arenaMiddleX-200,global.arenaMiddleY,depth,obj_healSlime);
 			instance_create_depth(global.arenaMiddleX+200,global.arenaMiddleY,depth,obj_healSlime);
-			instance_create_depth(global.arenaMiddleX,global.arenaMiddleY+175,depth,obj_healSlime);
 			instance_create_depth(global.arenaMiddleX,global.arenaMiddleY-175,depth,obj_healSlime);
 		}
 		#endregion

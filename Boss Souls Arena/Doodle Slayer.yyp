@@ -2063,6 +2063,14 @@
             }
         },
         {
+            "Key": "4ea76d04-f7dc-4a27-a973-47606690b41c",
+            "Value": {
+                "id": "41e5656d-1d7a-4307-a535-eca257191da6",
+                "resourcePath": "sounds\\snd_teleport\\snd_teleport.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "4ec51d8d-4a1f-48de-80f2-96efcee12336",
             "Value": {
                 "id": "8313f2be-428f-4b81-9219-1ecbed8d6fd0",
@@ -4215,6 +4223,14 @@
             }
         },
         {
+            "Key": "a67eee30-184d-41b0-bdf1-21dff47b4159",
+            "Value": {
+                "id": "52ab3182-29f3-4a99-b97e-98a00102e72e",
+                "resourcePath": "sprites\\spr_equipment_zombieHead\\spr_equipment_zombieHead.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a76e7cf7-5f89-4e71-b185-3911073e52b3",
             "Value": {
                 "id": "3a9c2f1b-c1ff-4267-b36c-697b3203f19c",
@@ -4922,7 +4938,7 @@
             "Key": "c3862930-271d-4344-b686-980302817132",
             "Value": {
                 "id": "545b1432-f55c-434d-b841-11a3e130c56e",
-                "resourcePath": "sounds\\sound1\\sound1.yy",
+                "resourcePath": "sounds\\snd_music_undead\\snd_music_undead.yy",
                 "resourceType": "GMSound"
             }
         },

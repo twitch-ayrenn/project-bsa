@@ -73,8 +73,8 @@ if (drawArea == true)
 			draw_line_width_color(global.arenaMiddleX-50,y+1000,global.arenaMiddleX-50,y-1000,1,c_green,c_green);
 			draw_line_width_color(global.arenaMiddleX-25,y+1000,global.arenaMiddleX-25,y-1000,1,c_green,c_green);
 			draw_line_width_color(global.arenaMiddleX,y+1000,global.arenaMiddleX,y-1000,1,c_green,c_green);
-			draw_line_width_color(global.arenaMiddleX+150,y+1000,global.arenaMiddleX+150,y-1000,1,c_green,c_green);
-			draw_line_width_color(global.arenaMiddleX+125,y+1000,global.arenaMiddleX+125,y-1000,1,c_green,c_green);
+			//draw_line_width_color(global.arenaMiddleX+150,y+1000,global.arenaMiddleX+150,y-1000,1,c_green,c_green);
+			//draw_line_width_color(global.arenaMiddleX+125,y+1000,global.arenaMiddleX+125,y-1000,1,c_green,c_green);
 			draw_line_width_color(global.arenaMiddleX+100,y+1000,global.arenaMiddleX+100,y-1000,1,c_green,c_green);
 			draw_line_width_color(global.arenaMiddleX+75,y+1000,global.arenaMiddleX+75,y-1000,1,c_green,c_green);
 			draw_line_width_color(global.arenaMiddleX+50,y+1000,global.arenaMiddleX+50,y-1000,1,c_green,c_green);

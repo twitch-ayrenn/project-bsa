@@ -4,4 +4,3 @@ audio_play_sound(snd_startgame,Prioity.VeryHigh,true);
 turnBackGroundWhite = true;
 skip = false;
 showSkip = false;
-audio_channel_num()

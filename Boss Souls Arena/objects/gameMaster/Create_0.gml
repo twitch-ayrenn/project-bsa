@@ -176,7 +176,7 @@ global.ultimateAttackKey = ord("E");
 global.deBuggerInfo = false;
 global.showDD = false;
 global.showFps = false;
-global.deBugg = false;
+global.deBugg = true;
 fpsShowTimerStacks = 0;
 fpsShow = "";
 fullscreen = true;
@@ -201,7 +201,7 @@ tutorialFadeOut = false;
 checkOnce = true;
 ////Character progression and select
 //Progress // for a boss its its number -1
-assassinProgress = 1;
+assassinProgress = 30;
 bloodKnightProgress = 1;
 pyromancerProgress = 1;
 shopkeeperProgress = 1;

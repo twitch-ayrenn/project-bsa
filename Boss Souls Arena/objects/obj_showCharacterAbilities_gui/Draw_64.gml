@@ -40,8 +40,8 @@ if (hover == true)
 		draw_text_transformed_color(xText,yText+17.5*1,"portal that shoots where you aim.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(xText,yText+17.5*2,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(xText,yText+17.5*3,"[Left-Click]: Shoot a fireball. Hold to",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(xText,yText+17.5*4,"charge for up to 3 seconds. Charging the ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(xText,yText+17.5*5,"fireball increases size and damage.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(xText,yText+17.5*4,"charge for up to 2.5 seconds. Charging",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(xText,yText+17.5*5,"the fireball increases size and damage.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(xText,yText+17.5*6,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(xText,yText+17.5*7,"[Right-Click]: Shoot waves of fireballs",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(xText,yText +17.5*8,"in a cone. Cone amoumt increases with",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
@@ -121,9 +121,9 @@ if (hover == true)
 		draw_text_transformed_color(xText,yText+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(xText,yText+17.5*11,"[Space]: Dash and summon bats in a circle.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(xText,yText+17.5*12,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(xText,yText+17.5*13,"[Ult/E]: Shoot a blood beam twoards a",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(xText,yText+17.5*14,"direction that deals massive damage.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(xText,yText+17.5*15,"#Note you can not aim it",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(xText,yText+17.5*13,"[Ult/E]: Shoot a blood beam towards a",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(xText,yText+17.5*14,"direction. It deals massive damage.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(xText,yText+17.5*15,"#Note you cannot aim it",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(xText,yText+17.5*16,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	}
 	#endregion

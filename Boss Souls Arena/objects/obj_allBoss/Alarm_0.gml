@@ -883,7 +883,7 @@ if (attack == Atks.ZoneAttack)
 		drawArea = false;		
 		xBeamSpawn = global.arenaMiddleX-200;
 		activateAlarm5 = true;
-		beamsToSpawn = 15;
+		beamsToSpawn = 13;
 	}
 	
 }

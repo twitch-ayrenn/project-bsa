@@ -177,7 +177,7 @@ if (menu == Menues.BossLoot)
 		{
 			draw_set_font(fnt_NewNormalText);
 			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Standing still for 2.5 seconds",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"shoot a corruption beam that",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"shoots a corruption beam that",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"deals massive damage.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			var cbtext = "[Beam Damage]: " + string(dmgCalc*6*3);
@@ -271,7 +271,7 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"to enemies hit.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"It always has a attack speed of 1 ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,"attack every 3 seconds. All extra",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"firetate is converted to % damage.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"firerate is converted to % damage.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_set_font(fnt_menu_fill);
 			draw_text_transformed_color(infoTextX,350+8.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
@@ -295,7 +295,7 @@ if (menu == Menues.BossLoot)
 		{
 			draw_set_font(fnt_NewNormalText);
 			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"2 Portals will apear in the arena.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"You, your oppenent or any",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"You, your opponent or any",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"projectiles can travel between",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			var portalCd = "these 2 portals once every [" + string(clamp(7*(1-cdCalc),2,7)) + "]";
 			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,portalCd,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -503,7 +503,7 @@ if (menu == Menues.Settings)
 	}
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(70,690,"Reset Game!",0.5,0.5,0,c_red,c_red,c_dkgray,c_dkgray,1);
+	draw_text_transformed_color(70,690,"Reset Progression!",0.5,0.5,0,c_red,c_red,c_dkgray,c_dkgray,1);
 
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);
@@ -582,6 +582,8 @@ if (menu == Menues.Play)
 				draw_text_transformed_color(xText,yText+30*3,"cooldown. The Shadow Assassin is an",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 				draw_text_transformed_color(xText,yText+30*4,"assassin and all abilities reset the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 				draw_text_transformed_color(xText,yText+30*5,"cooldown of the [Left-Click] Ability.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			
+				draw_text_transformed_color(xText,yText+30*19,"You move with the [W] & [A] & [S] & [D] keys.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 			}
 			#endregion
 			#region The Pyromancer
@@ -591,7 +593,7 @@ if (menu == Menues.Play)
 				var yText = 50;
 				var textSize = 0.1;
 				draw_set_font(fnt_menu_fill)
-				draw_text_transformed_color(800,550,"The Pryomancer",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,playerTutorialAlpha);
+				draw_text_transformed_color(800,550,"The Pyromancer",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,playerTutorialAlpha);
 				//
 				draw_set_font(fnt_NewNormalText)
 				draw_text_transformed_color(xText,yText+30*0,"To the left is the hud. Hover over the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
@@ -600,6 +602,8 @@ if (menu == Menues.Play)
 				draw_text_transformed_color(xText,yText+30*3,"cooldown. The Pyromancer is a spellcaster",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 				draw_text_transformed_color(xText,yText+30*4,"which has powerful spells but with high",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 				draw_text_transformed_color(xText,yText+30*5,"cooldowns exept the dash.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			
+				draw_text_transformed_color(xText,yText+30*19,"You move with the [W] & [A] & [S] & [D] keys.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 			}
 			#endregion
 			#region The Blood Knight
@@ -609,7 +613,7 @@ if (menu == Menues.Play)
 				var yText = 50;
 				var textSize = 0.1;
 				draw_set_font(fnt_menu_fill)
-				draw_text_transformed_color(800,550,"The Pryomancer",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,playerTutorialAlpha);
+				draw_text_transformed_color(800,550,"The Blood Knight",0.4,0.4,0,c_red,c_red,c_maroon,c_maroon,playerTutorialAlpha);
 				//
 				draw_set_font(fnt_NewNormalText)
 				draw_text_transformed_color(xText,yText+30*0,"To the left is the hud. Hover over the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
@@ -618,6 +622,8 @@ if (menu == Menues.Play)
 				draw_text_transformed_color(xText,yText+30*3,"cooldown. However the Blood Knight",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 				draw_text_transformed_color(xText,yText+30*4,"has a short cooldown on the [Left click]",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 				draw_text_transformed_color(xText,yText+30*5,"so you use it all the time.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				
+				draw_text_transformed_color(xText,yText+30*19,"You move with the [W] & [A] & [S] & [D] keys.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 			}
 			#endregion
 			draw_set_halign(fa_left);
@@ -721,7 +727,7 @@ if (menu == Menues.Death)
 	}
 }
 //showInfo
-if (global.ShowInfo == true && menu == Menues.Play)
+if (global.deBugg == true && menu == Menues.Play && instance_exists(global.player))
 {
 	var playerHealth = "[Current/Max Health]: [" + string(obj_allPlayer.hp) + "] | ["  + string(obj_allPlayer.maxHp) +"]";
 	var playerDmg = "[Damage]: [" + string(global.damage) + "]";
@@ -738,20 +744,21 @@ if (global.ShowInfo == true && menu == Menues.Play)
 	var yIncreasse = 20;
 	var textSize = 0.075;
 	var xStart = 15;
+	var yStart = 120;
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(xStart,100+1*yIncreasse,"Defensive & Mobility",textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
-	draw_text_transformed_color(xStart,100+2*yIncreasse,playerHealth,textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
-	draw_text_transformed_color(xStart,100+3*yIncreasse,playerSpeed,textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
-	draw_text_transformed_color(xStart,100+4*yIncreasse,playerDashPower,textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
-	draw_text_transformed_color(xStart,100+5*yIncreasse+10,"Damage & Sustain",textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);	
-	draw_text_transformed_color(xStart,100+6*yIncreasse+10,playerDmg,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);	
-	draw_text_transformed_color(xStart,100+7*yIncreasse+10,playerFireRate,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);	
-	draw_text_transformed_color(xStart,100+8*yIncreasse+10,playerLifesteal,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);
-	draw_text_transformed_color(xStart,100+9*yIncreasse+20,"Magic & Misc",textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);	
-	draw_text_transformed_color(xStart,100+10*yIncreasse+20,playerAura,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);	
-	draw_text_transformed_color(xStart,100+11*yIncreasse+20,playerCDRightClick,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);		
-	draw_text_transformed_color(xStart,100+12*yIncreasse+20,playerCDDash,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-	draw_text_transformed_color(xStart,100+13*yIncreasse+20,playerCDUlt,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	draw_text_transformed_color(xStart,yStart+1*yIncreasse,"Defensive & Mobility",textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(xStart,yStart+2*yIncreasse,playerHealth,textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(xStart,yStart+3*yIncreasse,playerSpeed,textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(xStart,yStart+4*yIncreasse,playerDashPower,textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(xStart,yStart+5*yIncreasse+10,"Damage & Sustain",textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);	
+	draw_text_transformed_color(xStart,yStart+6*yIncreasse+10,playerDmg,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);	
+	draw_text_transformed_color(xStart,yStart+7*yIncreasse+10,playerFireRate,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);	
+	draw_text_transformed_color(xStart,yStart+8*yIncreasse+10,playerLifesteal,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(xStart,yStart+9*yIncreasse+20,"Magic & Misc",textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);	
+	draw_text_transformed_color(xStart,yStart+10*yIncreasse+20,playerAura,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);	
+	draw_text_transformed_color(xStart,yStart+11*yIncreasse+20,playerCDRightClick,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);		
+	draw_text_transformed_color(xStart,yStart+12*yIncreasse+20,playerCDDash,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	draw_text_transformed_color(xStart,yStart+13*yIncreasse+20,playerCDUlt,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 }
 if (global.showDD == true)
 {

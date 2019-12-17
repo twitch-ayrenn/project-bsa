@@ -3,6 +3,10 @@ if (gameMaster.menu == Menues.PlayerSelect)
 {
 	gameMaster.menu = Menues.Main;
 }
+if (gameMaster.menu == Menues.BossSelect)
+{
+	gameMaster.menu = Menues.BossLoot;
+}
 if (gameMaster.menu == Menues.BossLoot)
 {
 	gameMaster.menu = Menues.PlayerSelect;
@@ -26,10 +30,6 @@ if (gameMaster.menu == Menues.BossLoot)
 	if (gameMaster.angelSlayerUnlocked == false){with (obj_npc_theAngelSlayer){sprite_index = spr_angelSlayer_outline_locked}}
 	if (gameMaster.gravelingUnlocked == true){with (obj_npc_theGraveling){sprite_index = spr_graveling_outline_unSelected}}
 	if (gameMaster.gravelingUnlocked == false){with (obj_npc_theGraveling){sprite_index = spr_graveling_outline_locked}}
-}
-if (gameMaster.menu == Menues.BossSelect)
-{
-	gameMaster.menu = Menues.BossLoot;
 }
 if (gameMaster.menu == Menues.Settings)
 {
