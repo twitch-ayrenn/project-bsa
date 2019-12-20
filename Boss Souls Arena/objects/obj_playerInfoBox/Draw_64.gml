@@ -141,7 +141,7 @@ if (playerShowInfoFor == Character.BloodKnight)
 {
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(65,450,		  "[Passive]: Your blood armor doubles",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450,		  "[Passive]: Your armor doubles",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*1,"your health and health upgrades.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*2,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*3,"[Left-Click]: Summon bats that kill your",0.075,0.075,0,c_white,c_white,c_white,c_white,1);

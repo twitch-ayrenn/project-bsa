@@ -97,7 +97,7 @@ if (moveType == MovementType.StandingStill)
 			corruptKlot.image_angle = corruptKlot.direction;
 			//Visual
 			corruptKlot.image_alpha = 0.85;
-			corruptKlot.image_blend = c_purple;
+			corruptKlot.image_blend = global.lightBlue;
 			corruptKlot.sprite_index = spr_bloodKlott;
 			corruptKlot.image_xscale = 1.5;
 			corruptKlot.image_yscale = 1.5;
@@ -701,6 +701,10 @@ if (hp <= 0 && phase == maxPhase)
 	}
 	#endregion
 	instance_create_depth(global.arenaMiddleX,-156,depth,obj_rewardChest);
+	if (audio_is_playing(snd_music_victory) == false)
+	{
+		audio_play_sound(snd_music_victory,Prioity.Normal,false);	
+	}
 	gameMaster.menu = Menues.BossSlain;
 	game_save(global.saveFile);
 	instance_destroy();

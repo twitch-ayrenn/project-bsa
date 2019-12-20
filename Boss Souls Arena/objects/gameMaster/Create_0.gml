@@ -123,7 +123,7 @@ global.dD = 1;
 global.orange = make_color_rgb(255,140,0);
 global.goldColor = make_color_rgb(218,165,32);
 global.purple = make_color_rgb(148,0,211);
-global.lightBlue = make_color_rgb(173,216,230);
+global.lightBlue = make_color_rgb(135,206,250);
 global.paleRed = make_color_rgb(178,34,34);
 global.yelloworange = make_color_rgb(255,165,0);
 global.yellowGreen = make_color_rgb(154,205,50);
@@ -176,7 +176,7 @@ global.ultimateAttackKey = ord("E");
 global.deBuggerInfo = false;
 global.showDD = false;
 global.showFps = false;
-global.deBugg = true;
+global.deBugg = false;
 fpsShowTimerStacks = 0;
 fpsShow = "";
 fullscreen = true;
@@ -201,7 +201,7 @@ tutorialFadeOut = false;
 checkOnce = true;
 ////Character progression and select
 //Progress // for a boss its its number -1
-assassinProgress = 30;
+assassinProgress = 1;
 bloodKnightProgress = 1;
 pyromancerProgress = 1;
 shopkeeperProgress = 1;
