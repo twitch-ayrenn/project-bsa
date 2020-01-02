@@ -9,7 +9,7 @@ if (gameMaster.menu == Menues.Main)
 	image_xscale = 0.1955555;
 	image_yscale = -0.11875;
 	visible = true;
-	image_alpha = 0.55;
+	if (image_alpha > 0.55){image_alpha -= 1.1/30;}
 }
 if (gameMaster.menu == Menues.PlayerSelect)
 {
@@ -18,5 +18,5 @@ if (gameMaster.menu == Menues.PlayerSelect)
 	image_xscale = 0.18;
 	image_yscale = -0.11875;
 	visible = true;
-	image_alpha = 0.65;
+	if (image_alpha < 0.80){image_alpha += 1.1/30;}
 }

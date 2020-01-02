@@ -20,7 +20,8 @@
         "317f381d-1312-4bb4-8279-c226a601bc4d",
         "e0f026e6-d1e2-4199-8748-8e6aa8d16283",
         "daca9e11-b3fe-43f1-9dc1-05f433e445b6",
-        "994100af-bb79-4cd3-ba7e-c71905b9f16f"
+        "994100af-bb79-4cd3-ba7e-c71905b9f16f",
+        "6cf970aa-f772-4237-9168-3d6bc03249e7"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_theBloodKnight",

@@ -632,12 +632,87 @@ if (attack == Atks.GooSpawn)
 			}
 		}
 	}
+	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
+	{
+		if (spawnThingOnce == true)
+		{
+			spawnThingOnce = false;
+			var gooGround = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY-135,-5,obj_enemyProjectile);
+			//Main
+			gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+			gooGround.speed = 0;
+			gooGround.image_angle = 90;
+			//Visual
+			gooGround.image_alpha = 0.75;
+			gooGround.image_blend = global.orange;
+			gooGround.sprite_index = spr_gooGround;
+			gooGround.image_xscale = 2;
+			gooGround.image_yscale = 2;
+			gooGround.destroy = false;
+			gooGround.effectType = Effect.NoEffect;
+		}
+		if (spawnThingOnce == false)
+		{
+			with (obj_enemyProjectile)
+			{
+				if (sprite_index == gooSprite)
+				{
+					image_xscale = clamp(image_xscale+0.75,0,2);
+					image_yscale = image_xscale;
+				}
+			}
+		}
+	}
 }
 #endregion
 #region OneShot
 if (attack == Atks.OneShotAttack)
 {
-
+	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
+	{
+		var infernalBall = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+		//Main
+		infernalBall.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		infernalBall.speed = 5;
+		infernalBall.image_angle = infernalBall.direction+90;
+		//Visual
+		infernalBall.image_alpha = 0.85;
+		infernalBall.image_blend = global.orange;
+		infernalBall.sprite_index = spr_fireBall;
+		infernalBall.image_xscale = 3;
+		infernalBall.image_yscale = 3;
+		infernalBall.effectType = Effect.Spark;
+		if (phase == 2 || phase == 3)
+		{
+			var infernalBall = instance_create_depth(global.arenaMiddleX-175,global.arenaMiddleY,depth+1,obj_enemyProjectile);
+			//Main
+			infernalBall.direction = point_direction(global.arenaMiddleX-175,global.arenaMiddleY,obj_allPlayer.x,obj_allPlayer.y);
+			infernalBall.speed = 5;
+			infernalBall.image_angle = infernalBall.direction+90;
+			//Visual
+			infernalBall.image_alpha = 0.85;
+			infernalBall.image_blend = c_yellow;
+			infernalBall.sprite_index = spr_fireBall;
+			infernalBall.image_xscale = 3;
+			infernalBall.image_yscale = 3;
+			infernalBall.effectType = Effect.Spark;
+		}
+		if (phase == 3)
+		{
+			var infernalBall = instance_create_depth(global.arenaMiddleX+175,global.arenaMiddleY,depth+1,obj_enemyProjectile);
+			//Main
+			infernalBall.direction = point_direction(global.arenaMiddleX+175,global.arenaMiddleY,obj_allPlayer.x,obj_allPlayer.y);
+			infernalBall.speed = 5;
+			infernalBall.image_angle = infernalBall.direction+90;
+			//Visual
+			infernalBall.image_alpha = 0.85;
+			infernalBall.image_blend = c_yellow;
+			infernalBall.sprite_index = spr_fireBall;
+			infernalBall.image_xscale = 3;
+			infernalBall.image_yscale = 3;
+			infernalBall.effectType = Effect.Spark;
+		}
+	}
 }
 #endregion
 #region ConeAttack
@@ -828,7 +903,7 @@ if (attack == Atks.RapidFire)
 {
 	if (gameMaster.chosenBoss == Boss.KnightWitchYi)
 	{
-		rapidFireStacks += 10;
+		rapidFireStacks += 8;
 		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
 		//Main
 		gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
@@ -847,6 +922,10 @@ if (attack == Atks.RapidFire)
 	if (gameMaster.chosenBoss == Boss.AngelKnightOscar)
 	{
 		rapidFireStacks += 6;
+	}
+	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
+	{
+		rapidFireStacks += 8;
 	}
 }
 #endregion

@@ -10,3 +10,6 @@ enum Prioity
 	High = 80,
 	VeryHigh = 100,
 }
+audio_sound_gain(snd_music_menu,0,0);
+global.playMenuMusic = true;
+global.playBossMusic = false;

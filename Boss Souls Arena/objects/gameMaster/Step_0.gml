@@ -55,6 +55,8 @@ if (keyboard_check_released(vk_escape))
 	playerTutorialAlpha = 0;
 	quePlayerTutorial = false;
 	checkOnce = true;
+	audio_stop_sound(snd_music_menu);
+	global.playMenuMusic = true;
 	menu = Menues.Main;
 	room_goto(rm_menu);
 }

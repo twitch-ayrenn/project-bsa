@@ -2,9 +2,9 @@
 ////Menues
 //saves
 //dont use Save.dat, always use a new verisor//Save.dat.full0.3
-//Save.dat.Demo0.3
+//global.saveFile = "Save.alpha.0.65"; gaygang release
 menu = 0;
-global.saveFile = "Save.alpha.0.5";
+global.saveFile = "Save.alpha.0.62";
 //if (file_exists(global.saveFile) == true)
 //{
 //	game_load(global.saveFile);
@@ -117,7 +117,6 @@ global.arena = rm_arena;
 global.demo = false;
 //save
 //game balance
-global.projectileHit = 0;//trash
 global.dD = 1;
 //colors
 global.orange = make_color_rgb(255,140,0);
@@ -152,6 +151,7 @@ settingsColor = global.darkYellow;
 settingsSize = 1;
 //settings
 global.musicOn = true;
+global.musicVolume = 0.35;
 global.soundOn = true;
 global.ambientOn = true;
 global.ShowInfo = false;
@@ -175,8 +175,8 @@ global.ultimateAttackKey = ord("E");
 //
 global.deBuggerInfo = false;
 global.showDD = false;
-global.showFps = false;
-global.deBugg = false;
+global.showFps = true;
+global.deBugg = true;
 fpsShowTimerStacks = 0;
 fpsShow = "";
 fullscreen = true;
@@ -201,9 +201,9 @@ tutorialFadeOut = false;
 checkOnce = true;
 ////Character progression and select
 //Progress // for a boss its its number -1
-assassinProgress = 1;
-bloodKnightProgress = 1;
-pyromancerProgress = 1;
+assassinProgress = 25;
+bloodKnightProgress = 25;
+pyromancerProgress = 25;
 shopkeeperProgress = 1;
 theRedWarriorProgress = 1;
 plaugeWalkerProgress = 1;

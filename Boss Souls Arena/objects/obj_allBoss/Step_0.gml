@@ -26,6 +26,12 @@ if (state == BossStates.BeforeFight)
 {
 	sprite_index = idleSprite;
 }
+if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
+{
+	rotation1 -= 2;
+	rotation2 += 1;
+	rotation3 -= 1;
+}
 #endregion
 #region Fighting
 if (state == BossStates.Fighting)
@@ -78,6 +84,11 @@ if (moveType == MovementType.StandingStill)
 	{
 		x = global.arenaMiddleX;
 		y = global.arenaMiddleY-140;
+	}
+	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
+	{
+		x = global.arenaMiddleX;
+		y = global.arenaMiddleY;
 	}
 }
 #endregion
@@ -286,6 +297,62 @@ if (moveType == MovementType.StandingStill)
 		}
 	}
 	#endregion
+	#region Demon General Rektaar
+	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
+	{
+		if (rapidFireStacks > 0 && canRapidAttack == true)
+		{
+			canRapidAttack = false;
+			rapidFireStacks -= 1;
+		
+			var fireBalls = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			fireBalls.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+			fireBalls.speed = 6;
+			fireBalls.image_angle = fireBalls.direction+90;
+			//Visual
+			fireBalls.image_alpha = 0.85;
+			fireBalls.image_blend = global.orange;
+			fireBalls.sprite_index = spr_fireBall;
+			fireBalls.image_xscale = 1;
+			fireBalls.image_yscale = 1;
+			fireBalls.effectType = Effect.Flare;
+			
+			if (phase == 2 || phase == 3)
+			{
+				var fireBalls2 = instance_create_depth(global.arenaMiddleX-175,global.arenaMiddleY,depth+1,obj_enemyProjectile);
+				//Main
+				fireBalls2.direction = point_direction(global.arenaMiddleX-175,global.arenaMiddleY,obj_allPlayer.x,obj_allPlayer.y);
+				fireBalls2.speed = 6;
+				fireBalls2.image_angle = fireBalls2.direction+90;
+				//Visual
+				fireBalls2.image_alpha = 0.85;
+				fireBalls2.image_blend = c_yellow;
+				fireBalls2.sprite_index = spr_fireBall;
+				fireBalls2.image_xscale = 1;
+				fireBalls2.image_yscale = 1;
+				fireBalls2.effectType = Effect.Flare;
+			}
+			if (phase == 3)
+			{			
+				var fireBalls3 = instance_create_depth(global.arenaMiddleX+175,global.arenaMiddleY,depth+1,obj_enemyProjectile);
+				//Main
+				fireBalls3.direction = point_direction(global.arenaMiddleX+175,global.arenaMiddleY,obj_allPlayer.x,obj_allPlayer.y);
+				fireBalls3.speed = 6;
+				fireBalls3.image_angle = fireBalls3.direction+90;
+				//Visual
+				fireBalls3.image_alpha = 0.85;
+				fireBalls3.image_blend = c_yellow;
+				fireBalls3.sprite_index = spr_fireBall;
+				fireBalls3.image_xscale = 1;
+				fireBalls3.image_yscale = 1;
+				fireBalls3.effectType = Effect.Flare;
+			}
+		
+			alarm[2] = (0.8)*30;
+		}
+	}
+	#endregion
 #endregion
 #region Attacks
 if(chooseAnAttack == true)
@@ -319,6 +386,9 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && phase == 1){attack = choose(Atks.ConeAttack,Atks.CircleAttack,Atks.BeamAttack);}
 	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && phase == 2){attack = choose(Atks.ConeAttack,Atks.CircleAttack,Atks.BeamAttack,Atks.HealAttack);}
 	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && phase == 3){attack = choose(Atks.ConeAttack,Atks.CircleAttack,Atks.BeamAttack,Atks.HealAttack,Atks.RapidFire);}
+	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar && phase == 1){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.GooSpawn);}
+	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar && phase == 2){attack = choose(Atks.BeamAttack,Atks.OneShotAttack,Atks.RapidFire,Atks.GooSpawn);}
+	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar && phase == 3){attack = choose(Atks.BeamAttack,Atks.OneShotAttack,Atks.RapidFire);}
 	#endregion
 	if (attack == Atks.NormalShot)
 	{
@@ -511,6 +581,27 @@ if(chooseAnAttack == true)
 			indicator.follow = true;
 		}
 		#endregion
+		#region Demon General
+		if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
+		{
+			var beam = instance_create_depth(global.arenaMiddleX-400,global.arenaMiddleY,depth+1,obj_enemyProjectile);
+			//Main
+			beam.image_angle = 0;
+			//Visual
+			beam.image_alpha = 0.85;
+			beam.image_blend = global.orange;
+			beam.sprite_index = spr_beam;
+			beam.image_xscale = 0.5;
+			beam.image_yscale = 40;
+			beam.maxSize = 2;
+			beam.minSize = 0.25;
+			beam.stickOn = true;
+			beam.beamChase = true;
+			beam.turningSpeed = 15;
+			beam.destroy = true;
+			beam.effectType = Effect.NoEffect;
+		}
+		#endregion
 	}
 	if (attack == Atks.TeleportAttack)
 	{
@@ -701,9 +792,12 @@ if (hp <= 0 && phase == maxPhase)
 	}
 	#endregion
 	instance_create_depth(global.arenaMiddleX,-156,depth,obj_rewardChest);
-	if (audio_is_playing(snd_music_victory) == false)
+	if (audio_is_playing(snd_music_victory) == false && global.musicOn == true)
 	{
-		audio_play_sound(snd_music_victory,Prioity.Normal,false);	
+		audio_stop_sound(snd_music_victory);
+		audio_play_sound(snd_music_victory,10,true);
+		audio_sound_gain(snd_music_victory,0,0);
+		audio_sound_gain(snd_music_victory,global.musicVolume,(5)*1000);
 	}
 	gameMaster.menu = Menues.BossSlain;
 	game_save(global.saveFile);

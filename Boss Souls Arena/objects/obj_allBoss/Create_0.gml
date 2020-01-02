@@ -16,8 +16,8 @@ phase3Hp = 0; phase3Ms = 0; phase3Dmg = 0;
 phase4Hp = 0; phase4Ms = 0; phase4Dmg = 0;
 phase5Hp = 0; phase5Ms = 0; phase5Dmg = 0;
 phase6Hp = 0; phase6Ms = 0; phase6Dmg = 0;
-tier1Hp = 400; tier2Hp = 700; tier3Hp = 1100;
-tier4Hp = 1600; tier5Hp = 2100; tier6Hp = 2500;
+tier1Hp = 400; tier2Hp = 700; tier3Hp = 1000;
+tier4Hp = 1300; tier5Hp = 1700; tier6Hp = 3500;
 hp = 0;
 maxHp = hp;
 global.bossDamage = 10;
@@ -364,6 +364,37 @@ isHit = false;
 			//boss specifc
 		}
 		#endregion
+		#region Demon General Rektaar
+		if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
+		{
+			//stats
+			phase1Hp = tier3Hp*0.20; phase1Ms = 0.5; phase1Dmg = 25;
+			phase2Hp = tier3Hp*0.45; phase2Ms = 0.5; phase2Dmg = 30;
+			phase3Hp = tier3Hp*0.35; phase3Ms = 0.5; phase3Dmg = 35;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.StandingStill;
+			//attacks and phase
+			tier = 3;
+			phase = 1;
+			maxPhase = 3;
+			//visual
+			size = 1;
+			alpha = 1;
+			idleSprite = spr_boss_demonGeneral_idle;
+			beamSprite = spr_boss_demonGeneral_beam;
+			oneShotSprite = spr_boss_demonGeneral_oneShot;
+			gooSprite = spr_boss_demonGeneral_goo;
+			rapidFireSprite = spr_boss_demonGeneral_rapidFire;
+			//Specific
+			x = global.arenaMiddleX;
+			y = global.arenaMiddleY;
+			rotation1 = 0;
+			rotation2 = 0;
+			rotation3 = 0;
+		}
+		#endregion
 	#endregion
 	#region Tier 4
 	
@@ -395,6 +426,7 @@ isHit = false;
 	#endregion
 #endregion
 #region Finalize
+global.playBossMusic = true;
 sprite_index = normalSprite;
 actualSpeed = moveSpeed;
 normalMoveSpeed = moveSpeed;

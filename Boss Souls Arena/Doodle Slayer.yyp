@@ -247,6 +247,14 @@
             }
         },
         {
+            "Key": "06bc862b-9aac-4a71-bc19-261ed3fbe785",
+            "Value": {
+                "id": "e342a537-4682-4ff0-a3ee-022cee105c8f",
+                "resourcePath": "sprites\\spr_boss_demonGeneral_beam\\spr_boss_demonGeneral_beam.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "075b09c7-22ea-4c39-a54a-949df3d6d3c0",
             "Value": {
                 "id": "b64aa5b9-0a8e-4fff-b2e3-41a5c8f14608",
@@ -671,6 +679,14 @@
             }
         },
         {
+            "Key": "176bfb52-9c08-42ea-93dd-432f25b1a85e",
+            "Value": {
+                "id": "71d794ef-bdd2-4e32-8d33-0c41a82b431e",
+                "resourcePath": "views\\176bfb52-9c08-42ea-93dd-432f25b1a85e.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "17958073-e0a3-4498-938e-6508a16386b0",
             "Value": {
                 "id": "7986c16f-8182-4dd9-9f5e-8b317a5d3016",
@@ -691,6 +707,14 @@
             "Value": {
                 "id": "4b097a81-44ff-4525-9289-6eb035ca4e8b",
                 "resourcePath": "sprites\\spr_npc_theWarrior_normal\\spr_npc_theWarrior_normal.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "197fa949-35a0-486b-83d6-cee04d49edab",
+            "Value": {
+                "id": "5b09d88b-4dd1-44ff-8c5e-e3f1fd46fa49",
+                "resourcePath": "sprites\\spr_boss_demonGeneral_oneShot\\spr_boss_demonGeneral_oneShot.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -804,6 +828,22 @@
                 "id": "b5b41231-1236-4cd5-9847-06e75f9a6b71",
                 "resourcePath": "views\\1d1160f7-c9e3-4f00-bf38-b5efce88fc28.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "1d37a428-251e-4905-94e4-74ca06e5caf7",
+            "Value": {
+                "id": "427e0120-32cc-41f6-be14-e8e9e093e79c",
+                "resourcePath": "sprites\\spr_demonPortal_2\\spr_demonPortal_2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "1d5b20ad-17b0-4220-ba62-8024b693f24a",
+            "Value": {
+                "id": "7fb17ba2-bfbc-49ae-89bb-f2419072d3a5",
+                "resourcePath": "sprites\\spr_boss_demonGeneral_rapidFire\\spr_boss_demonGeneral_rapidFire.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1599,14 +1639,6 @@
             }
         },
         {
-            "Key": "3b0bce52-218c-48a8-aa02-4a87900e851f",
-            "Value": {
-                "id": "681b0274-b35c-42dd-9edc-aac953f46a3b",
-                "resourcePath": "sprites\\spr_boss_theGraveKeeper\\spr_boss_theGraveKeeper.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "3b92665d-f3eb-4860-a33b-cd1c9f63e365",
             "Value": {
                 "id": "415848ea-eb09-4967-b89e-98f34fa1f272",
@@ -1844,6 +1876,14 @@
                 "id": "1963caa3-8801-4c94-9c04-d0f65ad770f3",
                 "resourcePath": "objects\\obj_prop_keg\\obj_prop_keg.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "47368899-b25f-4a4e-b80e-a87d49c03bd7",
+            "Value": {
+                "id": "ece5acc8-ac94-49b1-af6e-d55e39b52c31",
+                "resourcePath": "sprites\\spr_demonPortal_3\\spr_demonPortal_3.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2759,6 +2799,14 @@
             }
         },
         {
+            "Key": "6cf970aa-f772-4237-9168-3d6bc03249e7",
+            "Value": {
+                "id": "c5874254-d5b0-437c-8e3a-d6aeaf9c92c9",
+                "resourcePath": "sprites\\spr_bloodling\\spr_bloodling.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6cfd1398-6c3c-4e79-90f0-57466cb3e849",
             "Value": {
                 "id": "6e019a5d-b5d1-4fa7-b728-2b534b1f24b4",
@@ -3127,6 +3175,14 @@
             }
         },
         {
+            "Key": "7b20ad83-7234-4436-84ac-6bd4aa03fe82",
+            "Value": {
+                "id": "ef0b74ab-93ec-42d7-9bec-461b2fd136cd",
+                "resourcePath": "sprites\\spr_boss_demonGeneral_goo\\spr_boss_demonGeneral_goo.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7b72cc62-df96-4de3-a10e-847a50418347",
             "Value": {
                 "id": "c0c9f9ec-59c6-4730-83db-677cec5fb7db",
@@ -3476,14 +3532,6 @@
                 "id": "19671f9b-142f-4bdb-bd58-31d245e55011",
                 "resourcePath": "objects\\obj_fightCard_angelKnightOscar\\obj_fightCard_angelKnightOscar.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "88f9b9c0-58fa-4d3d-89b0-8f3866813abd",
-            "Value": {
-                "id": "7a4535d6-4aff-401d-bd31-1a33f0773c43",
-                "resourcePath": "sprites\\spr_fight_t3_InfernalWisp\\spr_fight_t3_InfernalWisp.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -6119,14 +6167,6 @@
             }
         },
         {
-            "Key": "ed002d85-cc49-4768-943c-8e1bbd127299",
-            "Value": {
-                "id": "5a680e3e-2afd-483f-8454-1c487b9a8f42",
-                "resourcePath": "sprites\\spr_fight_t5_deathGeneral\\spr_fight_t5_deathGeneral.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "ed85bc5a-441b-4663-83b3-f93e71df0e6c",
             "Value": {
                 "id": "78722575-9590-4c3f-bb62-e16af1c46017",
@@ -6367,6 +6407,14 @@
             }
         },
         {
+            "Key": "f751b6e1-1705-468e-a183-d8481ab9ab55",
+            "Value": {
+                "id": "27de5e0e-8085-4c22-9e88-211cac0c9bf7",
+                "resourcePath": "sprites\\spr_demonPortal_1\\spr_demonPortal_1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "f7621fe8-83b4-4a4f-aa7a-aaf438f6a2c6",
             "Value": {
                 "id": "ade018a6-9d3d-49dc-9b01-4429370f44ad",
@@ -6419,6 +6467,14 @@
             "Value": {
                 "id": "1b4356b5-1566-415c-99e5-9447c4eed0cb",
                 "resourcePath": "sprites\\spr_boss_flameWisp_chase\\spr_boss_flameWisp_chase.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "fa2622d9-f19e-4780-8034-f7c6c2a8c2e8",
+            "Value": {
+                "id": "617fd9d1-6e10-4e4f-a9e1-66f89fdc219e",
+                "resourcePath": "sprites\\spr_boss_demonGeneral_idle\\spr_boss_demonGeneral_idle.yy",
                 "resourceType": "GMSprite"
             }
         },

@@ -28,3 +28,8 @@ if (blowRoofUp == true)
 yUpDown += clamp(changer,-upDownMax,upDownMax);
 if (yUpDown == 2){changer *= -1;}
 if (yUpDown == -2){changer *= -1;}
+if (phase == 3)
+{
+	yUpFade -= 2.5/30;
+	alphaUpFade -= 0.25/30;
+}

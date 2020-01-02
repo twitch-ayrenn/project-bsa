@@ -34,16 +34,19 @@ if (gameMaster.menu == Menues.BossLoot)
 if (gameMaster.menu == Menues.Settings)
 {
 	gameMaster.menu = Menues.Main;
+	game_save(global.saveFile);
 }
 if (gameMaster.menu == Menues.BossSlain && gameMaster.queLeave == false)
 {
 	gameMaster.queLeave = true;
 	gameMaster.leaveTranistionAlpha = 0;
+	global.playMenuMusic = true;
 }
 if (gameMaster.menu == Menues.Death && gameMaster.queLeave == false)
 {
 	gameMaster.queLeave = true;
 	gameMaster.leaveTranistionAlpha = 0;
+	global.playMenuMusic = true;
 }
 //sound
 if (global.soundOn == true)

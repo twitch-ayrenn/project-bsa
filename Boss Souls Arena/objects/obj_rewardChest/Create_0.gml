@@ -13,3 +13,5 @@ yUpDown = 0;
 changer = 0.5;
 upDownMax = 2;
 itemScale = 1;
+yUpFade = 0;
+alphaUpFade = 1;

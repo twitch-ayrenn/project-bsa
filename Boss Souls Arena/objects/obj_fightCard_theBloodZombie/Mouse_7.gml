@@ -61,3 +61,7 @@ if (global.tutorial == true)
 	global.tutorialBoss = true;
 	global.tutorialPlayer = false;
 }
+if (audio_is_playing(snd_music_victory) == true)
+{
+	audio_sound_gain(snd_music_menu,0,(0.25)*1000);
+}

@@ -33,8 +33,9 @@ if (menu == Menues.BossLoot)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(30,30,"Select Loot",1.2,1.2,0,global.orange,global.orange,c_yellow,c_yellow,1);
 
-	draw_text_transformed_color(1075,110,"Items",0.6,0.6,0,global.orange,global.orange,c_yellow,c_yellow,1);
-	
+	draw_set_halign(fa_center);
+	draw_text_transformed_color(1160,110,"Your Items",0.6,0.6,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_set_halign(fa_left);
 	var itemXIncrease = 120;
 	draw_text_transformed_color(525,710,"Item Slots",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	if(global.maxItemSlots >= 1){draw_text_transformed_color(435+1*itemXIncrease,855,"Item I",0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);}
@@ -62,7 +63,7 @@ if (menu == Menues.BossLoot)
 	var cdText = "Cooldown reduction: " + string(cdCalc*100) + "%";
 	if (global.ShowInfo == true)
 	{
-		shoveInX = 0;
+		shoveInX = 25;
 		itemTextSize = 0.075;
 		itemTextSeparationY = 22;
 		draw_text_transformed_color(30,330,"Stats",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
@@ -80,7 +81,7 @@ if (menu == Menues.BossLoot)
 	}
 	if (global.ShowInfo == false)
 	{
-		shoveInX = -270;
+		shoveInX = -270;//270
 		itemTextSize = 0.1;
 		itemTextSeparationY = 25;
 	}
@@ -94,12 +95,12 @@ if (menu == Menues.BossLoot)
 		draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"clicking on it.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"Hover over an [Item] to see info",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"about that [Item].",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"Clear Selected [Items] by ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,"pressing the \"Clear Selected Items\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"button.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		draw_set_font(fnt_menu_fill);
 		//draw_text_transformed_color(infoTextX,350+7.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 		draw_set_font(fnt_NewNormalText);
-		draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -108,7 +109,7 @@ if (menu == Menues.BossLoot)
 		draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		
 		draw_set_font(fnt_menu_fill);
-		var ItemName = "Item Info: " + "No item selected"
+		var ItemName = "No Selected Item"
 		draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1)
 	}
 	
@@ -567,43 +568,46 @@ if (menu == Menues.Play)
 			draw_sprite_ext(spr_tutorial_player,0,0,0,0.8333*10,0.8333*10,0,c_white,playerTutorialAlpha - 0.15);
 			draw_set_halign(fa_center);
 			#region The Shadow Assassin
+			var xText = 800;
+			var yText = 40;
+			var textSize = 0.095;
+			var TSY = 25;
 			if (chosenClass == Character.ShadowAssassin)
 			{
-				var xText = 800;
-				var yText = 50;
-				var textSize = 0.1;
+				
 				draw_set_font(fnt_menu_fill)
 				draw_text_transformed_color(800,550,"The Shadow Assassin",0.4,0.4,0,c_fuchsia,c_fuchsia,c_purple,c_purple,playerTutorialAlpha);
 				//
 				draw_set_font(fnt_NewNormalText)
-				draw_text_transformed_color(xText,yText+30*0,"To the left is the hud. Hover over the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+30*1,"hud with your mouse to see your abilities.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+30*2,"Using an ability puts that ability on",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+30*3,"cooldown. The Shadow Assassin is an",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+30*4,"assassin and all abilities reset the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+30*5,"cooldown of the [Left-Click] Ability.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			
-				draw_text_transformed_color(xText,yText+30*19,"You move with the [W] & [A] & [S] & [D] keys.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*0,"To the left is your hud. It displays all",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*1,"your cooldowns on your abilities.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*2,"Hover over the hud with your mouse",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*3,"to see your abilities.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*4,"Using an ability puts that ability on",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*5,"cooldown. You are an assassin and all",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*6,"your abilities allow you to recast your",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*7,"[Left-Click] ability again. Teleport inside",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*8,"your enemies to maxemize your damage.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*9,"You move with [W] & [A] & [S] & [D].",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 			}
 			#endregion
 			#region The Pyromancer
 			if (chosenClass == Character.Pyromancer)
 			{
-				var xText = 800;
-				var yText = 50;
-				var textSize = 0.1;
 				draw_set_font(fnt_menu_fill)
 				draw_text_transformed_color(800,550,"The Pyromancer",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,playerTutorialAlpha);
 				//
 				draw_set_font(fnt_NewNormalText)
-				draw_text_transformed_color(xText,yText+30*0,"To the left is the hud. Hover over the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+30*1,"hud with your mouse to see your abilities.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+30*2,"Using an ability puts that ability on",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+30*3,"cooldown. The Pyromancer is a spellcaster",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+30*4,"which has powerful spells but with high",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+30*5,"cooldowns exept the dash.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			
-				draw_text_transformed_color(xText,yText+30*19,"You move with the [W] & [A] & [S] & [D] keys.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*0,"To the left is your hud. It displays all",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*1,"your cooldowns on your abilities.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*2,"Hover over the hud with your mouse",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*3,"to see your abilities.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*4,"Using an ability puts that ability on",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*5,"cooldown. You are a spellcaster which",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*6,"which has powerful spells but with high",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*7,"cooldowns. Your dash however is on a low",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*8,"cooldown so use it often.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*9,"You move with [W] & [A] & [S] & [D].",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 			}
 			#endregion
 			#region The Blood Knight
@@ -616,6 +620,17 @@ if (menu == Menues.Play)
 				draw_text_transformed_color(800,550,"The Blood Knight",0.4,0.4,0,c_red,c_red,c_maroon,c_maroon,playerTutorialAlpha);
 				//
 				draw_set_font(fnt_NewNormalText)
+				draw_text_transformed_color(xText,yText+TSY*0,"To the left is your hud. It displays all",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*1,"your cooldowns on your abilities.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*2,"Hover over the hud with your mouse",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*3,"to see your abilities.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*4,"Using an ability puts that ability on",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*5,"cooldown. As a summoner you can summon",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*6,"your bats all the time with your",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*7,"[Left-Click] ability.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*8,"cooldown so use it often.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*9,"You move with [W] & [A] & [S] & [D].",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				
 				draw_text_transformed_color(xText,yText+30*0,"To the left is the hud. Hover over the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 				draw_text_transformed_color(xText,yText+30*1,"hud with your mouse to see your abilities.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 				draw_text_transformed_color(xText,yText+30*2,"Using an ability puts that ability on",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);

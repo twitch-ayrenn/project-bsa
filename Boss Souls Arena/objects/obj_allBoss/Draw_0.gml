@@ -102,35 +102,20 @@ if (drawArea == true)
 	#endregion
 }
 #endregion
-if (gameMaster.chosenBoss == Boss.TheMadWitches)
+if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
 {
-	var fakeAlpha = 0.65;
-	if (attack == Atks.BeamAttack)
+	if (phase == 2 || phase == 3)
 	{
-		if (position == 1){draw_sprite_ext(spr_theOrangeWitch_beam,image_index,rightX,rightY,-1,size,0,c_white,fakeAlpha);}
-		if (position == 1){draw_sprite_ext(spr_theYellowWitch_beam,image_index,topX,topY,size,size,0,c_white,fakeAlpha);}
-		if (position == 2){draw_sprite_ext(spr_boss_theGreenWitch_beam,image_index,rightX,rightY,-1,size,0,c_white,fakeAlpha);}
-		if (position == 2){draw_sprite_ext(spr_theOrangeWitch_beam,image_index,leftX,leftY,1,size,0,c_white,fakeAlpha);}
-		if (position == 3){draw_sprite_ext(spr_boss_theGreenWitch_beam,image_index,leftX,leftY,1,size,0,c_white,fakeAlpha);}
-		if (position == 3){draw_sprite_ext(spr_theYellowWitch_beam,image_index,rightX,rightY,-1,size,0,c_white,fakeAlpha);}
+		draw_sprite_ext(spr_demonPortal_1,0,global.arenaMiddleX-175,global.arenaMiddleY,1,1,rotation1,c_white,0.85);
+		draw_sprite_ext(spr_demonPortal_2,0,global.arenaMiddleX-175,global.arenaMiddleY,1,1,rotation2,c_white,0.85);
+		draw_sprite_ext(spr_demonPortal_3,0,global.arenaMiddleX-175,global.arenaMiddleY,1,1,rotation3,c_white,0.85);
 	}
-	if (attack == Atks.GooSpawn)
-	{
-		if (position == 1){draw_sprite_ext(spr_theOrangeWitch_goo,image_index,rightX,rightY,-1,size,0,c_white,fakeAlpha);}
-		if (position == 1){draw_sprite_ext(spr_theYellowWitch_goo,image_index,topX,topY,size,size,0,c_white,fakeAlpha);}
-		if (position == 2){draw_sprite_ext(spr_boss_theGreenWitch_goo,image_index,rightX,rightY,-1,size,0,c_white,fakeAlpha);}
-		if (position == 2){draw_sprite_ext(spr_theOrangeWitch_goo,image_index,leftX,leftY,1,size,0,c_white,fakeAlpha);}
-		if (position == 3){draw_sprite_ext(spr_boss_theGreenWitch_goo,image_index,leftX,leftY,1,size,0,c_white,fakeAlpha);}
-		if (position == 3){draw_sprite_ext(spr_theYellowWitch_goo,image_index,rightX,rightY,-1,size,0,c_white,fakeAlpha);}
-	}
-	if (attack == Atks.RapidFire)
-	{
-		if (position == 1){draw_sprite_ext(spr_theOrangeWitch_rapidFire,image_index,rightX,rightY,-1,size,0,c_white,fakeAlpha);}
-		if (position == 1){draw_sprite_ext(spr_theYellowWitch_rapidFire,image_index,topX,topY,size,size,0,c_white,fakeAlpha);}
-		if (position == 2){draw_sprite_ext(spr_boss_theGreenWitch_rapidFire,image_index,rightX,rightY,-1,size,0,c_white,fakeAlpha);}
-		if (position == 2){draw_sprite_ext(spr_theOrangeWitch_rapidFire,image_index,leftX,leftY,1,size,0,c_white,fakeAlpha);}
-		if (position == 3){draw_sprite_ext(spr_boss_theGreenWitch_rapidFire,image_index,leftX,leftY,1,size,0,c_white,fakeAlpha);}
-		if (position == 3){draw_sprite_ext(spr_theYellowWitch_rapidFire,image_index,rightX,rightY,-1,size,0,c_white,fakeAlpha);}
+	
+	if (phase == 3)
+	{	
+		draw_sprite_ext(spr_demonPortal_1,0,global.arenaMiddleX+175,global.arenaMiddleY,1,1,rotation1+35,c_white,0.85);
+		draw_sprite_ext(spr_demonPortal_2,0,global.arenaMiddleX+175,global.arenaMiddleY,1,1,rotation2+35,c_white,0.85);
+		draw_sprite_ext(spr_demonPortal_3,0,global.arenaMiddleX+175,global.arenaMiddleY,1,1,rotation3+35,c_white,0.85);
 	}
 }
 if (isHit == false){draw_self();}

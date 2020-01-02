@@ -45,6 +45,11 @@ if (stickOn == true)
 	x = obj_allBoss.x;	
 	y = obj_allBoss.y;
 	depth = obj_allBoss.depth+1;
+	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
+	{
+		x = global.arenaMiddleX-400;	
+		y = global.arenaMiddleY;
+	}
 }
 if (beamChase == true)
 {
