@@ -1,8 +1,8 @@
 /// @description Insert description here
 #region Bosses
-if (gameMaster.chosenBoss == Boss.BloodKingVarus)
+if (gameMaster.chosenBoss == Boss.Gravekeeper)
 {
-	draw_sprite_ext(spr_blackOut,0,0,0,0.833,0.833,0,c_black,blackOutAlpha);
+	draw_sprite_ext(spr_darkness,0,0,0,2,2,0,c_black,blackOutAlpha);
 }
 #endregion
 #region AllBosses

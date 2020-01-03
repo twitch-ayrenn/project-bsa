@@ -69,7 +69,7 @@
             "isLocked": false,
             "name": "Layer 1",
             "opacity": 100,
-            "visible": false
+            "visible": true
         }
     ],
     "origin": 4,

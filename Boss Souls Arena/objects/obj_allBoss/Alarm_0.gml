@@ -4,6 +4,15 @@ randomize();
 if (attack == Atks.BeamAttack || attack == Atks.OneShotAttack){with(obj_camera){shake_remain = 5;}}
 if (attack == Atks.CircleAttack && gameMaster.chosenBoss == Boss.AngelSlayerRekZul){with(obj_camera){shake_remain = 5;}}
 #endregion
+#region Before Boss Attacks
+if (gameMaster.chosenBoss == Boss.Gravekeeper)
+{
+	x = choose(global.arenaMiddleX,global.arenaMiddleX-125,global.arenaMiddleX+125);
+	y = choose(global.arenaMiddleY,global.arenaMiddleY-125,global.arenaMiddleY+125);
+	if (x == global.arenaMiddleX && y == global.arenaMiddleY){x = choose(global.arenaMiddleX-125,global.arenaMiddleX+125);}
+	alpha = 0.75;
+}
+#endregion
 #region Tier1
 #region NormalAttacks
 if (attack == Atks.NormalShot)
@@ -921,7 +930,7 @@ if (attack == Atks.RapidFire)
 	}
 	if (gameMaster.chosenBoss == Boss.AngelKnightOscar)
 	{
-		rapidFireStacks += 6;
+		rapidFireStacks += 5;
 	}
 	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
 	{
@@ -987,6 +996,183 @@ if (attack == Atks.TauntAttack)
 		gooGround.effectType = Effect.NoEffect;
 		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
 	}
+}
+#endregion
+#region Heal Attack
+if (attack == Atks.HealAttack)
+{
+	
+}
+#endregion
+#endregion
+#region Tier4
+#region NormalAttacks
+if (attack == Atks.NormalShot)
+{
+	if (gameMaster.chosenBoss == Boss.Gravekeeper)
+	{
+		obj_bossMeleeWeapon.state = MeleeWeaponStates.SpinOnce;
+		obj_bossMeleeWeapon.spinTimes = phase + 1;
+	}
+}
+#endregion
+#region CircleAttacks
+if (attack == Atks.CircleAttack)
+{
+	
+}
+#endregion
+#region GooSpawn
+if (attack == Atks.GooSpawn)
+{
+	if (gameMaster.chosenBoss == Boss.BloodKnightDavid)
+	{
+		var gooGround = instance_create_depth(obj_indicator.x,obj_indicator.y,-5,obj_enemyProjectile);
+		//Main
+		gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		gooGround.speed = 0;
+		gooGround.image_angle = irandom_range(0,360);
+		//Visual
+		gooGround.image_alpha = 1;
+		gooGround.image_blend = c_teal;
+		gooGround.sprite_index = spr_gooGround;
+		gooGround.image_xscale = 2.5;
+		gooGround.image_yscale = 2.5;
+		gooGround.destroy = true;
+		gooGround.effectType = Effect.NoEffect;
+		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
+	}
+}
+#endregion
+#region OneShot
+if (attack == Atks.OneShotAttack)
+{
+	if (gameMaster.chosenBoss == Boss.Gravekeeper)
+	{
+		var infernalBall = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+		//Main
+		infernalBall.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		infernalBall.speed = 5;
+		infernalBall.image_angle = infernalBall.direction+90;
+		//Visual
+		infernalBall.image_alpha = 0.8;
+		infernalBall.image_blend = c_gray;
+		infernalBall.sprite_index = spr_graveScythe_projectile;
+		infernalBall.image_xscale = 1;
+		infernalBall.image_yscale = 1;
+		infernalBall.effectType = Effect.NoEffect;
+	}
+	if (gameMaster.chosenBoss == Boss.BloodKnightDavid)
+	{
+		var infernalBall = instance_create_depth(obj_allPlayer.x,obj_allPlayer.y-200,depth+1,obj_enemyProjectile);
+		//Main
+		infernalBall.direction = point_direction(obj_allPlayer.x,obj_allPlayer.y-200,obj_allPlayer.x,obj_allPlayer.y);
+		infernalBall.speed = 8;
+		infernalBall.image_angle = infernalBall.direction+90;
+		//Visual
+		infernalBall.image_alpha = 0.8;
+		infernalBall.image_blend = c_red;
+		infernalBall.sprite_index = spr_bloodKlott;
+		infernalBall.image_xscale = 3;
+		infernalBall.image_yscale = 3;
+		infernalBall.effectType = Effect.Flare;
+	}
+}
+#endregion
+#region ConeAttack
+if (attack == Atks.ConeAttack)
+{
+	if (gameMaster.chosenBoss == Boss.Gravekeeper)
+	{	
+		var coneWide = 220;
+		var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.5;
+		var coneAmount = 22;
+		repeat(coneAmount)
+		{
+			var fireBolt = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			fireBolt.direction = coneAtkFW;
+			fireBolt.speed = 3;
+			fireBolt.image_angle = fireBolt.direction+90;
+			//Visual
+			fireBolt.image_alpha = 0.85;
+			fireBolt.sprite_index = spr_graveScythe_projectile;
+			fireBolt.image_blend = c_aqua;
+			fireBolt.image_xscale = 0.55;
+			fireBolt.image_yscale = 0.55;
+			fireBolt.effectType = Effect.NoEffect;
+			coneAtkFW += (coneWide/coneAmount);
+		}
+	}
+	if (gameMaster.chosenBoss == Boss.BloodKnightDavid)
+	{	
+		var coneWide = 45;
+		var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.5;
+		var coneAmount = 20;
+		repeat(coneAmount)
+		{
+			var fireBolt = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			fireBolt.direction = coneAtkFW;
+			fireBolt.speed = 5;
+			fireBolt.image_angle = fireBolt.direction+90;
+			//Visual
+			fireBolt.image_alpha = 0.85;
+			fireBolt.sprite_index = spr_bloodKlott;
+			fireBolt.image_blend = c_aqua;
+			fireBolt.image_xscale = 1;
+			fireBolt.image_yscale = 1;
+			fireBolt.effectType = Effect.Flare;
+			coneAtkFW += (coneWide/coneAmount);
+		}
+	}
+}
+#endregion
+#region ChaseAttack
+if (attack == Atks.ChaseAttack)
+{
+	
+}
+#endregion
+#region BeamAttack
+if (attack == Atks.BeamAttack)
+{
+	
+}
+#endregion
+#region RapidFire
+if (attack == Atks.RapidFire)
+{
+	if (gameMaster.chosenBoss == Boss.Gravekeeper)
+	{
+		rapidFireStacks += 8;
+	}
+	if (gameMaster.chosenBoss == Boss.BloodKnightDavid)
+	{
+		rapidFireStacks += 5;
+	}
+}
+#endregion
+#region Teleport
+if (attack == Atks.TeleportAttack)
+{
+	if (gameMaster.chosenBoss == Boss.BloodKnightDavid)
+	{
+		alpha = normalAlpha;
+		chooseAnAttack = true;
+	}
+}
+#endregion
+#region ZoneAttack
+if (attack == Atks.ZoneAttack)
+{
+	
+}
+#endregion
+#region TauntAttack
+if (attack == Atks.TauntAttack)
+{
+	
 }
 #endregion
 #region Heal Attack

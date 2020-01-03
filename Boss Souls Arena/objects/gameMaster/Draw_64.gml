@@ -628,15 +628,8 @@ if (menu == Menues.Play)
 				draw_text_transformed_color(xText,yText+TSY*5,"cooldown. As a summoner you can summon",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 				draw_text_transformed_color(xText,yText+TSY*6,"your bats all the time with your",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 				draw_text_transformed_color(xText,yText+TSY*7,"[Left-Click] ability.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*8,"cooldown so use it often.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+				draw_text_transformed_color(xText,yText+TSY*8,"",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 				draw_text_transformed_color(xText,yText+TSY*9,"You move with [W] & [A] & [S] & [D].",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				
-				draw_text_transformed_color(xText,yText+30*0,"To the left is the hud. Hover over the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+30*1,"hud with your mouse to see your abilities.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+30*2,"Using an ability puts that ability on",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+30*3,"cooldown. However the Blood Knight",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+30*4,"has a short cooldown on the [Left click]",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+30*5,"so you use it all the time.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 				
 				draw_text_transformed_color(xText,yText+30*19,"You move with the [W] & [A] & [S] & [D] keys.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 			}

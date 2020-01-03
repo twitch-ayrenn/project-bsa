@@ -38,7 +38,7 @@ hp = 100;
 moveSpeed = 2;
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
-global.damage = 1;
+global.damage = 1*1;
 baseLifeSteal = 0.8;
 global.lifeSteal = baseLifeSteal;
 dashSpeed = 5;
@@ -71,11 +71,14 @@ if (class == Character.ShadowAssassin)
 	ultColor = c_fuchsia;
 	//character specific
 	teleportRange = 96;
+	teleportRange *= 1 + (gameMaster.bonusDash/100);
 	throwKnives = false;
 	knivesToThrow = 0;
 	knivesThrownStacks = 0;
 	throwingDirection = 0;
-	instance_create_depth(x,y,1,obj_shadowAttackRange);
+	var shadowRange = instance_create_depth(x,y,1,obj_shadowAttackRange);
+	shadowRange.image_xscale *= 1+(gameMaster.bonusDash/100);
+	shadowRange.image_yscale = shadowRange.image_xscale;
 	daggerAmount = 12;
 }
 if (class == Character.Pyromancer)

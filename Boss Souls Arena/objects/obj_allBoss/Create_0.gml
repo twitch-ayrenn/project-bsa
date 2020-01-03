@@ -397,7 +397,81 @@ isHit = false;
 		#endregion
 	#endregion
 	#region Tier 4
-	
+		#region Gravekeeper
+		if (gameMaster.chosenBoss == Boss.Gravekeeper) 
+		{
+			//stats
+			phase1Hp = tier4Hp*0.25; phase1Ms = 1; phase1Dmg = 80;
+			phase2Hp = tier4Hp*0.30; phase2Ms = 1; phase2Dmg = 40;
+			phase3Hp = tier4Hp*0.45; phase3Ms = 1.1; phase3Dmg = 35;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.WalkingTowardsWDirection;
+			//attacks and phase
+			tier = 4;
+			phase = 1;
+			maxPhase = 3;
+			//visual
+			size = 1.5;
+			alpha = 0.75;
+			idleSprite = spr_boss_theGraveKeeper_idle;
+			oneShotSprite = spr_boss_theGraveKeeper_oneShot;
+			coneSprite = spr_boss_theGraveKeeper_cone;
+			rapidFireSprite = spr_boss_theGraveKeeper_rapidFire;
+			healSprite = spr_boss_theGraveKeeper_heal;
+			chaseSprite = spr_boss_theGraveKeeper_chase;
+			normalSprite = spr_boss_theGraveKeeper_normal;
+			//boss Specfic
+			var scythe = instance_create_depth(x,y,depth,obj_bossMeleeWeapon);
+			scythe.sprite_index = spr_graveScythe_spin;
+			scythe.image_xscale = 1.5;
+			scythe.image_yscale = 1.5;
+			scythe.spinSpeed = 20;
+			dashSpeed = 4;
+			healingAmount = 1;
+			instance_create_depth(global.arenaMiddleX-125,global.arenaMiddleY-125,-9,obj_teleportMarker);
+			instance_create_depth(global.arenaMiddleX,global.arenaMiddleY-125,-9,obj_teleportMarker);
+			instance_create_depth(global.arenaMiddleX+125,global.arenaMiddleY-125,-9,obj_teleportMarker);
+			instance_create_depth(global.arenaMiddleX-125,global.arenaMiddleY,-9,obj_teleportMarker);
+			instance_create_depth(global.arenaMiddleX+125,global.arenaMiddleY,-9,obj_teleportMarker);
+			instance_create_depth(global.arenaMiddleX-125,global.arenaMiddleY+125,-9,obj_teleportMarker);
+			instance_create_depth(global.arenaMiddleX,global.arenaMiddleY+125,-9,obj_teleportMarker);
+			instance_create_depth(global.arenaMiddleX+125,global.arenaMiddleY+125,-9,obj_teleportMarker);
+		}
+		#endregion
+		#region Bloodarmy General
+		if (gameMaster.chosenBoss == Boss.BloodKnightDavid) 
+		{
+			//stats
+			phase1Hp = tier4Hp*0.2; phase1Ms = 1; phase1Dmg = 25;
+			phase2Hp = tier4Hp*0.2; phase2Ms = 1.1; phase2Dmg = 25;
+			phase3Hp = tier4Hp*0.45; phase3Ms = 1.2; phase3Dmg = 25;
+			phase4Hp = tier4Hp*0.15; phase4Ms = 0; phase4Dmg = 30;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.WalkingTowards;
+			//attacks and phase
+			tier = 4;
+			phase = 1;
+			maxPhase = 4;
+			//visual
+			size = 2;
+			alpha = 1;
+			idleSprite = spr_boss_bloodArmyGeneral_idle;
+			oneShotSprite = spr_boss_bloodArmyGeneral_oneShot;
+			coneSprite = spr_boss_bloodArmyGeneral_cone;
+			rapidFireSprite = spr_boss_bloodArmyGeneral_rapidfire;
+			chaseSprite = spr_boss_bloodArmyGeneral_chase;
+			gooSprite = spr_boss_bloodArmyGeneral_goo;
+			teleportSprite = spr_boss_bloodArmyGeneral_teleport;
+			//boss Specfic
+			var spinBeam = instance_create_depth(x,y,depth+1,obj_spinBeam);
+			spinBeam.image_blend = c_red;
+			
+		}
+		#endregion
 	#endregion 
 	#region Tier 5
 		#region Varus

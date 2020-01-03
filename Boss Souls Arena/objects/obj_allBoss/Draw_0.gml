@@ -102,6 +102,7 @@ if (drawArea == true)
 	#endregion
 }
 #endregion
+//boss Specific
 if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
 {
 	if (phase == 2 || phase == 3)
@@ -118,6 +119,9 @@ if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
 		draw_sprite_ext(spr_demonPortal_3,0,global.arenaMiddleX+175,global.arenaMiddleY,1,1,rotation3+35,c_white,0.85);
 	}
 }
+#region Bloom
+
+#endregion
 if (isHit == false){draw_self();}
 if (isHit == true)
 {

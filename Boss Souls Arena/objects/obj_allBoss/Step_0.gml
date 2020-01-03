@@ -38,7 +38,7 @@ if (state == BossStates.Fighting)
 {
 #region Movement
 actualSpeed = moveSpeed;
-if (moveType == MovementType.WalkingTowards && gameMaster.chosenBoss != Boss.DeathKnight)
+if (moveType == MovementType.WalkingTowards)
 {
 	move_towards_point(global.player.x,global.player.y,actualSpeed);
 }
@@ -293,7 +293,7 @@ if (moveType == MovementType.StandingStill)
 			rapidFireStacks -= 1;
 			drawArea = true;
 			
-			alarm[2] = (0.65)*30;
+			alarm[2] = (0.8)*30;
 		}
 	}
 	#endregion
@@ -353,6 +353,48 @@ if (moveType == MovementType.StandingStill)
 		}
 	}
 	#endregion
+	#region Gravekeeper
+	if (gameMaster.chosenBoss == Boss.Gravekeeper)
+	{
+		if (rapidFireStacks > 0 && canRapidAttack == true)
+		{
+			canRapidAttack = false;
+			rapidFireStacks -= 1;
+			
+			x = choose(global.arenaMiddleX,global.arenaMiddleX-125,global.arenaMiddleX+125);
+			y = choose(global.arenaMiddleY,global.arenaMiddleY-125,global.arenaMiddleY+125);
+			if (x == global.arenaMiddleX && y == global.arenaMiddleY){x = choose(global.arenaMiddleX-125,global.arenaMiddleX+125);}
+		
+			var graveScyhte = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			graveScyhte.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+			graveScyhte.speed = 4.5;
+			graveScyhte.image_angle = graveScyhte.direction+90;
+			//Visual
+			graveScyhte.image_alpha = 0.85;
+			graveScyhte.image_blend = c_white;
+			graveScyhte.sprite_index = spr_graveScythe_projectile;
+			graveScyhte.image_xscale = 0.55;
+			graveScyhte.image_yscale = 0.55;
+			graveScyhte.effectType = Effect.NoEffect;
+		
+			alarm[2] = (0.65)*30;
+		}
+	}
+	#endregion
+	#region Angel Knight Oscar
+	if (gameMaster.chosenBoss == Boss.BloodKnightDavid)
+	{
+		if (rapidFireStacks > 0 && canRapidAttack == true)
+		{
+			canRapidAttack = false;
+			rapidFireStacks -= 1;
+			drawArea = true;
+			
+			alarm[2] = (0.8)*30;
+		}
+	}
+	#endregion
 #endregion
 #region Attacks
 if(chooseAnAttack == true)
@@ -390,6 +432,17 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar && phase == 2){attack = choose(Atks.BeamAttack,Atks.OneShotAttack,Atks.RapidFire,Atks.GooSpawn);}
 	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar && phase == 3){attack = choose(Atks.BeamAttack,Atks.OneShotAttack,Atks.RapidFire);}
 	#endregion
+	#region Tier4 Bosses
+	if (gameMaster.chosenBoss == Boss.Gravekeeper && phase == 1){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.ConeAttack); alpha = 0; x += choose(50,0,-50); y += choose(50,0,-50);}
+	if (gameMaster.chosenBoss == Boss.Gravekeeper && phase == 2 && instance_exists(obj_healZone) == false){attack = choose(Atks.ChaseAttack,Atks.NormalShot,Atks.HealAttack); alpha = 0; x += choose(50,0,-50); y += choose(50,0,-50);}
+	if (gameMaster.chosenBoss == Boss.Gravekeeper && phase == 2 && instance_exists(obj_healZone) == true){attack = choose(Atks.ChaseAttack,Atks.NormalShot); alpha = 0; x += choose(50,0,-50); y += choose(50,0,-50);}
+	if (gameMaster.chosenBoss == Boss.Gravekeeper && phase == 3 && instance_exists(obj_healZone) == false){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.ConeAttack,Atks.ChaseAttack,Atks.NormalShot,Atks.HealAttack); alpha = 0; x += choose(50,0,-50); y += choose(50,0,-50);}
+	if (gameMaster.chosenBoss == Boss.Gravekeeper && phase == 3 && instance_exists(obj_healZone) == true){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.ConeAttack,Atks.ChaseAttack,Atks.NormalShot); alpha = 0; x += choose(50,0,-50); y += choose(50,0,-50);}
+	if (gameMaster.chosenBoss == Boss.BloodKnightDavid && phase == 1){attack = choose(Atks.RapidFire,Atks.ConeAttack,Atks.ChaseAttack);}
+	if (gameMaster.chosenBoss == Boss.BloodKnightDavid && phase == 2){attack = choose(Atks.RapidFire,Atks.ConeAttack,Atks.GooSpawn);}
+	if (gameMaster.chosenBoss == Boss.BloodKnightDavid && phase == 3){attack = choose(Atks.RapidFire,Atks.ConeAttack,Atks.GooSpawn,Atks.OneShotAttack);}
+	if (gameMaster.chosenBoss == Boss.BloodKnightDavid && phase == 4){attack = choose(Atks.ChaseAttack);}
+	#endregion
 	if (attack == Atks.NormalShot)
 	{
 		sprite_index = normalSprite;
@@ -400,6 +453,14 @@ if(chooseAnAttack == true)
 			speed = dashSpeed;
 			
 			alarm[4] = (0.35)*30;
+		}
+		#endregion
+		#region Gravekeeper
+		if (gameMaster.chosenBoss == Boss.Gravekeeper)
+		{
+			speed = dashSpeed;
+			
+			alarm[4] = (1.9)*30;
 		}
 		#endregion
 	}
@@ -459,6 +520,16 @@ if(chooseAnAttack == true)
 			indicator.image_yscale = 0.085;
 			indicator.image_blend = c_maroon;
 			indicator.follow = true;
+		}
+		#endregion
+		#region Bloodarmy general
+		if (gameMaster.chosenBoss == Boss.BloodKnightDavid)
+		{
+			var indicator = instance_create_depth(global.player.x,global.player.y,-5,obj_indicator)
+			indicator.sprite_index = spr_damageCircle;
+			indicator.image_xscale = 0.16;
+			indicator.image_yscale = 0.16;
+			indicator.image_blend = c_maroon;
 		}
 		#endregion
 	}
@@ -548,6 +619,26 @@ if(chooseAnAttack == true)
 			beam.effectType = Effect.NoEffect;
 		}
 		#endregion
+		#region Gravekeeper
+		if (gameMaster.chosenBoss == Boss.Gravekeeper)
+		{
+			alpha = 0.75;
+			moveSpeed = 1.35;
+			with(obj_bossMeleeWeapon)
+			{
+				state = MeleeWeaponStates.SpinChase;
+			}
+		}
+		#endregion
+		#region Bloodarmy General
+		if (gameMaster.chosenBoss == Boss.BloodKnightDavid && phase != 4)
+		{
+			with(obj_spinBeam)
+			{
+				spinSpeed = 3;	
+			}
+		}
+		#endregion
 	}
 	if (attack == Atks.RapidFire)
 	{
@@ -607,7 +698,7 @@ if(chooseAnAttack == true)
 	{
 		sprite_index = teleportSprite;
 		attackColor = global.purple;
-		if (gameMaster.chosenBoss == Boss.WispSisterJulia || gameMaster.chosenBoss == Boss.BloodKingVarus)
+		if (gameMaster.chosenBoss == Boss.WispSisterJulia || gameMaster.chosenBoss == Boss.BloodKingVarus || gameMaster.chosenBoss == Boss.BloodKnightDavid)
 		{
 			alpha = 0;
 			var xTp = obj_allPlayer.x + choose(-200,-150,-100,100,150,200);
@@ -667,6 +758,13 @@ if(chooseAnAttack == true)
 			instance_create_depth(global.arenaMiddleX,global.arenaMiddleY-175,depth,obj_healSlime);
 		}
 		#endregion
+		#region Gravekeeper
+		if (gameMaster.chosenBoss == Boss.Gravekeeper)
+		{
+			var healZone = instance_create_depth(x,y,-5,obj_healZone);
+			healZone.image_blend = c_lime;
+		}
+		#endregion
 	}
 	alarm[0] = timeAfterIndicate;
 	alarm[1] = attackCooldown*choose(1,1,1,1,2);
@@ -692,6 +790,15 @@ if (hp <= 0 && phase == 1 && phase != maxPhase)
 		}
 	}
 	#endregion
+	#region Bloodarmy General
+	if (gameMaster.chosenBoss == Boss.BloodKnightDavid)
+	{
+		with(obj_spinBeam)
+		{
+			spinSpeed = 2;	
+		}
+	}
+	#endregion
 }
 if (hp <= 0 && phase == 2 && phase != maxPhase)
 {
@@ -706,6 +813,15 @@ if (hp <= 0 && phase == 3 && phase != maxPhase)
 	hp = phase4Hp;
 	moveSpeed = phase4Ms;
 	global.bossDamage = phase4Dmg;
+	#region Bloodarmy General
+	if (gameMaster.chosenBoss == Boss.BloodKnightDavid)
+	{
+		with(obj_spinBeam)
+		{
+			spinSpeed = 4.25;	
+		}
+	}
+	#endregion
 }
 if (hp <= 0 && phase == 4 && phase != maxPhase)
 {

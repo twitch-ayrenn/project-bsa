@@ -7,7 +7,7 @@ var target = global.player;
 //damage
 if (sprite_index == spr_gooGround || sprite_index == spr_chaseDamage){dmg = clamp(global.bossDamage*(clamp((target.hp/target.maxHp),0.5,1)),1,0.8*(target.maxHp));}
 if (sprite_index == spr_beam){dmg = clamp(global.bossDamage*3*(clamp((target.hp/target.maxHp),0.5,1)),1,0.8*(target.maxHp));}
-if (sprite_index == spr_fireBall ||sprite_index == spr_bat || sprite_index == spr_swordShot || sprite_index == spr_bloodKlott)
+if (sprite_index == spr_fireBall ||sprite_index == spr_bat || sprite_index == spr_swordShot || sprite_index == spr_bloodKlott || sprite_index == spr_graveScythe_projectile)
 {
 	dmg = clamp(global.bossDamage*image_xscale*image_xscale*(clamp((target.hp/target.maxHp),0.5,1)),1,0.8*(target.maxHp));
 }
@@ -20,6 +20,7 @@ if (effectType == Effect.Spark){var party = effect_create_below(ef_spark,x,y,0.0
 if (effectType == Effect.Smoke){var party = effect_create_below(ef_smoke,x,y,0.005,image_blend);part_system_depth(party,depth+5);}
 if (gooGroundSizeFix == true && sprite_index == spr_gooGround) {image_xscale = image_xscale*0.75;image_yscale = image_xscale; gooGroundSizeFix = false;}
 if (sprite_index == spr_bloodKlott || sprite_index == spr_swordShot){image_angle -= 30;}
+if (sprite_index == spr_graveScythe_projectile){image_angle += 30;}
 if (sprite_index == spr_beam)
 {
 	image_xscale += sizeChanger/30;

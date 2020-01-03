@@ -1,5 +1,6 @@
 /// @description Insert description here
 var target = global.player;
+image_alpha = obj_allBoss.image_alpha;
 dmg = clamp(global.bossDamage*(clamp((target.hp/target.maxHp),0.5,1)),1,0.8*(target.maxHp));
 if (instance_exists(obj_allBoss))
 {
@@ -9,7 +10,7 @@ if (instance_exists(obj_allBoss))
 if (state == MeleeWeaponStates.idle)
 {
 	image_angle = obj_allBoss.direction-135+180;
-	if (gameMaster.chosenBoss = Boss.DeathKnight){image_index = 0;}
+	if (gameMaster.chosenBoss == Boss.Gravekeeper){image_angle = 0;}
 }
 if (state == MeleeWeaponStates.SpinOnce)
 {

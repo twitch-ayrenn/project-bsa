@@ -3,7 +3,20 @@
 if (global.itemSelected[Boss.DeathKnight] == true){direction = point_direction(x,y,mouse_x,mouse_y);}
 if (hp > maxHp){hp = maxHp;}
 depth = -y;
-blackOutAlpha += clamp(0.1/30,0,1);//Varus
+#region Bosses
+if (instance_exists(obj_allBoss))
+{
+	if (gameMaster.chosenBoss == Boss.Gravekeeper && obj_allBoss.phase > 1)
+	{
+		blackOutAlpha = clamp(blackOutAlpha + 0.1/30,0,0.10 + obj_allBoss.phase*0.30);
+	}
+}
+if (instance_exists(obj_allBoss) == false)
+{
+	blackOutAlpha = clamp(blackOutAlpha - 0.5/30,0,0.75);
+}
+#endregion
+
 #region Speed
 //checkBefore
 if (speed < 0){speed = 0;}
@@ -309,6 +322,8 @@ if (mouse_x < x)
 			shadow.image_yscale = image_yscale;
 			var shadowRange = instance_create_depth(mouse_y,mouse_x,depth,obj_shadowAttackRange);
 			shadowRange.objectToFollow = shadow.id;
+			shadowRange.image_xscale *= 1+(gameMaster.bonusDash/100);
+			shadowRange.image_yscale = shadowRange.image_xscale;
 		}
 	}
 	#endregion
@@ -719,6 +734,7 @@ if (hp <= 0 && state != States.Dead)
 }
 if (gameMaster.menu == Menues.Death)
 {
+	speed = 0;
 	image_angle += 10;
 	image_angle = clamp(image_angle,0,90);
 }

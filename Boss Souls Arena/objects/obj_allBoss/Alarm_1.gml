@@ -56,3 +56,20 @@ if (gameMaster.chosenBoss == Boss.DeathKnight)
 		state = MeleeWeaponStates.idle;
 	}
 }
+if (gameMaster.chosenBoss == Boss.Gravekeeper)
+{
+	rapidFireStacks = 0;
+	with(obj_bossMeleeWeapon)
+	{
+		state = MeleeWeaponStates.idle;
+	}
+}
+#region Bloodarmy General
+if (gameMaster.chosenBoss == Boss.BloodKnightDavid && phase == 1)
+{
+	with(obj_spinBeam)
+	{
+		spinSpeed = 1;
+	}
+}
+#endregion
