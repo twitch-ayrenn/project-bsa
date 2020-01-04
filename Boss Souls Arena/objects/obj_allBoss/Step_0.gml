@@ -90,6 +90,11 @@ if (moveType == MovementType.StandingStill)
 		x = global.arenaMiddleX;
 		y = global.arenaMiddleY;
 	}
+	if (gameMaster.chosenBoss == Boss.StatueOfCorruption)
+	{
+		x = global.arenaMiddleX;
+		y = global.arenaMiddleY;
+	}
 }
 #endregion
 #region Ongoing things
@@ -395,6 +400,37 @@ if (moveType == MovementType.StandingStill)
 		}
 	}
 	#endregion
+	#region Statue Of Corruption
+	if (gameMaster.chosenBoss == Boss.StatueOfCorruption)
+	{
+		if (rapidFireStacks > 0 && canRapidAttack == true)
+		{
+			canRapidAttack = false;
+			rapidFireStacks -= 1;
+		
+			var angleBk = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+			var circleAmount = 15;
+			repeat(circleAmount)
+			{
+				var swordShot = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+				//Main
+				swordShot.direction = angleBk;
+				swordShot.speed = 1.65;
+				swordShot.image_angle = swordShot.direction+90;
+				//Visual
+				swordShot.image_alpha = 0.85;
+				swordShot.sprite_index = spr_fireBall;
+				swordShot.image_blend = global.lightBlue;
+				swordShot.image_xscale = 0.75;
+				swordShot.image_yscale = 0.75;
+				swordShot.effectType = Effect.Flare;
+				angleBk += (360/circleAmount);
+			}
+		
+			alarm[2] = (0.6)*30;
+		}
+	}
+	#endregion
 #endregion
 #region Attacks
 if(chooseAnAttack == true)
@@ -442,6 +478,9 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.BloodKnightDavid && phase == 2){attack = choose(Atks.RapidFire,Atks.ConeAttack,Atks.GooSpawn);}
 	if (gameMaster.chosenBoss == Boss.BloodKnightDavid && phase == 3){attack = choose(Atks.RapidFire,Atks.ConeAttack,Atks.GooSpawn,Atks.OneShotAttack);}
 	if (gameMaster.chosenBoss == Boss.BloodKnightDavid && phase == 4){attack = choose(Atks.ChaseAttack);}
+	if (gameMaster.chosenBoss == Boss.StatueOfCorruption && phase == 1){attack = choose(Atks.RapidFire);}
+	if (gameMaster.chosenBoss == Boss.StatueOfCorruption && phase == 2){attack = choose(Atks.RapidFire,Atks.CircleAttack,Atks.ConeAttack);}
+	if (gameMaster.chosenBoss == Boss.StatueOfCorruption && phase == 3){attack = choose(Atks.RapidFire,Atks.CircleAttack,Atks.ConeAttack,Atks.BeamAttack,Atks.ChaseAttack);}
 	#endregion
 	if (attack == Atks.NormalShot)
 	{
@@ -483,6 +522,12 @@ if(chooseAnAttack == true)
 			indicator.image_yscale = 0.085;
 			indicator.image_blend = c_maroon;
 			indicator.follow = true;
+		}
+		#endregion
+		#region Statue Of Corruption
+		if (gameMaster.chosenBoss == Boss.StatueOfCorruption)
+		{
+			drawArea = true;
 		}
 		#endregion
 	}
@@ -639,6 +684,7 @@ if(chooseAnAttack == true)
 			}
 		}
 		#endregion
+		
 	}
 	if (attack == Atks.RapidFire)
 	{

@@ -100,6 +100,32 @@ if (drawArea == true)
 		draw_line_width_color(x,y-600,x,y+600,1,global.orange,global.orange);
 	}
 	#endregion
+	#region Statue Of Corruption
+	if (gameMaster.chosenBoss == Boss.StatueOfCorruption)
+	{
+		if (attack == Atks.BeamAttack)
+		{
+			draw_line_width_color(x-600,y,x+600,y,1,global.orange,global.orange);
+			draw_line_width_color(x,y-600,x,y+600,1,global.orange,global.orange);
+		}
+		if (attack == Atks.CircleAttack)
+		{
+			draw_line_width_color(x,y,x+600,y,1,c_fuchsia,c_fuchsia);
+			draw_line_width_color(x,y,x+600,y-346,1,c_fuchsia,c_fuchsia);//30
+			draw_line_width_color(x,y,x+600,y-1040,1,c_fuchsia,c_fuchsia);//60
+			draw_line_width_color(x,y,x,y-600,1,c_fuchsia,c_fuchsia);//90
+			draw_line_width_color(x,y,x-600,y-346,1,c_fuchsia,c_fuchsia);//120
+			draw_line_width_color(x,y,x-600,y-1040,1,c_fuchsia,c_fuchsia);//150
+			draw_line_width_color(x,y,x-600,y,1,c_fuchsia,c_fuchsia);//180
+			draw_line_width_color(x,y,x-600,y+346,1,c_fuchsia,c_fuchsia);//210
+			draw_line_width_color(x,y,x-600,y+1040,1,c_fuchsia,c_fuchsia);//240
+			draw_line_width_color(x,y,x,y+600,1,c_fuchsia,c_fuchsia);//270
+			draw_line_width_color(x,y,x+600,y+346,1,c_fuchsia,c_fuchsia);//300
+			draw_line_width_color(x,y,x+600,y+1040,1,c_fuchsia,c_fuchsia);//330
+			draw_line_width_color(x,y,x+600,y,1,c_fuchsia,c_fuchsia);//360
+		}
+	}
+	#endregion
 }
 #endregion
 //boss Specific
@@ -111,7 +137,6 @@ if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
 		draw_sprite_ext(spr_demonPortal_2,0,global.arenaMiddleX-175,global.arenaMiddleY,1,1,rotation2,c_white,0.85);
 		draw_sprite_ext(spr_demonPortal_3,0,global.arenaMiddleX-175,global.arenaMiddleY,1,1,rotation3,c_white,0.85);
 	}
-	
 	if (phase == 3)
 	{	
 		draw_sprite_ext(spr_demonPortal_1,0,global.arenaMiddleX+175,global.arenaMiddleY,1,1,rotation1+35,c_white,0.85);

@@ -12,7 +12,7 @@ if (gameMaster.chosenBoss == Boss.AngelKnightOscar)
 	beam.sprite_index = spr_beam;
 	beam.image_xscale = 0.25;
 	beam.image_yscale = 30;
-	beam.maxSize = 1.5;
+	beam.maxSize = 1.35;
 	beam.minSize = 0.25;
 	beam.stickOn = true;
 	beam.range = 2*30;
@@ -32,7 +32,7 @@ if (gameMaster.chosenBoss == Boss.BloodKnightDavid)
 	beam.sprite_index = spr_beam;
 	beam.image_xscale = 0.25;
 	beam.image_yscale = 30;
-	beam.maxSize = 1.5;
+	beam.maxSize = 1.35;
 	beam.minSize = 0.25;
 	beam.stickOn = true;
 	beam.range = 2*30;

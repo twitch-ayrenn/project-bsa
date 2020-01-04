@@ -1019,7 +1019,30 @@ if (attack == Atks.NormalShot)
 #region CircleAttacks
 if (attack == Atks.CircleAttack)
 {
-	
+	if (gameMaster.chosenBoss == Boss.StatueOfCorruption)
+	{
+		drawArea = false;
+		var beamCircleAngle = 0;
+		var circleBeams = 12;
+		repeat(circleBeams)
+		{
+			var beam = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			beam.image_angle = beamCircleAngle+90;
+			//Visual
+			beam.image_alpha = 0.85;
+			beam.image_blend = c_fuchsia;
+			beam.sprite_index = spr_beam;
+			beam.image_xscale = 0.2;
+			beam.image_yscale = 20;
+			beam.maxSize = 2;
+			beam.minSize = 0.2;
+			beam.stickOn = true;
+			beam.range = 1*30;
+			beam.effectType = Effect.NoEffect;
+			beamCircleAngle += 360/circleBeams;
+		}
+	}
 }
 #endregion
 #region GooSpawn
@@ -1040,7 +1063,11 @@ if (attack == Atks.GooSpawn)
 		gooGround.image_yscale = 2.5;
 		gooGround.destroy = true;
 		gooGround.effectType = Effect.NoEffect;
-		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
+		with (gooGround)
+		{
+			var nearestIndicator = instance_nearest(x,y,obj_indicator);
+			instance_destroy(nearestIndicator);
+		}
 	}
 }
 #endregion
@@ -1126,18 +1153,81 @@ if (attack == Atks.ConeAttack)
 			coneAtkFW += (coneWide/coneAmount);
 		}
 	}
+	if (gameMaster.chosenBoss == Boss.StatueOfCorruption)
+	{	
+		var coneWide = 180;
+		var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.5;
+		var coneAmount = 18;
+		repeat(coneAmount)
+		{
+			var fireBolt = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			fireBolt.direction = coneAtkFW;
+			fireBolt.speed = 3;
+			fireBolt.image_angle = fireBolt.direction+90;
+			//Visual
+			fireBolt.image_alpha = 0.85;
+			fireBolt.sprite_index = spr_fireBall;
+			fireBolt.image_blend = c_aqua;
+			fireBolt.image_xscale = 1.5;
+			fireBolt.image_yscale = 1.5;
+			fireBolt.effectType = Effect.Flare;
+			coneAtkFW += (coneWide/coneAmount);
+		}
+	}
 }
 #endregion
 #region ChaseAttack
 if (attack == Atks.ChaseAttack)
 {
-	
+	if (gameMaster.chosenBoss == Boss.StatueOfCorruption)
+	{
+		var infernalBall = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+		//Main
+		infernalBall.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		infernalBall.speed = 2;
+		infernalBall.image_angle = 0;
+		//Visual
+		infernalBall.image_alpha = 0.5;
+		infernalBall.image_blend = c_white;
+		infernalBall.sprite_index = spr_statueOfChase;
+		infernalBall.image_xscale = 1;
+		infernalBall.image_yscale = 1;
+		infernalBall.effectType = Effect.NoEffect;
+		infernalBall.chase = true;
+		infernalBall.range = (10)*30;
+	}
 }
 #endregion
 #region BeamAttack
 if (attack == Atks.BeamAttack)
 {
-	
+	if (gameMaster.chosenBoss == Boss.StatueOfCorruption)
+	{
+		var angle = 0;
+		var amount = 4;
+		repeat(amount)
+		{
+			var beam = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			beam.image_angle = angle;
+			//Visual
+			beam.image_alpha = 0.85;
+			beam.image_blend = global.orange;
+			beam.sprite_index = spr_beam;
+			beam.image_xscale = 0.25;
+			beam.image_yscale = 20;
+			beam.maxSize = 1.5;
+			beam.minSize = 0.25;
+			beam.stickOn = true;
+			beam.beamChase = true;
+			beam.turningSpeed = 45;
+			beam.destroy = true;
+			beam.range = (4)*30; 
+			beam.effectType = Effect.NoEffect;
+			angle += 360/amount;
+		}
+	}
 }
 #endregion
 #region RapidFire
@@ -1150,6 +1240,10 @@ if (attack == Atks.RapidFire)
 	if (gameMaster.chosenBoss == Boss.BloodKnightDavid)
 	{
 		rapidFireStacks += 5;
+	}
+	if (gameMaster.chosenBoss == Boss.StatueOfCorruption)
+	{
+		rapidFireStacks += 8;
 	}
 }
 #endregion

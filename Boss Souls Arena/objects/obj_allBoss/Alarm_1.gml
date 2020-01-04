@@ -69,7 +69,7 @@ if (gameMaster.chosenBoss == Boss.BloodKnightDavid && phase == 1)
 {
 	with(obj_spinBeam)
 	{
-		spinSpeed = 1;
+		spinSpeed = 0.75;
 	}
 }
 #endregion

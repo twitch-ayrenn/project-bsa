@@ -546,7 +546,7 @@
             "Key": "11d30a3d-16a9-4c16-875c-f672e5da4caf",
             "Value": {
                 "id": "f7a86e9f-f85b-4a8a-8703-94b142d1f662",
-                "resourcePath": "sprites\\spr_slimeKing\\spr_slimeKing.yy",
+                "resourcePath": "sprites\\spr_slimeQueen\\spr_slimeQueen.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1052,6 +1052,14 @@
                 "id": "0a68b69d-1855-49f2-87d5-b9cad764fbe1",
                 "resourcePath": "objects\\obj_healSlime\\obj_healSlime.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "24d2c34c-f81a-48f3-8674-7fe2fcca3fbf",
+            "Value": {
+                "id": "657346f2-8a80-40e5-a99b-945b738edfa9",
+                "resourcePath": "sprites\\spr_boss_statueOfCorruption_cone\\spr_boss_statueOfCorruption_cone.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1863,6 +1871,14 @@
             }
         },
         {
+            "Key": "42ef4c04-b459-4994-b03d-117b570cc332",
+            "Value": {
+                "id": "e09a3e18-900b-4e81-8895-ad43b627776f",
+                "resourcePath": "sprites\\spr_boss_statueOfCorruption_chase\\spr_boss_statueOfCorruption_chase.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4428644b-6a7b-496f-9478-95b377470316",
             "Value": {
                 "id": "cb050d07-a291-42f7-ad67-acd5734836bc",
@@ -1971,6 +1987,14 @@
             "Value": {
                 "id": "31a960c1-3670-4aae-aa42-e4cf707a409a",
                 "resourcePath": "sprites\\spr_angelSlayerRekZul_chase\\spr_angelSlayerRekZul_chase.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "488e1495-804c-4c6b-a0a7-38d631721c71",
+            "Value": {
+                "id": "54805260-a55d-4d9d-a897-6634392d74a1",
+                "resourcePath": "sprites\\spr_statueOfChase\\spr_statueOfChase.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2564,6 +2588,14 @@
                 "id": "76e5b97f-3603-42ac-840d-4e011fab3f98",
                 "resourcePath": "objects\\obj_playButton_theZombie\\obj_playButton_theZombie.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "62c0d77c-e2b5-4e73-8501-c5ce0cbee86e",
+            "Value": {
+                "id": "a389d974-0b78-472c-82a9-ac29faea1afb",
+                "resourcePath": "sprites\\spr_boss_statueOfCorruption_rapidFire\\spr_boss_statueOfCorruption_rapidFire.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -3475,6 +3507,14 @@
             "Value": {
                 "id": "4e1093e5-bb64-4823-9843-811c4a227017",
                 "resourcePath": "sprites\\spr_item_zombieHead\\spr_item_zombieHead.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "822f7504-10b9-46f6-aa37-21cdc1417d48",
+            "Value": {
+                "id": "866aca59-b78e-418c-bd2b-9deb1ba87cf4",
+                "resourcePath": "sprites\\spr_boss_statueOfCorruption_idle\\spr_boss_statueOfCorruption_idle.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -4463,6 +4503,14 @@
             }
         },
         {
+            "Key": "abd81940-8552-4461-a741-632531d08641",
+            "Value": {
+                "id": "8a61ca18-73af-4916-8b75-2e76720473b3",
+                "resourcePath": "sprites\\spr_boss_statueOfCorruption_beam\\spr_boss_statueOfCorruption_beam.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ac5e2a7b-5db9-4a1a-8693-33c765ec35e8",
             "Value": {
                 "id": "86a331c6-19f4-4a5e-8ab2-044c3f98b3ae",
@@ -4652,6 +4700,14 @@
                 "id": "d6ac49b3-fbbc-43eb-a621-d3b12ee44831",
                 "resourcePath": "sprites\\spr_soulSword\\spr_soulSword.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b12295b9-6231-42d2-916d-699b0742821e",
+            "Value": {
+                "id": "57756cf2-6441-4d98-8816-f348dc9a3104",
+                "resourcePath": "views\\b12295b9-6231-42d2-916d-699b0742821e.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -5556,6 +5612,14 @@
                 "id": "0d8870a0-8056-42c0-9fe0-357e48e2d722",
                 "resourcePath": "views\\d1b74a97-85b1-4685-a90a-077f4d59f407.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "d273f94a-67b3-4bbf-917d-5d78bbd89d85",
+            "Value": {
+                "id": "e8dbf4f1-4712-4cce-a907-7464b404c502",
+                "resourcePath": "sprites\\spr_boss_statueOfCorruption_circle\\spr_boss_statueOfCorruption_circle.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

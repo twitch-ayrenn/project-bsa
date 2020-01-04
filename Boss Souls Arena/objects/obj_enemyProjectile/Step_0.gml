@@ -5,7 +5,7 @@ if (place_meeting(x,y,obj_allBoss) == false){depth = -50;}
 if (sprite_index == spr_gooGround){depth = -7;}
 var target = global.player;
 //damage
-if (sprite_index == spr_gooGround || sprite_index == spr_chaseDamage){dmg = clamp(global.bossDamage*(clamp((target.hp/target.maxHp),0.5,1)),1,0.8*(target.maxHp));}
+if (sprite_index == spr_gooGround || sprite_index == spr_chaseDamage || spr_statueOfChase){dmg = clamp(global.bossDamage*(clamp((target.hp/target.maxHp),0.5,1)),1,0.8*(target.maxHp));}
 if (sprite_index == spr_beam){dmg = clamp(global.bossDamage*3*(clamp((target.hp/target.maxHp),0.5,1)),1,0.8*(target.maxHp));}
 if (sprite_index == spr_fireBall ||sprite_index == spr_bat || sprite_index == spr_swordShot || sprite_index == spr_bloodKlott || sprite_index == spr_graveScythe_projectile)
 {
@@ -36,10 +36,14 @@ if (sprite_index == spr_beam)
 }
 #endregion
 #region movement
-if (chase == true && instance_exists(target))
+if (chase == true && instance_exists(target) && sprite_index != spr_statueOfChase)
 {
-	move_towards_point(target.x,target.y,target.moveSpeed);
+	move_towards_point(target.x,target.y,2);
 	image_angle = direction+90;
+}
+if (chase == true && instance_exists(target) && sprite_index == spr_statueOfChase)
+{
+	move_towards_point(target.x,target.y,1);
 }
 if (stickOn == true)
 {
@@ -64,7 +68,7 @@ if (destroy == true)
 	alarm[0] = range;
 }
 #region damage
-if (place_meeting(x,y,target) && sprite_index != spr_gooGround && global.iFrame == false && sprite_index != spr_beam && sprite_index != spr_chaseDamage && global.noDamage == false)
+if (place_meeting(x,y,target) && sprite_index != spr_gooGround && global.iFrame == false && sprite_index != spr_beam && sprite_index != spr_chaseDamage && global.noDamage == false && sprite_index != spr_statueOfChase)
 {
 	var damageToTarget = dmg;
 	var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
@@ -92,7 +96,8 @@ if (place_meeting(x,y,target) && sprite_index != spr_gooGround && global.iFrame 
 	global.noDamage = true;
 	instance_destroy();
 }
-if (stacks >= (1)*30 && sprite_index == spr_gooGround && place_meeting(x,y,target) && global.iFrame == false|| stacks >= (1)*30 && sprite_index == spr_chaseDamage && place_meeting(x,y,target) && global.iFrame == false)
+if (stacks >= (1)*30 && sprite_index == spr_gooGround && place_meeting(x,y,target) && global.iFrame == false || stacks >= (1)*30 && sprite_index == spr_chaseDamage && place_meeting(x,y,target) && global.iFrame == false 
+|| stacks >= (1)*30 && sprite_index == spr_statueOfChase && place_meeting(x,y,target) && global.iFrame == false)
 {
 	var damageToTarget = dmg;
 	var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);

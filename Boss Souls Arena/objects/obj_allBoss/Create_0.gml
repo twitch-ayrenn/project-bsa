@@ -279,7 +279,7 @@ isHit = false;
 		}
 		#endregion
 	#endregion
-	#region Tier 3
+	#region Tier 3 Done
 		#region Angel Slayer RekZul
 		if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul) 
 		{
@@ -444,9 +444,9 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.BloodKnightDavid) 
 		{
 			//stats
-			phase1Hp = tier4Hp*0.2; phase1Ms = 1; phase1Dmg = 25;
-			phase2Hp = tier4Hp*0.2; phase2Ms = 1.1; phase2Dmg = 25;
-			phase3Hp = tier4Hp*0.45; phase3Ms = 1.2; phase3Dmg = 25;
+			phase1Hp = tier4Hp*0.2; phase1Ms = 1; phase1Dmg = 20;
+			phase2Hp = tier4Hp*0.2; phase2Ms = 1.1; phase2Dmg = 20;
+			phase3Hp = tier4Hp*0.45; phase3Ms = 1.2; phase3Dmg = 20;
 			phase4Hp = tier4Hp*0.15; phase4Ms = 0; phase4Dmg = 30;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
@@ -469,8 +469,93 @@ isHit = false;
 			//boss Specfic
 			var spinBeam = instance_create_depth(x,y,depth+1,obj_spinBeam);
 			spinBeam.image_blend = c_red;
-			
 		}
+		#endregion
+		#region Statue Of Corruption
+		if (gameMaster.chosenBoss == Boss.StatueOfCorruption) 
+		{
+			//stats
+			phase1Hp = tier4Hp*0.15; phase1Ms = 1; phase1Dmg = 25;
+			phase2Hp = tier4Hp*0.35; phase2Ms = 1.1; phase2Dmg = 20;
+			phase3Hp = tier4Hp*0.5; phase3Ms = 1.2; phase3Dmg = 20;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.StandingStill;
+			//attacks and phase
+			tier = 4;
+			phase = 1;
+			maxPhase = 3;
+			//visual
+			size = 1;
+			alpha = 1;
+			idleSprite = spr_boss_statueOfCorruption_idle;
+			coneSprite = spr_boss_statueOfCorruption_cone;
+			rapidFireSprite = spr_boss_statueOfCorruption_rapidFire;
+			chaseSprite = spr_boss_statueOfCorruption_chase;
+			circleSprite = spr_boss_statueOfCorruption_circle;
+			beamSprite = spr_boss_statueOfCorruption_beam;
+			//boss Specfic
+			#region Goo around the Arena
+			//1
+			var gooGround = instance_create_depth(global.arenaMiddleX+225,global.arenaMiddleY,-5,obj_enemyProjectile);
+			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
+			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
+			//2
+			var gooGround = instance_create_depth(global.arenaMiddleX+190,global.arenaMiddleY+100,-5,obj_enemyProjectile);
+			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
+			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
+			//3
+			var gooGround = instance_create_depth(global.arenaMiddleX+190,global.arenaMiddleY-100,-5,obj_enemyProjectile);
+			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
+			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
+			//4
+			var gooGround = instance_create_depth(global.arenaMiddleX-190,global.arenaMiddleY+100,-5,obj_enemyProjectile);
+			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
+			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
+			//5
+			var gooGround = instance_create_depth(global.arenaMiddleX-190,global.arenaMiddleY-100,-5,obj_enemyProjectile);
+			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
+			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
+			//6
+			var gooGround = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY-180,-5,obj_enemyProjectile);
+			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
+			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
+			//7
+			var gooGround = instance_create_depth(global.arenaMiddleX+100,global.arenaMiddleY-160,-5,obj_enemyProjectile);
+			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
+			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
+			//8
+			var gooGround = instance_create_depth(global.arenaMiddleX-100,global.arenaMiddleY-160,-5,obj_enemyProjectile);
+			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
+			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
+			//9
+			var gooGround = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY+180,-5,obj_enemyProjectile);
+			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
+			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
+			//10
+			var gooGround = instance_create_depth(global.arenaMiddleX+100,global.arenaMiddleY+160,-5,obj_enemyProjectile);
+			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
+			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
+			//11
+			var gooGround = instance_create_depth(global.arenaMiddleX-100,global.arenaMiddleY+160,-5,obj_enemyProjectile);
+			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
+			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
+			}
+			#endregion
+			x = global.arenaMiddleX;
+			y = global.arenaMiddleY;
 		#endregion
 	#endregion 
 	#region Tier 5
