@@ -16,7 +16,7 @@ if (canAttack == true)
 	fireBolt.direction = point_direction(x,y,mouse_x,mouse_y);
 	fireBolt.image_angle = fireBolt.direction+90;
 	fireBolt.speed = 5;
-	fireBolt.image_xscale = 1;
+	fireBolt.image_xscale = 0.75*(1 + (gameMaster.bonusConjur/200));
 	fireBolt.image_yscale = fireBolt.image_xscale;
 	fireBolt.charge = 1;
 	

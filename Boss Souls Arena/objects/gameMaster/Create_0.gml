@@ -54,19 +54,20 @@ enum Boss
 	StatueOfCorruption,
 	WispSisters,
 
-	FrostQueenFalak,//6
-	DemonQueensHead,
+	DemonQueensHead,// 5
 	BloodKingVarus,
 	SlimeKing, 
 	DeathKing,
 	VoidLordHeadless,
 	
-	LadyCorruption,
+	ArenaKing,
 	//canceld Bosses
 	TheMadWitches,//4
 	QueenSerpant,
 	StoneSerpant,
 	ShadowClan,
+	FrostQueenFalak,//6
+	LadyCorruption,
 	//Info
 	Health = 400,
 	Speed = 401,
@@ -199,6 +200,7 @@ playerTutorialAlpha = 0;
 quePlayerTutorial = false;
 tutorialFadeOut = false;
 checkOnce = true;
+outline_init();
 ////Character progression and select
 //Progress // for a boss its its number -1
 assassinProgress = 25;

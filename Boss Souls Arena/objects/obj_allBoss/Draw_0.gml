@@ -144,9 +144,7 @@ if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
 		draw_sprite_ext(spr_demonPortal_3,0,global.arenaMiddleX+175,global.arenaMiddleY,1,1,rotation3+35,c_white,0.85);
 	}
 }
-#region Bloom
 
-#endregion
 if (isHit == false){draw_self();}
 if (isHit == true)
 {
@@ -154,3 +152,9 @@ if (isHit == true)
 	draw_self();
 	gpu_set_fog(false,c_white,0,0);
 }
+#region Bloom
+if (gameMaster.chosenBoss == Boss.BloodZombie)
+{
+	draw_sprite_ext(spr_bloom_big,0,x,y,0.75,0.75,0,c_red,0.2);
+}
+#endregion

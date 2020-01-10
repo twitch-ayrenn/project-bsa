@@ -91,7 +91,7 @@ if (instance_exists(obj_allBoss))
 
 #endregion
 #region Player Ui
-draw_healthbar(130,40,75+275+maxHp*0.5,66,(hp / maxHp) * 100,c_dkgray,c_maroon,c_red,0,false,true);
+draw_healthbar(130,40,75+225+maxHp*1,66,(hp / maxHp) * 100,c_dkgray,c_maroon,c_red,0,false,true);
 //ult
 draw_healthbar(125,75,185-1,135,(ultCooldownLeft / ultCooldown) * 100,ultColor,c_dkgray,c_dkgray,3,true,false);
 //leftClick

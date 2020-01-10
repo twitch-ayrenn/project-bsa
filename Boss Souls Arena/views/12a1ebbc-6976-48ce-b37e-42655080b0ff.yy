@@ -11,7 +11,7 @@
         "fa2240c3-2c48-419d-8db3-62b091604e8a"
     ],
     "filterType": "GMSprite",
-    "folderName": "grp_theInfernalWisp",
+    "folderName": "grp_wispSisterAnna",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

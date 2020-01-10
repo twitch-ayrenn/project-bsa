@@ -191,6 +191,7 @@ blackOutAlpha = 0;
 #endregion
 #region maxValues
 if (class == Character.Pyromancer){leftClickCooldown = (9)*30; coneShotAmount = int64(global.damage*2);}
+if (class == Character.BloodKnight){hp += gameMaster.bonusHealth;}
 actualBKDashSpeed = 0;//needs to exist or else it crashes 
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;

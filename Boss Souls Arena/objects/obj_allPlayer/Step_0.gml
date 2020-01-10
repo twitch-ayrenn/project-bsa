@@ -108,7 +108,8 @@ if (mouse_x < x)
 	#region ShadowAssassin
 	if (class == Character.ShadowAssassin)
 	{
-		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false)
+		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false
+		|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false)
 		{
 			if (instance_exists(obj_shadow))
 			{
@@ -195,13 +196,16 @@ if (mouse_x < x)
 	{
 		if (canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && meteorStun != 0)
 		{
-			if (mouse_check_button(mb_left))
+			if (mouse_check_button(mb_left)
+			|| keyboard_check(ord("1")))
 			{
 				charge += 1*(1+(gameMaster.bonusFirerate/100));
 				moveSpeed = 0;
 			}
-			if (mouse_check_button_released(mb_left) || charge >= maxCharge || mouse_check_button(mb_left) && mouse_check_button(mb_right) ||
-			mouse_check_button(mb_left) && keyboard_check(vk_space) || mouse_check_button(mb_left) && keyboard_check(ord("E")))
+			if (mouse_check_button_released(mb_left) || charge >= maxCharge || mouse_check_button(mb_left) && mouse_check_button(mb_right) 
+			|| mouse_check_button(mb_left) && keyboard_check(vk_space) || mouse_check_button(mb_left) && keyboard_check(ord("E")) 
+			|| mouse_check_button(mb_left) && keyboard_check_released(ord("1")) || mouse_check_button(mb_left) && keyboard_check(ord("2"))
+			|| mouse_check_button(mb_left) && keyboard_check_released(ord("R")) || mouse_check_button(mb_left) && keyboard_check_released(ord("Q")))
 			{
 				canLeftClick = false;
 				leftClickCooldownLeft = leftClickCooldown;
@@ -228,7 +232,8 @@ if (mouse_x < x)
 	#region Bloodknight
 	if (class == Character.BloodKnight)
 	{
-		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false)
+		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false
+		|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false)
 		{
 			canLeftClick = false;
 			leftClickCooldownLeft = leftClickCooldown;
@@ -250,7 +255,8 @@ if (mouse_x < x)
 	#endregion
 	#region Items
 	#region Death Scythe
-	if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == true)
+	if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == true
+	|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == true)
 	{
 		obj_equipment_deathScythe.state = MeleeWeaponStates.SpinOnce;
 		obj_equipment_deathScythe.spinTimes = 1;
@@ -308,7 +314,8 @@ if (mouse_x < x)
 	#region ShadowAssassin
 	if (class == Character.ShadowAssassin)
 	{
-		if (mouse_check_button(mb_right) && canRightClick == true && place_free(mouse_x,mouse_y))
+		if (mouse_check_button(mb_right) && canRightClick == true && place_free(mouse_x,mouse_y)
+		|| keyboard_check(ord("2"))) && canRightClick == true && place_free(mouse_x,mouse_y)
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
@@ -317,7 +324,7 @@ if (mouse_x < x)
 			canLeftClick = true;
 			leftClickCooldownLeft = 0;
 			var shadow = instance_create_depth(mouse_x,mouse_y,-mouse_y,obj_shadow);
-			shadow.image_alpha = image_alpha-0.2;
+			shadow.image_alpha = 1-0.2;
 			shadow.image_xscale = image_xscale;
 			shadow.image_yscale = image_yscale;
 			var shadowRange = instance_create_depth(mouse_y,mouse_x,depth,obj_shadowAttackRange);
@@ -332,7 +339,8 @@ if (mouse_x < x)
 	{
 		var coneWide = 45;
 		var coneAmount = 6;
-		if (mouse_check_button(mb_right) && canRightClick == true && meteorStun != 0)
+		if (mouse_check_button(mb_right) && canRightClick == true && meteorStun != 0 
+		|| keyboard_check(ord("2")) && canRightClick == true && meteorStun != 0)
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
@@ -394,7 +402,8 @@ if (mouse_x < x)
 	#region Bloodknight
 	if (class == Character.BloodKnight)
 	{
-		if (mouse_check_button(mb_right) && canRightClick == true)
+		if (mouse_check_button(mb_right) && canRightClick == true
+		|| keyboard_check(ord("2")) && canRightClick == true)
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
@@ -409,7 +418,7 @@ if (mouse_x < x)
 			if (global.itemSelected[Boss.FlameGate] == true)
 			{
 				var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
-				horn.destroyTime = (maxHp/50)*30;
+				horn.destroyTime = (maxHp/75)*30;
 			}
 			#endregion
 		}
@@ -431,14 +440,14 @@ if (mouse_x < x)
 			if (madHatAmount == 1){instance_create_depth(mouse_x,mouse_y,-mouse_y,obj_equipment_madHat);}
 			if (madHatAmount == 2)
 			{
-				instance_create_depth(mouse_x+5,mouse_y,-mouse_y,obj_equipment_madHat);
-				instance_create_depth(mouse_x-5,mouse_y,-mouse_y,obj_equipment_madHat);
+				instance_create_depth(mouse_x+10,mouse_y,-mouse_y,obj_equipment_madHat);
+				instance_create_depth(mouse_x-10,mouse_y,-mouse_y,obj_equipment_madHat);
 			}
 			if (madHatAmount == 3)
 			{
-				instance_create_depth(mouse_x+4,mouse_y+4,-mouse_y,obj_equipment_madHat);
-				instance_create_depth(mouse_x-4,mouse_y+4,-mouse_y,obj_equipment_madHat);
-				instance_create_depth(mouse_x,mouse_y+6,-mouse_y,obj_equipment_madHat);
+				instance_create_depth(mouse_x+8,mouse_y+8,-mouse_y,obj_equipment_madHat);
+				instance_create_depth(mouse_x-8,mouse_y+8,-mouse_y,obj_equipment_madHat);
+				instance_create_depth(mouse_x,mouse_y+10,-mouse_y,obj_equipment_madHat);
 			}
 		}
 		#endregion
@@ -455,7 +464,9 @@ if (mouse_x < x)
 	#region ShadowAssassin
 	if (class == Character.ShadowAssassin)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true)
+		if (keyboard_check(ord("E")) && canUlt == true
+		|| keyboard_check(ord("R")) && canUlt == true
+		|| keyboard_check(ord("Q")) && canUlt == true)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
@@ -474,7 +485,9 @@ if (mouse_x < x)
 	#region Pyromancer
 	if (class == Character.Pyromancer)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true && place_free(mouse_x,mouse_y) )
+		if (keyboard_check(ord("E")) && canUlt == true && place_free(mouse_x,mouse_y)
+		|| keyboard_check(ord("Q")) && canUlt == true && place_free(mouse_x,mouse_y)
+		|| keyboard_check(ord("R")) && canUlt == true && place_free(mouse_x,mouse_y))
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
@@ -523,7 +536,9 @@ if (mouse_x < x)
 	#region BloodKnight
 	if (class == Character.BloodKnight)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true)
+		if (keyboard_check(ord("E")) && canUlt == true
+		|| keyboard_check(ord("R")) && canUlt == true
+		|| keyboard_check(ord("Q")) && canUlt == true)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
@@ -653,7 +668,7 @@ if (mouse_x < x)
 		if (global.itemSelected[Boss.FlameGate] == true)
 		{
 			var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
-			horn.destroyTime = (maxHp/50)*30;
+			horn.destroyTime = (maxHp/75)*30;
 		}
 		#endregion
 		#region Futuristic Soldier

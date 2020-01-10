@@ -17,7 +17,7 @@ phase4Hp = 0; phase4Ms = 0; phase4Dmg = 0;
 phase5Hp = 0; phase5Ms = 0; phase5Dmg = 0;
 phase6Hp = 0; phase6Ms = 0; phase6Dmg = 0;
 tier1Hp = 400; tier2Hp = 700; tier3Hp = 1000;
-tier4Hp = 1300; tier5Hp = 1700; tier6Hp = 3500;
+tier4Hp = 1500; tier5Hp = 1600; tier6Hp = 3500;
 hp = 0;
 maxHp = hp;
 global.bossDamage = 10;
@@ -475,9 +475,9 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.StatueOfCorruption) 
 		{
 			//stats
-			phase1Hp = tier4Hp*0.15; phase1Ms = 1; phase1Dmg = 25;
-			phase2Hp = tier4Hp*0.35; phase2Ms = 1.1; phase2Dmg = 20;
-			phase3Hp = tier4Hp*0.5; phase3Ms = 1.2; phase3Dmg = 20;
+			phase1Hp = tier4Hp*0.15; phase1Ms = 0; phase1Dmg = 30;
+			phase2Hp = tier4Hp*0.35; phase2Ms = 0; phase2Dmg = 30;
+			phase3Hp = tier4Hp*0.5; phase3Ms = 0; phase3Dmg = 30;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -496,6 +496,8 @@ isHit = false;
 			circleSprite = spr_boss_statueOfCorruption_circle;
 			beamSprite = spr_boss_statueOfCorruption_beam;
 			//boss Specfic
+			x = global.arenaMiddleX;
+			y = global.arenaMiddleY;
 			#region Goo around the Arena
 			//1
 			var gooGround = instance_create_depth(global.arenaMiddleX+225,global.arenaMiddleY,-5,obj_enemyProjectile);
@@ -552,10 +554,58 @@ isHit = false;
 			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
 			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
 			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
-			}
+			
 			#endregion
-			x = global.arenaMiddleX;
-			y = global.arenaMiddleY;
+		}
+		#endregion
+		#region Wisp Sister Jana
+		if (gameMaster.chosenBoss == Boss.WispSisters) 
+		{
+			//stats
+			phase1Hp = tier4Hp*0.20; phase1Ms = 1; phase1Dmg = 40;
+			phase2Hp = tier4Hp*0.20; phase2Ms = 1.5; phase2Dmg = 40;
+			phase3Hp = tier4Hp*0.45; phase3Ms = 2; phase3Dmg = 40;
+			phase4Hp = tier4Hp*0.45; phase4Ms = 2; phase4Dmg = 25;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.WalkingTowards;
+			//attacks and phase
+			tier = 4;
+			phase = 1;
+			maxPhase = 4;
+			//visual
+			size = 1.5;
+			alpha = 0.85;
+			#region Wisp Sister Sprites
+			janaPhase1Circle = spr_boss_flameWisp_circle;
+			janaPhase1Cone = spr_boss_flameWisp_coneAttack;
+			janaPhase1OneShot = spr_boss_flameWisp_oneShot;
+			
+			janaPhase2Circle = spr_boss_wispSisterJulia_circle;
+			janaPhase2Chase = spr_boss_wispSisterJulia_chase;
+			janaPhase2Teleport = spr_boss_wispSisterJulia_teleport;
+			janaPhase2Goo = spr_boss_wispSisterJulia_goo;
+			
+			janaPhase3Circle = spr_boss_jana_circle;
+			janaPhase3Cone = spr_boss_jana_cone;
+			janaPhase3OneShot = spr_boss_jana_oneShot;
+			janaPhase3Chase = spr_boss_jana_chase;
+			janaPhase3Teleport = spr_boss_jana_teleport;
+			janaPhase3Goo = spr_boss_jana_goo;
+			
+			rapidFireSprite = spr_boss_jana_rapidFire;
+			#endregion
+			idleSprite = spr_boss_jana_idle;
+			circleSprite = janaPhase1Circle;
+			coneSprite = janaPhase1Cone;
+			oneShotSprite = janaPhase1OneShot;
+			gooSprite = janaPhase2Goo;
+			teleportSprite = janaPhase2Teleport;
+			chaseSprite = janaPhase2Chase;
+			rapidFireSprite = rapidFireSprite;
+			
+		}
 		#endregion
 	#endregion 
 	#region Tier 5

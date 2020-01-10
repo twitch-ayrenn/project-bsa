@@ -58,7 +58,7 @@ if (attack == Atks.CircleAttack)
 			angleBk += (360/circleAmount);
 		}
 	}
-	if (gameMaster.chosenBoss == Boss.FlameWisp)
+	if (gameMaster.chosenBoss == Boss.FlameWisp || gameMaster.chosenBoss == Boss.WispSisters)
 	{
 		var angleFC = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);;
 		var circleAmount = 14;
@@ -164,7 +164,7 @@ if (attack == Atks.GooSpawn)
 #region OneShot
 if (attack == Atks.OneShotAttack)
 {
-	if (gameMaster.chosenBoss == Boss.FlameWisp)
+	if (gameMaster.chosenBoss == Boss.FlameWisp || gameMaster.chosenBoss == Boss.WispSisters)
 	{
 		var infernalBall = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
 		//Main
@@ -184,7 +184,7 @@ if (attack == Atks.OneShotAttack)
 #region Cone Attacks
 if (attack == Atks.ConeAttack)
 {
-	if (gameMaster.chosenBoss == Boss.FlameWisp)
+	if (gameMaster.chosenBoss == Boss.FlameWisp || gameMaster.chosenBoss == Boss.WispSisters)
 	{
 		
 		var coneWide = 90;
@@ -365,7 +365,7 @@ if (attack == Atks.NormalShot)
 #region CircleAttacks
 if (attack == Atks.CircleAttack)
 {
-	if (gameMaster.chosenBoss == Boss.WispSisterJulia)
+	if (gameMaster.chosenBoss == Boss.WispSisterJulia || gameMaster.chosenBoss == Boss.WispSisters)
 	{
 		var angle = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
 		var circleAmount = 24;
@@ -391,7 +391,7 @@ if (attack == Atks.CircleAttack)
 #region GooSpawn
 if (attack == Atks.GooSpawn)
 {
-	if (gameMaster.chosenBoss == Boss.WispSisterJulia)
+	if (gameMaster.chosenBoss == Boss.WispSisterJulia || gameMaster.chosenBoss == Boss.WispSisters)
 	{
 		
 		var gooGround = instance_create_depth(obj_indicator.x,obj_indicator.y,-5,obj_enemyProjectile);
@@ -407,7 +407,11 @@ if (attack == Atks.GooSpawn)
 		gooGround.image_yscale = 4;
 		gooGround.destroy = true;
 		gooGround.effectType = Effect.NoEffect;
-		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
+		with (gooGround)
+		{
+			var nearestIndicator = instance_nearest(x,y,obj_indicator);
+			instance_destroy(nearestIndicator);
+		}
 	}
 	if (gameMaster.chosenBoss == Boss.FlameGate)
 	{
@@ -505,7 +509,7 @@ if (attack == Atks.BeamAttack)
 #region RapidFire
 if (attack == Atks.RapidFire)
 {
-	if (gameMaster.chosenBoss == Boss.WispSisterJulia)
+	if (gameMaster.chosenBoss == Boss.WispSisterJulia || gameMaster.chosenBoss == Boss.WispSisters)
 	{
 		rapidFireStacks += 10;
 	}
@@ -518,7 +522,7 @@ if (attack == Atks.RapidFire)
 #region Teleport
 if (attack == Atks.TeleportAttack)
 {
-	if (gameMaster.chosenBoss == Boss.WispSisterJulia)
+	if (gameMaster.chosenBoss == Boss.WispSisterJulia || gameMaster.chosenBoss == Boss.WispSisters)
 	{
 		alpha = normalAlpha;
 		chooseAnAttack = true;

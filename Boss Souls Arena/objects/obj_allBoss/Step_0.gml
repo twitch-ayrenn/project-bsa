@@ -431,6 +431,33 @@ if (moveType == MovementType.StandingStill)
 		}
 	}
 	#endregion
+	#region WispSister Jana
+	if (gameMaster.chosenBoss == Boss.WispSisters)
+	{
+		if (rapidFireStacks > 0 && canRapidAttack == true)
+		{
+			canRapidAttack = false;
+			rapidFireStacks -= 1;
+			
+			shake_remain = 2;
+		
+			var fireball = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			fireball.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+			fireball.speed = 6;
+			fireball.image_angle = fireball.direction+90;
+			//Visual
+			fireball.image_alpha = 0.85;
+			fireball.image_blend = c_aqua;
+			fireball.sprite_index = spr_fireBall;
+			fireball.image_xscale = 2;
+			fireball.image_yscale = 2;
+			fireball.effectType = Effect.Flare;
+		
+			alarm[2] = (0.75)*30;
+		}
+	}
+	#endregion
 #endregion
 #region Attacks
 if(chooseAnAttack == true)
@@ -481,6 +508,10 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.StatueOfCorruption && phase == 1){attack = choose(Atks.RapidFire);}
 	if (gameMaster.chosenBoss == Boss.StatueOfCorruption && phase == 2){attack = choose(Atks.RapidFire,Atks.CircleAttack,Atks.ConeAttack);}
 	if (gameMaster.chosenBoss == Boss.StatueOfCorruption && phase == 3){attack = choose(Atks.RapidFire,Atks.CircleAttack,Atks.ConeAttack,Atks.BeamAttack,Atks.ChaseAttack);}
+	if (gameMaster.chosenBoss == Boss.WispSisters && phase == 1){attack = choose(Atks.ConeAttack,Atks.OneShotAttack,Atks.CircleAttack);}
+	if (gameMaster.chosenBoss == Boss.WispSisters && phase == 2){attack = choose(Atks.CircleAttack,Atks.ChaseAttack,Atks.GooSpawn,Atks.TeleportAttack);}
+	if (gameMaster.chosenBoss == Boss.WispSisters && phase == 3){attack = choose(Atks.CircleAttack,Atks.ChaseAttack,Atks.GooSpawn,Atks.TeleportAttack,Atks.ConeAttack,Atks.OneShotAttack);}
+	if (gameMaster.chosenBoss == Boss.WispSisters && phase == 4){attack = Atks.RapidFire;}
 	#endregion
 	if (attack == Atks.NormalShot)
 	{
@@ -547,7 +578,7 @@ if(chooseAnAttack == true)
 		}
 		#endregion
 		#region WispSisterAnna
-		if (gameMaster.chosenBoss == Boss.WispSisterJulia)
+		if (gameMaster.chosenBoss == Boss.WispSisterJulia || gameMaster.chosenBoss == Boss.WispSisters)
 		{
 			var indicator = instance_create_depth(global.player.x,global.player.y,-5,obj_indicator)
 			indicator.sprite_index = spr_damageCircle;
@@ -619,7 +650,7 @@ if(chooseAnAttack == true)
 		}
 		#endregion
 		#region Wisp Sister Anna
-		if (gameMaster.chosenBoss == Boss.WispSisterJulia)
+		if (gameMaster.chosenBoss == Boss.WispSisterJulia || gameMaster.chosenBoss == Boss.WispSisters)
 		{
 			moveSpeed = 2.65;
 			var chaseDamage = instance_create_depth(x,y,depth-1,obj_enemyProjectile);
@@ -744,7 +775,7 @@ if(chooseAnAttack == true)
 	{
 		sprite_index = teleportSprite;
 		attackColor = global.purple;
-		if (gameMaster.chosenBoss == Boss.WispSisterJulia || gameMaster.chosenBoss == Boss.BloodKingVarus || gameMaster.chosenBoss == Boss.BloodKnightDavid)
+		if (gameMaster.chosenBoss == Boss.WispSisterJulia || gameMaster.chosenBoss == Boss.BloodKingVarus || gameMaster.chosenBoss == Boss.BloodKnightDavid || gameMaster.chosenBoss == Boss.WispSisters)
 		{
 			alpha = 0;
 			var xTp = obj_allPlayer.x + choose(-200,-150,-100,100,150,200);
@@ -761,8 +792,6 @@ if(chooseAnAttack == true)
 			indicator.image_blend = c_maroon;
 			indicator.followPlayer = true;
 		}
-		#region AngelSlayerRekZul	
-		#endregion
 	}
 	if (attack == Atks.ZoneAttack)
 	{
@@ -845,6 +874,12 @@ if (hp <= 0 && phase == 1 && phase != maxPhase)
 		}
 	}
 	#endregion
+	#region Wisp Sisters Janna
+	if (gameMaster.chosenBoss == Boss.WispSisters)
+	{
+		circleSprite = janaPhase2Circle;
+	}
+	#endregion
 }
 if (hp <= 0 && phase == 2 && phase != maxPhase)
 {
@@ -852,6 +887,17 @@ if (hp <= 0 && phase == 2 && phase != maxPhase)
 	hp = phase3Hp;
 	moveSpeed = phase3Ms;
 	global.bossDamage = phase3Dmg;
+	#region Wisp Sisters Janna
+	if (gameMaster.chosenBoss == Boss.WispSisters)
+	{
+		circleSprite = janaPhase3Circle;
+		coneSprite = janaPhase3Cone
+		oneShotSprite = janaPhase3OneShot;
+		gooSprite = janaPhase3Goo;
+		teleportSprite = janaPhase3Teleport;
+		chaseSprite = janaPhase3Chase;
+	}
+	#endregion
 }
 if (hp <= 0 && phase == 3 && phase != maxPhase)
 {

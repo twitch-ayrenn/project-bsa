@@ -207,7 +207,7 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"from the ground. When erupting",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"it deals massive damage to enemies.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"The demon claw blocks all projectiles.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			var dhText = "It lasts for [" + string(hpCalc/50) + "] seconds." 
+			var dhText = "It lasts for [" + string(hpCalc/75) + "] seconds.";
 			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,dhText,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			
 			var fText2 = "[Claw Damage]: " + string(dmgCalc*10)
@@ -219,7 +219,7 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"+ 20% Dash/Teleport Length",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
 			if (global.ShowInfo == true)
 			{
-				draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"[Note] the time the claw stays up ",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+				draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"[Note] The time the claw stays up ",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
 				draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"scales with your [Max Health].",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
 			}			
 			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -546,6 +546,7 @@ if (menu == Menues.Play)
 	if (global.tutorial == true)
 	{
 		draw_sprite_ext(spr_tutorial_boss,0,0,0,0.8333*10,0.8333*10,0,c_white,transitionAlpha-0.15);
+		draw_sprite_ext(spr_arenaKingTutorial,0,1400,750,-10,10,0,c_white,transitionAlpha);
 		draw_set_halign(fa_center);
 		var textSize = 0.1;
 		draw_text_transformed_color(800,275,"This is your opponent",0.6,0.6,0,c_lime,c_lime,c_green,c_green,transitionAlpha);
@@ -634,6 +635,7 @@ if (menu == Menues.Play)
 				draw_text_transformed_color(xText,yText+30*19,"You move with the [W] & [A] & [S] & [D] keys.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 			}
 			#endregion
+			draw_sprite_ext(spr_arenaKingTutorial,0,1200,250,-10,10,0,c_white,playerTutorialAlpha);
 			draw_set_halign(fa_left);
 			draw_set_halign(fa_center);
 			draw_text_transformed_color(150,800,"Click Any Key",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);

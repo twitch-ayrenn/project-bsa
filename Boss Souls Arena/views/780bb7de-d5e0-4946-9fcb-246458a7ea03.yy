@@ -4,13 +4,9 @@
     "mvc": "1.1",
     "name": "780bb7de-d5e0-4946-9fcb-246458a7ea03",
     "children": [
-        "cfa20bd7-1794-4fc5-9b26-adf22043b55c",
-        "b063ac4e-9aaf-46f0-9794-a05a7b31b3e5",
-        "b77289ff-7170-43ab-8152-b4e045f41974",
-        "8fc206b5-1d20-4f53-a242-89d893081aed",
-        "a08ab509-94a1-4c0d-9273-852a02bc7d6e",
-        "bcb7453b-1f98-4fbc-a3bc-61a16a0cc592",
-        "a9c0f29c-f64c-4252-80a1-c81b96185757"
+        "12a1ebbc-6976-48ce-b37e-42655080b0ff",
+        "11b1196d-79f5-4018-b577-a190c9b0b08c",
+        "039bacf1-f9c0-4aec-b096-bbb9f124368e"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_wispSisters",
