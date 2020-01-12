@@ -149,16 +149,24 @@ activateUltItem = false;
 activateDashItem = false;
 activateLeftClickItem = false;
 activateRightClickItem = false;
-//
+#region Blood Zombie / Zombie Head
 bPSpeed = 1;
 if (global.itemSelected[Boss.BloodZombie] == true){instance_create_depth(x,y,depth+1,obj_visual_zombieHead);}
+#endregion
+#region Wisp Sister Julia / Flamie
 summonFlamie = false;
 summonFlamieTime = clamp(24*((2-conjurationPower)),3,24)*30;
 summonFlamieStacks = 0;
 if (global.itemSelected[Boss.FlameWisp] == true){summonFlamie = true;}
+#endregion
+#region The Corrupter / Edge Of Corruption
 edgeOfCorruptionCharge = 0;
 edgeOfCorruptionChargeTime = (2.5)*30;
+#endregion
+#region Knight Witch Yi / Death Cap
 madHatAmount = int64(1*conjurationPower);
+#endregion
+#region Wisp Sister Julia / Futuristic Soldier
 if (global.itemSelected[Boss.WispSisterJulia] == true)
 {
 	repeat(int64(2*conjurationPower))
@@ -166,24 +174,38 @@ if (global.itemSelected[Boss.WispSisterJulia] == true)
 		instance_create_depth(x+irandom_range(-5,5),y+irandom_range(-5,5),-y,obj_equipment_futuristicSoldier);	
 	}
 }
+#endregion
+#region Angel Slayer / Nether Portal
 global.portalTime = clamp(7*(1 - (clamp(gameMaster.bonusCooldown*1,0,99)/100)),2,7);
 if (global.itemSelected[Boss.AngelSlayerRekZul] == true)
 {
 	instance_create_depth(x,y,depth,obj_equipment_leftPortal);
 	instance_create_depth(x,y,depth,obj_equipment_rightPortal);
 }
-if (global.itemSelected[Boss.DeathKnight] == true)
+#endregion
+#region Death Knight / Death Scythe
+if (global.itemSelected[Boss.DeathKnight] == true && global.itemSelected[Boss.DemonLordRekTaar] == false)
 {
 	instance_create_depth(x,y,depth+1,obj_equipment_deathScythe);
 	var extraDamage = (1+(abs(preLCCD/30-3)/10))*global.damage*5*(1+(gameMaster.bonusFirerate/100));
 	global.deathScyhteDamage = extraDamage;
 	leftClickCooldown = (3)*30;
 }
-#region ultra Rapid Fire Hourglass
+#endregion
+#region Angel Knight Oscar/ultra Rapid Fire Hourglass
 if (global.itemSelected[Boss.AngelKnightOscar] == true)
 {
 	global.damage *= 0.35;
 }
+#endregion
+#region Demon General Rektaar
+if (global.itemSelected[Boss.DemonLordRekTaar] == true){instance_create_depth(x,y,depth+1,obj_visual_demonPortal);}
+leftClickCooldown = (6)*30;
+leftClickCooldown *= 1 - (gameMaster.bonusFirerate/100);
+#endregion
+#region
+#endregion
+#region
 #endregion
 #endregion
 #region Bosses

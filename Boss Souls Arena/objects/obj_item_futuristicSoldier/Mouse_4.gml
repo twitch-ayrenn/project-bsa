@@ -1,5 +1,5 @@
 /// @description Insert description here
-if (global.itemSlots >= 1 && global.itemSelected[bossForThisItem] == false)
+if (global.itemSlots >= 1 && global.itemSelected[bossForThisItem] == false && global.slot6 == false)
 {
 	global.itemSelected[bossForThisItem] = true;
 	global.itemSlots -= 1;
@@ -30,4 +30,5 @@ if (global.itemSlots >= 1 && global.itemSelected[bossForThisItem] == false)
 	gameMaster.previewAura -= previewAura;
 	gameMaster.previewConjur -= previewConjur;
 	gameMaster.previewCooldown -= previewCooldown;
+	
 }

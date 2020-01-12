@@ -55,7 +55,8 @@ if (menu == Menues.BossLoot)
 	var dlText = "Dash/Tp Bonus: " + string(0 + bonusDash + previewDash) + "%";
 	var dmgCalc = int64(10 + bonusDamage + previewDamage);
 	var dmgText = "Damage: " + string(dmgCalc);
-	var frText = "Attack Speed: " + string(100 + bonusFirerate + previewFirerate) + "%";
+	var firerateCalc = 1 + ((bonusFirerate + previewFirerate)/100);
+	var frText = "Attack Speed: " + string(firerateCalc*100) + "%";
 	var lsText = "LifeSteal: " + string(75 + bonusLifeSteal + previewLifeSteal) + "%";//base is 75% for all damage
 	var conjureCalc = 1 + (bonusConjur + previewConjur)/100;
 	var cjText = "Conjuration Power: " + string((conjureCalc-1)*100) + "%";
@@ -124,7 +125,7 @@ if (menu == Menues.BossLoot)
 			var bztext = "[Area Damage]: " + string(dmgCalc) + "/second";
 			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,bztext,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			var bztext2 = "[Speed Increase]: " +  string(50) + "%";
-			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,bztext2,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,bztext2,itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
 			draw_set_font(fnt_menu_fill);
 			draw_text_transformed_color(infoTextX,350+7.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
@@ -162,7 +163,7 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			if (global.ShowInfo == true)
 			{
-				draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"[Note] Spawn time scales with",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+				draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"[Note]: Spawn time scales with",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 				draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"Conjuration Bonus.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			}
 			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -216,10 +217,10 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+7.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
 			draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"+ 10 Health",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
-			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"+ 20% Dash/Teleport Length",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"+ 20% Dash and Teleport Length",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
 			if (global.ShowInfo == true)
 			{
-				draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"[Note] The time the claw stays up ",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+				draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"[Note]: The time the claw stays up ",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
 				draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"scales with your [Max Health].",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
 			}			
 			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -312,7 +313,7 @@ if (menu == Menues.BossLoot)
 			{
 			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"[Note] The portals coooldown scales ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"with cooldown reduction.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"#Note Minimum cooldown is 2 seconds",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"[Note]: Minimum cooldown is 2 seconds",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			}
 			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"\"hmmm huuu huhhuuu?\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			
@@ -379,6 +380,33 @@ if (menu == Menues.BossLoot)
 			draw_set_font(fnt_menu_fill);
 			if(global.ShowInfo == true){var ItemName = "Item Info: " + "URFH";}
 			if(global.ShowInfo == false){var ItemName = "Item Info: " + "Ultra Rapid Fire Hourglass";}
+			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+		}
+		#endregion
+		#region Demon General Rektaar
+		if (itemShowInfoFor == Boss.DemonLordRekTaar)
+		{
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Your [Left-Click] ability is replaced",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"with the Demon Portal.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			frText = "The portal summons an Impling every [" + string(6/firerateCalc) + "]";
+			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,frText,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"seconds that charge in the direction you ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"aim. Dashing or Teleporting resets the ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,"cooldown.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			var bztext = "[Imp Damage]: " + string(dmgCalc*5*conjureCalc);
+			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,bztext,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_set_font(fnt_menu_fill);
+			draw_text_transformed_color(infoTextX,350+8.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"+ 1 Speed",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"+ 20% Dash and Teleport Length",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"+ 2 Damage",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"[Note]: Summoning Power increases the",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"damage the impling deals.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			//name
+			draw_set_font(fnt_menu_fill);
+			var ItemName = "Item Info: " + "Zombie Head"
 			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 		}
 		#endregion

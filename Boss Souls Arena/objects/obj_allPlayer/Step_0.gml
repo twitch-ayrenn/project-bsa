@@ -108,8 +108,8 @@ if (mouse_x < x)
 	#region ShadowAssassin
 	if (class == Character.ShadowAssassin)
 	{
-		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false
-		|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false)
+		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false
+		|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
 		{
 			if (instance_exists(obj_shadow))
 			{
@@ -255,11 +255,49 @@ if (mouse_x < x)
 	#endregion
 	#region Items
 	#region Death Scythe
-	if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == true
-	|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == true)
+	if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == true && global.itemSelected[Boss.DemonLordRekTaar] == false
+	|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == true && global.itemSelected[Boss.DemonLordRekTaar] == false)
 	{
 		obj_equipment_deathScythe.state = MeleeWeaponStates.SpinOnce;
 		obj_equipment_deathScythe.spinTimes = 1;
+		
+		canLeftClick = false;
+		leftClickCooldownLeft = leftClickCooldown;
+		activateLeftClickItem = true;
+		if (class == Character.ShadowAssassin)
+		{
+			if (instance_exists(obj_shadow))
+			{
+				with (obj_shadow)
+				{
+					var angleL = 0;
+					var amountL = int64(global.player.daggerAmount);
+					repeat(amountL)
+					{
+						var dagger = instance_create_depth(x,y,depth+1,obj_daggerProjectile);
+						dagger.direction = angleL;
+						dagger.speed = 7;
+						dagger.image_angle = angleL-90;
+						dagger.image_xscale = 0.9;
+						dagger.image_yscale = 1.1;
+						angleL += 360/amountL;
+					}
+				}
+			}
+		}
+	}
+	#endregion
+	#region Demon Portal
+	if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DemonLordRekTaar] == true
+	|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DemonLordRekTaar] == true)
+	{
+		with (obj_visual_demonPortal)
+		{
+			var impling = instance_create_depth(x,y,depth+1,obj_equipment_impling)
+			impling.speed = 5;
+			impling.direction = point_direction(x,y,mouse_x,mouse_y);
+			impling.size = 0.65 * global.damage * global.player.conjurationPower;
+		}
 		
 		canLeftClick = false;
 		leftClickCooldownLeft = leftClickCooldown;

@@ -2383,6 +2383,14 @@
             }
         },
         {
+            "Key": "55fd051a-e6ad-4a52-a12d-3e0ed49daaa9",
+            "Value": {
+                "id": "953b2e2c-d72f-44b7-a03d-2bff5d1f2172",
+                "resourcePath": "sprites\\spr_equipment_impling\\spr_equipment_impling.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5605e173-433c-4b5b-b420-2dc86ab765c3",
             "Value": {
                 "id": "4f770e42-6248-4c7d-8594-1ef5fd38cbc4",
@@ -2707,6 +2715,14 @@
             "Value": {
                 "id": "c05b0081-9801-4860-b3a1-9ed827ed1a76",
                 "resourcePath": "objects\\obj_spinBeam\\obj_spinBeam.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "63b2cb5b-c6a7-4654-a8b6-b041493dd213",
+            "Value": {
+                "id": "7308058e-d699-4f5e-8b95-e1f372c620c6",
+                "resourcePath": "objects\\obj_visual_demonPortal\\obj_visual_demonPortal.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -3067,6 +3083,14 @@
             "Value": {
                 "id": "91919cdf-e3f6-4315-9f5c-b338347372fc",
                 "resourcePath": "sprites\\spr_guardianCursor\\spr_guardianCursor.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "730240e9-bb64-4fbe-9ebc-424133d7ddc2",
+            "Value": {
+                "id": "b92bf8d1-187c-43d0-b4ea-61d6484fafde",
+                "resourcePath": "sprites\\spr_loot_equipment_implings\\spr_loot_equipment_implings.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5823,6 +5847,14 @@
             }
         },
         {
+            "Key": "d77be312-cae9-44f3-a791-ae072c902166",
+            "Value": {
+                "id": "f834b868-a19c-4991-9c1a-23089b7148e2",
+                "resourcePath": "objects\\obj_item_implings\\obj_item_implings.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "d799e861-219e-407a-bfb7-80b6e35fb2ef",
             "Value": {
                 "id": "119d2412-e039-40cd-ae9f-483d77da8bf4",
@@ -5900,6 +5932,14 @@
                 "id": "98720631-fe9f-49a5-b92c-97ec930d34eb",
                 "resourcePath": "sprites\\spr_deathKnightScythe_spin\\spr_deathKnightScythe_spin.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "dba72ce7-98a5-445d-9fa9-3ecebcfcec3d",
+            "Value": {
+                "id": "50104b39-af13-4dca-afcf-60d7d136d11e",
+                "resourcePath": "objects\\obj_equipment_impling\\obj_equipment_impling.yy",
+                "resourceType": "GMObject"
             }
         },
         {
