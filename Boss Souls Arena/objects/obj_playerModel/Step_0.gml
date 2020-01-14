@@ -21,7 +21,7 @@ if (gameMaster.menu == Menues.PlayerSelect)
 if (gameMaster.menu == Menues.BossLoot)
 {
 	x = 28-4;
-	y = 56-16;
+	y = 56-20;
 	if (gameMaster.chosenClass == Character.TheRedWarrior){sprite_index = spr_player_theWarrior;}
 	if (gameMaster.chosenClass == Character.ShadowAssassin){sprite_index = spr_player_theAssasin;}
 	if (gameMaster.chosenClass == Character.Pyromancer){sprite_index = spr_player_theMage_menu;}

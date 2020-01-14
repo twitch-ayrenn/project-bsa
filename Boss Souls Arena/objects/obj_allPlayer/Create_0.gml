@@ -84,8 +84,8 @@ if (class == Character.ShadowAssassin)
 if (class == Character.Pyromancer)
 {
 	leftClickCooldown = (8)*30;
-	rightClickCooldown = (12)*30;
-	dashCooldown = (3)*30;
+	rightClickCooldown = (11)*30;
+	dashCooldown = (3.5)*30;
 	ultCooldown = (16)*30;
 	idleSprite = spr_player_theMage;
 	walkSprite = spr_player_theMage_walking;
@@ -159,6 +159,8 @@ summonFlamieTime = clamp(24*((2-conjurationPower)),3,24)*30;
 summonFlamieStacks = 0;
 if (global.itemSelected[Boss.FlameWisp] == true){summonFlamie = true;}
 #endregion
+global.fSFireRate = (1)*30;
+global.fSFireRate *= 1 - (gameMaster.bonusCooldown/100);
 #region The Corrupter / Edge Of Corruption
 edgeOfCorruptionCharge = 0;
 edgeOfCorruptionChargeTime = (2.5)*30;
@@ -187,7 +189,7 @@ if (global.itemSelected[Boss.AngelSlayerRekZul] == true)
 if (global.itemSelected[Boss.DeathKnight] == true && global.itemSelected[Boss.DemonLordRekTaar] == false)
 {
 	instance_create_depth(x,y,depth+1,obj_equipment_deathScythe);
-	var extraDamage = (1+(abs(preLCCD/30-3)/10))*global.damage*5*(1+(gameMaster.bonusFirerate/100));
+	var extraDamage = global.damage*6*(1+(gameMaster.bonusFirerate/100));
 	global.deathScyhteDamage = extraDamage;
 	leftClickCooldown = (3)*30;
 }
@@ -212,7 +214,7 @@ leftClickCooldown *= 1 - (gameMaster.bonusFirerate/100);
 blackOutAlpha = 0;
 #endregion
 #region maxValues
-if (class == Character.Pyromancer){leftClickCooldown = (9)*30; coneShotAmount = int64(global.damage*2);}
+if (class == Character.Pyromancer){leftClickCooldown = (8)*30; coneShotAmount = int64(global.damage*2);}
 if (class == Character.BloodKnight){hp += gameMaster.bonusHealth;}
 actualBKDashSpeed = 0;//needs to exist or else it crashes 
 normalSpeed = moveSpeed;

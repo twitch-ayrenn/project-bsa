@@ -160,6 +160,7 @@ global.colorBlindIcons = false;
 global.colorBlindText = false;
 global.dashTowardsMove = false;
 global.seeAbilitiesInGame = true;
+global.showExtraItemInfo = false;
 //tutorial
 global.tutorial = true;
 global.tutorialBoss = true;
