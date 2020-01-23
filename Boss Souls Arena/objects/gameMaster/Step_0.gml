@@ -29,6 +29,7 @@ if (menu == Menues.Play && room == rm_arena)
 	}
 }
 //proggresion
+if (global.itemSlots > 6){global.itemSlots = 6; global.maxItemSlots = 6;}
 //settings
 if (keyboard_check_released(ord("I")))
 {	

@@ -95,6 +95,14 @@
             }
         },
         {
+            "Key": "0260112a-d7eb-4023-8d8d-c21a2f042cef",
+            "Value": {
+                "id": "c8935ac9-4260-40b8-83e6-fded36aaebb1",
+                "resourcePath": "views\\0260112a-d7eb-4023-8d8d-c21a2f042cef.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "028a5c78-f2cd-4144-bfe2-19e227344076",
             "Value": {
                 "id": "fa407c50-28f7-41e2-9457-d783c22d71e1",
@@ -359,6 +367,14 @@
             }
         },
         {
+            "Key": "0c01eebf-3aa6-4a89-b66e-f5e1485ef8e3",
+            "Value": {
+                "id": "84ae9997-9d4e-411d-890e-06853c331c6f",
+                "resourcePath": "sprites\\spr_loot_scrollOfBlood\\spr_loot_scrollOfBlood.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0c8359e4-3343-46a9-8806-a5b9a76a5e83",
             "Value": {
                 "id": "031b9f88-5639-43f5-bce1-229b9a189b82",
@@ -506,7 +522,7 @@
             "Key": "110b0e1c-c1c7-4578-9d4d-53b2e9444072",
             "Value": {
                 "id": "b0fefbda-f406-48dd-94e7-1ae882268d48",
-                "resourcePath": "sprites\\spr_loot_flamePact\\spr_loot_flamePact.yy",
+                "resourcePath": "sprites\\spr_loot_scroll\\spr_loot_scroll.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -604,6 +620,14 @@
                 "id": "5d808e33-d589-4b4e-926b-cd9e6e79942e",
                 "resourcePath": "objects\\obj_fightCard_demonLordRekTaar\\obj_fightCard_demonLordRekTaar.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "149f07d5-99f2-416a-b0c0-c0dd56ba01a7",
+            "Value": {
+                "id": "64316c04-11e9-4c1d-8488-87b541cd2ac6",
+                "resourcePath": "sprites\\spr_boss_demonQueensHead_idle\\spr_boss_demonQueensHead_idle.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1279,6 +1303,14 @@
             }
         },
         {
+            "Key": "2b24363b-f1e5-4a7a-92c8-c7419abdca85",
+            "Value": {
+                "id": "10f25af4-f0ce-454f-955a-86b8765d740b",
+                "resourcePath": "sprites\\sprite468\\sprite468.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "2b4f7ad0-067e-4f71-9186-b505e408cc2e",
             "Value": {
                 "id": "c8d1a55a-2cf0-4c8f-ac6d-c5913bb25b7b",
@@ -1483,6 +1515,14 @@
             "Value": {
                 "id": "dee0ea6c-1b55-4b03-892b-e133ce5bc22e",
                 "resourcePath": "sprites\\spr_playCharacter\\spr_playCharacter.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "32733422-84be-4bae-8591-c4b7dec638d7",
+            "Value": {
+                "id": "8f0636c7-b959-4d0c-a2fe-1db00c8b7e72",
+                "resourcePath": "sprites\\spr_rewardChest1\\spr_rewardChest1.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1935,6 +1975,14 @@
             }
         },
         {
+            "Key": "453a22cc-443f-47f2-94b3-842901104e09",
+            "Value": {
+                "id": "7b68c060-d4d6-492f-98fc-c299818e7bf1",
+                "resourcePath": "sprites\\spr_loot_size1\\spr_loot_size1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "45484e32-203b-49bc-bc65-62c8e302befb",
             "Value": {
                 "id": "80786c45-f39f-4052-920c-181ed187fecc",
@@ -1948,6 +1996,14 @@
                 "id": "cf277856-c3f8-40b0-b25a-7b3e934557ad",
                 "resourcePath": "sprites\\spr_npc_theBloodKnight\\spr_npc_theBloodKnight.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "46081b41-d415-498b-a955-d8ae25087c6e",
+            "Value": {
+                "id": "64143a40-e2b0-4cd6-97ff-32135d4a8f13",
+                "resourcePath": "objects\\obj_item_lootBox\\obj_item_lootBox.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -2067,6 +2123,14 @@
             "Value": {
                 "id": "c5ccdafc-22ec-449f-8d19-71600ed1ac70",
                 "resourcePath": "objects\\obj_item_deathCap\\obj_item_deathCap.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "49cf1896-0eff-4550-9548-e2209933026e",
+            "Value": {
+                "id": "02d57dc2-ac80-442a-ab1e-cce76bf2ed49",
+                "resourcePath": "objects\\obj_equipment_theLastWish\\obj_equipment_theLastWish.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -2276,6 +2340,14 @@
                 "id": "3923191a-5c8f-48db-a8d3-8c857a9fc78d",
                 "resourcePath": "objects\\obj_angelSlayer\\obj_angelSlayer.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "51e7c85b-207c-4186-a19f-d9f6f3b4e23a",
+            "Value": {
+                "id": "106fb1b3-9f04-4c13-98d0-0cfaf9acb1d5",
+                "resourcePath": "sprites\\spr_boss_demonQueensHead_chase\\spr_boss_demonQueensHead_chase.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2735,6 +2807,14 @@
             }
         },
         {
+            "Key": "650bd4dc-2e6f-449f-b0f9-83c5e40cb64d",
+            "Value": {
+                "id": "3f1ad877-7d1e-4b38-825b-ad58bef98e18",
+                "resourcePath": "objects\\obj_demonQueensHorn\\obj_demonQueensHorn.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "65143a45-de16-49eb-9ea9-ea9f877dc2d2",
             "Value": {
                 "id": "18ce417f-6ee1-445b-a22a-ede20586ee23",
@@ -2996,6 +3076,14 @@
                 "id": "98c95348-9887-420c-8059-a86c8441aad8",
                 "resourcePath": "objects\\par_fightCards\\par_fightCards.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "6e82f8d1-509e-4448-b289-a555be0ae2b9",
+            "Value": {
+                "id": "1b6386da-35da-4212-b253-f84c3122e318",
+                "resourcePath": "sprites\\spr_demonQueensHorn\\spr_demonQueensHorn.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -4015,6 +4103,14 @@
             }
         },
         {
+            "Key": "94072e06-7f12-446f-b4b6-cea4af2aa6ca",
+            "Value": {
+                "id": "a843648c-91ee-4074-aa5a-df343238e475",
+                "resourcePath": "sprites\\spr_loot_theLastWish\\spr_loot_theLastWish.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "9420954b-b7f3-448b-bbf5-62ecd2b12e70",
             "Value": {
                 "id": "08b5a4c4-f7a3-49d6-b345-9c816d8510ba",
@@ -4124,6 +4220,14 @@
                 "id": "1933a51e-9bc4-46fd-9cab-bae306b8a419",
                 "resourcePath": "objects\\obj_button_settings_fullscreenTrue\\obj_button_settings_fullscreenTrue.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "9780e075-02a9-4dfa-85c5-4eef61923ff8",
+            "Value": {
+                "id": "78c87465-5963-4467-90b3-2e20c24821e9",
+                "resourcePath": "sprites\\spr_boss_demonQueensHead_oneShot\\spr_boss_demonQueensHead_oneShot.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -4823,6 +4927,14 @@
             }
         },
         {
+            "Key": "b2371c1b-b5fb-4112-8415-32628214166f",
+            "Value": {
+                "id": "2c203533-7834-48fa-b3c3-e2e8d1d03ba8",
+                "resourcePath": "sprites\\spr_boss_demonQueensHead_circle\\spr_boss_demonQueensHead_circle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b24bc9c8-69ec-4565-a880-2e420eb2a81f",
             "Value": {
                 "id": "7f000839-446f-4a2b-bc27-30235b09a44a",
@@ -5271,6 +5383,14 @@
             }
         },
         {
+            "Key": "c3b81c70-ac8d-4d8b-a176-deecddd6c2c5",
+            "Value": {
+                "id": "ff16cabe-b875-4e86-9da5-46acf4f77b27",
+                "resourcePath": "sprites\\spr_boss_demonQueensHead_rapidFire\\spr_boss_demonQueensHead_rapidFire.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c3f81b1d-b845-42b4-82df-18c00fcf2d7c",
             "Value": {
                 "id": "8909c013-426a-45b9-8bd4-9dc384e60c49",
@@ -5551,6 +5671,14 @@
             }
         },
         {
+            "Key": "ccd18815-a08c-4642-b5cc-0290628533ab",
+            "Value": {
+                "id": "cb79e704-ffcb-476f-8f50-aaefc57723c3",
+                "resourcePath": "objects\\obj_gravekeeperRange\\obj_gravekeeperRange.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ccff8b6c-4d62-4807-b3b3-191f6d26cecb",
             "Value": {
                 "id": "7c0a2288-32a7-49ab-9e04-adae08e2e4ac",
@@ -5571,6 +5699,14 @@
             "Value": {
                 "id": "3210d012-bef4-47ea-8d37-a35b17bba39b",
                 "resourcePath": "sprites\\sprite162\\sprite162.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "cda90d47-6ada-4061-9cd2-512ad38358e4",
+            "Value": {
+                "id": "263f5b33-061e-4884-a883-320bd5f2b7b6",
+                "resourcePath": "sprites\\spr_boss_demonQueensHead_beam\\spr_boss_demonQueensHead_beam.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5619,6 +5755,14 @@
             "Value": {
                 "id": "2f385c3a-8587-4fb1-876a-aeb8fa6712a0",
                 "resourcePath": "sprites\\spr_loot_demonHorn\\spr_loot_demonHorn.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ced4131d-fde7-4116-9d75-19eb580f8aed",
+            "Value": {
+                "id": "a73af552-1ea4-4a08-831d-305ef1b3d1bc",
+                "resourcePath": "sprites\\spr_loot_lootBox\\spr_loot_lootBox.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5911,6 +6055,14 @@
             }
         },
         {
+            "Key": "d8dc500e-2d5f-4b46-a184-03c4aefb7436",
+            "Value": {
+                "id": "4ee3e668-9998-4e0b-8f51-09874ad76375",
+                "resourcePath": "objects\\obj_item_scrollOfBlood\\obj_item_scrollOfBlood.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "d9318266-9c6b-490a-a85a-cb4e78cdfce0",
             "Value": {
                 "id": "865e6609-b7f1-4ece-ad8a-a9ad6a5f1f1a",
@@ -5955,6 +6107,14 @@
             "Value": {
                 "id": "98720631-fe9f-49a5-b92c-97ec930d34eb",
                 "resourcePath": "sprites\\spr_deathKnightScythe_spin\\spr_deathKnightScythe_spin.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "db755c72-d340-4662-9f08-107fe4bf16d9",
+            "Value": {
+                "id": "7e019051-cb63-4347-b952-286de7601d68",
+                "resourcePath": "sprites\\spr_equipment_theLastWish\\spr_equipment_theLastWish.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -6439,6 +6599,14 @@
             }
         },
         {
+            "Key": "eb407d6f-fff8-4200-ae9b-31edd1af81bc",
+            "Value": {
+                "id": "38d46f7a-8b87-49d2-98ae-d70b21a0c582",
+                "resourcePath": "objects\\obj_equipment_gravekeeper\\obj_equipment_gravekeeper.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "eb48225f-39e6-470b-a64f-f90415cbb362",
             "Value": {
                 "id": "d339fc1c-3428-48b1-82b7-ed9dd7e85a5e",
@@ -6455,6 +6623,14 @@
             }
         },
         {
+            "Key": "eb799993-e072-411a-8fa7-700de665f5ce",
+            "Value": {
+                "id": "4939eb75-caa2-4b19-9c41-40495e46b9dd",
+                "resourcePath": "objects\\obj_item_theLastWish\\obj_item_theLastWish.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ec2d9daf-94a3-48b6-8550-f10516a1d0a8",
             "Value": {
                 "id": "ea4d7c2a-4bbc-4ac3-a4fc-a39f6138c3f2",
@@ -6467,6 +6643,14 @@
             "Value": {
                 "id": "55ee6545-7a49-46d6-8915-00d529a1db4a",
                 "resourcePath": "sprites\\spr_shadowScreen_left\\spr_shadowScreen_left.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ec586102-f06a-4403-aeb0-325aabe15ace",
+            "Value": {
+                "id": "3b744453-513c-478f-9330-35c5e4ac60b1",
+                "resourcePath": "sprites\\spr_boss_demonQueensHead_teleport\\spr_boss_demonQueensHead_teleport.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -6516,6 +6700,14 @@
                 "id": "8f69ef58-0cbc-4e62-ab86-c3c77b090b7a",
                 "resourcePath": "objects\\obj_angelSlayerRekZul\\obj_angelSlayerRekZul.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "eddf0d28-95f2-4f8a-88b2-c4d03b3aa778",
+            "Value": {
+                "id": "42c01ba5-cce1-433c-b32c-29f75b6b59c5",
+                "resourcePath": "sprites\\spr_lastWishRange\\spr_lastWishRange.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -6684,6 +6876,14 @@
                 "id": "d2657509-fe5d-43bd-8098-b849b5f5cd56",
                 "resourcePath": "sprites\\spr_fight_t2_deathKnight\\spr_fight_t2_deathKnight.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f5d06748-95dd-4e6e-a767-31c693b5acfd",
+            "Value": {
+                "id": "f59bd5ac-2615-4b1b-ae53-56c145b2f794",
+                "resourcePath": "objects\\obj_theLastWishRange\\obj_theLastWishRange.yy",
+                "resourceType": "GMObject"
             }
         },
         {

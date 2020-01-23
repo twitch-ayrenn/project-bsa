@@ -15,7 +15,10 @@
         "4987dc1b-db54-4c50-8a80-85e9371a5b1c",
         "9a38c031-2b97-429b-8198-963f290c353b",
         "d77be312-cae9-44f3-a791-ae072c902166",
-        "d75807aa-3d64-4b6c-81ab-62022fbdfaab"
+        "d75807aa-3d64-4b6c-81ab-62022fbdfaab",
+        "d8dc500e-2d5f-4b46-a184-03c4aefb7436",
+        "46081b41-d415-498b-a955-d8ae25087c6e",
+        "eb799993-e072-411a-8fa7-700de665f5ce"
     ],
     "filterType": "GMObject",
     "folderName": "grp_items",

@@ -20,7 +20,7 @@ if (color == c_lime)
 if (color == c_maroon)
 {
 	yRise -= 0.25;
-	if (yRise <= -6)
+	if (yRise <= -9)
 	{
 		instance_destroy();	
 	}

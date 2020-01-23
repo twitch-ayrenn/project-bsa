@@ -149,6 +149,50 @@ activateUltItem = false;
 activateDashItem = false;
 activateLeftClickItem = false;
 activateRightClickItem = false;
+#region Statue of Corruption / The Lootbox
+totalItems = 13;
+if (global.itemSelected[Boss.StatueOfCorruption] == true && global.slot2 == true)
+{
+	itemRolled[1] = false;
+	itemRolled[2] = false;
+	counter = 1;
+	while (itemRolled[1] == false || itemRolled[2] == false)
+	{
+		if (counter == 6 || counter == 10 || counter == 13){counter++;}
+		if (counter == 9){counter += 2;}
+		
+		if (global.itemSelected[counter] == false && irandom_range(1,totalItems) == 1) 
+		{
+			global.itemSelected[counter] = true;
+			if (itemRolled[1] == true && itemRolled[2] == false){itemRolled[2] = true;}
+			if (itemRolled[1] == false){itemRolled[1] = true;}
+		}
+		
+		counter++;
+		if(counter > totalItems){counter = 1;}
+	}
+	if (global.itemSelected[Boss.DeathKnight] == true){preLCCD = leftClickCooldown;}
+}
+if (global.itemSelected[Boss.StatueOfCorruption] == true && global.slot2 == false)
+{
+	itemsRolled = 0;
+	counter = 1;
+	while(itemsRolled < global.maxItemSlots + 2)
+	{
+		if (counter == 6 || counter == 10 || counter == 13){counter++;}
+		if (counter == 9){counter += 2;}
+		
+		if (global.itemSelected[counter] == false && irandom_range(1,totalItems) == 1)
+		{
+			global.itemSelected[counter] = true;
+			itemsRolled++;	
+		}
+		
+		counter++;
+		if(counter > totalItems){counter = 1;}
+	}
+}
+#endregion
 #region Blood Zombie / Zombie Head
 bPSpeed = 1;
 if (global.itemSelected[Boss.BloodZombie] == true){instance_create_depth(x,y,depth+1,obj_visual_zombieHead);}
@@ -159,8 +203,6 @@ summonFlamieTime = clamp(24*((2-conjurationPower)),3,24)*30;
 summonFlamieStacks = 0;
 if (global.itemSelected[Boss.FlameWisp] == true){summonFlamie = true;}
 #endregion
-global.fSFireRate = (1)*30;
-global.fSFireRate *= 1 - (gameMaster.bonusCooldown/100);
 #region The Corrupter / Edge Of Corruption
 edgeOfCorruptionCharge = 0;
 edgeOfCorruptionChargeTime = (2.5)*30;
@@ -175,6 +217,8 @@ if (global.itemSelected[Boss.WispSisterJulia] == true)
 	{
 		instance_create_depth(x+irandom_range(-5,5),y+irandom_range(-5,5),-y,obj_equipment_futuristicSoldier);	
 	}
+	global.fSFireRate = (1)*30;
+	global.fSFireRate *= 1 - (gameMaster.bonusCooldown/100);
 }
 #endregion
 #region Angel Slayer / Nether Portal
@@ -201,13 +245,37 @@ if (global.itemSelected[Boss.AngelKnightOscar] == true)
 }
 #endregion
 #region Demon General Rektaar
-if (global.itemSelected[Boss.DemonLordRekTaar] == true){instance_create_depth(x,y,depth+1,obj_visual_demonPortal);}
-leftClickCooldown = (6)*30;
-leftClickCooldown *= 1 - (gameMaster.bonusFirerate/100);
+if (global.itemSelected[Boss.DemonLordRekTaar] == true)
+{
+	instance_create_depth(x,y,depth+1,obj_visual_demonPortal);
+	leftClickCooldown = (6)*30;
+	leftClickCooldown *= 1 - (gameMaster.bonusFirerate/100);
+}
+#endregion
+#region Gravekeeper
+gravekeeperSpeed = 1;
+if (global.itemSelected[Boss.Gravekeeper] == true)
+{
+	instance_create_depth(x+irandom_range(10,25),y+irandom_range(-25,25),depth,obj_equipment_gravekeeper);
+}
+#endregion
+#region Bloodarmy General
+shield = false;
+shieldStacks = 0;
+shieldTime = (2)*30;
+shieldSpeed = 1;
+#endregion
+#region Wisp Sisters the last wish
+if (global.itemSelected[Boss.WispSisters] == true)
+{
+	damageInCircle = global.damage*1.1;
+	damageOutSideCircle = global.damage;
+	lifestealInCircle = global.lifeSteal + 0.1;
+	lifestealOutsideCircle = global.lifeSteal;
+}
 #endregion
 #region
-#endregion
-#region
+
 #endregion
 #endregion
 #region Bosses

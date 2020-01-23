@@ -1,7 +1,8 @@
 /// @description Insert description here
 #region vars
 //depth
-if (place_meeting(x,y,obj_allBoss) == false){depth = -50;}
+//if (place_meeting(x,y,obj_allBoss) == false){depth = -50;}
+depth = -y-50;
 if (sprite_index == spr_gooGround){depth = -7;}
 var target = global.player;
 //damage
@@ -55,6 +56,12 @@ if (stickOn == true)
 		x = global.arenaMiddleX-400;	
 		y = global.arenaMiddleY;
 	}
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead)
+	{
+		x = obj_allBoss.x;	
+		y = obj_allBoss.y-29;
+	}
+	
 }
 if (beamChase == true)
 {

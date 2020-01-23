@@ -16,7 +16,6 @@ if (instance_exists(obj_allBoss) == false)
 	blackOutAlpha = clamp(blackOutAlpha - 0.5/30,0,0.75);
 }
 #endregion
-
 #region Speed
 //checkBefore
 if (speed < 0){speed = 0;}
@@ -40,7 +39,7 @@ if (state == States.Idle || state == States.Walking)
 {
 image_angle = 0;
 #region Movement
-actualSpeed = (moveSpeed)*bPSpeed*global.playerBossSlow*meteorStun;
+actualSpeed = (moveSpeed)*bPSpeed*global.playerBossSlow*meteorStun*gravekeeperSpeed*shieldSpeed;
 if (keyboard_check(ord("A")) && keyboard_check(ord("S")) || keyboard_check(ord("A")) && keyboard_check(ord("W")) ||  keyboard_check(ord("D")) && keyboard_check(ord("S")) || keyboard_check(ord("D")) && keyboard_check(ord("W")))
 {
 	actualSpeed = actualSpeed*0.85;
@@ -296,7 +295,7 @@ if (mouse_x < x)
 			var impling = instance_create_depth(x,y,depth+1,obj_equipment_impling)
 			impling.speed = 5;
 			impling.direction = point_direction(x,y,mouse_x,mouse_y);
-			impling.size = 0.65 * global.damage * global.player.conjurationPower;
+			impling.size = 0.45 + 0.20 * global.damage * global.player.conjurationPower;
 		}
 		
 		canLeftClick = false;
@@ -328,6 +327,7 @@ if (mouse_x < x)
 	if (activateLeftClickItem == true)
 	{
 		activateLeftClickItem = false;
+		#region DeathCap
 		if (instance_exists(obj_equipment_madHat))
 		{
 			with (obj_equipment_madHat)
@@ -342,10 +342,10 @@ if (mouse_x < x)
 				projectile.image_blend = c_red;
 			}
 		}
+		#endregion 
 	}
 	#endregion
 	#region onGoingEffects
-	
 	#endregion
 #endregion
 #region RightClick
@@ -590,6 +590,17 @@ if (mouse_x < x)
 	if (activateUltItem == true)
 	{
 		activateUltItem = false;
+		#region Bloodarmy General
+		if (global.itemSelected[Boss.BloodKnightDavid] == true)
+		{
+			shield = true;
+			var damageToTarget = hp*0.5;
+			var damageText = instance_create_depth(x+irandom_range(-8,8),y+irandom_range(-5,5),depth-10,obj_textMaker);
+			damageText.color = c_maroon;
+			damageText.text = damageToTarget/10;
+			hp -= damageToTarget;
+		}
+		#endregion
 		#region Zombie Head
 		if (global.itemSelected[Boss.BloodZombie] == true && instance_exists(par_enemy))
 		{
@@ -697,6 +708,20 @@ if (mouse_x < x)
 			horn.destroyTime = (maxHp/75)*30;
 		}
 		#endregion
+		#region the last wish
+			if (global.itemSelected[Boss.WispSisters] == true && instance_exists(obj_equipment_theLastWish) == false)
+			{
+				instance_create_depth(x,y,depth,obj_equipment_theLastWish);
+			}
+			if (global.itemSelected[Boss.WispSisters] == true && instance_exists(obj_equipment_theLastWish) == true)
+			{
+				with (obj_equipment_theLastWish)
+				{
+					x = global.player.x;
+					y = global.player.y;
+				}
+			}
+		#endregion
 	}
 	#endregion
 #endregion
@@ -737,6 +762,22 @@ if (mouse_x < x)
 	#region Zombie Head
 	if (place_meeting(x,y,obj_equipment_bloodPuddle)){bPSpeed = 1 + (50)/100;}
 	if (!place_meeting(x,y,obj_equipment_bloodPuddle)){bPSpeed = 1;}
+	#endregion
+	#region Bloodarmy General
+	shieldSpeed = 1;
+	if (shield == true)
+	{
+		shieldStacks++;
+		global.iFrame = true;
+		shieldSpeed = 0;
+		image_blend = c_red;
+	}
+	if (shieldStacks >= shieldTime)
+	{
+		shieldStacks = 0;
+		shield = false;
+		image_blend = c_white;
+	}
 	#endregion
 #endregion
 #region Cooldowns

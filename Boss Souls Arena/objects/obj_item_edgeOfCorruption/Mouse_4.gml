@@ -30,5 +30,4 @@ if (global.itemSlots >= 1 && global.itemSelected[bossForThisItem] == false && gl
 	gameMaster.previewAura -= previewAura;
 	gameMaster.previewConjur -= previewConjur;
 	gameMaster.previewCooldown -= previewCooldown;
-	
 }

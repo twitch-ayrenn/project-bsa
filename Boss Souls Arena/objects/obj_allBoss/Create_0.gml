@@ -38,6 +38,10 @@ enum MovementType
 moveType = 1;
 pointX = choose(60,0,-60);
 pointY = choose(60,-60);
+jump = false;
+fall = false;
+targetX = 0;
+targetY = 0;
 #endregion
 #region Phases
 tier = 1;
@@ -609,6 +613,37 @@ isHit = false;
 		#endregion
 	#endregion 
 	#region Tier 5
+		#region Demon Queens Head
+		if (gameMaster.chosenBoss == Boss.DemonQueensHead) 
+		{
+			//stats
+			phase1Hp = tier4Hp*0.25; phase1Ms = 0.75; phase1Dmg = 20;
+			phase2Hp = tier4Hp*0.15; phase2Ms = 0.75; phase2Dmg = 20;
+			phase3Hp = tier4Hp*0.2; phase3Ms = 0.75; phase3Dmg = 20;
+			phase4Hp = tier4Hp*0.4; phase4Ms = 1; phase4Dmg = 30;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.WalkingTowards;
+			//attacks and phase
+			tier = 4;
+			phase = 1;
+			maxPhase = 4;
+			//visual
+			size = 1.5;
+			alpha = 1;
+			idleSprite = spr_boss_demonQueensHead_idle;
+			oneShotSprite = spr_boss_demonQueensHead_oneShot;
+			rapidFireSprite = spr_boss_demonQueensHead_rapidFire;
+			chaseSprite = spr_boss_demonQueensHead_chase;
+			teleportSprite = spr_boss_demonQueensHead_teleport;
+			beamSprite = spr_boss_demonQueensHead_beam;
+			circleSprite = spr_boss_demonQueensHead_circle;
+			//boss Specfic
+			var spinBeam = instance_create_depth(x,y,depth+1,obj_demonQueensHorn);
+			x -= 25;
+		}
+		#endregion
 		#region Varus
 		if (gameMaster.chosenBoss == Boss.BloodKingVarus) 
 		{
@@ -629,7 +664,7 @@ isHit = false;
 			coneSprite = spr_boss_bloodRoyalVarus_cone;
 			teleportSprite = spr_boss_bloodRoyalVarus_teleport;
 			oneShotSprite = spr_boss_bloodRoyalVarus_oneShot;
-			chaseSprite = spr_boss_bloodRoyalVarus_chase;	
+			chaseSprite = spr_boss_bloodRoyalVarus_chase;
 		}
 		#endregion
 	#endregion

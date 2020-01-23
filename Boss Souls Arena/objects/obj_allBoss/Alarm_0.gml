@@ -1280,3 +1280,184 @@ if (attack == Atks.HealAttack)
 }
 #endregion
 #endregion
+#region Tier5
+#region NormalAttacks
+if (attack == Atks.NormalShot)
+{
+	
+}
+#endregion
+#region CircleAttacks
+if (attack == Atks.CircleAttack)
+{
+	
+}
+#endregion
+#region GooSpawn
+if (attack == Atks.GooSpawn)
+{
+	
+}
+#endregion
+#region OneShot
+if (attack == Atks.OneShotAttack)
+{
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead)
+	{
+		//up
+		var infernalBall = instance_create_depth(global.player.x,global.player.y-150,depth+1,obj_enemyProjectile);
+		//Main
+		infernalBall.direction = 270;
+		infernalBall.speed = 7.5;
+		infernalBall.image_angle = infernalBall.direction+90;
+		//Visual
+		infernalBall.image_alpha = 0.85;
+		infernalBall.image_blend = c_red;
+		infernalBall.sprite_index = spr_bloodKlott;
+		infernalBall.image_xscale = 2;
+		infernalBall.image_yscale = 2;
+		infernalBall.effectType = Effect.Flare;
+		//down
+		var infernalBall2 = instance_create_depth(global.player.x,global.player.y+150,depth+1,obj_enemyProjectile);
+		//Main
+		infernalBall2.direction = 90;
+		infernalBall2.speed = 7.5;
+		infernalBall2.image_angle = infernalBall2.direction+90;
+		//Visual
+		infernalBall2.image_alpha = 0.85;
+		infernalBall2.image_blend = c_red;
+		infernalBall2.sprite_index = spr_bloodKlott;
+		infernalBall2.image_xscale = 2;
+		infernalBall2.image_yscale = 2;
+		infernalBall2.effectType = Effect.Flare;	
+		//left
+		var infernalBall3 = instance_create_depth(global.player.x-150,global.player.y,depth+1,obj_enemyProjectile);
+		//Main
+		infernalBall3.direction = 0;
+		infernalBall3.speed = 7.5;
+		infernalBall3.image_angle = infernalBall3.direction+90;
+		//Visual
+		infernalBall3.image_alpha = 0.85;
+		infernalBall3.image_blend = c_red;
+		infernalBall3.sprite_index = spr_bloodKlott;
+		infernalBall3.image_xscale = 2;
+		infernalBall3.image_yscale = 2;
+		infernalBall3.effectType = Effect.Flare;	
+		//right
+		var infernalBall4 = instance_create_depth(global.player.x+150,global.player.y,depth+1,obj_enemyProjectile);
+		//Main
+		infernalBall4.direction = 180;
+		infernalBall4.speed = 7.5;
+		infernalBall4.image_angle = infernalBall4.direction+90;
+		//Visual
+		infernalBall4.image_alpha = 0.85;
+		infernalBall4.image_blend = c_red;
+		infernalBall4.sprite_index = spr_bloodKlott;
+		infernalBall4.image_xscale = 2;
+		infernalBall4.image_yscale = 2;
+		infernalBall4.effectType = Effect.Flare;	
+	}
+}
+#endregion
+#region ConeAttack
+if (attack == Atks.ConeAttack)
+{
+	
+}
+#endregion
+#region ChaseAttack
+if (attack == Atks.ChaseAttack)
+{
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead)
+	{
+		
+		
+		targetX = global.player.x;
+		targetY = global.player.y;
+		
+		var nearestIndicator = instance_nearest(targetX,targetY,obj_indicator);
+		if(instance_exists(obj_indicator)){instance_destroy(nearestIndicator);}
+		
+		x = targetX;
+		y = global.player.y-400;
+		
+		fall = true;
+		jump = false;
+	}
+}
+#endregion
+#region BeamAttack
+if (attack == Atks.BeamAttack)
+{
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead)
+	{
+		var beam = instance_create_depth(x-20,y-29,depth+1,obj_enemyProjectile);
+		//Main
+		beam.image_angle = -90;
+		//Visual
+		beam.image_alpha = 0.85;
+		beam.image_blend = c_red;
+		beam.sprite_index = spr_beam;
+		beam.image_xscale = 0.5;
+		beam.image_yscale = 20;
+		beam.maxSize = 2;
+		beam.minSize = 0.25;
+		beam.stickOn = true;
+		beam.beamChase = true;
+		beam.turningSpeed = 40;
+		beam.destroy = false;
+		beam.effectType = Effect.NoEffect;
+			
+		var beam2 = instance_create_depth(x+20,y-29,depth+1,obj_enemyProjectile);
+		//Main
+		beam2.image_angle = 90;
+		//Visual
+		beam2.image_alpha = 0.85;
+		beam2.image_blend = c_red;
+		beam2.sprite_index = spr_beam;
+		beam2.image_xscale = 0.5;
+		beam2.image_yscale = 20;
+		beam2.maxSize = 2;
+		beam2.minSize = 0.25;
+		beam2.stickOn = true;
+		beam2.beamChase = true;
+		beam2.turningSpeed = -40;
+		beam2.destroy = false;
+		beam2.effectType = Effect.NoEffect;
+	}
+}
+#endregion
+#region RapidFire
+if (attack == Atks.RapidFire)
+{
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead)
+	{
+		rapidFireStacks += 6;
+	}
+}
+#endregion
+#region Teleport
+if (attack == Atks.TeleportAttack)
+{
+	
+}
+#endregion
+#region ZoneAttack
+if (attack == Atks.ZoneAttack)
+{
+	
+}
+#endregion
+#region TauntAttack
+if (attack == Atks.TauntAttack)
+{
+	
+}
+#endregion
+#region Heal Attack
+if (attack == Atks.HealAttack)
+{
+	
+}
+#endregion
+#endregion

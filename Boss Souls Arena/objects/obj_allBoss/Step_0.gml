@@ -1,12 +1,11 @@
 /// @description Insert description here
-// You can write your code in this editor
+#region Visuals & Variables
 globalvar attack;
 if (startUpVars == true)
 {
 	startUpVars = false;
 	attack = 0;
 }
-#region Visuals & Variables
 randomize();
 var sizeX = size;
 if (x < obj_allPlayer.x){sizeX = size;}
@@ -26,6 +25,7 @@ if (state == BossStates.BeforeFight)
 {
 	sprite_index = idleSprite;
 }
+#region Demon Lord Rektaar
 if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
 {
 	rotation1 -= 2;
@@ -33,12 +33,13 @@ if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
 	rotation3 -= 1;
 }
 #endregion
+#endregion
 #region Fighting
 if (state == BossStates.Fighting)
 {
 #region Movement
 actualSpeed = moveSpeed;
-if (moveType == MovementType.WalkingTowards)
+if (moveType == MovementType.WalkingTowards && fall == false)
 {
 	move_towards_point(global.player.x,global.player.y,actualSpeed);
 }
@@ -95,6 +96,15 @@ if (moveType == MovementType.StandingStill)
 		x = global.arenaMiddleX;
 		y = global.arenaMiddleY;
 	}
+}
+if (jump == true)
+{
+	y = clamp(y - 35, 0, global.arenaMiddleY+300);
+}
+if (fall == true)
+{
+	y = clamp(y + 35, 0, targetY);
+	if (y >= targetY){fall = false;}
 }
 #endregion
 #region Ongoing things
@@ -205,7 +215,7 @@ if (moveType == MovementType.StandingStill)
 		}
 	}
 	#endregion
-	#region Flame Gate
+	#region Demon Gate
 	if (gameMaster.chosenBoss == Boss.FlameGate)
 	{
 		if (rapidFireStacks > 0 && canRapidAttack == true)
@@ -458,6 +468,58 @@ if (moveType == MovementType.StandingStill)
 		}
 	}
 	#endregion
+	#region Demon Queen's Head
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead)
+	{
+		if (rapidFireStacks > 0 && canRapidAttack == true)
+		{
+			canRapidAttack = false;
+			rapidFireStacks -= 1;
+		
+			var coneWide = 40;
+			var coneAtkFW = point_direction(x+20,y-29,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.34;
+			var coneAmount = 3;
+			repeat(coneAmount)
+			{
+				var fireBolt = instance_create_depth(x+20,y-29,depth+1,obj_enemyProjectile);
+				//Main
+				fireBolt.direction = coneAtkFW;
+				fireBolt.speed = 5.85;
+				fireBolt.image_angle = fireBolt.direction+90;
+				//Visual
+				fireBolt.image_alpha = 0.8;
+				fireBolt.sprite_index = spr_fireBall;
+				fireBolt.image_blend = c_red;
+				fireBolt.image_xscale = 1.25;
+				fireBolt.image_yscale = 1.25;
+				fireBolt.effectType = Effect.Flare;
+				coneAtkFW += (coneWide/coneAmount);
+			}
+			
+			var coneWide = 40;
+			var coneAtkFW = point_direction(x-20,y-29,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.34;
+			var coneAmount = 3;
+			repeat(coneAmount)
+			{
+				var fireBolt = instance_create_depth(x-20,y-29,depth-1,obj_enemyProjectile);
+				//Main
+				fireBolt.direction = coneAtkFW;
+				fireBolt.speed = 5.85;
+				fireBolt.image_angle = fireBolt.direction+90;
+				//Visual
+				fireBolt.image_alpha = 0.8;
+				fireBolt.sprite_index = spr_fireBall;
+				fireBolt.image_blend = c_red;
+				fireBolt.image_xscale = 1.25;
+				fireBolt.image_yscale = 1.25;
+				fireBolt.effectType = Effect.Flare;
+				coneAtkFW += (coneWide/coneAmount);
+			}
+		
+			alarm[2] = (0.75)*30;
+		}
+	}
+	#endregion
 #endregion
 #region Attacks
 if(chooseAnAttack == true)
@@ -512,6 +574,12 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.WispSisters && phase == 2){attack = choose(Atks.CircleAttack,Atks.ChaseAttack,Atks.GooSpawn,Atks.TeleportAttack);}
 	if (gameMaster.chosenBoss == Boss.WispSisters && phase == 3){attack = choose(Atks.CircleAttack,Atks.ChaseAttack,Atks.GooSpawn,Atks.TeleportAttack,Atks.ConeAttack,Atks.OneShotAttack);}
 	if (gameMaster.chosenBoss == Boss.WispSisters && phase == 4){attack = Atks.RapidFire;}
+	#endregion
+	#region Tier5 Bosses
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead && phase == 1){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.BeamAttack,Atks.ChaseAttack);}
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead && phase == 2){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.BeamAttack,Atks.ChaseAttack,Atks.TeleportAttack);}
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead && phase == 3){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.BeamAttack,Atks.ChaseAttack,Atks.TeleportAttack,Atks.CircleAttack);}
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead && phase == 4){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.BeamAttack,Atks.ChaseAttack,Atks.TeleportAttack,Atks.CircleAttack);}
 	#endregion
 	if (attack == Atks.NormalShot)
 	{
@@ -715,7 +783,24 @@ if(chooseAnAttack == true)
 			}
 		}
 		#endregion
-		
+		#region Demon Queens Head
+		if (gameMaster.chosenBoss == Boss.DemonQueensHead)
+		{
+			var nearestBeams1 = instance_nearest(x-20,y-29,obj_enemyProjectile);
+			var nearestBeams2 = instance_nearest(x+20,y-29,obj_enemyProjectile);
+			with (nearestBeams1){if (nearestBeams1.sprite_index == spr_beam){instance_destroy();}}
+			with (nearestBeams2){if (nearestBeams2.sprite_index == spr_beam){instance_destroy();}}
+			
+			var indicator = instance_create_depth(global.player.x,global.player.y,-5,obj_indicator)
+			indicator.sprite_index = spr_damageCircle;
+			indicator.image_xscale = 0.1;
+			indicator.image_yscale = 0.1;
+			indicator.image_blend = c_maroon;
+			indicator.followPlayer = true;
+			
+			jump = true;
+		}
+		#endregion
 	}
 	if (attack == Atks.RapidFire)
 	{
