@@ -55,9 +55,9 @@ enum Boss
 	WispSisters,
 
 	DemonQueensHead,// 5
-	BloodKingVarus,
-	SlimeKing, 
 	DeathKing,
+	SlimeQueen, 
+	BloodKingVarus,
 	VoidLordHeadless,
 	
 	ArenaKing,
@@ -162,8 +162,8 @@ global.dashTowardsMove = false;
 global.seeAbilitiesInGame = true;
 global.showExtraItemInfo = false;
 //tutorial
-global.tutorial = true;
-global.tutorialBoss = true;
+global.tutorial = false;
+global.tutorialBoss = false;
 global.tutorialPlayer = false;
 //controlls
 global.moveUpKey = ord("W");
@@ -204,9 +204,9 @@ checkOnce = true;
 outline_init();
 ////Character progression and select
 //Progress // for a boss its its number -1
-assassinProgress = 25;
-bloodKnightProgress = 25;
-pyromancerProgress = 25;
+assassinProgress = 100;
+bloodKnightProgress = 100;
+pyromancerProgress = 100;
 shopkeeperProgress = 1;
 theRedWarriorProgress = 1;
 plaugeWalkerProgress = 1;

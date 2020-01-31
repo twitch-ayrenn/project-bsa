@@ -76,9 +76,12 @@ if (class == Character.ShadowAssassin)
 	knivesToThrow = 0;
 	knivesThrownStacks = 0;
 	throwingDirection = 0;
-	var shadowRange = instance_create_depth(x,y,1,obj_shadowAttackRange);
-	shadowRange.image_xscale *= 1+(gameMaster.bonusDash/100);
-	shadowRange.image_yscale = shadowRange.image_xscale;
+	if (global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
+	{
+		var shadowRange = instance_create_depth(x,y,1,obj_shadowAttackRange);
+		shadowRange.image_xscale *= 1+(gameMaster.bonusDash/100);
+		shadowRange.image_yscale = shadowRange.image_xscale;
+	}
 	daggerAmount = 12;
 }
 if (class == Character.Pyromancer)
@@ -135,12 +138,13 @@ moveSpeed += gameMaster.bonusSpeed/10;
 dashSpeed *= 1+(gameMaster.bonusDash/100);
 global.damage += gameMaster.bonusDamage/10;
 leftClickCooldown *= 1 - (gameMaster.bonusFirerate/100);
-global.lifeSteal += gameMaster.bonusLifeSteal;
-auraPower = 1 + (gameMaster.bonusAura/100);
+global.lifeSteal += gameMaster.bonusLifeSteal/100;
 conjurationPower = 1 + (gameMaster.bonusConjur/100);
-rightClickCooldown *= 1 - (gameMaster.bonusCooldown/100);
-ultCooldown *= 1 - (gameMaster.bonusCooldown/100);
-dashCooldown *= 1 - (gameMaster.bonusCooldown/100);
+cdrCap = 0.5;
+if (global.itemSelected[Boss.AngelKnightOscar] == true){cdrCap = 0.6;}
+rightClickCooldown *= 1 - clamp((gameMaster.bonusCooldown/100),0,cdrCap);
+ultCooldown *= 1 - clamp((gameMaster.bonusCooldown/100),0,cdrCap);
+dashCooldown *= 1 - clamp((gameMaster.bonusCooldown/100),0,cdrCap);
 #endregion
 #region Items
 preLCCD = 0;
@@ -158,8 +162,8 @@ if (global.itemSelected[Boss.StatueOfCorruption] == true && global.slot2 == true
 	counter = 1;
 	while (itemRolled[1] == false || itemRolled[2] == false)
 	{
-		if (counter == 6 || counter == 10 || counter == 13){counter++;}
-		if (counter == 9){counter += 2;}
+		if (counter == 6 || counter == 10){counter++;}
+		if (counter == 9 || counter == 13){counter += 2;}
 		
 		if (global.itemSelected[counter] == false && irandom_range(1,totalItems) == 1) 
 		{
@@ -179,8 +183,8 @@ if (global.itemSelected[Boss.StatueOfCorruption] == true && global.slot2 == fals
 	counter = 1;
 	while(itemsRolled < global.maxItemSlots + 2)
 	{
-		if (counter == 6 || counter == 10 || counter == 13){counter++;}
-		if (counter == 9){counter += 2;}
+		if (counter == 6 || counter == 10){counter++;}
+		if (counter == 9 || counter == 13){counter += 2;}
 		
 		if (global.itemSelected[counter] == false && irandom_range(1,totalItems) == 1)
 		{
@@ -218,7 +222,7 @@ if (global.itemSelected[Boss.WispSisterJulia] == true)
 		instance_create_depth(x+irandom_range(-5,5),y+irandom_range(-5,5),-y,obj_equipment_futuristicSoldier);	
 	}
 	global.fSFireRate = (1)*30;
-	global.fSFireRate *= 1 - (gameMaster.bonusCooldown/100);
+	global.fSFireRate *= 1 - clamp((gameMaster.bonusCooldown/100)*1.25,0,0.9);
 }
 #endregion
 #region Angel Slayer / Nether Portal
@@ -241,7 +245,7 @@ if (global.itemSelected[Boss.DeathKnight] == true && global.itemSelected[Boss.De
 #region Angel Knight Oscar/ultra Rapid Fire Hourglass
 if (global.itemSelected[Boss.AngelKnightOscar] == true)
 {
-	global.damage *= 0.35;
+	global.damage *= 0.5;
 }
 #endregion
 #region Demon General Rektaar

@@ -126,6 +126,12 @@ if (drawArea == true)
 		}
 	}
 	#endregion
+	#region Demon Queens Head
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead && attack == Atks.BeamAttack)
+	{
+		draw_line_width_color(x-600,y,x+600,y,1,global.orange,global.orange);
+	}
+	#endregion
 }
 #endregion
 //boss Specific
@@ -152,9 +158,4 @@ if (isHit == true)
 	draw_self();
 	gpu_set_fog(false,c_white,0,0);
 }
-#region Bloom
-if (gameMaster.chosenBoss == Boss.BloodZombie)
-{
-	draw_sprite_ext(spr_bloom_big,0,x,y,0.75,0.75,0,c_red,0.2);
-}
-#endregion
+

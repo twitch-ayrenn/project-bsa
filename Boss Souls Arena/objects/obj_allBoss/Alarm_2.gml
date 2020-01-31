@@ -1,5 +1,6 @@
 /// @description Insert rapidFire
 canRapidAttack = true;
+with(obj_camera){shake_remain = 2;}
 #region Angel Knight Oscar
 if (gameMaster.chosenBoss == Boss.AngelKnightOscar)
 {

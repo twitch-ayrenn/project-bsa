@@ -40,6 +40,7 @@ pointX = choose(60,0,-60);
 pointY = choose(60,-60);
 jump = false;
 fall = false;
+dealDamageOnFall = true;
 targetX = 0;
 targetY = 0;
 #endregion
@@ -617,16 +618,16 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.DemonQueensHead) 
 		{
 			//stats
-			phase1Hp = tier4Hp*0.25; phase1Ms = 0.75; phase1Dmg = 20;
-			phase2Hp = tier4Hp*0.15; phase2Ms = 0.75; phase2Dmg = 20;
-			phase3Hp = tier4Hp*0.2; phase3Ms = 0.75; phase3Dmg = 20;
-			phase4Hp = tier4Hp*0.4; phase4Ms = 1; phase4Dmg = 30;
+			phase1Hp = tier5Hp*0.25; phase1Ms = 0.75; phase1Dmg = 20;
+			phase2Hp = tier5Hp*0.15; phase2Ms = 0.75; phase2Dmg = 20;
+			phase3Hp = tier5Hp*0.2; phase3Ms = 0.75; phase3Dmg = 20;
+			phase4Hp = tier5Hp*0.4; phase4Ms = 1; phase4Dmg = 30;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
 			moveType = MovementType.WalkingTowards;
 			//attacks and phase
-			tier = 4;
+			tier = 5;
 			phase = 1;
 			maxPhase = 4;
 			//visual
@@ -640,7 +641,75 @@ isHit = false;
 			beamSprite = spr_boss_demonQueensHead_beam;
 			circleSprite = spr_boss_demonQueensHead_circle;
 			//boss Specfic
-			var spinBeam = instance_create_depth(x,y,depth+1,obj_demonQueensHorn);
+			var horn = instance_create_depth(x,y,depth+1,obj_demonQueensHorn);
+			horn.image_xscale = image_xscale;
+			horn.image_yscale = horn.image_xscale;
+			x -= 25;
+		}
+		#endregion
+		#region Death Kings
+		if (gameMaster.chosenBoss == Boss.DeathKing) 
+		{
+			//stats
+			phase1Hp = tier4Hp*0.15; phase1Ms = 0.25; phase1Dmg = 25;
+			phase2Hp = tier4Hp*0.15; phase2Ms = 0.25; phase2Dmg = 30;
+			phase3Hp = tier4Hp*0.15; phase3Ms = 0.25; phase3Dmg = 35;
+			phase4Hp = tier4Hp*0.25; phase4Ms = 0.25; phase4Dmg = 40;
+			phase5Hp = tier5Hp*0.30; phase5Ms = 1.5; phase5Dmg = 30;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.WalkingTowards;
+			//attacks and phase
+			tier = 5;
+			phase = 1;
+			maxPhase = 5;
+			//visual
+			size = 2;
+			alpha = 0.75;
+			idleSprite = spr_boss_deathKing_idle;
+			oneShotSprite = spr_boss_deathKing_oneShot;
+			rapidFireSprite = spr_boss_deathKing_rapidFire;
+			chaseSprite = spr_boss_deathKing_chase;
+			teleportSprite = spr_boss_deathKing_teleport;
+			beamSprite = spr_boss_deathKing_beam;
+			coneSprite = spr_boss_deathKing_cone;
+			//boss Specfic
+			teleportX = choose(-75,75);
+			teleportY = choose(-75,75);
+			canTeleport = false;
+			teleportTime = (3)*10;
+			instance_create_depth(x,y,depth,obj_teleportMarker);
+		}
+		#endregion
+		#region Death Kings
+		if (gameMaster.chosenBoss == Boss.SlimeQueen) 
+		{
+			//stats
+			phase1Hp = tier4Hp*0.25; phase1Ms = 0.75; phase1Dmg = 25;
+			phase2Hp = tier4Hp*0.15; phase2Ms = 0.75; phase2Dmg = 30;
+			phase3Hp = tier4Hp*0.15; phase3Ms = 0.75; phase3Dmg = 35;
+			phase4Hp = 1500; phase4Ms = 0; phase4Dmg = 40;
+			phase5Hp = tier5Hp*0.45; phase5Ms = 1; phase5Dmg = 30;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.WalkingTowards;
+			//attacks and phase
+			tier = 5;
+			phase = 1;
+			maxPhase = 5;
+			//visual
+			size = 2;
+			alpha = 1;
+			idleSprite = spr_boss_slimeQueen_idle;
+			oneShotSprite = spr_boss_slimeQueen_oneShot;
+			rapidFireSprite = spr_boss_slimeQueen_rapidFire;
+			chaseSprite = spr_boss_slimeQueen_chase;
+			coneSprite = spr_boss_slimeQueen_cone;
+			circleSprite = spr_boss_slimeQueen_circle;
+			gooSprite = spr_boss_slimeQueen_goo;
+			//boss Specfic
 			x -= 25;
 		}
 		#endregion

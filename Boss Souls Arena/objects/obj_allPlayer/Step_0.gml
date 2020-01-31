@@ -193,7 +193,7 @@ if (mouse_x < x)
 	#region Pyromancer
 	if (class == Character.Pyromancer)
 	{
-		if (canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && meteorStun != 0)
+		if (canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && meteorStun != 0 && global.itemSelected[Boss.DemonLordRekTaar] == false)
 		{
 			if (mouse_check_button(mb_left)
 			|| keyboard_check(ord("1")))
@@ -231,8 +231,8 @@ if (mouse_x < x)
 	#region Bloodknight
 	if (class == Character.BloodKnight)
 	{
-		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false
-		|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false)
+		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false
+		|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
 		{
 			canLeftClick = false;
 			leftClickCooldownLeft = leftClickCooldown;
@@ -343,6 +343,24 @@ if (mouse_x < x)
 			}
 		}
 		#endregion 
+		#region DeathKing Boss
+			if (instance_exists(obj_allBoss) && gameMaster.chosenBoss == Boss.DeathKing)
+			{
+				with (obj_allBoss)
+				{
+					if (canTeleport == true)
+					{
+						if (place_free(x+teleportX,y)){x = x + teleportX;}
+						if (place_free(x,y+teleportY)){y = y + teleportY;}
+						
+						teleportX = choose(-75,75);
+						teleportY = choose(-75,75);
+						
+						canTeleport = false;
+					}
+				}
+			}
+		#endregion
 	}
 	#endregion
 	#region onGoingEffects
@@ -457,6 +475,27 @@ if (mouse_x < x)
 			{
 				var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
 				horn.destroyTime = (maxHp/75)*30;
+			}
+			#endregion
+			#region Demon general rektaar
+			if (global.itemSelected[Boss.DemonLordRekTaar] == true)
+			{
+				canLeftClick = true;
+				leftClickCooldownLeft = 0;
+			}
+			#endregion
+			#region the last wish
+			if (global.itemSelected[Boss.WispSisters] == true && instance_exists(obj_equipment_theLastWish) == false)
+			{
+				instance_create_depth(x,y,depth,obj_equipment_theLastWish);
+			}
+			if (global.itemSelected[Boss.WispSisters] == true && instance_exists(obj_equipment_theLastWish) == true)
+			{
+				with (obj_equipment_theLastWish)
+				{
+					x = global.player.x;
+					y = global.player.y;
+				}
 			}
 			#endregion
 		}
@@ -625,6 +664,20 @@ if (mouse_x < x)
 			}
 		}
 		#endregion
+		#region DeathKing Boss
+			if (instance_exists(obj_allBoss) && gameMaster.chosenBoss == Boss.DeathKing)
+			{
+				with (obj_allBoss)
+				{
+					
+					if (place_free(x+teleportX,y)){x = x + teleportX;}
+					if (place_free(x,y+teleportY)){y = y + teleportY;}
+						
+					teleportX = choose(-75,75);
+					teleportY = choose(-75,75);
+				}
+			}
+		#endregion
 	}
 	#endregion
 #endregion
@@ -720,6 +773,13 @@ if (mouse_x < x)
 					x = global.player.x;
 					y = global.player.y;
 				}
+			}
+		#endregion
+		#region Demon general rektaar
+			if (global.itemSelected[Boss.DemonLordRekTaar] == true)
+			{
+				canLeftClick = true;
+				leftClickCooldownLeft = 0;
 			}
 		#endregion
 	}

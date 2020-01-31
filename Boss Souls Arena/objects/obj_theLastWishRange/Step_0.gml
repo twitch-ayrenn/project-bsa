@@ -18,7 +18,7 @@ if (instance_exists(obj_allBoss))
 		image_index = 0;
 	}
 }
-if (!place_meeting(x,y,global.player) && instance_exists(obj_allBoss))
+if (!place_meeting(x,y,global.player) && instance_exists(obj_allBoss) && global.player.meteorStun == 1)
 {
 	if (damage == true)
 	{

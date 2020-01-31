@@ -348,7 +348,6 @@ if (attack == Atks.TeleportAttack)
 }
 #endregion
 #region On all attacks
-
 #endregion
 #endregion
 #region Tier2
@@ -1290,18 +1289,84 @@ if (attack == Atks.NormalShot)
 #region CircleAttacks
 if (attack == Atks.CircleAttack)
 {
-	
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead)
+	{
+		var angleBk = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		var circleAmount = 24;
+		repeat(circleAmount)
+		{
+			var bloodKlot = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			bloodKlot.direction = angleBk;
+			bloodKlot.speed = 5;
+			bloodKlot.image_angle = bloodKlot.direction;
+			//Visual
+			bloodKlot.image_alpha = 0.85;
+			bloodKlot.sprite_index = spr_bloodKlott;
+			bloodKlot.image_blend = c_maroon;
+			bloodKlot.image_xscale = 1;
+			bloodKlot.image_yscale = 1;
+			bloodKlot.effectType = Effect.Smoke;
+			angleBk += (360/circleAmount);
+		}
+	}
+	if (gameMaster.chosenBoss == Boss.SlimeQueen)
+	{
+		var angleBk = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		var circleAmount = 16;
+		repeat(circleAmount)
+		{
+			var bloodKlot = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			bloodKlot.direction = angleBk;
+			bloodKlot.speed = 5;
+			bloodKlot.image_angle = bloodKlot.direction;
+			//Visual
+			bloodKlot.image_alpha = 0.55;
+			bloodKlot.sprite_index = spr_bloodKlott;
+			bloodKlot.image_blend = c_green;
+			bloodKlot.image_xscale = 1.75;
+			bloodKlot.image_yscale = 1.75;
+			bloodKlot.effectType = Effect.Smoke;
+			angleBk += (360/circleAmount);
+		}
+	}
 }
 #endregion
 #region GooSpawn
 if (attack == Atks.GooSpawn)
 {
-	
+	if (gameMaster.chosenBoss == Boss.SlimeQueen)
+	{
+		with (obj_enemyProjectile)
+		{
+			if (sprite_index == gooSprite)
+			{
+				image_xscale = clamp(image_xscale*1.1,0,4);
+				image_yscale = image_xscale;
+			}
+		}
+		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
+		//Main
+		gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		gooGround.speed = 0;
+		//Visual
+		gooGround.image_alpha = 1;
+		gooGround.image_blend = c_green;
+		gooGround.sprite_index = spr_gooGround;
+		gooGround.image_xscale = 3.2;
+		gooGround.image_yscale = 3.2;
+		gooGround.destroy = false;
+		gooGround.effectType = Effect.NoEffect;
+		
+		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
+	}
 }
 #endregion
 #region OneShot
 if (attack == Atks.OneShotAttack)
 {
+	#region Demon Queens Head
 	if (gameMaster.chosenBoss == Boss.DemonQueensHead)
 	{
 		//up
@@ -1357,12 +1422,127 @@ if (attack == Atks.OneShotAttack)
 		infernalBall4.image_yscale = 2;
 		infernalBall4.effectType = Effect.Flare;	
 	}
+	#endregion
+	if (gameMaster.chosenBoss == Boss.DeathKing)
+	{
+		var bat = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+		//Main
+		bat.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		bat.speed = 7;
+		//Visual
+		bat.image_alpha = 0.8;
+		bat.image_blend = c_red;
+		bat.sprite_index = spr_bat;
+		bat.image_xscale = 1.5;
+		bat.image_yscale = 1.5;
+		bat.range = 4*10;
+		bat.boomerang = true;
+		bat.effectType = Effect.NoEffect;
+	}
+	#region Slime Queen
+	if (gameMaster.chosenBoss == Boss.SlimeQueen)
+	{
+		var slime = instance_create_depth(global.player.x+100,global.player.y+100,depth+1,obj_enemyProjectile);
+		//Main
+		slime.direction = 135;
+		slime.speed = 6.5;
+		//Visual
+		slime.image_alpha = 1;
+		slime.image_blend = c_lime;
+		slime.sprite_index = spr_slime;
+		slime.image_xscale = 1;
+		slime.image_yscale = 1;
+		slime.range = 10*10;
+		slime.effectType = Effect.NoEffect;
+		
+		var slime2 = instance_create_depth(global.player.x-100,global.player.y+100,depth+1,obj_enemyProjectile);
+		//Main
+		slime2.direction = 45;
+		slime2.speed = 6.5;
+		//Visual
+		slime2.image_alpha = 1;
+		slime2.image_blend = c_lime;
+		slime2.sprite_index = spr_slime;
+		slime2.image_xscale = 1;
+		slime2.image_yscale = 1;
+		slime2.range = 10*10;
+		slime2.effectType = Effect.NoEffect;
+		
+		var slime3 = instance_create_depth(global.player.x+100,global.player.y-100,depth+1,obj_enemyProjectile);
+		//Main
+		slime3.direction = 225;
+		slime3.speed = 6.5;
+		//Visual
+		slime3.image_alpha = 1;
+		slime3.image_blend = c_lime;
+		slime3.sprite_index = spr_slime;
+		slime3.image_xscale = 1;
+		slime3.image_yscale = 1;
+		slime3.range = 10*10;
+		slime3.effectType = Effect.NoEffect;
+		
+		var slime4 = instance_create_depth(global.player.x-100,global.player.y-100,depth+1,obj_enemyProjectile);
+		//Main
+		slime4.direction = 315;
+		slime4.speed = 6.5;
+		//Visual
+		slime4.image_alpha = 1;
+		slime4.image_blend = c_lime;
+		slime4.sprite_index = spr_slime;
+		slime4.image_xscale = 1;
+		slime4.image_yscale = 1;
+		slime4.range = 10*10;
+		slime4.effectType = Effect.NoEffect;
+	}
+	#endregion
 }
 #endregion
 #region ConeAttack
 if (attack == Atks.ConeAttack)
 {
-	
+	if (gameMaster.chosenBoss == Boss.DeathKing)
+	{	
+		var coneWide = 180;
+		var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.5;
+		var coneAmount = 56;
+		repeat(coneAmount)
+		{
+			var fireBolt = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			fireBolt.direction = coneAtkFW;
+			fireBolt.speed = 3;
+			fireBolt.image_angle = fireBolt.direction+90;
+			//Visual
+			fireBolt.image_alpha = 0.85;
+			fireBolt.sprite_index = spr_fireBall;
+			fireBolt.image_blend = c_dkgray;
+			fireBolt.image_xscale = 0.8;
+			fireBolt.image_yscale = 0.8;
+			fireBolt.effectType = Effect.Flare;
+			coneAtkFW += (coneWide/coneAmount);
+		}
+	}
+	if (gameMaster.chosenBoss == Boss.SlimeQueen)
+	{	
+		var coneWide = 90;
+		var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.5;
+		var coneAmount = 10;
+		repeat(coneAmount)
+		{
+			var slime = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			slime.direction = coneAtkFW;
+			slime.speed = 4;
+			//Visual
+			slime.image_alpha = 1;
+			slime.sprite_index = spr_slime;
+			slime.image_blend = c_lime;
+			slime.image_xscale = 0.65;
+			slime.image_yscale = 0.65;
+			slime.effectType = Effect.NoEffect;
+			coneAtkFW += (coneWide/coneAmount);
+		}
+	}
 }
 #endregion
 #region ChaseAttack
@@ -1370,19 +1550,49 @@ if (attack == Atks.ChaseAttack)
 {
 	if (gameMaster.chosenBoss == Boss.DemonQueensHead)
 	{
-		
+		with (obj_indicator){followPlayer = false;}
 		
 		targetX = global.player.x;
 		targetY = global.player.y;
-		
-		var nearestIndicator = instance_nearest(targetX,targetY,obj_indicator);
-		if(instance_exists(obj_indicator)){instance_destroy(nearestIndicator);}
 		
 		x = targetX;
 		y = global.player.y-400;
 		
 		fall = true;
 		jump = false;
+	}
+	if (gameMaster.chosenBoss == Boss.DeathKing)
+	{
+		var infernalBall = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+		//Main
+		infernalBall.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		infernalBall.speed = 3.5;
+		//Visual
+		infernalBall.image_alpha = 0.85;
+		infernalBall.image_blend = c_yellow;
+		infernalBall.sprite_index = spr_bat;
+		infernalBall.image_xscale = 2;
+		infernalBall.image_yscale = 2;
+		infernalBall.effectType = Effect.NoEffect;
+		infernalBall.chase = true;
+		infernalBall.range = (3)*30;
+	}
+	if (gameMaster.chosenBoss == Boss.SlimeQueen)
+	{
+		var bigSlime = instance_create_depth(obj_allPlayer.x,obj_allPlayer.y-200,depth+1,obj_enemyProjectile);
+		//Main
+		bigSlime.direction = 270;
+		bigSlime.speed = 10.5;
+		//Visual
+		bigSlime.image_alpha = 1;
+		bigSlime.image_blend = c_lime;
+		bigSlime.sprite_index = spr_slime;
+		bigSlime.image_xscale = 1.5;
+		bigSlime.image_yscale = 1.5;
+		bigSlime.range = (0.80)*30;
+		bigSlime.effectType = Effect.NoEffect;
+		
+		hp -= 45;
 	}
 }
 #endregion
@@ -1405,7 +1615,7 @@ if (attack == Atks.BeamAttack)
 		beam.stickOn = true;
 		beam.beamChase = true;
 		beam.turningSpeed = 40;
-		beam.destroy = false;
+		beam.destroy = true;
 		beam.effectType = Effect.NoEffect;
 			
 		var beam2 = instance_create_depth(x+20,y-29,depth+1,obj_enemyProjectile);
@@ -1422,7 +1632,7 @@ if (attack == Atks.BeamAttack)
 		beam2.stickOn = true;
 		beam2.beamChase = true;
 		beam2.turningSpeed = -40;
-		beam2.destroy = false;
+		beam2.destroy = true;
 		beam2.effectType = Effect.NoEffect;
 	}
 }
@@ -1434,12 +1644,55 @@ if (attack == Atks.RapidFire)
 	{
 		rapidFireStacks += 6;
 	}
+	if (gameMaster.chosenBoss == Boss.DeathKing)
+	{
+		rapidFireStacks += 8;
+	}
+	if (gameMaster.chosenBoss == Boss.SlimeQueen)
+	{
+		rapidFireStacks += 12;
+	}
 }
 #endregion
 #region Teleport
 if (attack == Atks.TeleportAttack)
 {
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead)
+	{
+		var playerX = global.player.x;
+		var playerY = global.player.y;
 	
+		global.player.x = x;
+		global.player.y = y;
+	
+		x = playerX;
+		y = playerY;
+	
+		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
+			//Main
+			gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+			gooGround.speed = 0;
+			gooGround.image_angle = irandom_range(0,360);
+			//Visual
+			gooGround.image_alpha = 1;
+			gooGround.image_blend = c_maroon;
+			gooGround.sprite_index = spr_gooGround;
+			gooGround.image_xscale = 2.5;
+			gooGround.image_yscale = 2.5;
+			gooGround.destroy = false;
+			gooGround.effectType = Effect.NoEffect;
+	}
+	if (gameMaster.chosenBoss == Boss.DeathKing)
+	{
+		if (place_free(x+teleportX,y)){x = x + teleportX;}
+		if (place_free(x,y+teleportY)){y = y + teleportY;}
+		
+		teleportX = choose(-75,75);
+		teleportY = choose(-75,75);
+		
+		alpha = normalAlpha;
+		chooseAnAttack = true;
+	}
 }
 #endregion
 #region ZoneAttack

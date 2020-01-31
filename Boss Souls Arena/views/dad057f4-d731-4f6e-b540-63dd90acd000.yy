@@ -21,7 +21,8 @@
         "6f92f2b7-9b69-44c4-acfb-340ba6c62bf1",
         "b12295b9-6231-42d2-916d-699b0742821e",
         "0260112a-d7eb-4023-8d8d-c21a2f042cef",
-        "11d30a3d-16a9-4c16-875c-f672e5da4caf"
+        "62a30c8f-8004-4567-84e2-71fa27a92b1d",
+        "8bcb07c4-2146-4ac1-9f52-cef923fd6877"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_boss",

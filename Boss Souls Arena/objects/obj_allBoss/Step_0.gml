@@ -100,11 +100,34 @@ if (moveType == MovementType.StandingStill)
 if (jump == true)
 {
 	y = clamp(y - 35, 0, global.arenaMiddleY+300);
+	dealDamageOnFall = true;
 }
 if (fall == true)
 {
-	y = clamp(y + 35, 0, targetY);
-	if (y >= targetY){fall = false;}
+	var fallSpeed = 30;
+	y = clamp(y + fallSpeed, 0, targetY);
+
+	with (global.player)
+	{
+		if (place_meeting(x,y,obj_indicator) && obj_allBoss.y >= obj_allBoss.targetY-fallSpeed && obj_allBoss.dealDamageOnFall == true && global.iFrame == false)
+		{
+			obj_allBoss.dealDamageOnFall = false;
+			var target = global.player;
+			var damageToTarget = 150;
+			var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
+			damageText.color = c_maroon;
+			damageText.text = damageToTarget/10;
+			target.hp -= damageToTarget;
+		}
+	}
+	
+	if (y >= targetY)
+	{
+		fall = false;
+		var nearestIndicator = instance_nearest(targetX,targetY,obj_indicator);
+		if(instance_exists(obj_indicator)){instance_destroy(nearestIndicator);}	
+		with(obj_camera){shake_remain = 6;}
+	}
 }
 #endregion
 #region Ongoing things
@@ -255,6 +278,8 @@ if (fall == true)
 			activateAlarm5 = false;
 			beamsToSpawn--;
 			
+			with(obj_camera){shake_remain = 2;}
+			
 			var beam = instance_create_depth(xBeamSpawn,global.arenaMiddleY-300,depth+1,obj_enemyProjectile);
 			//Main
 			beam.image_angle = 270-90;
@@ -397,7 +422,7 @@ if (fall == true)
 		}
 	}
 	#endregion
-	#region Angel Knight Oscar
+	#region Bloodarmy General
 	if (gameMaster.chosenBoss == Boss.BloodKnightDavid)
 	{
 		if (rapidFireStacks > 0 && canRapidAttack == true)
@@ -449,7 +474,7 @@ if (fall == true)
 			canRapidAttack = false;
 			rapidFireStacks -= 1;
 			
-			shake_remain = 2;
+			with(obj_camera){shake_remain = 1;}
 		
 			var fireball = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
 			//Main
@@ -490,8 +515,8 @@ if (fall == true)
 				fireBolt.image_alpha = 0.8;
 				fireBolt.sprite_index = spr_fireBall;
 				fireBolt.image_blend = c_red;
-				fireBolt.image_xscale = 1.25;
-				fireBolt.image_yscale = 1.25;
+				fireBolt.image_xscale = 1.2;
+				fireBolt.image_yscale = 1.2;
 				fireBolt.effectType = Effect.Flare;
 				coneAtkFW += (coneWide/coneAmount);
 			}
@@ -510,11 +535,66 @@ if (fall == true)
 				fireBolt.image_alpha = 0.8;
 				fireBolt.sprite_index = spr_fireBall;
 				fireBolt.image_blend = c_red;
-				fireBolt.image_xscale = 1.25;
-				fireBolt.image_yscale = 1.25;
+				fireBolt.image_xscale = 1.2;
+				fireBolt.image_yscale = 1.2;
 				fireBolt.effectType = Effect.Flare;
 				coneAtkFW += (coneWide/coneAmount);
 			}
+		
+			alarm[2] = (0.75)*30;
+		}
+	}
+	#endregion
+	#region Death Kings
+	if (gameMaster.chosenBoss == Boss.DeathKing)
+	{
+		if (rapidFireStacks > 0 && canRapidAttack == true)
+		{
+			canRapidAttack = false;
+			rapidFireStacks -= 1;
+		
+			var coneWide = 60;
+			var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.5;
+			var coneAmount = 4;
+			repeat(coneAmount)
+			{
+				var fireBolt = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+				//Main
+				fireBolt.direction = coneAtkFW;
+				fireBolt.speed = 5;
+				//Visual
+				fireBolt.image_alpha = 1;
+				fireBolt.sprite_index = spr_bat;
+				fireBolt.image_blend = c_gray;
+				fireBolt.image_xscale = 0.75;
+				fireBolt.image_yscale = 0.75;
+				fireBolt.effectType = Effect.NoEffect;
+				coneAtkFW += (coneWide/coneAmount);
+			}
+		
+			alarm[2] = (0.6)*30;
+		}
+	}
+	#endregion
+	#region WispSister Jana
+	if (gameMaster.chosenBoss == Boss.SlimeQueen)
+	{
+		if (rapidFireStacks > 0 && canRapidAttack == true)
+		{
+			canRapidAttack = false;
+			rapidFireStacks -= 1;
+		
+			var slime = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			slime.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+			slime.speed = 6.25;
+			//Visual
+			slime.image_alpha = 1;
+			slime.image_blend = global.lightBlue;
+			slime.sprite_index = spr_slime;
+			slime.image_xscale = 0.75;
+			slime.image_yscale = 0.75;
+			slime.effectType = Effect.NoEffect;
 		
 			alarm[2] = (0.75)*30;
 		}
@@ -576,10 +656,23 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.WispSisters && phase == 4){attack = Atks.RapidFire;}
 	#endregion
 	#region Tier5 Bosses
-	if (gameMaster.chosenBoss == Boss.DemonQueensHead && phase == 1){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.BeamAttack,Atks.ChaseAttack);}
-	if (gameMaster.chosenBoss == Boss.DemonQueensHead && phase == 2){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.BeamAttack,Atks.ChaseAttack,Atks.TeleportAttack);}
-	if (gameMaster.chosenBoss == Boss.DemonQueensHead && phase == 3){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.BeamAttack,Atks.ChaseAttack,Atks.TeleportAttack,Atks.CircleAttack);}
-	if (gameMaster.chosenBoss == Boss.DemonQueensHead && phase == 4){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.BeamAttack,Atks.ChaseAttack,Atks.TeleportAttack,Atks.CircleAttack);}
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead && phase == 1 && global.player.meteorStun == 1){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.BeamAttack,Atks.ChaseAttack);}
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead && phase == 2 && global.player.meteorStun == 1){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.BeamAttack,Atks.ChaseAttack,Atks.TeleportAttack);}
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead && phase >= 3 && global.player.meteorStun == 1){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.BeamAttack,Atks.ChaseAttack,Atks.TeleportAttack,Atks.CircleAttack);}
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead && phase == 1 && global.player.meteorStun == 0){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.BeamAttack);}
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead && phase == 2 && global.player.meteorStun == 0){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.BeamAttack,Atks.TeleportAttack);}
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead && phase >= 3 && global.player.meteorStun == 0){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.BeamAttack,Atks.TeleportAttack,Atks.CircleAttack);}
+	
+	if (gameMaster.chosenBoss == Boss.DeathKing && phase == 1){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.ConeAttack);}
+	if (gameMaster.chosenBoss == Boss.DeathKing && phase == 2){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.ConeAttack,Atks.BeamAttack);}
+	if (gameMaster.chosenBoss == Boss.DeathKing && phase == 3){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.ConeAttack,Atks.BeamAttack,Atks.ChaseAttack);}
+	if (gameMaster.chosenBoss == Boss.DeathKing && phase >= 4){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.BeamAttack,Atks.ChaseAttack,Atks.TeleportAttack);}
+	
+	if (gameMaster.chosenBoss == Boss.SlimeQueen && phase == 1){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.GooSpawn);}
+	if (gameMaster.chosenBoss == Boss.SlimeQueen && phase == 2){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.GooSpawn,Atks.CircleAttack);}
+	if (gameMaster.chosenBoss == Boss.SlimeQueen && phase == 3){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.GooSpawn,Atks.CircleAttack,Atks.ConeAttack);}
+	if (gameMaster.chosenBoss == Boss.SlimeQueen && phase == 4){attack = choose(Atks.ChaseAttack);}
+	if (gameMaster.chosenBoss == Boss.SlimeQueen && phase == 5){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.GooSpawn,Atks.CircleAttack,Atks.ConeAttack,Atks.ChaseAttack);}
 	#endregion
 	if (attack == Atks.NormalShot)
 	{
@@ -674,6 +767,17 @@ if(chooseAnAttack == true)
 			indicator.image_xscale = 0.16;
 			indicator.image_yscale = 0.16;
 			indicator.image_blend = c_maroon;
+		}
+		#endregion
+		#region Slime Queen
+		if (gameMaster.chosenBoss == Boss.SlimeQueen)
+		{
+			var indicator = instance_create_depth(x,y,-5,obj_indicator)
+			indicator.sprite_index = spr_damageCircle;
+			indicator.image_xscale = 0.215;
+			indicator.image_yscale = 0.215;
+			indicator.image_blend = c_maroon;
+			indicator.follow = true;
 		}
 		#endregion
 	}
@@ -798,6 +902,7 @@ if(chooseAnAttack == true)
 			indicator.image_blend = c_maroon;
 			indicator.followPlayer = true;
 			
+			with(obj_camera){shake_remain = 6;}
 			jump = true;
 		}
 		#endregion
@@ -853,6 +958,64 @@ if(chooseAnAttack == true)
 			beam.turningSpeed = 15;
 			beam.destroy = true;
 			beam.effectType = Effect.NoEffect;
+		}
+		#endregion
+		#region DeathKing
+		if (gameMaster.chosenBoss == Boss.DeathKing)
+		{
+			var beam = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY-400,depth+1,obj_enemyProjectile);
+			//Main
+			beam.image_angle = 60-90;
+			//Visual
+			beam.image_alpha = 0.85;
+			beam.image_blend = global.orange;
+			beam.sprite_index = spr_beam;
+			beam.image_xscale = 0.5;
+			beam.image_yscale = 50;
+			beam.maxSize = 2.5;
+			beam.minSize = 0.25;
+			beam.stickOn = true;
+			beam.beamChase = true;
+			beam.turningSpeed = -15;
+			beam.range = 15*30;
+			beam.destroy = true;
+			beam.effectType = Effect.NoEffect;
+			
+			var beam1 = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY-400,depth+1,obj_enemyProjectile);
+			//Main
+			beam1.image_angle = 120-90;
+			//Visual
+			beam1.image_alpha = 0.85;
+			beam1.image_blend = global.orange;
+			beam1.sprite_index = spr_beam;
+			beam1.image_xscale = 0.5;
+			beam1.image_yscale = 50;
+			beam1.maxSize = 2.5;
+			beam1.minSize = 0.25;
+			beam1.stickOn = true;
+			beam1.beamChase = true;
+			beam1.turningSpeed = -15;
+			beam1.range = 15*30;
+			beam1.destroy = true;
+			beam1.effectType = Effect.NoEffect;
+			
+			var beam2 = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY-400,depth+1,obj_enemyProjectile);
+			//Main
+			beam2.image_angle = 180-90;
+			//Visual
+			beam2.image_alpha = 0.85;
+			beam2.image_blend = global.orange;
+			beam2.sprite_index = spr_beam;
+			beam2.image_xscale = 0.5;
+			beam2.image_yscale = 50;
+			beam2.maxSize = 2.5;
+			beam2.minSize = 0.25;
+			beam2.stickOn = true;
+			beam2.beamChase = true;
+			beam2.turningSpeed = -15;
+			beam2.range = 15*30;
+			beam2.destroy = true;
+			beam2.effectType = Effect.NoEffect;
 		}
 		#endregion
 	}
@@ -928,6 +1091,7 @@ if(chooseAnAttack == true)
 	}
 	alarm[0] = timeAfterIndicate;
 	alarm[1] = attackCooldown*choose(1,1,1,1,2);
+	if (gameMaster.chosenBoss == Boss.SlimeQueen && phase == 4){alarm[0] = (0.85)*30;alarm[1] = (1)*30;}
 }
 #endregion
 }
@@ -965,6 +1129,18 @@ if (hp <= 0 && phase == 1 && phase != maxPhase)
 		circleSprite = janaPhase2Circle;
 	}
 	#endregion
+	#region SlimeQueen
+	if (gameMaster.chosenBoss == Boss.SlimeQueen && instance_exists(obj_enemyProjectile))
+	{
+		with (obj_enemyProjectile)
+		{
+			if (sprite_index == gooSprite)
+			{
+				instance_destroy();	
+			}
+		}
+	}
+	#endregion
 }
 if (hp <= 0 && phase == 2 && phase != maxPhase)
 {
@@ -983,6 +1159,18 @@ if (hp <= 0 && phase == 2 && phase != maxPhase)
 		chaseSprite = janaPhase3Chase;
 	}
 	#endregion
+	#region SlimeQueen
+	if (gameMaster.chosenBoss == Boss.SlimeQueen && instance_exists(obj_enemyProjectile))
+	{
+		with (obj_enemyProjectile)
+		{
+			if (sprite_index == gooSprite)
+			{
+				instance_destroy();	
+			}
+		}
+	}
+	#endregion
 }
 if (hp <= 0 && phase == 3 && phase != maxPhase)
 {
@@ -999,6 +1187,28 @@ if (hp <= 0 && phase == 3 && phase != maxPhase)
 		}
 	}
 	#endregion
+	#region SlimeQueen
+	if (gameMaster.chosenBoss == Boss.SlimeQueen && instance_exists(obj_enemyProjectile))
+	{
+		var indicator = instance_create_depth(global.player.x,global.player.y,-5,obj_indicator)
+		indicator.sprite_index = spr_damageCircle;
+		indicator.image_xscale = 0.1;
+		indicator.image_yscale = 0.1;
+		indicator.image_blend = c_maroon;
+		indicator.followPlayer = true;
+			
+		with(obj_camera){shake_remain = 6;}
+		jump = true;
+		
+		with (obj_enemyProjectile)
+		{
+			if (sprite_index == gooSprite)
+			{
+				instance_destroy();	
+			}
+		}
+	}
+	#endregion
 }
 if (hp <= 0 && phase == 4 && phase != maxPhase)
 {
@@ -1006,6 +1216,21 @@ if (hp <= 0 && phase == 4 && phase != maxPhase)
 	hp = phase5Hp;
 	moveSpeed = phase5Ms;
 	global.bossDamage = phase5Dmg;
+	#region SlimeQueen
+	if (gameMaster.chosenBoss == Boss.SlimeQueen)
+	{	
+		with (obj_indicator){followPlayer = false;}
+		
+		targetX = global.player.x;
+		targetY = global.player.y;
+		
+		x = targetX;
+		y = global.player.y-400;
+		
+		fall = true;
+		jump = false;
+	}
+	#endregion
 }
 if (hp <= 0 && phase == 5 && phase != maxPhase)
 {

@@ -4,7 +4,26 @@
     "mvc": "1.0",
     "name": "obj_demonQueensHorn",
     "eventList": [
-        
+        {
+            "id": "6bde373d-b01d-499d-854e-bc0741b7d958",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "650bd4dc-2e6f-449f-b0f9-83c5e40cb64d"
+        },
+        {
+            "id": "4e11fe2b-40f3-473f-b730-6b0a6564c1ee",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 3,
+            "m_owner": "650bd4dc-2e6f-449f-b0f9-83c5e40cb64d"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

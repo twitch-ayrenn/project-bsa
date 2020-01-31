@@ -61,13 +61,16 @@ if (menu == Menues.BossLoot)
 	var spdText = "Movement Speed: " + string(20 + bonusSpeed + previewSpeed);
 	var dlText = "Mobility Bonus: " + string(0 + bonusDash + previewDash) + "%";
 	var dmgCalc = int64(10 + bonusDamage + previewDamage);
+	if (global.itemSelected[Boss.AngelKnightOscar] == true){dmgCalc *= 0.5;}
 	var dmgText = "Damage Scaling: " + string(dmgCalc);
 	var firerateCalc = 1 + ((bonusFirerate + previewFirerate)/100);
 	var frText = "Attack Speed: " + string(10 + int64((firerateCalc-1)*10));
-	var lsText = "LifeSteal: " + string(75 + bonusLifeSteal + previewLifeSteal) + "%";//base is 75% for all damage
-	var conjureCalc = 1 + (bonusConjur + previewConjur)/100;
-	var cjText = "Summoning Power: " + string(int64((conjureCalc-1)*100)) + "%";
-	var cdCalc = (bonusCooldown + previewCooldown)/100;
+	var lsText = "LifeSteal: " + string(80 + bonusLifeSteal + previewLifeSteal) + "%";//base is 75% for all damage
+	var conjureCalc = (bonusConjur + previewConjur)/100;
+	var cjText = "Summoning Power: " + string(int64((conjureCalc)*100)) + "%";
+	var cdrCap = 0.5;
+	if (global.itemSelected[Boss.AngelKnightOscar] == true){cdrCap = 0.6;}
+	var cdCalc = clamp((bonusCooldown + previewCooldown)/100,0,cdrCap);
 	var cdText = "Cooldown reduction: " + string(int64(cdCalc*100)) + "%";
 	
 	
@@ -226,7 +229,7 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"The amount of soldiers scale with ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"summoning power. Their firerate",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"scales with cooldown reduction.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			var bztext = "[Projectile Damage]: " + string(dmgCalc*0.25);
+			var bztext = "[Projectile Damage]: " + string(dmgCalc*0.35);
 			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,bztext,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_set_font(fnt_menu_fill);
 			draw_text_transformed_color(infoTextX,350+7.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
@@ -333,18 +336,19 @@ if (menu == Menues.BossLoot)
 		{
 			draw_set_font(fnt_NewNormalText);
 			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Your [Dash], [Right-Click] and",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"[Ultimate] has a 50% reduced",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"cooldown. However your damage",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"is reduced by 65%.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"[Ultimate] has a 35% reduced",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"cooldown. However your damage is",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"reduced by 50%. Increases max ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"cooldown reduction from 50% to 60%.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_set_font(fnt_menu_fill);
-			draw_text_transformed_color(infoTextX,350+5.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+			draw_text_transformed_color(infoTextX,350+6.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"+ 3 Attack Speed",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
-			draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"+ 2 Damage Scaling",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
-			draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"\"Perfectly balanced as all",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"things should be...\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"+ 3 Attack Speed",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"+ 2 Damage Scaling",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"\"Perfectly balanced as all",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"things should be...\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			
 		
 			//name
 			draw_set_font(fnt_menu_fill);
@@ -362,7 +366,7 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,frText,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"seconds that charge in the direction",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"you aim. Dashing or Teleporting resets",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,"the cooldown. Summoning Power ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,"the cooldown. Summoning Power",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"increases the damage of the implings.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			var bztext = "[Imp Damage]: " + string(dmgCalc*5*conjureCalc);
 			draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,bztext,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
@@ -448,7 +452,7 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"+ 5% Cooldown reduction",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"[Items that cant be found in the box]:",itemTextSize,itemTextSize,0,global.goldColor,global.goldColor,c_yellow,c_yellow,1);
 			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"Death Scyhte, Broken Hourglass, The",itemTextSize,itemTextSize,0,global.goldColor,global.goldColor,c_yellow,c_yellow,1);
-			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"Lootbox",itemTextSize,itemTextSize,0,global.goldColor,global.goldColor,c_yellow,c_yellow,1);
+			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"Last Wish",itemTextSize,itemTextSize,0,global.goldColor,global.goldColor,c_yellow,c_yellow,1);
 			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"\"Is this gambling?\"",itemTextSize,itemTextSize,0,global.goldColor,global.goldColor,c_yellow,c_yellow,1);
 			
 			//name
@@ -845,8 +849,7 @@ if (global.deBugg == true && menu == Menues.Play && instance_exists(global.playe
 	var playerFireRate = "[Attack Speed]: [" + string(obj_allPlayer.leftClickCooldown/30) + "]";
 	var playerSpeed = "[Base|Current Speed]: [" + string(obj_allPlayer.moveSpeed) + "] | ["  + string(obj_allPlayer.actualSpeed) +"]";
 	var playerDashPower = "[Dash/Tp Power]: [" + string(bonusDash) + "]";
-	var playerLifesteal = "[LifeSteal]: [" + string(global.lifeSteal) + "%]";//base is 75% for all damage
-	var playerAura = "[Aura Power]: [" + string(int64(obj_allPlayer.auraPower*100)) + "%]";
+	var playerLifesteal = "[LifeSteal]: [" + string(global.lifeSteal) + "%]";
 	var playerConjuration = "[Conjuration Power]: [" + string(obj_allPlayer.conjurationPower*100) + "%]";
 	var playerCDRightClick = "[Right-Click Cooldown]: [" + string(obj_allPlayer.rightClickCooldown/30)+ "]";
 	var playerCDDash = "[Dash Cooldown]: [" + string(obj_allPlayer.dashCooldown/30)+ "]";
@@ -855,7 +858,7 @@ if (global.deBugg == true && menu == Menues.Play && instance_exists(global.playe
 	var yIncreasse = 20;
 	var textSize = 0.075;
 	var xStart = 15;
-	var yStart = 120;
+	var yStart = 150;
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(xStart,yStart+1*yIncreasse,"Defensive & Mobility",textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
 	draw_text_transformed_color(xStart,yStart+2*yIncreasse,playerHealth,textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
@@ -866,10 +869,9 @@ if (global.deBugg == true && menu == Menues.Play && instance_exists(global.playe
 	draw_text_transformed_color(xStart,yStart+7*yIncreasse+10,playerFireRate,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);	
 	draw_text_transformed_color(xStart,yStart+8*yIncreasse+10,playerLifesteal,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);
 	draw_text_transformed_color(xStart,yStart+9*yIncreasse+20,"Magic & Misc",textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);	
-	draw_text_transformed_color(xStart,yStart+10*yIncreasse+20,playerAura,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);	
-	draw_text_transformed_color(xStart,yStart+11*yIncreasse+20,playerCDRightClick,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);		
-	draw_text_transformed_color(xStart,yStart+12*yIncreasse+20,playerCDDash,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-	draw_text_transformed_color(xStart,yStart+13*yIncreasse+20,playerCDUlt,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	draw_text_transformed_color(xStart,yStart+10*yIncreasse+20,playerCDRightClick,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);		
+	draw_text_transformed_color(xStart,yStart+11*yIncreasse+20,playerCDDash,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	draw_text_transformed_color(xStart,yStart+12*yIncreasse+20,playerCDUlt,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 }
 if (global.showDD == true)
 {
