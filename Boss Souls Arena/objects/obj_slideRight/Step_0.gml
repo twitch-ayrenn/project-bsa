@@ -10,7 +10,7 @@ if (gameMaster.menu == Menues.BossSelect)
 	if (image_alpha < 0.85){image_alpha += 1.1/30;}
 	visible = true;
 }
-if (gameMaster.menu == Menues.BossSelect && hover == true && obj_fightCard_ladyCorruption.x > 136)
+if (gameMaster.menu == Menues.BossSelect && hover == true && obj_fightCard_theArenaKing.x > 136)
 {
 	depth = obj_fightCard_theBloodZombie.depth-1;
 	with(par_scrollingThings)
@@ -18,7 +18,7 @@ if (gameMaster.menu == Menues.BossSelect && hover == true && obj_fightCard_ladyC
 		x -= global.slidingSpeed;	
 	}
 }
-if (keyboard_check(vk_right) && obj_fightCard_ladyCorruption.x > 136 || keyboard_check(ord("D")) && obj_fightCard_ladyCorruption.x > 136)
+if (keyboard_check(vk_right) && obj_fightCard_theArenaKing.x > 136 || keyboard_check(ord("D")) && obj_fightCard_theArenaKing.x > 136)
 {
 	if (gameMaster.menu == Menues.BossSelect)
 	{

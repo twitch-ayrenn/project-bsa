@@ -5,16 +5,6 @@
     "name": "obj_npc_theShopkeeper",
     "eventList": [
         {
-            "id": "5276c81a-ef33-4d53-bb44-2c9647be2057",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "78a08fc7-e0fa-488c-a384-5ae9b273ddbd"
-        },
-        {
             "id": "c62445dd-0453-4b95-978e-52cb849fb854",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -25,33 +15,13 @@
             "m_owner": "78a08fc7-e0fa-488c-a384-5ae9b273ddbd"
         },
         {
-            "id": "38da3e38-c7a2-4e7b-98eb-66870cee95bc",
+            "id": "14f2c55f-8fe8-4ea1-84e2-c76aae3e614c",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 7,
-            "eventtype": 6,
-            "m_owner": "78a08fc7-e0fa-488c-a384-5ae9b273ddbd"
-        },
-        {
-            "id": "0514e07e-fef7-4eca-b59b-c60fe3b3b284",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 10,
-            "eventtype": 6,
-            "m_owner": "78a08fc7-e0fa-488c-a384-5ae9b273ddbd"
-        },
-        {
-            "id": "f5454ba0-8c03-46a8-96ba-1a929f1af20d",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 11,
-            "eventtype": 6,
+            "enumb": 0,
+            "eventtype": 0,
             "m_owner": "78a08fc7-e0fa-488c-a384-5ae9b273ddbd"
         }
     ],

@@ -85,7 +85,7 @@ if (instance_exists(obj_allBoss))
 			draw_sprite_ext(spr_bossLives,0,840+(45*3),875,3.5,3.5,0,c_dkgray,1);
 		}
 	}
-	if (B.maxPhase == 5)
+	if (B.maxPhase == 5 || B.maxPhase == 6)
 	{
 		if (B.phase == 1)
 		{

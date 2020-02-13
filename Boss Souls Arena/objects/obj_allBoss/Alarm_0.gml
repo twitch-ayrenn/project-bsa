@@ -212,7 +212,7 @@ if (attack == Atks.ConeAttack)
 #region Chase
 if (attack == Atks.ChaseAttack)
 {
-	if (gameMaster.chosenBoss == Boss.FlameWisp)
+	if (gameMaster.chosenBoss == Boss.FlameWisp || gameMaster.chosenBoss == Boss.ArenaKing)
 	{
 		var infernalBall = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
 		//Main
@@ -228,6 +228,25 @@ if (attack == Atks.ChaseAttack)
 		infernalBall.effectType = Effect.Smoke;
 		infernalBall.chase = true;
 		infernalBall.range = (6.5)*30;
+		
+		if (gameMaster.chosenBoss == Boss.ArenaKing)
+		{
+			infernalBall.image_blend = global.goldColor;
+			var infernalBall = instance_create_depth(kingCloneX,kingCloneY,depth+1,obj_enemyProjectile);
+			//Main
+			infernalBall.direction = point_direction(kingCloneX,kingCloneY,obj_allPlayer.x,obj_allPlayer.y);
+			infernalBall.speed = 3;
+			infernalBall.image_angle = infernalBall.direction+90;
+			//Visual
+			infernalBall.image_alpha = 0.85;
+			infernalBall.image_blend = global.goldColor;
+			infernalBall.sprite_index = spr_fireBall;
+			infernalBall.image_xscale = 3;
+			infernalBall.image_yscale = 3;
+			infernalBall.effectType = Effect.Smoke;
+			infernalBall.chase = true;
+			infernalBall.range = (6.5)*30;
+		}
 	}
 }
 #endregion
@@ -341,23 +360,16 @@ if (attack == Atks.RapidFire)
 	}
 }
 #endregion
-#region Teleport
-if (attack == Atks.TeleportAttack)
-{
-	
-}
-#endregion
-#region On all attacks
-#endregion
 #endregion
 #region Tier2
 #region NormalAttacks
 if (attack == Atks.NormalShot)
 {
-	if (gameMaster.chosenBoss == Boss.DeathKnight)
+	if (gameMaster.chosenBoss == Boss.DeathKnight || gameMaster.chosenBoss == Boss.ArenaKing)
 	{
 		obj_bossMeleeWeapon.state = MeleeWeaponStates.SpinOnce;
 		obj_bossMeleeWeapon.spinTimes = phase;
+		if (gameMaster.chosenBoss == Boss.ArenaKing){obj_bossMeleeWeapon.spinTimes += phase;}
 	}
 }
 #endregion
@@ -468,7 +480,7 @@ if (attack == Atks.OneShotAttack)
 #region ConeAttack
 if (attack == Atks.ConeAttack)
 {
-	if (gameMaster.chosenBoss == Boss.FlameGate)
+	if (gameMaster.chosenBoss == Boss.FlameGate || gameMaster.chosenBoss == Boss.ArenaKing)
 	{
 		
 		var coneWide = 45;
@@ -480,6 +492,7 @@ if (attack == Atks.ConeAttack)
 			//Main
 			fireBolt.direction = coneAtkFW;
 			fireBolt.speed = 5;
+			
 			fireBolt.image_angle = fireBolt.direction+90;
 			//Visual
 			fireBolt.image_alpha = 0.85;
@@ -489,6 +502,30 @@ if (attack == Atks.ConeAttack)
 			fireBolt.image_yscale = 1.2;
 			fireBolt.effectType = Effect.Flare;
 			coneAtkFW += (coneWide/coneAmount);
+			
+			if (gameMaster.chosenBoss == Boss.ArenaKing){fireBolt.speed = 3; fireBolt.image_blend = global.goldColor;}
+		}
+		if (gameMaster.chosenBoss == Boss.ArenaKing)
+		{
+			var coneWide = 45;
+			var coneAtkFW = point_direction(kingCloneX,kingCloneY,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.5;
+			var coneAmount = 15;
+			repeat(coneAmount)
+			{
+				var fireBolt = instance_create_depth(kingCloneX,kingCloneY,depth+1,obj_enemyProjectile);
+				//Main
+				fireBolt.direction = coneAtkFW;
+				fireBolt.speed = 3;
+				fireBolt.image_angle = fireBolt.direction+90;
+				//Visual
+				fireBolt.image_alpha = 0.85;
+				fireBolt.sprite_index = spr_fireBall;
+				fireBolt.image_blend = global.goldColor;
+				fireBolt.image_xscale = 1.2;
+				fireBolt.image_yscale = 1.2;
+				fireBolt.effectType = Effect.Flare;
+				coneAtkFW += (coneWide/coneAmount);
+			}
 		}
 	}
 }
@@ -548,7 +585,7 @@ if (attack == Atks.NormalShot)
 #region CircleAttacks
 if (attack == Atks.CircleAttack)
 {
-	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
+	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul  || gameMaster.chosenBoss == Boss.ArenaKing)
 	{
 		drawArea = false;
 		var beamCircleAngle = 0;
@@ -570,6 +607,31 @@ if (attack == Atks.CircleAttack)
 			beam.range = 1*30;
 			beam.effectType = Effect.NoEffect;
 			beamCircleAngle += 360/circleBeams;
+			
+			if (gameMaster.chosenBoss == Boss.ArenaKing){beam.image_blend = global.goldColor;}
+		}
+		if (gameMaster.chosenBoss == Boss.ArenaKing)
+		{
+			var beamCircleAngle = 0;
+			var circleBeams = 12;
+			repeat(circleBeams)
+			{
+				var beam = instance_create_depth(kingCloneX,kingCloneY,depth+1,obj_enemyProjectile);
+				//Main
+				beam.image_angle = beamCircleAngle+90;
+				//Visual
+				beam.image_alpha = 0.85;
+				beam.image_blend = global.goldColor;
+				beam.sprite_index = spr_beam;
+				beam.image_xscale = 0.2;
+				beam.image_yscale = 20;
+				beam.maxSize = 1.5;
+				beam.minSize = 0.2;
+				beam.stickOn = false;
+				beam.range = 1*30;
+				beam.effectType = Effect.NoEffect;
+				beamCircleAngle += 360/circleBeams;
+			}
 		}
 	}
 	if (gameMaster.chosenBoss == Boss.KnightWitchYi)
@@ -587,8 +649,8 @@ if (attack == Atks.CircleAttack)
 			swordShot.image_alpha = 0.85;
 			swordShot.sprite_index = spr_swordShot;
 			swordShot.image_blend = c_fuchsia;
-			swordShot.image_xscale = 1.25;
-			swordShot.image_yscale = 1.25;
+			swordShot.image_xscale = 1.15;
+			swordShot.image_yscale = 1.15;
 			swordShot.effectType = Effect.NoEffect;
 			angleBk += (360/circleAmount);
 		}
@@ -635,12 +697,27 @@ if (attack == Atks.GooSpawn)
 {
 	if (gameMaster.chosenBoss == Boss.KnightWitchYi)
 	{
+		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
+		//Main
+		gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		gooGround.speed = 0;
+		gooGround.image_angle = irandom_range(0,360);
+		//Visual
+		gooGround.image_alpha = 1;
+		gooGround.image_blend = c_maroon;
+		gooGround.sprite_index = spr_gooGround;
+		gooGround.image_xscale = knightWitchGooSize;
+		gooGround.image_yscale = knightWitchGooSize;
+		gooGround.destroy = false;
+		gooGround.effectType = Effect.NoEffect;
+		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
+		
 		with (obj_enemyProjectile)
 		{
 			if (sprite_index == spr_gooGround)
 			{
-				image_xscale += 0.2;
-				image_yscale += 0.2;
+				image_xscale += 0.15;
+				image_yscale += 0.15;
 			}
 		}
 	}
@@ -747,8 +824,8 @@ if (attack == Atks.ConeAttack)
 			fireBolt.image_alpha = 0.85;
 			fireBolt.sprite_index = spr_fireBall;
 			fireBolt.image_blend = c_aqua;
-			fireBolt.image_xscale = 1.2;
-			fireBolt.image_yscale = 1.2;
+			fireBolt.image_xscale = 1.15;
+			fireBolt.image_yscale = 1.15;
 			fireBolt.effectType = Effect.Flare;
 			coneAtkFW += (coneWide/coneAmount);
 		}
@@ -801,7 +878,7 @@ if (attack == Atks.ChaseAttack)
 #region BeamAttack
 if (attack == Atks.BeamAttack)
 {
-	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
+	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul || gameMaster.chosenBoss == Boss.ArenaKing)
 	{
 		drawArea = false;
 		var beam = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
@@ -814,10 +891,29 @@ if (attack == Atks.BeamAttack)
 		beam.image_xscale = 0.25;
 		beam.image_yscale = 20;
 		beam.maxSize = 2;
+		if (gameMaster.chosenBoss == Boss.ArenaKing){beam.maxSize = 2.5; beam.image_blend = global.goldColor;}
 		beam.minSize = 0.25;
 		beam.stickOn = true;
 		beam.range = 2.5*30;
 		beam.effectType = Effect.NoEffect;
+		if (gameMaster.chosenBoss == Boss.ArenaKing)
+		{
+			var beam = instance_create_depth(kingCloneX,kingCloneY,depth+1,obj_enemyProjectile);
+			//Main
+			beam.image_angle = point_direction(kingCloneX,kingCloneY,obj_allPlayer.x,obj_allPlayer.y)-90;
+			//Visual
+			beam.image_alpha = 0.85;
+			beam.image_blend = global.goldColor;
+			beam.sprite_index = spr_beam;
+			beam.image_xscale = 0.25;
+			beam.image_yscale = 20;
+			beam.maxSize = 2;
+			if (gameMaster.chosenBoss == Boss.ArenaKing){beam.maxSize = 2.5;}
+			beam.minSize = 0.25;
+			beam.stickOn = false;
+			beam.range = 2.5*30;
+			beam.effectType = Effect.NoEffect;
+		}
 	}
 	if (gameMaster.chosenBoss == Boss.KnightWitchYi)
 	{
@@ -915,7 +1011,7 @@ if (attack == Atks.RapidFire)
 {
 	if (gameMaster.chosenBoss == Boss.KnightWitchYi)
 	{
-		rapidFireStacks += 8;
+		rapidFireStacks += 7;
 		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
 		//Main
 		gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
@@ -1244,7 +1340,7 @@ if (attack == Atks.RapidFire)
 	{
 		rapidFireStacks += 5;
 	}
-	if (gameMaster.chosenBoss == Boss.StatueOfCorruption)
+	if (gameMaster.chosenBoss == Boss.StatueOfCorruption || gameMaster.chosenBoss == Boss.ArenaKing)
 	{
 		rapidFireStacks += 8;
 	}
@@ -1423,7 +1519,8 @@ if (attack == Atks.OneShotAttack)
 		infernalBall4.effectType = Effect.Flare;	
 	}
 	#endregion
-	if (gameMaster.chosenBoss == Boss.DeathKing)
+	#region Death King
+	if (gameMaster.chosenBoss == Boss.DeathKing )
 	{
 		var bat = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
 		//Main
@@ -1439,8 +1536,9 @@ if (attack == Atks.OneShotAttack)
 		bat.boomerang = true;
 		bat.effectType = Effect.NoEffect;
 	}
+	#endregion
 	#region Slime Queen
-	if (gameMaster.chosenBoss == Boss.SlimeQueen)
+	if (gameMaster.chosenBoss == Boss.SlimeQueen || gameMaster.chosenBoss == Boss.ArenaKing)
 	{
 		var slime = instance_create_depth(global.player.x+100,global.player.y+100,depth+1,obj_enemyProjectile);
 		//Main
@@ -1493,6 +1591,14 @@ if (attack == Atks.OneShotAttack)
 		slime4.image_yscale = 1;
 		slime4.range = 10*10;
 		slime4.effectType = Effect.NoEffect;
+		
+		if (gameMaster.chosenBoss == Boss.ArenaKing)
+		{
+			slime.image_blend = global.goldColor;
+			slime2.image_blend = global.goldColor;
+			slime3.image_blend = global.goldColor;
+			slime4.image_blend = global.goldColor;
+		}
 	}
 	#endregion
 }
@@ -1711,6 +1817,60 @@ if (attack == Atks.TauntAttack)
 if (attack == Atks.HealAttack)
 {
 	
+}
+#endregion
+#endregion
+#region Tier 6 The Arena King
+#region GooSpawn
+if (attack == Atks.GooSpawn)
+{
+	if (gameMaster.chosenBoss == Boss.ArenaKing)
+	{
+		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
+		//Main
+		gooGround.speed = 0;
+		//Visual
+		gooGround.image_alpha = 1;
+		gooGround.image_blend = global.goldColor;
+		gooGround.sprite_index = spr_gooGround;
+		gooGround.image_xscale = 2.2;
+		gooGround.image_yscale = 2.2;
+		gooGround.destroy = false;
+		gooGround.effectType = Effect.NoEffect;
+		
+		var gooGroundClone = instance_create_depth(kingCloneX,kingCloneY,-5,obj_enemyProjectile);
+		//Main
+		gooGroundClone.speed = 0;
+		//Visual
+		gooGroundClone.image_alpha = 1;
+		gooGroundClone.image_blend = global.goldColor;
+		gooGroundClone.sprite_index = spr_gooGround;
+		gooGroundClone.image_xscale = 2.2;
+		gooGroundClone.image_yscale = 2.2;
+		gooGroundClone.destroy = false;
+		gooGroundClone.effectType = Effect.NoEffect;
+		
+		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
+	}
+}
+#endregion
+#region Teleport
+if (attack == Atks.TeleportAttack)
+{
+	if (gameMaster.chosenBoss == Boss.ArenaKing)
+	{
+		alpha = 1;
+		var cloneX = kingCloneX;
+		var cloneY = kingCloneY;
+	
+		kingCloneX = x;
+		kingCloneY = y;
+	
+		x = cloneX;
+		y = cloneY;
+	
+		chooseAnAttack = true;
+	}
 }
 #endregion
 #endregion

@@ -4,7 +4,7 @@ if (gameMaster.menu == Menues.PlayerSelect)
 {
 	if (gameMaster.plaugeWalkerUnlocked == true)
 	{
-		sprite_index = spr_plaugeWalker_outline_selected;
+		outline = "selected";
 	}
 	with (obj_playerInfoBox){playerShowInfoFor = Character.PlaugeWalker;}
 	with (obj_playerModel){sprite_index = spr_player_plaugeWalker_idle;}

@@ -18,11 +18,6 @@ if (gameMaster.chosenClass == Character.Pyromancer && gameMaster.pyromancerProgr
 	gameMaster.chosenBoss = bossOnThisCard;
 	gameMaster.queFight = true;
 }
-if (gameMaster.chosenClass == Character.Shopkeeper && gameMaster.shopkeeperProgress >= bossOnThisCard-1)
-{
-	gameMaster.chosenBoss = bossOnThisCard;
-	gameMaster.queFight = true;
-}
 if (gameMaster.chosenClass == Character.TheRedWarrior && gameMaster.theRedWarriorProgress >= bossOnThisCard-1)
 {
 	gameMaster.chosenBoss = bossOnThisCard;
@@ -38,7 +33,7 @@ if (gameMaster.chosenClass == Character.AngelSlayer && gameMaster.angelSlayerPro
 	gameMaster.chosenBoss = bossOnThisCard;
 	gameMaster.queFight = true;
 }
-if (gameMaster.chosenClass == Character.RainbowSlime && gameMaster.rainbowSlimeProgress >= bossOnThisCard-1)
+if (gameMaster.chosenClass == Character.AgentOfGod && gameMaster.agentOfGodProgress >= bossOnThisCard-1)
 {
 	gameMaster.chosenBoss = bossOnThisCard;
 	gameMaster.queFight = true;
@@ -47,4 +42,21 @@ if (gameMaster.chosenClass == Character.Graveling && gameMaster.gravelingProgres
 {
 	gameMaster.chosenBoss = bossOnThisCard;
 	gameMaster.queFight = true;
+}
+transitionAlpha = 1;
+fightAlpha = 1;
+fightTransitionAlpha = 0;
+tutorialAlpha = 1;
+playerTutorialAlpha = 0;
+quePlayerTutorial = false;
+tutorialFadeOut = false;
+checkOnce = true;
+if (global.tutorial == true)
+{
+	global.tutorialBoss = true;
+	global.tutorialPlayer = false;
+}
+if (audio_is_playing(snd_music_victory) == true)
+{
+	audio_sound_gain(snd_music_menu,0,(0.25)*1000);
 }

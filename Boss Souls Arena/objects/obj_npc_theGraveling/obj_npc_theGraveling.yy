@@ -5,16 +5,6 @@
     "name": "obj_npc_theGraveling",
     "eventList": [
         {
-            "id": "f2da3bf4-cd13-40aa-aa03-d5220fead301",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "5ff61708-b69c-4436-a54d-90a2048b1598"
-        },
-        {
             "id": "c13f215c-7ac2-4755-82fe-a9c1562bdf9e",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -52,6 +42,26 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 11,
             "eventtype": 6,
+            "m_owner": "5ff61708-b69c-4436-a54d-90a2048b1598"
+        },
+        {
+            "id": "69ea10cd-1051-41b7-b7c0-122ba1356eca",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "5ff61708-b69c-4436-a54d-90a2048b1598"
+        },
+        {
+            "id": "28b1ab74-1bfa-4ce5-b767-0cd8250506e3",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 8,
             "m_owner": "5ff61708-b69c-4436-a54d-90a2048b1598"
         }
     ],

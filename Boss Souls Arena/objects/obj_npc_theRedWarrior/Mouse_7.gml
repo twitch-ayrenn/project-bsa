@@ -1,5 +1,6 @@
 /// @description Insert description here
-if (gameMaster.theRedWarriorUnlocked == true)
+if (gameMaster.theRedWarriorUnlocked == true && gameMaster.menu == Menues.PlayerSelect || 
+gameMaster.theRedWarriorUnlocked == true && gameMaster.menu == Menues.Main)
 {
 	if (global.soundOn == true){audio_play_sound(snd_buttonClick,Prioity.Normal,false);}
 	with (gameMaster)

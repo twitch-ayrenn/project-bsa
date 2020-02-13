@@ -5,16 +5,6 @@
     "name": "obj_npc_theAngelSlayer",
     "eventList": [
         {
-            "id": "529f3cd9-f100-452c-94a0-1383cf5a677e",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "a0259df7-b5fb-4be5-b3f2-d4ea21f5df9a"
-        },
-        {
             "id": "c94a5a53-24b9-41ed-a32f-28f839b6647c",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -52,6 +42,26 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 11,
             "eventtype": 6,
+            "m_owner": "a0259df7-b5fb-4be5-b3f2-d4ea21f5df9a"
+        },
+        {
+            "id": "4559fae7-d6af-4603-9043-cb6b7480bcf8",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "a0259df7-b5fb-4be5-b3f2-d4ea21f5df9a"
+        },
+        {
+            "id": "a284e986-0601-4ea2-9b9d-71a23e5a379a",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 8,
             "m_owner": "a0259df7-b5fb-4be5-b3f2-d4ea21f5df9a"
         }
     ],

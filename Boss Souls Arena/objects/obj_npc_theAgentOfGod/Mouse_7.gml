@@ -1,11 +1,12 @@
 /// @description Insert description here
-if (gameMaster.agentOfGodUnlocked == true)
+if (gameMaster.agentOfGodUnlocked == true && gameMaster.menu == Menues.PlayerSelect ||
+gameMaster.agentOfGodUnlocked == true && gameMaster.menu == Menues.Main)
 {
 	if (global.soundOn == true){audio_play_sound(snd_buttonClick,Prioity.Normal,false);}
 	with (gameMaster)
 	{
-		if (agentOfGodProgress < 2){menu = Menues.BossSelect;chosenClass = Character.PlaugeWalker;}
-		if (agentOfGodProgress > 1){menu = Menues.BossLoot;  chosenClass = Character.PlaugeWalker;}
+		if (agentOfGodProgress < 2){menu = Menues.BossSelect; chosenClass = Character.AgentOfGod;}
+		if (agentOfGodProgress > 1){menu = Menues.BossLoot;  chosenClass = Character.AgentOfGod;}
 		global.itemSlots = int64(1 + ((agentOfGodProgress-1)/4));
 		global.maxItemSlots = global.itemSlots;
 	}

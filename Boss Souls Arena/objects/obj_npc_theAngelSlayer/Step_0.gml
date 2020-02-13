@@ -3,7 +3,7 @@
 depth = -y;
 if (gameMaster.menu != Menues.PlayerSelect)
 {
-	sprite_index = spr_player_angelSlayer_idle;
+	outline = "noOutline";
 }
 if (spawnSign == true)
 {

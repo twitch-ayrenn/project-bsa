@@ -25,7 +25,7 @@ if (!place_meeting(x,y,global.player) && instance_exists(obj_allBoss) && global.
 		damage = false;
 		
 		var target = global.player;
-		var damageToTarget = global.player.hp*0.1;
+		var damageToTarget = global.player.hp*0.15;
 		var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
 		damageText.color = c_maroon;
 		damageText.text = damageToTarget;

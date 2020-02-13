@@ -38,7 +38,7 @@ hp = 100;
 moveSpeed = 2;
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
-global.damage = 1*1;
+global.damage = 1;
 baseLifeSteal = 0.8;
 global.lifeSteal = baseLifeSteal;
 dashSpeed = 5;
@@ -46,6 +46,7 @@ meteorStun = 1;
 global.noDamage = false;
 noDamageStacks = 0;
 noDamageTime = (0.1)*30;
+agentSpeed = 1;
 #endregion
 #region visuals and animation
 state = States.BeforeFight;
@@ -56,88 +57,116 @@ instance_create_depth(x,y,1,obj_allCursor);
 playerSize = 1;
 #endregion
 #region class system
-if (class == Character.ShadowAssassin)
-{
-	leftClickCooldown = (7)*30;
-	rightClickCooldown = (12)*30;
-	dashCooldown = (7)*30;
-	ultCooldown = (16)*30;
-	idleSprite = spr_player_theAssasin;
-	walkSprite = spr_player_theAssasin_walking;
-	deadSprite = spr_player_theAssasin_dead;
-	leftClickColor = global.purple;
-	rightClickColor = global.purple;
-	dashColor = global.purple;
-	ultColor = c_fuchsia;
-	//character specific
-	teleportRange = 96;
-	teleportRange *= 1 + (gameMaster.bonusDash/100);
-	throwKnives = false;
-	knivesToThrow = 0;
-	knivesThrownStacks = 0;
-	throwingDirection = 0;
-	if (global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
+	#region Shadow Assassin
+	if (class == Character.ShadowAssassin)
 	{
-		var shadowRange = instance_create_depth(x,y,1,obj_shadowAttackRange);
-		shadowRange.image_xscale *= 1+(gameMaster.bonusDash/100);
-		shadowRange.image_yscale = shadowRange.image_xscale;
+		leftClickCooldown = (7)*30;
+		rightClickCooldown = (12)*30;
+		dashCooldown = (7)*30;
+		ultCooldown = (16)*30;
+		idleSprite = spr_player_theAssasin;
+		walkSprite = spr_player_theAssasin_walking;
+		deadSprite = spr_player_theAssasin_dead;
+		leftClickColor = global.purple;
+		rightClickColor = global.purple;
+		dashColor = global.purple;
+		ultColor = c_fuchsia;
+		//character specific
+		teleportRange = 96;
+		teleportRange *= 1 + (gameMaster.bonusDash/100);
+		throwKnives = false;
+		knivesToThrow = 0;
+		knivesThrownStacks = 0;
+		throwingDirection = 0;
+		if (global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
+		{
+			var shadowRange = instance_create_depth(x,y,1,obj_shadowAttackRange);
+			shadowRange.image_xscale *= 1+(gameMaster.bonusDash/100);
+			shadowRange.image_yscale = shadowRange.image_xscale;
+		}
+		daggerAmount = 12;
 	}
-	daggerAmount = 12;
-}
-if (class == Character.Pyromancer)
-{
-	leftClickCooldown = (8)*30;
-	rightClickCooldown = (11)*30;
-	dashCooldown = (3.5)*30;
-	ultCooldown = (16)*30;
-	idleSprite = spr_player_theMage;
-	walkSprite = spr_player_theMage_walking;
-	deadSprite = spr_player_theMage_dead;
-	leftClickColor = global.orange;
-	rightClickColor = global.orange;
-	dashColor = global.orange;
-	ultColor = c_yellow;
-	//character specific
-	charge = 0;
-	maxCharge = (2.5)*30;//3
-	doConeShot = false;
-	coneShotAmount = int64(global.damage*2);
-	coneShotTimes = 0;
-	coneShotTime = (0.4)*30;
-	coneShotStacks = 0;
-	meteorSprite = spr_fireBall;
-	meteorStun = 1;
-	meteor = 0;
-}
-if (class == Character.BloodKnight)
-{
-	hp = 100*2;
-	leftClickCooldown = (1)*30;
-	rightClickCooldown = (7)*30;
-	dashCooldown = (7)*30;
-	ultCooldown = (14)*30;
-	idleSprite = spr_player_theBloodKnight;
-	walkSprite = spr_player_theBloodKnight_walking;
-	deadSprite = spr_player_theBloodKnight_dead;
-	leftClickColor = c_teal;
-	rightClickColor = c_teal;
-	dashColor = c_fuchsia;
-	ultColor = global.orange;
-	//character specific
-	batAmount = 1;
-	actualBKDashSpeed = 0;
-	BKDashStop = (0.35)*30;
-	BKDashStopLeft = 0;
-	BKDashCooldown = 0;
-	BKDdashDirection = 0;
-}
+	#endregion
+	#region Pyromancer
+	if (class == Character.Pyromancer)
+	{
+		leftClickCooldown = (8)*30;
+		rightClickCooldown = (11)*30;
+		dashCooldown = (3.5)*30;
+		ultCooldown = (16)*30;
+		idleSprite = spr_player_theMage;
+		walkSprite = spr_player_theMage_walking;
+		deadSprite = spr_player_theMage_dead;
+		leftClickColor = global.orange;
+		rightClickColor = global.orange;
+		dashColor = global.orange;
+		ultColor = c_yellow;
+		//character specific
+		charge = 0;
+		maxCharge = (2.5)*30;//3
+		doConeShot = false;
+		coneShotAmount = int64(global.damage*2);
+		coneShotTimes = 0;
+		coneShotTime = (0.4)*30;
+		coneShotStacks = 0;
+		meteorSprite = spr_fireBall;
+		meteorStun = 1;
+		meteor = 0;
+	}
+	#endregion
+	#region Blood Knight David
+	if (class == Character.BloodKnight)
+	{
+		hp = 100*2;
+		leftClickCooldown = (1)*30;
+		rightClickCooldown = (7)*30;
+		dashCooldown = (7)*30;
+		ultCooldown = (14)*30;
+		idleSprite = spr_player_theBloodKnight;
+		walkSprite = spr_player_theBloodKnight_walking;
+		deadSprite = spr_player_theBloodKnight_dead;
+		leftClickColor = c_maroon;
+		rightClickColor = c_maroon;
+		dashColor = c_maroon;
+		ultColor = c_red;
+		//character specific
+		batAmount = 1;
+		actualBKDashSpeed = 0;
+		BKDashStop = (0.35)*30;
+		BKDashStopLeft = 0;
+		BKDashCooldown = 0;
+		BKDdashDirection = 0;
+	}
+	#endregion
+	#region Agent Of God Tira
+	if (class == Character.AgentOfGod)
+	{
+		hp = 100;
+		leftClickCooldown = (10)*30;
+		rightClickCooldown = (10)*30;
+		dashCooldown = (10)*30;
+		ultCooldown = (12)*30;
+		idleSprite = spr_player_agentOfGod_idle;
+		walkSprite = spr_player_agentOfGod_walking;
+		deadSprite = spr_player_theBloodKnight_dead;
+		leftClickColor = c_teal;
+		rightClickColor = c_teal;
+		dashColor = c_teal;
+		ultColor = c_aqua;
+		//character specific
+		agentSpeed = 1;
+		machineGunStacks = 0;
+		machineGunTimes = 0;
+		instance_create_depth(global.arenaMiddleX,global.arenaMiddleY,depth,obj_holyBeam);
+	}
+	#endregion
 #endregion
 #region Stats
 hp += gameMaster.bonusHealth;
 moveSpeed += gameMaster.bonusSpeed/10;
 dashSpeed *= 1+(gameMaster.bonusDash/100);
 global.damage += gameMaster.bonusDamage/10;
-leftClickCooldown *= 1 - (gameMaster.bonusFirerate/100);
+leftClickCooldown *= leftClickCooldown/(leftClickCooldown*(1 + gameMaster.bonusFirerate/100));
 global.lifeSteal += gameMaster.bonusLifeSteal/100;
 conjurationPower = 1 + (gameMaster.bonusConjur/100);
 cdrCap = 0.5;

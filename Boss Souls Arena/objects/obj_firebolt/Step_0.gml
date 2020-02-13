@@ -41,9 +41,9 @@ if (isMeteor == true)
 	{
 		with (obj_enemyProjectile)
 		{
-			if (sprite_index != spr_beam && sprite_index != spr_gooGround)
+			if (sprite_index != spr_beam && sprite_index != spr_gooGround && place_meeting(x,y,obj_firebolt))
 			{
-			 instance_destroy();	
+				instance_destroy();	
 			}
 		}
 	}

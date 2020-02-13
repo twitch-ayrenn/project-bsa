@@ -3,7 +3,7 @@
 depth = -y-10;
 if (gameMaster.menu != Menues.PlayerSelect)
 {
-	sprite_index = spr_player_graveling;
+	outline = "noOutline";
 }
 if (spawnSign == true)
 {

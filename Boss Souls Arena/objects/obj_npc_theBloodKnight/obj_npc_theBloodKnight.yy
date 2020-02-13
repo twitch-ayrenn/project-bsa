@@ -5,16 +5,6 @@
     "name": "obj_npc_theBloodKnight",
     "eventList": [
         {
-            "id": "93deea97-6de7-4fba-81e8-4fddc063f7d4",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "0f69d334-7087-4bd9-a25d-e5d6096b4ff8"
-        },
-        {
             "id": "871721cb-bb57-4658-91af-cd1c9a08fa71",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -52,6 +42,26 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 11,
             "eventtype": 6,
+            "m_owner": "0f69d334-7087-4bd9-a25d-e5d6096b4ff8"
+        },
+        {
+            "id": "1ce997da-8013-4fff-adae-57c2fa829955",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "0f69d334-7087-4bd9-a25d-e5d6096b4ff8"
+        },
+        {
+            "id": "38775d35-df35-4f11-87a6-1796567472f4",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 8,
             "m_owner": "0f69d334-7087-4bd9-a25d-e5d6096b4ff8"
         }
     ],

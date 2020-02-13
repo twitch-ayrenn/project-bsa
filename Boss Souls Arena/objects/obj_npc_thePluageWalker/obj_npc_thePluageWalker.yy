@@ -5,16 +5,6 @@
     "name": "obj_npc_thePluageWalker",
     "eventList": [
         {
-            "id": "c6f18421-5f95-4e99-a8e0-24e791a13980",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "77c18167-bfc2-4113-92a7-68dc6dcaebe4"
-        },
-        {
             "id": "c7efbb9d-8848-4c11-94d6-405890c75b03",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -52,6 +42,26 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 11,
             "eventtype": 6,
+            "m_owner": "77c18167-bfc2-4113-92a7-68dc6dcaebe4"
+        },
+        {
+            "id": "9ef8db6f-4d05-4ac7-83fb-e2f9e5900f60",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "77c18167-bfc2-4113-92a7-68dc6dcaebe4"
+        },
+        {
+            "id": "a775b8dd-2835-4672-975f-714089b0a6d0",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 8,
             "m_owner": "77c18167-bfc2-4113-92a7-68dc6dcaebe4"
         }
     ],

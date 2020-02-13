@@ -4,7 +4,7 @@ if (gameMaster.menu == Menues.PlayerSelect)
 {
 	if (gameMaster.gravelingUnlocked == true)
 	{
-		sprite_index = spr_graveling_outline_selected;
+		outline = "selected";
 	}
 	with (obj_playerInfoBox){playerShowInfoFor = Character.Graveling;}
 	with (obj_playerModel){sprite_index = spr_player_graveling;size = 0.8;}

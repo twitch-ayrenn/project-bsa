@@ -2,9 +2,9 @@
 // You can write your code in this editor
 if (gameMaster.agentOfGodUnlocked == false)
 {
-	sprite_index = spr_agentOfGod_outline_locked;
+	outline = "locked";
 }
 if (gameMaster.agentOfGodUnlocked == true)
 {
-	sprite_index = spr_agentOfGod_outline_unSelected;
+	outline = "unSelected";
 }

@@ -1,17 +1,20 @@
 /// @description Insert description here
 depth = -y;
 if (instance_exists(obj_allBoss) == false){instance_destroy(obj_healSlime);}
-var nearestEnemy = instance_nearest(x,y,obj_allBoss);
-move_towards_point(nearestEnemy.x,nearestEnemy.y,0.4);
-if (hp <= 0)
+if (instance_exists(obj_allBoss))
 {
-	instance_destroy();	
-}
-if (place_meeting(x,y,nearestEnemy))
-{
-	with (nearestEnemy)
+	var nearestEnemy = instance_nearest(x,y,obj_allBoss);
+	move_towards_point(nearestEnemy.x,nearestEnemy.y,0.4);
+	if (hp <= 0)
 	{
-		nearestEnemy.hp += 20;
+		instance_destroy();	
 	}
-	instance_destroy();
+	if (place_meeting(x,y,nearestEnemy))
+	{
+		with (nearestEnemy)
+		{
+			nearestEnemy.hp += 20;
+		}
+		instance_destroy();
+	}
 }

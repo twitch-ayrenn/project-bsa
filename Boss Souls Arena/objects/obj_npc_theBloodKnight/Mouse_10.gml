@@ -4,7 +4,7 @@ if (gameMaster.menu == Menues.PlayerSelect)
 {
 	if (gameMaster.bloodKnightUnlocked == true)
 	{
-		sprite_index = spr_theBloodKnight_outline_selected;
+		outline = "selected";
 	}
 	with (obj_playerInfoBox){playerShowInfoFor = Character.BloodKnight;}
 	with (obj_playerModel){sprite_index = spr_player_theBloodKnight;}

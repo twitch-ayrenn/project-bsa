@@ -39,7 +39,7 @@ if (state == States.Idle || state == States.Walking)
 {
 image_angle = 0;
 #region Movement
-actualSpeed = (moveSpeed)*bPSpeed*global.playerBossSlow*meteorStun*gravekeeperSpeed*shieldSpeed;
+actualSpeed = (moveSpeed)*bPSpeed*global.playerBossSlow*meteorStun*gravekeeperSpeed*shieldSpeed*agentSpeed;
 if (keyboard_check(ord("A")) && keyboard_check(ord("S")) || keyboard_check(ord("A")) && keyboard_check(ord("W")) ||  keyboard_check(ord("D")) && keyboard_check(ord("S")) || keyboard_check(ord("D")) && keyboard_check(ord("W")))
 {
 	actualSpeed = actualSpeed*0.85;
@@ -252,6 +252,27 @@ if (mouse_x < x)
 		}
 	}
 	#endregion
+	#region Agent of God Tira
+	if (class == Character.AgentOfGod)
+	{
+		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false
+		|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
+		{
+			canLeftClick = false;
+			leftClickCooldownLeft = leftClickCooldown;
+			activateLeftClickItem = true;
+			
+			var swapBolt = instance_create_depth(x,y,depth+1,obj_swapBolt);
+			swapBolt.speed = 5;
+			if (instance_exists(obj_allBoss)){swapBolt.speed = clamp(point_distance(x,y,obj_allBoss.x,obj_allBoss.y)/50,3,15);}
+			swapBolt.direction = point_direction(x,y,mouse_x,mouse_y);
+			swapBolt.image_angle = swapBolt.direction+90;
+			//Visual
+			swapBolt.image_xscale = 2;
+			swapBolt.image_yscale = 2;
+		}
+	}
+	#endregion
 	#region Items
 	#region Death Scythe
 	if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == true && global.itemSelected[Boss.DemonLordRekTaar] == false
@@ -283,6 +304,11 @@ if (mouse_x < x)
 					}
 				}
 			}
+		}
+		if (class == Character.Pyromancer)
+		{
+			instance_create_depth(x,y,-y,obj_pyroPortal);
+			instance_create_depth(x,y,-y,obj_portal_bottom);
 		}
 	}
 	#endregion
@@ -322,6 +348,11 @@ if (mouse_x < x)
 				}
 			}
 		}
+		if (class == Character.Pyromancer)
+		{
+			instance_create_depth(x,y,-y,obj_pyroPortal);
+			instance_create_depth(x,y,-y,obj_portal_bottom);
+		}
 	}
 	#endregion
 	if (activateLeftClickItem == true)
@@ -343,8 +374,10 @@ if (mouse_x < x)
 			}
 		}
 		#endregion 
-		#region DeathKing Boss
-			if (instance_exists(obj_allBoss) && gameMaster.chosenBoss == Boss.DeathKing)
+		#region DeathKing Boss and Arena king
+		if (instance_exists(obj_allBoss))
+		{
+			if (gameMaster.chosenBoss == Boss.DeathKing || gameMaster.chosenBoss == Boss.ArenaKing)
 			{
 				with (obj_allBoss)
 				{
@@ -360,6 +393,7 @@ if (mouse_x < x)
 					}
 				}
 			}
+		}
 		#endregion
 	}
 	#endregion
@@ -507,6 +541,27 @@ if (mouse_x < x)
 		}
 	}
 	#endregion
+	#region Agent Of God
+	if (class == Character.AgentOfGod)
+	{
+		if (mouse_check_button(mb_right) && canRightClick == true
+		|| keyboard_check(ord("2")) && canRightClick == true)
+		{
+			if (place_free(mouse_x,mouse_y))
+			{
+				canRightClick = false;
+				rightClickCooldownLeft = rightClickCooldown;
+				activateRightClickItem = true;
+					
+				x = mouse_x;
+				y = mouse_y;
+				
+				var holyGround = instance_create_depth(x,y,depth,obj_holyGround);
+				holyGround.image_blend = c_teal;
+			}
+		}
+	}
+	#endregion
 	#region Items
 	if (activateRightClickItem == true)
 	{
@@ -625,6 +680,42 @@ if (mouse_x < x)
 		}
 	}
 	#endregion
+	#region Agent Of God
+	if (class == Character.AgentOfGod)
+	{
+		if (keyboard_check(ord("E")) && canUlt == true
+		|| keyboard_check(ord("R")) && canUlt == true
+		|| keyboard_check(ord("Q")) && canUlt == true)
+		{
+			canUlt = false;
+			ultCooldownLeft = ultCooldown;
+			activateUltItem = true;
+			
+			with(obj_camera){shake_remain += 2;}
+			machineGunTimes += 20;
+		}
+		if (machineGunTimes > 0){machineGunStacks++;}
+		if (machineGunStacks >= (0.25)*30)
+		{
+			machineGunStacks = 0;
+			machineGunTimes--;
+			
+			repeat (30)
+			{
+				var bolt = instance_create_depth(x+irandom_range(-1,1),y+irandom_range(-1,1),depth+1,obj_barageBolts);
+				bolt.speed = random_range(1,6);
+				var accuracy = 35;
+				bolt.direction = point_direction(x,y,mouse_x+irandom_range(-accuracy,accuracy),mouse_y+irandom_range(-accuracy,accuracy));
+				bolt.image_angle = bolt.direction+90;
+				//Visual
+				bolt.image_blend = choose(c_aqua,c_white,c_teal);
+				bolt.image_xscale = 0.75;
+				bolt.image_yscale = bolt.image_xscale;
+			}
+		}
+	}
+
+	#endregion
 	#region Items
 	if (activateUltItem == true)
 	{
@@ -664,8 +755,10 @@ if (mouse_x < x)
 			}
 		}
 		#endregion
-		#region DeathKing Boss
-			if (instance_exists(obj_allBoss) && gameMaster.chosenBoss == Boss.DeathKing)
+		#region DeathKing Boss and Arena King
+		if (instance_exists(obj_allBoss))
+		{
+			if (gameMaster.chosenBoss == Boss.DeathKing || gameMaster.chosenBoss == Boss.ArenaKing)
 			{
 				with (obj_allBoss)
 				{
@@ -677,6 +770,7 @@ if (mouse_x < x)
 					teleportY = choose(-75,75);
 				}
 			}
+		}
 		#endregion
 	}
 	#endregion
@@ -747,6 +841,28 @@ if (mouse_x < x)
 				batCircleShotAngle += 360/batCricleShotAmountL;
 				batShot.follow = false;
 			}
+		}
+	}
+	#endregion
+	#region Agent Of God
+	if (class == Character.AgentOfGod)
+	{
+		if (keyboard_check(vk_space) && canDash == true)
+		{
+			canDash = false;
+			dashCooldownLeft = dashCooldown;
+			activateDashItem = true;
+			dashStopLeft = dashStop;
+			actualDashSpeed = dashSpeed*1.5;
+			direction = point_direction(x,y,mouse_x,mouse_y);
+			
+			var holyBolt = instance_create_depth(x,y,depth+1,obj_holyBolt);
+			holyBolt.speed = dashSpeed*2.25;
+			holyBolt.direction = direction;
+			holyBolt.image_angle = holyBolt.direction+90;
+			//Visual
+			holyBolt.image_xscale = 2.5;
+			holyBolt.image_yscale = 2.5;
 		}
 	}
 	#endregion

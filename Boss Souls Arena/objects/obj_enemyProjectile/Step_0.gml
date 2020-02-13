@@ -42,6 +42,7 @@ if (sprite_index == spr_bat)
 	if (direction >= 90 && direction <= 270){ image_xscale =-size;}
 	if (direction < 90 || direction > 270){ image_xscale = size;}
 }
+if (gameMaster.chosenBoss == Boss.ArenaKing && sprite_index = spr_beam && instance_exists(obj_allBoss)){depth = obj_allBoss.depth+100;}
 #endregion
 #region movement
 if (chase == true && instance_exists(target) && sprite_index != spr_statueOfChase && sprite_index != spr_bat)
@@ -105,7 +106,7 @@ if (place_meeting(x,y,target) && sprite_index != spr_gooGround && global.iFrame 
 	damageText.text = damageToTarget;
 	target.hp -= damageToTarget;
 	#region Pool On hit
-	if(gameMaster.chosenBoss == Boss.BloodZombie  || gameMaster.chosenBoss == Boss.SlimeQueen)
+	if(gameMaster.chosenBoss == Boss.BloodZombie  || gameMaster.chosenBoss == Boss.SlimeQueen || gameMaster.chosenBoss == Boss.ArenaKing)
 	{
 		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
 		//Main
@@ -114,9 +115,11 @@ if (place_meeting(x,y,target) && sprite_index != spr_gooGround && global.iFrame 
 		gooGround.image_alpha = 1;
 		if (gameMaster.chosenBoss == Boss.BloodZombie){gooGround.image_blend = c_maroon;}
 		if (gameMaster.chosenBoss == Boss.SlimeQueen){gooGround.image_blend = c_green;}
+		if (gameMaster.chosenBoss == Boss.ArenaKing){gooGround.image_blend = global.goldColor;}
 		gooGround.sprite_index = spr_gooGround;
 		gooGround.image_xscale = 1;
-		gooGround.image_yscale = 1;
+		if (gameMaster.chosenBoss == Boss.ArenaKing){gooGround.image_xscale = 0.15 + image_xscale/5;}
+		gooGround.image_yscale = gooGround.image_xscale;
 		gooGround.destroy = false;
 	}
 	#endregion

@@ -11,6 +11,7 @@
         "47193803-4f2c-41b5-b9fe-beeeaafc2fc1",
         "b9cfa864-d87f-442c-b6f0-ac0b313aa921",
         "372efaef-97d4-4671-a9ca-3c5ad6f26349",
+        "ec6ce021-cc0a-4f20-a875-45dd419601e6",
         "ea86b46f-1118-4dd1-9344-47d32de1288c",
         "866f71b5-0211-4a71-9775-385f10994fe3",
         "f94e1622-f642-46b6-aded-034d1c5560f9",
@@ -19,7 +20,9 @@
         "9a1401ef-6bc2-40bd-811d-0a838214f78b",
         "81dd2d73-5911-469e-a1e5-393bd6f3fbab",
         "af5b34a6-ed58-4e51-842c-0b2e1443788d",
-        "3cbf60a9-28d4-4b6b-81a5-03ae7e8ec2e9"
+        "3cbf60a9-28d4-4b6b-81a5-03ae7e8ec2e9",
+        "78a08fc7-e0fa-488c-a384-5ae9b273ddbd",
+        "2b7fd2da-65b1-42d8-afba-91f0bd9bd1e7"
     ],
     "filterType": "GMObject",
     "folderName": "grp_props",

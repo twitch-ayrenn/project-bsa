@@ -8,7 +8,6 @@
         "16323029-bb3d-47d1-ba96-bae01d5cc269",
         "cb083882-ff31-4354-baa1-ad1e52837c7f",
         "9071dbe3-e664-4559-a98e-486f30a2a3d9",
-        "8fcfbc9a-715a-4bb8-b208-ba3002972b2c",
         "b270809a-9e97-49bb-997d-cb4c60a51b06",
         "f7621fe8-83b4-4a4f-aa7a-aaf438f6a2c6",
         "a407eb3a-55b5-4606-8785-7781963e43cd",
@@ -23,9 +22,7 @@
         "295ebcc6-b342-425f-a510-a3347456a293",
         "f179381a-9c61-4e95-b3f8-4d8b03ffe9c4",
         "98f8b6ee-445b-4760-81bd-eafee1931c1d",
-        "175cf5bf-6be2-4cdf-8b3f-d04004dda6ef",
-        "044e71e1-ef34-441c-bc4a-742993efe61d",
-        "3cb40d95-84ca-43fe-a31c-88f7aee6a3d9"
+        "0f2d8669-cad1-4dea-a670-56b0ed8fbd9e"
     ],
     "filterType": "GMObject",
     "folderName": "grp_fightCards",

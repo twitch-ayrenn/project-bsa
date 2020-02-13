@@ -74,8 +74,8 @@ if (gameMaster.chosenBoss == Boss.BloodKnightDavid && phase == 1)
 }
 #endregion
 #region DeathKing
-if (gameMaster.chosenBoss == Boss.DeathKing)
-{
+if (gameMaster.chosenBoss == Boss.DeathKing || gameMaster.chosenBoss == Boss.ArenaKing)
+{ 
 	canTeleport = true;	
 }
 

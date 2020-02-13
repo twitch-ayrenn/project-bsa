@@ -17,7 +17,7 @@ phase4Hp = 0; phase4Ms = 0; phase4Dmg = 0;
 phase5Hp = 0; phase5Ms = 0; phase5Dmg = 0;
 phase6Hp = 0; phase6Ms = 0; phase6Dmg = 0;
 tier1Hp = 400; tier2Hp = 700; tier3Hp = 1000;
-tier4Hp = 1500; tier5Hp = 1600; tier6Hp = 3500;
+tier4Hp = 1400; tier5Hp = 1800; tier6Hp = 2500;
 hp = 0;
 maxHp = hp;
 global.bossDamage = 10;
@@ -178,30 +178,6 @@ isHit = false;
 		#endregion
 	#endregion
 	#region Tier 2 Done
-		#region The Mad witches
-		if (gameMaster.chosenBoss == Boss.TheMadWitches) 
-		{
-			//stats
-			phase1Hp = tier1Hp; phase1Ms = 2; phase1Dmg = 20;
-			hp = phase1Hp;
-			global.bossDamage = phase1Dmg;
-			moveSpeed = phase1Ms;
-			moveType = MovementType.StandingStill;
-			//attacks and phase
-			tier = 1;
-			phase = 1;
-			maxPhase = 1;
-			//visual
-			size = 1;
-			alpha = 1;
-			beamSprite = spr_boss_theGreenWitch_beam;
-			teleportSprite = spr_boss_theGreenWitch_teleport;
-			rapidFireSprite = spr_boss_theGreenWitch_rapidFire;
-			gooSprite = spr_boss_theGreenWitch_goo;
-			//
-			position = 1;
-		}
-		#endregion
 		#region Wisp Sister Julia
 		if (gameMaster.chosenBoss == Boss.WispSisterJulia) 
 		{
@@ -319,7 +295,7 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.KnightWitchYi) 
 		{
 			//stats
-			phase1Hp = tier3Hp*1; phase1Ms = 1.4; phase1Dmg = 40;
+			phase1Hp = tier3Hp*1; phase1Ms = 1.25; phase1Dmg = 35;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -339,7 +315,7 @@ isHit = false;
 			tauntSprite = spr_boss_knightWitch_taunt;
 			coneSprite = spr_boss_knightWitch_cone;
 			//boss specifc
-			knightWitchGooSize = 1;
+			knightWitchGooSize = 0.9;
 		}
 		#endregion
 		#region AngelKnight
@@ -401,7 +377,7 @@ isHit = false;
 		}
 		#endregion
 	#endregion
-	#region Tier 4
+	#region Tier 4 Done
 		#region Gravekeeper
 		if (gameMaster.chosenBoss == Boss.Gravekeeper) 
 		{
@@ -428,6 +404,8 @@ isHit = false;
 			chaseSprite = spr_boss_theGraveKeeper_chase;
 			normalSprite = spr_boss_theGraveKeeper_normal;
 			//boss Specfic
+			x = global.arenaMiddleX;
+			y = global.arenaMiddleY;
 			var scythe = instance_create_depth(x,y,depth,obj_bossMeleeWeapon);
 			scythe.sprite_index = spr_graveScythe_spin;
 			scythe.image_xscale = 1.5;
@@ -613,7 +591,7 @@ isHit = false;
 		}
 		#endregion
 	#endregion 
-	#region Tier 5
+	#region Tier 5 Done
 		#region Demon Queens Head
 		if (gameMaster.chosenBoss == Boss.DemonQueensHead) 
 		{
@@ -651,10 +629,10 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.DeathKing) 
 		{
 			//stats
-			phase1Hp = tier4Hp*0.15; phase1Ms = 0.25; phase1Dmg = 25;
-			phase2Hp = tier4Hp*0.15; phase2Ms = 0.25; phase2Dmg = 30;
-			phase3Hp = tier4Hp*0.15; phase3Ms = 0.25; phase3Dmg = 35;
-			phase4Hp = tier4Hp*0.25; phase4Ms = 0.25; phase4Dmg = 40;
+			phase1Hp = tier5Hp*0.15; phase1Ms = 0.25; phase1Dmg = 25;
+			phase2Hp = tier5Hp*0.15; phase2Ms = 0.25; phase2Dmg = 30;
+			phase3Hp = tier5Hp*0.15; phase3Ms = 0.25; phase3Dmg = 35;
+			phase4Hp = tier5Hp*0.25; phase4Ms = 0.25; phase4Dmg = 40;
 			phase5Hp = tier5Hp*0.30; phase5Ms = 1.5; phase5Dmg = 30;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
@@ -682,15 +660,15 @@ isHit = false;
 			instance_create_depth(x,y,depth,obj_teleportMarker);
 		}
 		#endregion
-		#region Death Kings
+		#region Slime Queen
 		if (gameMaster.chosenBoss == Boss.SlimeQueen) 
 		{
 			//stats
-			phase1Hp = tier4Hp*0.25; phase1Ms = 0.75; phase1Dmg = 25;
-			phase2Hp = tier4Hp*0.15; phase2Ms = 0.75; phase2Dmg = 30;
-			phase3Hp = tier4Hp*0.15; phase3Ms = 0.75; phase3Dmg = 35;
-			phase4Hp = 1500; phase4Ms = 0; phase4Dmg = 40;
-			phase5Hp = tier5Hp*0.45; phase5Ms = 1; phase5Dmg = 30;
+			phase1Hp = tier5Hp*0.25; phase1Ms = 1; phase1Dmg = 32.5;
+			phase2Hp = tier5Hp*0.15; phase2Ms = 1.1; phase2Dmg = 37.5;
+			phase3Hp = tier5Hp*0.15; phase3Ms = 1.2; phase3Dmg = 42.5;
+			phase4Hp = 1500; phase4Ms = 0; phase4Dmg = 35;
+			phase5Hp = tier5Hp*0.45; phase5Ms = 1.3; phase5Dmg = 37.5;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -713,12 +691,15 @@ isHit = false;
 			x -= 25;
 		}
 		#endregion
-		#region Varus
+		#region Blood Army King
 		if (gameMaster.chosenBoss == Boss.BloodKingVarus) 
 		{
 			//stats
-			phase1Hp = tier5Hp*0.2; phase1Ms = 1; phase1Dmg = 20;
-			phase2Hp = tier5Hp*0.8; phase2Ms = 1.5; phase2Dmg = 25;
+			phase1Hp = tier5Hp*0.25; phase1Ms = 2; phase1Dmg = 50;
+			phase2Hp = 100; phase2Ms = 0; phase2Dmg = 50;
+			phase3Hp = tier5Hp*0.5; phase3Ms = 2.25; phase2Dmg = 50;
+			phase4Hp = 100; phase2Ms = 0; phase4Dmg = 50;
+			phase5Hp = tier5Hp*0.25; phase2Ms = 2; phase5Dmg = 50;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -726,16 +707,75 @@ isHit = false;
 			//attacks and phase
 			tier = 5;
 			phase = 1;
-			maxPhase = 2;
+			maxPhase = 5;
 			//visual
 			size = 1;
-			alpha = 0.9;
-			coneSprite = spr_boss_bloodRoyalVarus_cone;
-			teleportSprite = spr_boss_bloodRoyalVarus_teleport;
-			oneShotSprite = spr_boss_bloodRoyalVarus_oneShot;
-			chaseSprite = spr_boss_bloodRoyalVarus_chase;
+			alpha = 0.5;
+			idleSprite = spr_boss_bloodKing_idle;
+			teleportSprite = spr_boss_bloodKing_teleport;
+			oneShotSprite = spr_boss_bloodKing_oneShot;
+			chaseSprite = spr_boss_bloodKing_chase;
+			rapidFireSprite = spr_boss_bloodKing_rapidFire;
+			beamSprite = spr_boss_bloodKing_beam;
+			//boss Specfic
+			var dist = 145;
+			var distCorner = 115;
+			instance_create_depth(global.arenaMiddleX-distCorner,global.arenaMiddleY-distCorner,-9,obj_teleportMarker);
+			instance_create_depth(global.arenaMiddleX,global.arenaMiddleY-dist,-9,obj_teleportMarker);
+			instance_create_depth(global.arenaMiddleX+distCorner,global.arenaMiddleY-distCorner,-9,obj_teleportMarker);
+			instance_create_depth(global.arenaMiddleX-dist,global.arenaMiddleY,-9,obj_teleportMarker);
+			instance_create_depth(global.arenaMiddleX+dist,global.arenaMiddleY,-9,obj_teleportMarker);
+			instance_create_depth(global.arenaMiddleX-distCorner,global.arenaMiddleY+distCorner,-9,obj_teleportMarker);
+			instance_create_depth(global.arenaMiddleX,global.arenaMiddleY+dist,-9,obj_teleportMarker);
+			instance_create_depth(global.arenaMiddleX+distCorner,global.arenaMiddleY+distCorner,-9,obj_teleportMarker);
 		}
 		#endregion
+	#endregion
+	#region Tier 6 The Arena King
+	if (gameMaster.chosenBoss == Boss.ArenaKing) 
+	{
+		//stats
+		phase1Hp = tier6Hp*0.15; phase1Ms = 1; phase1Dmg = 20;
+		phase2Hp = tier6Hp*0.15; phase2Ms = 1.5; phase2Dmg = 35;
+		phase3Hp = tier6Hp*0.15; phase3Ms = 1.75; phase3Dmg = 35;
+		phase4Hp = tier6Hp*0.15; phase4Ms = 2; phase4Dmg = 35;
+		phase5Hp = tier6Hp*0.15; phase5Ms = 2.25; phase5Dmg = 35;
+		phase6Hp = tier6Hp*0.25; phase6Ms = 2.5; phase6Dmg = 35;
+		hp = phase1Hp;
+		global.bossDamage = phase1Dmg;
+		moveSpeed = phase1Ms;
+		moveType = MovementType.WalkingTowards;
+		//attacks and phase
+		tier = 6;
+		phase = 1;
+		maxPhase = 6;
+		//visual
+		size = 1;
+		alpha = 1;
+		idleSprite = spr_boss_arenaKing_idle;
+		chaseSprite = spr_boss_arenaKing_chase;
+		normalSprite = spr_boss_arenaKing_normal;
+		circleSprite = spr_boss_arenaKing_circle;
+		beamSprite = spr_boss_arenaKing_beam;
+		rapidFireSprite = spr_boss_arenaKing_rapidFire;
+		oneShotSprite = spr_boss_arenaKing_oneShot;
+		teleportSprite = spr_boss_arenaKing_teleport;
+		gooSprite = spr_boss_arenaKing_goo;
+		coneSprite = spr_boss_arenaKing_cone;
+		//boss Specfic
+		var sword = instance_create_depth(x,y,depth,obj_bossMeleeWeapon);
+		sword.sprite_index = spr_kingsEdge_spin;
+		sword.spinSpeed = 20;
+		
+		teleportX = choose(-75,75);
+		teleportY = choose(-75,75);
+		canTeleport = false;
+		teleportTime = (3)*10;
+		instance_create_depth(x,y,depth,obj_teleportMarker);
+		
+		kingCloneX = global.arenaMiddleX;
+		kingCloneY = global.arenaMiddleY;
+	}
 	#endregion
 #endregion
 #region Finalize

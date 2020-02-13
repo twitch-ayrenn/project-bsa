@@ -1,5 +1,6 @@
 /// @description Insert description here
-if (gameMaster.angelSlayerUnlocked == true)
+if (gameMaster.angelSlayerUnlocked == true && gameMaster.menu == Menues.PlayerSelect ||
+gameMaster.angelSlayerUnlocked == true && gameMaster.menu == Menues.Main)
 {
 	if (global.soundOn == true){audio_play_sound(snd_buttonClick,Prioity.Normal,false);}
 	with (gameMaster)

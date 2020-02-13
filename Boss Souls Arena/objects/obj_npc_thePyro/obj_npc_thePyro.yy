@@ -5,16 +5,6 @@
     "name": "obj_npc_thePyro",
     "eventList": [
         {
-            "id": "cbc873bd-aad4-491d-ab19-d9cbf1be96ad",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "0db41a8e-03c0-409b-b6b7-492c0742a70e"
-        },
-        {
             "id": "3d664a05-cbf2-4d5f-9bbb-08bf1dbcd119",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -52,6 +42,26 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 11,
             "eventtype": 6,
+            "m_owner": "0db41a8e-03c0-409b-b6b7-492c0742a70e"
+        },
+        {
+            "id": "2ed3bae4-7259-4ff0-81e6-9c2718c01311",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "0db41a8e-03c0-409b-b6b7-492c0742a70e"
+        },
+        {
+            "id": "7bc0da2c-f8b3-4141-828b-ee2bbc516c57",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 8,
             "m_owner": "0db41a8e-03c0-409b-b6b7-492c0742a70e"
         }
     ],

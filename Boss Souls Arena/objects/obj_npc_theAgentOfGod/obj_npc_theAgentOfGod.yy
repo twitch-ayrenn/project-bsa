@@ -5,16 +5,6 @@
     "name": "obj_npc_theAgentOfGod",
     "eventList": [
         {
-            "id": "d99a2033-78eb-437f-92e9-41261137c5a1",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "d4c786d4-2343-4b21-92ce-164e0441548d"
-        },
-        {
             "id": "4ba47037-b40c-4138-a97c-6451e35d3a21",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -52,6 +42,26 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 11,
             "eventtype": 6,
+            "m_owner": "d4c786d4-2343-4b21-92ce-164e0441548d"
+        },
+        {
+            "id": "ce81843c-396a-4d87-9fb3-4732a73b636e",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "d4c786d4-2343-4b21-92ce-164e0441548d"
+        },
+        {
+            "id": "be275e8d-a062-4f60-a576-9dbff79e41f0",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 8,
             "m_owner": "d4c786d4-2343-4b21-92ce-164e0441548d"
         }
     ],

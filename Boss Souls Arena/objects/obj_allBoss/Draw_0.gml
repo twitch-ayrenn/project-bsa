@@ -40,7 +40,7 @@ if (drawArea == true)
 	}
 	#endregion
 	#region Angel Slayer
-	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
+	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul )
 	{
 		if (attack == Atks.BeamAttack)
 		{
@@ -132,9 +132,50 @@ if (drawArea == true)
 		draw_line_width_color(x-600,y,x+600,y,1,global.orange,global.orange);
 	}
 	#endregion
+	#region Arena King
+	if (gameMaster.chosenBoss == Boss.ArenaKing)
+	{
+		if (attack == Atks.CircleAttack)
+		{
+			draw_line_width_color(x,y,x+600,y,1,global.goldColor,global.goldColor);
+			draw_line_width_color(x,y,x+600,y-346,1,global.goldColor,global.goldColor);//30
+			draw_line_width_color(x,y,x+600,y-1040,1,global.goldColor,global.goldColor);//60
+			draw_line_width_color(x,y,x,y-600,1,global.goldColor,global.goldColor);//90
+			draw_line_width_color(x,y,x-600,y-346,1,global.goldColor,global.goldColor);//120
+			draw_line_width_color(x,y,x-600,y-1040,1,global.goldColor,global.goldColor);//150
+			draw_line_width_color(x,y,x-600,y,1,global.goldColor,global.goldColor);//180
+			draw_line_width_color(x,y,x-600,y+346,1,global.goldColor,global.goldColor);//210
+			draw_line_width_color(x,y,x-600,y+1040,1,global.goldColor,global.goldColor);//240
+			draw_line_width_color(x,y,x,y+600,1,global.goldColor,global.goldColor);//270
+			draw_line_width_color(x,y,x+600,y+346,1,global.goldColor,global.goldColor);//300
+			draw_line_width_color(x,y,x+600,y+1040,1,global.goldColor,global.goldColor);//330
+			draw_line_width_color(x,y,x+600,y,1,global.goldColor,global.goldColor);//360
+			//Clone
+			draw_line_width_color(kingCloneX,kingCloneY,kingCloneX+600,kingCloneY,1,global.goldColor,global.goldColor);
+			draw_line_width_color(kingCloneX,kingCloneY,kingCloneX+600,kingCloneY-346,1,global.goldColor,global.goldColor);//30
+			draw_line_width_color(kingCloneX,kingCloneY,kingCloneX+600,kingCloneY-1040,1,global.goldColor,global.goldColor);//60
+			draw_line_width_color(kingCloneX,kingCloneY,kingCloneX,kingCloneY-600,1,global.goldColor,global.goldColor);//90
+			draw_line_width_color(kingCloneX,kingCloneY,kingCloneX-600,kingCloneY-346,1,global.goldColor,global.goldColor);//120
+			draw_line_width_color(kingCloneX,kingCloneY,kingCloneX-600,kingCloneY-1040,1,global.goldColor,global.goldColor);//150
+			draw_line_width_color(kingCloneX,kingCloneY,kingCloneX-600,kingCloneY,1,global.goldColor,global.goldColor);//180
+			draw_line_width_color(kingCloneX,kingCloneY,kingCloneX-600,kingCloneY+346,1,global.goldColor,global.goldColor);//210
+			draw_line_width_color(kingCloneX,kingCloneY,kingCloneX-600,kingCloneY+1040,1,global.goldColor,global.goldColor);//240
+			draw_line_width_color(kingCloneX,kingCloneY,kingCloneX,kingCloneY+600,1,global.goldColor,global.goldColor);//270
+			draw_line_width_color(kingCloneX,kingCloneY,kingCloneX+600,kingCloneY+346,1,global.goldColor,global.goldColor);//300
+			draw_line_width_color(kingCloneX,kingCloneY,kingCloneX+600,kingCloneY+1040,1,global.goldColor,global.goldColor);//330
+			draw_line_width_color(kingCloneX,kingCloneY,kingCloneX+600,kingCloneY,1,global.goldColor,global.goldColor);//360
+		}
+		if (attack == Atks.BeamAttack)
+		{
+			draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,global.goldColor,global.goldColor);
+			draw_line_width_color(kingCloneX,kingCloneY,obj_allPlayer.x,obj_allPlayer.y,1,global.goldColor,global.goldColor);
+		}
+	}
+	#endregion
 }
 #endregion
 //boss Specific
+#region Demon General Rektaar
 if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
 {
 	if (phase == 2 || phase == 3)
@@ -150,6 +191,13 @@ if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
 		draw_sprite_ext(spr_demonPortal_3,0,global.arenaMiddleX+175,global.arenaMiddleY,1,1,rotation3+35,c_white,0.85);
 	}
 }
+#endregion
+#region Arena King
+if (gameMaster.chosenBoss == Boss.ArenaKing)
+{
+	draw_sprite_ext(spr_boss_arenaKing_idle,image_index,kingCloneX,kingCloneY,image_xscale,image_yscale,0,c_gray,clamp(image_alpha-0.25,0,0.75));	
+}
+#endregion
 
 if (isHit == false){draw_self();}
 if (isHit == true)

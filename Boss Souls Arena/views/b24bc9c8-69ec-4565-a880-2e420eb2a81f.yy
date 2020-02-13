@@ -42,7 +42,8 @@
         "75bc3472-7aed-4e45-8feb-e17e40501fa6",
         "a67179c6-ac21-498e-9bf9-f943f4dbbb2c",
         "079b4bca-8753-4231-bd3a-dc7fef7cf0c6",
-        "98daee36-61c8-4d61-8088-6b1b78e295fe"
+        "98daee36-61c8-4d61-8088-6b1b78e295fe",
+        "20c5c4cb-a1d7-4664-a643-2711a558fbe9"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_fightCards",

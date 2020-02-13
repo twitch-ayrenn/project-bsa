@@ -2,9 +2,9 @@
 // You can write your code in this editor
 if (gameMaster.gravelingUnlocked == false)
 {
-	sprite_index = spr_graveling_outline_locked;
+	outline = "locked";
 }
 if (gameMaster.gravelingUnlocked == true)
 {
-	sprite_index = spr_graveling_outline_unSelected;
+	outline = "unSelected";
 }

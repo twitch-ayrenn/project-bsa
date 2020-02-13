@@ -18,11 +18,6 @@ if (gameMaster.chosenClass == Character.Pyromancer && gameMaster.pyromancerProgr
 	gameMaster.chosenBoss = bossOnThisCard;
 	gameMaster.queFight = true;
 }
-if (gameMaster.chosenClass == Character.Shopkeeper && gameMaster.shopkeeperProgress >= bossOnThisCard-1)
-{
-	gameMaster.chosenBoss = bossOnThisCard;
-	gameMaster.queFight = true;
-}
 if (gameMaster.chosenClass == Character.TheRedWarrior && gameMaster.theRedWarriorProgress >= bossOnThisCard-1)
 {
 	gameMaster.chosenBoss = bossOnThisCard;
@@ -38,7 +33,7 @@ if (gameMaster.chosenClass == Character.AngelSlayer && gameMaster.angelSlayerPro
 	gameMaster.chosenBoss = bossOnThisCard;
 	gameMaster.queFight = true;
 }
-if (gameMaster.chosenClass == Character.RainbowSlime && gameMaster.rainbowSlimeProgress >= bossOnThisCard-1)
+if (gameMaster.chosenClass == Character.AgentOfGod && gameMaster.agentOfGodProgress >= bossOnThisCard-1)
 {
 	gameMaster.chosenBoss = bossOnThisCard;
 	gameMaster.queFight = true;
