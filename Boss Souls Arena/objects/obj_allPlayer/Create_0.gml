@@ -8,6 +8,7 @@ leftClickCooldown = 0;
 leftClickCooldownLeft = 0;
 leftClickColor = c_white;
 leftClickColorCd = c_white
+weaponDirection = 0;
 //right
 canRightClick = true;
 rightClickCooldown = 0;
@@ -132,23 +133,21 @@ playerSize = 1;
 		//character specific
 		batAmount = 1;
 		actualBKDashSpeed = 0;
-		BKDashStop = (0.35)*30;
+		BKDashStop = (0.25)*30;
 		BKDashStopLeft = 0;
-		BKDashCooldown = 0;
-		BKDdashDirection = 0;
 	}
 	#endregion
 	#region Agent Of God Tira
 	if (class == Character.AgentOfGod)
 	{
 		hp = 100;
-		leftClickCooldown = (10)*30;
-		rightClickCooldown = (10)*30;
-		dashCooldown = (10)*30;
+		leftClickCooldown = (9)*30;
+		rightClickCooldown = (9)*30;
+		dashCooldown = (9)*30;
 		ultCooldown = (12)*30;
 		idleSprite = spr_player_agentOfGod_idle;
 		walkSprite = spr_player_agentOfGod_walking;
-		deadSprite = spr_player_theBloodKnight_dead;
+		deadSprite = spr_player_agentOfGod_dead;
 		leftClickColor = c_teal;
 		rightClickColor = c_teal;
 		dashColor = c_teal;
@@ -158,6 +157,35 @@ playerSize = 1;
 		machineGunStacks = 0;
 		machineGunTimes = 0;
 		instance_create_depth(global.arenaMiddleX,global.arenaMiddleY,depth,obj_holyBeam);
+	}
+	#endregion
+	#region Angel Slayer
+	slayerDashSpeed = 0;
+	if (class == Character.AngelSlayer)
+	{
+		hp = 100;
+		leftClickCooldown = (7)*30;//10
+		rightClickCooldown = (7)*30;
+		dashCooldown = (10)*30;
+		ultCooldown = (15)*30;
+		idleSprite = spr_player_angelSlayer_idle;
+		walkSprite = spr_player_angelSlayer_walking;
+		deadSprite = spr_player_agentOfGod_dead;
+		leftClickColor = c_maroon;
+		rightClickColor = c_maroon;
+		dashColor = c_maroon;
+		ultColor = c_red;
+		//character specific
+		slayerDashSpeed = dashSpeed*(1+(gameMaster.bonusDash/100));
+		actualASDashSpeed = 0;
+		ASDashStop = (0.25)*30;
+		ASDashStopLeft = 0;
+		slashOnce = false;
+		shotOnce = false;
+		slayerSpeed = 1;
+		ultimateStacks = 0;
+		ultimateTime = (6)*30;
+		instance_create_depth(x,y,depth+1,obj_slayerScythe);
 	}
 	#endregion
 #endregion
@@ -317,7 +345,8 @@ blackOutAlpha = 0;
 #region maxValues
 if (class == Character.Pyromancer){leftClickCooldown = (8)*30; coneShotAmount = int64(global.damage*2);}
 if (class == Character.BloodKnight){hp += gameMaster.bonusHealth;}
-actualBKDashSpeed = 0;//needs to exist or else it crashes 
+if (class == Character.AngelSlayer){hp = 100;}
+actualBKDashSpeed = 0; actualASDashSpeed = 0;//needs to exist or else it crashes 
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
 maxHp = hp;

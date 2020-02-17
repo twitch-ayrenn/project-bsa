@@ -467,8 +467,8 @@ if (menu == Menues.BossLoot)
 		{
 			draw_set_font(fnt_NewNormalText);
 			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Your [Dash] creates The Last Wish.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"If the player and boss stand in the",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"circle range your Damage Scaling and ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"If the player stands in the circle",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"range your Damage Scaling and ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"Lifesteal increase by 10%. If you ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"leave the circle you take 15% of",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,"your health as damage every second.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);

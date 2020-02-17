@@ -234,9 +234,9 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.DeathKnight) 
 		{
 			//stats
-			phase1Hp = tier2Hp*0.15; phase1Ms = 1; phase1Dmg = 30;
-			phase2Hp = tier2Hp*0.30; phase2Ms = 1; phase2Dmg = 30;
-			phase3Hp = tier2Hp*0.40; phase3Ms = 1; phase3Dmg = 25;
+			phase1Hp = tier2Hp*0.15; phase1Ms = 1.3; phase1Dmg = 30;
+			phase2Hp = tier2Hp*0.30; phase2Ms = 1.2; phase2Dmg = 30;
+			phase3Hp = tier2Hp*0.40; phase3Ms = 1.1; phase3Dmg = 25;
 			phase4Hp = tier2Hp*0.15; phase4Ms = 1; phase4Dmg = 27.5;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;

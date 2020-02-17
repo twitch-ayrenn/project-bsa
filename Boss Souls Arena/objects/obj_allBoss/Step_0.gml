@@ -113,7 +113,7 @@ if (fall == true)
 		{
 			obj_allBoss.dealDamageOnFall = false;
 			var target = global.player;
-			var damageToTarget = 150;
+			var damageToTarget = 125;
 			var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
 			damageText.color = c_maroon;
 			damageText.text = damageToTarget/10;
@@ -469,42 +469,42 @@ if (fall == true)
 			canRapidAttack = false;
 			rapidFireStacks -= 1;
 		
-			var coneWide = 40;
-			var coneAtkFW = point_direction(x+20,y-29,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.34;
+			var coneWide = 30;
+			var coneAtkFW = point_direction(x+20,y-29,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.50;
 			var coneAmount = 3;
 			repeat(coneAmount)
 			{
 				var fireBolt = instance_create_depth(x+20,y-29,depth+1,obj_enemyProjectile);
 				//Main
 				fireBolt.direction = coneAtkFW;
-				fireBolt.speed = 5.85;
+				fireBolt.speed = 5.25;
 				fireBolt.image_angle = fireBolt.direction+90;
 				//Visual
 				fireBolt.image_alpha = 0.8;
 				fireBolt.sprite_index = spr_fireBall;
 				fireBolt.image_blend = c_red;
-				fireBolt.image_xscale = 1.2;
-				fireBolt.image_yscale = 1.2;
+				fireBolt.image_xscale = 1.1;
+				fireBolt.image_yscale = 1.1;
 				fireBolt.effectType = Effect.Flare;
 				coneAtkFW += (coneWide/coneAmount);
 			}
 			
-			var coneWide = 40;
-			var coneAtkFW = point_direction(x-20,y-29,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.34;
+			var coneWide = 30;
+			var coneAtkFW = point_direction(x-20,y-29,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.50;
 			var coneAmount = 3;
 			repeat(coneAmount)
 			{
 				var fireBolt = instance_create_depth(x-20,y-29,depth-1,obj_enemyProjectile);
 				//Main
 				fireBolt.direction = coneAtkFW;
-				fireBolt.speed = 5.85;
+				fireBolt.speed = 5.25;
 				fireBolt.image_angle = fireBolt.direction+90;
 				//Visual
 				fireBolt.image_alpha = 0.8;
 				fireBolt.sprite_index = spr_fireBall;
 				fireBolt.image_blend = c_red;
-				fireBolt.image_xscale = 1.2;
-				fireBolt.image_yscale = 1.2;
+				fireBolt.image_xscale = 1.1;
+				fireBolt.image_yscale = 1.1;
 				fireBolt.effectType = Effect.Flare;
 				coneAtkFW += (coneWide/coneAmount);
 			}
@@ -589,6 +589,12 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.WispSisterJulia && phase == 3){attack = choose(Atks.RapidFire);}
 	if (gameMaster.chosenBoss == Boss.FlameGate && phase == 1){attack = choose(Atks.RapidFire,Atks.RapidFire,Atks.ConeAttack,Atks.OneShotAttack,Atks.GooSpawn);
 	with(obj_enemyProjectile){if (sprite_index == gooSprite && image_xscale >= 2.5){with(obj_allBoss){attack = choose(Atks.RapidFire,Atks.RapidFire,Atks.ConeAttack,Atks.OneShotAttack);}}}}
+	if (gameMaster.chosenClass == Character.ShadowAssassin || gameMaster.chosenClass == Character.AngelSlayer)
+	{
+		if (gameMaster.chosenBoss == Boss.FlameGate && phase == 1){attack = choose(Atks.RapidFire,Atks.ConeAttack,Atks.OneShotAttack,Atks.GooSpawn);
+		with(obj_enemyProjectile){if (sprite_index == gooSprite && image_xscale >= 2.5){with(obj_allBoss){attack = choose(Atks.RapidFire,Atks.ConeAttack,Atks.OneShotAttack);}}}}
+	}
+	
 	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 1){attack = choose(Atks.NormalShot);}
 	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 2){attack = choose(Atks.NormalShot,Atks.TeleportAttack);}
 	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 3){attack = choose(Atks.ChaseAttack,Atks.ChaseAttack,Atks.TeleportAttack);}

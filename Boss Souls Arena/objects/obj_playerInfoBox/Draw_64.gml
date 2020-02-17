@@ -169,39 +169,6 @@ if (playerShowInfoFor == Character.BloodKnight)
 	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: Medium",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 }
 #endregion
-#region The Rainbow Slime
-if (playerShowInfoFor == Character.RainbowSlime)
-{
-	//description
-	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(65,450,		  "Locked for Alpha Build",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*1,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*2,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*3,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*4,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*5,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*6,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*7,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450 +17.5*8,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*9,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*11,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*12,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*13,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*14,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*15,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*16,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	
-	//name
-	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(163,216,"The Rainbow Slime",0.38,0.38,0,c_silver,c_silver,c_white,c_white,1);
-	//stats
-	draw_text_transformed_color(295,320-15-5,"Sustain: ",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
-	draw_text_transformed_color(295,340-15+15-5,"Damage: ",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
-	draw_text_transformed_color(295,360-15+30-5,"Mobility: ",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
-	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: ",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-}
-#endregion
 #region The Plaugewalker
 if (playerShowInfoFor == Character.PlaugeWalker)
 {
@@ -306,22 +273,22 @@ if (playerShowInfoFor == Character.AngelSlayer)
 {
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(65,450,		  "Locked for Alpha Build",0.075,0.075,0,c_dkgray,c_dkgray,c_black,c_black,1);
-	draw_text_transformed_color(65,450+17.5*1,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*2,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*3,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450,		  "[Passive][1]: All abilities allow you to ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*1,"use your [Left-Click] ability again.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*2,"[Passive][2]: The Angel Slayer can't have",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*3,"more than 100 Health Points.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*4,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*5,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*6,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*5,"[Left-Click]: Dash then Slash with you",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*6,"scythe in a circle.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*7,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450 +17.5*8,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*9,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450 +17.5*8,"[Right-Click]: Dash Back and summon",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*9,"demons.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*11,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*11,"[Space]: Dash a long distance.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*12,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*13,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*14,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*15,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*13,"[Ult/E]: Spin your scythe for 6 seconds.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*14,"During this time you cant use the other",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*15,"abilities but you gain a 50% speed boost.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*16,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	//name

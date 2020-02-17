@@ -1,6 +1,6 @@
 /// @description Code
 #region Vars
-if (global.itemSelected[Boss.DeathKnight] == true){direction = point_direction(x,y,mouse_x,mouse_y);}
+weaponDirection = point_direction(x,y,mouse_x,mouse_y);
 if (hp > maxHp){hp = maxHp;}
 depth = -y;
 #region Bosses
@@ -22,13 +22,14 @@ if (speed < 0){speed = 0;}
 if (actualDashSpeed < 0){actualDashSpeed = 0;}
 if (actualBKDashSpeed < 0){actualBKDashSpeed = 0;}
 //speed
-speed = actualDashSpeed + actualBKDashSpeed;
+speed = actualDashSpeed + actualBKDashSpeed + actualASDashSpeed;
 //checkAfter
 if (speed < 0){speed = 0;}
 if (actualDashSpeed < 0){actualDashSpeed = 0;}
 if (actualBKDashSpeed < 0){actualBKDashSpeed = 0;}
-if (speed > 0){global.iFrame = true;}
 if (speed == 0){global.iFrame = false;}
+if (speed > 0){global.iFrame = true;}
+if (speed == -slayerDashSpeed ){global.iFrame = true;}
 #endregion
 if (global.noDamage == true){noDamageStacks++;}
 if (noDamageStacks >= noDamageTime){global.noDamage = false; noDamageStacks = 0;}
@@ -39,7 +40,7 @@ if (state == States.Idle || state == States.Walking)
 {
 image_angle = 0;
 #region Movement
-actualSpeed = (moveSpeed)*bPSpeed*global.playerBossSlow*meteorStun*gravekeeperSpeed*shieldSpeed*agentSpeed;
+actualSpeed = (moveSpeed)*bPSpeed*global.playerBossSlow*meteorStun*gravekeeperSpeed*shieldSpeed*agentSpeed*slayerSpeed;
 if (keyboard_check(ord("A")) && keyboard_check(ord("S")) || keyboard_check(ord("A")) && keyboard_check(ord("W")) ||  keyboard_check(ord("D")) && keyboard_check(ord("S")) || keyboard_check(ord("D")) && keyboard_check(ord("W")))
 {
 	actualSpeed = actualSpeed*0.85;
@@ -264,12 +265,58 @@ if (mouse_x < x)
 			
 			var swapBolt = instance_create_depth(x,y,depth+1,obj_swapBolt);
 			swapBolt.speed = 5;
-			if (instance_exists(obj_allBoss)){swapBolt.speed = clamp(point_distance(x,y,obj_allBoss.x,obj_allBoss.y)/50,3,15);}
 			swapBolt.direction = point_direction(x,y,mouse_x,mouse_y);
 			swapBolt.image_angle = swapBolt.direction+90;
 			//Visual
 			swapBolt.image_xscale = 2;
 			swapBolt.image_yscale = 2;
+		}
+	}
+	#endregion
+	#region Angel Slayer
+	if (class == Character.AngelSlayer)
+	{
+		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false && slayerSpeed = 1
+		|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false && slayerSpeed = 1)
+		{
+			canLeftClick = false;
+			leftClickCooldownLeft = leftClickCooldown;
+			activateLeftClickItem = true;
+			
+			ASDashStopLeft = ASDashStop;
+			actualASDashSpeed = slayerDashSpeed;
+			slashOnce = true;
+			direction = point_direction(x,y,mouse_x,mouse_y);
+			#region DemonHorn
+			if (global.itemSelected[Boss.FlameGate] == true)
+			{
+				var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
+				horn.destroyTime = (maxHp/75)*30;
+			}
+			#endregion
+			#region the last wish
+			if (global.itemSelected[Boss.WispSisters] == true && instance_exists(obj_equipment_theLastWish) == false)
+			{
+				instance_create_depth(x,y,depth,obj_equipment_theLastWish);
+			}
+			if (global.itemSelected[Boss.WispSisters] == true && instance_exists(obj_equipment_theLastWish) == true)
+			{
+				with (obj_equipment_theLastWish)
+				{
+					x = global.player.x;
+					y = global.player.y;
+				}
+			}
+			#endregion
+		}
+		if (ASDashStopLeft > 0){ASDashStopLeft--;}
+		if (ASDashStopLeft <= 0 && slashOnce == true)
+		{
+			slashOnce = false
+			actualASDashSpeed -= slayerDashSpeed; 
+			
+			obj_slayerScythe.state = MeleeWeaponStates.SpinOnce;
+			obj_slayerScythe.spinTimes += 1;
 		}
 	}
 	#endregion
@@ -562,6 +609,64 @@ if (mouse_x < x)
 		}
 	}
 	#endregion
+	#region Angel Slayer
+	if (class == Character.AngelSlayer)
+	{
+		if (mouse_check_button(mb_right) && canRightClick == true && slayerSpeed = 1
+		|| keyboard_check(ord("2")) && canRightClick == true && slayerSpeed = 1)
+		{
+			canRightClick = false;
+			rightClickCooldownLeft = rightClickCooldown;
+			activateRightClickItem = true;
+			
+			canLeftClick = true;
+			leftClickCooldownLeft = 0;
+			ASDashStopLeft = ASDashStop;
+			actualASDashSpeed = slayerDashSpeed;
+			shotOnce = true;
+			direction = point_direction(x,y,mouse_x,mouse_y)+180;
+			#region DemonHorn
+			if (global.itemSelected[Boss.FlameGate] == true)
+			{
+				var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
+				horn.destroyTime = (maxHp/75)*30;
+			}
+			#endregion
+			#region the last wish
+			if (global.itemSelected[Boss.WispSisters] == true && instance_exists(obj_equipment_theLastWish) == false)
+			{
+				instance_create_depth(x,y,depth,obj_equipment_theLastWish);
+			}
+			if (global.itemSelected[Boss.WispSisters] == true && instance_exists(obj_equipment_theLastWish) == true)
+			{
+				with (obj_equipment_theLastWish)
+				{
+					x = global.player.x;
+					y = global.player.y;
+				}
+			}
+			#endregion
+		}
+		if (ASDashStopLeft <= 0 && shotOnce == true)
+		{
+			shotOnce = false
+			actualASDashSpeed -= slayerDashSpeed;
+			
+			var demonSpeed = 0;
+			var demonAmount = int64(4*conjurationPower);
+			repeat(demonAmount)
+			{
+				var demon = instance_create_depth(x,y,depth+1,obj_demons);
+				demon.speed = demonAmount + 3 - demonSpeed;
+				demon.direction = point_direction(x,y,mouse_x,mouse_y);
+				//Visual
+				demon.image_xscale = image_xscale;
+				demon.image_yscale = abs(demon.image_xscale);
+				demonSpeed -= 1;
+			}
+		}
+	}
+	#endregion
 	#region Items
 	if (activateRightClickItem == true)
 	{
@@ -716,6 +821,30 @@ if (mouse_x < x)
 	}
 
 	#endregion
+	#region Angel Slayer
+	if (class == Character.AngelSlayer)
+	{
+		if (keyboard_check(ord("E")) && canUlt == true
+		|| keyboard_check(ord("R")) && canUlt == true
+		|| keyboard_check(ord("Q")) && canUlt == true)
+		{
+			canUlt = false;
+			ultCooldownLeft = ultCooldown;
+			activateUltItem = true;
+			
+			slayerSpeed = 1.50;
+			ultimateStacks = ultimateTime;
+		}
+	}
+	if (ultimateStacks > 0){ultimateStacks--;}
+	if (ultimateStacks <= 0 && slayerSpeed > 1)
+	{
+		ultimateStacks = 0;
+		slayerSpeed = 1;
+		obj_slayerScythe.state = MeleeWeaponStates.idle;
+	}
+	if (slayerSpeed > 1){obj_slayerScythe.state = MeleeWeaponStates.SpinChase;}
+	#endregion
 	#region Items
 	if (activateUltItem == true)
 	{
@@ -863,6 +992,23 @@ if (mouse_x < x)
 			//Visual
 			holyBolt.image_xscale = 2.5;
 			holyBolt.image_yscale = 2.5;
+		}
+	}
+	#endregion
+	#region Angel Slayer
+	if (class == Character.AngelSlayer)
+	{
+		if (keyboard_check(vk_space) && canDash == true && slayerSpeed == 1)
+		{
+			canDash = false;
+			dashCooldownLeft = dashCooldown;
+			activateDashItem = true;
+			dashStopLeft = dashStop;
+			actualDashSpeed = slayerDashSpeed*2.5;
+			direction = point_direction(x,y,mouse_x,mouse_y);
+			
+			canLeftClick = true;
+			leftClickCooldownLeft = 0;
 		}
 	}
 	#endregion

@@ -5,7 +5,7 @@ x = obj_equipment_theLastWish.x;
 y = obj_equipment_theLastWish.y;
 if (instance_exists(obj_allBoss))
 {
-	if (place_meeting(x,y,global.player) && place_meeting(x,y,obj_allBoss))
+	if (place_meeting(x,y,global.player))
 	{
 		global.damage = global.player.damageInCircle;
 		global.lifeSteal = global.player.lifestealInCircle;
@@ -18,7 +18,7 @@ if (instance_exists(obj_allBoss))
 		image_index = 0;
 	}
 }
-if (!place_meeting(x,y,global.player) && instance_exists(obj_allBoss) && global.player.meteorStun == 1)
+if (!place_meeting(x,y,global.player) && instance_exists(obj_allBoss) && global.player.meteorStun == 1 && global.iFrame == false)
 {
 	if (damage == true)
 	{

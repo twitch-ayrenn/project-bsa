@@ -1,6 +1,6 @@
 /// @description Insert description here
 var target = instance_nearest(x,y,par_enemy);
-dmg = global.deathScyhteDamage;
+dmg = global.damage*6;
 if (instance_exists(global.player))
 {
 	x = global.player.x;
@@ -10,6 +10,7 @@ if (state == MeleeWeaponStates.idle)
 {
 	image_angle = global.player.weaponDirection-135+180;
 	image_index = 0;
+
 }
 if (state == MeleeWeaponStates.SpinOnce)
 {
@@ -53,14 +54,14 @@ if (state == MeleeWeaponStates.SpinOnce || state == MeleeWeaponStates.SpinChase)
 		damageText.color = c_white;
 		damageText.text = damageToTarget;
 		target.hp -= damageToTarget;
-		with(obj_camera){shake_remain += 2;}
+		with(obj_camera){shake_remain += 1.5;}
 		
 		var amountHealed = dmg*global.lifeSteal;
 		var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
 		healText.color = c_lime;
 		healText.text = amountHealed;
-		obj_allPlayer.hp += dmg*global.lifeSteal;
+		global.player.hp += dmg*global.lifeSteal;
 		
-		alarm[1] = (1)*30;
+		alarm[1] = (0.25)*30;
 	}
 }

@@ -415,6 +415,14 @@
             }
         },
         {
+            "Key": "0d0a280e-39d7-4a7f-b3fc-1e6fd8bb507a",
+            "Value": {
+                "id": "ddbd001e-52ce-4849-a72c-480b44909347",
+                "resourcePath": "objects\\obj_slayerScythe\\obj_slayerScythe.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0d791226-402e-4bc1-987a-c3d6b8b6bac4",
             "Value": {
                 "id": "fded3524-cad7-43d0-a81a-9f4f84501c0a",
@@ -1212,6 +1220,14 @@
                 "id": "6f0bda9d-d0a5-4d6e-9bc9-b1b3d1553fcc",
                 "resourcePath": "objects\\obj_item_qH_warriorAxe\\obj_item_qH_warriorAxe.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "268c55ec-5adf-48ed-a790-5be14214bbfd",
+            "Value": {
+                "id": "02aeb7df-9cfa-4511-885b-28447078e4ef",
+                "resourcePath": "sprites\\spr_slayerSctyhe\\spr_slayerSctyhe.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -4127,6 +4143,14 @@
             }
         },
         {
+            "Key": "92bbb040-816d-4fd5-baf8-9f080646a392",
+            "Value": {
+                "id": "c30202c3-8dba-43be-b1b3-706064827c00",
+                "resourcePath": "sprites\\spr_demonProjectile\\spr_demonProjectile.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "92c54c6e-31c6-44e1-aab9-03fcd46d5cd7",
             "Value": {
                 "id": "cbda2f14-9607-4963-8a74-ad483e85e6f2",
@@ -4775,6 +4799,14 @@
             }
         },
         {
+            "Key": "aadad1ae-9b28-4dce-8d7b-3b2595d202fe",
+            "Value": {
+                "id": "476e6f42-89ef-4ca7-99a6-9ad4b51818cd",
+                "resourcePath": "objects\\obj_demons\\obj_demons.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ab498e55-d249-42af-b238-08c84d780137",
             "Value": {
                 "id": "7798b61a-5c51-401a-8194-932aabd8aaf7",
@@ -5156,6 +5188,14 @@
                 "id": "142a4290-9738-4a39-84fd-5a39ba3c3bbf",
                 "resourcePath": "sprites\\spr_teleport\\spr_teleport.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b688ecf0-df6d-4bde-8f41-8b00081069dc",
+            "Value": {
+                "id": "4ac7e949-a782-4a2d-a559-b90d5470ba5a",
+                "resourcePath": "views\\b688ecf0-df6d-4bde-8f41-8b00081069dc.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -6291,6 +6331,14 @@
             "Value": {
                 "id": "aeccc100-da5a-4732-b4f9-67a104b57a1b",
                 "resourcePath": "sprites\\spr_fight_t5_graveLord\\spr_fight_t5_graveLord.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "dd8cbcbe-0bb2-44fd-a97c-7f463e2f3e77",
+            "Value": {
+                "id": "641b4caa-57b2-4acc-b8a5-364ede25bac9",
+                "resourcePath": "sprites\\spr_player_agentOfGod_dead\\spr_player_agentOfGod_dead.yy",
                 "resourceType": "GMSprite"
             }
         },
