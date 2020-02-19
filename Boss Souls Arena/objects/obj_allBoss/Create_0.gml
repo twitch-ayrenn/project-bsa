@@ -295,7 +295,7 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.KnightWitchYi) 
 		{
 			//stats
-			phase1Hp = tier3Hp*1; phase1Ms = 1.25; phase1Dmg = 35;
+			phase1Hp = tier3Hp*0.9; phase1Ms = 1.25; phase1Dmg = 32.5;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -630,10 +630,10 @@ isHit = false;
 		{
 			//stats
 			phase1Hp = tier5Hp*0.15; phase1Ms = 0.25; phase1Dmg = 25;
-			phase2Hp = tier5Hp*0.15; phase2Ms = 0.25; phase2Dmg = 30;
-			phase3Hp = tier5Hp*0.15; phase3Ms = 0.25; phase3Dmg = 35;
-			phase4Hp = tier5Hp*0.25; phase4Ms = 0.25; phase4Dmg = 40;
-			phase5Hp = tier5Hp*0.30; phase5Ms = 1.5; phase5Dmg = 30;
+			phase2Hp = tier5Hp*0.15; phase2Ms = 0.25; phase2Dmg = 27.5;
+			phase3Hp = tier5Hp*0.15; phase3Ms = 0.25; phase3Dmg = 32.5;
+			phase4Hp = tier5Hp*0.25; phase4Ms = 0.25; phase4Dmg = 37.5;
+			phase5Hp = tier5Hp*0.30; phase5Ms = 1.5; phase5Dmg = 27.5;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -691,55 +691,16 @@ isHit = false;
 			x -= 25;
 		}
 		#endregion
-		#region Blood Army King
-		if (gameMaster.chosenBoss == Boss.BloodKingVarus) 
-		{
-			//stats
-			phase1Hp = tier5Hp*0.25; phase1Ms = 2; phase1Dmg = 50;
-			phase2Hp = 100; phase2Ms = 0; phase2Dmg = 50;
-			phase3Hp = tier5Hp*0.5; phase3Ms = 2.25; phase2Dmg = 50;
-			phase4Hp = 100; phase2Ms = 0; phase4Dmg = 50;
-			phase5Hp = tier5Hp*0.25; phase2Ms = 2; phase5Dmg = 50;
-			hp = phase1Hp;
-			global.bossDamage = phase1Dmg;
-			moveSpeed = phase1Ms;
-			moveType = MovementType.WalkingTowards;
-			//attacks and phase
-			tier = 5;
-			phase = 1;
-			maxPhase = 5;
-			//visual
-			size = 1;
-			alpha = 0.5;
-			idleSprite = spr_boss_bloodKing_idle;
-			teleportSprite = spr_boss_bloodKing_teleport;
-			oneShotSprite = spr_boss_bloodKing_oneShot;
-			chaseSprite = spr_boss_bloodKing_chase;
-			rapidFireSprite = spr_boss_bloodKing_rapidFire;
-			beamSprite = spr_boss_bloodKing_beam;
-			//boss Specfic
-			var dist = 145;
-			var distCorner = 115;
-			instance_create_depth(global.arenaMiddleX-distCorner,global.arenaMiddleY-distCorner,-9,obj_teleportMarker);
-			instance_create_depth(global.arenaMiddleX,global.arenaMiddleY-dist,-9,obj_teleportMarker);
-			instance_create_depth(global.arenaMiddleX+distCorner,global.arenaMiddleY-distCorner,-9,obj_teleportMarker);
-			instance_create_depth(global.arenaMiddleX-dist,global.arenaMiddleY,-9,obj_teleportMarker);
-			instance_create_depth(global.arenaMiddleX+dist,global.arenaMiddleY,-9,obj_teleportMarker);
-			instance_create_depth(global.arenaMiddleX-distCorner,global.arenaMiddleY+distCorner,-9,obj_teleportMarker);
-			instance_create_depth(global.arenaMiddleX,global.arenaMiddleY+dist,-9,obj_teleportMarker);
-			instance_create_depth(global.arenaMiddleX+distCorner,global.arenaMiddleY+distCorner,-9,obj_teleportMarker);
-		}
-		#endregion
 	#endregion
 	#region Tier 6 The Arena King
 	if (gameMaster.chosenBoss == Boss.ArenaKing) 
 	{
 		//stats
 		phase1Hp = tier6Hp*0.15; phase1Ms = 1; phase1Dmg = 20;
-		phase2Hp = tier6Hp*0.15; phase2Ms = 1.5; phase2Dmg = 35;
-		phase3Hp = tier6Hp*0.15; phase3Ms = 1.75; phase3Dmg = 35;
-		phase4Hp = tier6Hp*0.15; phase4Ms = 2; phase4Dmg = 35;
-		phase5Hp = tier6Hp*0.15; phase5Ms = 2.25; phase5Dmg = 35;
+		phase2Hp = tier6Hp*0.15; phase2Ms = 1.5; phase2Dmg = 25;
+		phase3Hp = tier6Hp*0.15; phase3Ms = 1.75; phase3Dmg = 27.5;
+		phase4Hp = tier6Hp*0.15; phase4Ms = 2; phase4Dmg = 30;
+		phase5Hp = tier6Hp*0.15; phase5Ms = 2.25; phase5Dmg = 32.5;
 		phase6Hp = tier6Hp*0.25; phase6Ms = 2.5; phase6Dmg = 35;
 		hp = phase1Hp;
 		global.bossDamage = phase1Dmg;
@@ -791,8 +752,8 @@ if (tier == 1){ timeAfterIndicate = (2.5)*30;  attackCooldown = (5)*30;}
 if (tier == 2){ timeAfterIndicate = (2)*30;  attackCooldown = (4.5)*30;}
 if (tier == 3){ timeAfterIndicate = (1.75)*30;  attackCooldown = (4.25)*30;}
 if (tier == 4){ timeAfterIndicate = (1.5)*30;  attackCooldown = (4)*30;}
-if (tier == 5){ timeAfterIndicate = (1)*30;  attackCooldown = (3.75)*30;}
-if (tier == 6){ timeAfterIndicate = (0.75)*30;  attackCooldown = (3.25)*30;}
+if (tier == 5){ timeAfterIndicate = (1.25)*30;  attackCooldown = (3.75)*30;}
+if (tier == 6){ timeAfterIndicate = (1)*30;  attackCooldown = (3.25)*30;}
 #endregion
 
 

@@ -29,7 +29,7 @@ if (actualDashSpeed < 0){actualDashSpeed = 0;}
 if (actualBKDashSpeed < 0){actualBKDashSpeed = 0;}
 if (speed == 0){global.iFrame = false;}
 if (speed > 0){global.iFrame = true;}
-if (speed == -slayerDashSpeed ){global.iFrame = true;}
+if (speed == -slayerDashSpeed){global.iFrame = true;}
 #endregion
 if (global.noDamage == true){noDamageStacks++;}
 if (noDamageStacks >= noDamageTime){global.noDamage = false; noDamageStacks = 0;}
@@ -40,7 +40,7 @@ if (state == States.Idle || state == States.Walking)
 {
 image_angle = 0;
 #region Movement
-actualSpeed = (moveSpeed)*bPSpeed*global.playerBossSlow*meteorStun*gravekeeperSpeed*shieldSpeed*agentSpeed*slayerSpeed;
+actualSpeed = (moveSpeed)*bPSpeed*global.playerBossSlow*meteorStun*gravekeeperSpeed*shieldSpeed*agentSpeed*slayerSpeed*bfSpeed;
 if (keyboard_check(ord("A")) && keyboard_check(ord("S")) || keyboard_check(ord("A")) && keyboard_check(ord("W")) ||  keyboard_check(ord("D")) && keyboard_check(ord("S")) || keyboard_check(ord("D")) && keyboard_check(ord("W")))
 {
 	actualSpeed = actualSpeed*0.85;
@@ -695,9 +695,9 @@ if (mouse_x < x)
 	#region ShadowAssassin
 	if (class == Character.ShadowAssassin)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true
-		|| keyboard_check(ord("R")) && canUlt == true
-		|| keyboard_check(ord("Q")) && canUlt == true)
+		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
+		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
+		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
@@ -716,9 +716,9 @@ if (mouse_x < x)
 	#region Pyromancer
 	if (class == Character.Pyromancer)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true && place_free(mouse_x,mouse_y)
-		|| keyboard_check(ord("Q")) && canUlt == true && place_free(mouse_x,mouse_y)
-		|| keyboard_check(ord("R")) && canUlt == true && place_free(mouse_x,mouse_y))
+		if (keyboard_check(ord("E")) && canUlt == true && place_free(mouse_x,mouse_y) && global.itemSelected[Boss.DemonQueensHead] == false
+		|| keyboard_check(ord("Q")) && canUlt == true && place_free(mouse_x,mouse_y) && global.itemSelected[Boss.DemonQueensHead] == false
+		|| keyboard_check(ord("R")) && canUlt == true && place_free(mouse_x,mouse_y) && global.itemSelected[Boss.DemonQueensHead] == false)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
@@ -767,9 +767,9 @@ if (mouse_x < x)
 	#region BloodKnight
 	if (class == Character.BloodKnight)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true
-		|| keyboard_check(ord("R")) && canUlt == true
-		|| keyboard_check(ord("Q")) && canUlt == true)
+		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
+		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
+		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
@@ -788,9 +788,9 @@ if (mouse_x < x)
 	#region Agent Of God
 	if (class == Character.AgentOfGod)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true
-		|| keyboard_check(ord("R")) && canUlt == true
-		|| keyboard_check(ord("Q")) && canUlt == true)
+		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
+		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
+		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
@@ -824,9 +824,9 @@ if (mouse_x < x)
 	#region Angel Slayer
 	if (class == Character.AngelSlayer)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true
-		|| keyboard_check(ord("R")) && canUlt == true
-		|| keyboard_check(ord("Q")) && canUlt == true)
+		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
+		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
+		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
@@ -835,17 +835,34 @@ if (mouse_x < x)
 			slayerSpeed = 1.50;
 			ultimateStacks = ultimateTime;
 		}
+		if (ultimateStacks > 0){ultimateStacks--;}
+		if (ultimateStacks <= 0 && slayerSpeed > 1)
+		{
+			ultimateStacks = 0;
+			slayerSpeed = 1;
+			obj_slayerScythe.state = MeleeWeaponStates.idle;
+		}
+		if (slayerSpeed > 1){obj_slayerScythe.state = MeleeWeaponStates.SpinChase;}
 	}
-	if (ultimateStacks > 0){ultimateStacks--;}
-	if (ultimateStacks <= 0 && slayerSpeed > 1)
-	{
-		ultimateStacks = 0;
-		slayerSpeed = 1;
-		obj_slayerScythe.state = MeleeWeaponStates.idle;
-	}
-	if (slayerSpeed > 1){obj_slayerScythe.state = MeleeWeaponStates.SpinChase;}
 	#endregion
 	#region Items
+	if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == true
+	|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == true
+	|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == true)
+	{
+		canUlt = false;
+		ultCooldownLeft = ultCooldown;
+		activateUltItem = true;
+		
+		var bfBlast = instance_create_depth(x,y,depth-1,obj_bfBlast);
+		bfBlast.speed = 6;
+		bfBlast.direction = point_direction(x,y,mouse_x,mouse_y);
+		//Visual
+		bfBlast.image_angle = bfBlast.direction+90;
+		bfBlast.image_blend = c_lime;
+		bfBlast.image_xscale = 3.5;
+		bfBlast.image_yscale = bfBlast.image_xscale;
+	}
 	if (activateUltItem == true)
 	{
 		activateUltItem = false;
@@ -863,22 +880,12 @@ if (mouse_x < x)
 		#region Zombie Head
 		if (global.itemSelected[Boss.BloodZombie] == true && instance_exists(par_enemy))
 		{
-			if (instance_exists(obj_equipment_bloodPuddle) == true)
+			var bloodPuddle = instance_create_depth(x,y,-6,obj_equipment_bloodPuddle);
+			bloodPuddle.image_xscale = 1.1;
+			bloodPuddle.image_yscale = bloodPuddle.image_xscale;
+			if (gameMaster.chosenClass == Character.Pyromancer && instance_exists(obj_allBoss))
 			{
-				instance_destroy(obj_equipment_bloodPuddle);
-				var bloodPuddle = instance_create_depth(x,y,-6,obj_equipment_bloodPuddle);
-				bloodPuddle.image_xscale = 1.1;
-				bloodPuddle.image_yscale = bloodPuddle.image_xscale;
-				if (gameMaster.chosenClass == Character.Pyromancer && instance_exists(obj_allBoss))
-				{
-					var bloodPuddle = instance_create_depth(obj_allBoss.x,obj_allBoss.y,-6,obj_equipment_bloodPuddle);
-					bloodPuddle.image_xscale = 1.1;
-					bloodPuddle.image_yscale = bloodPuddle.image_xscale;
-				}
-			}
-			if (instance_exists(obj_equipment_bloodPuddle) == false)
-			{
-				var bloodPuddle = instance_create_depth(x,y,-6,obj_equipment_bloodPuddle);
+				var bloodPuddle = instance_create_depth(obj_allBoss.x,obj_allBoss.y,-6,obj_equipment_bloodPuddle);
 				bloodPuddle.image_xscale = 1.1;
 				bloodPuddle.image_yscale = bloodPuddle.image_xscale;
 			}
@@ -1084,6 +1091,8 @@ if (mouse_x < x)
 	#region Zombie Head
 	if (place_meeting(x,y,obj_equipment_bloodPuddle)){bPSpeed = 1 + (50)/100;}
 	if (!place_meeting(x,y,obj_equipment_bloodPuddle)){bPSpeed = 1;}
+	if (place_meeting(x,y,obj_bigFuckingPuddle)){bfSpeed = 1.3;}
+	if (!place_meeting(x,y,obj_bigFuckingPuddle)){bfSpeed = 1;}
 	#endregion
 	#region Bloodarmy General
 	shieldSpeed = 1;

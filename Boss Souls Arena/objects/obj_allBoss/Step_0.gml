@@ -114,6 +114,7 @@ if (fall == true)
 			obj_allBoss.dealDamageOnFall = false;
 			var target = global.player;
 			var damageToTarget = 125;
+			if (gameMaster.chosenClass == Character.AngelSlayer){var damageToTarget = 80;}
 			var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
 			damageText.color = c_maroon;
 			damageText.text = damageToTarget/10;
@@ -649,12 +650,6 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.SlimeQueen && phase == 3){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.GooSpawn,Atks.CircleAttack,Atks.ConeAttack);}
 	if (gameMaster.chosenBoss == Boss.SlimeQueen && phase == 4){attack = choose(Atks.ChaseAttack);}
 	if (gameMaster.chosenBoss == Boss.SlimeQueen && phase == 5){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.GooSpawn,Atks.CircleAttack,Atks.ConeAttack,Atks.ChaseAttack);}
-	
-	if (gameMaster.chosenBoss == Boss.BloodKingVarus && phase == 1){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.ChaseAttack,Atks.BeamAttack);}
-	if (gameMaster.chosenBoss == Boss.BloodKingVarus && phase == 2){attack = choose(Atks.TauntAttack);}
-	if (gameMaster.chosenBoss == Boss.BloodKingVarus && phase == 3){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.ChaseAttack,Atks.BeamAttack,Atks.TeleportAttack);}
-	if (gameMaster.chosenBoss == Boss.BloodKingVarus && phase == 4){attack = choose(Atks.TauntAttack);}
-	if (gameMaster.chosenBoss == Boss.BloodKingVarus && phase == 5){attack = choose(Atks.ChaseAttack);}
 	#endregion
 	#region Tier6 Bosses
 	if (gameMaster.chosenBoss == Boss.ArenaKing && phase == 1){attack = choose(Atks.CircleAttack,Atks.NormalShot,Atks.ChaseAttack,Atks.BeamAttack);}
@@ -903,10 +898,10 @@ if(chooseAnAttack == true)
 		#region Demon Queens Head
 		if (gameMaster.chosenBoss == Boss.DemonQueensHead)
 		{
-			var nearestBeams1 = instance_nearest(x-20,y-29,obj_enemyProjectile);
-			var nearestBeams2 = instance_nearest(x+20,y-29,obj_enemyProjectile);
-			with (nearestBeams1){if (nearestBeams1.sprite_index == spr_beam){instance_destroy();}}
-			with (nearestBeams2){if (nearestBeams2.sprite_index == spr_beam){instance_destroy();}}
+			with(obj_enemyProjectile)
+			{
+				if (sprite_index == spr_beam){instance_destroy();}
+			}
 			
 			var indicator = instance_create_depth(global.player.x,global.player.y,-5,obj_indicator)
 			indicator.sprite_index = spr_damageCircle;
@@ -990,7 +985,7 @@ if(chooseAnAttack == true)
 			beam.stickOn = true;
 			beam.beamChase = true;
 			beam.turningSpeed = -15;
-			beam.range = 15*30;
+			beam.range = 12*30;
 			beam.destroy = true;
 			beam.effectType = Effect.NoEffect;
 			
@@ -1008,7 +1003,7 @@ if(chooseAnAttack == true)
 			beam1.stickOn = true;
 			beam1.beamChase = true;
 			beam1.turningSpeed = -15;
-			beam1.range = 15*30;
+			beam1.range = 10*30;
 			beam1.destroy = true;
 			beam1.effectType = Effect.NoEffect;
 			
@@ -1026,7 +1021,7 @@ if(chooseAnAttack == true)
 			beam2.stickOn = true;
 			beam2.beamChase = true;
 			beam2.turningSpeed = -15;
-			beam2.range = 15*30;
+			beam2.range = 8*30;
 			beam2.destroy = true;
 			beam2.effectType = Effect.NoEffect;
 		}

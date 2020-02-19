@@ -1,6 +1,6 @@
 /// @description Insert description here
 var target = instance_nearest(x,y,par_enemy);
-dmg = global.damage*6;
+dmg = global.damage*6.5;
 if (instance_exists(global.player))
 {
 	x = global.player.x;

@@ -235,7 +235,7 @@ if (attack == Atks.ChaseAttack)
 			var infernalBall = instance_create_depth(kingCloneX,kingCloneY,depth+1,obj_enemyProjectile);
 			//Main
 			infernalBall.direction = point_direction(kingCloneX,kingCloneY,obj_allPlayer.x,obj_allPlayer.y);
-			infernalBall.speed = 3;
+			infernalBall.speed = 2.5;
 			infernalBall.image_angle = infernalBall.direction+90;
 			//Visual
 			infernalBall.image_alpha = 0.85;
@@ -1343,6 +1343,10 @@ if (attack == Atks.RapidFire)
 	if (gameMaster.chosenBoss == Boss.StatueOfCorruption || gameMaster.chosenBoss == Boss.ArenaKing)
 	{
 		rapidFireStacks += 8;
+		if (gameMaster.chosenBoss == Boss.ArenaKing)
+		{
+			rapidFireStacks -= 2;
+		}
 	}
 }
 #endregion
@@ -1672,7 +1676,7 @@ if (attack == Atks.ChaseAttack)
 		var infernalBall = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
 		//Main
 		infernalBall.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
-		infernalBall.speed = 3.5;
+		infernalBall.speed = 2.5;
 		//Visual
 		infernalBall.image_alpha = 0.85;
 		infernalBall.image_blend = c_yellow;

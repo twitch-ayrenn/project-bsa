@@ -775,6 +775,14 @@
             }
         },
         {
+            "Key": "18906bd4-a80d-49a2-ba6e-029122f290aa",
+            "Value": {
+                "id": "ea5356f6-8e5d-429c-ae47-b0b0898030ba",
+                "resourcePath": "objects\\obj_bfBlast\\obj_bfBlast.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "191ce2ed-6b0e-4950-b5bf-32c3e222c729",
             "Value": {
                 "id": "4b097a81-44ff-4525-9289-6eb035ca4e8b",
@@ -1180,6 +1188,14 @@
                 "id": "657346f2-8a80-40e5-a99b-945b738edfa9",
                 "resourcePath": "sprites\\spr_boss_statueOfCorruption_cone\\spr_boss_statueOfCorruption_cone.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "2504d7e6-3f19-4825-92b1-e11f49df46a8",
+            "Value": {
+                "id": "613d9f6d-440d-45fd-95c9-b34c4ca9cc7a",
+                "resourcePath": "objects\\obj_bigFuckingPuddle\\obj_bigFuckingPuddle.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -2732,6 +2748,14 @@
                 "id": "4f9cfa81-9ce3-463c-8d79-74aa57ba627f",
                 "resourcePath": "sprites\\spr_vampireCloak\\spr_vampireCloak.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "6129ac1f-1530-431f-bee1-572f92a57b02",
+            "Value": {
+                "id": "6ec41e8c-5faf-453e-813b-89b9757f5190",
+                "resourcePath": "objects\\obj_item_bfb9000\\obj_item_bfb9000.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -4523,6 +4547,14 @@
             "Value": {
                 "id": "0651b13b-0bc6-4c57-9982-ef6b519e41cd",
                 "resourcePath": "sprites\\spr_boss_deathKinght_teleport\\spr_boss_deathKinght_teleport.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "9e369968-5c1a-4014-a0d5-cb35b25f3839",
+            "Value": {
+                "id": "27d33a15-d08b-413f-bde0-ba187c9b5413",
+                "resourcePath": "sprites\\spr_loot_bfb9000\\spr_loot_bfb9000.yy",
                 "resourceType": "GMSprite"
             }
         },

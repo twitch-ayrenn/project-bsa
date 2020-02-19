@@ -160,7 +160,8 @@ playerSize = 1;
 	}
 	#endregion
 	#region Angel Slayer
-	slayerDashSpeed = 0;
+	slayerDashSpeed = dashSpeed*(1+(gameMaster.bonusDash/100));
+	slayerSpeed = 1;
 	if (class == Character.AngelSlayer)
 	{
 		hp = 100;
@@ -191,6 +192,7 @@ playerSize = 1;
 #endregion
 #region Stats
 hp += gameMaster.bonusHealth;
+if (class == Character.AngelSlayer){hp = 100;}
 moveSpeed += gameMaster.bonusSpeed/10;
 dashSpeed *= 1+(gameMaster.bonusDash/100);
 global.damage += gameMaster.bonusDamage/10;
@@ -334,6 +336,14 @@ if (global.itemSelected[Boss.WispSisters] == true)
 	lifestealInCircle = global.lifeSteal + 0.1;
 	lifestealOutsideCircle = global.lifeSteal;
 }
+#endregion
+#region DemonQueens Head
+if (global.itemSelected[Boss.DemonQueensHead] == true)
+{
+	ultCooldown = (30)*30;
+	ultCooldown *= 1 - clamp((gameMaster.bonusCooldown/100),0,cdrCap);
+}
+bfSpeed = 1;
 #endregion
 #region
 
