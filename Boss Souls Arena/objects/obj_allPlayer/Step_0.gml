@@ -40,7 +40,7 @@ if (state == States.Idle || state == States.Walking)
 {
 image_angle = 0;
 #region Movement
-actualSpeed = (moveSpeed)*bPSpeed*global.playerBossSlow*meteorStun*gravekeeperSpeed*shieldSpeed*agentSpeed*slayerSpeed*bfSpeed;
+actualSpeed = (moveSpeed)*bPSpeed*global.playerBossSlow*meteorStun*gravekeeperSpeed*shieldSpeed*agentSpeed*slayerSpeed*bfSpeed*t52Speed;
 if (keyboard_check(ord("A")) && keyboard_check(ord("S")) || keyboard_check(ord("A")) && keyboard_check(ord("W")) ||  keyboard_check(ord("D")) && keyboard_check(ord("S")) || keyboard_check(ord("D")) && keyboard_check(ord("W")))
 {
 	actualSpeed = actualSpeed*0.85;
@@ -688,6 +688,14 @@ if (mouse_x < x)
 			}
 		}
 		#endregion
+		#region T52 Slime armor
+		if (t52Active == true)
+		{
+			var slime = instance_create_depth(x,y,depth+1,obj_slimeProjectile);
+			slime.speed = 2;
+			slime.direction = point_direction(x,y,mouse_x,mouse_y);
+		}
+		#endregion
 	}
 	#endregion
 #endregion
@@ -846,6 +854,7 @@ if (mouse_x < x)
 	}
 	#endregion
 	#region Items
+	#region Big Fucking Blast 9000
 	if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == true
 	|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == true
 	|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == true)
@@ -863,9 +872,39 @@ if (mouse_x < x)
 		bfBlast.image_xscale = 3.5;
 		bfBlast.image_yscale = bfBlast.image_xscale;
 	}
+	#endregion
+	#region t52 Slime Armor
+	if (global.itemSelected[Boss.SlimeQueen] == true)
+	{
+		if (t52Stacks > 0){t52Stacks--;}
+		if (t52Stacks <= 0 && t52Active == true)
+		{
+			t52Stacks = 0;
+			idleSprite = normalIdleSprite;
+			walkSprite = normalWalkSprite;
+			t52Active = false;
+			t52Speed = 1;
+			maxHp /= 1.2;
+		}
+	}
+	#endregion
 	if (activateUltItem == true)
 	{
 		activateUltItem = false;
+		
+		#region t52 Slime Armor
+		if (global.itemSelected[Boss.SlimeQueen] == true)
+		{
+			idleSprite = t52Idle;
+			walkSprite = t52Walking;
+			t52Stacks = t52Time;
+			t52Active = true;
+			t52Speed = 0.80;
+			var oldMaxHp = maxHp;
+			maxHp *= 1.2;
+			hp += maxHp - oldMaxHp;
+		}
+		#endregion
 		#region Bloodarmy General
 		if (global.itemSelected[Boss.BloodKnightDavid] == true)
 		{
@@ -965,17 +1004,13 @@ if (mouse_x < x)
 			actualDashSpeed = dashSpeed;
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			
-			var batCircleShotAngle = 0;
-			var batCricleShotAmountL = 24;
-			repeat(batCricleShotAmountL)
+			repeat(int64(batAmount*conjurationPower))
 			{
-				var batShot = instance_create_depth(x,y+3,depth+1,obj_batProjectile);
-				batShot.direction = batCircleShotAngle;
+				var batShot = instance_create_depth(x+irandom_range(-25,25),y+irandom_range(-25,25),depth+1,obj_batProjectile);
 				batShot.speed = 6;
 				batShot.sprite_index = spr_batprojectile_long;
-				batShot.destroyTime = (0.5)*30;
-				batCircleShotAngle += 360/batCricleShotAmountL;
-				batShot.follow = false;
+				batShot.direction = point_direction(x,y,mouse_x,mouse_y);
+				batShot.destroyTime = 1*30;
 			}
 		}
 	}
@@ -1044,12 +1079,20 @@ if (mouse_x < x)
 				}
 			}
 		#endregion
+		#region T52 Slime Armor
+		if (t52Active == true)
+		{
+			var slime = instance_create_depth(x,y,depth+1,obj_slimeProjectile);
+			slime.speed = 2;
+			slime.direction = point_direction(x,y,mouse_x,mouse_y);
+		}
+		#endregion
 		#region Demon general rektaar
-			if (global.itemSelected[Boss.DemonLordRekTaar] == true)
-			{
-				canLeftClick = true;
-				leftClickCooldownLeft = 0;
-			}
+		if (global.itemSelected[Boss.DemonLordRekTaar] == true)
+		{
+			canLeftClick = true;
+			leftClickCooldownLeft = 0;
+		}
 		#endregion
 	}
 	#endregion

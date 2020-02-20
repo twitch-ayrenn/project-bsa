@@ -171,7 +171,7 @@ playerSize = 1;
 		ultCooldown = (15)*30;
 		idleSprite = spr_player_angelSlayer_idle;
 		walkSprite = spr_player_angelSlayer_walking;
-		deadSprite = spr_player_agentOfGod_dead;
+		deadSprite = spr_player_angelSlayer_dead;
 		leftClickColor = c_maroon;
 		rightClickColor = c_maroon;
 		dashColor = c_maroon;
@@ -262,7 +262,7 @@ if (global.itemSelected[Boss.BloodZombie] == true){instance_create_depth(x,y,dep
 #endregion
 #region Wisp Sister Julia / Flamie
 summonFlamie = false;
-summonFlamieTime = clamp(24*((2-conjurationPower)),3,24)*30;
+summonFlamieTime = clamp(9/conjurationPower,3,9)*30;
 summonFlamieStacks = 0;
 if (global.itemSelected[Boss.FlameWisp] == true){summonFlamie = true;}
 #endregion
@@ -340,13 +340,24 @@ if (global.itemSelected[Boss.WispSisters] == true)
 #region DemonQueens Head
 if (global.itemSelected[Boss.DemonQueensHead] == true)
 {
-	ultCooldown = (30)*30;
+	ultCooldown = (20)*30;
 	ultCooldown *= 1 - clamp((gameMaster.bonusCooldown/100),0,cdrCap);
 }
 bfSpeed = 1;
 #endregion
-#region
+#region Death King
 
+#endregion
+#region Slime Queens - T52 Slime Armor
+if (global.itemSelected[Boss.SlimeQueen] == true)
+{
+	t52Idle = spr_equipment_t52slimeArmor_idle;
+	t52Walking = spr_equipment_t52slimeArmor_walk;
+	t52Time = (7)*30;
+	t52Stacks = 0;
+}
+t52Active = false;
+t52Speed = 1;
 #endregion
 #endregion
 #region Bosses
@@ -361,6 +372,8 @@ normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
 maxHp = hp;
 sprite_index = idleSprite;
+normalIdleSprite = idleSprite;
+normalWalkSprite = walkSprite;
 ultCooldownLeft = ultCooldown
 if (global.itemSelected[Boss.DeathKnight] == true){leftClickCooldown = (3)*30;}
 #endregion

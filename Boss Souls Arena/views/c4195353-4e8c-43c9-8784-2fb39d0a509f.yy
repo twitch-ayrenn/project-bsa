@@ -21,7 +21,9 @@
         "55fd051a-e6ad-4a52-a12d-3e0ed49daaa9",
         "2cb2fbaf-3ccf-4164-bb00-280162f71bf0",
         "db755c72-d340-4662-9f08-107fe4bf16d9",
-        "eddf0d28-95f2-4f8a-88b2-c4d03b3aa778"
+        "eddf0d28-95f2-4f8a-88b2-c4d03b3aa778",
+        "8b25eb83-2b50-4eee-bff1-150a29879f47",
+        "88aa19bd-9677-4c52-9ad0-107410f095b3"
     ],
     "filterType": "GMSprite",
     "folderName": "spr_loot",

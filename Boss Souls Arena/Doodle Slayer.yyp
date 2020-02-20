@@ -423,6 +423,14 @@
             }
         },
         {
+            "Key": "0d6478ac-4130-4228-aadb-404969905225",
+            "Value": {
+                "id": "a2f7d486-b6e3-40c6-8d74-259432f01c08",
+                "resourcePath": "objects\\obj_slimeProjectile\\obj_slimeProjectile.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0d791226-402e-4bc1-987a-c3d6b8b6bac4",
             "Value": {
                 "id": "fded3524-cad7-43d0-a81a-9f4f84501c0a",
@@ -3935,6 +3943,14 @@
             }
         },
         {
+            "Key": "88aa19bd-9677-4c52-9ad0-107410f095b3",
+            "Value": {
+                "id": "01689928-aef5-43fa-a4a6-bd66bc1c3615",
+                "resourcePath": "sprites\\spr_equipment_t52slimeArmor_walk\\spr_equipment_t52slimeArmor_walk.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "88e33ad7-c862-4689-aeea-2bb1ac98ff9d",
             "Value": {
                 "id": "19671f9b-142f-4bdb-bd58-31d245e55011",
@@ -4011,6 +4027,14 @@
             "Value": {
                 "id": "fbbac517-ac0b-480f-bdfb-54dfa3729747",
                 "resourcePath": "sprites\\spr_wispJar_green\\spr_wispJar_green.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "8b25eb83-2b50-4eee-bff1-150a29879f47",
+            "Value": {
+                "id": "3af8cc0a-24be-4072-8d9d-cc74854a7dbd",
+                "resourcePath": "sprites\\spr_equipment_t52slimeArmor_idle\\spr_equipment_t52slimeArmor_idle.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -4983,6 +5007,14 @@
             }
         },
         {
+            "Key": "ae88d974-5d09-47eb-8502-6edb74527784",
+            "Value": {
+                "id": "adb9d1c0-131a-4dd7-89c8-47112b88af03",
+                "resourcePath": "sprites\\spr_player_angelSlayer_dead\\spr_player_angelSlayer_dead.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "aed66f73-6287-4892-93dd-02ba716be4b7",
             "Value": {
                 "id": "70830ace-d33f-4429-aa36-01ec7d23bcff",
@@ -5084,6 +5116,14 @@
                 "id": "5c6359ce-333f-4093-9d33-5f61abbc6dd9",
                 "resourcePath": "sprites\\spr_boss_theGreenWitch\\spr_boss_theGreenWitch.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b1e020ce-db9c-4a8e-8b1e-eddfe9d1882f",
+            "Value": {
+                "id": "075087d6-b1f3-49f8-9d27-85d062ce375c",
+                "resourcePath": "objects\\obj_item_t52slimeArmor\\obj_item_t52slimeArmor.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -7260,6 +7300,14 @@
                 "id": "24bb90c8-8365-4974-8a1d-a6c6267b9d0c",
                 "resourcePath": "objects\\obj_button_play_challanges\\obj_button_play_challanges.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "fa9a2cb2-4584-411e-a7f9-eec9d4a1fb59",
+            "Value": {
+                "id": "41f1c5c9-7346-4ad3-a69d-254e1e67c450",
+                "resourcePath": "sprites\\spr_loot_t52slimeArmor\\spr_loot_t52slimeArmor.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

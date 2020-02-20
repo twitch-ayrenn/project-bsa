@@ -26,7 +26,8 @@
         "49cf1896-0eff-4550-9548-e2209933026e",
         "f5d06748-95dd-4e6e-a767-31c693b5acfd",
         "18906bd4-a80d-49a2-ba6e-029122f290aa",
-        "2504d7e6-3f19-4825-92b1-e11f49df46a8"
+        "2504d7e6-3f19-4825-92b1-e11f49df46a8",
+        "0d6478ac-4130-4228-aadb-404969905225"
     ],
     "filterType": "GMObject",
     "folderName": "grp_items",
