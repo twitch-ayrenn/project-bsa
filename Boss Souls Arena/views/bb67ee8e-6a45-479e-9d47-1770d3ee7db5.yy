@@ -20,7 +20,8 @@
         "46081b41-d415-498b-a955-d8ae25087c6e",
         "eb799993-e072-411a-8fa7-700de665f5ce",
         "6129ac1f-1530-431f-bee1-572f92a57b02",
-        "b1e020ce-db9c-4a8e-8b1e-eddfe9d1882f"
+        "b1e020ce-db9c-4a8e-8b1e-eddfe9d1882f",
+        "89338312-048a-434c-af77-3c03b56a141b"
     ],
     "filterType": "GMObject",
     "folderName": "grp_items",

@@ -56,6 +56,7 @@ walkSprite = 0;
 deadSprite = 0;
 instance_create_depth(x,y,1,obj_allCursor);
 playerSize = 1;
+normalAlpha = 1;
 #endregion
 #region class system
 	#region Shadow Assassin
@@ -86,6 +87,7 @@ playerSize = 1;
 			shadowRange.image_yscale = shadowRange.image_xscale;
 		}
 		daggerAmount = 12;
+		normalAlpha = 0.85;
 	}
 	#endregion
 	#region Pyromancer
@@ -342,11 +344,23 @@ if (global.itemSelected[Boss.DemonQueensHead] == true)
 {
 	ultCooldown = (20)*30;
 	ultCooldown *= 1 - clamp((gameMaster.bonusCooldown/100),0,cdrCap);
+	ultColor = c_lime;
 }
 bfSpeed = 1;
 #endregion
 #region Death King
-
+if (global.itemSelected[Boss.DeathKing] == true)
+{
+	if (class != Character.Graveling){instance_create_depth(x,y,depth+1,obj_visual_deathBat);}
+	if (class != Character.ShadowAssassin)
+	{
+		var deathBatRange = instance_create_depth(x,y,depth,obj_deathBatRange);
+		deathBatRange.image_xscale *= 1+(gameMaster.bonusDash/100);
+		deathBatRange.image_yscale = deathBatRange.image_xscale;
+		teleportRange = 96;
+		teleportRange *= 1 + (gameMaster.bonusDash/100);
+	}
+}
 #endregion
 #region Slime Queens - T52 Slime Armor
 if (global.itemSelected[Boss.SlimeQueen] == true)

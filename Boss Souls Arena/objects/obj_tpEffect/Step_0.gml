@@ -11,6 +11,6 @@ if (image_xscale <= 0)
 }
 if (image_xscale >= 1.1)
 {
-	with(obj_allPlayer){image_alpha = 0.85}
+	with(obj_allPlayer){image_alpha = normalAlpha}
 	instance_destroy();
 }

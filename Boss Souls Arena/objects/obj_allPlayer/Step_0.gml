@@ -119,7 +119,8 @@ if (mouse_x < x)
 					leftClickCooldownLeft = leftClickCooldown;
 					activateLeftClickItem = true;
 				
-					instance_create_depth(x,y,depth,obj_tpEffect);
+					var tpEffect = instance_create_depth(x,y,depth,obj_tpEffect);
+					tpEffect.image_blend = c_fuchsia;
 					image_alpha = 0;
 					if (global.soundOn == true)
 					{
@@ -686,6 +687,21 @@ if (mouse_x < x)
 				instance_create_depth(mouse_x-8,mouse_y+8,-mouse_y,obj_equipment_madHat);
 				instance_create_depth(mouse_x,mouse_y+10,-mouse_y,obj_equipment_madHat);
 			}
+		}
+		#endregion
+		#region
+		if (global.itemSelected[Boss.DeathKing] == true && distance_to_point(mouse_x,mouse_y) <= teleportRange && place_free(mouse_x,mouse_y))
+		{
+			var tpEffect = instance_create_depth(x,y,depth,obj_tpEffect);
+			tpEffect.image_blend = c_black;
+			image_alpha = 0;
+			if (global.soundOn == true)
+			{
+				audio_play_sound(snd_teleport,Prioity.Low,false);
+			}
+					
+			x = mouse_x;
+			y = mouse_y;
 		}
 		#endregion
 		#region T52 Slime armor
