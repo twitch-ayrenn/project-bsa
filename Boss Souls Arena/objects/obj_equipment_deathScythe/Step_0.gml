@@ -40,7 +40,8 @@ if (state == MeleeWeaponStates.SpinOnce)
 }
 if (state == MeleeWeaponStates.SpinChase)
 {
-	image_angle += spinSpeed/1.5;
+	dmg = global.damage*7;
+	image_angle += spinSpeed*0.75;
 	image_index = 1;
 }
 if (state == MeleeWeaponStates.SpinOnce || state == MeleeWeaponStates.SpinChase)
@@ -61,6 +62,6 @@ if (state == MeleeWeaponStates.SpinOnce || state == MeleeWeaponStates.SpinChase)
 		healText.text = amountHealed;
 		obj_allPlayer.hp += dmg*global.lifeSteal;
 		
-		alarm[1] = (1)*30;
+		alarm[1] = (0.25)*30;
 	}
 }

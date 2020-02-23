@@ -17,7 +17,7 @@ phase4Hp = 0; phase4Ms = 0; phase4Dmg = 0;
 phase5Hp = 0; phase5Ms = 0; phase5Dmg = 0;
 phase6Hp = 0; phase6Ms = 0; phase6Dmg = 0;
 tier1Hp = 400; tier2Hp = 700; tier3Hp = 1000;
-tier4Hp = 1400; tier5Hp = 1800; tier6Hp = 2500;
+tier4Hp = 1400; tier5Hp = 1800; tier6Hp = 2400;
 hp = 0;
 maxHp = hp;
 global.bossDamage = 10;
@@ -697,11 +697,11 @@ isHit = false;
 	{
 		//stats
 		phase1Hp = tier6Hp*0.15; phase1Ms = 1; phase1Dmg = 20;
-		phase2Hp = tier6Hp*0.15; phase2Ms = 1.5; phase2Dmg = 25;
-		phase3Hp = tier6Hp*0.15; phase3Ms = 1.75; phase3Dmg = 27.5;
-		phase4Hp = tier6Hp*0.15; phase4Ms = 2; phase4Dmg = 30;
-		phase5Hp = tier6Hp*0.15; phase5Ms = 2.25; phase5Dmg = 32.5;
-		phase6Hp = tier6Hp*0.25; phase6Ms = 2.5; phase6Dmg = 35;
+		phase2Hp = tier6Hp*0.15; phase2Ms = 1.25; phase2Dmg = 25;
+		phase3Hp = tier6Hp*0.15; phase3Ms = 1.5; phase3Dmg = 27.5;
+		phase4Hp = tier6Hp*0.15; phase4Ms = 1.75; phase4Dmg = 30;
+		phase5Hp = tier6Hp*0.15; phase5Ms = 2; phase5Dmg = 32.5;
+		phase6Hp = tier6Hp*0.25; phase6Ms = 2.25; phase6Dmg = 35;
 		hp = phase1Hp;
 		global.bossDamage = phase1Dmg;
 		moveSpeed = phase1Ms;

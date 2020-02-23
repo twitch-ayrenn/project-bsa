@@ -390,7 +390,7 @@ if (fall == true)
 			if (gameMaster.chosenBoss == Boss.ArenaKing){moveSpeed = 0;}
 		
 			var angleBk = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
-			var circleAmount = 15;
+			var circleAmount = 14;
 			repeat(circleAmount)
 			{
 				var swordShot = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
@@ -402,8 +402,8 @@ if (fall == true)
 				swordShot.image_alpha = 0.85;
 				swordShot.sprite_index = spr_fireBall;
 				swordShot.image_blend = global.lightBlue;
-				swordShot.image_xscale = 0.75;
-				swordShot.image_yscale = 0.75;
+				swordShot.image_xscale = 0.7;
+				swordShot.image_yscale = 0.7;
 				swordShot.effectType = Effect.Flare;
 				angleBk += (360/circleAmount);
 				
@@ -412,7 +412,7 @@ if (fall == true)
 			if (gameMaster.chosenBoss == Boss.ArenaKing)
 			{
 				var angleBk = point_direction(kingCloneX,kingCloneY,obj_allPlayer.x,obj_allPlayer.y);
-				var circleAmount = 15;
+				var circleAmount = 14;
 				repeat(circleAmount)
 				{
 					var swordShot = instance_create_depth(kingCloneX,kingCloneY,depth+1,obj_enemyProjectile);
@@ -424,8 +424,8 @@ if (fall == true)
 					swordShot.image_alpha = 0.85;
 					swordShot.sprite_index = spr_fireBall;
 					swordShot.image_blend = global.goldColor;
-					swordShot.image_xscale = 0.75;
-					swordShot.image_yscale = 0.75;
+					swordShot.image_xscale = 0.7;
+					swordShot.image_yscale = 0.7;
 					swordShot.effectType = Effect.Flare;
 					angleBk += (360/circleAmount);
 				}
@@ -658,6 +658,15 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.ArenaKing && phase == 4){attack = choose(Atks.CircleAttack,Atks.NormalShot,Atks.ChaseAttack,Atks.BeamAttack,Atks.RapidFire,Atks.OneShotAttack,Atks.TeleportAttack);}
 	if (gameMaster.chosenBoss == Boss.ArenaKing && phase == 5){attack = choose(Atks.CircleAttack,Atks.NormalShot,Atks.ChaseAttack,Atks.BeamAttack,Atks.RapidFire,Atks.OneShotAttack,Atks.TeleportAttack,Atks.GooSpawn);}
 	if (gameMaster.chosenBoss == Boss.ArenaKing && phase == 6){attack = choose(Atks.CircleAttack,Atks.NormalShot,Atks.ChaseAttack,Atks.BeamAttack,Atks.RapidFire,Atks.OneShotAttack,Atks.TeleportAttack,Atks.GooSpawn,Atks.ConeAttack);}
+	if (gameMaster.chosenClass == Character.AngelSlayer)
+	{
+		if (gameMaster.chosenBoss == Boss.ArenaKing && phase == 1){attack = choose(Atks.CircleAttack,Atks.NormalShot,Atks.ChaseAttack,Atks.BeamAttack,Atks.CircleAttack,Atks.NormalShot,Atks.BeamAttack);}
+		if (gameMaster.chosenBoss == Boss.ArenaKing && phase == 2){attack = choose(Atks.CircleAttack,Atks.NormalShot,Atks.ChaseAttack,Atks.BeamAttack,Atks.RapidFire,Atks.CircleAttack,Atks.NormalShot,Atks.BeamAttack);}
+		if (gameMaster.chosenBoss == Boss.ArenaKing && phase == 3){attack = choose(Atks.CircleAttack,Atks.NormalShot,Atks.ChaseAttack,Atks.BeamAttack,Atks.RapidFire,Atks.OneShotAttack,Atks.CircleAttack,Atks.NormalShot,Atks.BeamAttack,Atks.RapidFire,Atks.OneShotAttack);}
+		if (gameMaster.chosenBoss == Boss.ArenaKing && phase == 4){attack = choose(Atks.CircleAttack,Atks.NormalShot,Atks.ChaseAttack,Atks.BeamAttack,Atks.RapidFire,Atks.OneShotAttack,Atks.TeleportAttack,Atks.CircleAttack,Atks.NormalShot,Atks.BeamAttack,Atks.OneShotAttack,Atks.TeleportAttack);}
+		if (gameMaster.chosenBoss == Boss.ArenaKing && phase == 5){attack = choose(Atks.CircleAttack,Atks.NormalShot,Atks.ChaseAttack,Atks.BeamAttack,Atks.RapidFire,Atks.OneShotAttack,Atks.TeleportAttack,Atks.GooSpawn,Atks.CircleAttack,Atks.NormalShot,Atks.BeamAttack,Atks.OneShotAttack,Atks.TeleportAttack,Atks.GooSpawn);}
+		if (gameMaster.chosenBoss == Boss.ArenaKing && phase == 6){attack = choose(Atks.CircleAttack,Atks.NormalShot,Atks.ChaseAttack,Atks.BeamAttack,Atks.RapidFire,Atks.OneShotAttack,Atks.TeleportAttack,Atks.GooSpawn,Atks.ConeAttack,Atks.CircleAttack,Atks.NormalShot,Atks.BeamAttack,Atks.OneShotAttack,Atks.TeleportAttack,Atks.GooSpawn,Atks.ConeAttack);}
+	}
 	#endregion
 	if (attack == Atks.NormalShot)
 	{

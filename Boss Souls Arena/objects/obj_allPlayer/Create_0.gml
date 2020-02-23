@@ -169,7 +169,7 @@ normalAlpha = 1;
 		hp = 100;
 		leftClickCooldown = (7)*30;//10
 		rightClickCooldown = (7)*30;
-		dashCooldown = (10)*30;
+		dashCooldown = (9)*30;
 		ultCooldown = (15)*30;
 		idleSprite = spr_player_angelSlayer_idle;
 		walkSprite = spr_player_angelSlayer_walking;
@@ -188,7 +188,10 @@ normalAlpha = 1;
 		slayerSpeed = 1;
 		ultimateStacks = 0;
 		ultimateTime = (6)*30;
-		instance_create_depth(x,y,depth+1,obj_slayerScythe);
+		if (global.itemSelected[Boss.DeathKnight] == false)
+		{
+			instance_create_depth(x,y,depth+1,obj_slayerScythe);
+		}
 	}
 	#endregion
 #endregion
@@ -215,7 +218,7 @@ activateDashItem = false;
 activateLeftClickItem = false;
 activateRightClickItem = false;
 #region Statue of Corruption / The Lootbox
-totalItems = 13;
+totalItems = 17;
 if (global.itemSelected[Boss.StatueOfCorruption] == true && global.slot2 == true)
 {
 	itemRolled[1] = false;
@@ -270,7 +273,7 @@ if (global.itemSelected[Boss.FlameWisp] == true){summonFlamie = true;}
 #endregion
 #region The Corrupter / Edge Of Corruption
 edgeOfCorruptionCharge = 0;
-edgeOfCorruptionChargeTime = (2.5)*30;
+edgeOfCorruptionChargeTime = (2)*30;
 #endregion
 #region Knight Witch Yi / Death Cap
 madHatAmount = int64(1*conjurationPower);
@@ -369,6 +372,8 @@ if (global.itemSelected[Boss.SlimeQueen] == true)
 	t52Walking = spr_equipment_t52slimeArmor_walk;
 	t52Time = (7)*30;
 	t52Stacks = 0;
+	maxHp = hp;
+	slimeArmorHp = maxHp*1.2;
 }
 t52Active = false;
 t52Speed = 1;
@@ -385,6 +390,7 @@ actualBKDashSpeed = 0; actualASDashSpeed = 0;//needs to exist or else it crashes
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
 maxHp = hp;
+normalMaxHp = maxHp;
 sprite_index = idleSprite;
 normalIdleSprite = idleSprite;
 normalWalkSprite = walkSprite;

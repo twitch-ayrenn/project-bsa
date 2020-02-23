@@ -11,7 +11,7 @@ if (color == c_lime)
 }
 if (color == c_maroon)
 {
-	draw_text_transformed_color(x,y+yRise,int64(10*text),0.175,0.175,0,color,color,color,color,1+(yRise/15));
+	draw_text_transformed_color(x,y+yRise,int64(text),0.175,0.175,0,color,color,color,color,1+(yRise/15));
 }
 if (color == c_red)
 {

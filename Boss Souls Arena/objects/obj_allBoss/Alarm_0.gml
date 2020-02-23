@@ -175,8 +175,8 @@ if (attack == Atks.OneShotAttack)
 		infernalBall.image_alpha = 0.85;
 		infernalBall.image_blend = global.orange;
 		infernalBall.sprite_index = spr_fireBall;
-		infernalBall.image_xscale = 3;
-		infernalBall.image_yscale = 3;
+		infernalBall.image_xscale = 2.5;
+		infernalBall.image_yscale = 2.5;
 		infernalBall.effectType = Effect.Spark;
 	}
 }
@@ -217,14 +217,14 @@ if (attack == Atks.ChaseAttack)
 		var infernalBall = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
 		//Main
 		infernalBall.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
-		infernalBall.speed = 3;
+		infernalBall.speed = 2.5;
 		infernalBall.image_angle = infernalBall.direction+90;
 		//Visual
 		infernalBall.image_alpha = 0.85;
 		infernalBall.image_blend = global.orange;
 		infernalBall.sprite_index = spr_fireBall;
-		infernalBall.image_xscale = 3;
-		infernalBall.image_yscale = 3;
+		infernalBall.image_xscale = 2.5;
+		infernalBall.image_yscale = 2.5;
 		infernalBall.effectType = Effect.Smoke;
 		infernalBall.chase = true;
 		infernalBall.range = (6.5)*30;
@@ -235,14 +235,14 @@ if (attack == Atks.ChaseAttack)
 			var infernalBall = instance_create_depth(kingCloneX,kingCloneY,depth+1,obj_enemyProjectile);
 			//Main
 			infernalBall.direction = point_direction(kingCloneX,kingCloneY,obj_allPlayer.x,obj_allPlayer.y);
-			infernalBall.speed = 2.5;
+			infernalBall.speed = 2.25;
 			infernalBall.image_angle = infernalBall.direction+90;
 			//Visual
 			infernalBall.image_alpha = 0.85;
 			infernalBall.image_blend = global.goldColor;
 			infernalBall.sprite_index = spr_fireBall;
-			infernalBall.image_xscale = 3;
-			infernalBall.image_yscale = 3;
+			infernalBall.image_xscale = 2.5;
+			infernalBall.image_yscale = 2.5;
 			infernalBall.effectType = Effect.Smoke;
 			infernalBall.chase = true;
 			infernalBall.range = (6.5)*30;
@@ -602,6 +602,7 @@ if (attack == Atks.CircleAttack)
 			beam.image_xscale = 0.2;
 			beam.image_yscale = 20;
 			beam.maxSize = 1.5;
+			if (gameMaster.chosenBoss == Boss.ArenaKing){beam.maxSize = 1.25;}
 			beam.minSize = 0.2;
 			beam.stickOn = true;
 			beam.range = 1*30;
@@ -625,7 +626,7 @@ if (attack == Atks.CircleAttack)
 				beam.sprite_index = spr_beam;
 				beam.image_xscale = 0.2;
 				beam.image_yscale = 20;
-				beam.maxSize = 1.5;
+				beam.maxSize = 1.25;
 				beam.minSize = 0.2;
 				beam.stickOn = false;
 				beam.range = 1*30;

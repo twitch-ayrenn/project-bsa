@@ -815,6 +815,14 @@
             }
         },
         {
+            "Key": "1cdc7daa-e8db-4159-9e5e-b8db7f0e075b",
+            "Value": {
+                "id": "ac3d480a-807a-4fc4-9a97-373d59aca624",
+                "resourcePath": "objects\\obj_item_spiritOfTheKing\\obj_item_spiritOfTheKing.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "1d1160f7-c9e3-4f00-bf38-b5efce88fc28",
             "Value": {
                 "id": "b5b41231-1236-4cd5-9847-06e75f9a6b71",
@@ -4767,6 +4775,14 @@
             }
         },
         {
+            "Key": "be3eceef-4c73-4149-a88d-2dccfa652dec",
+            "Value": {
+                "id": "7c4bc896-90fd-4edc-83ea-bda0d6428a57",
+                "resourcePath": "sprites\\spr_spritiOfTheKing\\spr_spritiOfTheKing.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "be64ea62-f9f4-4a14-bc3f-7a32a7d3bb03",
             "Value": {
                 "id": "dd347ac8-1f5b-4cb1-aa00-d94e0547e177",
@@ -5931,6 +5947,14 @@
             "Value": {
                 "id": "d8c27598-e39d-4da6-a7a9-f041d22ca6b2",
                 "resourcePath": "sprites\\spr_slime\\spr_slime.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e91b7d18-eb93-4cdb-afe2-ea62fd851ae5",
+            "Value": {
+                "id": "554ddc19-09e6-49a5-92db-65c8124169fd",
+                "resourcePath": "sprites\\spr_loot_spiritOfTheKing\\spr_loot_spiritOfTheKing.yy",
                 "resourceType": "GMSprite"
             }
         },

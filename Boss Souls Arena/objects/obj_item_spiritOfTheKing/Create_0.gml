@@ -1,15 +1,15 @@
 /// @description Insert description here
-bossForThisItem = Boss.DeathKnight;
+bossForThisItem = Boss.DeathKing;
 image_blend = c_white;
 reset = false;
 hover = false;
 thisItemSelected = false;
-bonusHealth = 0;
-bonusSpeed = 0;	
+bonusHealth = 20;
+bonusSpeed = 2;
 bonusDash = 0;
 bonusDamage = 0;
-bonusFirerate = 0;
-bonusLifeSteal = 10;
+bonusFirerate = 20;
+bonusLifeSteal = 2;
 bonusAura = 0;
 bonusConjur = 0;
 bonusCooldown = 0;

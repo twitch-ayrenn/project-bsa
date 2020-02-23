@@ -369,7 +369,7 @@ if (mouse_x < x)
 			var impling = instance_create_depth(x,y,depth+1,obj_equipment_impling)
 			impling.speed = 5;
 			impling.direction = point_direction(x,y,mouse_x,mouse_y);
-			impling.size = 0.45 + 0.20 * global.damage * global.player.conjurationPower;
+			impling.size = 0.45 + 0.25 * global.damage * global.player.conjurationPower;//0.2
 		}
 		
 		canLeftClick = false;
@@ -429,10 +429,10 @@ if (mouse_x < x)
 			{
 				with (obj_allBoss)
 				{
-					if (canTeleport == true)
+					if (canTeleport == true && place_free(x+teleportX,y+teleportY))
 					{
-						if (place_free(x+teleportX,y)){x = x + teleportX;}
-						if (place_free(x,y+teleportY)){y = y + teleportY;}
+						x = x + teleportX;
+						y = y + teleportY;
 						
 						teleportX = choose(-75,75);
 						teleportY = choose(-75,75);
@@ -864,9 +864,26 @@ if (mouse_x < x)
 		{
 			ultimateStacks = 0;
 			slayerSpeed = 1;
-			obj_slayerScythe.state = MeleeWeaponStates.idle;
+			if (global.itemSelected[Boss.DeathKnight] == false)
+			{
+				obj_slayerScythe.state = MeleeWeaponStates.idle;
+			}
+			if (global.itemSelected[Boss.DeathKnight] == true)
+			{
+				obj_equipment_deathScythe.state = MeleeWeaponStates.idle;
+			}
 		}
-		if (slayerSpeed > 1){obj_slayerScythe.state = MeleeWeaponStates.SpinChase;}
+		if (slayerSpeed > 1)
+		{
+			if (global.itemSelected[Boss.DeathKnight] == false)
+			{
+				obj_slayerScythe.state = MeleeWeaponStates.SpinChase;
+			}
+			if (global.itemSelected[Boss.DeathKnight] == true)
+			{
+				obj_equipment_deathScythe.state = MeleeWeaponStates.SpinChase;
+			}
+		}
 	}
 	#endregion
 	#region Items
@@ -900,7 +917,7 @@ if (mouse_x < x)
 			walkSprite = normalWalkSprite;
 			t52Active = false;
 			t52Speed = 1;
-			maxHp /= 1.2;
+			maxHp = normalMaxHp;
 		}
 	}
 	#endregion
@@ -917,8 +934,11 @@ if (mouse_x < x)
 			t52Active = true;
 			t52Speed = 0.80;
 			var oldMaxHp = maxHp;
-			maxHp *= 1.2;
-			hp += maxHp - oldMaxHp;
+			if (class != Character.AngelSlayer)
+			{
+				maxHp = slimeArmorHp;
+				hp += maxHp - oldMaxHp;
+			}
 		}
 		#endregion
 		#region Bloodarmy General
@@ -949,16 +969,21 @@ if (mouse_x < x)
 		#region DeathKing Boss and Arena King
 		if (instance_exists(obj_allBoss))
 		{
-			if (gameMaster.chosenBoss == Boss.DeathKing || gameMaster.chosenBoss == Boss.ArenaKing)
+			if (gameMaster.chosenBoss == Boss.DeathKing)
 			{
 				with (obj_allBoss)
 				{
 					
-					if (place_free(x+teleportX,y)){x = x + teleportX;}
-					if (place_free(x,y+teleportY)){y = y + teleportY;}
+					if (place_free(x+teleportX,y+teleportY))
+					{
+						x = x + teleportX;
+						y = y + teleportY;
 						
-					teleportX = choose(-75,75);
-					teleportY = choose(-75,75);
+						teleportX = choose(-75,75);
+						teleportY = choose(-75,75);
+						
+						canTeleport = false;
+					}
 				}
 			}
 		}
