@@ -1117,6 +1117,7 @@ if(chooseAnAttack == true)
 	alarm[0] = timeAfterIndicate;
 	alarm[1] = attackCooldown*choose(1,1,1,1,2);
 	if (gameMaster.chosenBoss == Boss.SlimeQueen && phase == 4){alarm[0] = (0.85)*30;alarm[1] = (1)*30;}
+	if (gameMaster.chosenBoss == Boss.ArenaKing && attack == Atks.ChaseAttack){alarm[0] = (1.5)*30;}
 }
 #endregion
 }

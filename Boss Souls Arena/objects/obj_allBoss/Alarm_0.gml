@@ -229,7 +229,7 @@ if (attack == Atks.ChaseAttack)
 		infernalBall.chase = true;
 		infernalBall.range = (6.5)*30;
 		
-		if (gameMaster.chosenBoss == Boss.ArenaKing)
+		if (gameMaster.chosenBoss == Boss.ArenaKing && gameMaster.chosenClass != Character.AngelSlayer)
 		{
 			infernalBall.image_blend = global.goldColor;
 			var infernalBall = instance_create_depth(kingCloneX,kingCloneY,depth+1,obj_enemyProjectile);
