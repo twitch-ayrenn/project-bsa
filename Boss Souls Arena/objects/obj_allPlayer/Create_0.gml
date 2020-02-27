@@ -194,6 +194,35 @@ normalAlpha = 1;
 		}
 	}
 	#endregion
+	#region Graveling
+	gravelingSpeed = 0;
+	gravelingAreaSpeed = 1;
+	actualGDashSpeed = 0;
+	if (class == Character.Graveling)
+	{
+		hp = 100;
+		leftClickCooldown = (3)*30;
+		rightClickCooldown = (6)*30;
+		dashCooldown = (6)*30;
+		ultCooldown = (1)*30;
+		idleSprite = spr_player_graveling;
+		walkSprite = spr_player_graveling;
+		deadSprite = spr_player_agentOfGod_dead;
+		leftClickColor = global.darkYellow;
+		rightClickColor = global.darkYellow;
+		dashColor = global.darkYellow;
+		ultColor = c_yellow;
+		//character specific
+		gravelingSpeed = 0;
+		gravlingMaxSpeed = 2;
+		gravelingStacks = 0;
+		gravelingAreaSpeed = 1;
+		actualGDashSpeed = 0;
+		GDashStop = (0.25)*30;
+		GDashStopLeft = 0;
+		instance_create_depth(x,y,depth,obj_gravelingRange);
+	}
+	#endregion
 #endregion
 #region Stats
 hp += gameMaster.bonusHealth;

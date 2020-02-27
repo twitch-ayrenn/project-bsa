@@ -8,7 +8,7 @@ if (destroy == true)
 	
 	alarm[1] = (8)*30;
 }
-if (dealDamage == true)
+if (dealDamage == true && instance_exists(obj_allBoss))
 {
 	dealDamage = false;
 	with(par_enemy)

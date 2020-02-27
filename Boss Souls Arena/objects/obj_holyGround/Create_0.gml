@@ -5,6 +5,6 @@ image_blend = c_aqua;
 dealDamage = true;
 damageTimer = (1)*30;
 destroy = true;
-size = 2;
+size = 1;
 image_xscale = size;
 image_yscale = size;

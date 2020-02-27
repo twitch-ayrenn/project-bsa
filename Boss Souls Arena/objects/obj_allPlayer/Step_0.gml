@@ -16,13 +16,13 @@ if (instance_exists(obj_allBoss) == false)
 	blackOutAlpha = clamp(blackOutAlpha - 0.5/30,0,0.75);
 }
 #endregion
-#region Speed
+#region Dash Speed
 //checkBefore
 if (speed < 0){speed = 0;}
 if (actualDashSpeed < 0){actualDashSpeed = 0;}
 if (actualBKDashSpeed < 0){actualBKDashSpeed = 0;}
 //speed
-speed = actualDashSpeed + actualBKDashSpeed + actualASDashSpeed;
+speed = actualDashSpeed + actualBKDashSpeed + actualASDashSpeed + actualGDashSpeed;
 //checkAfter
 if (speed < 0){speed = 0;}
 if (actualDashSpeed < 0){actualDashSpeed = 0;}
@@ -40,7 +40,8 @@ if (state == States.Idle || state == States.Walking)
 {
 image_angle = 0;
 #region Movement
-actualSpeed = (moveSpeed)*bPSpeed*global.playerBossSlow*meteorStun*gravekeeperSpeed*shieldSpeed*agentSpeed*slayerSpeed*bfSpeed*t52Speed;
+actualSpeed = (moveSpeed + gravelingSpeed)*bPSpeed*global.playerBossSlow*meteorStun*gravekeeperSpeed*shieldSpeed*agentSpeed*slayerSpeed*bfSpeed*t52Speed*gravelingAreaSpeed;
+var actualSpeedBefore = actualSpeed;
 if (keyboard_check(ord("A")) && keyboard_check(ord("S")) || keyboard_check(ord("A")) && keyboard_check(ord("W")) ||  keyboard_check(ord("D")) && keyboard_check(ord("S")) || keyboard_check(ord("D")) && keyboard_check(ord("W")))
 {
 	actualSpeed = actualSpeed*0.85;
@@ -321,6 +322,35 @@ if (mouse_x < x)
 		}
 	}
 	#endregion
+	#region Graveling
+	if (class == Character.Graveling)
+	{
+		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false
+		|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
+		{
+			canLeftClick = false;
+			leftClickCooldownLeft = leftClickCooldown;
+			activateLeftClickItem = true;
+			
+			gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);
+			var graveAccuracy = 25;
+			var graveLength = 1;
+			var boltAmount = int64(3 + actualSpeedBefore*2);
+			repeat (boltAmount)
+			{
+				var graveBolt = instance_create_depth(x,y,depth-1,obj_graveBolt);
+				graveBolt.direction = point_direction(x,y,mouse_x,mouse_y)+irandom_range(-graveAccuracy,graveAccuracy);
+				graveBolt.speed = actualSpeedBefore + random_range(1,4);
+				graveBolt.image_angle = graveBolt.direction+90;
+				// Visual
+				graveBolt.image_xscale = 1;
+				graveBolt.image_yscale = graveBolt.image_xscale;
+				graveBolt.image_alpha = 1;
+				graveBolt.timeToDestroy = random_range(0.05,0.45)*30;
+			}
+		}
+	}
+	#endregion
 	#region Items
 	#region Death Scythe
 	if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == true && global.itemSelected[Boss.DemonLordRekTaar] == false
@@ -332,6 +362,7 @@ if (mouse_x < x)
 		canLeftClick = false;
 		leftClickCooldownLeft = leftClickCooldown;
 		activateLeftClickItem = true;
+		
 		if (class == Character.ShadowAssassin)
 		{
 			if (instance_exists(obj_shadow))
@@ -358,6 +389,7 @@ if (mouse_x < x)
 			instance_create_depth(x,y,-y,obj_pyroPortal);
 			instance_create_depth(x,y,-y,obj_portal_bottom);
 		}
+		if (class == Character.Graveling){gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);}
 	}
 	#endregion
 	#region Demon Portal
@@ -375,6 +407,7 @@ if (mouse_x < x)
 		canLeftClick = false;
 		leftClickCooldownLeft = leftClickCooldown;
 		activateLeftClickItem = true;
+		
 		if (class == Character.ShadowAssassin)
 		{
 			if (instance_exists(obj_shadow))
@@ -400,6 +433,10 @@ if (mouse_x < x)
 		{
 			instance_create_depth(x,y,-y,obj_pyroPortal);
 			instance_create_depth(x,y,-y,obj_portal_bottom);
+		}
+		if (class == Character.Graveling)
+		{
+			gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);
 		}
 	}
 	#endregion
@@ -446,6 +483,19 @@ if (mouse_x < x)
 	}
 	#endregion
 	#region onGoingEffects
+	if (class == Character.Graveling)
+	{
+		if (gravelingSpeed > 0)
+		{
+			gravelingStacks++;
+			if (gravelingStacks >= (2)*30)
+			{
+				gravelingStacks = 0;
+			
+				gravelingSpeed = clamp(gravelingSpeed - 0.5,0,1.5);
+			}
+		}
+	}
 	#endregion
 #endregion
 #region RightClick
@@ -605,7 +655,7 @@ if (mouse_x < x)
 				y = mouse_y;
 				
 				var holyGround = instance_create_depth(x,y,depth,obj_holyGround);
-				holyGround.image_blend = c_teal;
+				holyGround.image_blend = c_aqua;
 			}
 		}
 	}
@@ -665,6 +715,25 @@ if (mouse_x < x)
 				demon.image_yscale = abs(demon.image_xscale);
 				demonSpeed -= 1;
 			}
+		}
+	}
+	#endregion
+	#region Graveling
+	if (class == Character.Graveling)
+	{
+		if (mouse_check_button(mb_right) && canRightClick == true
+		|| keyboard_check(ord("2")) && canRightClick == true)
+		{
+			canRightClick = false;
+			rightClickCooldownLeft = rightClickCooldown;
+			activateRightClickItem = true;
+			
+			gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);
+			var amountHealed = actualSpeedBefore*10;
+			var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
+			healText.color = c_lime;
+			healText.text = amountHealed/10;
+			hp = clamp(hp + actualSpeedBefore*10,0,maxHp);
 		}
 	}
 	#endregion
@@ -733,7 +802,13 @@ if (mouse_x < x)
 			leftClickCooldownLeft = 0;
 			canDash = true;
 			dashCooldownLeft = 0;
+			
+			var amountHealed = maxHp-hp;
+			var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
+			healText.color = c_lime;
+			healText.text = amountHealed/10;
 			hp = maxHp;
+			
 		}
 	}
 	#endregion
@@ -886,6 +961,33 @@ if (mouse_x < x)
 		}
 	}
 	#endregion
+	#region Graveling
+	if (class == Character.Graveling)
+	{
+		obj_gravelingRange.image_xscale = 0.05 * actualSpeedBefore*4*(1+gameMaster.bonusDash/100);
+		obj_gravelingRange.image_yscale = obj_gravelingRange.image_xscale;
+		
+		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
+		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
+		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false)
+		{
+			canUlt = false;
+			ultCooldownLeft = ultCooldown;
+			activateUltItem = true;
+			
+			GDashStopLeft = GDashStop;
+			actualGDashSpeed = clamp(actualSpeedBefore*4*(1+gameMaster.bonusDash/100),actualSpeedBefore*4,100);
+			direction = point_direction(x,y,mouse_x,mouse_y);
+			gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);
+		}
+		
+		if (GDashStopLeft > 0){GDashStopLeft--;}
+		if (GDashStopLeft <= 0)
+		{
+			actualGDashSpeed = 0; 
+		}
+	}
+	#endregion
 	#region Items
 	#region Big Fucking Blast 9000
 	if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == true
@@ -904,6 +1006,10 @@ if (mouse_x < x)
 		bfBlast.image_blend = c_lime;
 		bfBlast.image_xscale = 3.5;
 		bfBlast.image_yscale = bfBlast.image_xscale;
+		
+		if (class == Character.ShadowAssassin){canLeftClick = true;	leftClickCooldownLeft = 0;}
+		if (class == Character.Pyromancer){instance_create_depth(x,y,-y,obj_pyroPortal); instance_create_depth(x,y,-y,obj_portal_bottom);}
+		if (class == Character.Graveling){gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);}
 	}
 	#endregion
 	#region t52 Slime Armor
@@ -1095,6 +1201,22 @@ if (mouse_x < x)
 		}
 	}
 	#endregion
+	#region Graveling
+	if (class == Character.Graveling)
+	{
+		if (keyboard_check(vk_space) && canDash == true)
+		{
+			canDash = false;
+			dashCooldownLeft = dashCooldown;
+			activateDashItem = true;
+			
+			gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);
+			var deadGround = instance_create_depth(x,y,depth,obj_deadGround);
+			deadGround.destroyTimer = (2 + actualSpeedBefore)*30;
+		}
+	}
+	#endregion
+	
 	#region Items
 	if (activateDashItem == true)
 	{
