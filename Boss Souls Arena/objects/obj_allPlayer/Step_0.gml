@@ -333,20 +333,19 @@ if (mouse_x < x)
 			activateLeftClickItem = true;
 			
 			gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);
-			var graveAccuracy = 25;
-			var graveLength = 1;
+			var graveAccuracy = 15;
 			var boltAmount = int64(3 + actualSpeedBefore*2);
 			repeat (boltAmount)
 			{
 				var graveBolt = instance_create_depth(x,y,depth-1,obj_graveBolt);
 				graveBolt.direction = point_direction(x,y,mouse_x,mouse_y)+irandom_range(-graveAccuracy,graveAccuracy);
-				graveBolt.speed = actualSpeedBefore + random_range(1,4);
+				graveBolt.speed = actualSpeedBefore*3;
 				graveBolt.image_angle = graveBolt.direction+90;
 				// Visual
-				graveBolt.image_xscale = 1;
+				graveBolt.image_xscale = 0.75;
 				graveBolt.image_yscale = graveBolt.image_xscale;
 				graveBolt.image_alpha = 1;
-				graveBolt.timeToDestroy = random_range(0.05,0.45)*30;
+				graveBolt.timeToDestroy = (0.25)*30;
 			}
 		}
 	}
@@ -733,7 +732,7 @@ if (mouse_x < x)
 			var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
 			healText.color = c_lime;
 			healText.text = amountHealed/10;
-			hp = clamp(hp + actualSpeedBefore*10,0,maxHp);
+			hp = clamp(hp + actualSpeedBefore*10.5,0,maxHp);
 		}
 	}
 	#endregion
@@ -964,8 +963,9 @@ if (mouse_x < x)
 	#region Graveling
 	if (class == Character.Graveling)
 	{
-		obj_gravelingRange.image_xscale = 0.05 * actualSpeedBefore*4*(1+gameMaster.bonusDash/100);
+		obj_gravelingRange.image_xscale = 0.055 * actualSpeedBefore*4*(1+gameMaster.bonusDash/100);
 		obj_gravelingRange.image_yscale = obj_gravelingRange.image_xscale;
+		teleportRange = 6 *actualSpeedBefore*4*(1+gameMaster.bonusDash/100);
 		
 		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
 		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
@@ -976,15 +976,37 @@ if (mouse_x < x)
 			activateUltItem = true;
 			
 			GDashStopLeft = GDashStop;
+			dashDamage = true;
 			actualGDashSpeed = clamp(actualSpeedBefore*4*(1+gameMaster.bonusDash/100),actualSpeedBefore*4,100);
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);
 		}
 		
-		if (GDashStopLeft > 0){GDashStopLeft--;}
+		if (GDashStopLeft > 0)
+		{
+			GDashStopLeft--;
+			if (dashDamage == true && place_meeting(x,y,par_enemy))
+			{
+				dashDamage = false;
+				var enemy = instance_nearest(x,y,par_enemy);
+				var player = instance_nearest(x,y,obj_allPlayer);	
+				var damageDealt = global.damage*5*actualSpeedBefore;
+				var damageText = instance_create_depth(enemy.x+irandom_range(-8,8),enemy.y+irandom_range(-5,5),enemy.depth-10,obj_textMaker);
+				damageText.color = c_white;
+				damageText.text = damageDealt;
+				enemy.hp -= global.damage*5*actualSpeedBefore;
+			
+				var amountHealed = global.damage*5*actualSpeedBefore;
+				var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
+				healText.color = c_lime;
+				healText.text = amountHealed;
+				hp += global.damage*5*actualSpeedBefore;
+			}
+		}
 		if (GDashStopLeft <= 0)
 		{
 			actualGDashSpeed = 0; 
+			dashDamage = false; 
 		}
 	}
 	#endregion

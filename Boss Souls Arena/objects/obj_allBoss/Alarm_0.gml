@@ -405,7 +405,7 @@ if (attack == Atks.GooSpawn)
 	if (gameMaster.chosenBoss == Boss.WispSisterJulia || gameMaster.chosenBoss == Boss.WispSisters)
 	{
 		
-		var gooGround = instance_create_depth(obj_indicator.x,obj_indicator.y,-5,obj_enemyProjectile);
+		var gooGround = instance_create_depth(indicatorX,indicatorY,-5,obj_enemyProjectile);
 		//Main
 		gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
 		gooGround.speed = 0;
@@ -418,11 +418,8 @@ if (attack == Atks.GooSpawn)
 		gooGround.image_yscale = 4;
 		gooGround.destroy = true;
 		gooGround.effectType = Effect.NoEffect;
-		with (gooGround)
-		{
-			var nearestIndicator = instance_nearest(x,y,obj_indicator);
-			instance_destroy(nearestIndicator);
-		}
+		var nearestIndicator = instance_nearest(gooGround.x,gooGround.y,obj_indicator);
+		if (instance_exists(nearestIndicator)){instance_destroy(nearestIndicator);}
 	}
 	if (gameMaster.chosenBoss == Boss.FlameGate)
 	{

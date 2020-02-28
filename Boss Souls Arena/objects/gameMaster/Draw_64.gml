@@ -408,7 +408,7 @@ if (menu == Menues.BossLoot)
 		
 			//name
 			draw_set_font(fnt_menu_fill);
-			var ItemName = "Item:" + "Gravekeeper's Head"
+			var ItemName = "Item:" + "Gravekeeper";
 			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 		}
 		#endregion

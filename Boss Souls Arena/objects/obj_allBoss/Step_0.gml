@@ -741,6 +741,10 @@ if(chooseAnAttack == true)
 		#region WispSisterAnna
 		if (gameMaster.chosenBoss == Boss.WispSisterJulia || gameMaster.chosenBoss == Boss.WispSisters)
 		{
+			globalvar indicatorX;
+			globalvar indicatorY;
+			indicatorX = global.player.x;
+			indicatorY = global.player.y;
 			var indicator = instance_create_depth(global.player.x,global.player.y,-5,obj_indicator)
 			indicator.sprite_index = spr_damageCircle;
 			indicator.image_xscale = 0.25;
@@ -1012,7 +1016,7 @@ if(chooseAnAttack == true)
 			beam1.stickOn = true;
 			beam1.beamChase = true;
 			beam1.turningSpeed = -15;
-			beam1.range = 10*30;
+			beam1.range = 12*30;
 			beam1.destroy = true;
 			beam1.effectType = Effect.NoEffect;
 			
@@ -1030,7 +1034,7 @@ if(chooseAnAttack == true)
 			beam2.stickOn = true;
 			beam2.beamChase = true;
 			beam2.turningSpeed = -15;
-			beam2.range = 8*30;
+			beam2.range = 12*30;
 			beam2.destroy = true;
 			beam2.effectType = Effect.NoEffect;
 		}

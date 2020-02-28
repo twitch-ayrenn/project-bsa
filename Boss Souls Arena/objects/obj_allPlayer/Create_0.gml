@@ -201,10 +201,10 @@ normalAlpha = 1;
 	if (class == Character.Graveling)
 	{
 		hp = 100;
-		leftClickCooldown = (3)*30;
-		rightClickCooldown = (6)*30;
-		dashCooldown = (6)*30;
-		ultCooldown = (1)*30;
+		leftClickCooldown = (3)*30; // 3
+		rightClickCooldown = (6)*30;// 6
+		dashCooldown = (6)*30;// 6
+		ultCooldown = (12)*30; // 12
 		idleSprite = spr_player_graveling;
 		walkSprite = spr_player_graveling;
 		deadSprite = spr_player_agentOfGod_dead;
@@ -221,6 +221,7 @@ normalAlpha = 1;
 		GDashStop = (0.25)*30;
 		GDashStopLeft = 0;
 		instance_create_depth(x,y,depth,obj_gravelingRange);
+		dashDamage = false;
 	}
 	#endregion
 #endregion
@@ -383,12 +384,18 @@ bfSpeed = 1;
 #region Death King
 if (global.itemSelected[Boss.DeathKing] == true)
 {
-	if (class != Character.Graveling){instance_create_depth(x,y,depth+1,obj_visual_deathBat);}
+	if (class != Character.Graveling)
+	{
+		instance_create_depth(x,y,depth+1,obj_visual_deathBat);
+	}
 	if (class != Character.ShadowAssassin)
 	{
-		var deathBatRange = instance_create_depth(x,y,depth,obj_deathBatRange);
-		deathBatRange.image_xscale *= 1+(gameMaster.bonusDash/100);
-		deathBatRange.image_yscale = deathBatRange.image_xscale;
+		if (class != Character.Graveling)
+		{
+			var deathBatRange = instance_create_depth(x,y,depth,obj_deathBatRange);
+			deathBatRange.image_xscale *= 1+(gameMaster.bonusDash/100);
+			deathBatRange.image_yscale = deathBatRange.image_xscale;
+		}
 		teleportRange = 96;
 		teleportRange *= 1 + (gameMaster.bonusDash/100);
 	}
