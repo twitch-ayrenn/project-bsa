@@ -302,7 +302,7 @@ if (menu == Menues.BossLoot)
 		
 			//name
 			draw_set_font(fnt_menu_fill);
-			var ItemName = "Item: " + "Nether Portal";
+			var ItemName = "Item: " + "Obsidian Portal";
 			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 		}
 		#endregion

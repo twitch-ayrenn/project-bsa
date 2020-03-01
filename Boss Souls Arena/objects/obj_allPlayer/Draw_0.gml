@@ -13,4 +13,3 @@ if (global.itemSelected[Boss.TheCorrupter] == true)
 	}
 }
 draw_self();
-draw_circle(x,y,teleportRange,true);

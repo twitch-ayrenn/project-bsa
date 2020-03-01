@@ -103,39 +103,6 @@ if (playerShowInfoFor == Character.ShadowAssassin)
 	
 }
 #endregion
-#region The Shopkeeper
-if (playerShowInfoFor == Character.Shopkeeper)
-{
-	//description
-	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(65,450,		  "Locked for Alpha Build",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*1,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*2,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*3,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*4,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*5,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*6,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*7,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450 +17.5*8,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*9,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*11,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*12,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*13,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*14,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*15,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*16,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	
-	//name
-	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(163,216,"The Shopkeeper",0.38,0.38,0,global.goldColor,global.goldColor,c_yellow,c_yellow,1);
-	//stats
-	draw_text_transformed_color(295,320-15-5,"Sustain: ",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
-	draw_text_transformed_color(295,340-15+15-5,"Damage: ",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
-	draw_text_transformed_color(295,360-15+30-5,"Mobility: ",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
-	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: ",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-}
-#endregion
 #region The Bloodknight
 if (playerShowInfoFor == Character.BloodKnight)
 {
@@ -174,22 +141,22 @@ if (playerShowInfoFor == Character.PlaugeWalker)
 {
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(65,450,		  "Locked for Alpha Build",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*1,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450,		  "[Passive]: The disease around you deals",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*1,"damage and heals your summonings.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*2,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*3,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*4,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*5,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*3,"[Left-Click]: Summon 5 plaugelings that",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*4, "deal damage to enemies and heal your",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*5,"monsters.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*6,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*7,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450 +17.5*8,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*9,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*7,"[Right-Click]: Summon a Wisp that deals",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450 +17.5*8,"damage to enemies in its circle and ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*9,"increases your movement speed.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*11,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*12,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*11,"[Space]: Places an area of disease that",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*12,"has the same properties as your [passive].",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*13,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*14,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*15,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*14,"[Ultimate]: Summons zamii the big zombie.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*15,"Zamii shoots at enemies.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*16,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	//name
@@ -240,32 +207,32 @@ if (playerShowInfoFor == Character.Graveling)
 {
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(65,450,		  "Locked for Alpha Build",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*1,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*2,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*3,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*4,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450,		  "[Passive]: Gain speed with every attack",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*1,"and spell cast. Speed increases the",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*2,"power of your spells and attacks.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*3,"The range of your [Attack] and [Ultimate]",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*4,"is shown by the circle around you.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*5,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*6,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*6,"[Attack]: Shot a burst of shadow bolts.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*7,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450 +17.5*8,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450 +17.5*8,"[Hero-Power]: Heal yourself.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*9,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*11,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*10,"[Space]: Place an area that damages",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*11,"enemies and increases your speed. ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*12,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*13,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*14,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*15,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*13,"[Ultimate]: Dash and deal massive damage",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*14,"to enemies dash trough. You do not take",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*15,"damage when touching an enemy.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*16,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	//name
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(163,216,"The Graveling",0.38,0.38,0,c_gray,c_gray,c_dkgray,c_black,1);
 	//stats
-	draw_text_transformed_color(295,320-15-5,"Sustain: ",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
-	draw_text_transformed_color(295,340-15+15-5,"Damage: ",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
-	draw_text_transformed_color(295,360-15+30-5,"Mobility: ",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
-	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: ",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	draw_text_transformed_color(295,320-15-5,"Sustain: Medium",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(295,340-15+15-5,"Damage: Medium",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(295,360-15+30-5,"Mobility: High",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
+	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: Low",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 }
 #endregion
 #region The Angel Slayer
