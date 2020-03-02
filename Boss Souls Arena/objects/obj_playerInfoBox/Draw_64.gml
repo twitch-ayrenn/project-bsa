@@ -44,20 +44,20 @@ if (playerShowInfoFor == Character.Pyromancer)
 	draw_text_transformed_color(65,450,		  "[Passive]: Each ability summons a flame",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*1,"portal that shoots where you aim.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*2,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*3,"[Left-Click]: Shoot a fireball. Hold to",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*3,"[Attack]: Shoot a fireball. Hold to",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*4,"charge for up to 2.5 seconds. Charging",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*5,"the fireball increases size and damage.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*6,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*7,"[Right-Click]: Shoot waves of fireballs",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*7,"[Ability][1]: Shoot waves of fireballs",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450 +17.5*8,"in a cone. Cone amoumt increases with",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*9,"damage stat.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*11,"[Space]: Dash a long distance.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*11,"[Ability][2]: Dash a long distance.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*12,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*13,"[Ult/E]: Become a giant meteor that falls",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*14,"from the sky. Deal massive damage and ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*15,"leave a fiery ground that deals damage",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*16,"for 10 seconds.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*13,"[Ultimate]: Become a big meteor that falls",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*14,"from the sky. Deal damage enemies hit.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*15,"The meteor leaves a fiery ground.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*16,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	//name
 	draw_set_font(fnt_menu_fill);
@@ -74,22 +74,22 @@ if (playerShowInfoFor == Character.ShadowAssassin)
 {
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(65,450,		  "[Passive]: All abilities allow you to use",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*1,"your [Left-Click] ability again.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450,		  "[Passive]: All [abilities] allow you to ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*1,"use your [Attack] again.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*2,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*3,"[Left-Click]: Click inside the purple circle",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*3,"[Attack]: Click inside the purple circle",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*4,"to teleport and throw knives around you.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*5,"#Note you do not take damage when",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*6,"touching an enemy.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*7,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*8,"[Right-Click]: Summon a Shadow, it also",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*8,"[Ability][1]: Summon a Shadow, it also",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*9,"throws knives when you use [Left-Click].",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*11,"[Space]: Dash and make the circle around",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*12,"you deal damage for 4 seconds.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*11,"[Ability][2]: Dash and make the circle ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*12,"around you deal damage for 4 seconds.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*13,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*14,"[Ult/E]: Fully heal yourself and reset all",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*15,"your ability cooldowns.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*14,"[Ultimate]: Fully heal yourself and reset ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*15,"all your ability cooldowns.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*16,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	//name
@@ -108,22 +108,22 @@ if (playerShowInfoFor == Character.BloodKnight)
 {
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(65,450,		  "[Passive]: Your armor doubles",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*1,"your health and health upgrades.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*2,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*3,"[Left-Click]: Summon bats that kill your",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*4,"enemies.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*5,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*6,"[Right-Click]: Dash and deal damage to",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*7,"enemies in your way.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450 +17.5*8,"#Note you do not take damage when",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*9,"touching an enemy.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450,		  "[Passive]: Your armor doubles max health.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*1,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*2,"[Attack]: Summon bats that kill your",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*3,"enemies.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*4,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*5,"[Ability][1]: Dash and deal damage to",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*6,"enemies in your way. You do not take",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*7,"damage when touching an enemy.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450 +17.5*8,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*9,"Ability][2]: Dash and summon 3 bats.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*11,"[Space]: Dash and summon bats in a circle.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*12,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*13,"[Ult/E]: Shoot a blood beam towards a",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*14,"direction. It deals massive damage.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*15,"#Note you cannot aim it",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*11,"[Ultimate]: Shoot an uncontrollable blood ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*12,"beam towards a direction. It deals massive",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*13,"damage.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*14,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*15,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*16,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	//name
@@ -144,15 +144,15 @@ if (playerShowInfoFor == Character.PlaugeWalker)
 	draw_text_transformed_color(65,450,		  "[Passive]: The disease around you deals",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*1,"damage and heals your summonings.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*2,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*3,"[Left-Click]: Summon 5 plaugelings that",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*3,"[Attack]: Summon 5 plaugelings that",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*4, "deal damage to enemies and heal your",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*5,"monsters.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*6,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*7,"[Right-Click]: Summon a Wisp that deals",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*7,"[Ability][1]: Summon a Wisp that deals",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450 +17.5*8,"damage to enemies in its circle and ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*9,"increases your movement speed.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*11,"[Space]: Places an area of disease that",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*11,"[Ability][2]: Places an area of disease that",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*12,"has the same properties as your [passive].",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*13,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*14,"[Ultimate]: Summons zamii the big zombie.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
@@ -163,10 +163,10 @@ if (playerShowInfoFor == Character.PlaugeWalker)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(163,216,"The Plaugewalker",0.38,0.38,0,c_lime,c_lime,c_green,c_green,1);
 	//stats
-	draw_text_transformed_color(295,320-15-5,"Sustain: ",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
-	draw_text_transformed_color(295,340-15+15-5,"Damage: ",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
-	draw_text_transformed_color(295,360-15+30-5,"Mobility: ",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
-	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: ",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	draw_text_transformed_color(295,320-15-5,"Sustain: Low",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(295,340-15+15-5,"Damage: Very High",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(295,360-15+30-5,"Mobility: Low",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
+	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: Medium",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 }
 #endregion
 #region The Agent of God
@@ -174,20 +174,20 @@ if (playerShowInfoFor == Character.AgentOfGod)
 {
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(65,450,		  "Locked for Alpha Build",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*1,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*2,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450,		  "[Passive]: A holy beam from above ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*1,"follows your mouse movement and deals ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*2,"damage to enemies it burns.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*3,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*4,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*4,"[Attack]: Shoot a big holy bolt.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*5,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*6,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*7,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*6,"[Ability][1]: Teleport and place a holy",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*7,"area which burns your enemies.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450 +17.5*8,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*9,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*9,"[Ability][2]: Dash a long distance and shoot",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*10,"a big holy bolt towards dash direction.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*11,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*12,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*13,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*12,"[Ultimate]: Breathe holy fire over 5",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*13,"seconds.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*14,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*15,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*16,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
@@ -196,10 +196,10 @@ if (playerShowInfoFor == Character.AgentOfGod)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(163,216,"The Agent of God",0.38,0.38,0,c_aqua,c_aqua,c_silver,c_silver,1);
 	//stats
-	draw_text_transformed_color(295,320-15-5,"Sustain: ",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
-	draw_text_transformed_color(295,340-15+15-5,"Damage: ",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
-	draw_text_transformed_color(295,360-15+30-5,"Mobility: ",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
-	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: ",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	draw_text_transformed_color(295,320-15-5,"Sustain: Low",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(295,340-15+15-5,"Damage: High",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(295,360-15+30-5,"Mobility: High",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
+	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: High",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 }
 #endregion
 #region The Graveling
@@ -215,9 +215,9 @@ if (playerShowInfoFor == Character.Graveling)
 	draw_text_transformed_color(65,450+17.5*5,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*6,"[Attack]: Shot a burst of shadow bolts.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*7,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450 +17.5*8,"[Hero-Power]: Heal yourself.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450 +17.5*8,"[Ability][1]: Heal yourself.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*9,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*10,"[Space]: Place an area that damages",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*10,"[Ability][2]: Place an area that damages",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*11,"enemies and increases your speed. ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*12,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*13,"[Ultimate]: Dash and deal massive damage",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
@@ -232,7 +232,7 @@ if (playerShowInfoFor == Character.Graveling)
 	draw_text_transformed_color(295,320-15-5,"Sustain: Medium",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
 	draw_text_transformed_color(295,340-15+15-5,"Damage: Medium",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
 	draw_text_transformed_color(295,360-15+30-5,"Mobility: High",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
-	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: Low",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: Medium",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 }
 #endregion
 #region The Angel Slayer
@@ -245,15 +245,15 @@ if (playerShowInfoFor == Character.AngelSlayer)
 	draw_text_transformed_color(65,450+17.5*2,"[Passive][2]: The Angel Slayer can't have",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*3,"more than 100 Health Points.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*4,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*5,"[Left-Click]: Dash then Slash with you",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*5,"[Attack]: Dash then Slash with you",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*6,"scythe in a circle.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*7,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450 +17.5*8,"[Right-Click]: Dash Back and summon",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450 +17.5*8,"[Ability][1]: Dash Back and summon",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*9,"demons.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*11,"[Space]: Dash a long distance.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*11,"[Ability][2]: Dash a long distance.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*12,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*13,"[Ult/E]: Spin your scythe for 6 seconds.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*13,"[Ultimate]: Spin your scythe for 6 seconds.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*14,"During this time you cant use the other",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*15,"abilities but you gain a 50% speed boost.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*16,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
@@ -262,10 +262,10 @@ if (playerShowInfoFor == Character.AngelSlayer)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(163,216,"The Angel Slayer",0.38,0.38,0,c_red,c_red,c_black,c_black,1);
 	//stats
-	draw_text_transformed_color(295,320-15-5,"Sustain: ",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
-	draw_text_transformed_color(295,340-15+15-5,"Damage: ",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
-	draw_text_transformed_color(295,360-15+30-5,"Mobility: ",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
-	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: ",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	draw_text_transformed_color(295,320-15-5,"Sustain: Low",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(295,340-15+15-5,"Damage: High",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(295,360-15+30-5,"Mobility: High",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
+	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: Low",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 }
 #endregion
 

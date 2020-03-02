@@ -1173,7 +1173,7 @@ if (mouse_x < x)
 			actualDashSpeed = dashSpeed;
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			
-			repeat(int64(batAmount*conjurationPower))
+			repeat(int64(3*conjurationPower))
 			{
 				var batShot = instance_create_depth(x+irandom_range(-25,25),y+irandom_range(-25,25),depth+1,obj_batProjectile);
 				batShot.speed = 6;
