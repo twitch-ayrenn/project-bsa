@@ -87,6 +87,14 @@
             }
         },
         {
+            "Key": "028de98f-6066-4810-9a77-5121b64e9565",
+            "Value": {
+                "id": "cd4f0387-ae04-4fa6-8de3-e003b5fe6029",
+                "resourcePath": "sprites\\spr_\\spr_.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0299588f-6a1e-4925-b9d3-fef838f8bdd5",
             "Value": {
                 "id": "97aa867c-d5dd-4998-b05e-9dc4b86acc6f",
@@ -2459,6 +2467,14 @@
             "Value": {
                 "id": "cf8c5c0c-986e-42aa-90f7-0b03bb9e68f5",
                 "resourcePath": "sprites\\spr_boss_slimeQueen_goo\\spr_boss_slimeQueen_goo.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "64e05a50-6754-4d76-9815-b6c560ed3ecd",
+            "Value": {
+                "id": "5a4c5bc0-e769-4225-8abb-548b1b150530",
+                "resourcePath": "sprites\\spr_zamii\\spr_zamii.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -4898,7 +4914,7 @@
             "Key": "c9036a7a-64a4-4f3a-b05b-46b42b8c5ae0",
             "Value": {
                 "id": "ad4292d1-983f-4157-a366-2097a5b17799",
-                "resourcePath": "sprites\\spr_add_bloodling\\spr_add_bloodling.yy",
+                "resourcePath": "sprites\\spr_plaugeling\\spr_plaugeling.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5316,6 +5332,14 @@
                 "id": "df6d790f-3d66-4ba4-b979-52497ef6fabd",
                 "resourcePath": "rooms\\rm_bossSelect\\rm_bossSelect.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "d7f81df3-49d4-4fdf-88bb-ac893d059fe3",
+            "Value": {
+                "id": "2fd0bb39-fb95-4731-8282-5f35b1965c8b",
+                "resourcePath": "sprites\\spr_speedWisp\\spr_speedWisp.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

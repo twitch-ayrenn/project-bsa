@@ -224,6 +224,33 @@ normalAlpha = 1;
 		dashDamage = false;
 	}
 	#endregion
+	#region PlaugeWalker
+	if (class == Character.PlaugeWalker)
+	{
+		hp = 100;
+		leftClickCooldown = (3)*30; // 3
+		rightClickCooldown = (8)*30;// 6
+		dashCooldown = (8)*30;// 6
+		ultCooldown = (18)*30; // 12
+		idleSprite = spr_player_graveling;
+		walkSprite = spr_player_graveling;
+		deadSprite = spr_player_graveling_dead;
+		leftClickColor = global.darkYellow;
+		rightClickColor = global.darkYellow;
+		dashColor = global.darkYellow;
+		ultColor = c_yellow;
+		//character specific
+		gravelingSpeed = 0;
+		gravlingMaxSpeed = 2;
+		gravelingStacks = 0;
+		gravelingAreaSpeed = 1;
+		actualGDashSpeed = 0;
+		GDashStop = (0.25)*30;
+		GDashStopLeft = 0;
+		instance_create_depth(x,y,depth,obj_gravelingRange);
+		dashDamage = false;
+	}
+	#endregion
 #endregion
 #region Stats
 hp += gameMaster.bonusHealth;
