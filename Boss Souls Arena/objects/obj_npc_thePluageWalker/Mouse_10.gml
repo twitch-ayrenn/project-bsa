@@ -7,5 +7,5 @@ if (gameMaster.menu == Menues.PlayerSelect)
 		outline = "selected";
 	}
 	with (obj_playerInfoBox){playerShowInfoFor = Character.PlaugeWalker;}
-	with (obj_playerModel){sprite_index = spr_player_plaugeWalker_idle;}
+	with (obj_playerModel){sprite_index = spr_player_plagueWalker_idle;}
 }

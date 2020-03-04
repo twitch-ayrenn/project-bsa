@@ -5,7 +5,7 @@ gameMaster.plaugeWalkerUnlocked == true && gameMaster.menu == Menues.Main)
 	if (global.soundOn == true){audio_play_sound(snd_buttonClick,Prioity.Normal,false);}
 	with (gameMaster)
 	{
-		if (pluageWalkerProgress < 2){menu = Menues.BossSelect;chosenClass = Character.PlaugeWalker;}
+		if (plaugeWalkerProgress < 2){menu = Menues.BossSelect;chosenClass = Character.PlaugeWalker;}
 		if (plaugeWalkerProgress > 1){menu = Menues.BossLoot;  chosenClass = Character.PlaugeWalker;}
 		global.itemSlots = int64(1 + ((plaugeWalkerProgress-1)/4));
 		global.maxItemSlots = global.itemSlots;

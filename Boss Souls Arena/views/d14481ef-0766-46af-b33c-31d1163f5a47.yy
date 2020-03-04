@@ -9,10 +9,12 @@
         "c9036a7a-64a4-4f3a-b05b-46b42b8c5ae0",
         "64e05a50-6754-4d76-9815-b6c560ed3ecd",
         "d7f81df3-49d4-4fdf-88bb-ac893d059fe3",
-        "028de98f-6066-4810-9a77-5121b64e9565"
+        "028de98f-6066-4810-9a77-5121b64e9565",
+        "643ebacb-0daf-4d6d-85c0-e1e6ae6e6561",
+        "8004cbcd-7200-4ca8-b43b-ea25a397cc7d"
     ],
     "filterType": "GMSprite",
-    "folderName": "grp_thePlaugeWalker",
+    "folderName": "grp_thePlagueWalker",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

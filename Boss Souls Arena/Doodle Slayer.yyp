@@ -90,7 +90,7 @@
             "Key": "028de98f-6066-4810-9a77-5121b64e9565",
             "Value": {
                 "id": "cd4f0387-ae04-4fa6-8de3-e003b5fe6029",
-                "resourcePath": "sprites\\spr_\\spr_.yy",
+                "resourcePath": "sprites\\spr_plagueGround\\spr_plagueGround.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -687,6 +687,14 @@
             }
         },
         {
+            "Key": "17ee45a7-d648-48e0-8a12-eeb9b6c387b5",
+            "Value": {
+                "id": "b5bf2989-c822-4bc7-860d-2e5b35bc8e88",
+                "resourcePath": "views\\17ee45a7-d648-48e0-8a12-eeb9b6c387b5.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "18118601-7053-4aa6-9ad6-dbb4f5398e06",
             "Value": {
                 "id": "0a60a8ee-d0c4-4faf-8738-5f1594e463ad",
@@ -1191,6 +1199,14 @@
             }
         },
         {
+            "Key": "2a10860a-fbe6-4402-a077-7ce4662ec5b2",
+            "Value": {
+                "id": "5f7cb759-235b-4a7f-9b9b-3ed2a241a38a",
+                "resourcePath": "objects\\obj_plagueGround\\obj_plagueGround.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "2a47d9ab-943e-4f2a-912e-2cd12a3d0750",
             "Value": {
                 "id": "d03d0b42-d591-4d07-ac63-b8a9b7d6f539",
@@ -1591,6 +1607,14 @@
             }
         },
         {
+            "Key": "3c326d9c-1754-4ab4-9832-f9150fa98987",
+            "Value": {
+                "id": "8d4f2cdc-30df-47ea-bb57-85fbd37def0d",
+                "resourcePath": "objects\\obj_plagueVisual2\\obj_plagueVisual2.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "3c922666-a453-4467-85ca-adbd59c56f21",
             "Value": {
                 "id": "e27af80b-f466-47a8-9755-e1d398ae1689",
@@ -1754,7 +1778,7 @@
             "Key": "45484e32-203b-49bc-bc65-62c8e302befb",
             "Value": {
                 "id": "80786c45-f39f-4052-920c-181ed187fecc",
-                "resourcePath": "sprites\\spr_player_plaugeWalker_idle\\spr_player_plaugeWalker_idle.yy",
+                "resourcePath": "sprites\\spr_player_plagueWalker_idle\\spr_player_plagueWalker_idle.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2463,6 +2487,14 @@
             }
         },
         {
+            "Key": "643ebacb-0daf-4d6d-85c0-e1e6ae6e6561",
+            "Value": {
+                "id": "eb642041-f1e9-473d-bd8e-04d06dc966ca",
+                "resourcePath": "sprites\\spr_plagueGround_circle\\spr_plagueGround_circle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6475f77e-c6ab-4772-8fa9-1ee8766268e7",
             "Value": {
                 "id": "cf8c5c0c-986e-42aa-90f7-0b03bb9e68f5",
@@ -3111,6 +3143,14 @@
             }
         },
         {
+            "Key": "8004cbcd-7200-4ca8-b43b-ea25a397cc7d",
+            "Value": {
+                "id": "15dd588a-8995-4117-8146-59e5cc06cca6",
+                "resourcePath": "sprites\\spr_leech\\spr_leech.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "80538e44-aa60-4aa9-9a38-c531e3883f5e",
             "Value": {
                 "id": "9aab6309-344e-48c6-9426-13cb6fd54462",
@@ -3220,6 +3260,14 @@
                 "id": "17dadc99-1506-4de0-b9aa-5b7aa3419783",
                 "resourcePath": "sprites\\spr_prop_gold\\spr_prop_gold.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "838fcdca-73be-4778-8adb-106a27df529a",
+            "Value": {
+                "id": "cb5ad6cf-7361-46ea-9390-885c793d9797",
+                "resourcePath": "objects\\obj_plagueVisual4\\obj_plagueVisual4.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -3983,6 +4031,14 @@
             }
         },
         {
+            "Key": "a37cd136-2ae0-45d4-b663-0961ae4fb91b",
+            "Value": {
+                "id": "f3d0f226-1241-49f3-927b-35c2462dcecc",
+                "resourcePath": "objects\\obj_plagueVisual1\\obj_plagueVisual1.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "a3b1a336-9a7c-43de-89e0-d9b8ad1285b9",
             "Value": {
                 "id": "95f40188-8659-4a72-853c-fe0ad9644dcf",
@@ -4530,7 +4586,7 @@
             "Key": "b8b2ce4f-f1d2-40e4-87e1-58b0a4bb6e34",
             "Value": {
                 "id": "b927e40f-7daa-453d-89cf-2fa7d2ca8bcb",
-                "resourcePath": "sprites\\spr_player_plaugeWalker_walking\\spr_player_plaugeWalker_walking.yy",
+                "resourcePath": "sprites\\spr_player_plagueWalker_walking\\spr_player_plagueWalker_walking.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5972,6 +6028,14 @@
                 "id": "42c01ba5-cce1-433c-b32c-29f75b6b59c5",
                 "resourcePath": "sprites\\spr_lastWishRange\\spr_lastWishRange.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "eee5e73b-0923-42c1-85da-baa46883a8a5",
+            "Value": {
+                "id": "46cadb0f-a39d-43d3-b761-0d0d6463a451",
+                "resourcePath": "objects\\obj_plagueVisual3\\obj_plagueVisual3.yy",
+                "resourceType": "GMObject"
             }
         },
         {

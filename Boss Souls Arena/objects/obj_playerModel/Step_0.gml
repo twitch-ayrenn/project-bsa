@@ -28,7 +28,7 @@ if (gameMaster.menu == Menues.BossLoot)
 	if (gameMaster.chosenClass == Character.Shopkeeper){sprite_index = spr_player_theShopkeeper;}
 	if (gameMaster.chosenClass == Character.BloodKnight){sprite_index = spr_player_theBloodKnight;}
 	if (gameMaster.chosenClass == Character.RainbowSlime){sprite_index = spr_player_theRainbowSlime;}
-	if (gameMaster.chosenClass == Character.PlaugeWalker){sprite_index = spr_player_plaugeWalker_idle;}
+	if (gameMaster.chosenClass == Character.PlaugeWalker){sprite_index = spr_player_plagueWalker_idle;}
 	if (gameMaster.chosenClass == Character.AgentOfGod){sprite_index = spr_player_agentOfGod_idle;}
 	if (gameMaster.chosenClass == Character.Graveling){sprite_index = spr_player_graveling;}
 	if (gameMaster.chosenClass == Character.AngelSlayer){sprite_index = spr_player_angelSlayer_idle;}
