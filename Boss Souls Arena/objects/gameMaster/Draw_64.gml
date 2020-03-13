@@ -198,7 +198,7 @@ if (menu == Menues.BossLoot)
 		#region DemonGate
 		if (itemShowInfoFor == Boss.FlameGate)
 		{
-			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Dashing causes a demon claw to burst",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"[Dashing] causes a demon claw to burst",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"from the ground. When erupting it",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"deals massive damage to enemies hit.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"The demon claw blocks all projectiles.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -251,8 +251,8 @@ if (menu == Menues.BossLoot)
 		if (itemShowInfoFor == Boss.DeathKnight)
 		{
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Your [Basic Attack] is replaced with",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"the Death Scythe.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Your [Attack] is replaced with the",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"Death Scythe slash.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"It spins around you and deals damage",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"to enemies hit.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"It always has an attack speed of 1 ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -310,22 +310,21 @@ if (menu == Menues.BossLoot)
 		if (itemShowInfoFor == Boss.KnightWitchYi)
 		{
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Using your [Hero Power] summons",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			var witchAmountT = "[" + string(int64(1*conjureCalc)) + "] witches that last for 3 ";
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Using your [Ability][1] summons",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			var witchAmountT = "[" + string(int64(1*conjureCalc)) + "] witches that last for 4 seconds.";
 			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,witchAmountT,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"seconds. They shoot a projectile",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"towards your mouse cursor when you",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"use your [Basic Attack].",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,"The amount of witches scales with",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"[Summoining Power].",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"They shoot a projectile towards your" ,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"mouse cursor when you use your ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"[Attack]. The amount of witches scales",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,"with [Summoining Power].",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			var cbtext = "[Projectile Damage]: " + string(dmgCalc*2);
-			draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,cbtext,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,cbtext,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_set_font(fnt_menu_fill);
-			draw_text_transformed_color(infoTextX,350+9.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+			draw_text_transformed_color(infoTextX,350+8.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"+ 30% Bonus Attack Speed",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
-			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"+ 30% Summoning Power",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"\"Doubt is the greatest enemy.\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"+ 30% Bonus Attack Speed",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"+ 30% Summoning Power",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"\"Doubt is the greatest enemy.\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		
 			//name
 			draw_set_font(fnt_menu_fill);
@@ -337,19 +336,18 @@ if (menu == Menues.BossLoot)
 		if (itemShowInfoFor == Boss.AngelKnightOscar)
 		{
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Your [Dash], [Right-Click] and",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"[Ultimate] has a 35% reduced",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"cooldown. However your damage is",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"reduced by 50%. Increases max ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"cooldown reduction from 50% to 60%.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Your [Abilities] and [Ultimate] has a",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"35% reduced cooldown. However your",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"damage is reduced by 50%. Increases",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"max cooldown reduction to 60%.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_set_font(fnt_menu_fill);
-			draw_text_transformed_color(infoTextX,350+6.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+			draw_text_transformed_color(infoTextX,350+5.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"+ 30% Bonus Attack Speed",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
-			draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"+ 2 Damage Scaling",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
-			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"\"Perfectly balanced as all",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"things should be...\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"+ 30% Bonus Attack Speed",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"+ 2 Damage Scaling",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"\"Perfectly balanced as all",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"things should be...\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			
 		
 			//name
@@ -362,7 +360,7 @@ if (menu == Menues.BossLoot)
 		if (itemShowInfoFor == Boss.DemonLordRekTaar)
 		{
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Your [Basic Attack]  is replaced with",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Your [Attack] is replaced with",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"the Demon Portal. The portal can",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			frText = "summon an Impling every [" + string(6/firerateCalc) + "]";
 			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,frText,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -416,7 +414,7 @@ if (menu == Menues.BossLoot)
 		if (itemShowInfoFor == Boss.BloodKnightDavid)
 		{
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Your [Ultimate] ability makes you",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Your [Ultimate] makes you",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"invincible for 2 seconds. You can",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"not move during this effect and",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"it costs 50% of your current health.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -467,7 +465,7 @@ if (menu == Menues.BossLoot)
 		if (itemShowInfoFor == Boss.WispSisters)
 		{
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Your [Dashes] create The Last Wish.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"[Dashing] creates The Last Wish.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"If the player stands in the circle",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"range your [Damage Scaling] and ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"[Lifesteal] increase by 10%. If you ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -522,7 +520,7 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"enter T52 Slime Armor for 7 seconds. ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			var t52Text = "With the armor on you will summon [" + string(int64(1*conjureCalc)) + "] ";
 			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,t52Text,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"slime with every attack and ability.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"slime with every [Attack] and [Ability].",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"When inside the armor you will have",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,"20% higher max health but you move ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"20% slower.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -545,12 +543,12 @@ if (menu == Menues.BossLoot)
 		if (itemShowInfoFor == Boss.DeathKing)
 		{
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Your [Hero Power] teleports you to",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Your [Ability][1] teleports you to",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"where you are aiming within the ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			var deathKingText = "circle around you. You also gain [" + string(int64(hpCalc*0.02)) + "]% ";
 			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,deathKingText,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"[Lifesteal]. The amount of [Lifesteal]",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"is 2% of [Max Health].",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"gained is 2% of [Max Health].",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_set_font(fnt_menu_fill);
 			draw_text_transformed_color(infoTextX,350+6.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);

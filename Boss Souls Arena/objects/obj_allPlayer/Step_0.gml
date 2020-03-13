@@ -40,7 +40,7 @@ if (state == States.Idle || state == States.Walking)
 {
 image_angle = 0;
 #region Movement
-actualSpeed = (moveSpeed + gravelingSpeed)*bPSpeed*global.playerBossSlow*meteorStun*gravekeeperSpeed*shieldSpeed*agentSpeed*slayerSpeed*bfSpeed*t52Speed*gravelingAreaSpeed;
+actualSpeed = (moveSpeed + gravelingSpeed)*bPSpeed*global.playerBossSlow*meteorStun*gravekeeperSpeed*shieldSpeed*agentSpeed*slayerSpeed*bfSpeed*t52Speed*gravelingAreaSpeed*plagueSpeed;
 var actualSpeedBefore = actualSpeed;
 if (keyboard_check(ord("A")) && keyboard_check(ord("S")) || keyboard_check(ord("A")) && keyboard_check(ord("W")) ||  keyboard_check(ord("D")) && keyboard_check(ord("S")) || keyboard_check(ord("D")) && keyboard_check(ord("W")))
 {
@@ -347,6 +347,27 @@ if (mouse_x < x)
 				graveBolt.image_alpha = 1;
 				graveBolt.timeToDestroy = (0.25)*30;
 			}
+		}
+	}
+	#endregion
+	#region Plague Walker
+	if (class == Character.PlaugeWalker)
+	{
+		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false
+		|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
+		{
+			canLeftClick = false;
+			leftClickCooldownLeft = leftClickCooldown;
+			activateLeftClickItem = true;
+			
+			var leech = instance_create_depth(x,y,depth+1,obj_leech);
+			leech.speed = 5;
+			leech.direction = point_direction(x,y,mouse_x,mouse_y);
+			leech.image_angle = leech.direction-90;
+			//Visual
+			leech.image_xscale = 0.65 + conjurationPower/10;
+			leech.image_yscale = 0.65 + conjurationPower/10;
+			leech.destroyTime = (4)*30*conjurationPower;
 		}
 	}
 	#endregion
@@ -736,6 +757,27 @@ if (mouse_x < x)
 		}
 	}
 	#endregion
+	#region Plaguewalker
+	if (class == Character.PlaugeWalker)
+	{
+		if (mouse_check_button(mb_right) && canRightClick == true
+		|| keyboard_check(ord("2")) && canRightClick == true)
+		{
+			canRightClick = false;
+			rightClickCooldownLeft = rightClickCooldown;
+			activateRightClickItem = true;
+			
+			var separation = 30;
+			repeat(int64(5*conjurationPower))
+			{
+				var doodlings = instance_create_depth(x+irandom_range(-separation,separation),y+irandom_range(-separation,separation),depth+1,obj_plaguelings);
+				doodlings.speed = 3;
+				doodlings.direction = point_direction(x,y,mouse_x,mouse_y);
+				doodlings.destroyTime = 10*30;
+			}
+		}
+	}
+	#endregion
 	#region Items
 	if (activateRightClickItem == true)
 	{
@@ -1010,6 +1052,23 @@ if (mouse_x < x)
 		}
 	}
 	#endregion
+	#region Plaguewalker
+	if (class == Character.PlaugeWalker)
+	{
+		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
+		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
+		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false)
+		{
+			canUlt = false;
+			ultCooldownLeft = ultCooldown;
+			activateUltItem = true;
+			
+			var zamii = instance_create_depth(x,y,depth,obj_zamii);
+			zamii.image_xscale =  0.65 + 0.35*conjurationPower;
+			zamii.image_yscale = zamii.image_xscale;
+		}
+	}
+	#endregion
 	#region Items
 	#region Big Fucking Blast 9000
 	if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == true
@@ -1238,7 +1297,24 @@ if (mouse_x < x)
 		}
 	}
 	#endregion
-	
+	#region Plaguewalker
+	if (class == Character.PlaugeWalker)
+	{
+		if (keyboard_check(vk_space) && canDash == true && slayerSpeed == 1)
+		{
+			canDash = false;
+			dashCooldownLeft = dashCooldown;
+			activateDashItem = true;
+			dashStopLeft = dashStop;
+			actualDashSpeed = dashSpeed;
+			direction = point_direction(x,y,mouse_x,mouse_y);
+			
+			var plagueWisp = instance_create_depth(x,y,depth,obj_plagueWisp);
+			plagueWisp.image_xscale = 0.65;
+			plagueWisp.image_yscale = plagueWisp.image_xscale;
+		}
+	}
+	#endregion
 	#region Items
 	if (activateDashItem == true)
 	{

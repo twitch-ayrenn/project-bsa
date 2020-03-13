@@ -228,27 +228,20 @@ normalAlpha = 1;
 	if (class == Character.PlaugeWalker)
 	{
 		hp = 100;
-		leftClickCooldown = (3)*30; // 3
-		rightClickCooldown = (8)*30;// 6
-		dashCooldown = (8)*30;// 6
-		ultCooldown = (18)*30; // 12
-		idleSprite = spr_player_graveling;
-		walkSprite = spr_player_graveling;
+		leftClickCooldown = (2)*30; // 2
+		rightClickCooldown = (6)*30;// 6
+		dashCooldown = (12)*30;// 12
+		ultCooldown = (1)*30; // 18
+		idleSprite = spr_player_plagueWalker_idle;
+		walkSprite = spr_player_plagueWalker_walking;
 		deadSprite = spr_player_graveling_dead;
-		leftClickColor = global.darkYellow;
-		rightClickColor = global.darkYellow;
-		dashColor = global.darkYellow;
-		ultColor = c_yellow;
+		leftClickColor = c_green;
+		rightClickColor = c_green;
+		dashColor = c_green;
+		ultColor = c_lime;
 		//character specific
-		gravelingSpeed = 0;
-		gravlingMaxSpeed = 2;
-		gravelingStacks = 0;
-		gravelingAreaSpeed = 1;
-		actualGDashSpeed = 0;
-		GDashStop = (0.25)*30;
-		GDashStopLeft = 0;
-		instance_create_depth(x,y,depth,obj_gravelingRange);
-		dashDamage = false;
+		plagueSpeed = 1;
+		
 	}
 	#endregion
 #endregion

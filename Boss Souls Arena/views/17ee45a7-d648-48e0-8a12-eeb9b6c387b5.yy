@@ -5,10 +5,12 @@
     "name": "17ee45a7-d648-48e0-8a12-eeb9b6c387b5",
     "children": [
         "2a10860a-fbe6-4402-a077-7ce4662ec5b2",
-        "a37cd136-2ae0-45d4-b663-0961ae4fb91b",
-        "3c326d9c-1754-4ab4-9832-f9150fa98987",
-        "eee5e73b-0923-42c1-85da-baa46883a8a5",
-        "838fcdca-73be-4778-8adb-106a27df529a"
+        "817d8845-d54f-41a6-b418-b3ce95b7ca9f",
+        "3758dbc3-22ee-462c-b16d-bcc73673dd3b",
+        "a1894977-ac3d-44b3-a996-e9587ddc90f4",
+        "188ac05b-79ec-447c-a9ed-287e1222c0e6",
+        "2cbf6063-f10e-4b84-a40f-c21c8fa3a000",
+        "1637de7e-9c11-4a07-8e33-2a0c49d69405"
     ],
     "filterType": "GMObject",
     "folderName": "grp_plagueWalker",
