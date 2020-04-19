@@ -9,5 +9,6 @@ if (destroy == true && hp > 0)
 	alarm[1] = (1)*30;
 }
 if (hp <= 0){instance_destroy();}
+if (hp >= maxHp){hp = maxHp;}
 if (x <= mouse_x){image_xscale = 1;}
 if (x > mouse_x){image_xscale = -1;}

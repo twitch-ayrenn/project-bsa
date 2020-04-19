@@ -1,11 +1,16 @@
 /// @description Insert description here
 var target = global.player;
-image_alpha = obj_allBoss.image_alpha;
+
 dmg = clamp(global.bossDamage*(clamp((target.hp/target.maxHp),0.5,1)),1,0.8*(target.maxHp));
 if (instance_exists(obj_allBoss))
 {
 	x = obj_allBoss.x;
 	y = obj_allBoss.y;
+	image_alpha = obj_allBoss.image_alpha;
+}
+if (instance_exists(obj_allBoss) == false)
+{
+	instance_destroy();
 }
 if (state == MeleeWeaponStates.idle)
 {

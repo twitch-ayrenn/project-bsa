@@ -15,6 +15,9 @@ if (instance_exists(obj_allBoss))
 		{
 			nearestEnemy.hp += 20;
 		}
-		instance_destroy();
+		with (obj_healSlime)
+		{
+			instance_destroy();
+		}
 	}
 }

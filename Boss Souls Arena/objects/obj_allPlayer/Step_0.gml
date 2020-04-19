@@ -768,7 +768,7 @@ if (mouse_x < x)
 			activateRightClickItem = true;
 			
 			var separation = 30;
-			repeat(int64(5*conjurationPower))
+			repeat(int64(plaguelingAmount*conjurationPower))
 			{
 				var doodlings = instance_create_depth(x+irandom_range(-separation,separation),y+irandom_range(-separation,separation),depth+1,obj_plaguelings);
 				doodlings.speed = 3;

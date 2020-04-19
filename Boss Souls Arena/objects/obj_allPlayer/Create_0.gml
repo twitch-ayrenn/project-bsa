@@ -39,7 +39,7 @@ hp = 100;
 moveSpeed = 2;
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
-global.damage = 1;
+global.damage = 1*20;
 baseLifeSteal = 0.8;
 global.lifeSteal = baseLifeSteal;
 dashSpeed = 5;
@@ -225,22 +225,27 @@ normalAlpha = 1;
 	}
 	#endregion
 	#region PlaugeWalker
+	plagueSpeed = 1;
 	if (class == Character.PlaugeWalker)
 	{
 		hp = 100;
 		leftClickCooldown = (2)*30; // 2
 		rightClickCooldown = (6)*30;// 6
-		dashCooldown = (12)*30;// 12
-		ultCooldown = (1)*30; // 18
+		dashCooldown = (10)*30;// 12
+		ultCooldown = (18)*30; // 18
 		idleSprite = spr_player_plagueWalker_idle;
 		walkSprite = spr_player_plagueWalker_walking;
-		deadSprite = spr_player_graveling_dead;
+		deadSprite = spr_player_plagueWalker_dead;
 		leftClickColor = c_green;
 		rightClickColor = c_green;
 		dashColor = c_green;
 		ultColor = c_lime;
 		//character specific
-		plagueSpeed = 1;
+		plaguelingAmount = 4;
+		var plagueRange = instance_create_depth(mouse_y,mouse_x,depth,obj_plagueGround);
+		plagueRange.objectToFollow = id;
+		plagueRange.image_xscale *= 0.8 + 0.15 * (gameMaster.bonusConjur/100);
+		plagueRange.image_yscale = plagueRange.image_xscale;
 		
 	}
 	#endregion
@@ -359,7 +364,7 @@ if (global.itemSelected[Boss.DeathKnight] == true && global.itemSelected[Boss.De
 #region Angel Knight Oscar/ultra Rapid Fire Hourglass
 if (global.itemSelected[Boss.AngelKnightOscar] == true)
 {
-	global.damage *= 0.5;
+	global.damage *= 0.55;
 }
 #endregion
 #region Demon General Rektaar

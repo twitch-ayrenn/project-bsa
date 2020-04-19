@@ -128,6 +128,15 @@ if (instance_exists(obj_allBoss))
 			draw_sprite_ext(spr_bossLives,0,840+(45*4),875,3.5,3.5,0,c_dkgray,1);
 		}
 	}
+	if (B.phase == 6 && gameMaster.chosenBoss == Boss.ArenaKing)
+	{
+		draw_sprite_ext(spr_bossLives,0,840,875,3.5,3.5,0,c_red,1);
+		draw_sprite_ext(spr_bossLives,0,840+(45*1),875,3.5,3.5,0,c_dkgray,1);
+		draw_sprite_ext(spr_bossLives,0,840+(45*2),875,3.5,3.5,0,c_dkgray,1);
+		draw_sprite_ext(spr_bossLives,0,840+(45*3),875,3.5,3.5,0,c_dkgray,1);
+		draw_sprite_ext(spr_bossLives,0,840+(45*4),875,3.5,3.5,0,c_dkgray,1);
+		draw_sprite_ext(spr_bossLives,0,840+(45*5),875,3.5,3.5,0,c_dkgray,1);
+	}
 }
 #endregion
 #region specific bosses

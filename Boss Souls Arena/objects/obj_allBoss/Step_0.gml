@@ -1262,12 +1262,27 @@ if (hp <= 0 && phase == 4 && phase != maxPhase)
 	}
 	#endregion
 }
-if (hp <= 0 && phase == 5 && phase != maxPhase)
+if (hp <= 0 && phase == 5 && phase != maxPhase && gameMaster.chosenBoss != Boss.ArenaKing)
 {
 	phase++;
 	hp = phase6Hp;
 	moveSpeed = phase6Ms;
 	global.bossDamage = phase6Dmg;
+}
+if (hp <= 0 && phase == 5 && phase != maxPhase && gameMaster.chosenBoss == Boss.ArenaKing)
+{
+	if (instance_exists(par_bossStuff)){with(par_bossStuff){instance_destroy();}}
+	instance_destroy();
+	var chest = instance_create_depth(global.arenaMiddleX,-156,depth,obj_rewardChest);
+	chest.kingSuprise = true;
+	if (audio_is_playing(snd_music_victory) == false && global.musicOn == true)
+	{
+		audio_stop_sound(snd_music_victory);
+		audio_play_sound(snd_music_victory,10,true);
+		audio_sound_gain(snd_music_victory,0,0);
+		audio_sound_gain(snd_music_victory,global.musicVolume,(5)*1000);
+	}
+	gameMaster.menu = Menues.BossSlain;
 }
 if (hp <= 0 && phase == maxPhase)
 {

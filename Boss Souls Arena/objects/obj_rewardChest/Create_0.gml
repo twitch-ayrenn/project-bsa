@@ -15,3 +15,4 @@ upDownMax = 2;
 itemScale = 1;
 yUpFade = 0;
 alphaUpFade = 1;
+kingSuprise = false;

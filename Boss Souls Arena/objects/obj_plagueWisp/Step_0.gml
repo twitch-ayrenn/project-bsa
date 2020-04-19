@@ -31,3 +31,4 @@ if (hp <= 0)
 	instance_destroy();
 	instance_destroy(circleId);
 }
+if (hp >= maxHp){hp = maxHp;}

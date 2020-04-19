@@ -9,7 +9,7 @@ with (global.player)
 {
 	if(place_meeting(x,y,obj_plagueWispRange))
 	{
-		plagueSpeed = 1.2 + 0.1*(gameMaster.bonusConjur/100);
+		plagueSpeed = 1.25 + 0.1*(gameMaster.bonusConjur/100);
 	}
 	if !(place_meeting(x,y,obj_plagueWispRange))
 	{

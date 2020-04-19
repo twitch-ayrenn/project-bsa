@@ -714,8 +714,8 @@ if (attack == Atks.GooSpawn)
 		{
 			if (sprite_index == spr_gooGround)
 			{
-				image_xscale += 0.15;
-				image_yscale += 0.15;
+				image_xscale += 0.125;
+				image_yscale += 0.125;
 			}
 		}
 	}

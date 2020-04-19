@@ -15,6 +15,7 @@ if (destroy == true && hp > 0)
 	alarm[1] = (1)*30;
 }
 if (hp <= 0){instance_destroy();}
+if (hp >= maxHp){hp = maxHp;}
 //
 if (instance_exists(obj_allBoss) == true)
 {

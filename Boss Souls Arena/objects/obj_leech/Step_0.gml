@@ -39,6 +39,7 @@ if (foundTarget == true)
 	if (target == "boss" && instance_exists(obj_allBoss))
 	{
 		depth = obj_allBoss.depth-5;
+		image_alpha = obj_allBoss.image_alpha; 
 		x = obj_allBoss.x + distanceToBossX*0.30;
 		y = obj_allBoss.y + distanceToBossY*0.30;
 		if (dealDamage == true)

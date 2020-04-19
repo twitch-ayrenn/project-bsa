@@ -315,7 +315,7 @@ isHit = false;
 			tauntSprite = spr_boss_knightWitch_taunt;
 			coneSprite = spr_boss_knightWitch_cone;
 			//boss specifc
-			knightWitchGooSize = 0.9;
+			knightWitchGooSize = 0.85;
 		}
 		#endregion
 		#region AngelKnight
@@ -697,11 +697,11 @@ isHit = false;
 	{
 		//stats
 		phase1Hp = tier6Hp*0.15; phase1Ms = 1; phase1Dmg = 20;
-		phase2Hp = tier6Hp*0.15; phase2Ms = 1.25; phase2Dmg = 22.5;
-		phase3Hp = tier6Hp*0.15; phase3Ms = 1.5; phase3Dmg = 25;
-		phase4Hp = tier6Hp*0.15; phase4Ms = 1.75; phase4Dmg = 27.5;
-		phase5Hp = tier6Hp*0.15; phase5Ms = 2; phase5Dmg = 30;
-		phase6Hp = tier6Hp*0.25; phase6Ms = 2.25; phase6Dmg = 32.5;
+		phase2Hp = tier6Hp*0.15; phase2Ms = 1.2; phase2Dmg = 22.5;
+		phase3Hp = tier6Hp*0.15; phase3Ms = 1.4; phase3Dmg = 25;
+		phase4Hp = tier6Hp*0.15; phase4Ms = 1.6; phase4Dmg = 27.5;
+		phase5Hp = tier6Hp*0.15; phase5Ms = 1.8; phase5Dmg = 30;
+		phase6Hp = tier6Hp*0.25; phase6Ms = 2; phase6Dmg = 32.5;
 		hp = phase1Hp;
 		global.bossDamage = phase1Dmg;
 		moveSpeed = phase1Ms;
