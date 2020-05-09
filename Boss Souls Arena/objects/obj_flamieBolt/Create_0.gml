@@ -4,4 +4,5 @@ destroy = true;
 timeToDestroy = (4)*30;
 grow = false;
 split = false;
+image_blend = global.orange;
 //sound

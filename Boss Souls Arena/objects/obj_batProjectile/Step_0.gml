@@ -24,6 +24,7 @@ if (instance_exists(obj_allBoss))
 	if (place_meeting(x,y,enemy))
 	{
 		var damageDealt = 1;
+		if (sprite_index == spr_batprojectile_long){damageDealt = 3;}
 		var damageText = instance_create_depth(enemy.x+irandom_range(-8,8),enemy.y+irandom_range(-5,5),enemy.depth-10,obj_textMaker);
 		damageText.color = c_white;
 		damageText.text = damageDealt;

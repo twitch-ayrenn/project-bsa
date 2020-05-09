@@ -1,7 +1,18 @@
 	/// @description Insert description here
 image_alpha = 0.8;
 depth = -y;
-if (isMeteor == true) {depth = -2000;}
+if (isMeteor == true) 
+{
+	depth = -2000;
+	var meteorTrail = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
+	meteorTrail.fadeSpeed = 0.11;
+	meteorTrail.sprite_index = sprite_index;
+	meteorTrail.image_xscale = image_xscale;
+	meteorTrail.image_yscale = image_yscale;
+	meteorTrail.image_angle = image_angle;
+	meteorTrail.image_blend = image_blend;
+	meteorTrail.image_alpha = image_alpha;
+}
 if (destroy == true)
 {
 	destroy = false;
@@ -32,7 +43,7 @@ if (place_meeting(x,y,enemy))
 	{
 		instance_create_depth(x,y,depth,obj_meteorGround);
 	}
-	if (image_xscale >= 2.5){with(obj_camera){shake_remain += 7*image_xscale;}}
+	if (image_xscale >= 1.25){with(obj_camera){shake_remain += 14*image_xscale;}}
 	instance_destroy();
 }
 if (isMeteor == true)

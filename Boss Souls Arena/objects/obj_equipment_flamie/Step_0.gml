@@ -13,8 +13,8 @@ if (distance_to_object(global.player) <= 15 && instance_exists(par_enemy))
 		dagger.direction = point_direction(x,y,target.x,target.y);
 		dagger.speed = 5;
 		dagger.image_angle = dagger.direction+90;
-		dagger.image_xscale = 2.5;
-		dagger.image_yscale = 2.5;
+		dagger.image_xscale = 1.25;
+		dagger.image_yscale = 1.25;
 		dagger.image_alpha = 0.75;
 	var indicator = instance_nearest(x,y,obj_indicator);
 	instance_destroy(indicator);

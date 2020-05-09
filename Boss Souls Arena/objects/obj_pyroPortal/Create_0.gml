@@ -4,6 +4,7 @@ portalLength = (4)*30*(1 + (gameMaster.bonusConjur/100));
 destroyStacks = portalLength;
 canAttack = true;
 size = 0.75*(1 + (gameMaster.bonusConjur/200));
+
 image_xscale = size;
 image_yscale = size;
 //sound

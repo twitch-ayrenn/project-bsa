@@ -32,5 +32,8 @@ if (target == "allied" && instance_exists(targetId))
 		healText.color = c_lime;
 		healText.text = amountHealed/10;
 		hp += amountHealed;
+		
+		var particle = instance_create_depth(x,y,depth+1,obj_particle_healing_small);
+		particle.objectToFollow = id;
 	}
 }

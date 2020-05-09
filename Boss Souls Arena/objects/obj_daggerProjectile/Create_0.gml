@@ -3,3 +3,4 @@
 destroy = true;
 stacks = 0;
 destroyTime = (0.45)*30;
+//particles

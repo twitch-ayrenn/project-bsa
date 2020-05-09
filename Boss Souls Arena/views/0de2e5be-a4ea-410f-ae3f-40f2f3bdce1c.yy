@@ -7,11 +7,14 @@
         "543d030d-67d8-4b77-99c6-ec28fc6bf58b",
         "83f12a14-59a5-42c4-89b3-d11ed517a401",
         "054d8d6b-9b9e-439c-8240-e8279e63ff20",
+        "318e7149-8b3f-4026-8e51-b77eebf80368",
         "b43cde35-b5af-4b5d-afd7-b3bcf042c0cd",
+        "b386c69a-3491-4c4b-b84f-5b3e9cfa81a5",
         "c79102e3-921d-4117-939e-190199b951bc",
         "23937dc8-4634-41ee-bd53-c492c1b8f84d",
         "766c3b1f-309e-4263-8c4d-2ae58eeb0b7e",
-        "24a4d625-b74d-42cf-a40d-154f76b13f99"
+        "24a4d625-b74d-42cf-a40d-154f76b13f99",
+        "7991ab81-6459-48fa-94af-0d84dde97b54"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_doodleWithPants",

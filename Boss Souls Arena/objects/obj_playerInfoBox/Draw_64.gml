@@ -3,39 +3,6 @@
 draw_text_transformed_color(75,215,"Info:",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 draw_text_transformed_color(105,415,"Abilites",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 draw_text_transformed_color(340,255,"Stats",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
-#region The Red Warrior
-if (playerShowInfoFor == Character.TheRedWarrior)
-{
-	//description
-	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(65,450,		  "Locked for Alpha Build",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*1,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*2,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*3,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*4,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*5,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*6,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*7,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450 +17.5*8,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*9,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*11,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*12,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*13,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*14,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*15,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*16,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	
-	//name
-	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(163,216,"The Red Warrior",0.38,0.38,0,c_gray,c_gray,c_red,c_red,1);
-	//stats
-	draw_text_transformed_color(295,320-15-5,"Sustain: ",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
-	draw_text_transformed_color(295,340-15+15-5,"Damage: ",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
-	draw_text_transformed_color(295,360-15+30-5,"Mobility: ",0.275,0.275,0,c_aqua,c_aqua,c_blue,c_blue,1);
-	draw_text_transformed_color(295,380-15+45-5,"Cooldowns: ",0.275,0.275,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-}
-#endregion
 #region The Pyromancer
 if (playerShowInfoFor == Character.Pyromancer)
 {
@@ -48,20 +15,20 @@ if (playerShowInfoFor == Character.Pyromancer)
 	draw_text_transformed_color(65,450+17.5*4,"charge for up to 2.5 seconds. Charging",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*5,"the fireball increases size and damage.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*6,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*7,"[Ability][1]: Shoot waves of fireballs",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*7,"[Ability][1]: Breathe waves of fireballs",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450 +17.5*8,"in a cone. Cone amoumt increases with",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*9,"damage stat.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*11,"[Ability][2]: Dash a long distance.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*12,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*13,"[Ultimate]: Become a big meteor that falls",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*14,"from the sky. Deal damage enemies hit.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*15,"The meteor leaves a fiery ground.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*14,"from the sky. Deal damage to enemies hit by",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*15,"the meteor or the fiery ground it leaves.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*16,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	//name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(163,216,"Pyromancer Nina",0.38,0.38,0,global.orange,global.orange,c_orange,c_orange,1);
+	draw_text_transformed_color(163,216,"Flamie The Pyromancer",0.38,0.38,0,global.orange,global.orange,c_orange,c_orange,1);
 	//stats
 	draw_text_transformed_color(295,320-15-5,"Sustain: Low",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
 	draw_text_transformed_color(295,340-15+15-5,"Damage: High",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
@@ -94,7 +61,7 @@ if (playerShowInfoFor == Character.ShadowAssassin)
 	
 	//name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(163,216,"Shadow Assassin Rhy",0.38,0.38,0,c_fuchsia,c_fuchsia,c_purple,c_purple,0.85);
+	draw_text_transformed_color(163,216,"Assy The Shadow Assassin",0.32,0.32,0,c_fuchsia,c_fuchsia,c_purple,c_purple,0.85);
 	//stats
 	draw_text_transformed_color(295,320-15-5,"Sustain: Medium",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
 	draw_text_transformed_color(295,340-15+15-5,"Damage: Medium",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
@@ -108,7 +75,7 @@ if (playerShowInfoFor == Character.BloodKnight)
 {
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(65,450,		  "[Passive]: Your armor doubles max health.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450,		  "[Passive]: Double health points.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*1,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*2,"[Attack]: Summon bats that kill your",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*3,"enemies.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
@@ -117,7 +84,7 @@ if (playerShowInfoFor == Character.BloodKnight)
 	draw_text_transformed_color(65,450+17.5*6,"enemies in your way. You do not take",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*7,"damage when touching an enemy.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450 +17.5*8,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*9,"Ability][2]: Dash and summon 3 bats.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*9,"Ability][2]: Dash and summon a giant bat.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*11,"[Ultimate]: Shoot an uncontrollable blood ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*12,"beam towards a direction. It deals massive",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
@@ -128,7 +95,7 @@ if (playerShowInfoFor == Character.BloodKnight)
 	
 	//name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(163,216,"Bloodknight David",0.38,0.38,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(163,216,"Reeia The Bloodknight",0.38,0.38,0,c_red,c_red,c_maroon,c_maroon,1);
 	//stats
 	draw_text_transformed_color(295,320-15-5,"Sustain: Low",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
 	draw_text_transformed_color(295,340-15+15-5,"Damage: Medium",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
@@ -161,7 +128,7 @@ if (playerShowInfoFor == Character.PlaugeWalker)
 	
 	//name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(163,216,"The Plaugewalker",0.38,0.38,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(163,216,"Plaigi The Plaugewalker",0.35,0.35,0,c_lime,c_lime,c_green,c_green,1);
 	//stats
 	draw_text_transformed_color(295,320-15-5,"Sustain: Low",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
 	draw_text_transformed_color(295,340-15+15-5,"Damage: Very High",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
@@ -194,7 +161,7 @@ if (playerShowInfoFor == Character.AgentOfGod)
 	
 	//name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(163,216,"The Agent of God",0.38,0.38,0,c_aqua,c_aqua,c_silver,c_silver,1);
+	draw_text_transformed_color(163,216,"Tyra The Agent of God",0.35,0.35,0,c_aqua,c_aqua,c_silver,c_silver,1);
 	//stats
 	draw_text_transformed_color(295,320-15-5,"Sustain: Low",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
 	draw_text_transformed_color(295,340-15+15-5,"Damage: High",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
@@ -227,7 +194,7 @@ if (playerShowInfoFor == Character.Graveling)
 	
 	//name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(163,216,"The Graveling",0.38,0.38,0,c_gray,c_gray,c_dkgray,c_black,1);
+	draw_text_transformed_color(163,216,"Deady The Graveling",0.38,0.38,0,c_gray,c_gray,c_dkgray,c_black,1);
 	//stats
 	draw_text_transformed_color(295,320-15-5,"Sustain: Medium",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
 	draw_text_transformed_color(295,340-15+15-5,"Damage: Medium",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);
@@ -249,7 +216,7 @@ if (playerShowInfoFor == Character.AngelSlayer)
 	draw_text_transformed_color(65,450+17.5*6,"scythe in a circle.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*7,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450 +17.5*8,"[Ability][1]: Dash Back and summon",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(65,450+17.5*9,"demons.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(65,450+17.5*9,"a charging demon that deals damage.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*10,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*11,"[Ability][2]: Dash a long distance.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(65,450+17.5*12,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
@@ -260,7 +227,7 @@ if (playerShowInfoFor == Character.AngelSlayer)
 	
 	//name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(163,216,"The Angel Slayer",0.38,0.38,0,c_red,c_red,c_black,c_black,1);
+	draw_text_transformed_color(163,216,"Killy The Angel Slayer",0.38,0.38,0,c_red,c_red,c_black,c_black,1);
 	//stats
 	draw_text_transformed_color(295,320-15-5,"Sustain: Low",0.275,0.275,0,c_lime,c_lime,c_green,c_green,1);
 	draw_text_transformed_color(295,340-15+15-5,"Damage: High",0.275,0.275,0,c_red,c_red,c_maroon,c_maroon,1);

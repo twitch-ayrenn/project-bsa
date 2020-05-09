@@ -5,10 +5,10 @@ if (instance_exists(followEyeObject))
 {
 	if (x < followEyeObject.x)
 	{
-		image_xscale = 1;
+		image_xscale = size;
 	}
 	if (x >= followEyeObject.x)
 	{
-		image_xscale = -1;	
+		image_xscale = -size;	
 	}
 }

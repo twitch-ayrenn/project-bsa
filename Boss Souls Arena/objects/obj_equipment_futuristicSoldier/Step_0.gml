@@ -42,6 +42,10 @@ if (shoot == true)
 	{
 		dagger.image_blend = c_aqua;
 	}
+	if (soldierType == 3)
+	{
+		dagger.image_blend = c_silver;
+	}
 	
 	alarm[0] = global.fSFireRate;
 }

@@ -217,7 +217,7 @@ if (mouse_x < x)
 				infernalBall.speed = 4 + charge/35;
 				infernalBall.direction = point_direction(x,y,mouse_x,mouse_y);
 				infernalBall.image_angle = infernalBall.direction+90;
-				infernalBall.image_xscale = 0.5 + charge/25;
+				infernalBall.image_xscale = 0.25 + charge/50;
 				infernalBall.image_yscale = infernalBall.image_xscale;
 				infernalBall.charge = 1 + ((charge/2.5)-1);
 			
@@ -265,13 +265,13 @@ if (mouse_x < x)
 			leftClickCooldownLeft = leftClickCooldown;
 			activateLeftClickItem = true;
 			
-			var swapBolt = instance_create_depth(x,y,depth+1,obj_swapBolt);
-			swapBolt.speed = 5;
-			swapBolt.direction = point_direction(x,y,mouse_x,mouse_y);
-			swapBolt.image_angle = swapBolt.direction+90;
+			var bigBolt = instance_create_depth(x,y,depth+1,obj_holyFireBolt);
+			bigBolt.speed = 5;
+			bigBolt.direction = point_direction(x,y,mouse_x,mouse_y);
+			bigBolt.image_angle = bigBolt.direction+90;
 			//Visual
-			swapBolt.image_xscale = 2;
-			swapBolt.image_yscale = 2;
+			bigBolt.image_xscale = 0.20 + global.damage/1.75;
+			bigBolt.image_yscale = bigBolt.image_xscale;
 		}
 	}
 	#endregion
@@ -342,7 +342,7 @@ if (mouse_x < x)
 				graveBolt.speed = actualSpeedBefore*3;
 				graveBolt.image_angle = graveBolt.direction+90;
 				// Visual
-				graveBolt.image_xscale = 0.75;
+				graveBolt.image_xscale = 0.55;
 				graveBolt.image_yscale = graveBolt.image_xscale;
 				graveBolt.image_alpha = 1;
 				graveBolt.timeToDestroy = (0.25)*30;
@@ -365,8 +365,8 @@ if (mouse_x < x)
 			leech.direction = point_direction(x,y,mouse_x,mouse_y);
 			leech.image_angle = leech.direction-90;
 			//Visual
-			leech.image_xscale = 0.65 + conjurationPower/10;
-			leech.image_yscale = 0.65 + conjurationPower/10;
+			leech.image_xscale = 0.45 + conjurationPower/10;
+			leech.image_yscale = 0.45 + conjurationPower/10;
 			leech.destroyTime = (4)*30*conjurationPower;
 		}
 	}
@@ -532,9 +532,11 @@ if (mouse_x < x)
 			canLeftClick = true;
 			leftClickCooldownLeft = 0;
 			var shadow = instance_create_depth(mouse_x,mouse_y,-mouse_y,obj_shadow);
-			shadow.image_alpha = 1-0.2;
+			shadow.image_alpha = 0.7;
 			shadow.image_xscale = image_xscale;
 			shadow.image_yscale = image_yscale;
+			shadow.image_blend = c_ltgray;
+			
 			var shadowRange = instance_create_depth(mouse_y,mouse_x,depth,obj_shadowAttackRange);
 			shadowRange.objectToFollow = shadow.id;
 			shadowRange.image_xscale *= 1+(gameMaster.bonusDash/100);
@@ -567,8 +569,8 @@ if (mouse_x < x)
 				fireBolt.image_angle = fireBolt.direction+90;
 				//Visual
 				fireBolt.image_alpha = 0.85;
-				fireBolt.image_xscale = 1.75;
-				fireBolt.image_yscale = 1.75;
+				fireBolt.image_xscale = 0.9;
+				fireBolt.image_yscale = 0.9;
 				fireBolt.effectType = Effect.Flare;
 				fireBolt.charge = 1;
 				coneAtkFW += (coneWide/coneAmount);
@@ -598,8 +600,8 @@ if (mouse_x < x)
 				fireBolt.image_angle = fireBolt.direction+90;
 				//Visual
 				fireBolt.image_alpha = 0.85;
-				fireBolt.image_xscale = 1.75;
-				fireBolt.image_yscale = 1.75;
+				fireBolt.image_xscale = 0.9;
+				fireBolt.image_yscale = 0.9;
 				fireBolt.effectType = Effect.Flare;
 				fireBolt.charge = 1;
 				coneAtkFW += (coneWide/coneAmount);
@@ -620,7 +622,7 @@ if (mouse_x < x)
 			instance_create_depth(x,y,depth-1,obj_bloodKnightDash);
 			
 			BKDashStopLeft = BKDashStop;
-			actualBKDashSpeed = dashSpeed*2;
+			actualBKDashSpeed = dashSpeed;
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			#region DemonHorn
 			if (global.itemSelected[Boss.FlameGate] == true)
@@ -654,7 +656,7 @@ if (mouse_x < x)
 		if (BKDashStopLeft > 0){BKDashStopLeft--;}
 		if (BKDashStopLeft <= 0)
 		{
-			actualBKDashSpeed -= dashSpeed*2; 
+			actualBKDashSpeed -= dashSpeed; 
 			instance_destroy(obj_bloodKnightDash);
 		}
 	}
@@ -723,18 +725,9 @@ if (mouse_x < x)
 			shotOnce = false
 			actualASDashSpeed -= slayerDashSpeed;
 			
-			var demonSpeed = 0;
-			var demonAmount = int64(4*conjurationPower);
-			repeat(demonAmount)
-			{
-				var demon = instance_create_depth(x,y,depth+1,obj_demons);
-				demon.speed = demonAmount + 3 - demonSpeed;
-				demon.direction = point_direction(x,y,mouse_x,mouse_y);
-				//Visual
-				demon.image_xscale = image_xscale;
-				demon.image_yscale = abs(demon.image_xscale);
-				demonSpeed -= 1;
-			}
+			var demon = instance_create_depth(x,y,depth+1,obj_demons);
+			demon.speed = 6;
+			demon.direction = point_direction(x,y,mouse_x,mouse_y);
 		}
 	}
 	#endregion
@@ -754,6 +747,9 @@ if (mouse_x < x)
 			healText.color = c_lime;
 			healText.text = amountHealed/10;
 			hp = clamp(hp + actualSpeedBefore*10.5,0,maxHp);
+			
+			var particle = instance_create_depth(x,y,depth+1,obj_particle_healing_small);
+			particle.objectToFollow = id;
 		}
 	}
 	#endregion
@@ -844,6 +840,9 @@ if (mouse_x < x)
 			canDash = true;
 			dashCooldownLeft = 0;
 			
+			var particle = instance_create_depth(x,y,depth+1,obj_particle_healing_small);
+			particle.objectToFollow = id;
+			
 			var amountHealed = maxHp-hp;
 			var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
 			healText.color = c_lime;
@@ -873,7 +872,7 @@ if (mouse_x < x)
 			meteor.image_angle = meteor.direction+90;
 			meteor.image_alpha = 0.75;
 			meteor.speed = 6;
-			meteor.image_xscale = 5;
+			meteor.image_xscale = 2.5;
 			meteor.image_yscale = meteor.image_xscale;
 			meteor.charge = 15;
 			meteor.isMeteor = true;
@@ -940,21 +939,22 @@ if (mouse_x < x)
 			machineGunTimes += 20;
 		}
 		if (machineGunTimes > 0){machineGunStacks++;}
-		if (machineGunStacks >= (0.25)*30)
+		if (machineGunStacks >= (0.125)*30)
 		{
 			machineGunStacks = 0;
 			machineGunTimes--;
 			
-			repeat (30)
+			repeat (30)//30
 			{
 				var bolt = instance_create_depth(x+irandom_range(-1,1),y+irandom_range(-1,1),depth+1,obj_barageBolts);
-				bolt.speed = random_range(1,6);
-				var accuracy = 35;
+				//bolt.speed = random_range(1,7);
+				bolt.speed = random_range(1,5);
+				var accuracy = 30;
 				bolt.direction = point_direction(x,y,mouse_x+irandom_range(-accuracy,accuracy),mouse_y+irandom_range(-accuracy,accuracy));
 				bolt.image_angle = bolt.direction+90;
 				//Visual
-				bolt.image_blend = choose(c_aqua,c_white,c_teal);
-				bolt.image_xscale = 0.75;
+				//bolt.image_blend = choose(c_aqua,c_white,c_teal);
+				bolt.image_xscale = 0.45;
 				bolt.image_yscale = bolt.image_xscale;
 			}
 		}
@@ -1200,6 +1200,14 @@ if (mouse_x < x)
 				dealDamage = true;
 			}
 		}
+		if (speed > 0)
+		{
+			var shadowTrail = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
+			shadowTrail.fadeSpeed = 0.2;
+			shadowTrail.sprite_index = idleSprite;
+			shadowTrail.image_xscale = image_xscale;
+			shadowTrail.image_yscale = image_yscale;
+		}
 	}
 	#endregion
 	#region Pyromancer
@@ -1218,6 +1226,18 @@ if (mouse_x < x)
 			instance_create_depth(x,y,-y,obj_pyroPortal);
 			instance_create_depth(x,y,-y,obj_portal_bottom);
 		}
+		if (speed > 0)
+		{
+			var poisonTrail = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
+			poisonTrail.fadeSpeed = 0.25;
+			poisonTrail.sprite_index = spr_firebolt_big;
+			poisonTrail.image_xscale = 0.65;
+			poisonTrail.image_yscale = 0.65;
+			poisonTrail.image_angle = direction+90;
+			poisonTrail.image_blend = global.orange;
+			poisonTrail.image_alpha = 0.75;	
+			poisonTrail.objectToInheritFrom = id;
+		}
 	}
 	#endregion
 	#region Bloodknight
@@ -1232,14 +1252,25 @@ if (mouse_x < x)
 			actualDashSpeed = dashSpeed;
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			
-			repeat(int64(3*conjurationPower))
+			repeat(int64(1*conjurationPower))
 			{
 				var batShot = instance_create_depth(x+irandom_range(-25,25),y+irandom_range(-25,25),depth+1,obj_batProjectile);
 				batShot.speed = 6;
 				batShot.sprite_index = spr_batprojectile_long;
 				batShot.direction = point_direction(x,y,mouse_x,mouse_y);
-				batShot.destroyTime = 1*30;
+				batShot.destroyTime = 3*30;
+				batShot.image_xscale = 1.25;
+				batShot.image_yscale = batShot.image_xscale;
 			}
+		}
+		if (speed > 0)
+		{
+			var bloodTrail = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
+			bloodTrail.fadeSpeed = 0.25;
+			bloodTrail.sprite_index = spr_bloodBeamEffect;
+			bloodTrail.image_xscale = image_xscale*0.65;
+			bloodTrail.image_yscale = bloodTrail.image_xscale;
+			bloodTrail.objectToInheritFrom = id;
 		}
 	}
 	#endregion
@@ -1255,13 +1286,22 @@ if (mouse_x < x)
 			actualDashSpeed = dashSpeed*1.5;
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			
-			var holyBolt = instance_create_depth(x,y,depth+1,obj_holyBolt);
+			var holyBolt = instance_create_depth(x,y,depth+1,obj_holyBlast);
 			holyBolt.speed = dashSpeed*2.25;
 			holyBolt.direction = direction;
 			holyBolt.image_angle = holyBolt.direction+90;
 			//Visual
-			holyBolt.image_xscale = 2.5;
-			holyBolt.image_yscale = 2.5;
+			holyBolt.image_xscale = 0.5 + global.damage/1.75;
+			holyBolt.image_yscale = holyBolt.image_xscale
+		}
+		if (speed > 0)
+		{
+			var holyTrail = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
+			holyTrail.fadeSpeed = 0.1;
+			holyTrail.sprite_index = idleSprite;
+			holyTrail.image_xscale = image_xscale;
+			holyTrail.image_yscale = image_yscale;
+			holyTrail.image_alpha = 0.5;
 		}
 	}
 	#endregion
@@ -1280,6 +1320,30 @@ if (mouse_x < x)
 			canLeftClick = true;
 			leftClickCooldownLeft = 0;
 		}
+		if (speed == 0)
+		{
+			var demonShade = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
+			demonShade.fadeSpeed = 0.20;//0.15
+			demonShade.sprite_index = sprite_index;
+			demonShade.image_xscale = image_xscale;
+			demonShade.image_yscale = image_yscale;
+			demonShade.image_angle = image_angle;
+			demonShade.image_alpha = image_alpha;
+			demonShade.image_speed = image_speed;
+			demonShade.image_alpha = 0.5;
+		}
+		if (speed > 0)
+		{
+			var demonShade = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
+			demonShade.fadeSpeed = 0.1;//0.05
+			demonShade.sprite_index = spr_particle_demonTrail;
+			demonShade.image_xscale = image_xscale;
+			demonShade.image_yscale = image_yscale;
+			demonShade.image_angle = image_angle;
+			demonShade.image_alpha = image_alpha;
+			demonShade.image_speed = image_speed;
+			demonShade.image_alpha = 1;
+		}
 	}
 	#endregion
 	#region Graveling
@@ -1294,6 +1358,19 @@ if (mouse_x < x)
 			gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);
 			var deadGround = instance_create_depth(x,y,depth,obj_deadGround);
 			deadGround.destroyTimer = (2 + actualSpeedBefore)*30;
+		}
+		if (speed > 0)
+		{
+			var demonShade = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
+			demonShade.fadeSpeed = 0.2;//0.05
+			demonShade.sprite_index = spr_bat;
+			demonShade.image_xscale = image_xscale;
+			demonShade.image_yscale = image_yscale;
+			demonShade.image_angle = image_angle;
+			demonShade.image_alpha = image_alpha;
+			demonShade.image_speed = image_speed;
+			demonShade.image_blend = c_dkgray;
+			demonShade.image_alpha = 0.9;
 		}
 	}
 	#endregion
@@ -1310,8 +1387,20 @@ if (mouse_x < x)
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			
 			var plagueWisp = instance_create_depth(x,y,depth,obj_plagueWisp);
-			plagueWisp.image_xscale = 0.65;
+			plagueWisp.image_xscale = 0.75;
 			plagueWisp.image_yscale = plagueWisp.image_xscale;
+		}
+		if (speed > 0)
+		{
+			var poisonTrail = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
+			poisonTrail.fadeSpeed = 0.075;
+			poisonTrail.sprite_index = spr_firebolt_big;
+			poisonTrail.image_xscale = image_xscale;
+			poisonTrail.image_yscale = image_yscale;
+			poisonTrail.image_angle = direction+90;
+			poisonTrail.image_blend = c_lime;
+			poisonTrail.image_alpha = 0.75;	
+			poisonTrail.objectToInheritFrom = id;
 		}
 	}
 	#endregion
@@ -1382,11 +1471,14 @@ if (mouse_x < x)
 	if (edgeOfCorruptionCharge >= edgeOfCorruptionChargeTime)
 	{
 		instance_create_depth(x,y,depth+1,obj_bloodBeamEffect);
-		var bloodBeam = instance_create_depth(x,y,depth+2,obj_equipment_corruptionBeam);
-		bloodBeam.image_angle = point_direction(x,y,mouse_x,mouse_y)+270;
-		bloodBeam.image_yscale = 20;
-		bloodBeam.image_xscale = 1.8;
-		bloodBeam.image_blend = c_fuchsia;
+		var corruptionBeam = instance_create_depth(x,y,depth+2,obj_equipment_corruptionBeam);
+		corruptionBeam.image_angle = point_direction(x,y,mouse_x,mouse_y)+270;
+		corruptionBeam.image_yscale = 20;
+		corruptionBeam.image_xscale = 1.8;
+		corruptionBeam.image_blend = c_fuchsia;
+		
+		var corruptionAura = instance_create_depth(x,y,depth,obj_coruptionBeamEffect);
+		
 		with(obj_camera){shake_remain += 5;}
 		edgeOfCorruptionCharge = 0;
 	} 

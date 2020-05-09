@@ -39,7 +39,7 @@ hp = 100;
 moveSpeed = 2;
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
-global.damage = 1*20;
+global.damage = 1*1;
 baseLifeSteal = 0.8;
 global.lifeSteal = baseLifeSteal;
 dashSpeed = 5;
@@ -135,7 +135,7 @@ normalAlpha = 1;
 		//character specific
 		batAmount = 1;
 		actualBKDashSpeed = 0;
-		BKDashStop = (0.25)*30;
+		BKDashStop = (0.65)*30;
 		BKDashStopLeft = 0;
 	}
 	#endregion
@@ -146,7 +146,7 @@ normalAlpha = 1;
 		leftClickCooldown = (9)*30;
 		rightClickCooldown = (9)*30;
 		dashCooldown = (9)*30;
-		ultCooldown = (12)*30;
+		ultCooldown = (12)*30;//12
 		idleSprite = spr_player_agentOfGod_idle;
 		walkSprite = spr_player_agentOfGod_walking;
 		deadSprite = spr_player_agentOfGod_dead;

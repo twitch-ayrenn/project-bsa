@@ -4,7 +4,7 @@
 //dont use Save.dat, always use a new verisor//Save.dat.full0.3
 //global.saveFile = "Save.alpha.0.65"; gaygang release
 menu = 0;
-global.saveFile = "Save.alpha.0.62";
+global.saveFile = "Save.alpha.0.64";
 //if (file_exists(global.saveFile) == true)
 //{
 //	game_load(global.saveFile);
@@ -15,17 +15,18 @@ global.saveFile = "Save.alpha.0.62";
 //}
 enum Menues
 {
-	Main,
-	PlayerSelect,
-	BossLoot,
-	Settings,
-	BossSelect,
-	Play,
-	Death,
-	BossSlain,
-	BossFailed,
+	BeforeGame = 0,
+	Main = 1,
+	PlayerSelect = 2,
+	BossLoot = 3,
+	Settings = 4,
+	BossSelect = 5,
+	Play = 6,
+	Death = 7,
+	BossSlain = 8,
+	BossFailed = 9,
 }
-menu = Menues.Main;
+//menu = Menues.Main;
 enum Depths
 {
 	M_FightCards,
@@ -153,8 +154,8 @@ statsSize = 1;
 settingsColor = global.darkYellow;
 settingsSize = 1;
 //settings
-global.musicOn = true;
-global.musicVolume = 0.35;
+global.musicOn = false;
+global.musicVolume = 1;
 global.soundOn = true;
 global.ambientOn = true;
 global.ShowInfo = false;
@@ -204,6 +205,12 @@ quePlayerTutorial = false;
 tutorialFadeOut = false;
 checkOnce = true;
 outline_init();
+//Particles
+enum Particles
+{
+	Healing_Small,
+	
+}
 ////Character progression and select
 //Progress // for a boss its its number -1
 assassinProgress = 1;

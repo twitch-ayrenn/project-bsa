@@ -1,5 +1,4 @@
 /// @description Insert description here
-// You can write your code in this editor
 depth = -y;
 stacks++;
 if (stacks >= destroyTime)
@@ -28,3 +27,4 @@ if (place_meeting(x,y,enemy))
 	}
 	instance_destroy();
 }
+

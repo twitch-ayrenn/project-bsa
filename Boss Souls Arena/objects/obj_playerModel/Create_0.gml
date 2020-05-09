@@ -2,4 +2,4 @@
 // You can write your code in this editor
 outline_init();
 visible = true;	
-size = 1.5;
+size = 1.15;

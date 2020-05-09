@@ -8,10 +8,6 @@ if (room == rm_beforeGame)
 		audio_play_sound(snd_startgame,Prioity.VeryHigh,true);
 	}
 }
-if (menu == Menues.PlayerSelect)
-{
-	
-}
 //game spawn
 if (menu == Menues.Play && room == rm_arena)
 {
@@ -66,9 +62,6 @@ if (menu == Menues.Main)
 {
 	chosenBoss = Boss.NoBoss;
 }
-//optemisation
-
-//stats
 //balance
 if (global.dD > 1.32){global.dD = 1.32;}
 if (global.dD < 0.68){global.dD = 0.68;}

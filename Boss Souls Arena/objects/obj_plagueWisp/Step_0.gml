@@ -1,5 +1,6 @@
 /// @description Insert description here
 depth = -y;
+image_alpha = 0.75;
 if (distance_to_point(pointToStandX,pointToStandY) >= 5)
 {
 	move_towards_point(pointToStandX,pointToStandY,2);	
