@@ -4,7 +4,6 @@ if (target == "boss" && instance_exists(obj_allBoss))
 {
 
 	var enemy = instance_nearest(x,y,par_enemy);
-	var player = instance_nearest(x,y,obj_allPlayer);	
 	var damageDealt = 1;
 	enemy.hp -= damageDealt;
 	if (obj_allBoss.image_alpha > 0.25)

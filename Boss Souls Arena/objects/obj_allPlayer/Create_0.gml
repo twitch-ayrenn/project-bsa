@@ -7,14 +7,13 @@ canLeftClick = true;
 leftClickCooldown = 0;
 leftClickCooldownLeft = 0;
 leftClickColor = c_white;
-leftClickColorCd = c_white
+
 weaponDirection = 0;
 //right
 canRightClick = true;
 rightClickCooldown = 0;
 rightClickCooldownLeft = 0;
 rightClickColor = c_white;
-rightClickColorCd = c_white;
 //dash
 canDash = true;
 dashSpeed = 0;
@@ -23,16 +22,13 @@ dashStop = (0.25)*30;
 dashStopLeft = 0;
 dashCooldown = 0;
 dashCooldownLeft = 0;
-dashDirection = 0;
 global.iFrame = false;
 dashColor = c_white;
-dashColorCd = c_white;
 //ult
 canUlt = false;//false default
 ultCooldown = 0;
 ultCooldownLeft = 0;
 ultColor = c_white;
-ultColorCd = c_white;
 #endregion
 #region Stats
 hp = 100;
@@ -76,10 +72,6 @@ normalAlpha = 1;
 		//character specific
 		teleportRange = 96;
 		teleportRange *= 1 + (gameMaster.bonusDash/100);
-		throwKnives = false;
-		knivesToThrow = 0;
-		knivesThrownStacks = 0;
-		throwingDirection = 0;
 		if (global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
 		{
 			var shadowRange = instance_create_depth(x,y,1,obj_shadowAttackRange);
@@ -112,7 +104,6 @@ normalAlpha = 1;
 		coneShotTimes = 0;
 		coneShotTime = (0.4)*30;
 		coneShotStacks = 0;
-		meteorSprite = spr_fireBall;
 		meteorStun = 1;
 		meteor = 0;
 	}

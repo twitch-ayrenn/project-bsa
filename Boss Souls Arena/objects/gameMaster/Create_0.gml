@@ -113,11 +113,8 @@ enum States
 }
 chosenClass = 0;
 chosenBoss = 0;
-timeToKill = 0;
 global.player = obj_allPlayer;
-global.arena = rm_arena;
 //pricing
-global.demo = false;
 global.relase = false;
 global.deBugg = true;
 //save
@@ -128,21 +125,12 @@ global.orange = make_color_rgb(255,140,0);
 global.goldColor = make_color_rgb(218,165,32);
 global.purple = make_color_rgb(148,0,211);
 global.lightBlue = make_color_rgb(135,206,250);
-global.paleRed = make_color_rgb(178,34,34);
-global.yelloworange = make_color_rgb(255,165,0);
-global.yellowGreen = make_color_rgb(154,205,50);
 global.darkGreen = make_color_rgb(0,100,0);
-global.teal = make_color_rgb(32,178,170);
-global.steelBlue = make_color_rgb(70,130,180);
 global.paleViolet = make_color_rgb(138,43,226);
-global.slateGray = make_color_rgb(112,128,144);
 global.skyBlue = make_color_rgb(135,206,235);
 global.darkYellow = make_color_rgb(180,180,0);
 global.maroonOutline = make_color_rgb(90,0,0);
 global.greenOutline = make_color_rgb(0,70,0);
-//text vars
-global.space = " ";
-global.slash = "/";
 //mainMenu text vars and settings
 playColor = global.darkYellow;
 playSize = 1;
@@ -284,22 +272,9 @@ itemTextSeparationY = 22;
 //arena
 global.arenaMiddleX = 615;
 global.arenaMiddleY = 600;
-//talking stuff
-global.playerLine1 = 0;
-global.playerLine2 = 0;
-global.playerLine3 = 0;
-global.playerLine4 = 0;
-global.playerLine5 = 0
-global.playerTextColor = c_white;
 ////stats
-deaths = 0;
-timeSeconds = 0; timeStacks = 0;
-//////game progress
-global.dLAbilityNerf = 1.25;
-global.dlHealthBuff = 1.25;
-global.dlDamageNerf = 0.75;
-////bosses slain
-falseAllBosses = false;
+//deaths = 0;
+//timeSeconds = 0; timeStacks = 0;
 //Versions
 if (global.deBugg == true)
 {

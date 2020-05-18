@@ -26,11 +26,6 @@ follow = obj_allBoss;
 xTo = x;
 yTo = y;
 //screenshake
-extraX = 0;
-extraY = 0;
-view_w_half = camera_get_view_width(view_camera[0]) * 0.5;
-view_h_half = camera_get_view_width(view_camera[0]) * 0.5;
 shake_length = 30;
 shake_magnitude = 6;//lägre = större shake
 shake_remain = 0;//time of shake
-buff = 32;

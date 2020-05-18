@@ -251,7 +251,6 @@ if (attack == Atks.BeamAttack)
 			var beamBloom = instance_create_depth(x,y,depth+1,obj_particle_beamBloom);
 			beamBloom.objectToInheritFrom = beam.id;
 			beamBloom.image_blend = beam.image_blend;
-			beamBloom.image_alpha = 0.25;
 		}
 	}
 	if (gameMaster.chosenBoss == Boss.TheCorrupter && phase == 2)

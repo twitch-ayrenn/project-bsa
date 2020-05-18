@@ -13,7 +13,6 @@ beamChase = false;
 turningSpeed = 10;
 dmg = 0;
 effectType = Effect.NoEffect
-gooGroundSizeFix = true;
 gooSprite = spr_gooGround;
 boomerang = false;
 goToBoss = false;

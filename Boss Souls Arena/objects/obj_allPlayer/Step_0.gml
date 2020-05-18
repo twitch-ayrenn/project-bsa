@@ -1477,7 +1477,7 @@ if (mouse_x < x)
 		corruptionBeam.image_xscale = 1.8;
 		corruptionBeam.image_blend = c_fuchsia;
 		
-		var corruptionAura = instance_create_depth(x,y,depth,obj_coruptionBeamEffect);
+		instance_create_depth(x,y,depth,obj_coruptionBeamEffect);
 		
 		with(obj_camera){shake_remain += 5;}
 		edgeOfCorruptionCharge = 0;

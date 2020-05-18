@@ -48,7 +48,6 @@ targetY = 0;
 tier = 1;
 phase = 1;
 maxPhase = 2;
-oneTimeVars = true;
 #endregion
 #region Attacks
 chooseAnAttack = true;
@@ -92,7 +91,6 @@ idleSprite = 0;
 normalSprite = 0;
 oneShotSprite = 0;
 circleSprite = 0;
-summonSprite = 0;
 chaseSprite = 0;
 coneSprite = 0;
 gooSprite = 0;
