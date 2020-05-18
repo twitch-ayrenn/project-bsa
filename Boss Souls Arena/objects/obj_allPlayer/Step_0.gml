@@ -1085,7 +1085,7 @@ if (mouse_x < x)
 		//Visual
 		bfBlast.image_angle = bfBlast.direction+90;
 		bfBlast.image_blend = c_lime;
-		bfBlast.image_xscale = 3.5;
+		bfBlast.image_xscale = 2;
 		bfBlast.image_yscale = bfBlast.image_xscale;
 		
 		if (class == Character.ShadowAssassin){canLeftClick = true;	leftClickCooldownLeft = 0;}
@@ -1143,12 +1143,12 @@ if (mouse_x < x)
 		if (global.itemSelected[Boss.BloodZombie] == true && instance_exists(par_enemy))
 		{
 			var bloodPuddle = instance_create_depth(x,y,-6,obj_equipment_bloodPuddle);
-			bloodPuddle.image_xscale = 1.1;
+			bloodPuddle.image_xscale = 0.6;
 			bloodPuddle.image_yscale = bloodPuddle.image_xscale;
 			if (gameMaster.chosenClass == Character.Pyromancer && instance_exists(obj_allBoss))
 			{
 				var bloodPuddle = instance_create_depth(obj_allBoss.x,obj_allBoss.y,-6,obj_equipment_bloodPuddle);
-				bloodPuddle.image_xscale = 1.1;
+				bloodPuddle.image_xscale = 0.6;
 				bloodPuddle.image_yscale = bloodPuddle.image_xscale;
 			}
 		}
@@ -1497,13 +1497,11 @@ if (mouse_x < x)
 		shieldStacks++;
 		global.iFrame = true;
 		shieldSpeed = 0;
-		image_blend = c_red;
 	}
 	if (shieldStacks >= shieldTime)
 	{
 		shieldStacks = 0;
 		shield = false;
-		image_blend = c_white;
 	}
 	#endregion
 #endregion

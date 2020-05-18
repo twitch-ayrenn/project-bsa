@@ -1,6 +1,15 @@
 /// @description Insert description here
 image_alpha = 1;
 depth = -y-100;
+var demonShade = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
+demonShade.fadeSpeed = 0.25;//0.15
+demonShade.sprite_index = sprite_index;
+demonShade.image_xscale = image_xscale;
+demonShade.image_yscale = image_yscale;
+demonShade.image_angle = image_angle;
+demonShade.image_alpha = image_alpha;
+demonShade.image_speed = image_speed;
+demonShade.image_alpha = 0.5;
 if (direction >= 90 && direction < 270)
 {
 	image_xscale = -size;	

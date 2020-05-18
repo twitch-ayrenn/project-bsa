@@ -17,8 +17,8 @@ if(gameMaster.chosenBoss == Boss.SlimeQueen)
 	gooGround.image_alpha = 1;
 	gooGround.image_blend = c_green;
 	gooGround.sprite_index = spr_gooGround;
-	gooGround.image_xscale = 1.1;
-	gooGround.image_yscale = 1.1;
+	gooGround.image_xscale = 0.18;
+	gooGround.image_yscale = 0.18;
 	with(obj_camera){shake_remain = 3;}
 	gooGround.destroy = false;
 }

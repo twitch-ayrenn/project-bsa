@@ -8,6 +8,8 @@ if (destroyStacks > 0)
 if (destroyStacks <= 0)
 {
 	instance_destroy();
+	var nearestPortalBottom = instance_nearest(x,y,obj_portal_bottom);
+	instance_destroy(nearestPortalBottom);
 }
 if (canAttack == true)
 {

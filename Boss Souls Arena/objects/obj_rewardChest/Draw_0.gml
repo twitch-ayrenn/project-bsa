@@ -15,13 +15,15 @@ if (phase == 3)
 	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul){draw_sprite_ext(spr_loot_netherPortal, 0,x-9, y-30+yUpDown+yUpFade, itemScale, itemScale, image_angle, image_blend, alphaUpFade);}
 	if (gameMaster.chosenBoss == Boss.DeathKnight){draw_sprite_ext(spr_loot_deathScythe, 0,x-9, y-30+yUpDown+yUpFade, itemScale, itemScale, image_angle, image_blend, alphaUpFade);}
 	if (gameMaster.chosenBoss == Boss.KnightWitchYi){draw_sprite_ext(spr_loot_deathCap, 0,x-9, y-30+yUpDown+yUpFade, itemScale, itemScale, image_angle, image_blend, alphaUpFade);}
-	if (gameMaster.chosenBoss == Boss.AngelKnightOscar){draw_sprite_ext(spr_loot_ultraRapidFireTime, 0,x-9, y-30+yUpDown+yUpFade, itemScale, itemScale, image_angle, image_blend, alphaUpFade);}
+	if (gameMaster.chosenBoss == Boss.AngelKnightOscar){draw_sprite_ext(spr_loot_hourglass, 0,x-9, y-30+yUpDown+yUpFade, itemScale, itemScale, image_angle, image_blend, alphaUpFade);}
 	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar){draw_sprite_ext(spr_loot_implings, 0,x-9, y-30+yUpDown+yUpFade, itemScale, itemScale, image_angle, image_blend, alphaUpFade);}
 	if (gameMaster.chosenBoss == Boss.Gravekeeper){draw_sprite_ext(spr_loot_gravekeeper, 0,x-9, y-30+yUpDown+yUpFade, itemScale, itemScale, image_angle, image_blend, alphaUpFade);}
 	if (gameMaster.chosenBoss == Boss.BloodKnightDavid){draw_sprite_ext(spr_loot_scrollOfBlood, 0,x-9, y-30+yUpDown+yUpFade, itemScale, itemScale, image_angle, image_blend, alphaUpFade);}
 	if (gameMaster.chosenBoss == Boss.StatueOfCorruption){draw_sprite_ext(spr_loot_lootBox, 0,x-9, y-30+yUpDown+yUpFade, itemScale, itemScale, image_angle, image_blend, alphaUpFade);}
 	if (gameMaster.chosenBoss == Boss.WispSisters){draw_sprite_ext(spr_loot_theLastWish, 0,x-9, y-30+yUpDown+yUpFade, itemScale, itemScale, image_angle, image_blend, alphaUpFade);}
-	
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead){draw_sprite_ext(spr_loot_bfb9000, 0,x-9, y-30+yUpDown+yUpFade, itemScale, itemScale, image_angle, image_blend, alphaUpFade);}
+	if (gameMaster.chosenBoss == Boss.DeathKing){draw_sprite_ext(spr_loot_bat, 0,x-9, y-30+yUpDown+yUpFade, itemScale, itemScale, image_angle, image_blend, alphaUpFade);}
+	if (gameMaster.chosenBoss == Boss.SlimeQueen){draw_sprite_ext(spr_loot_t52slimeArmor, 0,x-9, y-30+yUpDown+yUpFade, itemScale, itemScale, image_angle, image_blend, alphaUpFade);}
 	draw_sprite_ext( sprite_index, 2,x, y+roofY, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 }
 if (phase == 1)

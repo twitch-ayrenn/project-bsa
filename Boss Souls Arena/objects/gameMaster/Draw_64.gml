@@ -1,46 +1,36 @@
 /// @description Insert description here
-// You can write your code in this editor
-draw_set_font(fnt_menu_fill);
-if (menu == Menues.Main || menu == Menues.BossLoot || menu == Menues.PlayerSelect || menu == Menues.BossSlain)
-{
-	
-}
+#region Main Menu
 if (menu == Menues.Main)
 {
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,50,"Boss Souls Arena",1.4,1.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	
-	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(100,200,"Campaign",playSize,playSize,0,global.orange,global.orange,playColor,playColor,1);
 	
-	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(100,310,"Credits",playArenaSize,playArenaSize,0,global.orange,global.orange,playArenaColor,playArenaColor,1);
 	
-	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(100,660-160,"",statsSize,statsSize,0,c_yellow,c_yellow,statsColor,statsColor,1);
 	
-	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(100,420,"Settings",settingsSize,settingsSize,0,global.orange,global.orange,settingsColor,settingsColor,1);
 	
-	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Exit",exitSize,exitSize,0,exitColor,exitColor,exitColor,exitColor,1);
 	
 	if (backToMenuAlpha > 0){backToMenuAlpha -= clamp(0.45/30,0,1);}
 	draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,backToMenuAlpha);
 }
+#endregion
+#region Boss Loot
 if (menu == Menues.BossLoot)
 {
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(30,30,"Select Loot",1.2,1.2,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	
-	var line1X = 400;
+	draw_line_width(400,200,400,700,5);
+	var line1X = 400;//400
 	draw_line_width_color(line1X,200,line1X,200+500,5,global.orange,c_yellow);
 	var line2X = 1135;
 	draw_line_width_color(line2X,200,line2X,200+500,5,global.orange,c_yellow);
 	
-	//draw_set_halign(fa_center);
-	//draw_text_transformed_color(1000,110,"Your Items",0.6,0.6,0,global.orange,global.orange,c_yellow,c_yellow,1);
-	//draw_set_halign(fa_left);
 	var itemXIncrease = 120;
 	draw_text_transformed_color(525,710,"Item Slots",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	if(global.maxItemSlots >= 1){draw_text_transformed_color(435+1*itemXIncrease,855,"Item I",0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);}
@@ -575,129 +565,101 @@ if (menu == Menues.BossLoot)
 	
 	draw_text_transformed_color(1310,760,"Fight!",fightSize,fightSize,0,c_red,c_red,fightColor,fightColor,1);
 }
+#endregion
+#region Settings
 if (menu == Menues.Settings)
 {
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(30,30,"Settings",1.5,1.5,0,c_gray,c_gray,c_white,c_white,1);
 	
-	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(80,210,"Gameplay",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
 	
-	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(70,270,"Show Extra info:  /",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
 	if (global.ShowInfo == true)
 	{
-		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(435,270,"On",0.5,0.5,0,c_green,c_green,c_white,c_white,1);
 		
-		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(515,270,"Off",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
 	}
 	if (global.ShowInfo == false)
 	{
-		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(435,270,"On",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
 		
-		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(515,270,"Off",0.5,0.5,0,c_red,c_red,c_white,c_white,1);
 	}
-	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(80,330,"Visual",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
 	
-	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(70,390,"Fullscreen:  /",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
 	if (window_get_fullscreen() == true)
 	{
-		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(315,390,"On",0.5,0.5,0,c_green,c_green,c_white,c_white,1);
 		
-		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(390,390,"Off",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
 	}
 	if (window_get_fullscreen()  == false)
 	{
-		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(315,390,"On",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
 		
-		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(390,390,"Off",0.5,0.5,0,c_red,c_red,c_white,c_white,1);
 	}
-	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(80,450,"Audio",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
 	
-	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(70,510,"Music:  /",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
 	if (global.musicOn == true)
 	{
-		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(200,510,"On",0.5,0.5,0,c_green,c_green,c_white,c_white,1);
 		
-		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(290,510,"Off",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
 	}
 	if (global.musicOn == false)
 	{
-		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(200,510,"On",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
 		
-		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(290,510,"Off",0.5,0.5,0,c_red,c_red,c_white,c_white,1);
 	}
 	
-	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(70,570,"Ambient:  /",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
 	if (global.ambientOn == true)
 	{
-		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(250,570,"On",0.5,0.5,0,c_green,c_green,c_white,c_white,1);
 		
-		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(330,570,"Off",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
 	}
 	if (global.ambientOn == false)
 	{
-		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(250,570,"On",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
 		
-		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(330,570,"Off",0.5,0.5,0,c_red,c_red,c_white,c_white,1);
 	}
-	
-	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(70,630,"Sound:  /",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);	
 	if (global.soundOn == true)
 	{
-
-		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(220,630,"On",0.5,0.5,0,c_green,c_green,c_white,c_white,1);
-		
-		draw_set_font(fnt_menu_fill);
+
 		draw_text_transformed_color(300,630,"Off",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
 	}
 	if (global.soundOn == false)
 	{
-		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(220,630,"On",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
 		
-		draw_set_font(fnt_menu_fill);
 		draw_text_transformed_color(300,630,"Off",0.5,0.5,0,c_red,c_red,c_white,c_white,1);
 	}
 	
-	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(70,690,"Reset Progression!",0.5,0.5,0,c_red,c_red,c_dkgray,c_dkgray,1);
 
-	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);
 }
+#endregion
+#region Character Select
 if (menu == Menues.PlayerSelect)
 {
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(30,30,"Select a Fighter",1.5,1.5,0,global.orange,global.orange,c_yellow,c_yellow,1);
 
-
-	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);
 }
+#endregion
+#region Boss Select
 if (menu == Menues.BossSelect)
 {
 	draw_set_font(fnt_menu_fill);
@@ -719,6 +681,8 @@ if (menu == Menues.BossSelect)
 		if (fightTransitionAlpha == 1){room_goto(rm_arena);	menu = Menues.Play; transitionAlpha = 1;queFight = false;}
 	}
 }
+#endregion
+#region In Game
 if (menu == Menues.Play)
 {
 	//Tutorial
@@ -861,6 +825,8 @@ if (menu == Menues.Play)
 		}
 	}
 }
+#endregion
+#region Victory Screen
 if (menu == Menues.BossSlain)
 {
 	draw_set_halign(fa_center);
@@ -887,6 +853,8 @@ if (menu == Menues.BossSlain)
 		menu = Menues.Main;
 	}
 }
+#endregion
+#region Death / Lost
 if (menu == Menues.Death)
 {
 	deathAlpha += clamp(0.5/30,0,1);
@@ -916,7 +884,8 @@ if (menu == Menues.Death)
 		menu = Menues.Main;
 	}
 }
-//showInfo
+#endregion
+#region Debugg
 if (global.deBugg == true && menu == Menues.Play && instance_exists(global.player))
 {
 	var playerHealth = "[Current/Max Health]: [" + string(obj_allPlayer.hp) + "] | ["  + string(obj_allPlayer.maxHp) +"]";
@@ -969,9 +938,10 @@ if (global.showFps == true)
 	draw_text_transformed_color(110,900-25,fpsShow,0.2,0.2,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(200,900-25,menu,0.2,0.2,0,c_white,c_white,c_white,c_white,1);
 }
-//cursor
+#endregion
+#region Cursur Menu
 if (room == rm_menu || menu == Menues.Death)
 {
 	draw_sprite_ext(spr_cursorMenu,0,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),3,3,0,global.goldColor,1,);
 }
-
+#endregion

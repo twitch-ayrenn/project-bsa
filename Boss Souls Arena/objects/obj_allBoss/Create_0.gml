@@ -147,10 +147,10 @@ isHit = false;
 			size = 1.5;
 			alpha = 0.85;
 			idleSprite = spr_boss_flameWisp_idle;
-			coneSprite = spr_boss_flameWisp_coneAttack
-			circleSprite = spr_boss_flameWisp_circle;
+			coneSprite = spr_boss_flameWisp_cone;
+			circleSprite = spr_boss_flameWisp_circleAttack;
 			oneShotSprite = spr_boss_flameWisp_oneShot;
-			chaseSprite = spr_boss_flameWisp_chase;
+			chaseSprite = spr_boss_flameWisp_chaseAttack;
 		}
 		#endregion
 		#region TheCorrupter
@@ -315,7 +315,7 @@ isHit = false;
 			tauntSprite = spr_boss_knightWitch_taunt;
 			coneSprite = spr_boss_knightWitch_cone;
 			//boss specifc
-			knightWitchGooSize = 0.85;
+			knightWitchGooSize = 0.14;
 		}
 		#endregion
 		#region AngelKnight
@@ -561,8 +561,8 @@ isHit = false;
 			size = 1.5;
 			alpha = 0.85;
 			#region Wisp Sister Sprites
-			janaPhase1Circle = spr_boss_flameWisp_circle;
-			janaPhase1Cone = spr_boss_flameWisp_coneAttack;
+			janaPhase1Circle = spr_boss_flameWisp_circleAttack;
+			janaPhase1Cone = spr_boss_flameWisp_cone;
 			janaPhase1OneShot = spr_boss_flameWisp_oneShot;
 			
 			janaPhase2Circle = spr_boss_wispSisterJulia_circle;

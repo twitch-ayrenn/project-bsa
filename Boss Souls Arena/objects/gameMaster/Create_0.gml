@@ -4,7 +4,7 @@
 //dont use Save.dat, always use a new verisor//Save.dat.full0.3
 //global.saveFile = "Save.alpha.0.65"; gaygang release
 menu = 0;
-global.saveFile = "Save.alpha.0.64";
+global.saveFile = "Save.test.0.1";
 //if (file_exists(global.saveFile) == true)
 //{
 //	game_load(global.saveFile);
@@ -13,6 +13,7 @@ global.saveFile = "Save.alpha.0.64";
 //{
 //	game_save(global.saveFile);
 //}
+room_goto(rm_beforeGame);
 enum Menues
 {
 	BeforeGame = 0,
@@ -117,6 +118,8 @@ global.player = obj_allPlayer;
 global.arena = rm_arena;
 //pricing
 global.demo = false;
+global.relase = false;
+global.deBugg = true;
 //save
 //game balance
 global.dD = 1;
@@ -157,7 +160,7 @@ settingsSize = 1;
 global.musicOn = false;
 global.musicVolume = 1;
 global.soundOn = true;
-global.ambientOn = true;
+global.ambientOn = false;
 global.ShowInfo = false;
 global.colorBlindIcons = false;
 global.colorBlindText = false;
@@ -180,8 +183,7 @@ global.ultimateAttackKey = ord("E");
 //
 global.deBuggerInfo = false;
 global.showDD = false;
-global.showFps = true;
-global.deBugg = true;
+global.showFps = false;
 fpsShowTimerStacks = 0;
 fpsShow = "";
 fullscreen = true;
@@ -231,11 +233,11 @@ bloodKnightUnlocked = true;
 pyromancerUnlocked = true;
 shopkeeperUnlocked = false;
 theRedWarriorUnlocked = false;
-plaugeWalkerUnlocked = false;
-angelSlayerUnlocked = false;
+plaugeWalkerUnlocked = true;
+angelSlayerUnlocked = true;
 rainbowSlimeUnlocked = false;
-agentOfGodUnlocked = false;
-gravelingUnlocked = false;
+agentOfGodUnlocked = true;
+gravelingUnlocked = true;
 //Items
 assassinItems[100] = false;
 bloodKnightItems[100] = false;
@@ -298,29 +300,30 @@ global.dlHealthBuff = 1.25;
 global.dlDamageNerf = 0.75;
 ////bosses slain
 falseAllBosses = false;
-//debugg appliance
+//Versions
 if (global.deBugg == true)
 {
 	//Progression
-	assassinProgress = 100;
-	bloodKnightProgress = 100;
-	pyromancerProgress = 100;
-	shopkeeperProgress = 100;
-	theRedWarriorProgress = 100;
-	plaugeWalkerProgress = 100;
-	angelSlayerProgress = 100;
-	rainbowSlimeProgress = 100;
-	agentOfGodProgress = 100;
+	assassinProgress = 100;			bloodKnightProgress = 100;
+	pyromancerProgress = 100;		plaugeWalkerProgress = 100;
+	angelSlayerProgress = 100;		agentOfGodProgress = 100;		
 	gravelingProgress = 100;
-	//
-	assassinUnlocked = true;
-	bloodKnightUnlocked = true;
-	pyromancerUnlocked = true;
-	shopkeeperUnlocked = true;
-	theRedWarriorUnlocked = true;
-	plaugeWalkerUnlocked = true;
-	angelSlayerUnlocked = true;
-	rainbowSlimeUnlocked = true;
-	agentOfGodUnlocked = true;
+	//Unlocked
+	assassinUnlocked = true;		bloodKnightUnlocked = true;
+	pyromancerUnlocked = true;		plaugeWalkerUnlocked = true;
+	angelSlayerUnlocked = true;		agentOfGodUnlocked = true;	
 	gravelingUnlocked = true;
+}
+if (global.relase == true)
+{
+	//Progression
+	assassinProgress = 1;			bloodKnightProgress = 1;
+	pyromancerProgress = 1;			plaugeWalkerProgress = 1;
+	angelSlayerProgress = 1;		agentOfGodProgress = 1;		
+	gravelingProgress = 1;
+	//Unlocked
+	assassinUnlocked = true;		bloodKnightUnlocked = true;
+	pyromancerUnlocked = false;		plaugeWalkerUnlocked = false;
+	angelSlayerUnlocked = false;	agentOfGodUnlocked = false;		
+	gravelingUnlocked = false;
 }

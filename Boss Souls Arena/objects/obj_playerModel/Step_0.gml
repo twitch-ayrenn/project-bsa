@@ -3,11 +3,11 @@
 depth = -1000;
 if (gameMaster.menu == Menues.PlayerSelect || gameMaster.menu == Menues.BossLoot)
 {
-	visible = true;	
+	image_alpha = 1;	
 }
 if (gameMaster.menu != Menues.PlayerSelect && gameMaster.menu != Menues.BossLoot)
 {
-	visible = false;	
+	image_alpha = 0;	
 }
 //size
 size = 1.15

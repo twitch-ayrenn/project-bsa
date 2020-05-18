@@ -5,8 +5,8 @@
     "name": "a373f1c2-e794-4328-9c7d-653d2e573a18",
     "children": [
         "d9318266-9c6b-490a-a85a-cb4e78cdfce0",
-        "9ab6257d-66fa-4b5e-94ea-ce860969539c",
-        "5ba056bc-6827-40fd-8b30-502ca8e639f5",
+        "f6ed7b12-5a77-4f76-a01e-f9e15f68cc58",
+        "9f381c27-d485-4465-ad45-8f24a8acef22",
         "5623aae9-19e9-4130-936c-1af8e7334552",
         "70a8d068-2c57-4099-85e5-b5c1c99ecbe1",
         "1da7cf0b-7c13-4a9a-a525-ab313f7a50d1",
@@ -23,7 +23,9 @@
         "d1ff19ca-e8b4-41d9-9d0c-0f021eed5088",
         "1c49f220-924a-4ffd-91f8-79ef2ea17952",
         "932afdd7-3f8e-4ddb-a516-d7e675987ee2",
-        "e8bba994-e73b-4453-b777-7431dd1fd68d"
+        "e8bba994-e73b-4453-b777-7431dd1fd68d",
+        "51b1045e-1179-4480-9d3e-2cc7a9bd7bbb",
+        "8f7baa76-16ab-4d23-9718-80188c198dd4"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_porjetiles",

@@ -13,3 +13,7 @@ if (global.itemSelected[Boss.TheCorrupter] == true)
 	}
 }
 draw_self();
+if (shield == true)
+{
+	draw_sprite_ext(spr_visual_bloodscroll,0,x,y,image_xscale*1.5,image_yscale*1.5,0,c_white,0.45);	
+}

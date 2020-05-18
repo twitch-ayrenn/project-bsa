@@ -18,3 +18,4 @@ gooSprite = spr_gooGround;
 boomerang = false;
 goToBoss = false;
 size = 1;
+

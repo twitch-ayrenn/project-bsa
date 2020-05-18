@@ -149,8 +149,8 @@ if (fall == true)
 			corruptKlot.image_alpha = 0.85;
 			corruptKlot.image_blend = global.lightBlue;
 			corruptKlot.sprite_index = spr_bloodKlott;
-			corruptKlot.image_xscale = 1.5;
-			corruptKlot.image_yscale = 1.5;
+			corruptKlot.image_xscale = 1.1;
+			corruptKlot.image_yscale = 1.1;
 			corruptKlot.effectType = Effect.Flare;
 		
 			alarm[2] = (0.75)*30;
@@ -1139,7 +1139,7 @@ if (hp <= 0 && phase == 1 && phase != maxPhase)
 		var middleGooSpawn = instance_nearest(645,590,obj_enemyProjectile);
 		with (middleGooSpawn)
 		{
-			image_xscale = 2.5;
+			image_xscale = 0.65;
 			image_yscale = image_xscale;
 		}
 	}

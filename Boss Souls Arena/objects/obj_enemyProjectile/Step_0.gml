@@ -1,7 +1,5 @@
-/// @description Insert description here
 #region vars
 //depth
-//if (place_meeting(x,y,obj_allBoss) == false){depth = -50;}
 depth = -y-50;
 size = image_xscale;
 if (sprite_index == spr_gooGround){depth = -7;}
@@ -17,12 +15,11 @@ if (sprite_index == spr_fireBall || sprite_index == spr_bat || sprite_index == s
 stacks++;
 #endregion
 #region Visuals 
-if (effectType == Effect.Flare){var party = effect_create_below(ef_flare,x,y,0.005,image_blend);part_system_depth(party,depth+5);}
-if (effectType == Effect.Star){var party = effect_create_below(ef_star,x,y,0.005,image_blend);part_system_depth(party,depth+5);}
-if (effectType == Effect.Spark){var party = effect_create_below(ef_spark,x,y,0.005,image_blend);part_system_depth(party,depth+5);}
-if (effectType == Effect.Smoke){var party = effect_create_below(ef_smoke,x,y,0.005,image_blend);part_system_depth(party,depth+5);}
-if (gooGroundSizeFix == true && sprite_index == spr_gooGround) {image_xscale = image_xscale*0.75;image_yscale = image_xscale; gooGroundSizeFix = false;}
-if (sprite_index == spr_bloodKlott || sprite_index == spr_swordShot){image_angle -= 30;}
+//if (effectType == Effect.Flare){var party = effect_create_below(ef_flare,x,y,0.005,image_blend);part_system_depth(party,depth+5);}
+//if (effectType == Effect.Star){var party = effect_create_below(ef_star,x,y,0.005,image_blend);part_system_depth(party,depth+5);}
+//if (effectType == Effect.Spark){var party = effect_create_below(ef_spark,x,y,0.005,image_blend);part_system_depth(party,depth+5);}
+//if (effectType == Effect.Smoke){var party = effect_create_below(ef_smoke,x,y,0.005,image_blend);part_system_depth(party,depth+5);}
+if (sprite_index == spr_swordShot){image_angle -= 30;}
 if (sprite_index == spr_graveScythe_projectile){image_angle += 30;}
 if (sprite_index == spr_beam)
 {
@@ -117,8 +114,8 @@ if (place_meeting(x,y,target) && sprite_index != spr_gooGround && global.iFrame 
 		if (gameMaster.chosenBoss == Boss.SlimeQueen){gooGround.image_blend = c_green;}
 		if (gameMaster.chosenBoss == Boss.ArenaKing){gooGround.image_blend = global.goldColor;}
 		gooGround.sprite_index = spr_gooGround;
-		gooGround.image_xscale = 1;
-		if (gameMaster.chosenBoss == Boss.ArenaKing){gooGround.image_xscale = 0.15 + image_xscale/5;}
+		gooGround.image_xscale = 0.15;
+		if (gameMaster.chosenBoss == Boss.ArenaKing){gooGround.image_xscale = 0.04 + image_xscale/20;}
 		gooGround.image_yscale = gooGround.image_xscale;
 		gooGround.destroy = false;
 	}

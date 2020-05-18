@@ -28,8 +28,8 @@ if (attack == Atks.NormalShot)
 		bloodKlot.image_alpha = 0.85;
 		bloodKlot.image_blend = c_maroon;
 		bloodKlot.sprite_index = spr_bloodKlott;
-		bloodKlot.image_xscale = 1.5;
-		bloodKlot.image_yscale = 1.5;
+		bloodKlot.image_xscale = 1.15;
+		bloodKlot.image_yscale = 1.15;
 		bloodKlot.effectType = Effect.Flare;
 	}
 }
@@ -95,8 +95,8 @@ if (attack == Atks.GooSpawn)
 		gooGround.image_alpha = 1;
 		gooGround.image_blend = c_maroon;
 		gooGround.sprite_index = spr_gooGround;
-		gooGround.image_xscale = 3.1;
-		gooGround.image_yscale = 3.1;
+		gooGround.image_xscale = 0.5;
+		gooGround.image_yscale = 0.5;
 		gooGround.destroy = false;
 		gooGround.effectType = Effect.NoEffect;
 		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
@@ -116,8 +116,8 @@ if (attack == Atks.GooSpawn)
 			gooGround.image_alpha = 0.75;
 			gooGround.image_blend = global.purple;
 			gooGround.sprite_index = spr_gooGround;
-			gooGround.image_xscale = 1.5;
-			gooGround.image_yscale = 1.5;
+			gooGround.image_xscale = 0.24;
+			gooGround.image_yscale = 0.24;
 			gooGround.destroy = false;
 			gooGround.effectType = Effect.NoEffect;
 		}
@@ -125,36 +125,7 @@ if (attack == Atks.GooSpawn)
 		{
 			with (middleGooSpawn)
 			{
-				image_xscale += clamp(0.4,0,2.5);
-				image_yscale = image_xscale;
-			}
-		}
-	}
-	if (gameMaster.chosenBoss == Boss.TheMadWitches)
-	{
-		var bottomGooSpawn = instance_nearest(global.arenaMiddleX,global.arenaMiddleY+125,obj_enemyProjectile);
-		if (spawnThingOnce == true)
-		{
-			spawnThingOnce = false;
-			var gooGround = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY+125,-5,obj_enemyProjectile);
-			//Main
-			gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
-			gooGround.speed = 0;
-			gooGround.image_angle = 90;
-			//Visual
-			gooGround.image_alpha = 0.75;
-			gooGround.image_blend = c_lime;
-			gooGround.sprite_index = spr_gooGround;
-			gooGround.image_xscale = 2;
-			gooGround.image_yscale = 2;
-			gooGround.destroy = false;
-			gooGround.effectType = Effect.NoEffect;
-		}
-		if (spawnThingOnce == false)
-		{
-			with (bottomGooSpawn)
-			{
-				image_xscale += clamp(0.6,0,2.5);
+				image_xscale += clamp(0.1,0,2.5);
 				image_yscale = image_xscale;
 			}
 		}
@@ -261,7 +232,7 @@ if (attack == Atks.BeamAttack)
 		var beamCircleAmount = 4;
 		repeat (beamCircleAmount)
 		{
-			var beam = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			var beam = instance_create_depth(x,y,depth+2,obj_enemyProjectile);
 			//Main
 			beam.image_angle = angleBeamPlus-90;
 			//Visual
@@ -276,6 +247,11 @@ if (attack == Atks.BeamAttack)
 			beam.range = 5*30;
 			beam.effectType = Effect.NoEffect;
 			angleBeamPlus += (360/beamCircleAmount)
+			
+			var beamBloom = instance_create_depth(x,y,depth+1,obj_particle_beamBloom);
+			beamBloom.objectToInheritFrom = beam.id;
+			beamBloom.image_blend = beam.image_blend;
+			beamBloom.image_alpha = 0.25;
 		}
 	}
 	if (gameMaster.chosenBoss == Boss.TheCorrupter && phase == 2)
@@ -414,8 +390,8 @@ if (attack == Atks.GooSpawn)
 		gooGround.image_alpha = 1;
 		gooGround.image_blend = c_teal;
 		gooGround.sprite_index = spr_gooGround;
-		gooGround.image_xscale = 4;
-		gooGround.image_yscale = 4;
+		gooGround.image_xscale = 0.65;
+		gooGround.image_yscale = 0.65;
 		gooGround.destroy = true;
 		gooGround.effectType = Effect.NoEffect;
 		var nearestIndicator = instance_nearest(gooGround.x,gooGround.y,obj_indicator);
@@ -435,8 +411,8 @@ if (attack == Atks.GooSpawn)
 			gooGround.image_alpha = 0.75;
 			gooGround.image_blend = c_orange;
 			gooGround.sprite_index = spr_gooGround;
-			gooGround.image_xscale = 2;
-			gooGround.image_yscale = 2;
+			gooGround.image_xscale = 0.32;
+			gooGround.image_yscale = 0.32;//2
 			gooGround.destroy = false;
 			gooGround.effectType = Effect.NoEffect;
 		}
@@ -446,7 +422,7 @@ if (attack == Atks.GooSpawn)
 			{
 				if (sprite_index == gooSprite)
 				{
-					image_xscale += clamp(0.75,0,2.5);
+					image_xscale += clamp(0.12,0,2.5);
 					image_yscale = image_xscale;
 				}
 			}
@@ -714,8 +690,8 @@ if (attack == Atks.GooSpawn)
 		{
 			if (sprite_index == spr_gooGround)
 			{
-				image_xscale += 0.125;
-				image_yscale += 0.125;
+				image_xscale += 0.02;
+				image_yscale += 0.02;
 			}
 		}
 	}
@@ -733,8 +709,8 @@ if (attack == Atks.GooSpawn)
 			gooGround.image_alpha = 0.75;
 			gooGround.image_blend = global.orange;
 			gooGround.sprite_index = spr_gooGround;
-			gooGround.image_xscale = 2;
-			gooGround.image_yscale = 2;
+			gooGround.image_xscale = 0.32;
+			gooGround.image_yscale = 0.32;
 			gooGround.destroy = false;
 			gooGround.effectType = Effect.NoEffect;
 		}
@@ -744,7 +720,7 @@ if (attack == Atks.GooSpawn)
 			{
 				if (sprite_index == gooSprite)
 				{
-					image_xscale = clamp(image_xscale+0.75,0,2);
+					image_xscale = clamp(image_xscale+0.12,0,2);
 					image_yscale = image_xscale;
 				}
 			}
@@ -1156,8 +1132,8 @@ if (attack == Atks.GooSpawn)
 		gooGround.image_alpha = 1;
 		gooGround.image_blend = c_teal;
 		gooGround.sprite_index = spr_gooGround;
-		gooGround.image_xscale = 2.5;
-		gooGround.image_yscale = 2.5;
+		gooGround.image_xscale = 0.4;
+		gooGround.image_yscale = 0.4;
 		gooGround.destroy = true;
 		gooGround.effectType = Effect.NoEffect;
 		with (gooGround)
@@ -1197,8 +1173,8 @@ if (attack == Atks.OneShotAttack)
 		infernalBall.image_alpha = 0.8;
 		infernalBall.image_blend = c_red;
 		infernalBall.sprite_index = spr_bloodKlott;
-		infernalBall.image_xscale = 3;
-		infernalBall.image_yscale = 3;
+		infernalBall.image_xscale = 2.3;
+		infernalBall.image_yscale = 2.3;
 		infernalBall.effectType = Effect.Flare;
 	}
 }
@@ -1244,8 +1220,8 @@ if (attack == Atks.ConeAttack)
 			fireBolt.image_alpha = 0.85;
 			fireBolt.sprite_index = spr_bloodKlott;
 			fireBolt.image_blend = c_aqua;
-			fireBolt.image_xscale = 1;
-			fireBolt.image_yscale = 1;
+			fireBolt.image_xscale = 0.75;
+			fireBolt.image_yscale = 0.75;
 			fireBolt.effectType = Effect.Flare;
 			coneAtkFW += (coneWide/coneAmount);
 		}
@@ -1402,8 +1378,8 @@ if (attack == Atks.CircleAttack)
 			bloodKlot.image_alpha = 0.85;
 			bloodKlot.sprite_index = spr_bloodKlott;
 			bloodKlot.image_blend = c_maroon;
-			bloodKlot.image_xscale = 1;
-			bloodKlot.image_yscale = 1;
+			bloodKlot.image_xscale = 0.75;
+			bloodKlot.image_yscale = 0.75;
 			bloodKlot.effectType = Effect.Smoke;
 			angleBk += (360/circleAmount);
 		}
@@ -1423,8 +1399,8 @@ if (attack == Atks.CircleAttack)
 			bloodKlot.image_alpha = 0.55;
 			bloodKlot.sprite_index = spr_bloodKlott;
 			bloodKlot.image_blend = c_green;
-			bloodKlot.image_xscale = 1.75;
-			bloodKlot.image_yscale = 1.75;
+			bloodKlot.image_xscale = 1.3;
+			bloodKlot.image_yscale = 1.3;
 			bloodKlot.effectType = Effect.Smoke;
 			angleBk += (360/circleAmount);
 		}
@@ -1452,8 +1428,8 @@ if (attack == Atks.GooSpawn)
 		gooGround.image_alpha = 1;
 		gooGround.image_blend = c_green;
 		gooGround.sprite_index = spr_gooGround;
-		gooGround.image_xscale = 3.2;
-		gooGround.image_yscale = 3.2;
+		gooGround.image_xscale = 0.5;
+		gooGround.image_yscale = 0.5;
 		gooGround.destroy = false;
 		gooGround.effectType = Effect.NoEffect;
 		
@@ -1477,8 +1453,8 @@ if (attack == Atks.OneShotAttack)
 		infernalBall.image_alpha = 0.85;
 		infernalBall.image_blend = c_red;
 		infernalBall.sprite_index = spr_bloodKlott;
-		infernalBall.image_xscale = 2;
-		infernalBall.image_yscale = 2;
+		infernalBall.image_xscale = 1.5;
+		infernalBall.image_yscale = 1.5;
 		infernalBall.effectType = Effect.Flare;
 		//down
 		var infernalBall2 = instance_create_depth(global.player.x,global.player.y+150,depth+1,obj_enemyProjectile);
@@ -1490,8 +1466,8 @@ if (attack == Atks.OneShotAttack)
 		infernalBall2.image_alpha = 0.85;
 		infernalBall2.image_blend = c_red;
 		infernalBall2.sprite_index = spr_bloodKlott;
-		infernalBall2.image_xscale = 2;
-		infernalBall2.image_yscale = 2;
+		infernalBall2.image_xscale = 1.5;
+		infernalBall2.image_yscale = 1.5;
 		infernalBall2.effectType = Effect.Flare;	
 		//left
 		var infernalBall3 = instance_create_depth(global.player.x-150,global.player.y,depth+1,obj_enemyProjectile);
@@ -1503,8 +1479,8 @@ if (attack == Atks.OneShotAttack)
 		infernalBall3.image_alpha = 0.85;
 		infernalBall3.image_blend = c_red;
 		infernalBall3.sprite_index = spr_bloodKlott;
-		infernalBall3.image_xscale = 2;
-		infernalBall3.image_yscale = 2;
+		infernalBall3.image_xscale = 1.5;
+		infernalBall3.image_yscale = 1.5;
 		infernalBall3.effectType = Effect.Flare;	
 		//right
 		var infernalBall4 = instance_create_depth(global.player.x+150,global.player.y,depth+1,obj_enemyProjectile);
@@ -1516,8 +1492,8 @@ if (attack == Atks.OneShotAttack)
 		infernalBall4.image_alpha = 0.85;
 		infernalBall4.image_blend = c_red;
 		infernalBall4.sprite_index = spr_bloodKlott;
-		infernalBall4.image_xscale = 2;
-		infernalBall4.image_yscale = 2;
+		infernalBall4.image_xscale = 1.5;
+		infernalBall4.image_yscale = 1.5;
 		infernalBall4.effectType = Effect.Flare;	
 	}
 	#endregion
@@ -1835,8 +1811,8 @@ if (attack == Atks.GooSpawn)
 		gooGround.image_alpha = 1;
 		gooGround.image_blend = global.goldColor;
 		gooGround.sprite_index = spr_gooGround;
-		gooGround.image_xscale = 2.2;
-		gooGround.image_yscale = 2.2;
+		gooGround.image_xscale = 0.35;
+		gooGround.image_yscale = 0.35;
 		gooGround.destroy = false;
 		gooGround.effectType = Effect.NoEffect;
 		
@@ -1847,8 +1823,8 @@ if (attack == Atks.GooSpawn)
 		gooGroundClone.image_alpha = 1;
 		gooGroundClone.image_blend = global.goldColor;
 		gooGroundClone.sprite_index = spr_gooGround;
-		gooGroundClone.image_xscale = 2.2;
-		gooGroundClone.image_yscale = 2.2;
+		gooGroundClone.image_xscale = 0.35;
+		gooGroundClone.image_yscale = 0.35;
 		gooGroundClone.destroy = false;
 		gooGroundClone.effectType = Effect.NoEffect;
 		

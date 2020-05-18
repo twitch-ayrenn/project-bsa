@@ -19,7 +19,7 @@ if (instance_exists(enemy))
 	}
 	if (follow == true)
 	{
-		move_towards_point(enemy.x,enemy.y,speed);
+		move_towards_point(enemy.x,enemy.y,5);
 	}
 	if (place_meeting(x,y,enemy))
 	{
