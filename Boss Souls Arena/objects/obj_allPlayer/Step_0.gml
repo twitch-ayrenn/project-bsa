@@ -8,7 +8,7 @@ if (instance_exists(obj_allBoss))
 {
 	if (gameMaster.chosenBoss == Boss.Gravekeeper && obj_allBoss.phase > 1)
 	{
-		blackOutAlpha = clamp(blackOutAlpha + 0.1/30,0,0.10 + obj_allBoss.phase*0.30);
+		blackOutAlpha = clamp(blackOutAlpha + 0.2/30,0,0.10 + obj_allBoss.phase*0.30);
 	}
 }
 if (instance_exists(obj_allBoss) == false)
@@ -576,8 +576,8 @@ if (mouse_x < x)
 				coneAtkFW += (coneWide/coneAmount);
 			}
 			
-			instance_create_depth(mouse_x,mouse_y,-mouse_y,obj_pyroPortal);
-			instance_create_depth(mouse_x,mouse_y,-mouse_y,obj_portal_bottom);
+			instance_create_depth(x,y,-y,obj_pyroPortal);
+			instance_create_depth(x,y,-y,obj_portal_bottom);
 			
 		}	
 		if (doConeShot == true && coneShotTimes > 0)
@@ -1535,6 +1535,7 @@ if (hp <= 0 && state != States.Dead)
 }
 if (gameMaster.menu == Menues.Death)
 {
+	hp = 0;
 	speed = 0;
 	image_angle += 10;
 	image_angle = clamp(image_angle,0,90);

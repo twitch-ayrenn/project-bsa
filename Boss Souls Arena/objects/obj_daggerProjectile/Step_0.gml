@@ -9,7 +9,7 @@ var enemy = instance_nearest(x,y,par_enemy);
 if (place_meeting(x,y,enemy))
 {
 	var damageDealt = global.damage;
-	var damageText = instance_create_depth(enemy.x+irandom_range(-8,8),enemy.y+irandom_range(-5,5),enemy.depth-10,obj_textMaker);
+	var damageText = instance_create_depth(enemy.x+irandom_range(-16,16),enemy.y+irandom_range(-13,13),enemy.depth-10,obj_textMaker);
 	damageText.color = c_white;
 	damageText.text = damageDealt;
 	with (enemy)
@@ -18,7 +18,7 @@ if (place_meeting(x,y,enemy))
 	}
 	with(obj_camera){shake_remain += 0.125;}
 	var amountHealed = global.damage*global.lifeSteal;
-	var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
+	var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-12,12),obj_allPlayer.y+irandom_range(-7,7),obj_allPlayer.depth-10,obj_textMaker);
 	healText.color = c_lime;
 	healText.text = amountHealed;
 	with (obj_allPlayer)

@@ -16,29 +16,6 @@ if (drawArea == true)
 		}
 	}
 	#endregion
-	#region The Mad Witches
-	if (gameMaster.chosenBoss == Boss.TheMadWitches && attack == Atks.BeamAttack)
-	{
-		if (position == 1)
-		{
-			draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,c_lime,c_lime);
-			draw_line_width_color(topX,topY,obj_allPlayer.x,obj_allPlayer.y,1,c_yellow,c_yellow);
-			draw_line_width_color(rightX,rightY,obj_allPlayer.x,obj_allPlayer.y,1,global.orange,global.orange);
-		}
-		if (position == 2)
-		{
-			draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,c_yellow,c_yellow);
-			draw_line_width_color(leftX,leftY,obj_allPlayer.x,obj_allPlayer.y,1,global.orange,global.orange);
-			draw_line_width_color(rightX,rightY,obj_allPlayer.x,obj_allPlayer.y,1,c_lime,c_lime);
-		}
-		if (position == 3)
-		{
-			draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,global.orange,global.orange);
-			draw_line_width_color(rightX,rightY,obj_allPlayer.x,obj_allPlayer.y,1,c_yellow,c_yellow);
-			draw_line_width_color(leftX,leftY,obj_allPlayer.x,obj_allPlayer.y,1,c_lime,c_lime);
-		}
-	}
-	#endregion
 	#region Angel Slayer
 	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul )
 	{

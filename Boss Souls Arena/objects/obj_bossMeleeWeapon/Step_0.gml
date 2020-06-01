@@ -1,7 +1,15 @@
 /// @description Insert description here
 var target = global.player;
-
 dmg = clamp(global.bossDamage*(clamp((target.hp/target.maxHp),0.5,1)),1,0.8*(target.maxHp));
+
+var demonShade = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
+	demonShade.fadeSpeed = 0.25;
+	demonShade.sprite_index = sprite_index;
+	demonShade.image_xscale = image_xscale;
+	demonShade.image_yscale = image_yscale;
+	demonShade.image_angle = image_angle;
+	demonShade.image_alpha = image_alpha/2;
+	demonShade.image_index = image_index;
 if (instance_exists(obj_allBoss))
 {
 	x = obj_allBoss.x;
@@ -15,7 +23,7 @@ if (instance_exists(obj_allBoss) == false)
 if (state == MeleeWeaponStates.idle)
 {
 	image_angle = obj_allBoss.direction-135+180;
-	if (gameMaster.chosenBoss == Boss.Gravekeeper){image_angle = 0;}
+	image_index = 0;
 }
 if (state == MeleeWeaponStates.SpinOnce)
 {
@@ -30,24 +38,24 @@ if (state == MeleeWeaponStates.SpinOnce)
 	if (doSpin == true && image_angle < currentAngle+360)
 	{
 		image_angle += spinSpeed;
-		if (gameMaster.chosenBoss = Boss.DeathKnight){image_index = 1;}
+		image_index = 1;
 	}
 	if (image_angle < currentAngle+360)
 	{
 		alarm[0] = (0.15)*30;
-		if (gameMaster.chosenBoss = Boss.DeathKnight){image_index = 0;}
+		image_index = 0;
 	}
 	if (spinTimes <= 0 && canSpin == true)
 	{
-		state = MeleeWeaponStates.idle
+		state = MeleeWeaponStates.idle;
 		doSpin = false;
 	}
-	if (gameMaster.chosenBoss = Boss.DeathKnight){image_index = 1;}
+	image_index = 1;
 }
 if (state == MeleeWeaponStates.SpinChase)
 {
 	image_angle += spinSpeed/1.5;
-	if (gameMaster.chosenBoss = Boss.DeathKnight){image_index = 1;}
+	if (gameMaster.chosenBoss = Boss.DeathKnight || gameMaster.chosenBoss = Boss.Gravekeeper){image_index = 1;}
 }
 if (state == MeleeWeaponStates.SpinOnce || state == MeleeWeaponStates.SpinChase)
 {

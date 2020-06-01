@@ -21,24 +21,22 @@ if (destroy == true)
 var enemy = instance_nearest(x,y,par_enemy);
 if (place_meeting(x,y,enemy))
 {
-	var damageDealt = global.damage*charge*1.1;
+	var damageDealt = global.damage*charge;
 	var damageText = instance_create_depth(enemy.x+irandom_range(-8,8),enemy.y+irandom_range(-5,5),enemy.depth-10,obj_textMaker);
 	damageText.color = c_white;
 	damageText.text = damageDealt;
 	with (enemy)
 	{	
 		var nearestFireBall = instance_nearest(x,y,obj_firebolt);
-		hp -= global.damage*nearestFireBall.charge*1.1;
+		hp -= global.damage*nearestFireBall.charge;
 	}
-	var amountHealed = global.damage*charge*global.lifeSteal*1.1;
+	var amountHealed = global.damage*charge*global.lifeSteal;
 	var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
 	healText.color = c_lime;
 	healText.text = amountHealed;
-	with (obj_allPlayer)
-	{
-		var nearestFireBall = instance_nearest(x,y,obj_firebolt);
-		hp += global.damage*global.lifeSteal*nearestFireBall.charge*1.1;
-	}
+
+	global.player.hp += global.damage*global.lifeSteal*id.charge;
+	
 	if (isMeteor == true)
 	{
 		instance_create_depth(x,y,depth,obj_meteorGround);

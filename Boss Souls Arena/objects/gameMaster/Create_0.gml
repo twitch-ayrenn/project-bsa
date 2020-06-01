@@ -194,6 +194,8 @@ playerTutorialAlpha = 0;
 quePlayerTutorial = false;
 tutorialFadeOut = false;
 checkOnce = true;
+autoGoToMenu = true;
+autoGoToMenuStacks = 0;
 outline_init();
 //Particles
 enum Particles

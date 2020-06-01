@@ -4,6 +4,7 @@ speed = 0;
 moveSpeed = normalMoveSpeed;
 pointX = choose(60,0,-60);
 pointY = choose(60,-60);
+#region Angel Slayer
 if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
 {
 	if (instance_exists(obj_enemyProjectile))
@@ -15,12 +16,14 @@ if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
 		}
 	}
 }
+#endregion
 #region KnightWitch yi
 if (gameMaster.chosenBoss == Boss.KnightWitchYi)
 {
 	global.playerBossSlow = 1;
 }
 #endregion
+#region Death Knight
 if (gameMaster.chosenBoss == Boss.DeathKnight)
 {
 	with(obj_bossMeleeWeapon)
@@ -28,6 +31,8 @@ if (gameMaster.chosenBoss == Boss.DeathKnight)
 		state = MeleeWeaponStates.idle;
 	}
 }
+#endregion
+#region Gravekeeper
 if (gameMaster.chosenBoss == Boss.Gravekeeper)
 {
 	rapidFireStacks = 0;
@@ -36,6 +41,7 @@ if (gameMaster.chosenBoss == Boss.Gravekeeper)
 		state = MeleeWeaponStates.idle;
 	}
 }
+#endregion
 #region Bloodarmy General
 if (gameMaster.chosenBoss == Boss.BloodKnightDavid && phase == 1)
 {

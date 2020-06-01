@@ -10,8 +10,8 @@
         "7bd790fe-d090-47e1-bee1-71bc137ae500",
         "9e104fa9-25e9-4acf-833f-efbca97b6309",
         "db4f3f2a-e9fd-4a76-b84e-d0553fe5bf59",
-        "558056f5-0f40-4881-a49f-8ac9f65b7898",
-        "be64ea62-f9f4-4a14-bc3f-7a32a7d3bb03"
+        "be64ea62-f9f4-4a14-bc3f-7a32a7d3bb03",
+        "558056f5-0f40-4881-a49f-8ac9f65b7898"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_deathKnight",

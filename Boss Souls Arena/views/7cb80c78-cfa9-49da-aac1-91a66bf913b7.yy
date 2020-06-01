@@ -10,7 +10,8 @@
         "7bfa44b8-a08b-48c9-837a-0d1d99b35fcc",
         "92bbb040-816d-4fd5-baf8-9f080646a392",
         "268c55ec-5adf-48ed-a790-5be14214bbfd",
-        "4dcf58d0-6ca0-4bf0-9e31-e3cf85471a48"
+        "4dcf58d0-6ca0-4bf0-9e31-e3cf85471a48",
+        "505e6198-ac10-4e54-9528-31792b36eae4"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_theAngelSlayerRekI",

@@ -3,6 +3,7 @@
     "modelName": "GMAmazonFireOptions",
     "mvc": "1.0",
     "name": "Amazon Fire",
+    "option_amazonfire_application_tag_inject": null,
     "option_amazonfire_build_tools": "",
     "option_amazonfire_compile_sdk": "",
     "option_amazonfire_display_name": "Made in GameMaker Studio 2",
@@ -41,6 +42,7 @@
     "option_amazonfire_target_sdk": "",
     "option_amazonfire_texture_page": "2048x2048",
     "option_amazonfire_tools_from_version": false,
+    "option_amazonfire_tv_banner": "${base_options_dir}\\android\\tv_banner.png",
     "option_amazonfire_version": {
         "build": 0,
         "major": 1,

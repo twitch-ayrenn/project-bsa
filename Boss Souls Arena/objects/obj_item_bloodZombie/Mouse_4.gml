@@ -1,6 +1,11 @@
 /// @description Insert description here
 if (global.itemSlots >= 1 && global.itemSelected[bossForThisItem] == false && global.slot6 == false)
 {
+	if (global.soundOn == true)
+	{
+		audio_play_sound(snd_buttonClick,Prioity.Normal,false);
+	}
+	
 	global.itemSelected[bossForThisItem] = true;
 	global.itemSlots -= 1;
 	thisItemSelected = true;
@@ -30,5 +35,4 @@ if (global.itemSlots >= 1 && global.itemSelected[bossForThisItem] == false && gl
 	gameMaster.previewAura -= previewAura;
 	gameMaster.previewConjur -= previewConjur;
 	gameMaster.previewCooldown -= previewCooldown;
-	
 }

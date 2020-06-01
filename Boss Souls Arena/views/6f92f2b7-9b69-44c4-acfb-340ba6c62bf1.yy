@@ -4,13 +4,13 @@
     "mvc": "1.1",
     "name": "6f92f2b7-9b69-44c4-acfb-340ba6c62bf1",
     "children": [
-        "18118601-7053-4aa6-9ad6-dbb4f5398e06",
-        "fcfbe0fb-fd02-4b2a-9e8f-c639007770f9",
-        "89b2b7d3-2f9a-44fa-8e5c-b3fa8e075665",
-        "63268a83-a060-44c5-8d85-fa66167d54c9",
-        "ae22c4d7-1363-4714-afc4-34bd88909be4",
-        "1dcc2f27-675f-4615-b98e-3b86e6653cbf",
-        "7ab69e15-403c-4b56-b219-80e50b6a5efa"
+        "dbaeb4aa-2628-4b9b-9c08-ca059d619b07",
+        "3c5bb865-3c47-4db0-894c-f626d194f163",
+        "aaa4af39-e8ee-48ed-9224-b49e445f72ec",
+        "233377f1-68c4-4603-8f65-a10eb38faa49",
+        "afa3334c-4043-4e4e-b7bb-db5cd206fbc7",
+        "238a83c5-e394-423e-b2c8-0187ad20c300",
+        "12f74f31-8335-4fbd-8a60-c038f70067f8"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_bloodArmyGeneral",

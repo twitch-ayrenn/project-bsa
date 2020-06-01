@@ -52,6 +52,7 @@ if (keyboard_check_released(vk_escape))
 	playerTutorialAlpha = 0;
 	quePlayerTutorial = false;
 	checkOnce = true;
+	autoGoToMenuStacks = 0;
 	audio_stop_sound(snd_music_menu);
 	global.playMenuMusic = true;
 	menu = Menues.Main;
@@ -61,6 +62,16 @@ if (keyboard_check_released(vk_escape))
 if (menu == Menues.Main)
 {
 	chosenBoss = Boss.NoBoss;
+}
+// DeathScreen go away auto
+if (menu == Menues.Death)
+{
+	autoGoToMenuStacks++;
+	if (autoGoToMenuStacks >= (4)*30)
+	{
+		autoGoToMenuStacks = 0;
+		queLeave = true;	
+	}
 }
 //balance
 if (global.dD > 1.32){global.dD = 1.32;}

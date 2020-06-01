@@ -8,14 +8,14 @@ if (startUpVars == true)
 }
 randomize();
 var sizeX = size;
-if (x < obj_allPlayer.x){sizeX = size;}
-if (x > obj_allPlayer.x){sizeX = -size;}
+if (x < global.player.x && distance_to_object(global.player) > 3){sizeX = size;}
+if (x > global.player.x && distance_to_object(global.player) > 3){sizeX = -size;}
 image_xscale = sizeX;
 image_yscale = size;
 if (hp <= 0){hp = 0;}
 if (hp > maxHp){hp = maxHp;}
 depth = -y;
-if (gameMaster.chosenBoss == Boss.BloodKingVarus){depth = obj_allPlayer.depth+1;}
+if (gameMaster.chosenBoss == Boss.BloodKingVarus){depth = global.player.depth+1;}
 image_alpha = alpha;
 if (image_blend = c_red)
 {
@@ -32,6 +32,49 @@ if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
 	rotation2 += 1;
 	rotation3 -= 1;
 }
+#endregion
+#region Particles
+	#region Wisp Sisters Julia
+	if (gameMaster.chosenBoss == Boss.WispSisterJulia && speed > 2)
+	{
+		var demonShade = instance_create_depth(x,y,depth+15,obj_particle_dash_characterFollow);
+		demonShade.fadeSpeed = 0.15;//0.15
+		demonShade.sprite_index = sprite_index;
+		demonShade.image_xscale = image_xscale;
+		demonShade.image_yscale = image_yscale;
+		demonShade.image_angle = image_angle;
+		demonShade.image_alpha = image_alpha;
+		demonShade.image_speed = image_speed;
+		demonShade.image_alpha = 0.6;
+	}
+	#endregion
+	#region Death Knight
+	if (gameMaster.chosenBoss == Boss.DeathKnight && speed > 2)
+	{
+		var demonShade = instance_create_depth(x,y,depth+15,obj_particle_dash_characterFollow);
+		demonShade.fadeSpeed = 0.15;//0.15
+		demonShade.sprite_index = sprite_index;
+		demonShade.image_xscale = image_xscale;
+		demonShade.image_yscale = image_yscale;
+		demonShade.image_angle = image_angle;
+		demonShade.image_alpha = image_alpha;
+		demonShade.image_speed = image_speed;
+		demonShade.image_alpha = 0.6;
+	}
+	#endregion
+	#region Gravekeeper
+	if (gameMaster.chosenBoss == Boss.Gravekeeper && speed > 3)
+	{
+		var demonShade = instance_create_depth(x,y,depth+15,obj_particle_dash_characterFollow);
+		demonShade.fadeSpeed = 0.15;//0.15
+		demonShade.sprite_index = sprite_index;
+		demonShade.image_xscale = image_xscale;
+		demonShade.image_yscale = image_yscale;
+		demonShade.image_angle = image_angle;
+		demonShade.image_alpha = image_alpha;
+		demonShade.image_speed = image_speed;
+	}
+	#endregion
 #endregion
 #endregion
 #region Fighting
@@ -119,6 +162,27 @@ if (fall == true)
 			damageText.color = c_maroon;
 			damageText.text = damageToTarget/10;
 			target.hp -= damageToTarget;
+		}
+		if (hp <= 0)
+		{
+			image_alpha = 0;
+			normalAlpha = 0;
+			var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
+			//Main
+			gooGround.speed = 0;
+			//Visual
+			gooGround.image_alpha = 1;
+			if (gameMaster.chosenClass == Character.ShadowAssassin){gooGround.image_blend = c_purple;}
+			if (gameMaster.chosenClass == Character.AgentOfGod){gooGround.image_blend = c_teal;}
+			if (gameMaster.chosenClass == Character.AngelSlayer){gooGround.image_blend = c_black;}
+			if (gameMaster.chosenClass == Character.BloodKnight){gooGround.image_blend = c_maroon;}
+			if (gameMaster.chosenClass == Character.Graveling){gooGround.image_blend = c_dkgray;}
+			if (gameMaster.chosenClass == Character.Pyromancer){gooGround.image_blend = global.orange;}
+			if (gameMaster.chosenClass == Character.PlaugeWalker){gooGround.image_blend = c_green;}
+			gooGround.sprite_index = spr_gooGround;
+			gooGround.image_xscale = 0.15;
+			gooGround.image_yscale = gooGround.image_xscale;
+			gooGround.destroy = false;
 		}
 	}
 	
@@ -478,14 +542,14 @@ if (fall == true)
 				var fireBolt = instance_create_depth(x+20,y-29,depth+1,obj_enemyProjectile);
 				//Main
 				fireBolt.direction = coneAtkFW;
-				fireBolt.speed = 5.25;
+				fireBolt.speed = 4.5;
 				fireBolt.image_angle = fireBolt.direction+90;
 				//Visual
 				fireBolt.image_alpha = 0.8;
 				fireBolt.sprite_index = spr_fireBall;
-				fireBolt.image_blend = c_red;
-				fireBolt.image_xscale = 1.1;
-				fireBolt.image_yscale = 1.1;
+				fireBolt.image_blend = c_lime;
+				fireBolt.image_xscale = 1;
+				fireBolt.image_yscale = 1;
 				fireBolt.effectType = Effect.Flare;
 				coneAtkFW += (coneWide/coneAmount);
 			}
@@ -498,14 +562,14 @@ if (fall == true)
 				var fireBolt = instance_create_depth(x-20,y-29,depth-1,obj_enemyProjectile);
 				//Main
 				fireBolt.direction = coneAtkFW;
-				fireBolt.speed = 5.25;
+				fireBolt.speed = 4.5;
 				fireBolt.image_angle = fireBolt.direction+90;
 				//Visual
 				fireBolt.image_alpha = 0.8;
 				fireBolt.sprite_index = spr_fireBall;
-				fireBolt.image_blend = c_red;
-				fireBolt.image_xscale = 1.1;
-				fireBolt.image_yscale = 1.1;
+				fireBolt.image_blend = c_lime;
+				fireBolt.image_xscale = 1;
+				fireBolt.image_yscale = 1;
 				fireBolt.effectType = Effect.Flare;
 				coneAtkFW += (coneWide/coneAmount);
 			}
@@ -514,7 +578,7 @@ if (fall == true)
 		}
 	}
 	#endregion
-	#region Death Kings
+	#region Death King
 	if (gameMaster.chosenBoss == Boss.DeathKing)
 	{
 		if (rapidFireStacks > 0 && canRapidAttack == true)
@@ -522,7 +586,7 @@ if (fall == true)
 			canRapidAttack = false;
 			rapidFireStacks -= 1;
 		
-			var coneWide = 60;
+			var coneWide = 75;
 			var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.5;
 			var coneAmount = 4;
 			repeat(coneAmount)
@@ -530,7 +594,7 @@ if (fall == true)
 				var fireBolt = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
 				//Main
 				fireBolt.direction = coneAtkFW;
-				fireBolt.speed = 5;
+				fireBolt.speed = 3.5;
 				//Visual
 				fireBolt.image_alpha = 1;
 				fireBolt.sprite_index = spr_bat;
@@ -875,7 +939,7 @@ if(chooseAnAttack == true)
 			beam.image_angle = -90;
 			//Visual
 			beam.image_alpha = 0.85;
-			beam.image_blend = global.orange;
+			beam.image_blend = c_yellow;
 			beam.sprite_index = spr_beam;
 			beam.image_xscale = 0.5;
 			beam.image_yscale = 20;
@@ -1048,6 +1112,7 @@ if(chooseAnAttack == true)
 	{
 		sprite_index = teleportSprite;
 		attackColor = global.purple;
+		#region Wisp Sisters and Blood Knight David
 		if (gameMaster.chosenBoss == Boss.WispSisterJulia || gameMaster.chosenBoss == Boss.BloodKnightDavid || gameMaster.chosenBoss == Boss.WispSisters)
 		{
 			alpha = 0;
@@ -1056,6 +1121,8 @@ if(chooseAnAttack == true)
 			if (place_empty(xTp,y,obj_noGoZone)){x = xTp;}
 			if (place_empty(x,yTp,obj_noGoZone)){y = yTp;}
 		}
+		#endregion
+		#region Death Knight
 		if (gameMaster.chosenBoss == Boss.DeathKnight)
 		{
 			var indicator = instance_create_depth(global.player.x+45,global.player.y,-5,obj_indicator)
@@ -1064,7 +1131,47 @@ if(chooseAnAttack == true)
 			indicator.image_yscale = 0.08;
 			indicator.image_blend = c_maroon;
 			indicator.followPlayer = true;
+			
+			var xTp = obj_allPlayer.x + choose(-200,-150,-100,100,150,200);
+			var yTp = obj_allPlayer.y + choose(-150,-100,100,150);
+			if (place_empty(xTp,y,obj_noGoZone)){x = xTp;}
+			if (place_empty(x,yTp,obj_noGoZone)){y = yTp;}
+			
+			alpha = 0;
+			
+			var tpEffect = instance_create_depth(x,y,depth,obj_particle_tpEffect);
+			tpEffect.image_xscale = 1;
+			tpEffect.image_yscale = 1;
+			tpEffect.normalAlpha = 1;
+			tpEffect.image_blend = c_purple;
+			tpEffect.objectToInheritFrom = id;
+			tpEffect.grow = -0.6;
+			tpEffect.maxGrowth = 1.1;
+			tpEffect.objectType = "boss";
+			tpEffect.switchOnce = false;
 		}
+		#endregion
+		#region Angel Slayer
+		if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
+		{		
+			var xTp = obj_allPlayer.x + choose(-200,-150,-100,100,150,200);
+			var yTp = obj_allPlayer.y + choose(-150,-100,100,150);
+			if (place_empty(xTp,y,obj_noGoZone)){x = xTp;}
+			if (place_empty(x,yTp,obj_noGoZone)){y = yTp;}
+			alpha = 0;
+			
+			var tpEffect = instance_create_depth(x,y,depth,obj_particle_tpEffect);
+			tpEffect.image_xscale = 1;
+			tpEffect.image_yscale = 1;
+			tpEffect.normalAlpha = 1;
+			tpEffect.image_blend = c_purple;
+			tpEffect.objectToInheritFrom = id;
+			tpEffect.grow = -0.6;
+			tpEffect.maxGrowth = 1.1;
+			tpEffect.objectType = "boss";
+			tpEffect.switchOnce = false;
+		}
+		#endregion
 		if (gameMaster.chosenBoss == Boss.ArenaKing)
 		{
 			alpha = 0;
@@ -1144,6 +1251,12 @@ if (hp <= 0 && phase == 1 && phase != maxPhase)
 		}
 	}
 	#endregion
+	#region Gravekeeper
+	if (gameMaster.chosenBoss == Boss.Gravekeeper)
+	{
+		normalAlpha = 0.5;
+	}
+	#endregion
 	#region Bloodarmy General
 	if (gameMaster.chosenBoss == Boss.BloodKnightDavid)
 	{
@@ -1178,6 +1291,12 @@ if (hp <= 0 && phase == 2 && phase != maxPhase)
 	hp = phase3Hp;
 	moveSpeed = phase3Ms;
 	global.bossDamage = phase3Dmg;
+	#region Gravekeeper
+	if (gameMaster.chosenBoss == Boss.Gravekeeper)
+	{
+		normalAlpha = 0.3;
+	}
+	#endregion
 	#region Wisp Sisters Janna
 	if (gameMaster.chosenBoss == Boss.WispSisters)
 	{
@@ -1284,7 +1403,7 @@ if (hp <= 0 && phase == 5 && phase != maxPhase && gameMaster.chosenBoss == Boss.
 	}
 	gameMaster.menu = Menues.BossSlain;
 }
-if (hp <= 0 && phase == maxPhase)
+if (hp <= 0 && phase == maxPhase && gameMaster.menu != Menues.Death)
 {
 	//boss
 	if (instance_exists(par_bossStuff)){with(par_bossStuff){instance_destroy();}}

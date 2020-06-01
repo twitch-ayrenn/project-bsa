@@ -1,9 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
-depth = obj_allPlayer.depth+2;
+depth = global.player.depth+2;
 image_alpha = 0.65;
-x = obj_allPlayer.x;
-y = obj_allPlayer.y;
+x = global.player.x;
+y = global.player.y;
+if (gameMaster.chosenClass == Character.Pyromancer){y =  global.player.y+6;}
 sizeX -= 0.05;
 image_xscale = sizeX;
 if (sizeX <= 0){instance_destroy();}

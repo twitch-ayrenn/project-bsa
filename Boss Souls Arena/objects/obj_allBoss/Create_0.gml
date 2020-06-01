@@ -483,59 +483,58 @@ isHit = false;
 			//1
 			var gooGround = instance_create_depth(global.arenaMiddleX+225,global.arenaMiddleY,-5,obj_enemyProjectile);
 			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
-			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.image_xscale = 0.34; gooGround.image_yscale = 0.34; 
 			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
 			//2
 			var gooGround = instance_create_depth(global.arenaMiddleX+190,global.arenaMiddleY+100,-5,obj_enemyProjectile);
 			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
-			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.image_xscale = 0.34; gooGround.image_yscale = 0.34; 
 			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
 			//3
 			var gooGround = instance_create_depth(global.arenaMiddleX+190,global.arenaMiddleY-100,-5,obj_enemyProjectile);
 			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
-			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.image_xscale = 0.34; gooGround.image_yscale = 0.34; 
 			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
 			//4
 			var gooGround = instance_create_depth(global.arenaMiddleX-190,global.arenaMiddleY+100,-5,obj_enemyProjectile);
 			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
-			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.image_xscale = 0.34; gooGround.image_yscale = 0.34; 
 			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
 			//5
 			var gooGround = instance_create_depth(global.arenaMiddleX-190,global.arenaMiddleY-100,-5,obj_enemyProjectile);
 			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
-			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.image_xscale = 0.34; gooGround.image_yscale = 0.34; 
 			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
 			//6
 			var gooGround = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY-180,-5,obj_enemyProjectile);
 			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
-			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.image_xscale = 0.34; gooGround.image_yscale = 0.34; 
 			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
 			//7
 			var gooGround = instance_create_depth(global.arenaMiddleX+100,global.arenaMiddleY-160,-5,obj_enemyProjectile);
 			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
-			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.image_xscale = 0.34; gooGround.image_yscale = 0.34; 
 			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
 			//8
 			var gooGround = instance_create_depth(global.arenaMiddleX-100,global.arenaMiddleY-160,-5,obj_enemyProjectile);
 			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
-			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.image_xscale = 0.34; gooGround.image_yscale = 0.34; 
 			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
 			//9
 			var gooGround = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY+180,-5,obj_enemyProjectile);
 			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
-			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.image_xscale = 0.34; gooGround.image_yscale = 0.34; 
 			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
 			//10
 			var gooGround = instance_create_depth(global.arenaMiddleX+100,global.arenaMiddleY+160,-5,obj_enemyProjectile);
 			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
-			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.image_xscale = 0.34; gooGround.image_yscale = 0.34; 
 			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
 			//11
 			var gooGround = instance_create_depth(global.arenaMiddleX-100,global.arenaMiddleY+160,-5,obj_enemyProjectile);
 			gooGround.image_blend = c_purple; gooGround.sprite_index = spr_gooGround;
-			gooGround.image_xscale = 2.1; gooGround.image_yscale = 2.1; 
+			gooGround.image_xscale = 0.34; gooGround.image_yscale = 0.34; 
 			gooGround.destroy = false; gooGround.effectType = Effect.NoEffect;
-			
 			#endregion
 		}
 		#endregion

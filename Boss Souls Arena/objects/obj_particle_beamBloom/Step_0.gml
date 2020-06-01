@@ -2,7 +2,7 @@
 // You can write your code in this editor
 if (instance_exists(objectToInheritFrom))
 {
-	depth = objectToInheritFrom.depth-1;
+	depth = objectToInheritFrom.depth+15;
 	x = objectToInheritFrom.x;
 	y = objectToInheritFrom.y;
 }

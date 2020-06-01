@@ -3,3 +3,4 @@
 color = c_white;
 text = "0";
 yRise = 0;
+outline_init();
