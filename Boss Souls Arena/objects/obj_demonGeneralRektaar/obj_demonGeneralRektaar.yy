@@ -5,16 +5,6 @@
     "name": "obj_demonGeneralRektaar",
     "eventList": [
         {
-            "id": "6f6d1514-2c49-43d8-95ec-4af796191980",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "89ec0641-2e1e-48e0-a207-755c5e525465"
-        },
-        {
             "id": "724edd55-9b8c-44f6-b371-23dcc271d919",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -22,6 +12,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
+            "m_owner": "89ec0641-2e1e-48e0-a207-755c5e525465"
+        },
+        {
+            "id": "1fc494e0-74c0-4900-92e2-8b2c53e29141",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 3,
             "m_owner": "89ec0641-2e1e-48e0-a207-755c5e525465"
         }
     ],

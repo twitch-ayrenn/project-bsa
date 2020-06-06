@@ -2,16 +2,192 @@
 #region Main Menu
 if (menu == Menues.Main)
 {
+	var campaignSize = 1;
+	var bossRushSize = 1;
+	var sizeOfSetting = 1;
+	var creditsSize = 1;
+	
+	var startY = 220;
+	var sep = 130;
+	
+	#region Campaign
+	if (device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*0 && device_mouse_y_to_gui(0) <startY + sep*1-20)
+	{
+		playColor = c_yellow;
+		campaignSize = 1.05;
+	}
+	else 
+	{ 
+		playColor = global.darkYellow;
+		campaignSize = 1;
+	}
+	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*0 && device_mouse_y_to_gui(0) <startY + sep*1-20)
+	{
+		chosenMode = Menues.Campaign;
+		menu = Menues.PlayerSelect;	
+		bonusHealth = 0;
+		bonusSpeed = 0;
+		bonusDash = 0;
+		bonusDamage = 0;
+		bonusFirerate = 0;
+		bonusLifeSteal = 0;
+		bonusConjur = 0;
+		bonusCooldown = 0;
+		
+		transitionAlpha = 1;
+		fightAlpha = 1;
+		fightTransitionAlpha = 0;
+		tutorialAlpha = 1;
+		playerTutorialAlpha = 0;
+		quePlayerTutorial = false;
+		tutorialFadeOut = false;
+		checkOnce = true;
+		if (global.tutorial == true)
+		{
+			global.tutorialBoss = true;
+			global.tutorialPlayer = false;
+		}
+		if (assassinUnlocked == true){with (obj_npc_theShadow){outline = "unSelected";}}
+		if (assassinUnlocked == false){with (obj_npc_theShadow){outline = "locked"}}
+		if (pyromancerUnlocked == true){with (obj_npc_thePyro){outline = "unSelected";}}
+		if (pyromancerUnlocked == false){with (obj_npc_thePyro){outline = "locked"}}
+		if (bloodKnightUnlocked == true){with (obj_npc_theBloodKnight){outline = "unSelected";}}
+		if (bloodKnightUnlocked == false){with (obj_npc_theBloodKnight){outline = "locked"}}
+		if (plaugeWalkerUnlocked == true){with (obj_npc_thePluageWalker){outline = "unSelected";}}
+		if (plaugeWalkerUnlocked == false){with (obj_npc_thePluageWalker){outline = "locked"}}
+		if (agentOfGodUnlocked == true){with (obj_npc_theAgentOfGod){outline = "unSelected";}}
+		if (agentOfGodUnlocked == false){with (obj_npc_theAgentOfGod){outline = "locked"}}
+		if (angelSlayerUnlocked == true){with (obj_npc_theAngelSlayer){outline = "unSelected";}}
+		if (angelSlayerUnlocked == false){with (obj_npc_theAngelSlayer){outline = "locked"}}
+		if (gravelingUnlocked == true){with (obj_npc_theGraveling){outline = "unSelected";}}
+		if (gravelingUnlocked == false){with (obj_npc_theGraveling){outline = "locked"}}
+		with(par_npc){spawnSign = true;}
+		if (global.soundOn == true)
+		{
+			audio_play_sound(snd_buttonClick,Prioity.Normal,false);
+		}
+	}
+	#endregion
+	#region Boss Rush
+	if (device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*1 && device_mouse_y_to_gui(0) <startY + sep*2-20)
+	{
+		playArenaColor = c_yellow;
+		bossRushSize = 1.05;
+	}
+	else 
+	{ 
+		playArenaColor = global.darkYellow;
+		bossRushSize = 1;
+	}
+	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*1 && device_mouse_y_to_gui(0) <startY + sep*2-20)
+	{
+		chosenMode = Menues.BossRush;
+		menu = Menues.PlayerSelect;	
+		bonusHealth = 0;
+		bonusSpeed = 0;
+		bonusDash = 0;
+		bonusDamage = 0;
+		bonusFirerate = 0;
+		bonusLifeSteal = 0;
+		bonusConjur = 0;
+		bonusCooldown = 0;
+		
+		transitionAlpha = 1;
+		fightAlpha = 1;
+		fightTransitionAlpha = 0;
+		tutorialAlpha = 1;
+		playerTutorialAlpha = 0;
+		quePlayerTutorial = false;
+		tutorialFadeOut = false;
+		checkOnce = true;
+		if (global.tutorial == true)
+		{
+			global.tutorialBoss = true;
+			global.tutorialPlayer = false;
+		}
+		if (assassinUnlocked == true){with (obj_npc_theShadow){outline = "unSelected";}}
+		if (assassinUnlocked == false){with (obj_npc_theShadow){outline = "locked"}}
+		if (pyromancerUnlocked == true){with (obj_npc_thePyro){outline = "unSelected";}}
+		if (pyromancerUnlocked == false){with (obj_npc_thePyro){outline = "locked"}}
+		if (bloodKnightUnlocked == true){with (obj_npc_theBloodKnight){outline = "unSelected";}}
+		if (bloodKnightUnlocked == false){with (obj_npc_theBloodKnight){outline = "locked"}}
+		if (plaugeWalkerUnlocked == true){with (obj_npc_thePluageWalker){outline = "unSelected";}}
+		if (plaugeWalkerUnlocked == false){with (obj_npc_thePluageWalker){outline = "locked"}}
+		if (agentOfGodUnlocked == true){with (obj_npc_theAgentOfGod){outline = "unSelected";}}
+		if (agentOfGodUnlocked == false){with (obj_npc_theAgentOfGod){outline = "locked"}}
+		if (angelSlayerUnlocked == true){with (obj_npc_theAngelSlayer){outline = "unSelected";}}
+		if (angelSlayerUnlocked == false){with (obj_npc_theAngelSlayer){outline = "locked"}}
+		if (gravelingUnlocked == true){with (obj_npc_theGraveling){outline = "unSelected";}}
+		if (gravelingUnlocked == false){with (obj_npc_theGraveling){outline = "locked"}}
+		with(par_npc){spawnSign = true;}
+		if (global.soundOn == true)
+		{
+			audio_play_sound(snd_buttonClick,Prioity.Normal,false);
+		}
+		if (global.soundOn == true)
+		{
+			audio_play_sound(snd_buttonClick,Prioity.Normal,false);
+		}
+	}
+	#endregion
+	#region Settings
+	if (device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*2 && device_mouse_y_to_gui(0) <startY + sep*3-20)
+	{
+		settingsColor = c_yellow;
+		sizeOfSetting = 1.05;
+	}
+	else 
+	{ 
+		settingsColor = global.darkYellow;
+		sizeOfSetting = 1;
+	}
+	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*2 && device_mouse_y_to_gui(0) <startY + sep*3-20)
+	{
+		with (gameMaster)
+		{
+			menu = Menues.Settings;	
+		}
+		if (global.soundOn == true)
+		{
+			audio_play_sound(snd_buttonClick,Prioity.Normal,false);
+		}
+		if (global.soundOn == true)
+		{
+			audio_play_sound(snd_buttonClick,Prioity.Normal,false);
+		}
+	}
+	#endregion
+	#region Credits
+	if (device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*3 && device_mouse_y_to_gui(0) <startY + sep*4-20)
+	{
+		creditsColor = c_yellow;
+		creditsSize = 1.05;
+	}
+	else 
+	{ 
+		creditsColor = global.darkYellow;
+		creditsSize = 1;
+	}
+	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*3 && device_mouse_y_to_gui(0) <startY + sep*4-20)
+	{
+		menu = Menues.Credits;
+		if (global.soundOn == true)
+		{
+			audio_play_sound(snd_buttonClick,Prioity.Normal,false);
+		}
+	}
+	#endregion
+	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,50,"Boss Souls Arena",1.4,1.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	
-	draw_text_transformed_color(100,200,"Campaign",playSize,playSize,0,global.orange,global.orange,playColor,playColor,1);
+	draw_text_transformed_color(80,startY + sep*0,"Campaign",campaignSize,campaignSize,0,global.orange,global.orange,playColor,playColor,1);
 	
-	draw_text_transformed_color(100,310,"Credits",playArenaSize,playArenaSize,0,global.orange,global.orange,playArenaColor,playArenaColor,1);
+	draw_text_transformed_color(80,startY + sep*1,"Arena Rush",bossRushSize,bossRushSize,0,global.orange,global.orange,playArenaColor,playArenaColor,1);
 	
-	draw_text_transformed_color(100,660-160,"",statsSize,statsSize,0,c_yellow,c_yellow,statsColor,statsColor,1);
+	draw_text_transformed_color(80,startY + sep*2,"Settings",sizeOfSetting,sizeOfSetting,0,global.orange,global.orange,settingsColor,settingsColor,1);
 	
-	draw_text_transformed_color(100,420,"Settings",settingsSize,settingsSize,0,global.orange,global.orange,settingsColor,settingsColor,1);
+	draw_text_transformed_color(80,startY + sep*3,"Credits",creditsSize,creditsSize,0,global.orange,global.orange,creditsColor,creditsColor,1);
 	
 	draw_text_transformed_color(50,760,"Exit",exitSize,exitSize,0,exitColor,exitColor,exitColor,exitColor,1);
 	
@@ -564,88 +740,88 @@ if (menu == Menues.BossLoot)
 	draw_set_halign(fa_left);
 	
 	draw_text_transformed_color(1310,760,"Fight!",fightSize,fightSize,0,c_red,c_red,fightColor,fightColor,1);
+	
+	if (queFight == true)
+	{
+		if (fightTransitionAlpha < 1){fightTransitionAlpha += clamp(0.6/30,0,1)}
+		draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,fightTransitionAlpha);
+		if (fightTransitionAlpha == 1){room_goto(rm_arena);	menu = Menues.Play; transitionAlpha = 1;queFight = false;}
+	}
 }
 #endregion
 #region Settings
 if (menu == Menues.Settings)
 {
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(30,30,"Settings",1.5,1.5,0,c_gray,c_gray,c_white,c_white,1);
+	draw_text_transformed_color(50,50,"Settings",1.4,1.4,0,c_gray,c_gray,c_white,c_white,1);
 	
-	draw_text_transformed_color(80,210,"Gameplay",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
+	var headlineSize = 0.5;
+	var settingSize = 0.35;
+	var sep = 50;
+	var startY = 190;
 	
-	draw_text_transformed_color(70,270,"Show Extra info:  /",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
-	if (global.ShowInfo == true)
+	var pressOnce = true;
+	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 70 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*1 && device_mouse_y_to_gui(0) <startY + sep*2-20)
 	{
-		draw_text_transformed_color(435,270,"On",0.5,0.5,0,c_green,c_green,c_white,c_white,1);
-		
-		draw_text_transformed_color(515,270,"Off",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
+		if (window_get_fullscreen() == false && pressOnce == true){window_set_fullscreen(true); pressOnce = false;}
+		if (window_get_fullscreen() == true && pressOnce == true){window_set_fullscreen(false); pressOnce = false;}
 	}
-	if (global.ShowInfo == false)
+	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 70 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*2 && device_mouse_y_to_gui(0) <startY + sep*3-20)
 	{
-		draw_text_transformed_color(435,270,"On",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
-		
-		draw_text_transformed_color(515,270,"Off",0.5,0.5,0,c_red,c_red,c_white,c_white,1);
+		if (global.screenShake == false && pressOnce == true){global.screenShake = true; pressOnce = false;}
+		if (global.screenShake == true && pressOnce == true){global.screenShake = false; pressOnce = false;}
 	}
-	draw_text_transformed_color(80,330,"Visual",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
-	
-	draw_text_transformed_color(70,390,"Fullscreen:  /",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
-	if (window_get_fullscreen() == true)
+	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 70 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*3 && device_mouse_y_to_gui(0) <startY + sep*4-20)
 	{
-		draw_text_transformed_color(315,390,"On",0.5,0.5,0,c_green,c_green,c_white,c_white,1);
-		
-		draw_text_transformed_color(390,390,"Off",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
+		if (global.dashTowardsMove == false && pressOnce == true){global.dashTowardsMove = true; pressOnce = false;}
+		if (global.dashTowardsMove == true && pressOnce == true){global.dashTowardsMove = false; pressOnce = false;}
 	}
-	if (window_get_fullscreen()  == false)
+	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 70 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*4 && device_mouse_y_to_gui(0) <startY + sep*5-20)
 	{
-		draw_text_transformed_color(315,390,"On",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
-		
-		draw_text_transformed_color(390,390,"Off",0.5,0.5,0,c_red,c_red,c_white,c_white,1);
-	}
-	draw_text_transformed_color(80,450,"Audio",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
-	
-	draw_text_transformed_color(70,510,"Music:  /",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
-	if (global.musicOn == true)
+		if (global.autoAim == false && pressOnce == true){global.autoAim = true; pressOnce = false;}
+		if (global.autoAim == true && pressOnce == true){global.autoAim = false; pressOnce = false;}
+	}	
+	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 70 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*5 && device_mouse_y_to_gui(0) <startY + sep*6-20)
 	{
-		draw_text_transformed_color(200,510,"On",0.5,0.5,0,c_green,c_green,c_white,c_white,1);
-		
-		draw_text_transformed_color(290,510,"Off",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
-	}
-	if (global.musicOn == false)
+		if (global.colorBlindIcons == false && pressOnce == true){global.colorBlindIcons = true; pressOnce = false;}
+		if (global.colorBlindIcons == true && pressOnce == true){global.colorBlindIcons = false; pressOnce = false;}
+	}	
+	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 70 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*6 && device_mouse_y_to_gui(0) <startY + sep*7-20)
 	{
-		draw_text_transformed_color(200,510,"On",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
-		
-		draw_text_transformed_color(290,510,"Off",0.5,0.5,0,c_red,c_red,c_white,c_white,1);
+		if (global.colorBlindText == false && pressOnce == true){global.colorBlindText = true; pressOnce = false;}
+		if (global.colorBlindText == true && pressOnce == true){global.colorBlindText = false; pressOnce = false;}
 	}
 	
-	draw_text_transformed_color(70,570,"Ambient:  /",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
-	if (global.ambientOn == true)
+	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 70 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*8 && device_mouse_y_to_gui(0) <startY + sep*9-20)
 	{
-		draw_text_transformed_color(250,570,"On",0.5,0.5,0,c_green,c_green,c_white,c_white,1);
-		
-		draw_text_transformed_color(330,570,"Off",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
-	}
-	if (global.ambientOn == false)
+		if (global.musicOn == false && pressOnce == true){global.musicOn = true; pressOnce = false;}
+		if (global.musicOn == true && pressOnce == true){global.musicOn = false; pressOnce = false;}
+	}	
+	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 70 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*9 && device_mouse_y_to_gui(0) <startY + sep*10-20)
 	{
-		draw_text_transformed_color(250,570,"On",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
-		
-		draw_text_transformed_color(330,570,"Off",0.5,0.5,0,c_red,c_red,c_white,c_white,1);
-	}
-	draw_text_transformed_color(70,630,"Sound:  /",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);	
-	if (global.soundOn == true)
-	{
-		draw_text_transformed_color(220,630,"On",0.5,0.5,0,c_green,c_green,c_white,c_white,1);
-
-		draw_text_transformed_color(300,630,"Off",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
-	}
-	if (global.soundOn == false)
-	{
-		draw_text_transformed_color(220,630,"On",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
-		
-		draw_text_transformed_color(300,630,"Off",0.5,0.5,0,c_red,c_red,c_white,c_white,1);
-	}
+		if (global.soundOn == false && pressOnce == true){global.soundOn = true; pressOnce = false;}
+		if (global.soundOn == true && pressOnce == true){global.soundOn = false; pressOnce = false;}
+	}	
 	
-	draw_text_transformed_color(70,690,"Reset Progression!",0.5,0.5,0,c_red,c_red,c_dkgray,c_dkgray,1);
+	draw_text_transformed_color(70,startY + sep*0,"Gameplay",headlineSize,headlineSize,0,c_gray,c_gray,c_white,c_white,1);
+	if (window_get_fullscreen() == false){draw_text_transformed_color(80,startY + sep*1,"Fullscreen: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (window_get_fullscreen() == true){draw_text_transformed_color(80,startY + sep*1,"Fullscreen: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.screenShake == false){draw_text_transformed_color(80,startY + sep*2,"Screen Shake: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.screenShake == true){draw_text_transformed_color(80,startY + sep*2,"Screen Shake: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.dashTowardsMove == false){draw_text_transformed_color(80,startY + sep*3,"Dash Towards Mouse: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.dashTowardsMove == true){draw_text_transformed_color(80,startY + sep*3,"Dash Towards Mouse: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.autoAim == false){draw_text_transformed_color(80,startY + sep*4,"Aim Assistance: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.autoAim == true){draw_text_transformed_color(80,startY + sep*4,"Aim Assistance: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.colorBlindIcons == false){draw_text_transformed_color(80,startY + sep*5,"Color Blind Attack Icons: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.colorBlindIcons == true){draw_text_transformed_color(80,startY + sep*5,"Color Blind Attack Icons: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.colorBlindText == false){draw_text_transformed_color(80,startY + sep*6,"Color Blind Attack Text: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.colorBlindText == true){draw_text_transformed_color(80,startY + sep*6,"Color Blind Attack Text: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	
+	draw_text_transformed_color(70,startY + sep*7,"Audio",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
+	if (global.musicOn == false){draw_text_transformed_color(80,startY + sep*8,"Music: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.musicOn == true){draw_text_transformed_color(80,startY + sep*8,"Music: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.soundOn == false){draw_text_transformed_color(80,startY + sep*9,"Sound: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.soundOn == true){draw_text_transformed_color(80,startY + sep*9,"Sound: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
 
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);
 }
@@ -654,8 +830,34 @@ if (menu == Menues.Settings)
 if (menu == Menues.PlayerSelect)
 {
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(30,30,"Select a Fighter",1.5,1.5,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(50,50,"Select a Fighter",1.4,1.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 
+	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);
+}
+#endregion
+#region Credits
+if (menu == Menues.Credits)
+{
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(50,50,"Credits",1.4,1.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	
+	var headlineSize = 0.4;
+	var textSize = 0.275;
+	var sep = 31;
+	var startY = 205;
+	
+	draw_text_transformed_color(80,startY-10 + sep*0,"Development",headlineSize,headlineSize,0,c_gray,c_gray,c_white,c_white,1);
+	draw_text_transformed_color(65,startY + sep*1,"Hey! My name is Arrjan Tarach and i ",textSize,textSize,0,c_gray,c_gray,c_white,c_white,1);
+	draw_text_transformed_color(65,startY + sep*2,"programmed, designed and drew everything",textSize,textSize,0,c_gray,c_gray,c_white,c_white,1);
+	draw_text_transformed_color(65,startY + sep*3,"in this game. This is my first really big ",textSize,textSize,0,c_gray,c_gray,c_white,c_white,1);
+	draw_text_transformed_color(65,startY + sep*4,"project and i have worked on this project",textSize,textSize,0,c_gray,c_gray,c_white,c_white,1);
+	draw_text_transformed_color(65,startY + sep*5,"for 2 years. I really hope you enjoy it:)",textSize,textSize,0,c_gray,c_gray,c_white,c_white,1);
+	draw_text_transformed_color(65,startY + sep*6,"",textSize,textSize,0,c_gray,c_gray,c_white,c_white,1);
+	draw_text_transformed_color(80,startY-5 + sep*7,"",headlineSize,headlineSize,0,c_gray,c_gray,c_white,c_white,1);
+	draw_text_transformed_color(65,startY + sep*8,"",textSize,textSize,0,c_gray,c_gray,c_white,c_white,1);
+	draw_text_transformed_color(65,startY + sep*9,"",textSize,textSize,0,c_gray,c_gray,c_white,c_white,1);
+	draw_text_transformed_color(65,startY + sep*10,"",textSize,textSize,0,c_gray,c_gray,c_white,c_white,1);
+	
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);
 }
 #endregion
@@ -663,7 +865,7 @@ if (menu == Menues.PlayerSelect)
 if (menu == Menues.BossSelect)
 {
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(30,30,"Select Fight",1.5,1.5,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(30,30,"Select Fight",1.4,1.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	
 	draw_set_halign(fa_center);
 	var cX = 800;//center x
@@ -676,7 +878,7 @@ if (menu == Menues.BossSelect)
 	
 	if (queFight == true)
 	{
-		if (fightTransitionAlpha < 1){fightTransitionAlpha += clamp(0.3/30,0,1)}
+		if (fightTransitionAlpha < 1){fightTransitionAlpha += clamp(0.4/30,0,1)}
 		draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,fightTransitionAlpha);
 		if (fightTransitionAlpha == 1){room_goto(rm_arena);	menu = Menues.Play; transitionAlpha = 1;queFight = false;}
 	}
@@ -887,51 +1089,53 @@ if (menu == Menues.Death)
 }
 #endregion
 #region Debugg
-//if (global.deBugg == false && menu == Menues.Play && instance_exists(global.player))
-//{
-//	var playerHealth = "[Current/Max Health]: [" + string(obj_allPlayer.hp) + "] | ["  + string(obj_allPlayer.maxHp) +"]";
-//	var playerDmg = "[Damage]: [" + string(global.damage) + "]";
-//	var playerFireRate = "[Attack Speed]: [" + string(obj_allPlayer.leftClickCooldown/30) + "]";
-//	var playerSpeed = "[Base|Current Speed]: [" + string(obj_allPlayer.moveSpeed) + "] | ["  + string(obj_allPlayer.actualSpeed) +"]";
-//	var playerDashPower = "[Dash/Tp Power]: [" + string(bonusDash) + "]";
-//	var playerLifesteal = "[LifeSteal]: [" + string(global.lifeSteal) + "%]";
-//	var playerConjuration = "[Conjuration Power]: [" + string(obj_allPlayer.conjurationPower*100) + "%]";
-//	var playerCDRightClick = "[Right-Click Cooldown]: [" + string(obj_allPlayer.rightClickCooldown/30)+ "]";
-//	var playerCDDash = "[Dash Cooldown]: [" + string(obj_allPlayer.dashCooldown/30)+ "]";
-//	var playerCDUlt = "[Ultimate Cooldown]: [" + string(obj_allPlayer.ultCooldown/30)+ "]";
+if (global.deBugg == true && menu == Menues.Play && instance_exists(global.player))
+{
+	var playerHealth = "[Current/Max Health]: [" + string(obj_allPlayer.hp) + "] | ["  + string(obj_allPlayer.maxHp) +"]";
+	var playerDmg = "[Damage]: [" + string(global.damage) + "]";
+	var playerFireRate = "[Attack Speed]: [" + string(obj_allPlayer.leftClickCooldown/30) + "]";
+	var playerSpeed = "[Base|Current Speed]: [" + string(obj_allPlayer.moveSpeed) + "] | ["  + string(obj_allPlayer.actualSpeed) +"]";
+	var playerDashPower = "[Dash/Tp Power]: [" + string(bonusDash) + "]";
+	var playerLifesteal = "[LifeSteal]: [" + string(global.lifeSteal) + "%]";
+	var playerConjuration = "[Conjuration Power]: [" + string(obj_allPlayer.conjurationPower*100) + "%]";
+	var playerCDRightClick = "[Right-Click Cooldown]: [" + string(obj_allPlayer.rightClickCooldown/30)+ "]";
+	var playerCDDash = "[Dash Cooldown]: [" + string(obj_allPlayer.dashCooldown/30)+ "]";
+	var playerCDUlt = "[Ultimate Cooldown]: [" + string(obj_allPlayer.ultCooldown/30)+ "]";
+	var difficuluty = "[Difficulty]: [" + string(global.campaignDifficulty) + "]"
 	
-//	var yIncreasse = 20;
-//	var textSize = 0.075;
-//	var xStart = 15;
-//	var yStart = 150;
-//	draw_set_font(fnt_NewNormalText);
-//	draw_text_transformed_color(xStart,yStart+1*yIncreasse,"Defensive & Mobility",textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
-//	draw_text_transformed_color(xStart,yStart+2*yIncreasse,playerHealth,textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
-//	draw_text_transformed_color(xStart,yStart+3*yIncreasse,playerSpeed,textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
-//	draw_text_transformed_color(xStart,yStart+4*yIncreasse,playerDashPower,textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
-//	draw_text_transformed_color(xStart,yStart+5*yIncreasse+10,"Damage & Sustain",textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);	
-//	draw_text_transformed_color(xStart,yStart+6*yIncreasse+10,playerDmg,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);	
-//	draw_text_transformed_color(xStart,yStart+7*yIncreasse+10,playerFireRate,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);	
-//	draw_text_transformed_color(xStart,yStart+8*yIncreasse+10,playerLifesteal,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);
-//	draw_text_transformed_color(xStart,yStart+9*yIncreasse+20,"Magic & Misc",textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);	
-//	draw_text_transformed_color(xStart,yStart+10*yIncreasse+20,playerCDRightClick,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);		
-//	draw_text_transformed_color(xStart,yStart+11*yIncreasse+20,playerCDDash,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-//	draw_text_transformed_color(xStart,yStart+12*yIncreasse+20,playerCDUlt,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-//	draw_text_transformed_color(xStart,yStart+13*yIncreasse+20,playerConjuration,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-//}
-//if (global.showFps == true)
-//{
-//	draw_set_font(fnt_menu_fill);
-//	draw_text_transformed_color(25,900-25,"Fps(30):",0.2,0.2,0,c_white,c_white,c_white,c_white,1);
-//	fpsShowTimerStacks++;
-//	if (fpsShowTimerStacks >= 15)
-//	{	
-//		fpsShow = fps_real;
-//		fpsShowTimerStacks = 0;
-//	}
-//	draw_text_transformed_color(110,900-25,fpsShow,0.2,0.2,0,c_white,c_white,c_white,c_white,1);
-//	draw_text_transformed_color(200,900-25,menu,0.2,0.2,0,c_white,c_white,c_white,c_white,1);
-//}
+	var yIncreasse = 20;
+	var textSize = 0.075;
+	var xStart = 15;
+	var yStart = 150;
+	draw_set_font(fnt_NewNormalText);
+	draw_text_transformed_color(xStart,yStart+1*yIncreasse,"Defensive & Mobility",textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(xStart,yStart+2*yIncreasse,playerHealth,textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(xStart,yStart+3*yIncreasse,playerSpeed,textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(xStart,yStart+4*yIncreasse,playerDashPower,textSize,textSize,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(xStart,yStart+5*yIncreasse+10,"Damage & Sustain",textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);	
+	draw_text_transformed_color(xStart,yStart+6*yIncreasse+10,playerDmg,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);	
+	draw_text_transformed_color(xStart,yStart+7*yIncreasse+10,playerFireRate,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);	
+	draw_text_transformed_color(xStart,yStart+8*yIncreasse+10,playerLifesteal,textSize,textSize,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(xStart,yStart+9*yIncreasse+20,"Magic & Misc",textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);	
+	draw_text_transformed_color(xStart,yStart+10*yIncreasse+20,playerCDRightClick,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);		
+	draw_text_transformed_color(xStart,yStart+11*yIncreasse+20,playerCDDash,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	draw_text_transformed_color(xStart,yStart+12*yIncreasse+20,playerCDUlt,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	draw_text_transformed_color(xStart,yStart+13*yIncreasse+20,playerConjuration,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	draw_text_transformed_color(xStart,yStart+14*yIncreasse+20,difficuluty,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+}
+if (global.showFps == true)
+{
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(25,900-25,"Fps(30):",0.2,0.2,0,c_white,c_white,c_white,c_white,1);
+	fpsShowTimerStacks++;
+	if (fpsShowTimerStacks >= 15)
+	{	
+		fpsShow = fps_real;
+		fpsShowTimerStacks = 0;
+	}
+	draw_text_transformed_color(110,900-25,fpsShow,0.2,0.2,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(200,900-25,menu,0.2,0.2,0,c_white,c_white,c_white,c_white,1);
+}
 #endregion
 #region Cursur Menu
 if (room == rm_menu || menu == Menues.Death)

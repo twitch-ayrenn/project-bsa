@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (gameMaster.menu == Menues.Main || gameMaster.menu == Menues.PlayerSelect || gameMaster.menu == Menues.BossLoot || gameMaster.menu == Menues.BossSelect)
+if (gameMaster.menu == Menues.Main || gameMaster.menu == Menues.PlayerSelect || gameMaster.menu == Menues.BossLoot || gameMaster.menu == Menues.BossSelect || gameMaster.menu == Menues.Credits )
 {
 	x = 22.5;
 	y = 134.5;

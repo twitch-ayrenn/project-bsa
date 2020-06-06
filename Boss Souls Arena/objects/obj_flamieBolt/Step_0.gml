@@ -7,6 +7,7 @@ if (destroy == true)
 	destroy = false;
 	alarm[0] = (timeToDestroy);
 }
+if (place_meeting(x,y,obj_noGoZone)){instance_destroy();}
 var enemy = instance_nearest(x,y,par_enemy);
 if (place_meeting(x,y,enemy))
 {	

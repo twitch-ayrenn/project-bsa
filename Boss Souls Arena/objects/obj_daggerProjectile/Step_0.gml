@@ -5,6 +5,7 @@ if (stacks >= destroyTime)
 {
 	instance_destroy();
 }
+if (place_meeting(x,y,obj_noGoZone)){instance_destroy();}
 var enemy = instance_nearest(x,y,par_enemy);
 if (place_meeting(x,y,enemy))
 {

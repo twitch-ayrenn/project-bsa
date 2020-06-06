@@ -5,16 +5,6 @@
     "name": "obj_deathKing",
     "eventList": [
         {
-            "id": "174158ac-1438-48c4-a725-1caaa7f0829a",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "d3f49b83-32c9-44e5-a909-6a45b7750e15"
-        },
-        {
             "id": "61f86f71-8872-40eb-a193-7e1cc4e10182",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -22,6 +12,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
+            "m_owner": "d3f49b83-32c9-44e5-a909-6a45b7750e15"
+        },
+        {
+            "id": "d15f1788-fff4-4ebe-8c5a-ad137c546d13",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 3,
             "m_owner": "d3f49b83-32c9-44e5-a909-6a45b7750e15"
         }
     ],

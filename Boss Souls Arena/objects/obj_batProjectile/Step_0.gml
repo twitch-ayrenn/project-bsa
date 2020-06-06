@@ -7,6 +7,7 @@ if (destroy == true)
 	destroy = false;
 	alarm[0] = destroyTime;
 }
+if (place_meeting(x,y,obj_noGoZone)){instance_destroy();}
 if (instance_exists(obj_allBoss))
 {
 	if (obj_allBoss.image_alpha > 0)

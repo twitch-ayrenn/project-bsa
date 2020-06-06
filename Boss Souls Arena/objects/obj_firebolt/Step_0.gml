@@ -13,6 +13,7 @@ if (isMeteor == true)
 	meteorTrail.image_blend = image_blend;
 	meteorTrail.image_alpha = image_alpha;
 }
+if (place_meeting(x,y,obj_bulletDestroyer) && isMeteor == false){instance_destroy();} 
 if (destroy == true)
 {
 	destroy = false;

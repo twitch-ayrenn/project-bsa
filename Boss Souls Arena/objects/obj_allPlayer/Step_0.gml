@@ -50,22 +50,30 @@ if (keyboard_check(ord("W")) && place_free(x,y-actualSpeed))
 {
 	y -= actualSpeed;
 	state = States.Walking;
+	moveDirection = 90;
 }
 if (keyboard_check(ord("S")) && place_free(x,y+actualSpeed))
 {
 	y += actualSpeed;
 	state = States.Walking;
+	moveDirection = 270;
 }
 if (keyboard_check(ord("D")) && place_free(x+actualSpeed,y))
 {
 	x += actualSpeed;
 	state = States.Walking;
+	moveDirection = 0;
 }
 if (keyboard_check(ord("A")) && place_free(x-actualSpeed,y))
 {
 	x -= actualSpeed;
 	state = States.Walking;
+	moveDirection = 180;
 }
+if (keyboard_check(ord("W")) && keyboard_check(ord("D"))){moveDirection = 45;}
+if (keyboard_check(ord("S")) && keyboard_check(ord("D"))){moveDirection = 315;}
+if (keyboard_check(ord("S")) && keyboard_check(ord("A"))){moveDirection = 225;}
+if (keyboard_check(ord("W")) && keyboard_check(ord("A"))){moveDirection = 135;}
 if (direction >= 90 && direction < 270 && !place_free(x-speed-1,y))
 {
 	speed = 0;	
@@ -106,9 +114,11 @@ if (mouse_x < x)
 }
 #endregion
 #region LeftClick
+	var aimBotDistance = 50;
 	#region ShadowAssassin
 	if (class == Character.ShadowAssassin)
 	{
+		
 		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false
 		|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
 		{
@@ -130,6 +140,7 @@ if (mouse_x < x)
 					
 					x = mouse_x;
 					y = mouse_y;
+					if (global.autoAim == true && point_distance(mouse_x,mouse_y,obj_allBoss.x,obj_allBoss.y) <= aimBotDistance && instance_exists(obj_allBoss)){x = obj_allBoss.x; y = obj_allBoss.y;}
 					var angleL = 0;
 					var amountL = int64(daggerAmount);
 					repeat(amountL)
@@ -176,6 +187,7 @@ if (mouse_x < x)
 		
 					x = mouse_x;
 					y = mouse_y;
+					if (global.autoAim == true && point_distance(mouse_x,mouse_y,obj_allBoss.x,obj_allBoss.y) <= aimBotDistance && instance_exists(obj_allBoss)){x = obj_allBoss.x; y = obj_allBoss.y;}
 					var angleL = 0;
 					var amountL = int64(20);
 					repeat(amountL)
@@ -216,6 +228,7 @@ if (mouse_x < x)
 				var infernalBall = instance_create_depth(x,y,depth+1,obj_firebolt)
 				infernalBall.speed = 4 + charge/35;
 				infernalBall.direction = point_direction(x,y,mouse_x,mouse_y);
+				if (global.autoAim == true && instance_exists(obj_allBoss)){infernalBall.direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
 				infernalBall.image_angle = infernalBall.direction+90;
 				infernalBall.image_xscale = 0.25 + charge/50;
 				infernalBall.image_yscale = infernalBall.image_xscale;
@@ -268,6 +281,7 @@ if (mouse_x < x)
 			var bigBolt = instance_create_depth(x,y,depth+1,obj_holyFireBolt);
 			bigBolt.speed = 5;
 			bigBolt.direction = point_direction(x,y,mouse_x,mouse_y);
+			if (global.autoAim == true && instance_exists(obj_allBoss)){bigBolt.direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
 			bigBolt.image_angle = bigBolt.direction+90;
 			//Visual
 			bigBolt.image_xscale = 0.20 + global.damage/1.75;
@@ -289,6 +303,7 @@ if (mouse_x < x)
 			actualASDashSpeed = slayerDashSpeed;
 			slashOnce = true;
 			direction = point_direction(x,y,mouse_x,mouse_y);
+			if (global.autoAim == true && instance_exists(obj_allBoss)){direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
 			#region DemonHorn
 			if (global.itemSelected[Boss.FlameGate] == true)
 			{
@@ -339,6 +354,7 @@ if (mouse_x < x)
 			{
 				var graveBolt = instance_create_depth(x,y,depth-1,obj_graveBolt);
 				graveBolt.direction = point_direction(x,y,mouse_x,mouse_y)+irandom_range(-graveAccuracy,graveAccuracy);
+				if (global.autoAim == true && instance_exists(obj_allBoss)){graveBolt.direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y)+irandom_range(-graveAccuracy,graveAccuracy);}
 				graveBolt.speed = actualSpeedBefore*3;
 				graveBolt.image_angle = graveBolt.direction+90;
 				// Visual
@@ -363,7 +379,26 @@ if (mouse_x < x)
 			var leech = instance_create_depth(x,y,depth+1,obj_leech);
 			leech.speed = 5;
 			leech.direction = point_direction(x,y,mouse_x,mouse_y);
+			if (global.autoAim == true)
+			{
+				var	nearestWisp = noone;
+				var wispDistance = 1000;
+				if (instance_exists(obj_plagueWisp)){nearestWisp = instance_nearest(x,y,obj_plagueWisp); wispDistance = distance_to_object(nearestWisp);}
+				var	nearestBoss = noone;
+				var bossDistance = 1000;
+				if (instance_exists(obj_allBoss)){nearestBoss = instance_nearest(x,y,obj_allBoss); bossDistance = distance_to_object(nearestBoss);}
+				var	nearestZamii = noone;
+				var zamiiDistance = 1000;
+				if (instance_exists(obj_zamii)){nearestZamii = instance_nearest(x,y,obj_zamii); zamiiDistance = distance_to_object(nearestZamii);}
+				var nearestTarget = min(wispDistance,bossDistance,zamiiDistance);
+				var target = noone;
+				if (nearestTarget == wispDistance){target = nearestWisp;}
+				if (nearestTarget == bossDistance){target = nearestBoss;}
+				if (nearestTarget == zamiiDistance){target = nearestZamii;}
+				leech.direction = point_direction(x,y,target.x,target.y);
+			}
 			leech.image_angle = leech.direction-90;
+			
 			//Visual
 			leech.image_xscale = 0.45 + conjurationPower/10;
 			leech.image_yscale = 0.45 + conjurationPower/10;
@@ -421,6 +456,7 @@ if (mouse_x < x)
 			var impling = instance_create_depth(x,y,depth+1,obj_equipment_impling)
 			impling.speed = 5;
 			impling.direction = point_direction(x,y,mouse_x,mouse_y);
+			if (global.autoAim == true && instance_exists(obj_allBoss)){impling.direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
 			impling.size = 0.45 + 0.25 * global.damage * global.player.conjurationPower;//0.2
 		}
 		
@@ -470,6 +506,7 @@ if (mouse_x < x)
 			{
 				var projectile = instance_create_depth(x,y,depth+1,obj_madBolt);
 				projectile.direction = point_direction(x,y,mouse_x,mouse_y);
+				if (global.autoAim && instance_exists(obj_allBoss)){projectile.direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
 				projectile.speed = 7;
 				projectile.image_angle = projectile.direction+90;
 				projectile.image_xscale = 1.25;
@@ -532,6 +569,7 @@ if (mouse_x < x)
 			canLeftClick = true;
 			leftClickCooldownLeft = 0;
 			var shadow = instance_create_depth(mouse_x,mouse_y,-mouse_y,obj_shadow);
+			if (global.autoAim == true && instance_exists(obj_allBoss) && point_distance(mouse_x,mouse_y,obj_allBoss.x,obj_allBoss.y) < aimBotDistance){shadow.x = obj_allBoss.x;shadow.y = obj_allBoss.y;}
 			shadow.image_alpha = 0.7;
 			shadow.image_xscale = image_xscale;
 			shadow.image_yscale = image_yscale;
@@ -560,13 +598,16 @@ if (mouse_x < x)
 			coneShotTimes = coneShotAmount;
 			
 			var coneAtkFW = point_direction(x,y,mouse_x,mouse_y)-coneWide*0.5;
+			if (global.autoAim == true && instance_exists(obj_allBoss)){coneAtkFW = point_direction(x,y,obj_allBoss.x,obj_allBoss.y)-coneWide*0.5;}
 			repeat(coneAmount)
 			{
 				var fireBolt = instance_create_depth(x,y,depth+1,obj_firebolt);
 				//Main
 				fireBolt.direction = coneAtkFW;
+				
 				fireBolt.speed = 7;
 				fireBolt.image_angle = fireBolt.direction+90;
+				
 				//Visual
 				fireBolt.image_alpha = 0.85;
 				fireBolt.image_xscale = 0.9;
@@ -591,6 +632,7 @@ if (mouse_x < x)
 			doConeShot = true;
 		
 			var coneAtkFW = point_direction(x,y,mouse_x,mouse_y)-coneWide*0.5;
+			if (global.autoAim == true && instance_exists(obj_allBoss)){coneAtkFW = point_direction(x,y,obj_allBoss.x,obj_allBoss.y)-coneWide*0.5;}
 			repeat(coneAmount)
 			{
 				var fireBolt = instance_create_depth(x,y,depth+1,obj_firebolt);
@@ -624,6 +666,8 @@ if (mouse_x < x)
 			BKDashStopLeft = BKDashStop;
 			actualBKDashSpeed = dashSpeed;
 			direction = point_direction(x,y,mouse_x,mouse_y);
+			if (global.dashTowardsMove){direction = moveDirection;}
+			if (global.autoAim == true && instance_exists(obj_allBoss) && distance_to_object(obj_allBoss) <= aimBotDistance*2){direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
 			#region DemonHorn
 			if (global.itemSelected[Boss.FlameGate] == true)
 			{
@@ -677,6 +721,7 @@ if (mouse_x < x)
 				y = mouse_y;
 				
 				var holyGround = instance_create_depth(x,y,depth,obj_holyGround);
+				if (global.autoAim == true && instance_exists(obj_allBoss)){holyGround.x = obj_allBoss.x; holyGround.y = obj_allBoss.y ;}
 				holyGround.image_blend = c_aqua;
 			}
 		}
@@ -728,6 +773,7 @@ if (mouse_x < x)
 			var demon = instance_create_depth(x,y,depth+1,obj_demons);
 			demon.speed = 6;
 			demon.direction = point_direction(x,y,mouse_x,mouse_y);
+			if (global.autoAim == true && instance_exists(obj_allBoss)){demon.direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
 		}
 	}
 	#endregion
@@ -1021,6 +1067,7 @@ if (mouse_x < x)
 			dashDamage = true;
 			actualGDashSpeed = clamp(actualSpeedBefore*4*(1+gameMaster.bonusDash/100),actualSpeedBefore*4,100);
 			direction = point_direction(x,y,mouse_x,mouse_y);
+			if (global.dashTowardsMove){direction = moveDirection;}
 			gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);
 		}
 		
@@ -1082,6 +1129,7 @@ if (mouse_x < x)
 		var bfBlast = instance_create_depth(x,y,depth-1,obj_bfBlast);
 		bfBlast.speed = 6;
 		bfBlast.direction = point_direction(x,y,mouse_x,mouse_y);
+		if (global.autoAim == true && instance_exists(obj_allBoss)){bfBlast.direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
 		//Visual
 		bfBlast.image_angle = bfBlast.direction+90;
 		bfBlast.image_blend = c_lime;
@@ -1089,6 +1137,7 @@ if (mouse_x < x)
 		bfBlast.image_yscale = bfBlast.image_xscale;
 		
 		if (class == Character.ShadowAssassin){canLeftClick = true;	leftClickCooldownLeft = 0;}
+		if (class == Character.AngelSlayer){canLeftClick = true;	leftClickCooldownLeft = 0;}
 		if (class == Character.Pyromancer){instance_create_depth(x,y,-y,obj_pyroPortal); instance_create_depth(x,y,-y,obj_portal_bottom);}
 		if (class == Character.Graveling){gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);}
 	}
@@ -1190,7 +1239,8 @@ if (mouse_x < x)
 			dashStopLeft = dashStop;
 			actualDashSpeed = dashSpeed;
 			direction = point_direction(x,y,mouse_x,mouse_y);
-		
+			if (global.dashTowardsMove){direction = moveDirection;}
+			
 			canLeftClick = true;
 			leftClickCooldownLeft = 0;
 			
@@ -1222,6 +1272,7 @@ if (mouse_x < x)
 			global.iFrame = true;
 			actualDashSpeed = dashSpeed*2;
 			direction = point_direction(x,y,mouse_x,mouse_y);
+			if (global.dashTowardsMove){direction = moveDirection;}
 			
 			instance_create_depth(x,y,-y,obj_pyroPortal);
 			instance_create_depth(x,y,-y,obj_portal_bottom);
@@ -1251,6 +1302,7 @@ if (mouse_x < x)
 			dashStopLeft = dashStop;
 			actualDashSpeed = dashSpeed;
 			direction = point_direction(x,y,mouse_x,mouse_y);
+			if (global.dashTowardsMove){direction = moveDirection;}
 			
 			repeat(int64(1*conjurationPower))
 			{
@@ -1285,6 +1337,7 @@ if (mouse_x < x)
 			dashStopLeft = dashStop;
 			actualDashSpeed = dashSpeed*1.5;
 			direction = point_direction(x,y,mouse_x,mouse_y);
+			if (global.dashTowardsMove){direction = moveDirection;}
 			
 			var holyBolt = instance_create_depth(x,y,depth+1,obj_holyBlast);
 			holyBolt.speed = dashSpeed*2.25;
@@ -1316,6 +1369,7 @@ if (mouse_x < x)
 			dashStopLeft = dashStop;
 			actualDashSpeed = slayerDashSpeed*2.5;
 			direction = point_direction(x,y,mouse_x,mouse_y);
+			if (global.dashTowardsMove){direction = moveDirection;}
 			
 			canLeftClick = true;
 			leftClickCooldownLeft = 0;
@@ -1385,6 +1439,7 @@ if (mouse_x < x)
 			dashStopLeft = dashStop;
 			actualDashSpeed = dashSpeed;
 			direction = point_direction(x,y,mouse_x,mouse_y);
+			if (global.dashTowardsMove){direction = moveDirection;}
 			
 			var plagueWisp = instance_create_depth(x,y,depth,obj_plagueWisp);
 			plagueWisp.image_xscale = 0.75;
@@ -1473,6 +1528,7 @@ if (mouse_x < x)
 		instance_create_depth(x,y,depth+1,obj_bloodBeamEffect);
 		var corruptionBeam = instance_create_depth(x,y,depth+2,obj_equipment_corruptionBeam);
 		corruptionBeam.image_angle = point_direction(x,y,mouse_x,mouse_y)+270;
+		if (global.autoAim == true && instance_exists(obj_allBoss)){corruptionBeam.image_angle = point_direction(x,y,obj_allBoss.x,obj_allBoss.y)+270;}
 		corruptionBeam.image_yscale = 20;
 		corruptionBeam.image_xscale = 1.8;
 		corruptionBeam.image_blend = c_fuchsia;
@@ -1532,6 +1588,8 @@ if (hp <= 0 && state != States.Dead)
 	speed = 0;
 	moveSpeed = 0;
 	sprite_index = deadSprite;
+	global.campaignDifficulty -= 0.05;
+	global.campaignDifficulty = clamp(global.campaignDifficulty,global.minDifficulty,global.maxDifficulty);
 }
 if (gameMaster.menu == Menues.Death)
 {

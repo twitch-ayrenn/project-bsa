@@ -25,6 +25,14 @@ if (color == c_maroon)
 		instance_destroy();	
 	}
 }
+if (color == c_fuchsia)
+{
+	yRise -= 0.125;
+	if (yRise <= -9)
+	{
+		instance_destroy();	
+	}
+}
 if (color == c_red)
 {
 	yRise -= 0.25;

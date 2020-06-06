@@ -1,11 +1,7 @@
 /// @description om clickar
-if (gameMaster.menu == Menues.PlayerSelect)
+if (gameMaster.menu == Menues.PlayerSelect || gameMaster.menu == Menues.BossSelect ||gameMaster.menu == Menues.Credits)
 {
 	gameMaster.menu = Menues.Main;
-}
-if (gameMaster.menu == Menues.BossSelect)
-{
-	gameMaster.menu = Menues.BossLoot;
 }
 if (gameMaster.menu == Menues.BossLoot)
 {
@@ -14,8 +10,6 @@ if (gameMaster.menu == Menues.BossLoot)
 	if (gameMaster.assassinUnlocked == false){with (obj_npc_theShadow){outline = "locked"}}
 	if (gameMaster.pyromancerUnlocked == true){with (obj_npc_thePyro){outline = "unSelected";}}
 	if (gameMaster.pyromancerUnlocked == false){with (obj_npc_thePyro){outline = "locked"}}
-	if (gameMaster.shopkeeperUnlocked == true){with (obj_npc_theShopkeeper){outline = "unSelected";}}
-	if (gameMaster.shopkeeperUnlocked == false){with (obj_npc_theShopkeeper){outline = "locked"}}
 	if (gameMaster.bloodKnightUnlocked == true){with (obj_npc_theBloodKnight){outline = "unSelected";}}
 	if (gameMaster.bloodKnightUnlocked == false){with (obj_npc_theBloodKnight){outline = "locked"}}
 	if (gameMaster.plaugeWalkerUnlocked == true){with (obj_npc_thePluageWalker){outline = "unSelected";}}

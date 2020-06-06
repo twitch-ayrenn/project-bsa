@@ -1,10 +1,23 @@
 /// @description Insert description here
-// You can write your code in this editor
-if (gameMaster.angelSlayerUnlocked == false)
+if (gameMaster.chosenMode == Menues.Campaign)
 {
-	outline = "locked";
+	if (gameMaster.angelSlayerUnlocked == false)
+	{
+		outline = "locked";
+	}
+	if (gameMaster.angelSlayerUnlocked == true)
+	{
+		outline = "unSelected";
+	}
 }
-if (gameMaster.angelSlayerUnlocked == true)
+if (gameMaster.chosenMode ==  Menues.BossRush)
 {
-	outline = "unSelected";
+	if (gameMaster.bossAngelSlayerUnlocked == false)
+	{
+		outline = "locked";
+	}
+	if (gameMaster.bossAngelSlayerUnlocked == true)
+	{
+		outline = "unSelected";
+	}
 }

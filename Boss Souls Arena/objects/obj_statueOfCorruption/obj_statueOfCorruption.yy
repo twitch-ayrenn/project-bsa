@@ -5,16 +5,6 @@
     "name": "obj_statueOfCorruption",
     "eventList": [
         {
-            "id": "805e83f0-0d0b-4ea0-803f-abac450fc410",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "10de844d-cb5d-40f1-84be-4234fa274665"
-        },
-        {
             "id": "f6e7e5de-4074-4e14-97f7-f5533ef65a3f",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -22,6 +12,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
+            "m_owner": "10de844d-cb5d-40f1-84be-4234fa274665"
+        },
+        {
+            "id": "e0fc8677-c90a-4d6e-923f-887dc727f988",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 3,
             "m_owner": "10de844d-cb5d-40f1-84be-4234fa274665"
         }
     ],

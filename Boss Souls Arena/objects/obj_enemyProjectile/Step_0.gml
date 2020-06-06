@@ -101,7 +101,7 @@ if (place_meeting(x,y,target) && sprite_index != spr_gooGround && global.iFrame 
 	var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
 	damageText.color = c_maroon;
 	damageText.text = damageToTarget;
-	target.hp -= damageToTarget;
+	target.hp -= damageToTarget*global.campaignDifficulty;
 	#region Pool On hit
 	if(gameMaster.chosenBoss == Boss.BloodZombie  || gameMaster.chosenBoss == Boss.SlimeQueen || gameMaster.chosenBoss == Boss.ArenaKing)
 	{
@@ -131,7 +131,7 @@ if (stacks >= (1)*30 && sprite_index == spr_gooGround && place_meeting(x,y,targe
 	var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
 	damageText.color = c_maroon;
 	damageText.text = damageToTarget;
-	target.hp -= damageToTarget;
+	target.hp -= damageToTarget*global.campaignDifficulty;
 	stacks = 0;
 }
 if (stacks >= (0.25)*30 && sprite_index == spr_beam && place_meeting(x,y,target) && global.iFrame == false)
@@ -140,7 +140,7 @@ if (stacks >= (0.25)*30 && sprite_index == spr_beam && place_meeting(x,y,target)
 	var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
 	damageText.color = c_maroon;
 	damageText.text = damageToTarget;
-	target.hp -= damageToTarget;
+	target.hp -= damageToTarget*global.campaignDifficulty;
 	stacks = 0;
 }
 #endregion

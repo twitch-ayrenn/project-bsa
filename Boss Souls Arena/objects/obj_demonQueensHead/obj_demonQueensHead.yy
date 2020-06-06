@@ -5,16 +5,6 @@
     "name": "obj_demonQueensHead",
     "eventList": [
         {
-            "id": "d61268bc-a124-4082-bc9e-5109832601cc",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "38c169c2-b660-4ec0-b8b3-c2668fb9bb26"
-        },
-        {
             "id": "017e3f2d-3d6e-44d4-bbaa-33d9abc57c8a",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -22,6 +12,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
+            "m_owner": "38c169c2-b660-4ec0-b8b3-c2668fb9bb26"
+        },
+        {
+            "id": "58b162dd-df30-4cf3-893d-1804a6ff5d8c",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 3,
             "m_owner": "38c169c2-b660-4ec0-b8b3-c2668fb9bb26"
         }
     ],

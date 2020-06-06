@@ -1,10 +1,23 @@
 /// @description Insert description here
-// You can write your code in this editor
-if (gameMaster.plaugeWalkerUnlocked == false)
+if (gameMaster.chosenMode == Menues.Campaign)
 {
-	outline = "locked";
+	if (gameMaster.plaugeWalkerUnlocked == false)
+	{
+		outline = "locked";
+	}
+	if (gameMaster.plaugeWalkerUnlocked == true)
+	{
+		outline = "unSelected";
+	}
 }
-if (gameMaster.plaugeWalkerUnlocked == true)
+if (gameMaster.chosenMode ==  Menues.BossRush)
 {
-	outline = "unSelected";
+	if (gameMaster.bossPlaugeWalkerUnlocked == false)
+	{
+		outline = "locked";
+	}
+	if (gameMaster.bossPlaugeWalkerUnlocked == true)
+	{
+		outline = "unSelected";
+	}
 }

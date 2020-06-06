@@ -5,16 +5,6 @@
     "name": "obj_gravekeeper",
     "eventList": [
         {
-            "id": "8e40d4e0-40a0-4cdc-9736-27fcd8b2adbf",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "38ecb109-454c-4a6a-b394-30a8189594e4"
-        },
-        {
             "id": "9437a372-6638-4903-8c33-9bffca9d0d3a",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -22,6 +12,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
+            "m_owner": "38ecb109-454c-4a6a-b394-30a8189594e4"
+        },
+        {
+            "id": "0fd27617-4f54-4146-b352-85552bd343d6",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 3,
             "m_owner": "38ecb109-454c-4a6a-b394-30a8189594e4"
         }
     ],

@@ -6,16 +6,16 @@ if (gameMaster.menu == Menues.Main)
 {
 	x = 8;
 	y = 126;
-	image_xscale = 0.1955555;
+	image_xscale = 0.2;
 	image_yscale = -0.11875;
 	visible = true;
 	if (image_alpha > 0.55){image_alpha -= 1.1/30;}
 }
-if (gameMaster.menu == Menues.PlayerSelect)
+if (gameMaster.menu == Menues.PlayerSelect || gameMaster.menu == Menues.Credits)
 {
 	x = 8;
 	y = 126;
-	image_xscale = 0.18;
+	image_xscale = 0.2;
 	image_yscale = -0.11875;
 	visible = true;
 	if (image_alpha < 0.80){image_alpha += 1.1/30;}

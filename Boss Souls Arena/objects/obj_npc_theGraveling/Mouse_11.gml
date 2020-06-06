@@ -1,10 +1,23 @@
 /// @description Insert description here
-// You can write your code in this editor
-if (gameMaster.gravelingUnlocked == false)
+if (gameMaster.chosenMode == Menues.Campaign)
 {
-	outline = "locked";
+	if (gameMaster.gravelingUnlocked == false)
+	{
+		outline = "locked";
+	}
+	if (gameMaster.gravelingUnlocked == true)
+	{
+		outline = "unSelected";
+	}
 }
-if (gameMaster.gravelingUnlocked == true)
+if (gameMaster.chosenMode ==  Menues.BossRush)
 {
-	outline = "unSelected";
+	if (gameMaster.bossGravelingUnlocked == false)
+	{
+		outline = "locked";
+	}
+	if (gameMaster.bossGravelingUnlocked == true)
+	{
+		outline = "unSelected";
+	}
 }

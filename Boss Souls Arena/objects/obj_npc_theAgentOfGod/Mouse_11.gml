@@ -1,10 +1,23 @@
 /// @description Insert description here
-// You can write your code in this editor
-if (gameMaster.agentOfGodUnlocked == false)
+if (gameMaster.chosenMode == Menues.Campaign)
 {
-	outline = "locked";
+	if (gameMaster.agentOfGodUnlocked == false)
+	{
+		outline = "locked";
+	}
+	if (gameMaster.agentOfGodUnlocked == true)
+	{
+		outline = "unSelected";
+	}
 }
-if (gameMaster.agentOfGodUnlocked == true)
+if (gameMaster.chosenMode ==  Menues.BossRush)
 {
-	outline = "unSelected";
+	if (gameMaster.bossAgentOfGodUnlocked == false)
+	{
+		outline = "locked";
+	}
+	if (gameMaster.bossAgentOfGodUnlocked == true)
+	{
+		outline = "unSelected";
+	}
 }

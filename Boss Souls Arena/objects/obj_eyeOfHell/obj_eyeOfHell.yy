@@ -5,16 +5,6 @@
     "name": "obj_eyeOfHell",
     "eventList": [
         {
-            "id": "73fe73b0-db46-4f23-b96f-286b35015382",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "7f526dba-84bd-4857-a770-5bbea03fa973"
-        },
-        {
             "id": "416de20b-e3c9-44f9-8006-0d5878ef192d",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -22,6 +12,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
+            "m_owner": "7f526dba-84bd-4857-a770-5bbea03fa973"
+        },
+        {
+            "id": "49487260-7d00-47ac-9afb-9c86f47d289a",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 3,
             "m_owner": "7f526dba-84bd-4857-a770-5bbea03fa973"
         }
     ],

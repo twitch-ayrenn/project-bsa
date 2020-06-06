@@ -5,16 +5,6 @@
     "name": "obj_deathKnight",
     "eventList": [
         {
-            "id": "1e055407-24c9-49dd-9db4-b1fc8cb1b17a",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "1a4d7bca-9d77-440f-8420-996c66b8f520"
-        },
-        {
             "id": "4e7ff154-bd5c-4901-83fe-b95f2dec6eec",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -22,6 +12,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
+            "m_owner": "1a4d7bca-9d77-440f-8420-996c66b8f520"
+        },
+        {
+            "id": "1b4ff243-5263-4ab2-9b13-6f3088a680a9",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 3,
             "m_owner": "1a4d7bca-9d77-440f-8420-996c66b8f520"
         }
     ],

@@ -15,7 +15,6 @@ image_yscale = size;
 if (hp <= 0){hp = 0;}
 if (hp > maxHp){hp = maxHp;}
 depth = -y;
-if (gameMaster.chosenBoss == Boss.BloodKingVarus){depth = global.player.depth+1;}
 image_alpha = alpha;
 if (image_blend = c_red)
 {
@@ -156,12 +155,12 @@ if (fall == true)
 		{
 			obj_allBoss.dealDamageOnFall = false;
 			var target = global.player;
-			var damageToTarget = 125;
+			var damageToTarget = 125*global.campaignDifficulty;
 			if (gameMaster.chosenClass == Character.AngelSlayer){var damageToTarget = 80;}
 			var damageText = instance_create_depth(target.x+irandom_range(-8,8),target.y+irandom_range(-5,5),target.depth-10,obj_textMaker);
 			damageText.color = c_maroon;
 			damageText.text = damageToTarget/10;
-			target.hp -= damageToTarget;
+			target.hp -= damageToTarget*global.campaignDifficulty;
 		}
 		if (hp <= 0)
 		{
@@ -891,21 +890,6 @@ if(chooseAnAttack == true)
 	{
 		sprite_index = chaseSprite;
 		attackColor = c_yellow;
-		#region Blood Royal Varus
-		if (gameMaster.chosenBoss == Boss.BloodKingVarus)
-		{
-			moveSpeed = 2.6;
-			var chaseDamage = instance_create_depth(x,y,depth-1,obj_enemyProjectile);
-			//Visual
-			chaseDamage.image_alpha = 0;
-			chaseDamage.sprite_index = spr_chaseDamage;
-			chaseDamage.image_xscale = 0.2;
-			chaseDamage.image_yscale = 0.2;
-			chaseDamage.stickOn = true;
-			chaseDamage.range = (7.5)*30;
-			chaseDamage.effectType = Effect.NoEffect;
-		}
-		#endregion
 		#region Wisp Sister Anna
 		if (gameMaster.chosenBoss == Boss.WispSisterJulia || gameMaster.chosenBoss == Boss.WispSisters)
 		{
@@ -1103,10 +1087,12 @@ if(chooseAnAttack == true)
 			beam2.effectType = Effect.NoEffect;
 		}
 		#endregion
+		#region Arena King
 		if (gameMaster.chosenBoss == Boss.ArenaKing)
 		{
 			moveSpeed = 0;
 		}
+		#endregion
 	}
 	if (attack == Atks.TeleportAttack)
 	{
@@ -1229,6 +1215,25 @@ if(chooseAnAttack == true)
 	alarm[1] = attackCooldown*choose(1,1,1,1,2);
 	if (gameMaster.chosenBoss == Boss.SlimeQueen && phase == 4){alarm[0] = (0.85)*30;alarm[1] = (1)*30;}
 	if (gameMaster.chosenBoss == Boss.ArenaKing && attack == Atks.ChaseAttack){alarm[0] = (1.5)*30;}
+	if (global.colorBlindText == true)
+	{
+		var damageDealt = "";
+		if (attack == Atks.NormalShot){damageDealt = "Normal Attack";}
+		if (attack == Atks.CircleAttack){damageDealt = "Circle Attack";}
+		if (attack == Atks.GooSpawn){damageDealt = "Goo Spawn";}
+		if (attack == Atks.ConeAttack){damageDealt = "Cone Attack";}
+		if (attack == Atks.OneShotAttack){damageDealt = "One Shot";}
+		if (attack == Atks.ChaseAttack){damageDealt = "Chase Attack";}
+		if (attack == Atks.RapidFire){damageDealt = "Rapid Fire Attacks";}
+		if (attack == Atks.BeamAttack){damageDealt = "Laser Beam Attack";}
+		if (attack == Atks.TeleportAttack){damageDealt = "Teleport Attack";}
+		if (attack == Atks.HealAttack){damageDealt = "Heal Attack";}
+		if (attack == Atks.ZoneAttack){damageDealt = "Be Ready To Run!";}
+		if (attack == Atks.TauntAttack){damageDealt = "Taunt Attack";}
+		var damageText = instance_create_depth(x+irandom_range(-16,16),y+irandom_range(-13,13),depth-10,obj_textMaker);
+		damageText.color = c_fuchsia;
+		damageText.text = damageDealt;
+	}
 }
 #endregion
 }
@@ -1403,21 +1408,17 @@ if (hp <= 0 && phase == 5 && phase != maxPhase && gameMaster.chosenBoss == Boss.
 	}
 	gameMaster.menu = Menues.BossSlain;
 }
-if (hp <= 0 && phase == maxPhase && gameMaster.menu != Menues.Death)
+if (hp <= 0 && phase == maxPhase && gameMaster.menu != Menues.Death && gameMaster.chosenMode == Menues.Campaign)
 {
 	//boss
 	if (instance_exists(par_bossStuff)){with(par_bossStuff){instance_destroy();}}
+	global.campaignDifficulty += 0.05;
+	global.campaignDifficulty = clamp(global.campaignDifficulty,global.minDifficulty,global.maxDifficulty);
 	#region Items
 	if (gameMaster.chosenClass == Character.ShadowAssassin && gameMaster.assassinItems[gameMaster.chosenBoss] == false)
 	{
 		gameMaster.assassinItems[gameMaster.chosenBoss] = true;
 		gameMaster.assassinProgress += global.progressAmount;
-		gameMaster.totalProgress += 1;
-	}
-	if (gameMaster.chosenClass == Character.TheRedWarrior && gameMaster.theRedWarriorItems[gameMaster.chosenBoss] == false)
-	{
-		gameMaster.theRedWarriorItems[gameMaster.chosenBoss] = true;
-		gameMaster.theRedWarriorProgress += global.progressAmount;
 		gameMaster.totalProgress += 1;
 	}
 	if (gameMaster.chosenClass == Character.Pyromancer && gameMaster.pyromancerItems[gameMaster.chosenBoss] == false)
@@ -1426,22 +1427,10 @@ if (hp <= 0 && phase == maxPhase && gameMaster.menu != Menues.Death)
 		gameMaster.pyromancerProgress += global.progressAmount;
 		gameMaster.totalProgress += 1;
 	}
-	if (gameMaster.chosenClass == Character.Shopkeeper && gameMaster.shopkeeperItems[gameMaster.chosenBoss] == false)
-	{
-		gameMaster.shopkeeperItems[gameMaster.chosenBoss] = true;
-		gameMaster.shopkeeperProgress += global.progressAmount;
-		gameMaster.totalProgress += 1;
-	}
 	if (gameMaster.chosenClass == Character.BloodKnight && gameMaster.bloodKnightItems[gameMaster.chosenBoss] == false)
 	{
 		gameMaster.bloodKnightItems[gameMaster.chosenBoss] = true;
 		gameMaster.bloodKnightProgress += global.progressAmount;
-		gameMaster.totalProgress += 1;
-	}
-	if (gameMaster.chosenClass == Character.RainbowSlime && gameMaster.rainbowSlimeItems[gameMaster.chosenBoss] == false)
-	{
-		gameMaster.rainbowSlimeItems[gameMaster.chosenBoss] = true;
-		gameMaster.rainbowSlimeProgress += global.progressAmount;
 		gameMaster.totalProgress += 1;
 	}
 	if (gameMaster.chosenClass == Character.PlaugeWalker && gameMaster.plaugeWalkerItems[gameMaster.chosenBoss] == false)
@@ -1483,6 +1472,13 @@ if (hp <= 0 && phase == maxPhase && gameMaster.menu != Menues.Death)
 	}
 	gameMaster.menu = Menues.BossSlain;
 	game_save(global.saveFile);
+	instance_destroy();
+}
+if (hp <= 0 && phase == maxPhase && gameMaster.menu != Menues.Death && gameMaster.chosenMode == Menues.BossRush)
+{
+	gameMaster.chosenBoss += 1;
+	if (instance_exists(par_bossStuff)){with(par_bossStuff){instance_destroy();}}
+	var boss = instance_create_depth(global.arenaMiddleX+175,global.arenaMiddleY,-global.arenaMiddleY,obj_allBoss);
 	instance_destroy();
 }
 #endregion

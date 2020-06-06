@@ -1,10 +1,23 @@
 /// @description Insert description here
-// You can write your code in this editor
-if (gameMaster.assassinUnlocked == false)
+if (gameMaster.chosenMode == Menues.Campaign)
 {
-	outline = "locked";
+	if (gameMaster.assassinUnlocked == false)
+	{
+		outline = "locked";
+	}
+	if (gameMaster.assassinUnlocked == true)
+	{
+		outline = "unSelected";
+	}
 }
-if (gameMaster.assassinUnlocked == true)
+if (gameMaster.chosenMode ==  Menues.BossRush)
 {
-	outline = "unSelected";
+	if (gameMaster.bossAssassinUnlocked == false)
+	{
+		outline = "locked";
+	}
+	if (gameMaster.bossAssassinUnlocked == true)
+	{
+		outline = "unSelected";
+	}
 }

@@ -25,8 +25,12 @@ if (follow != noone)
 }
 
 
-x += random_range(-clamp(shake_remain,0,10),clamp(shake_remain,0,10));
-y += random_range(-clamp(shake_remain,0,10),clamp(shake_remain,0,10));
+if (global.screenShake == true)
+{
+	x += random_range(-clamp(shake_remain,0,10),clamp(shake_remain,0,10));
+	y += random_range(-clamp(shake_remain,0,10),clamp(shake_remain,0,10));
+
+}
 shake_remain = max(0,shake_remain-((1/shake_length)*shake_magnitude));
 shake_remain = clamp(shake_remain,0,10000);
 

@@ -18,11 +18,6 @@ if (gameMaster.chosenClass == Character.Pyromancer && gameMaster.pyromancerProgr
 	gameMaster.chosenBoss = bossOnThisCard;
 	gameMaster.queFight = true;
 }
-if (gameMaster.chosenClass == Character.TheRedWarrior && gameMaster.theRedWarriorProgress >= bossOnThisCard-1)
-{
-	gameMaster.chosenBoss = bossOnThisCard;
-	gameMaster.queFight = true;
-}
 if (gameMaster.chosenClass == Character.PlaugeWalker && gameMaster.plaugeWalkerProgress >= bossOnThisCard-1)
 {
 	gameMaster.chosenBoss = bossOnThisCard;

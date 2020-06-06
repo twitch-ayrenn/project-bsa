@@ -35,6 +35,7 @@ hp = 100;
 moveSpeed = 2;
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
+moveDirection = 0; 
 global.damage = 1*1;
 baseLifeSteal = 0.8;
 global.lifeSteal = baseLifeSteal;
@@ -433,6 +434,7 @@ t52Speed = 1;
 #endregion
 #region Bosses
 blackOutAlpha = 0;
+
 #endregion
 #region maxValues
 if (class == Character.Pyromancer){leftClickCooldown = (8)*30; coneShotAmount = int64(global.damage*2);}

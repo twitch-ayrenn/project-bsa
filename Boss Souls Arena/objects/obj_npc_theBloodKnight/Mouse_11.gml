@@ -1,10 +1,23 @@
 /// @description Insert description here
-// You can write your code in this editor
-if (gameMaster.bloodKnightUnlocked == false)
+if (gameMaster.chosenMode == Menues.Campaign)
 {
-	outline = "locked";
+	if (gameMaster.bloodKnightUnlocked == false)
+	{
+		outline = "locked";
+	}
+	if (gameMaster.bloodKnightUnlocked == true)
+	{
+		outline = "unSelected";
+	}
 }
-if (gameMaster.bloodKnightUnlocked == true)
+if (gameMaster.chosenMode ==  Menues.BossRush)
 {
-	outline = "unSelected";
+	if (gameMaster.bossBloodKnightUnlocked == false)
+	{
+		outline = "locked";
+	}
+	if (gameMaster.bossBloodKnightUnlocked == true)
+	{
+		outline = "unSelected";
+	}
 }

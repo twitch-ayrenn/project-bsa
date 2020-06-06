@@ -3,13 +3,27 @@
 depth = -y;
 image_alpha = 0.5;
 var stopDistance = 5;
-if (distance_to_point(mouse_x,mouse_y) > stopDistance)
+if (global.autoAim == false)
 {
-	move_towards_point(mouse_x,mouse_y,global.player.moveSpeed*1.6)
+	if (distance_to_point(mouse_x,mouse_y) > stopDistance)
+	{
+		move_towards_point(mouse_x,mouse_y,global.player.moveSpeed*1.6)
+	}
+	if (distance_to_point(mouse_x,mouse_y) <= stopDistance)
+	{
+		speed = 0;
+	}
 }
-if (distance_to_point(mouse_x,mouse_y) <= stopDistance)
+if (global.autoAim == true && instance_exists(obj_allBoss))
 {
-	speed = 0;
+	if (distance_to_point(obj_allBoss.x,obj_allBoss.y) > stopDistance)
+	{
+		move_towards_point(obj_allBoss.x,obj_allBoss.y,global.player.moveSpeed*1)
+	}
+	if (distance_to_point(obj_allBoss.x,obj_allBoss.y) <= stopDistance)
+	{
+		speed = 0;
+	}
 }
 if (dealDamage == true)
 {

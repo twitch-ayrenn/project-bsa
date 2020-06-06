@@ -7,6 +7,7 @@ if (destroy == true)
 	destroy = false;
 	alarm[0] = destroyTime;
 }
+if (place_meeting(x,y,obj_noGoZone)){instance_destroy();}
 if (direction > 90 && direction < 270){image_xscale = -size;}
 else{image_xscale = size;}
 if (instance_exists(obj_allBoss))

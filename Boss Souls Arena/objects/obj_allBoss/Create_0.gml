@@ -8,6 +8,7 @@ enum BossStates
 	Tutorial,
 }
 state = BossStates.BeforeFight;
+if (gameMaster.chosenMode == Menues.BossRush){state = BossStates.Fighting;}
 #endregion
 #region Stats
 phase1Hp = 0; phase1Ms = 0; phase1Dmg = 0;

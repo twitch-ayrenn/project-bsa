@@ -5,16 +5,6 @@
     "name": "obj_bloodArmyGeneral",
     "eventList": [
         {
-            "id": "262b4bd1-d93e-47ef-83f8-a4e1596d8259",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "992c2f6e-2efd-4a65-8aa5-e2d4da0917ec"
-        },
-        {
             "id": "1a610cd8-04cb-4742-8749-e7daaa637712",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -22,6 +12,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
+            "m_owner": "992c2f6e-2efd-4a65-8aa5-e2d4da0917ec"
+        },
+        {
+            "id": "79a86562-5f75-481f-8d60-ca21dd1530aa",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 3,
             "m_owner": "992c2f6e-2efd-4a65-8aa5-e2d4da0917ec"
         }
     ],

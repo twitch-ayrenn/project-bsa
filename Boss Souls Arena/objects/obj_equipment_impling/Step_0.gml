@@ -1,6 +1,7 @@
 /// @description Insert description here
 image_alpha = 1;
 depth = -y-100;
+if (place_meeting(x,y,obj_noGoZone)){instance_destroy();}
 var demonShade = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
 demonShade.fadeSpeed = 0.25;//0.15
 demonShade.sprite_index = sprite_index;

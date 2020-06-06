@@ -5,16 +5,6 @@
     "name": "obj_slimeQueen",
     "eventList": [
         {
-            "id": "3b12fc16-75ee-468c-8b48-9258aa475ebc",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "bfdbbe72-ca04-47a6-9f84-22596de6cfbf"
-        },
-        {
             "id": "98ba0037-f331-4fe8-9aeb-249a9485823d",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -22,6 +12,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
+            "m_owner": "bfdbbe72-ca04-47a6-9f84-22596de6cfbf"
+        },
+        {
+            "id": "b6dafc6c-61b1-4cbd-a7bd-ffa3e248c5bd",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 3,
             "m_owner": "bfdbbe72-ca04-47a6-9f84-22596de6cfbf"
         }
     ],

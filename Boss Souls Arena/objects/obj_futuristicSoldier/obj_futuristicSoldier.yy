@@ -5,16 +5,6 @@
     "name": "obj_futuristicSoldier",
     "eventList": [
         {
-            "id": "99c0020e-5082-42ca-a18d-9e7d29a212da",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "3f5858ac-cce8-4ea3-b714-80fffd5943ab"
-        },
-        {
             "id": "27eda2e9-7534-44a0-beda-957bc4fd01c9",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -22,6 +12,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
+            "m_owner": "3f5858ac-cce8-4ea3-b714-80fffd5943ab"
+        },
+        {
+            "id": "de424f33-ba70-4a3b-b8ec-5e942c8e4f63",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 3,
             "m_owner": "3f5858ac-cce8-4ea3-b714-80fffd5943ab"
         }
     ],

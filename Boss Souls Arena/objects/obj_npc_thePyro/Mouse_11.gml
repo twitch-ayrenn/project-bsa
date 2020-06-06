@@ -1,10 +1,23 @@
 /// @description Insert description here
-// You can write your code in this editor
-if (gameMaster.pyromancerUnlocked == false)
+if (gameMaster.chosenMode == Menues.Campaign)
 {
-	outline = "locked"
+	if (gameMaster.pyromancerUnlocked == false)
+	{
+		outline = "locked";
+	}
+	if (gameMaster.pyromancerUnlocked == true)
+	{
+		outline = "unSelected";
+	}
 }
-if (gameMaster.pyromancerUnlocked == true)
+if (gameMaster.chosenMode ==  Menues.BossRush)
 {
-	outline = "unSelected"
+	if (gameMaster.bossPyromancerUnlocked == false)
+	{
+		outline = "locked";
+	}
+	if (gameMaster.bossPyromancerUnlocked == true)
+	{
+		outline = "unSelected";
+	}
 }

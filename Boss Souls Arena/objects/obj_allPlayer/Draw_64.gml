@@ -10,9 +10,26 @@ var darkGray = make_color_rgb(10,10,10);
 if (instance_exists(obj_allBoss))
 {
 	var B = obj_allBoss;
-	draw_healthbar(360,800,760,843,(B.hp/B.maxHp)*100,darkGray,c_maroon,c_red,1,true,true);
-	draw_healthbar(845,800,1245,843,(B.hp/B.maxHp)*100,darkGray,c_maroon,c_red,0,true,true);
-	draw_sprite_ext(spr_bossBar,0,800,820,5,5,0,B.attackColor,1);
+	draw_healthbar(360-50,805,760+50,838,(B.hp/B.maxHp)*100,darkGray,c_maroon,c_red,1,true,true);
+	draw_healthbar(845-50,805,1245+50,838,(B.hp/B.maxHp)*100,darkGray,c_maroon,c_red,0,true,true);
+	var bossBar = 0;
+	if (global.colorBlindIcons == true)
+	{
+		if (attack == Atks.NormalShot){bossBar = 1;}
+		if (attack == Atks.CircleAttack){bossBar = 2;}
+		if (attack == Atks.GooSpawn){bossBar = 3;}
+		if (attack == Atks.ConeAttack){bossBar = 4;}
+		if (attack == Atks.OneShotAttack){bossBar = 5;}
+		if (attack == Atks.ChaseAttack){bossBar = 6;}
+		if (attack == Atks.RapidFire){bossBar = 7;}
+		if (attack == Atks.BeamAttack){bossBar = 8;}
+		if (attack == Atks.TeleportAttack){bossBar = 9;}
+		if (attack == Atks.HealAttack){bossBar = 10;}
+		if (attack == Atks.ZoneAttack){bossBar = 11;}
+		if (attack == Atks.TauntAttack){bossBar = 12;}
+	}
+	draw_sprite_ext(spr_bossBar21,bossBar,800,830,5,5,0,B.attackColor,1);
+	//draw_text_transformed_color(360))
 	if (B.maxPhase == 1)
 	{
 		if (B.phase == 1)
@@ -139,31 +156,30 @@ if (instance_exists(obj_allBoss))
 	}
 }
 #endregion
-#region specific bosses
-
-#endregion
 #region Player Ui
-draw_healthbar(130,40,75+225+maxHp*1,66,(hp / maxHp) * 100,c_dkgray,c_maroon,c_red,0,false,true);
+var uiHP_X = 60;
+var uiHp_Y = 60;
+var uiHP_Thick = 20;
+draw_set_alpha(0.75);
+draw_healthbar(uiHP_X,uiHp_Y,uiHP_X+195+maxHp*1,uiHp_Y+uiHP_Thick,100,c_dkgray,c_dkgray,c_dkgray,0,false,true);
+draw_set_alpha(1);
+draw_healthbar(uiHP_X,uiHp_Y,uiHP_X+195+maxHp*1,uiHp_Y+uiHP_Thick,(hp / maxHp) * 100,c_dkgray,c_maroon,c_red,0,false,true);
 //ult
-draw_healthbar(125,75,185-1,135,(ultCooldownLeft / ultCooldown) * 100,ultColor,c_dkgray,c_dkgray,3,true,false);
+draw_healthbar(60,90,119,150,(ultCooldownLeft / ultCooldown) * 100,ultColor,c_dkgray,c_dkgray,3,true,false);
 //leftClick
-draw_healthbar(195,75,235-1,115,(leftClickCooldownLeft / leftClickCooldown) * 100,leftClickColor,c_dkgray,c_dkgray,3,true,false);
+draw_healthbar(130,90,170,130,(leftClickCooldownLeft / leftClickCooldown) * 100,leftClickColor,c_dkgray,c_dkgray,3,true,false);
 //dash
-draw_healthbar(245,75,305-1,105,(dashCooldownLeft / dashCooldown) * 100,dashColor,c_dkgray,c_dkgray,3,true,false);
+draw_healthbar(180,90,239,120,(dashCooldownLeft / dashCooldown) * 100,dashColor,c_dkgray,c_dkgray,3,true,false);
 //rightCLick
-draw_healthbar(315,75,355-1,115,(rightClickCooldownLeft / rightClickCooldown) * 100,rightClickColor,c_dkgray,c_dkgray,3,true,false);
-
-draw_sprite_ext(spr_healthBarNew,0,85,30,5,5,0,c_white,1);
-if (gameMaster.chosenClass == Character.ShadowAssassin){draw_sprite_ext(spr_player_theAssasin,0,77,75,7.5,7.5,0,c_white,1);}
-if (gameMaster.chosenClass == Character.Pyromancer){draw_sprite_ext(spr_player_theMage_menu,0,77,75,7,7.,0,c_white,1);}
-if (gameMaster.chosenClass == Character.BloodKnight){draw_sprite_ext(spr_player_theBloodKnight,0,68,60,7.5,7.5,0,c_white,1);}
-
-
+draw_healthbar(250,90,289,130,(rightClickCooldownLeft / rightClickCooldown) * 100,rightClickColor,c_dkgray,c_dkgray,3,true,false);
+draw_sprite_ext(spr_healthBarNew2,0,50,50,5,5,0,c_white,1);
+draw_set_halign(fa_center);
 draw_set_font(fnt_NewNormalText);
-draw_text_transformed_color(145,87,"E",0.3*0.35,0.3*0.35,0,c_black,c_black,c_black,c_black,0.35);
-draw_text_transformed_color(203,84,"M1",0.2*0.35,0.2*0.35,0,c_black,c_black,c_black,c_black,0.35);
-draw_text_transformed_color(250,81,"Space",0.175*0.35,0.175*0.35,0,c_black,c_black,c_black,c_black,0.35);
-draw_text_transformed_color(320,84,"M2",0.2*0.35,0.2*0.35,0,c_black,c_black,c_black,c_black,0.35);
+draw_text_transformed_color(89,87+13,"E",0.3*0.35,0.3*0.35,0,c_black,c_black,c_black,c_black,0.35);
+draw_text_transformed_color(150,84+13,"M1",0.2*0.35,0.2*0.35,0,c_black,c_black,c_black,c_black,0.35);
+draw_text_transformed_color(209,81+13,"Space",0.175*0.35,0.175*0.35,0,c_black,c_black,c_black,c_black,0.35);
+draw_text_transformed_color(269,84+13,"M2",0.2*0.35,0.2*0.35,0,c_black,c_black,c_black,c_black,0.35);
+draw_set_halign(fa_left);
 
 //cursor
 var cursorSize = 2;

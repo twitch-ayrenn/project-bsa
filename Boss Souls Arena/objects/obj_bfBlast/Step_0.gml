@@ -1,6 +1,7 @@
 /// @description Insert description here
 image_alpha = 0.8;
 depth = -y-100;
+if (place_meeting(x,y,obj_noGoZone)){instance_destroy();}
 if (destroy == true)
 {
 	destroy = false;

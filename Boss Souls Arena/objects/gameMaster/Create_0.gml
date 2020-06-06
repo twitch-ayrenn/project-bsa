@@ -26,6 +26,9 @@ enum Menues
 	Death = 7,
 	BossSlain = 8,
 	BossFailed = 9,
+	Credits = 10,
+	BossRush = 11,
+	Campaign = 12,
 }
 //menu = Menues.Main;
 enum Depths
@@ -39,30 +42,28 @@ enum Boss
 	NoBoss = 0,
 	
 	BloodZombie = 1,//3
-	FlameWisp, // this is new wisp sister anna
-	TheCorrupter,
+	FlameWisp = 2, // this is new wisp sister anna
+	TheCorrupter = 3,
 
-	FlameGate,//3
-	WispSisterJulia,
-	DeathKnight,
+	FlameGate = 4,//3
+	WispSisterJulia = 5,
+	DeathKnight = 6,
 	
-	AngelSlayerRekZul,//4
-	KnightWitchYi,
-	AngelKnightOscar,
-	DemonLordRekTaar,
+	AngelSlayerRekZul = 7,//4
+	KnightWitchYi = 8,
+	AngelKnightOscar = 9,
+	DemonLordRekTaar = 10,
 	
-	Gravekeeper,//4
-    BloodKnightDavid,
-	StatueOfCorruption,
-	WispSisters,
+	Gravekeeper = 11,//4
+    BloodKnightDavid = 12,
+	StatueOfCorruption = 13,
+	WispSisters = 14,
 
-	DemonQueensHead,// 5
-	DeathKing,
-	SlimeQueen, 
-	BloodKingVarus,
-	VoidLordHeadless,
+	DemonQueensHead = 15,// 3
+	DeathKing = 16,
+	SlimeQueen = 17, 
 	
-	ArenaKing,
+	ArenaKing = 18,
 	//canceld Bosses
 	TheMadWitches,//4
 	QueenSerpant,
@@ -113,6 +114,7 @@ enum States
 }
 chosenClass = 0;
 chosenBoss = 0;
+chosenMode = 0;
 global.player = obj_allPlayer;
 //pricing
 global.relase = false;
@@ -140,19 +142,20 @@ clearColor = c_maroon;
 clearSize = 1;
 fightColor = c_maroon;
 fightSize = 1;
-statsColor = c_yellow;
-statsSize = 1;
 settingsColor = global.darkYellow;
 settingsSize = 1;
+creditsColor = global.darkYellow;
 //settings
 global.musicOn = false;
 global.musicVolume = 1;
 global.soundOn = true;
 global.ambientOn = false;
 global.ShowInfo = false;
-global.colorBlindIcons = false;
-global.colorBlindText = false;
-global.dashTowardsMove = false;
+global.colorBlindIcons = true;
+global.colorBlindText = true;
+global.autoAim = false;
+global.screenShake = true;
+global.dashTowardsMove = true;
 global.seeAbilitiesInGame = true;
 global.showExtraItemInfo = false;
 //tutorial
@@ -180,6 +183,9 @@ exitSize = 1;
 backColor = c_maroon;
 backSize = 1;
 global.slidingSpeed = 1.75;
+global.campaignDifficulty = 1;
+global.maxDifficulty = 1.25;
+global.minDifficulty = 0.75;
 //Alpha 
 deathAlpha = 0;
 transitionAlpha = 0;
@@ -201,18 +207,14 @@ outline_init();
 enum Particles
 {
 	Healing_Small,
-	
 }
 ////Character progression and select
 //Progress // for a boss its its number -1
 assassinProgress = 1;
 bloodKnightProgress = 1;
 pyromancerProgress = 1;
-shopkeeperProgress = 1;
-theRedWarriorProgress = 1;
 plaugeWalkerProgress = 1;
 angelSlayerProgress = 1;
-rainbowSlimeProgress = 1;
 agentOfGodProgress = 1;
 gravelingProgress = 1;
 totalProgress = 0;
@@ -221,22 +223,24 @@ global.progressAmount = 1.5;
 assassinUnlocked = true;
 bloodKnightUnlocked = true;
 pyromancerUnlocked = true;
-shopkeeperUnlocked = false;
-theRedWarriorUnlocked = false;
 plaugeWalkerUnlocked = true;
 angelSlayerUnlocked = true;
-rainbowSlimeUnlocked = false;
 agentOfGodUnlocked = true;
 gravelingUnlocked = true;
+//bossrush
+bossAssassinUnlocked = true;
+bossBloodKnightUnlocked = true;
+bossPyromancerUnlocked = true;
+bossPlaugeWalkerUnlocked = true;
+bossAngelSlayerUnlocked = true;
+bossAgentOfGodUnlocked = true;
+bossGravelingUnlocked = true;
 //Items
 assassinItems[100] = false;
 bloodKnightItems[100] = false;
 pyromancerItems[100] = false;
-shopkeeperItems[100] = false;
-theRedWarriorItems[100] = false;
 plaugeWalkerItems[100] = false;
 angelSlayerItems[100] = false;
-rainbowSlimeItems[100] = false;
 agentOfGodItems[100] = false;
 gravelingItems[100] = false;
 global.itemSlots = 0;
@@ -303,4 +307,12 @@ if (global.relase == true)
 	pyromancerUnlocked = false;		plaugeWalkerUnlocked = false;
 	angelSlayerUnlocked = false;	agentOfGodUnlocked = false;		
 	gravelingUnlocked = false;
+	bossAssassinUnlocked = true;
+	//Boss Rush
+	bossBloodKnightUnlocked = false;
+	bossPyromancerUnlocked = false;
+	bossPlaugeWalkerUnlocked = false;
+	bossAngelSlayerUnlocked = false;
+	bossAgentOfGodUnlocked = false;
+	bossGravelingUnlocked = false;
 }
