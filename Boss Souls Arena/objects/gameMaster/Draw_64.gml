@@ -1195,9 +1195,16 @@ if (menu == Menues.BossSelect)
 	draw_set_halign(fa_center);
 	var cX = 800;//center x
 	var cY = 450+375;
-	var progressionText = 0;
-	if (chosenClass == Character.ShadowAssassin){}
-	draw_text_transformed_color(cX,cY-100,"",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,0.65);
+	var progressionText = "";
+	if (chosenClass == Character.ShadowAssassin){progressionText = "Campaign Progression: " + string(int64(	(((assassinProgress-1)/1.5)/18)*100	)	) + "%";}
+	if (chosenClass == Character.Pyromancer){progressionText = "Campaign Progression: " + string(int64(	(((pyromancerProgress-1)/1.5)/18)*100	)	) + "%";}
+	if (chosenClass == Character.BloodKnight){progressionText = "Campaign Progression: " + string(int64(	(((bloodKnightProgress-1)/1.5)/18)*100	)	) + "%";}
+	if (chosenClass == Character.PlaugeWalker){progressionText = "Campaign Progression: " + string(int64(	(((plaugeWalkerProgress-1)/1.5)/18)*100	)	) + "%";}
+	if (chosenClass == Character.Graveling){progressionText = "Campaign Progression: " + string(int64(	(((gravelingProgress-1)/1.5)/18)*100	)	) + "%";}
+	if (chosenClass == Character.AgentOfGod){progressionText = "Campaign Progression: " + string(int64(	(((agentOfGodProgress-1)/1.5)/18)*100	)	) + "%";}
+	if (chosenClass == Character.AngelSlayer){progressionText = "Campaign Progression: " + string(int64(	(((angelSlayerProgress-1)/1.5)/18)*100	)	) + "%";}
+
+	draw_text_transformed_color(cX,cY-45,progressionText,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,0.65);
 	draw_text_transformed_color(cX,cY,"Press A or D to scroll in this menu",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,0.65);
 	draw_set_halign(fa_left);
 	

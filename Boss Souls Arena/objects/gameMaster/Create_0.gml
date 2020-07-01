@@ -304,7 +304,7 @@ global.arenaMiddleY = 600;
 if (global.deBugg == true)
 {
 	//Progression
-	assassinProgress = 100;			bloodKnightProgress = 100;
+	assassinProgress = 1;			bloodKnightProgress = 100;
 	pyromancerProgress = 100;		plaugeWalkerProgress = 100;
 	angelSlayerProgress = 100;		agentOfGodProgress = 100;		
 	gravelingProgress = 100;
