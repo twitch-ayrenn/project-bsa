@@ -12,3 +12,4 @@ if (global.itemSlots >= 1 && global.itemSelected[bossForThisItem] == false)
 	gameMaster.previewCooldown -= previewCooldown;
 }
 hover = false;
+if (gameMaster.itemShowInfoFor == bossForThisItem){gameMaster.itemShowInfoFor = Boss.NoBoss;}

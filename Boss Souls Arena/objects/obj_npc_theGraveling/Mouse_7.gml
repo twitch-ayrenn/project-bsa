@@ -1,6 +1,5 @@
 /// @description Insert description here
-if (gameMaster.gravelingUnlocked == true && gameMaster.menu == Menues.PlayerSelect ||
-gameMaster.gravelingUnlocked == true && gameMaster.menu == Menues.Main)
+if (gameMaster.gravelingUnlocked == true && gameMaster.menu == Menues.PlayerSelect)
 {
 	if (global.soundOn == true){audio_play_sound(snd_buttonClick,Prioity.Normal,false);}
 	with (gameMaster)

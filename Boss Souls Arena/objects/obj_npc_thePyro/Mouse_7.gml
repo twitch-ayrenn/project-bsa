@@ -1,6 +1,5 @@
 /// @description Insert description here
-if (gameMaster.pyromancerUnlocked == true && gameMaster.menu == Menues.PlayerSelect ||
-gameMaster.pyromancerUnlocked == true && gameMaster.menu == Menues.Main)
+if (gameMaster.pyromancerUnlocked == true && gameMaster.menu == Menues.PlayerSelect)
 {
 	if (global.soundOn == true){audio_play_sound(snd_buttonClick,Prioity.Normal,false);}
 	with (gameMaster)

@@ -36,7 +36,7 @@ moveSpeed = 2;
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
 moveDirection = 0; 
-global.damage = 1*1;
+global.damage = 1*40;
 baseLifeSteal = 0.8;
 global.lifeSteal = baseLifeSteal;
 dashSpeed = 5;
@@ -51,6 +51,7 @@ state = States.BeforeFight;
 idleSprite = 0;
 walkSprite = 0;
 deadSprite = 0;
+hatSprite = 0;
 instance_create_depth(x,y,1,obj_allCursor);
 playerSize = 1;
 normalAlpha = 1;
@@ -265,7 +266,7 @@ activateDashItem = false;
 activateLeftClickItem = false;
 activateRightClickItem = false;
 #region Statue of Corruption / The Lootbox
-totalItems = 17;
+totalItems = 20;
 if (global.itemSelected[Boss.StatueOfCorruption] == true && global.slot2 == true)
 {
 	itemRolled[1] = false;
@@ -273,7 +274,7 @@ if (global.itemSelected[Boss.StatueOfCorruption] == true && global.slot2 == true
 	counter = 1;
 	while (itemRolled[1] == false || itemRolled[2] == false)
 	{
-		if (counter == 6 || counter == 10){counter++;}
+		if (counter == 6 || counter == 10 || counter == 20){counter++;}
 		if (counter == 9 || counter == 13){counter += 2;}
 		
 		if (global.itemSelected[counter] == false && irandom_range(1,totalItems) == 1) 
@@ -431,10 +432,38 @@ if (global.itemSelected[Boss.SlimeQueen] == true)
 t52Active = false;
 t52Speed = 1;
 #endregion
+#region Arena King - Become the King
+if (global.itemSelected[Boss.ArenaKing] == true)
+{
+	instance_create_depth(x,y,depth,obj_equipment_crownGround);
+	if (class == Character.ShadowAssassin){idleSprite = spr_player_theAssasin_hat; walkSprite = spr_player_theAssasin_walking_hat;}
+	if (class == Character.Pyromancer){idleSprite = spr_player_theMage_hat; walkSprite = spr_player_theMage_walking_hat;}
+	if (class == Character.AngelSlayer){idleSprite = spr_player_angelSlayer_idle_hat; walkSprite = spr_player_angelSlayer_walking_hat;}
+	if (class == Character.PlaugeWalker){idleSprite = spr_player_plagueWalker_idle_hat; walkSprite = spr_player_plaugeWalker_walking_hat;}
+}
+#endregion
+#region Boss Rush
+actualSPHDashSpeed = 0;
+sPHDashStop =  0;
+sPHDashStopLeft = 0;
+sPHDashDamage = 0;
+if (global.itemSelected[Boss.BossRushReward] == true)
+{
+	actualSPHDashSpeed = 0;
+	sPHDashStop = (0.4)*30;
+	sPHDashStopLeft = 0;
+	sPHDashDamage = false;
+}
+#endregion
+#region Campagin Completed
+if (global.itemSelected[Boss.CampaignReward] == true)
+{
+	hellStacks = 0;
+}
+#endregion
 #endregion
 #region Bosses
 blackOutAlpha = 0;
-
 #endregion
 #region maxValues
 if (class == Character.Pyromancer){leftClickCooldown = (8)*30; coneShotAmount = int64(global.damage*2);}
@@ -444,6 +473,7 @@ actualBKDashSpeed = 0; actualASDashSpeed = 0;//needs to exist or else it crashes
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
 maxHp = hp;
+slimeArmorHp = maxHp*1.2;
 normalMaxHp = maxHp;
 sprite_index = idleSprite;
 normalIdleSprite = idleSprite;

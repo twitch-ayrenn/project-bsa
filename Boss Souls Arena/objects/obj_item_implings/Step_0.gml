@@ -11,6 +11,7 @@ if (gameMaster.chosenClass == Character.AgentOfGod && gameMaster.agentOfGodItems
 if (gameMaster.chosenClass == Character.Graveling && gameMaster.gravelingItems[bossForThisItem] == true){visible = true;mask_index = spr_loot_size;}
 if (gameMaster.chosenClass == Character.AngelSlayer && gameMaster.angelSlayerItems[bossForThisItem] == true){visible = true;mask_index = spr_loot_size;}
 if (global.deBugg == true){visible = true;mask_index = spr_loot_size;}
+if (global.itemImpling == true){visible = true;mask_index = spr_loot_size;}
 if (gameMaster.menu != Menues.BossLoot){visible = false;mask_index = spr_noMask;}
 if (reset == true)
 {

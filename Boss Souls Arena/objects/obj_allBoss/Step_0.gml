@@ -1386,14 +1386,14 @@ if (hp <= 0 && phase == 4 && phase != maxPhase)
 	}
 	#endregion
 }
-if (hp <= 0 && phase == 5 && phase != maxPhase && gameMaster.chosenBoss != Boss.ArenaKing)
+if (hp <= 0 && phase == 5 && phase != maxPhase && gameMaster.chosenBoss != Boss.ArenaKing && gameMaster.chosenMode == Menues.Campaign)
 {
 	phase++;
 	hp = phase6Hp;
 	moveSpeed = phase6Ms;
 	global.bossDamage = phase6Dmg;
 }
-if (hp <= 0 && phase == 5 && phase != maxPhase && gameMaster.chosenBoss == Boss.ArenaKing)
+if (hp <= 0 && phase == 5 && phase != maxPhase && gameMaster.chosenBoss == Boss.ArenaKing && gameMaster.chosenMode == Menues.Campaign)
 {
 	if (instance_exists(par_bossStuff)){with(par_bossStuff){instance_destroy();}}
 	instance_destroy();
@@ -1420,49 +1420,70 @@ if (hp <= 0 && phase == maxPhase && gameMaster.menu != Menues.Death && gameMaste
 		gameMaster.assassinItems[gameMaster.chosenBoss] = true;
 		gameMaster.assassinProgress += global.progressAmount;
 		gameMaster.totalProgress += 1;
+		if (gameMaster.chosenBoss == Boss.ArenaKing){with(gameMaster){bossAssassinUnlocked = true;}}
 	}
 	if (gameMaster.chosenClass == Character.Pyromancer && gameMaster.pyromancerItems[gameMaster.chosenBoss] == false)
 	{
 		gameMaster.pyromancerItems[gameMaster.chosenBoss] = true;
 		gameMaster.pyromancerProgress += global.progressAmount;
 		gameMaster.totalProgress += 1;
+		if (gameMaster.chosenBoss == Boss.ArenaKing){with(gameMaster){bossPyromancerUnlocked = true;}}
 	}
 	if (gameMaster.chosenClass == Character.BloodKnight && gameMaster.bloodKnightItems[gameMaster.chosenBoss] == false)
 	{
 		gameMaster.bloodKnightItems[gameMaster.chosenBoss] = true;
 		gameMaster.bloodKnightProgress += global.progressAmount;
 		gameMaster.totalProgress += 1;
+		if (gameMaster.chosenBoss == Boss.ArenaKing){with(gameMaster){bossPyromancerUnlocked = true;}}
 	}
 	if (gameMaster.chosenClass == Character.PlaugeWalker && gameMaster.plaugeWalkerItems[gameMaster.chosenBoss] == false)
 	{
 		gameMaster.plaugeWalkerItems[gameMaster.chosenBoss] = true;
 		gameMaster.plaugeWalkerProgress += global.progressAmount;
 		gameMaster.totalProgress += 1;
+		if (gameMaster.chosenBoss == Boss.ArenaKing){with(gameMaster){bossPlaugeWalkerUnlocked = true;}}
 	}
 	if (gameMaster.chosenClass == Character.AgentOfGod && gameMaster.agentOfGodItems[gameMaster.chosenBoss] == false)
 	{
 		gameMaster.agentOfGodItems[gameMaster.chosenBoss] = true;
 		gameMaster.agentOfGodProgress += global.progressAmount;
 		gameMaster.totalProgress += 1;
+		if (gameMaster.chosenBoss == Boss.ArenaKing){with(gameMaster){bossAgentOfGodUnlocked = true;}}
 	}
 	if (gameMaster.chosenClass == Character.Graveling && gameMaster.gravelingItems[gameMaster.chosenBoss] == false)
 	{
 		gameMaster.gravelingItems[gameMaster.chosenBoss] = true;
 		gameMaster.gravelingProgress += global.progressAmount;
 		gameMaster.totalProgress += 1;
+		if (gameMaster.chosenBoss == Boss.ArenaKing){with(gameMaster){bossGravelingUnlocked = true;}}
 	}
 	if (gameMaster.chosenClass == Character.AngelSlayer && gameMaster.angelSlayerItems[gameMaster.chosenBoss] == false)
 	{
 		gameMaster.angelSlayerItems[gameMaster.chosenBoss] = true;
 		gameMaster.angelSlayerProgress += global.progressAmount;
 		gameMaster.totalProgress += 1;
+		if (gameMaster.chosenBoss == Boss.ArenaKing){with(gameMaster){bossAngelSlayerUnlocked = true;}}
 	}
 	if (gameMaster.chosenBoss == Boss.BloodZombie)
 	{
 		global.tutorial = false;	
 	}
-	#endregion
+	if (gameMaster.chosenBoss == Boss.DeathKnight){global.itemDeathScythe = true;}
+	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar){global.itemImpling = true;}
+	if (gameMaster.chosenBoss == Boss.StatueOfCorruption){global.itemLootBox = true;}
+	if (gameMaster.chosenBoss == Boss.ArenaKing)
+	{
+		with (gameMaster)
+		{
+			//Unlocked
+			assassinUnlocked = true;		bloodKnightUnlocked = true;
+			pyromancerUnlocked = true;		plaugeWalkerUnlocked = true;
+			angelSlayerUnlocked = true;		agentOfGodUnlocked = true;		
+			gravelingUnlocked = true;
+		}
+	}
 	instance_create_depth(global.arenaMiddleX,-156,depth,obj_rewardChest);
+	#endregion
 	if (audio_is_playing(snd_music_victory) == false && global.musicOn == true)
 	{
 		audio_stop_sound(snd_music_victory);
@@ -1476,9 +1497,28 @@ if (hp <= 0 && phase == maxPhase && gameMaster.menu != Menues.Death && gameMaste
 }
 if (hp <= 0 && phase == maxPhase && gameMaster.menu != Menues.Death && gameMaster.chosenMode == Menues.BossRush)
 {
-	gameMaster.chosenBoss += 1;
+	if (gameMaster.chosenBoss == Boss.ArenaKing)
+	{
+		global.itemBossRush = true;
+		if (audio_is_playing(snd_music_victory) == false && global.musicOn == true)
+		{
+			audio_stop_sound(snd_music_victory);
+			audio_play_sound(snd_music_victory,10,true);
+			audio_sound_gain(snd_music_victory,0,0);
+			audio_sound_gain(snd_music_victory,global.musicVolume,(5)*1000);
+		}
+		gameMaster.chosenBoss = Boss.BossRushReward;
+		instance_create_depth(global.arenaMiddleX,-156,depth,obj_rewardChest);
+		gameMaster.menu = Menues.BossSlain;
+		game_save(global.saveFile);
+	}
 	if (instance_exists(par_bossStuff)){with(par_bossStuff){instance_destroy();}}
-	var boss = instance_create_depth(global.arenaMiddleX+175,global.arenaMiddleY,-global.arenaMiddleY,obj_allBoss);
+	if (gameMaster.chosenBoss != Boss.ArenaKing  || gameMaster.chosenBoss != Boss.BossRushReward)
+	{
+		gameMaster.chosenBoss += 1;
+		var boss = instance_create_depth(global.arenaMiddleX+175,global.arenaMiddleY,-global.arenaMiddleY,obj_allBoss);
+	}
 	instance_destroy();
 }
+
 #endregion

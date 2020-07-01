@@ -1,5 +1,6 @@
 /// @description om clickar
-if (gameMaster.menu == Menues.PlayerSelect || gameMaster.menu == Menues.BossSelect ||gameMaster.menu == Menues.Credits)
+if (gameMaster.menu == Menues.PlayerSelect || gameMaster.menu == Menues.BossSelect 
+|| gameMaster.menu == Menues.Credits || gameMaster.menu == Menues.Controlls )
 {
 	gameMaster.menu = Menues.Main;
 }

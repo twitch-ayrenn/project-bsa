@@ -4,11 +4,12 @@ if (menu == Menues.Main)
 {
 	var campaignSize = 1;
 	var bossRushSize = 1;
+	var controllsSize = 1;
 	var sizeOfSetting = 1;
 	var creditsSize = 1;
 	
-	var startY = 220;
-	var sep = 130;
+	var startY = 205;
+	var sep = 110;
 	
 	#region Campaign
 	if (device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*0 && device_mouse_y_to_gui(0) <startY + sep*1-20)
@@ -130,8 +131,28 @@ if (menu == Menues.Main)
 		}
 	}
 	#endregion
-	#region Settings
+	#region Controlls
 	if (device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*2 && device_mouse_y_to_gui(0) <startY + sep*3-20)
+	{
+		controllsColor = c_yellow;
+		controllsSize = 1.05;
+	}
+	else 
+	{ 
+		controllsColor = global.darkYellow;
+		controllsSize = 1;
+	}
+	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*2 && device_mouse_y_to_gui(0) <startY + sep*3-20)
+	{
+		menu = Menues.Controlls;
+		if (global.soundOn == true)
+		{
+			audio_play_sound(snd_buttonClick,Prioity.Normal,false);
+		}
+	}
+	#endregion
+	#region Settings
+	if (device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*3 && device_mouse_y_to_gui(0) <startY + sep*4-20)
 	{
 		settingsColor = c_yellow;
 		sizeOfSetting = 1.05;
@@ -141,7 +162,7 @@ if (menu == Menues.Main)
 		settingsColor = global.darkYellow;
 		sizeOfSetting = 1;
 	}
-	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*2 && device_mouse_y_to_gui(0) <startY + sep*3-20)
+	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*3 && device_mouse_y_to_gui(0) <startY + sep*4-20)
 	{
 		with (gameMaster)
 		{
@@ -158,7 +179,7 @@ if (menu == Menues.Main)
 	}
 	#endregion
 	#region Credits
-	if (device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*3 && device_mouse_y_to_gui(0) <startY + sep*4-20)
+	if (device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*4 && device_mouse_y_to_gui(0) <startY + sep*5-20)
 	{
 		creditsColor = c_yellow;
 		creditsSize = 1.05;
@@ -168,7 +189,7 @@ if (menu == Menues.Main)
 		creditsColor = global.darkYellow;
 		creditsSize = 1;
 	}
-	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*3 && device_mouse_y_to_gui(0) <startY + sep*4-20)
+	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*4 && device_mouse_y_to_gui(0) <startY + sep*5-20)
 	{
 		menu = Menues.Credits;
 		if (global.soundOn == true)
@@ -185,9 +206,11 @@ if (menu == Menues.Main)
 	
 	draw_text_transformed_color(80,startY + sep*1,"Arena Rush",bossRushSize,bossRushSize,0,global.orange,global.orange,playArenaColor,playArenaColor,1);
 	
-	draw_text_transformed_color(80,startY + sep*2,"Settings",sizeOfSetting,sizeOfSetting,0,global.orange,global.orange,settingsColor,settingsColor,1);
+	draw_text_transformed_color(80,startY + sep*2,"Controlls",controllsSize,controllsSize,0,global.orange,global.orange,controllsColor,controllsColor,1);
 	
-	draw_text_transformed_color(80,startY + sep*3,"Credits",creditsSize,creditsSize,0,global.orange,global.orange,creditsColor,creditsColor,1);
+	draw_text_transformed_color(80,startY + sep*3,"Settings",sizeOfSetting,sizeOfSetting,0,global.orange,global.orange,settingsColor,settingsColor,1);
+
+	draw_text_transformed_color(80,startY + sep*4,"Credits",creditsSize,creditsSize,0,global.orange,global.orange,creditsColor,creditsColor,1);
 	
 	draw_text_transformed_color(50,760,"Exit",exitSize,exitSize,0,exitColor,exitColor,exitColor,exitColor,1);
 	
@@ -207,15 +230,17 @@ if (menu == Menues.BossLoot)
 	var line2X = 1135;
 	draw_line_width_color(line2X,200,line2X,200+500,5,global.orange,c_yellow);
 	
-	var itemXIncrease = 120;
-	draw_text_transformed_color(525,710,"Item Slots",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
-	if(global.maxItemSlots >= 1){draw_text_transformed_color(435+1*itemXIncrease,855,"Item I",0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);}
-	if(global.maxItemSlots >= 2){draw_text_transformed_color(435+2*itemXIncrease,855,"Item II",0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);}
-	if(global.maxItemSlots >= 3){draw_text_transformed_color(435+3*itemXIncrease,855,"Item III",0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);}
-	if(global.maxItemSlots >= 4){draw_text_transformed_color(435+4*itemXIncrease,855,"Item IV",0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);}
-	if(global.maxItemSlots >= 5){draw_text_transformed_color(435+5*itemXIncrease,855,"Item V",0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);}
-	if(global.maxItemSlots >= 6){draw_text_transformed_color(435+6*itemXIncrease,855,"Item VI",0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);}
-	
+	var itemXIncrease = 119;
+	draw_text_transformed_color(525,680,"Item Slots",0.35,0.35,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	var itemSlotSize = 0.25;
+	var itemSlotY = 860;
+	if(global.maxItemSlots >= 1){draw_text_transformed_color(445+1*itemXIncrease,itemSlotY,"Item I",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}
+	if(global.maxItemSlots >= 2){draw_text_transformed_color(445+2*itemXIncrease,itemSlotY,"Item II",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}
+	if(global.maxItemSlots >= 3){draw_text_transformed_color(445+3*itemXIncrease,itemSlotY,"Item III",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}
+	if(global.maxItemSlots >= 4){draw_text_transformed_color(445+4*itemXIncrease,itemSlotY,"Item IV",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}
+	if(global.maxItemSlots >= 5){draw_text_transformed_color(445+5*itemXIncrease,itemSlotY,"Item V",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}
+	if(global.maxItemSlots >= 6){draw_text_transformed_color(445+6*itemXIncrease,itemSlotY,"Item VI",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}
+	//1161
 	var startY = 280;
 	var xStats = 45;
 	var yIncreasse = 32.5;
@@ -225,7 +250,9 @@ if (menu == Menues.BossLoot)
 	if (chosenClass == Character.BloodKnight){hpCalc *= 2;}
 	if (chosenClass == Character.AngelSlayer){hpCalc = 100;}
 	var hpText = "Max Health: " + string(hpCalc);
+	var spdCalc = 20 + bonusSpeed + previewSpeed
 	var spdText = "Movement Speed: " + string(20 + bonusSpeed + previewSpeed);
+	var dlCalc = 1 + (0 + bonusDash + previewDash)*0.01;
 	var dlText = "Mobility Bonus: " + string(0 + bonusDash + previewDash) + "%";
 	var dmgCalc = 10 + bonusDamage + previewDamage;
 	if (global.itemSelected[Boss.AngelKnightOscar] == true){dmgCalc *= 0.55;}
@@ -258,32 +285,206 @@ if (menu == Menues.BossLoot)
 	itemTextSize = 0.075;
 	itemTextSeparationY = 24;
 	draw_set_font(fnt_NewNormalText);
-	if (itemShowInfoFor == Boss.NoBoss)
-	{
-		infoTextX = 300 + shoveInX;
-		draw_set_font(fnt_NewNormalText);
-		draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Select an [Item] to the left by",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"clicking on it.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"Hover over an [Item] to see info",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"about that [Item].",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"Clear Selected [Items] by ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,"pressing the \"Clear Selected Items\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"button.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-		draw_set_font(fnt_menu_fill);
-		//draw_text_transformed_color(infoTextX,350+7.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
-		draw_set_font(fnt_NewNormalText);
-		draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"Hover over the stats on the left",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"side to see how the stats affects",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"other items and character abilities.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-		draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+	infoTextX = 300 + shoveInX;
+		#region No Item Selected
+		if (itemShowInfoFor == Boss.NoBoss)
+		{
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Select an item to the left by clicking",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"on it.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+3.5*itemTextSeparationY,"Hover over an item to see info about",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4.5*itemTextSeparationY,"that item.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5.5*itemTextSeparationY,"Clear Selected items by pressing the",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+6.5*itemTextSeparationY,"\"Clear Selected Items\" button.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"Hover over the stats on the left side",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"to see how the stats affects other",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"items and character abilities.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+11.5*itemTextSeparationY,"Gain more item slots by slaying more",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+12.5*itemTextSeparationY,"bosses. The max amount of item slots",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+13.5*itemTextSeparationY,"you can obtain is 6.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		
-		draw_set_font(fnt_menu_fill);
-		var ItemName = "No Selected Item"
-		draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1)
-	}
-	
+			draw_set_font(fnt_menu_fill);
+			var ItemName = "No Selected Item"
+			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1)
+		}
+		#endregion
+		#region Health
+		if (itemShowInfoFor == Boss.Health)
+		{
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Determines how much damage you",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"can take before dying.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		
+			draw_set_font(fnt_menu_fill);
+			var ItemName = "Health"
+			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1)
+		}
+		#endregion
+		#region Speed
+		if (itemShowInfoFor == Boss.Speed)
+		{
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"How fast you walk around. Some",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"bosses might require very high speed",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"to beat.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		
+			draw_set_font(fnt_menu_fill);
+			var ItemName = "Movement Speed"
+			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1)
+		}
+		#endregion
+		#region Mobility Bonus
+		if (itemShowInfoFor == Boss.DashLength)
+		{
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Increases the length of your dash and",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"how far you can teleport.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		
+			draw_set_font(fnt_menu_fill);
+			var ItemName = "Mobility Bonus"
+			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1)
+		}
+		#endregion
+		#region Damage
+		if (itemShowInfoFor == Boss.Damage)
+		{
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Increases your damage and the ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"damage items do. ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"Exeptions are:",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"Bloodknights summoned bats.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,"Plaguewalkers leeches",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		
+			draw_set_font(fnt_menu_fill);
+			var ItemName = "Damage Scaling"
+			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1)
+		}
+		#endregion
+		#region Attack Speed
+		if (itemShowInfoFor == Boss.AttackSpeed)
+		{
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Reduces the time between attacks.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"Exeptions are:",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"Pyromancer attacks.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"Death Scythe item",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		
+			draw_set_font(fnt_menu_fill);
+			var ItemName = "Attack Speed"
+			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1)
+		}
+		#endregion
+		#region Lifesteal
+		if (itemShowInfoFor == Boss.Lifesteal)
+		{
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"You heal for all damage you do.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"The amount healed is lifesteal ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"precentage times the damage dealt.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"Your base life steal is 80%.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		
+			draw_set_font(fnt_menu_fill);
+			var ItemName = "Lifesteal"
+			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1)
+		}
+		#endregion
+		#region Cooldown Reduction
+		if (itemShowInfoFor == Boss.CDR)
+		{
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Reduces the cooldown on your",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"abilities and ultimate ability. ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"Cooldown reduction is caped at",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"50% unless you have items that",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,"increase the cap.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		
+			draw_set_font(fnt_menu_fill);
+			var ItemName = "Cooldown Reduction"
+			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1)
+		}
+		#endregion
+		#region Summoning Power
+		if (itemShowInfoFor == Boss.SummoningPower)
+		{
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Summoning Power increases the power",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"of anything that has been summoned.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"This can either be by summoning more",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"things or increasing the damage or",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"the lifespan of the summoned thing.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		
+			draw_set_font(fnt_menu_fill);
+			var ItemName = "Summoning Power"
+			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1)
+		}
+		#endregion
+		
 		#region Blood Zombie
 		if (itemShowInfoFor == Boss.BloodZombie)
 		{
@@ -378,7 +579,7 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+9.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
 			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"+ 10 Max Health",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
-			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"+ 16% Mobility Bonus",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"+ 15% Mobility Bonus",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
 		
 			//name
 			draw_set_font(fnt_menu_fill);
@@ -440,8 +641,8 @@ if (menu == Menues.BossLoot)
 		
 			//name
 			draw_set_font(fnt_menu_fill);
-			var ItemName = "Item: " + "Death Scythe";
-			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+			var ItemName = "Permanent Item: " + "Death Scythe";
+			draw_text_transformed_color(infoTextX,340,ItemName,0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);
 		}
 		#endregion
 		#region Angel Slayer
@@ -540,13 +741,13 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+9.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
 			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"+ 1 Movement Speed",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
-			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"+ 16% Mobility Bonus",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"+ 15% Mobility Bonus",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
 			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"+ 2 Damage Scaling",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			
 			//name
 			draw_set_font(fnt_menu_fill);
-			var ItemName = "Item: " + "Imp Portal"
-			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+			var ItemName = "Permanent Item: " + "Imp Portal"
+			draw_text_transformed_color(infoTextX,340,ItemName,0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);
 		}
 		#endregion
 		#region Gravekeeper
@@ -572,7 +773,7 @@ if (menu == Menues.BossLoot)
 		
 			//name
 			draw_set_font(fnt_menu_fill);
-			var ItemName = "Item:" + "Gravekeeper";
+			var ItemName = "Item: " + "Gravekeeper";
 			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 		}
 		#endregion
@@ -618,13 +819,13 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"+ 5% Cooldown reduction",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"[Items that cant be found in the box]:",itemTextSize,itemTextSize,0,global.goldColor,global.goldColor,c_yellow,c_yellow,1);
 			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"Death Scyhte, Broken Hourglass, The",itemTextSize,itemTextSize,0,global.goldColor,global.goldColor,c_yellow,c_yellow,1);
-			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"Last Wish.",itemTextSize,itemTextSize,0,global.goldColor,global.goldColor,c_yellow,c_yellow,1);
+			draw_text_transformed_color(infoTextX,350+14*itemTextSeparationY,"Last Wish and Steamport Heart",itemTextSize,itemTextSize,0,global.goldColor,global.goldColor,c_yellow,c_yellow,1);
 			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"\"Is this gambling?\"",itemTextSize,itemTextSize,0,global.goldColor,global.goldColor,c_yellow,c_yellow,1);
 			
 			//name
 			draw_set_font(fnt_menu_fill);
-			var ItemName = "Item: " + "The Lootbox"
-			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+			var ItemName = "Permanent Item: " + "The Lootbox"
+			draw_text_transformed_color(infoTextX,340,ItemName,0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);
 		}
 		#endregion
 		#region Wisp Sister Jana
@@ -726,6 +927,80 @@ if (menu == Menues.BossLoot)
 			draw_set_font(fnt_menu_fill);
 			var ItemName = "Item: " + "Death Bat"
 			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+		}
+		#endregion
+		#region Arena King
+		if (itemShowInfoFor == Boss.ArenaKing)
+		{
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Standing near the boss charges the",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"crown. After 7 seconds of charge the",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"crown deals massive damage to all",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"enemies inside the circle. The damage",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"scales with your [Max health].",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			var akctext = "[Crown Damage]: " + string(int64(hpCalc*0.7));
+			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,akctext,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_set_font(fnt_menu_fill);
+			draw_text_transformed_color(infoTextX,350+7.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"+ 40 Health",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"+ 20% Attack Speed",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"+ 2% Lifesteal",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"\"You made it! You killed me and now",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"you become me, the Arena King\".",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			//name
+			draw_set_font(fnt_menu_fill);
+			var ItemName = "Permanent Item: " + "The New King"
+			draw_text_transformed_color(infoTextX,340,ItemName,0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);
+		}
+		#endregion
+		#region Boss Rush Reward
+		if (itemShowInfoFor == Boss.BossRushReward)
+		{
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Replaces [Ultimate] with a Dash that ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"deals massive damage to enemies you",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"dash trough. You do not take damage ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"when touching an enemy. The dash",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"damage is increased by speed and ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,"mobility bonus.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			var akctext = "[Dash Damage]: " + string(int64(spdCalc*6*dlCalc));
+			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,akctext,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_set_font(fnt_menu_fill);
+			draw_text_transformed_color(infoTextX,350+8.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"+ 5 Movement Speed",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"+ 5% Mobility Bonus",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			//name
+			draw_set_font(fnt_menu_fill);
+			var ItemName = "Permanent Item:" + "Steamport Heart"
+			draw_text_transformed_color(infoTextX,340,ItemName,0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);
+		}
+		#endregion
+		#region Campaign Reward
+		if (itemShowInfoFor == Boss.CampaignReward)
+		{
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Attacking shoots a green hellbolt.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"Hiting the boss with 10 hellbolts",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"calls down the wrath of the demon",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"queen to deal massive damage to",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"your enemies.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			var akctext = "[Queens Damage]: " + string(int64(dmgCalc*15));
+			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,akctext,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_set_font(fnt_menu_fill);
+			draw_text_transformed_color(infoTextX,350+7.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"+ 50% Attack Speed",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"+ 2% Lifesteal",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,350+11*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+12*itemTextSeparationY,"\"You Did It. The Crazy Son of a",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+13*itemTextSeparationY,"Bitch, You Did It!\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			//name
+			draw_set_font(fnt_menu_fill);
+			var ItemName = "Permanent Item: " + "Queen's Eye"
+			draw_text_transformed_color(infoTextX,340,ItemName,0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);
 		}
 		#endregion
 	#endregion
@@ -842,22 +1117,72 @@ if (menu == Menues.Credits)
 	draw_text_transformed_color(50,50,"Credits",1.4,1.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	
 	var headlineSize = 0.4;
-	var textSize = 0.275;
-	var sep = 31;
+	var textSize = 0.08;
+	var sep = 27;
 	var startY = 205;
 	
-	draw_text_transformed_color(80,startY-10 + sep*0,"Development",headlineSize,headlineSize,0,c_gray,c_gray,c_white,c_white,1);
-	draw_text_transformed_color(65,startY + sep*1,"Hey! My name is Arrjan Tarach and i ",textSize,textSize,0,c_gray,c_gray,c_white,c_white,1);
-	draw_text_transformed_color(65,startY + sep*2,"programmed, designed and drew everything",textSize,textSize,0,c_gray,c_gray,c_white,c_white,1);
-	draw_text_transformed_color(65,startY + sep*3,"in this game. This is my first really big ",textSize,textSize,0,c_gray,c_gray,c_white,c_white,1);
-	draw_text_transformed_color(65,startY + sep*4,"project and i have worked on this project",textSize,textSize,0,c_gray,c_gray,c_white,c_white,1);
-	draw_text_transformed_color(65,startY + sep*5,"for 2 years. I really hope you enjoy it:)",textSize,textSize,0,c_gray,c_gray,c_white,c_white,1);
-	draw_text_transformed_color(65,startY + sep*6,"",textSize,textSize,0,c_gray,c_gray,c_white,c_white,1);
-	draw_text_transformed_color(80,startY-5 + sep*7,"",headlineSize,headlineSize,0,c_gray,c_gray,c_white,c_white,1);
-	draw_text_transformed_color(65,startY + sep*8,"",textSize,textSize,0,c_gray,c_gray,c_white,c_white,1);
-	draw_text_transformed_color(65,startY + sep*9,"",textSize,textSize,0,c_gray,c_gray,c_white,c_white,1);
-	draw_text_transformed_color(65,startY + sep*10,"",textSize,textSize,0,c_gray,c_gray,c_white,c_white,1);
+	draw_text_transformed_color(80,startY-10 + sep*0,"Development",headlineSize,headlineSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_set_font(fnt_NewNormalText)
+	draw_text_transformed_color(65,startY + sep*1,"Hey! My name is Arrjan Tarach and i ",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*2,"programmed, designed and drew everything",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*3,"in this game. This is my first really big ",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*4,"project and i have worked on this project",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*5,"for 2 years. I really hope you enjoy it:)",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*6,"",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*7,"Outline Shader By: Gurpreet Singh Matharoo",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*8,"Normal Text Font: opendyslexic.org",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*9,"",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*10,"Special Thanks To!:",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*11,"Filip Zachrisson Hansen",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*12,"Jonathan Eriksson",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*13,"Martin Gullersbo",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*14,"Kevin Evason",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*15,"Anton Palmer",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*16,"Saga Lindquist",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*17,"",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*18,"",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*19,"",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_set_font(fnt_menu_fill);
 	
+	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);
+}
+#endregion
+#region Controlls
+if (menu == Menues.Controlls)
+{
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(50,50,"Controlls and Info",1.4,1.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	
+	var headlineSize = 0.4;
+	var textSize = 0.08;
+	var sep = 23.5;
+	var startY = 205;
+	
+	draw_text_transformed_color(80,startY-10 + sep*0,"Controlls",headlineSize,headlineSize,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_set_font(fnt_NewNormalText)
+	draw_text_transformed_color(65,startY + sep*1,"Move with [W] & [A] & [S] & [D] keys.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*2,"Attack with Left Click or 1",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*3,"[Ability][1]: Right Click or 2",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*4,"[Ability][2]: Space",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*5,"[Ultimate]: Q or E or R",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*6,"Ability cooldowns can be viewed in the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*7,"upper left corner when in the arena.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(80,startY-10 + sep*10,"Healing",headlineSize,headlineSize,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_set_font(fnt_NewNormalText)
+	draw_text_transformed_color(65,startY + sep*11,"Health is indicated by the big red bar",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*12,"in the upper left corner when in the arena.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*13,"You heal by doing damage to your opponent. ",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(80,startY-10 + sep*15,"Winning and Rewards",headlineSize,headlineSize,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_set_font(fnt_NewNormalText)
+	draw_text_transformed_color(65,startY + sep*16,"You win by defeating you opponent in the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*17,"arena. Every time you defeat a boss you",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*18,"gain an item. Slaying bosses unlocks more",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*19,"item slots over time.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);
 }
 #endregion
@@ -870,7 +1195,10 @@ if (menu == Menues.BossSelect)
 	draw_set_halign(fa_center);
 	var cX = 800;//center x
 	var cY = 450+375;
-	draw_text_transformed_color(cX,cY,"Press A or D to scroll in this menu",0.5,0.5,0,global.orange,global.orange,c_yellow,c_yellow,0.65);
+	var progressionText = 0;
+	if (chosenClass == Character.ShadowAssassin){}
+	draw_text_transformed_color(cX,cY-100,"",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,0.65);
+	draw_text_transformed_color(cX,cY,"Press A or D to scroll in this menu",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,0.65);
 	draw_set_halign(fa_left);
 	
 	draw_set_font(fnt_menu_fill);
@@ -894,14 +1222,20 @@ if (menu == Menues.Play)
 		draw_sprite_ext(spr_tutorial_boss,0,0,0,0.8333*10,0.8333*10,0,c_white,transitionAlpha-0.15);
 		draw_sprite_ext(spr_arenaKingTutorial,0,1400,750,-10,10,0,c_white,transitionAlpha);
 		draw_set_halign(fa_center);
-		var textSize = 0.1;
-		draw_text_transformed_color(800,275,"This is your opponent",0.6,0.6,0,c_lime,c_lime,c_green,c_green,transitionAlpha);
+		var xText = 800;
+		var yText = 580;
+		var textSize = 0.075;
+		var bigTextSize = textSize*1.5;
+		var TSY = 20;
+		
 		draw_set_font(fnt_NewNormalText)
-		draw_text_transformed_color(800,580,"Below is its health bar. The small red circles below it indicate ",textSize,textSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
-		draw_text_transformed_color(800,615,"how many phases the boss has. The Crystal in the middle and your",textSize,textSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
-		draw_text_transformed_color(800,650,"opponents eyes indicate which attack your opponent will do.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
-		draw_text_transformed_color(150,800,"Click Any Key",textSize,textSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
-		draw_text_transformed_color(150,830,"To Continue",textSize,textSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
+		draw_text_transformed_color(800,295,"This is your opponent",bigTextSize,bigTextSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
+		draw_text_transformed_color(800,yText+TSY*0,"Below is its health bar. The small red circles",textSize,textSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
+		draw_text_transformed_color(800,yText+TSY*1,"below it indicate how many phases the boss has.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
+		draw_text_transformed_color(800,yText+TSY*2,"The Crystal in the middle and your opponents eyes",textSize,textSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
+		draw_text_transformed_color(800,yText+TSY*3,"indicate which attack your opponent will do.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
+		draw_text_transformed_color(150,800,"Click Any Key",bigTextSize,bigTextSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
+		draw_text_transformed_color(150,830,"To Continue",bigTextSize,bigTextSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
 		draw_set_halign(fa_left);
 		if (tutorialAlpha > 0){tutorialAlpha -= clamp(0.5/30,0,1)}
 		draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,tutorialAlpha);
@@ -914,78 +1248,35 @@ if (menu == Menues.Play)
 			if (tutorialFadeOut == true && playerTutorialAlpha > 0){playerTutorialAlpha -= clamp(0.5/30,0,1);}
 			draw_sprite_ext(spr_tutorial_player,0,0,0,0.8333*10,0.8333*10,0,c_white,playerTutorialAlpha - 0.15);
 			draw_set_halign(fa_center);
-			#region The Shadow Assassin
 			var xText = 800;
-			var yText = 40;
-			var textSize = 0.095;
-			var TSY = 25;
-			if (chosenClass == Character.ShadowAssassin)
-			{
+			var yText = 30;
+			var textSize = 0.075;
+			var bigTextSize = textSize*1.5;
+			var TSY = 20;
+			
+			draw_set_font(fnt_NewNormalText)
+			draw_text_transformed_color(800,550,"This is you.",bigTextSize,bigTextSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			draw_text_transformed_color(xText,yText+TSY*0,"Controlls",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			draw_text_transformed_color(xText,yText+TSY*1,"Move with [W] & [A] & [S] & [D] keys.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			draw_text_transformed_color(xText,yText+TSY*2,"Attack with Left Click or 1",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			draw_text_transformed_color(xText,yText+TSY*3,"[Ability][1]: Right Click or 2",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			draw_text_transformed_color(xText,yText+TSY*4,"[Ability][2]: Space",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			draw_text_transformed_color(xText,yText+TSY*5,"[Ultimate]: Q or E or R",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			draw_text_transformed_color(xText,yText+TSY*6,"Ability cooldowns can be viewed in the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			draw_text_transformed_color(xText,yText+TSY*7,"upper left corner.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			
+			draw_text_transformed_color(xText,yText+TSY*9,"Healing",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			draw_text_transformed_color(xText,yText+TSY*10,"Health is indicated by the big red bar",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			draw_text_transformed_color(xText,yText+TSY*11,"in the upper left corner. You heal by",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			draw_text_transformed_color(xText,yText+TSY*12,"doing damage to your opponent. The best",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			draw_text_transformed_color(xText,yText+TSY*13,"way to to succeed in the arena is to be",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			draw_text_transformed_color(xText,yText+TSY*14,"aggresive and relentless.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 				
-				draw_set_font(fnt_menu_fill)
-				draw_text_transformed_color(800,550,"The Shadow Assassin",0.4,0.4,0,c_fuchsia,c_fuchsia,c_purple,c_purple,playerTutorialAlpha);
-				//
-				draw_set_font(fnt_NewNormalText)
-				draw_text_transformed_color(xText,yText+TSY*0,"To the left is your hud. It displays all",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*1,"your cooldowns on your abilities.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*2,"Hover over the hud with your mouse",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*3,"to see your abilities.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*4,"Using an ability puts that ability on",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*5,"cooldown. You are an assassin and all",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*6,"your abilities allow you to recast your",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*7,"[Left-Click] ability again. Teleport inside",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*8,"your enemies to maxemize your damage.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*9,"You move with [W] & [A] & [S] & [D].",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			}
-			#endregion
-			#region The Pyromancer
-			if (chosenClass == Character.Pyromancer)
-			{
-				draw_set_font(fnt_menu_fill)
-				draw_text_transformed_color(800,550,"The Pyromancer",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,playerTutorialAlpha);
-				//
-				draw_set_font(fnt_NewNormalText)
-				draw_text_transformed_color(xText,yText+TSY*0,"To the left is your hud. It displays all",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*1,"your cooldowns on your abilities.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*2,"Hover over the hud with your mouse",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*3,"to see your abilities.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*4,"Using an ability puts that ability on",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*5,"cooldown. You are a spellcaster which",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*6,"which has powerful spells but with high",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*7,"cooldowns. Your dash however is on a low",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*8,"cooldown so use it often.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*9,"You move with [W] & [A] & [S] & [D].",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			}
-			#endregion
-			#region The Blood Knight
-			if (chosenClass == Character.BloodKnight)
-			{
-				var xText = 800;
-				var yText = 50;
-				var textSize = 0.1;
-				draw_set_font(fnt_menu_fill)
-				draw_text_transformed_color(800,550,"The Blood Knight",0.4,0.4,0,c_red,c_red,c_maroon,c_maroon,playerTutorialAlpha);
-				//
-				draw_set_font(fnt_NewNormalText)
-				draw_text_transformed_color(xText,yText+TSY*0,"To the left is your hud. It displays all",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*1,"your cooldowns on your abilities.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*2,"Hover over the hud with your mouse",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*3,"to see your abilities.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*4,"Using an ability puts that ability on",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*5,"cooldown. As a summoner you can summon",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*6,"your bats all the time with your",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*7,"[Left-Click] ability.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*8,"",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				draw_text_transformed_color(xText,yText+TSY*9,"You move with [W] & [A] & [S] & [D].",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				
-				draw_text_transformed_color(xText,yText+30*19,"You move with the [W] & [A] & [S] & [D] keys.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			}
-			#endregion
 			draw_sprite_ext(spr_arenaKingTutorial,0,1200,250,-10,10,0,c_white,playerTutorialAlpha);
 			draw_set_halign(fa_left);
 			draw_set_halign(fa_center);
-			draw_text_transformed_color(150,800,"Click Any Key",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			draw_text_transformed_color(150,830,"To Continue",0.1,0.1,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			draw_text_transformed_color(150,800,"Click Any Key",bigTextSize,bigTextSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
+			draw_text_transformed_color(150,830,"To Continue",bigTextSize,bigTextSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
 			draw_set_halign(fa_left);
 		}
 		if (tutorialFadeOut == true && playerTutorialAlpha == 0)
@@ -1101,7 +1392,10 @@ if (global.deBugg == true && menu == Menues.Play && instance_exists(global.playe
 	var playerCDRightClick = "[Right-Click Cooldown]: [" + string(obj_allPlayer.rightClickCooldown/30)+ "]";
 	var playerCDDash = "[Dash Cooldown]: [" + string(obj_allPlayer.dashCooldown/30)+ "]";
 	var playerCDUlt = "[Ultimate Cooldown]: [" + string(obj_allPlayer.ultCooldown/30)+ "]";
-	var difficuluty = "[Difficulty]: [" + string(global.campaignDifficulty) + "]"
+	var difficuluty = "[Difficulty]: [" + string(global.campaignDifficulty) + "]";
+	var debuggText = "[]: [" + string(obj_allBoss.maxPhase) + "]";
+	var debuggText = "[]: [" + string(chosenBoss) + "]";
+	var debuggText = "[]: [" + string(chosenMode) + "]";
 	
 	var yIncreasse = 20;
 	var textSize = 0.075;
@@ -1122,6 +1416,7 @@ if (global.deBugg == true && menu == Menues.Play && instance_exists(global.playe
 	draw_text_transformed_color(xStart,yStart+12*yIncreasse+20,playerCDUlt,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 	draw_text_transformed_color(xStart,yStart+13*yIncreasse+20,playerConjuration,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 	draw_text_transformed_color(xStart,yStart+14*yIncreasse+20,difficuluty,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	draw_text_transformed_color(xStart,yStart+15*yIncreasse+20,debuggText,textSize,textSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 }
 if (global.showFps == true)
 {

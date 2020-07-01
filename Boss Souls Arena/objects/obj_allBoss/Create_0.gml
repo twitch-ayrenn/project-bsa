@@ -708,6 +708,7 @@ isHit = false;
 		tier = 6;
 		phase = 1;
 		maxPhase = 6;
+		if (gameMaster.chosenMode == Menues.BossRush){maxPhase = 5;}
 		//visual
 		size = 1;
 		alpha = 1;

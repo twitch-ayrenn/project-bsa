@@ -6,6 +6,6 @@ if (hover == true)
 	outline_start(1,c_lime,sprite_index,64);
 	draw_sprite_ext(sprite_index,image_index,210,12,2,2,0,c_white,1);
 }
-if (thisItemSelected == true){outline_start(1,c_lime,sprite_index,32);}
+if (thisItemSelected == true){outline_start(1,c_yellow,sprite_index,32);}
 draw_self();
 outline_end();

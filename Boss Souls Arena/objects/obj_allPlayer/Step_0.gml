@@ -22,7 +22,7 @@ if (speed < 0){speed = 0;}
 if (actualDashSpeed < 0){actualDashSpeed = 0;}
 if (actualBKDashSpeed < 0){actualBKDashSpeed = 0;}
 //speed
-speed = actualDashSpeed + actualBKDashSpeed + actualASDashSpeed + actualGDashSpeed;
+speed = actualDashSpeed + actualBKDashSpeed + actualASDashSpeed + actualGDashSpeed + actualSPHDashSpeed;
 //checkAfter
 if (speed < 0){speed = 0;}
 if (actualDashSpeed < 0){actualDashSpeed = 0;}
@@ -537,6 +537,16 @@ if (mouse_x < x)
 			}
 		}
 		#endregion
+		#region Campagin Reward
+		if (global.itemSelected[Boss.CampaignReward] == true)
+		{
+			var hellBolt = instance_create_depth(x,y,depth+1,obj_hellBolt);
+			hellBolt.direction = point_direction(x,y,mouse_x,mouse_y);
+			if (instance_exists(obj_allBoss)){hellBolt.direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
+			hellBolt.image_angle = hellBolt.direction+90;
+			hellBolt.speed = 8;
+		}
+		#endregion
 	}
 	#endregion
 	#region onGoingEffects
@@ -871,9 +881,9 @@ if (mouse_x < x)
 	#region ShadowAssassin
 	if (class == Character.ShadowAssassin)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
-		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
-		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false)
+		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
+		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
+		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
@@ -901,9 +911,9 @@ if (mouse_x < x)
 	#region Pyromancer
 	if (class == Character.Pyromancer)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true && place_free(mouse_x,mouse_y) && global.itemSelected[Boss.DemonQueensHead] == false
-		|| keyboard_check(ord("Q")) && canUlt == true && place_free(mouse_x,mouse_y) && global.itemSelected[Boss.DemonQueensHead] == false
-		|| keyboard_check(ord("R")) && canUlt == true && place_free(mouse_x,mouse_y) && global.itemSelected[Boss.DemonQueensHead] == false)
+		if (keyboard_check(ord("E")) && canUlt == true && place_free(mouse_x,mouse_y) && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
+		|| keyboard_check(ord("Q")) && canUlt == true && place_free(mouse_x,mouse_y) && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
+		|| keyboard_check(ord("R")) && canUlt == true && place_free(mouse_x,mouse_y) && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
@@ -952,9 +962,9 @@ if (mouse_x < x)
 	#region BloodKnight
 	if (class == Character.BloodKnight)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
-		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
-		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false)
+		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
+		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
+		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
@@ -973,9 +983,9 @@ if (mouse_x < x)
 	#region Agent Of God
 	if (class == Character.AgentOfGod)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
-		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
-		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false)
+		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
+		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
+		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
@@ -1010,9 +1020,9 @@ if (mouse_x < x)
 	#region Angel Slayer
 	if (class == Character.AngelSlayer)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
-		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
-		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false)
+		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
+		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
+		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
@@ -1053,11 +1063,11 @@ if (mouse_x < x)
 	{
 		obj_gravelingRange.image_xscale = 0.055 * actualSpeedBefore*4*(1+gameMaster.bonusDash/100);
 		obj_gravelingRange.image_yscale = obj_gravelingRange.image_xscale;
-		teleportRange = 6 *actualSpeedBefore*4*(1+gameMaster.bonusDash/100);
+		teleportRange = 6 * actualSpeedBefore * 4 * (1+gameMaster.bonusDash/100);
 		
-		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
-		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
-		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false)
+		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
+		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
+		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
@@ -1085,11 +1095,11 @@ if (mouse_x < x)
 				damageText.text = damageDealt;
 				enemy.hp -= global.damage*5*actualSpeedBefore;
 			
-				var amountHealed = global.damage*5*actualSpeedBefore;
+				var amountHealed = global.damage*5*actualSpeedBefore*global.lifeSteal;
 				var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
 				healText.color = c_lime;
 				healText.text = amountHealed;
-				hp += global.damage*5*actualSpeedBefore;
+				hp += global.damage*5*actualSpeedBefore*global.lifeSteal;
 			}
 		}
 		if (GDashStopLeft <= 0)
@@ -1102,9 +1112,9 @@ if (mouse_x < x)
 	#region Plaguewalker
 	if (class == Character.PlaugeWalker)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
-		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false
-		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false)
+		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
+		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
+		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
@@ -1118,9 +1128,9 @@ if (mouse_x < x)
 	#endregion
 	#region Items
 	#region Big Fucking Blast 9000
-	if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == true
-	|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == true
-	|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == true)
+	if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == true && global.itemSelected[Boss.BossRushReward] == false
+	|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == true && global.itemSelected[Boss.BossRushReward] == false
+	|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == true && global.itemSelected[Boss.BossRushReward] == false)
 	{
 		canUlt = false;
 		ultCooldownLeft = ultCooldown;
@@ -1140,6 +1150,53 @@ if (mouse_x < x)
 		if (class == Character.AngelSlayer){canLeftClick = true;	leftClickCooldownLeft = 0;}
 		if (class == Character.Pyromancer){instance_create_depth(x,y,-y,obj_pyroPortal); instance_create_depth(x,y,-y,obj_portal_bottom);}
 		if (class == Character.Graveling){gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);}
+	}
+	#endregion
+	#region Steamport Heart
+	if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.BossRushReward] == true
+	|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.BossRushReward] == true
+	|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.BossRushReward] == true)
+	{
+		canUlt = false;
+		ultCooldownLeft = ultCooldown;
+		activateUltItem = true;
+		
+		sPHDashStopLeft = sPHDashStop;
+		sPHDashDamage = true;
+		actualSPHDashSpeed = dashSpeed*2;
+		direction = point_direction(x,y,mouse_x,mouse_y);
+		if (global.dashTowardsMove){direction = moveDirection;}
+		
+		if (class == Character.ShadowAssassin){canLeftClick = true;	leftClickCooldownLeft = 0;}
+		if (class == Character.AngelSlayer){canLeftClick = true;	leftClickCooldownLeft = 0;}
+		if (class == Character.Pyromancer){instance_create_depth(x,y,-y,obj_pyroPortal); instance_create_depth(x,y,-y,obj_portal_bottom);}
+		if (class == Character.Graveling){gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);}
+	}
+	if (sPHDashStopLeft > 0)
+	{
+		sPHDashStopLeft--;
+		if (sPHDashDamage == true && place_meeting(x,y,par_enemy))
+		{
+			sPHDashDamage = false;
+			var enemy = instance_nearest(x,y,par_enemy);
+			var player = instance_nearest(x,y,obj_allPlayer);	
+			var damageDealt = 6*actualSpeedBefore*(1+(gameMaster.bonusDash/100));
+			var damageText = instance_create_depth(enemy.x+irandom_range(-8,8),enemy.y+irandom_range(-5,5),enemy.depth-10,obj_textMaker);
+			damageText.color = c_white;
+			damageText.text = damageDealt;
+			enemy.hp -= damageDealt;
+			
+			var amountHealed = damageDealt*global.lifeSteal;
+			var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
+			healText.color = c_lime;
+			healText.text = amountHealed;
+			hp += damageDealt*global.lifeSteal;
+		}
+	}
+	if (sPHDashStopLeft <= 0)
+	{
+		actualSPHDashSpeed = 0; 
+		sPHDashDamage = false; 
 	}
 	#endregion
 	#region t52 Slime Armor
@@ -1560,6 +1617,15 @@ if (mouse_x < x)
 		shield = false;
 	}
 	#endregion
+	#region Campagin Reward
+	if (global.itemSelected[Boss.CampaignReward] == true && hellStacks >= 15)
+	{
+		hellStacks = 0;
+		var demonQueen = instance_create_depth(obj_allBoss.x,obj_allBoss.y-250,-obj_allBoss.y-250,obj_demonQueen);
+		demonQueen.speed = 9;
+		demonQueen.direction = 270;
+	}
+	#endregion
 #endregion
 #region Cooldowns
 if (leftClickCooldownLeft > 0){leftClickCooldownLeft--;}
@@ -1571,7 +1637,7 @@ if (dashCooldownLeft <= 0){canDash = true;}
 if (dashStopLeft > 0){dashStopLeft--;}
 if (dashStopLeft <= 0)
 {
-	actualDashSpeed -= dashSpeed; 
+	actualDashSpeed -= dashSpeed;
 }
 if (ultCooldownLeft > 0){ultCooldownLeft--;}
 if (ultCooldownLeft <= 0){canUlt = true;}

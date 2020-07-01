@@ -73,7 +73,11 @@ if (menu == Menues.Death)
 		queLeave = true;	
 	}
 }
+if (gameMaster.assassinItems[Boss.ArenaKing] == true && gameMaster.pyromancerItems[Boss.ArenaKing] == true && gameMaster.bloodKnightItems[Boss.ArenaKing] == true
+&& gameMaster.angelSlayerItems[Boss.ArenaKing] == true && gameMaster.agentOfGodItems[Boss.ArenaKing] == true && gameMaster.gravelingItems[Boss.ArenaKing] == true
+&& gameMaster.plaugeWalkerItems[Boss.ArenaKing] == true)
+{
+	global.itemAllCampaign = true;
+}
 //balance
-if (global.dD > 1.32){global.dD = 1.32;}
-if (global.dD < 0.68){global.dD = 0.68;}
 

@@ -1,11 +1,11 @@
 /// @description Insert description here
-bossForThisItem = Boss.DeathKing;
+bossForThisItem = Boss.ArenaKing;
 image_blend = c_white;
 reset = false;
 hover = false;
 thisItemSelected = false;
-bonusHealth = 20;
-bonusSpeed = 2;
+bonusHealth = 40;
+bonusSpeed = 0;
 bonusDash = 0;
 bonusDamage = 0;
 bonusFirerate = 20;

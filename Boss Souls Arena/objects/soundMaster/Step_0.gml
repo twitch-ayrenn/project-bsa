@@ -8,7 +8,7 @@ if (room == rm_menu && global.musicOn == true && global.playMenuMusic == true &&
 	audio_sound_gain(snd_music_menu,0,0);
     audio_sound_gain(snd_music_menu,global.musicVolume,(15)*1000);
 }
-if (room == rm_arena && gameMaster.menu == Menues.Play && global.musicOn == true && global.playBossMusic == true)
+if (room == rm_arena && gameMaster.menu == Menues.Play && global.musicOn == true && global.playBossMusic == true && gameMaster.chosenMode == Menues.Campaign)
 {
 	global.playBossMusic = false;
 	if (audio_is_playing(snd_music_victory) == true)
@@ -62,6 +62,14 @@ if (room == rm_arena && gameMaster.menu == Menues.Play && global.musicOn == true
 		audio_sound_gain(snd_music_finalBossMusic,0,0);
 		audio_sound_gain(snd_music_finalBossMusic,global.musicVolume,(15)*1000);
 	}
+}
+if (room == rm_arena && gameMaster.menu == Menues.Play && global.musicOn == true && global.playBossMusic == true && gameMaster.chosenMode == Menues.BossRush)
+{
+	global.playBossMusic = false;
+	audio_stop_sound(snd_music_finalBossMusic);
+	audio_play_sound(snd_music_finalBossMusic,10,true);
+	audio_sound_gain(snd_music_finalBossMusic,0,0);
+	audio_sound_gain(snd_music_finalBossMusic,global.musicVolume,(15)*1000);
 }
 if (gameMaster.menu != Menues.Play)
 {

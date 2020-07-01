@@ -29,6 +29,7 @@ enum Menues
 	Credits = 10,
 	BossRush = 11,
 	Campaign = 12,
+	Controlls = 13,
 }
 //menu = Menues.Main;
 enum Depths
@@ -71,6 +72,9 @@ enum Boss
 	ShadowClan,
 	FrostQueenFalak,//6
 	LadyCorruption,
+	//ExtraItems
+	CampaignReward = 19,
+	BossRushReward = 20,
 	//Info
 	Health = 400,
 	Speed = 401,
@@ -145,8 +149,9 @@ fightSize = 1;
 settingsColor = global.darkYellow;
 settingsSize = 1;
 creditsColor = global.darkYellow;
+controllsColor = global.darkYellow;
 //settings
-global.musicOn = false;
+global.musicOn = true;
 global.musicVolume = 1;
 global.soundOn = true;
 global.ambientOn = false;
@@ -159,8 +164,8 @@ global.dashTowardsMove = true;
 global.seeAbilitiesInGame = true;
 global.showExtraItemInfo = false;
 //tutorial
-global.tutorial = false;
-global.tutorialBoss = false;
+global.tutorial = true;
+global.tutorialBoss = true;
 global.tutorialPlayer = false;
 //controlls
 global.moveUpKey = ord("W");
@@ -235,6 +240,14 @@ bossPlaugeWalkerUnlocked = true;
 bossAngelSlayerUnlocked = true;
 bossAgentOfGodUnlocked = true;
 bossGravelingUnlocked = true;
+//Completed CHaracters
+completedAssassin = false;
+completedBloodKnight = false;
+completedPlagueWalker = false;
+completedPyromancer = false;
+completedAngelSlayer = false;
+completedAgentOfGod = false;
+complatedGraveling = false;
 //Items
 assassinItems[100] = false;
 bloodKnightItems[100] = false;
@@ -243,6 +256,12 @@ plaugeWalkerItems[100] = false;
 angelSlayerItems[100] = false;
 agentOfGodItems[100] = false;
 gravelingItems[100] = false;
+global.itemLootBox = false;
+global.itemDeathScythe = false;
+global.itemImpling = false;
+global.itemCrown = false;
+global.itemBossRush = false;
+global.itemAllCampaign = false;
 global.itemSlots = 0;
 global.maxItemSlots = 0;
 global.itemSelected[100] = false;
@@ -297,18 +316,26 @@ if (global.deBugg == true)
 }
 if (global.relase == true)
 {
+	global.relase = false;
+	global.tutorial = true;
+	global.tutorialBoss = false;
+	global.tutorialPlayer = false;
+	
 	//Progression
 	assassinProgress = 1;			bloodKnightProgress = 1;
 	pyromancerProgress = 1;			plaugeWalkerProgress = 1;
 	angelSlayerProgress = 1;		agentOfGodProgress = 1;		
 	gravelingProgress = 1;
+
+	
 	//Unlocked
-	assassinUnlocked = true;		bloodKnightUnlocked = true;
-	pyromancerUnlocked = false;		plaugeWalkerUnlocked = false;
-	angelSlayerUnlocked = false;	agentOfGodUnlocked = false;		
+	assassinUnlocked = false;		bloodKnightUnlocked = true;
+	pyromancerUnlocked = true;		plaugeWalkerUnlocked = false;
+	angelSlayerUnlocked = true;	agentOfGodUnlocked = false;		
 	gravelingUnlocked = false;
-	bossAssassinUnlocked = true;
+	
 	//Boss Rush
+	bossAssassinUnlocked = false;
 	bossBloodKnightUnlocked = false;
 	bossPyromancerUnlocked = false;
 	bossPlaugeWalkerUnlocked = false;

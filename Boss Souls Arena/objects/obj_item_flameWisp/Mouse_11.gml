@@ -1,5 +1,4 @@
 /// @description Insert description here
-// You can write your code in this editor
 if (global.itemSlots >= 1 && global.itemSelected[bossForThisItem] == false)
 {
 	gameMaster.previewHealth -= previewHealth;
@@ -13,3 +12,4 @@ if (global.itemSlots >= 1 && global.itemSelected[bossForThisItem] == false)
 	gameMaster.previewCooldown -= previewCooldown;
 }
 hover = false;
+if (gameMaster.itemShowInfoFor == bossForThisItem){gameMaster.itemShowInfoFor = Boss.NoBoss;}

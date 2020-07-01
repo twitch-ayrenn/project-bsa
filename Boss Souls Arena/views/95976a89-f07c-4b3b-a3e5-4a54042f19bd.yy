@@ -15,7 +15,8 @@
         "74ae2013-d5bd-417b-aac8-30ed907d9f8d",
         "abb3ef77-25ca-43e3-a412-eafc2242dd8f",
         "71abb197-7318-4a6f-8294-49749883f413",
-        "8d5ab781-3ff5-4c97-8046-b86da4bebed3"
+        "8d5ab781-3ff5-4c97-8046-b86da4bebed3",
+        "8f007dbd-7b60-4812-864e-60945d2249d9"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_arenaKing",

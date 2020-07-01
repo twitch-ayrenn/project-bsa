@@ -12,6 +12,12 @@ if (gameMaster.chosenBoss == Boss.Gravekeeper)
 	if (x == global.arenaMiddleX && y == global.arenaMiddleY){x = choose(global.arenaMiddleX-125,global.arenaMiddleX+125);}
 	alpha = normalAlpha;
 }
+if (gameMaster.chosenBoss == Boss.ArenaKing && instance_exists(obj_bossMeleeWeapon) == false)
+{
+	var sword = instance_create_depth(x,y,depth,obj_bossMeleeWeapon);
+	sword.sprite_index = spr_kingsEdge_spin;
+	sword.spinSpeed = 20;	
+}
 #endregion
 #region Tier1
 #region NormalAttacks

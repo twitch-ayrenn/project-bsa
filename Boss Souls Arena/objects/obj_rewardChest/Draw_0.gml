@@ -24,6 +24,8 @@ if (phase == 3)
 	if (gameMaster.chosenBoss == Boss.DemonQueensHead){draw_sprite_ext(spr_loot_bfb9000, 0,x-9, y-30+yUpDown+yUpFade, itemScale, itemScale, image_angle, image_blend, alphaUpFade);}
 	if (gameMaster.chosenBoss == Boss.DeathKing){draw_sprite_ext(spr_loot_bat, 0,x-9, y-30+yUpDown+yUpFade, itemScale, itemScale, image_angle, image_blend, alphaUpFade);}
 	if (gameMaster.chosenBoss == Boss.SlimeQueen){draw_sprite_ext(spr_loot_t52slimeArmor, 0,x-9, y-30+yUpDown+yUpFade, itemScale, itemScale, image_angle, image_blend, alphaUpFade);}
+	if (gameMaster.chosenBoss == Boss.ArenaKing && kingSuprise == false){draw_sprite_ext(spr_loot_spiritOfTheKing, 0,x-9, y-30+yUpDown+yUpFade, itemScale, itemScale, image_angle, image_blend, alphaUpFade);}
+	if (gameMaster.chosenBoss == Boss.BossRushReward){draw_sprite_ext(spr_loot_steamportHeart, 0,x-9, y-30+yUpDown+yUpFade, itemScale, itemScale, image_angle, image_blend, alphaUpFade);}
 	draw_sprite_ext( sprite_index, 2,x, y+roofY, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 }
 if (phase == 1)
