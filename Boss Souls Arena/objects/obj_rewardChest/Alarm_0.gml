@@ -16,6 +16,7 @@ if (gameMaster.chosenBoss == Boss.ArenaKing && kingSuprise == true)
 	}
 	gameMaster.menu = Menues.Play;
 	gameMaster.chosenBoss = Boss.ArenaKing;
+	obj_arenaKing.visible = false;
 	var king = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY-10,depth-1,obj_allBoss);
 	with (king)
 	{	

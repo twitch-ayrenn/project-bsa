@@ -2823,6 +2823,14 @@
             }
         },
         {
+            "Key": "7a67827b-2b73-433d-9e7f-84bf92eb11f8",
+            "Value": {
+                "id": "3dd010c7-f8bf-4862-a01e-287f259d4322",
+                "resourcePath": "sprites\\bossSoulsIcon\\bossSoulsIcon.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7ace359d-b007-4769-8fd7-05c85ab7fa1a",
             "Value": {
                 "id": "6b433a42-53dd-4dcf-bd8d-00957fda4439",
@@ -4791,6 +4799,14 @@
             }
         },
         {
+            "Key": "c86d7b70-b1b3-4dc2-9320-8bda1895d3ef",
+            "Value": {
+                "id": "af6b2bee-6d14-449c-9e1a-a2d070635c8d",
+                "resourcePath": "sprites\\sprite447\\sprite447.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c89c478a-399d-4433-aae8-eb062cd69ee6",
             "Value": {
                 "id": "52221a31-cada-406f-8ca6-b4e75b4d7f13",
@@ -5475,6 +5491,14 @@
             "Value": {
                 "id": "f1eec721-77a3-4fe7-89a9-41b44064689d",
                 "resourcePath": "sprites\\spr_bloodBeam\\spr_bloodBeam.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e1464228-e980-4ec6-aa17-e7e732573f5c",
+            "Value": {
+                "id": "552d9f7b-2726-4060-a4dc-e75436e94a28",
+                "resourcePath": "sprites\\spr_arjaanGameStudios\\spr_arjaanGameStudios.yy",
                 "resourceType": "GMSprite"
             }
         },

@@ -15,7 +15,10 @@
         "f8fddc76-d774-4add-9abd-c0fe088474d9",
         "7d1f1806-5748-4e1c-9f96-06afcaf73169",
         "92c54c6e-31c6-44e1-aab9-03fcd46d5cd7",
-        "80583e08-5896-44b2-b468-56d2071ceda5"
+        "80583e08-5896-44b2-b468-56d2071ceda5",
+        "e1464228-e980-4ec6-aa17-e7e732573f5c",
+        "7a67827b-2b73-433d-9e7f-84bf92eb11f8",
+        "c86d7b70-b1b3-4dc2-9320-8bda1895d3ef"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_artwork",

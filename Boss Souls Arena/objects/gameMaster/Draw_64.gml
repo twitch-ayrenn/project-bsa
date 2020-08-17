@@ -106,20 +106,20 @@ if (menu == Menues.Main)
 			global.tutorialBoss = true;
 			global.tutorialPlayer = false;
 		}
-		if (assassinUnlocked == true){with (obj_npc_theShadow){outline = "unSelected";}}
-		if (assassinUnlocked == false){with (obj_npc_theShadow){outline = "locked"}}
-		if (pyromancerUnlocked == true){with (obj_npc_thePyro){outline = "unSelected";}}
-		if (pyromancerUnlocked == false){with (obj_npc_thePyro){outline = "locked"}}
-		if (bloodKnightUnlocked == true){with (obj_npc_theBloodKnight){outline = "unSelected";}}
-		if (bloodKnightUnlocked == false){with (obj_npc_theBloodKnight){outline = "locked"}}
-		if (plaugeWalkerUnlocked == true){with (obj_npc_thePluageWalker){outline = "unSelected";}}
-		if (plaugeWalkerUnlocked == false){with (obj_npc_thePluageWalker){outline = "locked"}}
-		if (agentOfGodUnlocked == true){with (obj_npc_theAgentOfGod){outline = "unSelected";}}
-		if (agentOfGodUnlocked == false){with (obj_npc_theAgentOfGod){outline = "locked"}}
-		if (angelSlayerUnlocked == true){with (obj_npc_theAngelSlayer){outline = "unSelected";}}
-		if (angelSlayerUnlocked == false){with (obj_npc_theAngelSlayer){outline = "locked"}}
-		if (gravelingUnlocked == true){with (obj_npc_theGraveling){outline = "unSelected";}}
-		if (gravelingUnlocked == false){with (obj_npc_theGraveling){outline = "locked"}}
+		if (bossAssassinUnlocked == true){with (obj_npc_theShadow){outline = "unSelected";}}
+		if (bossAssassinUnlocked == false){with (obj_npc_theShadow){outline = "locked"}}
+		if (bossPyromancerUnlocked == true){with (obj_npc_thePyro){outline = "unSelected";}}
+		if (bossPyromancerUnlocked == false){with (obj_npc_thePyro){outline = "locked"}}
+		if (bossBloodKnightUnlocked == true){with (obj_npc_theBloodKnight){outline = "unSelected";}}
+		if (bossBloodKnightUnlocked == false){with (obj_npc_theBloodKnight){outline = "locked"}}
+		if (bossPlaugeWalkerUnlocked == true){with (obj_npc_thePluageWalker){outline = "unSelected";}}
+		if (bossPlaugeWalkerUnlocked == false){with (obj_npc_thePluageWalker){outline = "locked"}}
+		if (bossAgentOfGodUnlocked == true){with (obj_npc_theAgentOfGod){outline = "unSelected";}}
+		if (bossAgentOfGodUnlocked == false){with (obj_npc_theAgentOfGod){outline = "locked"}}
+		if (bossAngelSlayerUnlocked == true){with (obj_npc_theAngelSlayer){outline = "unSelected";}}
+		if (bossAngelSlayerUnlocked == false){with (obj_npc_theAngelSlayer){outline = "locked"}}
+		if (bossGravelingUnlocked == true){with (obj_npc_theGraveling){outline = "unSelected";}}
+		if (bossGravelingUnlocked == false){with (obj_npc_theGraveling){outline = "locked"}}
 		with(par_npc){spawnSign = true;}
 		if (global.soundOn == true)
 		{
@@ -1165,8 +1165,9 @@ if (menu == Menues.Controlls)
 	draw_text_transformed_color(65,startY + sep*3,"[Ability][1]: Right Click or 2",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
 	draw_text_transformed_color(65,startY + sep*4,"[Ability][2]: Space",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
 	draw_text_transformed_color(65,startY + sep*5,"[Ultimate]: Q or E or R",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
-	draw_text_transformed_color(65,startY + sep*6,"Ability cooldowns can be viewed in the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
-	draw_text_transformed_color(65,startY + sep*7,"upper left corner when in the arena.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*6,"[ESC]: Go back to main menu",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*7,"Ability cooldowns can be viewed in the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*8,"upper left corner when in the arena.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(80,startY-10 + sep*10,"Healing",headlineSize,headlineSize,0,global.orange,global.orange,c_yellow,c_yellow,1);

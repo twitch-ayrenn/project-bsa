@@ -4,15 +4,15 @@
 //dont use Save.dat, always use a new verisor//Save.dat.full0.3
 //global.saveFile = "Save.alpha.0.65"; gaygang release
 menu = 0;
-global.saveFile = "Save.test.0.1";
-//if (file_exists(global.saveFile) == true)
-//{
-//	game_load(global.saveFile);
-//}
-//if (file_exists(global.saveFile) == false)
-//{
-//	game_save(global.saveFile);
-//}
+global.saveFile = "Save.test.0.4.0";
+if (file_exists(global.saveFile) == true)
+{
+	game_load(global.saveFile);
+}
+if (file_exists(global.saveFile) == false)
+{
+	game_save(global.saveFile);
+}
 room_goto(rm_beforeGame);
 enum Menues
 {
@@ -121,8 +121,8 @@ chosenBoss = 0;
 chosenMode = 0;
 global.player = obj_allPlayer;
 //pricing
-global.relase = false;
-global.deBugg = true;
+global.relase = true;
+global.deBugg = false;
 //save
 //game balance
 global.dD = 1;
@@ -152,15 +152,15 @@ creditsColor = global.darkYellow;
 controllsColor = global.darkYellow;
 //settings
 global.musicOn = true;
-global.musicVolume = 1;
+global.musicVolume = 0.25;
 global.soundOn = true;
 global.ambientOn = false;
 global.ShowInfo = false;
-global.colorBlindIcons = true;
-global.colorBlindText = true;
+global.colorBlindIcons = false;
+global.colorBlindText = false;
 global.autoAim = false;
 global.screenShake = true;
-global.dashTowardsMove = true;
+global.dashTowardsMove = false;
 global.seeAbilitiesInGame = true;
 global.showExtraItemInfo = false;
 //tutorial
@@ -304,7 +304,7 @@ global.arenaMiddleY = 600;
 if (global.deBugg == true)
 {
 	//Progression
-	assassinProgress = 1;			bloodKnightProgress = 100;
+	assassinProgress = 100;			bloodKnightProgress = 100;
 	pyromancerProgress = 100;		plaugeWalkerProgress = 100;
 	angelSlayerProgress = 100;		agentOfGodProgress = 100;		
 	gravelingProgress = 100;

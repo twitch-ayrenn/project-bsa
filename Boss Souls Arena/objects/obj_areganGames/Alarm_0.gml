@@ -1,5 +1,5 @@
 /// @description Insert description here
-// You can write your code in this editor
-layer_background_blend(layerelementtype_background,c_white);
+// You can write your code in this edito
 skip = true;
 showSkip = true;
+image_blend = c_white;
