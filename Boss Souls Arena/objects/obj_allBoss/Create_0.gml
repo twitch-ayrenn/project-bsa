@@ -264,9 +264,9 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul) 
 		{
 			//stats
-			phase1Hp = tier3Hp*0.125; phase1Ms = 1; phase1Dmg = 35;
-			phase2Hp = tier3Hp*0.375; phase2Ms = 1.25; phase2Dmg = 40;
-			phase3Hp = tier3Hp*0.5; phase3Ms = 1.5; phase3Dmg = 45;
+			phase1Hp = tier3Hp*0.2; phase1Ms = 1; phase1Dmg = 37;
+			phase2Hp = tier3Hp*0.3; phase2Ms = 1.25; phase2Dmg = 42;
+			phase3Hp = tier3Hp*0.5; phase3Ms = 1.5; phase3Dmg = 47;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;

@@ -670,9 +670,9 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul && phase == 2){attack = choose(Atks.CircleAttack,Atks.BeamAttack,Atks.ZoneAttack,Atks.TeleportAttack);}
 	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul && phase == 3){attack = choose(Atks.CircleAttack,Atks.ZoneAttack,Atks.TeleportAttack,Atks.ChaseAttack);}
 	if (gameMaster.chosenBoss == Boss.KnightWitchYi && phase == 1){attack = choose(Atks.CircleAttack,Atks.BeamAttack,Atks.ConeAttack,Atks.GooSpawn,Atks.RapidFire,Atks.TauntAttack);}
-	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && phase == 1){attack = choose(Atks.ConeAttack,Atks.CircleAttack,Atks.BeamAttack);}
-	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && phase == 2){attack = choose(Atks.ConeAttack,Atks.CircleAttack,Atks.BeamAttack,Atks.HealAttack);}
-	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && phase == 3){attack = choose(Atks.ConeAttack,Atks.CircleAttack,Atks.BeamAttack,Atks.HealAttack,Atks.RapidFire);}
+	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && phase == 1){attack = choose(Atks.ConeAttack,Atks.CircleAttack);}
+	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && phase == 2){attack = choose(Atks.ConeAttack,Atks.CircleAttack,Atks.BeamAttack);}
+	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && phase == 3){attack = choose(Atks.ConeAttack,Atks.CircleAttack,Atks.BeamAttack,Atks.RapidFire);}
 	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar && phase == 1){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.GooSpawn);}
 	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar && phase == 2){attack = choose(Atks.BeamAttack,Atks.OneShotAttack,Atks.RapidFire,Atks.GooSpawn);}
 	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar && phase == 3){attack = choose(Atks.BeamAttack,Atks.OneShotAttack,Atks.RapidFire);}

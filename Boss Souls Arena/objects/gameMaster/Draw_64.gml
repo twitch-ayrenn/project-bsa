@@ -1,4 +1,5 @@
 /// @description Insert description here
+var clickOnce = true;
 #region Main Menu
 if (menu == Menues.Main)
 {
@@ -162,8 +163,9 @@ if (menu == Menues.Main)
 		settingsColor = global.darkYellow;
 		sizeOfSetting = 1;
 	}
-	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*3 && device_mouse_y_to_gui(0) <startY + sep*4-20)
+	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*3 && device_mouse_y_to_gui(0) <startY + sep*4-20 && clickOnce)
 	{
+		clickOnce = false;
 		with (gameMaster)
 		{
 			menu = Menues.Settings;	
@@ -231,15 +233,15 @@ if (menu == Menues.BossLoot)
 	draw_line_width_color(line2X,200,line2X,200+500,5,global.orange,c_yellow);
 	
 	var itemXIncrease = 119;
-	draw_text_transformed_color(525,680,"Item Slots",0.35,0.35,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(525,680,"Item Slots: " + string(global.maxItemSlots),0.35,0.35,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	var itemSlotSize = 0.25;
 	var itemSlotY = 860;
-	if(global.maxItemSlots >= 1){draw_text_transformed_color(445+1*itemXIncrease,itemSlotY,"Item I",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}
-	if(global.maxItemSlots >= 2){draw_text_transformed_color(445+2*itemXIncrease,itemSlotY,"Item II",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}
-	if(global.maxItemSlots >= 3){draw_text_transformed_color(445+3*itemXIncrease,itemSlotY,"Item III",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}
-	if(global.maxItemSlots >= 4){draw_text_transformed_color(445+4*itemXIncrease,itemSlotY,"Item IV",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}
-	if(global.maxItemSlots >= 5){draw_text_transformed_color(445+5*itemXIncrease,itemSlotY,"Item V",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}
-	if(global.maxItemSlots >= 6){draw_text_transformed_color(445+6*itemXIncrease,itemSlotY,"Item VI",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}
+	if(global.maxItemSlots >= 1){draw_text_transformed_color(445+1*itemXIncrease,itemSlotY,"Item I",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1); draw_rectangle_color(445+1*itemXIncrease,itemSlotY,445+1*itemXIncrease+30,itemSlotY+30,global.goldColor,global.goldColor,c_yellow,c_yellow,true);}
+	if(global.maxItemSlots >= 2){draw_text_transformed_color(445+2*itemXIncrease,itemSlotY,"Item 2",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}
+	if(global.maxItemSlots >= 3){draw_text_transformed_color(445+3*itemXIncrease,itemSlotY,"Item 3",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}
+	if(global.maxItemSlots >= 4){draw_text_transformed_color(445+4*itemXIncrease,itemSlotY,"Item 4",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}
+	if(global.maxItemSlots >= 5){draw_text_transformed_color(445+5*itemXIncrease,itemSlotY,"Item 5",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}
+	if(global.maxItemSlots >= 6){draw_text_transformed_color(445+6*itemXIncrease,itemSlotY,"Item 6",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}
 	//1161
 	var startY = 280;
 	var xStats = 45;
@@ -291,11 +293,11 @@ if (menu == Menues.BossLoot)
 		{
 			draw_set_font(fnt_NewNormalText);
 			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Select an item to the left by clicking",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"on it.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+3.5*itemTextSeparationY,"Hover over an item to see info about",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+4.5*itemTextSeparationY,"that item.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+5.5*itemTextSeparationY,"Clear Selected items by pressing the",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+6.5*itemTextSeparationY,"\"Clear Selected Items\" button.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"on it. Clear Selected items by pressing ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"the \"Clear Selected Items\" button.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4.5*itemTextSeparationY,"Hover over an item to see info about",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5.5*itemTextSeparationY,"that item. Permanent items are ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+6.5*itemTextSeparationY,"unlocked on all characters.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,"Hover over the stats on the left side",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+9*itemTextSeparationY,"to see how the stats affects other",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+10*itemTextSeparationY,"items and character abilities.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -1067,8 +1069,9 @@ if (menu == Menues.Settings)
 		if (global.colorBlindText == true && pressOnce == true){global.colorBlindText = false; pressOnce = false;}
 	}
 	
-	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 70 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*8 && device_mouse_y_to_gui(0) <startY + sep*9-20)
+	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 70 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*8 && device_mouse_y_to_gui(0) <startY + sep*9-20 && clickOnce)
 	{
+		clickOnce = false;
 		if (global.musicOn == false && pressOnce == true){global.musicOn = true; pressOnce = false;}
 		if (global.musicOn == true && pressOnce == true){global.musicOn = false; pressOnce = false;}
 	}	
@@ -1170,19 +1173,21 @@ if (menu == Menues.Controlls)
 	draw_text_transformed_color(65,startY + sep*8,"upper left corner when in the arena.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(80,startY-10 + sep*10,"Healing",headlineSize,headlineSize,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(80,startY-10 + sep*10,"Healing & Dodging Damage",headlineSize,headlineSize,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText)
-	draw_text_transformed_color(65,startY + sep*11,"Health is indicated by the big red bar",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
-	draw_text_transformed_color(65,startY + sep*12,"in the upper left corner when in the arena.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
-	draw_text_transformed_color(65,startY + sep*13,"You heal by doing damage to your opponent. ",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*11,"Health is indicated by the big red bar in the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*12,"upper left corner when in the arena. You ",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*13,"heal by doing damage to your opponent. ",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*14,"While dashing you are invincible, can't take",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*15,"any damage and move trough projectiles.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(80,startY-10 + sep*15,"Winning and Rewards",headlineSize,headlineSize,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(80,startY-10 + sep*17,"Winning and Rewards",headlineSize,headlineSize,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText)
-	draw_text_transformed_color(65,startY + sep*16,"You win by defeating you opponent in the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
-	draw_text_transformed_color(65,startY + sep*17,"arena. Every time you defeat a boss you",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
-	draw_text_transformed_color(65,startY + sep*18,"gain an item. Slaying bosses unlocks more",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
-	draw_text_transformed_color(65,startY + sep*19,"item slots over time.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*18,"You win by defeating you opponent in the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*19,"arena. Every time you defeat a boss you",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*20,"gain an item. Slaying bosses unlocks more",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(65,startY + sep*21,"item slots over time.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);
 }
@@ -1302,15 +1307,25 @@ if (menu == Menues.Play)
 	draw_set_halign(fa_center);
 	var cX = 800;//center x
 	var cY = 450-350;
-	if(chosenBoss == Boss.BloodZombie){draw_text_transformed_color(cX,cY,"The Blood Harvester",1.5,1.5,0,c_lime,c_lime,c_green,c_green,fightAlpha);}
-	if(chosenBoss == Boss.FlameWisp){draw_text_transformed_color(cX,cY,"Wisp Sister Anna",1.5,1.5,0,global.orange,global.orange,c_orange,c_orange,fightAlpha);}
-	if(chosenBoss == Boss.TheCorrupter){draw_text_transformed_color(cX,cY,"The Corrupter",1.5,1.5,0,c_purple,c_purple,c_black,c_black,fightAlpha);}
-	if(chosenBoss == Boss.FlameGate){draw_text_transformed_color(cX,cY,"Eye of Hell",1.5,1.5,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);}
-	if(chosenBoss == Boss.WispSisterJulia){draw_text_transformed_color(cX,cY,"Wisp Sister Julia",1.5,1.5,0,c_aqua,c_aqua,c_teal,c_teal,fightAlpha);}
-	if(chosenBoss == Boss.DeathKnight){draw_text_transformed_color(cX,cY,"Death Knight",1.5,1.5,0,c_silver,c_silver,c_gray,c_gray,fightAlpha);}
-	if(chosenBoss == Boss.AngelSlayerRekZul){draw_text_transformed_color(cX,cY,"Angel Slayer Rekzul",1.5,1.5,0,c_maroon,c_maroon,c_black,c_black,fightAlpha);}
-	if(chosenBoss == Boss.KnightWitchYi){draw_text_transformed_color(cX,cY,"Knight Witch Gi",1.5,1.5,0,c_red,c_red,c_black,c_black,fightAlpha);}
-	if(chosenBoss == Boss.AngelKnightOscar){draw_text_transformed_color(cX,cY,"Angel Knight Oscar",1.5,1.5,0,c_aqua,c_aqua,c_silver,c_silver,fightAlpha);}
+	var nameSize = 1.3;
+	if(chosenBoss == Boss.BloodZombie){draw_text_transformed_color(cX,cY,"The Blood Harvester",nameSize,nameSize,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);}
+	if(chosenBoss == Boss.FlameWisp){draw_text_transformed_color(cX,cY,"Wisp Sister Anna",nameSize,nameSize,0,global.orange,global.orange,c_orange,c_orange,fightAlpha);}
+	if(chosenBoss == Boss.TheCorrupter){draw_text_transformed_color(cX,cY,"The Corrupter",nameSize,nameSize,0,c_purple,c_purple,c_black,c_black,fightAlpha);}
+	if(chosenBoss == Boss.FlameGate){draw_text_transformed_color(cX,cY,"Eye of Hell",nameSize,nameSize,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);}
+	if(chosenBoss == Boss.WispSisterJulia){draw_text_transformed_color(cX,cY,"Wisp Sister Julia",nameSize,nameSize,0,c_aqua,c_aqua,c_teal,c_teal,fightAlpha);}
+	if(chosenBoss == Boss.DeathKnight){draw_text_transformed_color(cX,cY,"Death Knight",nameSize,nameSize,0,c_silver,c_silver,c_gray,c_gray,fightAlpha);}
+	if(chosenBoss == Boss.AngelSlayerRekZul){draw_text_transformed_color(cX,cY,"Angel Slayer Rekzul",nameSize,nameSize,0,c_maroon,c_maroon,c_black,c_black,fightAlpha);}
+	if(chosenBoss == Boss.KnightWitchYi){draw_text_transformed_color(cX,cY,"Knight Witch Gi",nameSize,nameSize,0,c_red,c_red,c_black,c_black,fightAlpha);}
+	if(chosenBoss == Boss.AngelKnightOscar){draw_text_transformed_color(cX,cY,"Angel Knight Oscar",nameSize,nameSize,0,c_aqua,c_aqua,c_silver,c_silver,fightAlpha);}
+	if(chosenBoss == Boss.DemonLordRekTaar){draw_text_transformed_color(cX,cY,"Demon General Rektaar",nameSize,nameSize,0,global.orange,global.orange,c_yellow,c_yellow,fightAlpha);}
+	if(chosenBoss == Boss.Gravekeeper){draw_text_transformed_color(cX,cY,"The Gravekeeper",nameSize,nameSize,0,c_white,c_white,c_silver,c_silver,fightAlpha);}
+	if(chosenBoss == Boss.BloodKnightDavid){draw_text_transformed_color(cX,cY,"Blood Army General",nameSize,nameSize,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);}
+	if(chosenBoss == Boss.StatueOfCorruption){draw_text_transformed_color(cX,cY,"Statue Of Corruption",nameSize,nameSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,fightAlpha);}
+	if(chosenBoss == Boss.WispSisters){draw_text_transformed_color(cX,cY,"Wisp Sisters",nameSize,nameSize,0,global.orange,c_aqua,c_aqua,global.orange,fightAlpha);}
+	if(chosenBoss == Boss.DemonQueensHead){draw_text_transformed_color(cX,cY,"Demon Queens Head",nameSize,nameSize,0,c_red,c_red,c_red,c_red,fightAlpha);}
+	if(chosenBoss == Boss.DeathKing){draw_text_transformed_color(cX,cY,"Death King",nameSize,nameSize,0,c_black,global.goldColor,global.goldColor,c_black,fightAlpha);}
+	if(chosenBoss == Boss.SlimeQueen){draw_text_transformed_color(cX,cY,"Slime Queen",nameSize,nameSize,0,c_lime,global.goldColor,global.goldColor,c_lime,fightAlpha);}
+	if(chosenBoss == Boss.ArenaKing){draw_text_transformed_color(cX,cY,"The Arena King",nameSize,nameSize,0,c_yellow,c_yellow,global.goldColor,global.goldColor,fightAlpha);}
 	draw_set_halign(fa_left);
 	if (transitionAlpha == 0 && instance_exists(obj_allBoss) && instance_exists(global.player) && instance_exists(obj_camera) && checkOnce == true)
 	{

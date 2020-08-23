@@ -1248,9 +1248,12 @@ if (mouse_x < x)
 		#region Zombie Head
 		if (global.itemSelected[Boss.BloodZombie] == true && instance_exists(par_enemy))
 		{
-			var bloodPuddle = instance_create_depth(x,y,-6,obj_equipment_bloodPuddle);
-			bloodPuddle.image_xscale = 0.6;
-			bloodPuddle.image_yscale = bloodPuddle.image_xscale;
+			if (gameMaster.chosenClass != Character.Pyromancer)
+			{
+				var bloodPuddle = instance_create_depth(x,y,-6,obj_equipment_bloodPuddle);
+				bloodPuddle.image_xscale = 0.6;
+				bloodPuddle.image_yscale = bloodPuddle.image_xscale;
+			}
 			if (gameMaster.chosenClass == Character.Pyromancer && instance_exists(obj_allBoss))
 			{
 				var bloodPuddle = instance_create_depth(obj_allBoss.x,obj_allBoss.y,-6,obj_equipment_bloodPuddle);
