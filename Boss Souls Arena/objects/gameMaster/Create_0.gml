@@ -4,14 +4,14 @@
 //dont use Save.dat, always use a new verisor//Save.dat.full0.3
 //global.saveFile = "Save.alpha.0.65"; gaygang release
 menu = 0;
-global.saveFile = "Save.test.0.4.0";
+global.saveFile = "Save.test.0.7.0";
 if (file_exists(global.saveFile) == true)
 {
-	//game_load(global.saveFile);
+	game_load(global.saveFile);
 }
 if (file_exists(global.saveFile) == false)
 {
-	//game_save(global.saveFile);
+	game_save(global.saveFile);
 }
 room_goto(rm_beforeGame);
 enum Menues
@@ -121,8 +121,8 @@ chosenBoss = 0;
 chosenMode = 0;
 global.player = obj_allPlayer;
 //pricing
-global.relase = false;//true
-global.deBugg = true;//false
+global.relase = true;//true
+global.deBugg = false;//false
 //save
 //game balance
 global.dD = 1;
