@@ -236,7 +236,7 @@ if (menu == Menues.BossLoot)
 	draw_text_transformed_color(525,680,"Item Slots: " + string(global.maxItemSlots),0.35,0.35,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	var itemSlotSize = 0.25;
 	var itemSlotY = 860;
-	if(global.maxItemSlots >= 1){draw_text_transformed_color(445+1*itemXIncrease,itemSlotY,"Item I",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1); draw_rectangle_color(445+1*itemXIncrease,itemSlotY,445+1*itemXIncrease+30,itemSlotY+30,global.goldColor,global.goldColor,c_yellow,c_yellow,true);}
+	if(global.maxItemSlots >= 1){draw_text_transformed_color(445+1*itemXIncrease,itemSlotY,"Item I",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}
 	if(global.maxItemSlots >= 2){draw_text_transformed_color(445+2*itemXIncrease,itemSlotY,"Item 2",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}
 	if(global.maxItemSlots >= 3){draw_text_transformed_color(445+3*itemXIncrease,itemSlotY,"Item 3",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}
 	if(global.maxItemSlots >= 4){draw_text_transformed_color(445+4*itemXIncrease,itemSlotY,"Item 4",itemSlotSize,itemSlotSize,0,global.orange,global.orange,c_yellow,c_yellow,1);}

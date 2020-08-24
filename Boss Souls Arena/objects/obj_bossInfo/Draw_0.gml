@@ -509,13 +509,13 @@ if(showBossInfo == Boss.DeathKing)
 	//description
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(x+3,y+startY+4*1,"All right! Stop this madness right now, ",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*2,"if you think you have a chance against me. ",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*3,"Then you must truly be semi conscious. ",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*4,"This is the king of the dead here in person  ",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*5,"just to retrive your damned soul. Just like ",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*6,"all gravekin he wields extraordinary ",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*7,"teleporting and mind-reading capabilities.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*8,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*2,"if you think you have a chance against ",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*3,"me. Then you must truly be semi  ",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*4,"conscious. This is the king of the dead   ",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*5,"here in person just to retrive your ",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*6," damned soul. Just like all gravekin he ",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*7,"wields extraordinary  teleporting and ",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*8,"mind-reading capabilities.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
 	draw_text_transformed_color(x+3,y+startY+4*9,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
 	draw_text_transformed_color(x+3,y+startY+4*10,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(x+3,y+startY+4*11,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
@@ -542,7 +542,7 @@ if(showBossInfo == Boss.SlimeQueen)
 	draw_text_transformed_color(x+3,y+startY+4*1,"Terra the Slime Queen here to turn you",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
 	draw_text_transformed_color(x+3,y+startY+4*2,"into goo. Your final royal opponent",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
 	draw_text_transformed_color(x+3,y+startY+4*3,"before you can fight me! Haha i want to",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*4,"see you try to avoid poison goo.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*4,"see you try to avoid the poison goo.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
 	draw_text_transformed_color(x+3,y+startY+4*5,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
 	draw_text_transformed_color(x+3,y+startY+4*6,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
 	draw_text_transformed_color(x+3,y+startY+4*7,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
