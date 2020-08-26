@@ -2,12 +2,9 @@
 // You can write your code in this editor
 draw_self();
 var drawCompletedText = false;
-if (gameMaster.chosenClass == Character.TheRedWarrior && gameMaster.theRedWarriorItems[bossOnThisCard] == true){drawCompletedText = true;}
 if (gameMaster.chosenClass == Character.ShadowAssassin && gameMaster.assassinItems[bossOnThisCard] == true){drawCompletedText = true;}
 if (gameMaster.chosenClass == Character.Pyromancer && gameMaster.pyromancerItems[bossOnThisCard] == true){drawCompletedText = true;}
-if (gameMaster.chosenClass == Character.Shopkeeper && gameMaster.shopkeeperItems[bossOnThisCard] == true){drawCompletedText = true;}
 if (gameMaster.chosenClass == Character.BloodKnight && gameMaster.bloodKnightItems[bossOnThisCard] == true){drawCompletedText = true;}
-if (gameMaster.chosenClass == Character.RainbowSlime && gameMaster.rainbowSlimeItems[bossOnThisCard] == true){drawCompletedText = true;}
 if (gameMaster.chosenClass == Character.PlaugeWalker && gameMaster.plaugeWalkerItems[bossOnThisCard] == true){drawCompletedText = true;}
 if (gameMaster.chosenClass == Character.AgentOfGod && gameMaster.agentOfGodItems[bossOnThisCard] == true){drawCompletedText = true;}
 if (gameMaster.chosenClass == Character.Graveling && gameMaster.gravelingItems[bossOnThisCard] == true){drawCompletedText = true;}

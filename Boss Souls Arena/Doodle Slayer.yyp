@@ -1927,14 +1927,6 @@
             }
         },
         {
-            "Key": "4eda72ca-736c-453b-b7b1-ed50600417c6",
-            "Value": {
-                "id": "6bfd88a9-1ef6-4158-af1e-154ac0d2ef3a",
-                "resourcePath": "sprites\\spr_prop_cup\\spr_prop_cup.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "4ef208b6-3997-483f-b918-33d550378725",
             "Value": {
                 "id": "c1120504-932a-4e98-a60c-52ddc82dbc40",
@@ -3239,6 +3231,14 @@
             }
         },
         {
+            "Key": "8c5702e4-e8c1-4cac-ac62-434efdac019c",
+            "Value": {
+                "id": "c078fb9c-431b-4397-993f-c8b868df3a4f",
+                "resourcePath": "sprites\\spr_prop_cup\\spr_prop_cup.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8c7089a3-08e7-4761-abb7-f0cfc826bca8",
             "Value": {
                 "id": "91e654df-e432-4087-bd54-c87d74388b0a",
@@ -4175,14 +4175,6 @@
             }
         },
         {
-            "Key": "b29bdb95-50d0-47df-be43-caa836d7ff64",
-            "Value": {
-                "id": "4d227e12-878a-42d3-9c4f-477f3cec6eb5",
-                "resourcePath": "sprites\\spr_prop_bottle_empty\\spr_prop_bottle_empty.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "b2a1277e-3d68-483d-933a-6f75b9f93bfe",
             "Value": {
                 "id": "12bda0d9-d18c-4a9a-acb4-afea4b8fa9cb",
@@ -4372,14 +4364,6 @@
                 "id": "42dcd997-bbdf-4598-a635-dbf3852b4a37",
                 "resourcePath": "objects\\obj_prop_goldbag\\obj_prop_goldbag.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "ba0c6675-04a6-479a-a3b0-ff82dad3c6f6",
-            "Value": {
-                "id": "1285a055-30ae-4ba7-987b-11059bef1041",
-                "resourcePath": "sprites\\spr_prop_bottle_wine\\spr_prop_bottle_wine.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -5859,14 +5843,6 @@
             "Value": {
                 "id": "bad5fe8b-b99c-4844-a5e3-5ae61ab8c6f9",
                 "resourcePath": "sprites\\spr_boss_angelKnightOscar_heal\\spr_boss_angelKnightOscar_heal.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "f05e9f05-87b1-45ab-95e4-895fba83ee88",
-            "Value": {
-                "id": "c50f4557-9219-4d0f-85b0-2ec480c97356",
-                "resourcePath": "sprites\\spr_prop_bottle_beer\\spr_prop_bottle_beer.yy",
                 "resourceType": "GMSprite"
             }
         },

@@ -449,6 +449,10 @@ sPHDashStopLeft = 0;
 sPHDashDamage = 0;
 if (global.itemSelected[Boss.BossRushReward] == true)
 {
+	ultCooldown = (18)*30;
+	ultCooldown *= 1 - clamp((gameMaster.bonusCooldown/100),0,cdrCap);
+	ultColor = c_silver;
+	
 	actualSPHDashSpeed = 0;
 	sPHDashStop = (0.4)*30;
 	sPHDashStopLeft = 0;

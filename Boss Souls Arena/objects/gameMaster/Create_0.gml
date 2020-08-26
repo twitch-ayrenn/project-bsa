@@ -4,7 +4,7 @@
 //dont use Save.dat, always use a new verisor//Save.dat.full0.3
 //global.saveFile = "Save.alpha.0.65"; gaygang release
 menu = 0;
-global.saveFile = "Save.test.0.7.0";
+global.saveFile = "Save.test.0.1.1";
 if (file_exists(global.saveFile) == true)
 {
 	game_load(global.saveFile);
@@ -313,6 +313,13 @@ if (global.deBugg == true)
 	pyromancerUnlocked = true;		plaugeWalkerUnlocked = true;
 	angelSlayerUnlocked = true;		agentOfGodUnlocked = true;	
 	gravelingUnlocked = true;
+	
+	global.itemLootBox = true;
+	global.itemDeathScythe = true;
+	global.itemImpling = true;
+	global.itemCrown = true;
+	global.itemBossRush = true;
+	global.itemAllCampaign = true;
 }
 if (global.relase == true)
 {
@@ -331,7 +338,7 @@ if (global.relase == true)
 	//Unlocked
 	assassinUnlocked = false;		bloodKnightUnlocked = true;
 	pyromancerUnlocked = true;		plaugeWalkerUnlocked = false;
-	angelSlayerUnlocked = true;	agentOfGodUnlocked = false;		
+	angelSlayerUnlocked = true;	agentOfGodUnlocked = false;	
 	gravelingUnlocked = false;
 	
 	//Boss Rush
@@ -342,4 +349,23 @@ if (global.relase == true)
 	bossAngelSlayerUnlocked = false;
 	bossAgentOfGodUnlocked = false;
 	bossGravelingUnlocked = false;
+	
+	bonusHealth = 0;
+	bonusSpeed = 0;
+	bonusDash = 0;
+	bonusDamage = 0;
+	bonusFirerate = 0;
+	bonusLifeSteal = 0;
+	bonusAura = 0;
+	bonusConjur = 0;
+	bonusCooldown = 0;
+	previewHealth = 0;
+	previewSpeed = 0;
+	previewDash = 0;
+	previewDamage = 0;
+	previewFirerate = 0;
+	previewLifeSteal = 0;
+	previewAura = 0;
+	previewConjur = 0;
+	previewCooldown = 0;
 }

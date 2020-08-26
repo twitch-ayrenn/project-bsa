@@ -17,10 +17,6 @@
         "c1dd9a7a-993d-464b-8105-2e591e70f8e8",
         "590ac514-7521-4aec-9219-9ecd8e3ac640",
         "d799e861-219e-407a-bfb7-80b6e35fb2ef",
-        "4eda72ca-736c-453b-b7b1-ed50600417c6",
-        "f05e9f05-87b1-45ab-95e4-895fba83ee88",
-        "b29bdb95-50d0-47df-be43-caa836d7ff64",
-        "ba0c6675-04a6-479a-a3b0-ff82dad3c6f6",
         "96dca42a-849c-4efc-8af9-4217292134d2",
         "f3715e17-062d-4a10-a966-24b2d707a541",
         "22d647cf-98f3-446d-83a1-b1c76e094e9d",
@@ -48,7 +44,8 @@
         "33927986-0bcb-4efb-a108-fd4f907d8c3a",
         "76b17657-9b51-4e00-9c52-71234d03cf36",
         "32733422-84be-4bae-8591-c4b7dec638d7",
-        "b35e1c54-98e8-4724-ba64-8b92191ada75"
+        "b35e1c54-98e8-4724-ba64-8b92191ada75",
+        "8c5702e4-e8c1-4cac-ac62-434efdac019c"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_props",

@@ -22,5 +22,14 @@ if (gameMaster.pyromancerUnlocked == true && gameMaster.menu == Menues.PlayerSel
 	gameMaster.bonusAura = 0;
 	gameMaster.bonusConjur = 0;
 	gameMaster.bonusCooldown = 0;
+	gameMaster.previewHealth = 0;
+	gameMaster.previewSpeed = 0;
+	gameMaster.previewDash = 0;
+	gameMaster.previewDamage = 0;
+	gameMaster.previewFirerate = 0;
+	gameMaster.previewLifeSteal = 0;
+	gameMaster.previewAura = 0;
+	gameMaster.previewConjur = 0;
+	gameMaster.previewCooldown = 0;
 	gameMaster.itemShowInfoFor = Boss.NoBoss;
 }
