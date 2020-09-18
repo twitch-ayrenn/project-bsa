@@ -7,11 +7,11 @@ menu = 0;
 global.saveFile = "Save.test.0.1.1";
 if (file_exists(global.saveFile) == true)
 {
-	game_load(global.saveFile);
+	//game_load(global.saveFile);
 }
 if (file_exists(global.saveFile) == false)
 {
-	game_save(global.saveFile);
+	//game_save(global.saveFile);
 }
 room_goto(rm_beforeGame);
 enum Menues
@@ -121,8 +121,8 @@ chosenBoss = 0;
 chosenMode = 0;
 global.player = obj_allPlayer;
 //pricing
-global.relase = true;//true
-global.deBugg = false;//false
+global.relase = false;//true
+global.deBugg = true;//false
 //save
 //game balance
 global.dD = 1;

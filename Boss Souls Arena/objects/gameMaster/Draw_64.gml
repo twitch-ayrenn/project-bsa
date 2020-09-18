@@ -132,7 +132,7 @@ if (menu == Menues.Main)
 		}
 	}
 	#endregion
-	#region Controlls
+	#region Controls
 	if (device_mouse_x_to_gui(0) > 80 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*2 && device_mouse_y_to_gui(0) <startY + sep*3-20)
 	{
 		controllsColor = c_yellow;
@@ -208,7 +208,7 @@ if (menu == Menues.Main)
 	
 	draw_text_transformed_color(80,startY + sep*1,"Arena Rush",bossRushSize,bossRushSize,0,global.orange,global.orange,playArenaColor,playArenaColor,1);
 	
-	draw_text_transformed_color(80,startY + sep*2,"Controlls",controllsSize,controllsSize,0,global.orange,global.orange,controllsColor,controllsColor,1);
+	draw_text_transformed_color(80,startY + sep*2,"Controls",controllsSize,controllsSize,0,global.orange,global.orange,controllsColor,controllsColor,1);
 	
 	draw_text_transformed_color(80,startY + sep*3,"Settings",sizeOfSetting,sizeOfSetting,0,global.orange,global.orange,settingsColor,settingsColor,1);
 
@@ -1405,7 +1405,7 @@ if (menu == Menues.Death)
 }
 #endregion
 #region Debugg
-if (global.deBugg == true && menu == Menues.Play && instance_exists(global.player))
+if (global.deBugg == true && menu == Menues.Play && instance_exists(global.player) && false)
 {
 	var playerHealth = "[Current/Max Health]: [" + string(obj_allPlayer.hp) + "] | ["  + string(obj_allPlayer.maxHp) +"]";
 	var playerDmg = "[Damage]: [" + string(global.damage) + "]";
