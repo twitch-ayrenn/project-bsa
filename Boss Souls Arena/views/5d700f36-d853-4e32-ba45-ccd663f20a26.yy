@@ -11,9 +11,11 @@
         "2c0c300a-34fb-4e19-9fbc-384ef6d13f23",
         "9937875e-df32-4781-977c-566e8fd61229",
         "ef2c2328-e11f-4dff-84bd-a33f6531187a",
+        "8136f787-6cf1-430c-8e04-e85b156197f7",
         "4d6da9ba-d9da-496e-b0f1-21550d216d21",
         "b650b005-6dd4-4407-b25d-74ab290b704e",
-        "a2ae2b7b-0aba-4344-b705-41ac6ef3bd92"
+        "a2ae2b7b-0aba-4344-b705-41ac6ef3bd92",
+        "87d159d0-3103-48dc-ada2-5d790285080b"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_theShadowAssassin",

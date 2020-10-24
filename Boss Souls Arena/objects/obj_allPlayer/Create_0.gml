@@ -7,7 +7,6 @@ canLeftClick = true;
 leftClickCooldown = 0;
 leftClickCooldownLeft = 0;
 leftClickColor = c_white;
-
 weaponDirection = 0;
 //right
 canRightClick = true;
@@ -36,7 +35,7 @@ moveSpeed = 2;
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
 moveDirection = 0; 
-global.damage = 1*2.5;
+global.damage = 1*1;
 baseLifeSteal = 0.8;
 global.lifeSteal = baseLifeSteal;
 dashSpeed = 5;
@@ -55,6 +54,8 @@ hatSprite = 0;
 instance_create_depth(x,y,1,obj_allCursor);
 playerSize = 1;
 normalAlpha = 1;
+drawCharge = false;
+drawChargeFrame = 0;
 #endregion
 #region class system
 	#region Shadow Assassin

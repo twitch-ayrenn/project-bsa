@@ -48,6 +48,13 @@
                     "mvc": "1.0",
                     "FrameId": "a58b0d19-0456-42cc-ad7d-16eb16069d50",
                     "LayerId": "76c24cbd-b5d8-409d-8d74-81e1c8810eac"
+                },
+                {
+                    "id": "843219d1-f56c-4ca4-92d9-14233f394d81",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "a58b0d19-0456-42cc-ad7d-16eb16069d50",
+                    "LayerId": "c8e66bb1-f422-4ece-96b1-00c580935af8"
                 }
             ]
         }
@@ -56,6 +63,17 @@
     "gridY": 0,
     "height": 70,
     "layers": [
+        {
+            "id": "c8e66bb1-f422-4ece-96b1-00c580935af8",
+            "modelName": "GMImageLayer",
+            "mvc": "1.0",
+            "SpriteId": "a253d629-3d78-4b5a-9e52-c5bcdf5d0b4b",
+            "blendMode": 0,
+            "isLocked": false,
+            "name": "Layer 3",
+            "opacity": 100,
+            "visible": true
+        },
         {
             "id": "0e9f4782-c6fd-43d0-8a23-4bf155db366d",
             "modelName": "GMImageLayer",

@@ -175,7 +175,10 @@ if (gameMaster.chosenBoss == Boss.ArenaKing)
 }
 #endregion
 
-if (isHit == false){draw_self();}
+if (isHit == false)
+{
+	draw_self();
+}
 if (isHit == true)
 {
 	gpu_set_fog(true,c_white,0,0);

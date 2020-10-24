@@ -3,6 +3,9 @@
 weaponDirection = point_direction(x,y,mouse_x,mouse_y);
 if (hp > maxHp){hp = maxHp;}
 depth = -y;
+if (drawCharge){drawChargeFrame +=2 }
+if (drawChargeFrame >= 60){drawChargeFrame = 0;}
+drawCharge = false;
 #region Bosses
 if (instance_exists(obj_allBoss))
 {
@@ -215,6 +218,7 @@ if (mouse_x < x)
 			{
 				charge += 1*(1+(gameMaster.bonusFirerate/100));
 				moveSpeed = 0;
+				drawCharge = true;
 			}
 			if (mouse_check_button_released(mb_left) || charge >= maxCharge || mouse_check_button(mb_left) && mouse_check_button(mb_right) 
 			|| mouse_check_button(mb_left) && keyboard_check(vk_space) || mouse_check_button(mb_left) && keyboard_check(ord("E")) 
@@ -928,10 +932,11 @@ if (mouse_x < x)
 			meteor.image_angle = meteor.direction+90;
 			meteor.image_alpha = 0.75;
 			meteor.speed = 6;
-			meteor.image_xscale = 2.5;
+			meteor.image_xscale = 1.45;
 			meteor.image_yscale = meteor.image_xscale;
 			meteor.charge = 15;
 			meteor.isMeteor = true;
+			meteor.sprite_index = spr_firebolt_meteor;
 			
 			instance_create_depth(x,y,-y,obj_pyroPortal);
 			instance_create_depth(x,y,-y,obj_portal_bottom);

@@ -11,7 +11,8 @@
         "dec8afc4-48d4-4fbb-92ef-7b4aba823314",
         "0da83abb-d5f2-46ce-a9ba-16a5e86e5c00",
         "0c8359e4-3343-46a9-8806-a5b9a76a5e83",
-        "d0feb575-abd4-4c42-b916-dbc1a1bba172"
+        "d0feb575-abd4-4c42-b916-dbc1a1bba172",
+        "24beb891-2b40-4335-8745-2851f951a351"
     ],
     "filterType": "GMObject",
     "folderName": "grp_buttons",

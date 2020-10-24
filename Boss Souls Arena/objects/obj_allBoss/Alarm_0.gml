@@ -31,7 +31,7 @@ if (attack == Atks.NormalShot)
 		bloodKlot.speed = 6 ;
 		bloodKlot.image_angle = bloodKlot.direction;
 		//Visual
-		bloodKlot.image_alpha = 0.85;
+		bloodKlot.image_alpha = 1;
 		bloodKlot.image_blend = c_maroon;
 		bloodKlot.sprite_index = spr_bloodKlott;
 		bloodKlot.image_xscale = 1.15;

@@ -1,17 +1,17 @@
 	/// @description Insert description here
-image_alpha = 0.8;
+image_alpha = 0.9;
 depth = -y;
 if (isMeteor == true) 
 {
-	depth = -2000;
-	var meteorTrail = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
-	meteorTrail.fadeSpeed = 0.11;
-	meteorTrail.sprite_index = sprite_index;
-	meteorTrail.image_xscale = image_xscale;
-	meteorTrail.image_yscale = image_yscale;
-	meteorTrail.image_angle = image_angle;
-	meteorTrail.image_blend = image_blend;
-	meteorTrail.image_alpha = image_alpha;
+	depth = -y-2000;
+	//var meteorTrail = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
+	//meteorTrail.fadeSpeed = 0.11;
+	//meteorTrail.sprite_index = sprite_index;
+	//meteorTrail.image_xscale = image_xscale;
+	//meteorTrail.image_yscale = image_yscale;
+	//meteorTrail.image_angle = image_angle;
+	//meteorTrail.image_blend = image_blend;
+	//meteorTrail.image_alpha = image_alpha;
 }
 if (place_meeting(x,y,obj_bulletDestroyer) && isMeteor == false){instance_destroy();} 
 if (destroy == true)

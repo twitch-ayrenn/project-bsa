@@ -13,6 +13,10 @@ if (global.itemSelected[Boss.TheCorrupter] == true)
 	}
 }
 #endregion
+if (drawCharge)
+{
+	draw_sprite_ext(spr_charge,drawChargeFrame,x,y+5,0.75,0.75,0,global.orange,1);	
+}
 draw_self();
 #region
 if (global.itemSelected[Boss.ArenaKing] == true)

@@ -11,8 +11,8 @@ if (gameMaster.menu == Menues.Settings|| gameMaster.menu == Menues.BossLoot)
 }
 if (gameMaster.menu == Menues.BossSelect)
 {
-	if (image_alpha > 0.71){image_alpha -= 1.3/30;}
-	if (image_alpha < 0.7){image_alpha += clamp(1.1/30,0,0.7);}
+	if (image_alpha > 0.86){image_alpha -= 1.3/30;}
+	if (image_alpha < 0.85){image_alpha += clamp(1.1/30,0,0.7);}
 }
 if (gameMaster.menu != Menues.BossSelect && gameMaster.menu != Menues.Settings && gameMaster.menu != Menues.BossLoot)
 {

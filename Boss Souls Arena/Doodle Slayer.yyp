@@ -2074,7 +2074,7 @@
             "Key": "5623aae9-19e9-4130-936c-1af8e7334552",
             "Value": {
                 "id": "ad658672-9548-468b-b59c-17ba1e3a4a1e",
-                "resourcePath": "sprites\\spr_fireBall\\spr_fireBall.yy",
+                "resourcePath": "sprites\\spr_fireBall1\\spr_fireBall1.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2252,6 +2252,14 @@
                 "id": "67a27997-73e3-4424-85b4-0408e25d7caa",
                 "resourcePath": "views\\626b7859-6542-4d56-81ba-e80be62fdffe.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "6292ccf6-8869-4b3b-8c1a-0b3bd61c06bc",
+            "Value": {
+                "id": "077dc94e-381d-45ba-b787-4d91431afdb5",
+                "resourcePath": "sprites\\spr_bloodKlott\\spr_bloodKlott.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2586,7 +2594,7 @@
             "Key": "748e7be9-dd22-4563-af3f-ac0df6fdd61e",
             "Value": {
                 "id": "65ef129d-0093-49a9-9268-9b6c65226b62",
-                "resourcePath": "sprites\\spr_firebolt_big\\spr_firebolt_big.yy",
+                "resourcePath": "sprites\\spr_firebolt_big1\\spr_firebolt_big1.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2716,6 +2724,14 @@
                 "id": "6ece225b-27c8-4639-9756-23eb22e93c17",
                 "resourcePath": "objects\\obj_prop_shadow1\\obj_prop_shadow1.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "7926a6ae-8127-4d4d-bfa9-69395db17def",
+            "Value": {
+                "id": "6a42f8b4-4db5-470d-a019-89e3c01d0bb4",
+                "resourcePath": "sprites\\spr_fireBall\\spr_fireBall.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2903,6 +2919,14 @@
             }
         },
         {
+            "Key": "8136f787-6cf1-430c-8e04-e85b156197f7",
+            "Value": {
+                "id": "1432c9c7-6a9b-4278-a0c1-5269567cc03b",
+                "resourcePath": "sprites\\spr_shadowDaggerProjectile1\\spr_shadowDaggerProjectile1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8149c396-ab8f-4ba1-8ad9-128f3ed0b142",
             "Value": {
                 "id": "6268167e-c7be-49bb-b64f-2439f22854da",
@@ -3063,6 +3087,14 @@
             }
         },
         {
+            "Key": "87d159d0-3103-48dc-ada2-5d790285080b",
+            "Value": {
+                "id": "c768ea54-c6b7-4349-997d-634f1475ff68",
+                "resourcePath": "sprites\\spr_\\spr_.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8809cfc0-51c9-4c5e-a584-d9a5b4a93cd8",
             "Value": {
                 "id": "f9c110f8-d339-4242-9745-6d99e2c4a1f8",
@@ -3148,6 +3180,14 @@
                 "id": "60da47e9-2d23-4808-890a-06d43791f2d6",
                 "resourcePath": "sprites\\spr_visual_crown_agent_idle\\spr_visual_crown_agent_idle.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "8a92782f-e153-4521-bcf9-f6f9afa81494",
+            "Value": {
+                "id": "2b5ec230-fd43-4b76-b3b9-c7e58ae2dbb6",
+                "resourcePath": "objects\\object213\\object213.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -4243,6 +4283,14 @@
             "Value": {
                 "id": "9fc4bbfd-d508-4a11-8396-52d6fe3f8625",
                 "resourcePath": "sprites\\spr_angelSlayerRekZul_teleport\\spr_angelSlayerRekZul_teleport.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b7cdfa97-e0fd-4c87-8d7f-dc2eeb31f4f9",
+            "Value": {
+                "id": "0ab2b5c6-5d7c-44d7-b241-9f6f8b8ded5a",
+                "resourcePath": "sprites\\spr_firebolt_big\\spr_firebolt_big.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5359,6 +5407,14 @@
             }
         },
         {
+            "Key": "e3b8e3fa-bdf4-4e8c-aab3-24816dbf6efb",
+            "Value": {
+                "id": "1effc7f0-0d79-47c8-9325-92dc9e2c67e9",
+                "resourcePath": "sprites\\spr_charge\\spr_charge.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e42bf5cc-3f46-4d67-a6d0-a4885a11ac3f",
             "Value": {
                 "id": "269e8aad-063d-45b7-abcb-3e98d0ebbab0",
@@ -5404,6 +5460,14 @@
                 "id": "c16ff5a9-875c-4290-b0f4-7bcf5e9e9bb5",
                 "resourcePath": "objects\\obj_visual_deathBat\\obj_visual_deathBat.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "e6411592-a50d-4007-9be9-aa4a95849085",
+            "Value": {
+                "id": "01e35847-c6eb-4f37-a267-110bbf18bf2b",
+                "resourcePath": "sprites\\sprite419\\sprite419.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -5858,7 +5922,7 @@
             "Key": "f6ed7b12-5a77-4f76-a01e-f9e15f68cc58",
             "Value": {
                 "id": "4ea34815-986a-42c9-858a-fcbb71e46572",
-                "resourcePath": "sprites\\spr_bloodKlott\\spr_bloodKlott.yy",
+                "resourcePath": "sprites\\spr_bloodKlott2\\spr_bloodKlott2.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5996,6 +6060,14 @@
                 "id": "0de50afe-294a-4d68-8f3b-bbd1121297f1",
                 "resourcePath": "views\\fbc2b026-82e0-4ba3-81f2-1e47c16eb14f.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "fbf2eb2e-f0ab-46ee-90e6-7067c08b4d8c",
+            "Value": {
+                "id": "5049b3c1-4dca-4906-9202-e1a4c0695580",
+                "resourcePath": "sprites\\spr_firebolt_meteor\\spr_firebolt_meteor.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
