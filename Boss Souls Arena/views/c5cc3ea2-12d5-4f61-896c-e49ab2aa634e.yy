@@ -11,7 +11,8 @@
         "b7cdfa97-e0fd-4c87-8d7f-dc2eeb31f4f9",
         "7926a6ae-8127-4d4d-bfa9-69395db17def",
         "fbf2eb2e-f0ab-46ee-90e6-7067c08b4d8c",
-        "e3b8e3fa-bdf4-4e8c-aab3-24816dbf6efb"
+        "e3b8e3fa-bdf4-4e8c-aab3-24816dbf6efb",
+        "8f88c161-9264-4c43-91d4-e04e85a00d6a"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_particles",

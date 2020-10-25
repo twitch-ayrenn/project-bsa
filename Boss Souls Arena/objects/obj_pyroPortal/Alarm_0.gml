@@ -7,4 +7,5 @@ fireBolt.speed = 6;
 fireBolt.image_xscale = 0.65*(1 + (gameMaster.bonusConjur/200));
 fireBolt.image_yscale = fireBolt.image_xscale;
 fireBolt.charge = 2;
+fireBolt.isPortalAttack = true;
 canAttack = true;

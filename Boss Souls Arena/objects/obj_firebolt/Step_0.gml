@@ -42,7 +42,9 @@ if (place_meeting(x,y,enemy))
 	{
 		instance_create_depth(x,y,depth,obj_meteorGround);
 	}
-	if (image_xscale >= 1.25){with(obj_camera){shake_remain += 14*image_xscale;}}
+	if (isMeteor){with(obj_camera){shake_remain += 12;}}
+	if (isAttack){with(obj_camera){shake_remain += image_xscale*7;}}
+	if (isPortalAttack || isRightClick){with(obj_camera){shake_remain += 0.45;}}
 	instance_destroy();
 }
 if (isMeteor == true)

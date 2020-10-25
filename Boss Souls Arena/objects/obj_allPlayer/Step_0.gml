@@ -237,6 +237,7 @@ if (mouse_x < x)
 				infernalBall.image_xscale = 0.25 + charge/50;
 				infernalBall.image_yscale = infernalBall.image_xscale;
 				infernalBall.charge = 1 + ((charge/2.5)-1);
+				infernalBall.isAttack = true;
 			
 				charge = 0;
 				moveSpeed = normalSpeed;
@@ -365,6 +366,7 @@ if (mouse_x < x)
 				graveBolt.image_xscale = 0.55;
 				graveBolt.image_yscale = graveBolt.image_xscale;
 				graveBolt.image_alpha = 1;
+				graveBolt.image_blend = c_yellow;
 				graveBolt.timeToDestroy = (0.25)*30;
 			}
 		}
@@ -513,8 +515,8 @@ if (mouse_x < x)
 				if (global.autoAim && instance_exists(obj_allBoss)){projectile.direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
 				projectile.speed = 7;
 				projectile.image_angle = projectile.direction+90;
-				projectile.image_xscale = 1.25;
-				projectile.image_yscale = 1.25;
+				projectile.image_xscale = 1;
+				projectile.image_yscale = 1;
 				projectile.image_alpha = 0.85;
 				projectile.image_blend = c_red;
 			}
@@ -628,6 +630,7 @@ if (mouse_x < x)
 				fireBolt.image_yscale = 0.9;
 				fireBolt.effectType = Effect.Flare;
 				fireBolt.charge = 1;
+				fireBolt.isRightClick = true;
 				coneAtkFW += (coneWide/coneAmount);
 			}
 			
@@ -1148,7 +1151,7 @@ if (mouse_x < x)
 		//Visual
 		bfBlast.image_angle = bfBlast.direction+90;
 		bfBlast.image_blend = c_lime;
-		bfBlast.image_xscale = 2;
+		bfBlast.image_xscale = 0.55 + global.damage/4;
 		bfBlast.image_yscale = bfBlast.image_xscale;
 		
 		if (class == Character.ShadowAssassin){canLeftClick = true;	leftClickCooldownLeft = 0;}
@@ -1409,7 +1412,7 @@ if (mouse_x < x)
 			holyBolt.direction = direction;
 			holyBolt.image_angle = holyBolt.direction+90;
 			//Visual
-			holyBolt.image_xscale = 0.5 + global.damage/1.75;
+			holyBolt.image_xscale = 0.25 + global.damage/2;
 			holyBolt.image_yscale = holyBolt.image_xscale
 		}
 		if (speed > 0)
@@ -1477,6 +1480,7 @@ if (mouse_x < x)
 			gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);
 			var deadGround = instance_create_depth(x,y,depth,obj_deadGround);
 			deadGround.destroyTimer = (2 + actualSpeedBefore)*30;
+			deadGround.image_blend = c_olive;
 		}
 		if (speed > 0)
 		{

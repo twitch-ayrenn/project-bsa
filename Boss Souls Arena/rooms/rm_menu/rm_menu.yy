@@ -225,10 +225,37 @@
         "4f9153a1-67a1-44fd-bf62-5b78c570e544",
         "e6143dfd-e9cb-4291-a956-27520f381ddc",
         "b9d3526b-e02c-4f47-8a49-fa507c3de56f",
-        "70f02eef-1b56-45cc-931b-aaa1c96bd77e"
+        "70f02eef-1b56-45cc-931b-aaa1c96bd77e",
+        "e0fbfc32-e251-4d52-853d-4a801b19ec0e"
     ],
     "IsDnD": false,
     "layers": [
+        {
+            "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
+            "name": "Instances_2",
+            "id": "1341fc9b-3027-48e5-ab5b-0e2502c69b4f",
+            "depth": -510,
+            "grid_x": 32,
+            "grid_y": 32,
+            "hierarchyFrozen": false,
+            "hierarchyVisible": true,
+            "inheritLayerDepth": false,
+            "inheritLayerSettings": false,
+            "inheritSubLayers": false,
+            "inheritVisibility": false,
+            "instances": [
+{"name": "inst_6DB6577","id": "e0fbfc32-e251-4d52-853d-4a801b19ec0e","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"imageIndex": 0,"imageSpeed": 1,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_6DB6577","objId": "e4a1a5b9-7cb7-47b7-a511-9b2a852673ab","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.1","x": 133,"y": 75}
+            ],
+            "layers": [
+
+            ],
+            "m_parentID": "00000000-0000-0000-0000-000000000000",
+            "m_serialiseFrozen": false,
+            "modelName": "GMRInstanceLayer",
+            "mvc": "1.0",
+            "userdefined_depth": false,
+            "visible": true
+        },
         {
             "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
             "name": "fightCards",

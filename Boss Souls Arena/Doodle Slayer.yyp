@@ -3303,6 +3303,14 @@
             }
         },
         {
+            "Key": "8f88c161-9264-4c43-91d4-e04e85a00d6a",
+            "Value": {
+                "id": "3194116c-2dca-4b2f-8076-24c23b912eaf",
+                "resourcePath": "sprites\\spr_holybeamNew\\spr_holybeamNew.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8ff5c389-a97c-4c91-8572-32505eefdefb",
             "Value": {
                 "id": "e9123a4c-b93f-46a7-9a84-a2a7e03ad4b0",
@@ -4991,14 +4999,6 @@
             }
         },
         {
-            "Key": "d43918c0-b5c0-434f-8b33-8a3f75796643",
-            "Value": {
-                "id": "df961294-f3f6-4141-9d77-fc5a15c74ae4",
-                "resourcePath": "sprites\\spr_boss_bloodZombie_arrjan\\spr_boss_bloodZombie_arrjan.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "d49d2a5b-0f36-4baf-be62-a87cb9355a69",
             "Value": {
                 "id": "a9171a9f-9d04-415e-87cd-d130e7eddbed",
@@ -5439,6 +5439,14 @@
             }
         },
         {
+            "Key": "e4a1a5b9-7cb7-47b7-a511-9b2a852673ab",
+            "Value": {
+                "id": "6691fb76-10c4-41fe-bd6d-79f94279d9a1",
+                "resourcePath": "objects\\obj_menuVinjet\\obj_menuVinjet.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "e4f56bd4-937f-4fa6-bd22-2649cdd3a990",
             "Value": {
                 "id": "1b0df63a-eb64-4c20-b114-d3f39c8c7dcd",
@@ -5531,6 +5539,14 @@
             "Value": {
                 "id": "21055b85-f6b3-4400-80e2-c19b21febf89",
                 "resourcePath": "sprites\\spr_tutorial_boss\\spr_tutorial_boss.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e7cae7b2-62ff-495e-a72a-3d24527ccf3e",
+            "Value": {
+                "id": "d1250c32-23b5-4f1f-8096-572ffb00fb8b",
+                "resourcePath": "sprites\\spr_lowHealthVinjet\\spr_lowHealthVinjet.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -6084,6 +6100,14 @@
                 "id": "2b44e1ae-66f3-4214-9c94-67898745d130",
                 "resourcePath": "objects\\obj_flamieBolt\\obj_flamieBolt.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "fd146843-816a-49a9-be67-3e18a29c97ee",
+            "Value": {
+                "id": "5b193b71-2690-46e1-b706-43f7161a3749",
+                "resourcePath": "sprites\\spr_menuvinjet\\spr_menuvinjet.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

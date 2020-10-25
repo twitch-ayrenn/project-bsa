@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 depth = -y;
-image_alpha = 0.5;
+image_alpha = 1;
 var stopDistance = 5;
 if (global.autoAim == false)
 {

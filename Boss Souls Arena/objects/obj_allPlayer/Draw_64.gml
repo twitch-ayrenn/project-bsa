@@ -195,4 +195,13 @@ if (canRightClick == false){draw_sprite_part_ext(spr_newCursor1,0,33,20,8,5,devi
 //dash
 if (canDash == true){draw_sprite_part_ext(spr_newCursor1,0,0,25,41,17,device_mouse_x_to_gui(0)-40,device_mouse_y_to_gui(0)+5,cursorSize,cursorSize,dashColor,1);}
 if (canDash == false){draw_sprite_part_ext(spr_newCursor1,0,0,25,41,17,device_mouse_x_to_gui(0)-40,device_mouse_y_to_gui(0)+5,cursorSize,cursorSize,c_dkgray,1);}
+if (gameMaster.chosenClass == Character.Pyromancer && drawCharge)
+{
+	draw_healthbar(device_mouse_x_to_gui(0)-50,device_mouse_y_to_gui(0)+40,device_mouse_x_to_gui(0)+50,device_mouse_y_to_gui(0)+50,(charge/maxCharge)*100,c_black,c_orange,global.orange,0,true,true);
+}
+//Low Health Vinjett
+if (hp > 0.65*maxHp)
+{
+	draw_sprite_ext(spr_lowHealthVinjet,0,0,0,4.2,4.2,0,c_red,1.2-(hp/maxHp));
+}
 #endregion
