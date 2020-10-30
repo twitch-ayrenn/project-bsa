@@ -9,7 +9,7 @@ if (gameMaster.menu == Menues.Main)
 	image_xscale = 0.2;
 	image_yscale = -0.11875;
 	visible = true;
-	if (image_alpha > 0.6){image_alpha -= 1.1/30;}
+	if (image_alpha > 0.75){image_alpha -= 1.1/30;}
 }
 if (gameMaster.menu == Menues.PlayerSelect || gameMaster.menu == Menues.Credits || gameMaster.menu == Menues.Controlls)
 {

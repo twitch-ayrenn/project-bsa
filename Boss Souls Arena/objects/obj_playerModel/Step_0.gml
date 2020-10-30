@@ -1,11 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 depth = -1000;
-if (gameMaster.menu == Menues.PlayerSelect || gameMaster.menu == Menues.BossLoot)
+if (gameMaster.menu == Menues.BossLoot)
 {
 	image_alpha = 1;	
 }
-if (gameMaster.menu != Menues.PlayerSelect && gameMaster.menu != Menues.BossLoot)
+if (gameMaster.menu != Menues.BossLoot)
 {
 	image_alpha = 0;	
 }

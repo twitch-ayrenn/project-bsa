@@ -151,7 +151,7 @@ settingsSize = 1;
 creditsColor = global.darkYellow;
 controllsColor = global.darkYellow;
 //settings
-global.musicOn = true;
+global.musicOn = false;
 global.musicVolume = 0.25;
 global.soundOn = true;
 global.ambientOn = false;
