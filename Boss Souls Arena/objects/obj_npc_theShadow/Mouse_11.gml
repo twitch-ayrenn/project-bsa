@@ -9,6 +9,7 @@ if (gameMaster.chosenMode == Menues.Campaign)
 	{
 		outline = "unSelected";
 	}
+	with (obj_playerInfoBox){playerShowInfoFor = Character.NoCharacterCampaign;}
 }
 if (gameMaster.chosenMode ==  Menues.BossRush)
 {
@@ -20,4 +21,5 @@ if (gameMaster.chosenMode ==  Menues.BossRush)
 	{
 		outline = "unSelected";
 	}
+	with (obj_playerInfoBox){playerShowInfoFor = Character.NoCharacterArenaRush;}
 }

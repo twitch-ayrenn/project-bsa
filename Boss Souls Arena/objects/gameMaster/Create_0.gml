@@ -98,7 +98,8 @@ enum Character
 	RainbowSlime,
 	AgentOfGod,
 	Graveling,
-	
+	NoCharacterCampaign,
+	NoCharacterArenaRush,
 }
 enum Effect
 {
@@ -187,7 +188,7 @@ exitColor = c_maroon;
 exitSize = 1;
 backColor = c_maroon;
 backSize = 1;
-global.slidingSpeed = 1.75;
+global.slidingSpeed = 2.5;
 global.campaignDifficulty = 1;
 global.maxDifficulty = 1.25;
 global.minDifficulty = 0.75;

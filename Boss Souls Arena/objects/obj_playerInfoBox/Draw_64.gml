@@ -3,11 +3,98 @@
 //draw_text_transformed_color(75,215,"Info:",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 //draw_text_transformed_color(105,415,"Abilites",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 //draw_text_transformed_color(340,255,"Stats",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
-draw_line_width_color(65,260,570,260,5,c_yellow,c_yellow);
+draw_line_width_color(65,260,570,260,4,c_yellow,c_yellow);
 draw_rectangle_color(65,257,570,262,global.orange,global.orange,c_yellow,c_yellow,false);
 var sep = 18.3;
 var startY = 270;
 var startX = 65;
+#region Camapaign Info
+if (playerShowInfoFor == Character.NoCharacterCampaign)
+{
+	//name
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(70,202,"Campaign Info",0.45,0.45,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	//description
+	draw_set_font(fnt_NewNormalText);
+	draw_text_transformed_color(startX,startY+sep*00,"Fight an opponent for glory and loot. After",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*01,"defeating an opponent more opponents and  ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*02,"item slots will be unlocked.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);	
+	
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(startX,startY+sep*04-5,"Selecting a Fighter",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_set_font(fnt_NewNormalText);
+	draw_text_transformed_color(startX,startY+sep*05,"Hover over a fighter to get info about that",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*06,"fighter. Click on a fighter to select it and",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*07,"move on to item select or boss select.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(startX,startY+sep*09-5,"Unlocking More Fighters",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_set_font(fnt_NewNormalText);
+	draw_text_transformed_color(startX,startY+sep*10,"From the start only 3 fighter are available.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*11,"To unlock all fighters you have to defeat the",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*12,"Arena King once.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(startX,startY+sep*14-5,"Fighter Progression",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_set_font(fnt_NewNormalText);
+	draw_text_transformed_color(startX,startY+sep*15,"Each fighter has its own progression and has to ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*16,"go trough the arena. This means defeating a ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*17,"boss on a fighter does not carry over to ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*18,"other fighters. ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(startX,startY+sep*20-5,"How To Succeed In The Arena",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_set_font(fnt_NewNormalText);
+	draw_text_transformed_color(startX,startY+sep*21,"Fool! You wont succeed, you wont even come",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*22,"close to me, but if you want to make it far",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*23,"enough to where you get to fight me then you",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*24,"have to be as aggresive and relentless as",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*25,"your opponents - The Arena King",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	
+}
+#endregion
+#region Arena Rush Info
+if (playerShowInfoFor == Character.NoCharacterArenaRush)
+{
+	//name
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(70,202,"Arena Rush Info",0.45,0.45,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	//description
+	draw_set_font(fnt_NewNormalText);
+	draw_text_transformed_color(startX,startY+sep*00,"A true challange for those who have mastered",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*01,"the campaign and the fighters. Fight opponent",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*02,"after opponent and evetually the Arena King",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*03,"Himself in one go. To reach the king you have",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*04,"to defeat 14 other bosses in a row.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);	
+	
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(startX,startY+sep*06-5,"Selecting a Fighter",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_set_font(fnt_NewNormalText);
+	draw_text_transformed_color(startX,startY+sep*07,"Hover over a fighter to get info about that",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*08,"fighter. Click on a fighter to select it and",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*09,"move on to item select.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(startX,startY+sep*11-5,"Unlocking More Fighters",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_set_font(fnt_NewNormalText);
+	draw_text_transformed_color(startX,startY+sep*12,"To unlock a fighter for the Arena Rush you",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*13,"must first beat the main campaign with that",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*14,"fighter.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(startX,startY+sep*16-5,"Unlocking The Last Item",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_set_font(fnt_NewNormalText);
+	draw_text_transformed_color(startX,startY+sep*17,"Unlock a new item by beating the Arena Rush",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*18,"atleast once.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	
+	draw_set_font(fnt_menu_fill);
+	draw_text_transformed_color(startX,startY+sep*20-5,"How To Succeed In The Arena",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_set_font(fnt_NewNormalText);
+	draw_text_transformed_color(startX,startY+sep*21,"To succeed make sure to pick a combination of ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*22,"items that are strong in most scenarios as well",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*23,"as the must have items for certain opponents.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+}
+#endregion
 #region The Pyromancer
 if (playerShowInfoFor == Character.Pyromancer)
 {
@@ -19,12 +106,12 @@ if (playerShowInfoFor == Character.Pyromancer)
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*00,"Flamie, a cocky pyro here to test her skills.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*01,"Wants to prove her skills. Mages are all the",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*02,"same. She prove my ass - The Arena King",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*02,"same. She can prove my ass - The Arena King",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*04-5,"Passive",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*05,"Each [Ability] and [Attack] summons a flame ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*05,"Each ability and attack summons a flame",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*06,"portal that shoots firebolts where you aim.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*07,"Portals grow stronger with [Summoning Power].",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
@@ -69,13 +156,13 @@ if (playerShowInfoFor == Character.ShadowAssassin)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*04-5,"Passive",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*05,"You can use your [Attack] instantly after using",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*06,"an [Ability] or your [Ultimate].",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*05,"You can use your attack instantly after using",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*06,"an ability or your ultimate.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*8-5,"Attack - Left Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*9,"Click inside a purple circle to teleport and",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*9,"Click inside the purple circle to teleport and",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*10,"throw knives around you. You do not take ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*11,"damage when touching an enemy. Max damage",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*12,"is dealt when clicking on an enemy.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
@@ -84,7 +171,7 @@ if (playerShowInfoFor == Character.ShadowAssassin)
 	draw_text_transformed_color(startX,startY+sep*14-5,"Ability 1 - Right Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*15,"Summon a shadow of yourself, it also throws",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*16,"knives when you use [Attack] and has a purple",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*16,"knives when you attack and also has a purple",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*17,"circle that you can teleport to.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
@@ -96,7 +183,7 @@ if (playerShowInfoFor == Character.ShadowAssassin)
 	draw_text_transformed_color(startX,startY+sep*22-5,"Ultimate - R",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*23,"Restore all your health and reset all your ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*24,"[Attack] and [ability] cooldowns.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*24,"attack and ability cooldowns.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 }
 #endregion
 #region The Blood Knight
@@ -114,32 +201,32 @@ if (playerShowInfoFor == Character.BloodKnight)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*04-5,"Passive",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*05,"Double base health and health from items.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*05,"Double [Base Health] and [health] from items.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*7-5,"Attack - Left Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*8,"Summon bats that deal damage.  ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*9,"[Summoning Power] increases bats summoned.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*8,"Summon bats. [Summoning Power] increases",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*9,"the amount of bats summoned.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*11-5,"Ability 1 - Right Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*12,"Charge and deal damage to enemies in your",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*13,"way. You do not take damage when touching",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*14,"an  enemy. This [Ability] counts as a dash.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*14,"an enemy. This ability counts as a dash.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*16-5,"Ability 2 - Space",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*17,"Dash, summon a giant bat. [Summoning Power]",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*18,"also increases the damage the bat deals.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*18,"increases the damage the bat deals.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*20-5,"Ultimate - R",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*22,"Shoot an uncontrollable blood beam towards",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*23,"mouse direction. It deals massive damage.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*21,"Shoot an uncontrollable blood beam towards",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*22,"mouse direction. It deals massive damage.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*24,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 }
 #endregion
@@ -151,9 +238,9 @@ if (playerShowInfoFor == Character.PlaugeWalker)
 	draw_text_transformed_color(70,202,"Plaegi The Plaguewalker",0.45,0.45,0,c_lime,c_lime,c_green,c_green,1);
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*00,"Flamie, a cocky pyro here to test her skills.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*01,"Wants to prove her skills. Mages are all the",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*02,"same. She prove my ass - The Arena King",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*00,"Necromencers are always such lovely company.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*01,"They always bring a party and the stench",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*02,"is lovely - The Arena King",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*04-5,"Passive",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
@@ -173,7 +260,7 @@ if (playerShowInfoFor == Character.PlaugeWalker)
 	draw_text_transformed_color(startX,startY+sep*14-5,"Ability 1 - Right Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*15,"Summon plaguelings. [Summoning Power]",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*16,"increases the plaguelings summoned. ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*16,"increases the amount of plaguelings summoned. ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*18-5,"Ability 2 - Space",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
@@ -184,8 +271,8 @@ if (playerShowInfoFor == Character.PlaugeWalker)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*22-5,"Ultimate - R",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*23,"Summons a big zombie. The summon plaguelings",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*24,"over time. [Summoning Power] Increases the",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*23,"Summons a big zombie. The zombie plaguelings",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*24,"over time.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 }
 #endregion
 #region The Agent Of God
@@ -196,9 +283,9 @@ if (playerShowInfoFor == Character.AgentOfGod)
 	draw_text_transformed_color(70,202,"Isaac The Agent of God",0.45,0.45,0,c_aqua,c_aqua,c_silver,c_silver,1);
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*00,"Flamie, a cocky pyro here to test her skills.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*01,"Wants to prove her skills. Mages are all the",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*02,"same. She prove my ass - The Arena King",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*00,"This one must landed on her head when his fell",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*01,"from heaven. To think she could liberate this",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*02,"arena is madness - The Arena King",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*04-5,"Passive",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
@@ -239,17 +326,17 @@ if (playerShowInfoFor == Character.Graveling)
 	draw_text_transformed_color(70,202,"Deady The Graveling",0.45,0.45,0,c_gray,c_gray,c_dkgray,c_dkgray,1);
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*00,"Flamie, a cocky pyro here to test her skills.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*01,"Wants to prove her skills. Mages are all the",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*02,"same. She prove my ass - The Arena King",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*00,"A fast little shit, i bet my money this one",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*01,"will make it far but no one beats me. Imagine",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*02,"thinking they can beat me - The Arena King",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*04-5,"Passive",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*05,"Gain speed with every [Attack] and [Ability].",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*06,"Speed increases the power of your [Attack] &",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*07,"[Abilities]. The range of your [Attack] &",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*08,"[Ultimate] is shown by the circle around you.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*05,"Gain speed with every attack and ability.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*06,"Speed increases the power of your attack &",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*07,"abilities. The range of your attack & ultimate",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*08,"is shown by the circle around you.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*10-5,"Attack - Left Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
@@ -290,8 +377,8 @@ if (playerShowInfoFor == Character.AngelSlayer)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*04-5,"Passive",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*05,"You can use your [Attack] instantly after using",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*06,"an [Ability] & you cant have more than 100 HP.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*05,"You can use your attack instantly after using",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*06,"an ability & you cant have more than 100 HP.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*8-5,"Attack - Left Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
@@ -308,14 +395,13 @@ if (playerShowInfoFor == Character.AngelSlayer)
 	draw_text_transformed_color(startX,startY+sep*15-5,"Ability 2 - Space",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*16,"Dash a long distance.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*17,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*19-5,"Ultimate - R",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*18-5,"Ultimate - R",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*20,"Gain 50% movement speed and [Attack]",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*21,"constantly for 6 seconds. During this time you",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*22,"cant use any [Ability].",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*19,"Gain 50% movement speed and attack",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*20,"constantly for 6 seconds. During this time you",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*21,"cant use any ability.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 }
 #endregion
 
