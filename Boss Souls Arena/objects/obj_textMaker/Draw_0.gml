@@ -3,12 +3,12 @@
 draw_set_font(fnt_menu_fill);
 if (color == c_white)
 {
-	var textSize = clamp(text/50,0.1,0.35);
+	var textSize = clamp(text/60,0.1,0.30);
 	draw_text_transformed_color(x,y+yRise,int64(10*text),textSize,textSize,0,c_white,c_white,c_silver,c_silver,1+(yRise/15));
 }
 if (color == c_lime)
 {
-	var textSize = clamp(text/60,0.1,0.25);
+	var textSize = clamp(text/80,0.1,0.25);
 	draw_text_transformed_color(x,y+yRise,int64(10*text),textSize,textSize,0,c_lime,c_lime,c_green,c_green,1+(yRise/15));
 }
 if (color == c_maroon)

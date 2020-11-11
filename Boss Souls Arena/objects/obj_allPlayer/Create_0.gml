@@ -35,7 +35,7 @@ moveSpeed = 2;
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
 moveDirection = 0; 
-global.damage = 1*3;
+global.damage = 1*1;
 baseLifeSteal = 0.8;
 global.lifeSteal = baseLifeSteal;
 dashSpeed = 5;
@@ -118,7 +118,7 @@ drawChargeFrame = 0;
 		leftClickCooldown = (1)*30;
 		rightClickCooldown = (7)*30;
 		dashCooldown = (7)*30;
-		ultCooldown = (14)*30;
+		ultCooldown = (15)*30;
 		idleSprite = spr_player_theBloodKnight;
 		walkSprite = spr_player_theBloodKnight_walking;
 		deadSprite = spr_player_theBloodKnight_dead;
@@ -140,7 +140,7 @@ drawChargeFrame = 0;
 		leftClickCooldown = (9)*30;
 		rightClickCooldown = (9)*30;
 		dashCooldown = (9)*30;
-		ultCooldown = (12)*30;//12
+		ultCooldown = (14)*30;//12
 		idleSprite = spr_player_agentOfGod_idle;
 		walkSprite = spr_player_agentOfGod_walking;
 		deadSprite = spr_player_agentOfGod_dead;
@@ -394,7 +394,7 @@ if (global.itemSelected[Boss.WispSisters] == true)
 #region DemonQueens Head
 if (global.itemSelected[Boss.DemonQueensHead] == true)
 {
-	ultCooldown = (20)*30;
+	ultCooldown = (18)*30;
 	ultCooldown *= 1 - clamp((gameMaster.bonusCooldown/100),0,cdrCap);
 	ultColor = c_lime;
 }

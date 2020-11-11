@@ -1,8 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
-//draw_text_transformed_color(75,215,"Info:",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
-//draw_text_transformed_color(105,415,"Abilites",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
-//draw_text_transformed_color(340,255,"Stats",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 draw_line_width_color(65,260,570,260,4,c_yellow,c_yellow);
 draw_rectangle_color(65,257,570,262,global.orange,global.orange,c_yellow,c_yellow,false);
 var sep = 18.3;

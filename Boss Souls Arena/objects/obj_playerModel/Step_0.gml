@@ -13,26 +13,19 @@ if (gameMaster.menu != Menues.BossLoot)
 size = 1.15
 if (sprite_index == spr_player_graveling)
 {
-	size = 0.7;
+	size = 0.65;
 }
 if (sprite_index == spr_player_theBloodKnight)
 {
-	size = 1.05;
-}
-//position
-if (gameMaster.menu == Menues.PlayerSelect)
-{
-	x = 28;
-	y = 56;
-	if (sprite_index == spr_player_graveling){y = 63;}
-	if (sprite_index == spr_player_theBloodKnight){y = 59;}
+	size = 1;
 }
 if (gameMaster.menu == Menues.BossLoot)
 {
 	x = 24;
-	y = 39;
-	if (sprite_index == spr_player_graveling){y = 46;}
-	if (sprite_index == spr_player_theBloodKnight){y = 41;}
+	y = 43;
+	if (sprite_index == spr_player_theMage_menu){y = 46;}
+	if (sprite_index == spr_player_graveling){y = 49;}
+	if (sprite_index == spr_player_theBloodKnight){y = 47;}
 	if (gameMaster.chosenClass == Character.ShadowAssassin){sprite_index = spr_player_theAssasin;}
 	if (gameMaster.chosenClass == Character.Pyromancer){sprite_index = spr_player_theMage_menu;}
 	if (gameMaster.chosenClass == Character.BloodKnight){sprite_index = spr_player_theBloodKnight;}
