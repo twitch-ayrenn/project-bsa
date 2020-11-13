@@ -216,6 +216,12 @@ if (menu == Menues.Main)
 	
 	if (backToMenuAlpha > 0){backToMenuAlpha -= clamp(0.45/30,0,1);}
 	draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,backToMenuAlpha);
+	
+	//Beta
+	draw_set_alpha(0.75)
+	draw_rectangle_color(1275,735,1575,875,c_black,c_black,c_black,c_black,false);
+	draw_set_alpha(1)
+	draw_text_ext_transformed_color(1290,750,"Private Beta Build. Thanks so so much for playing<3 Hope you enjoy the game:D",100,1000,0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 }
 #endregion
 #region Boss Loot
