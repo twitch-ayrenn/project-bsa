@@ -102,27 +102,6 @@ if (moveType == MovementType.WalkingTowardsWDirection)
 }
 if (moveType == MovementType.StandingStill)
 {
-	if (gameMaster.chosenBoss == Boss.TheMadWitches)
-	{
-		globalvar leftX; leftX = global.arenaMiddleX - 175;
-		globalvar leftY; leftY = global.arenaMiddleY;
-		globalvar rightX; rightX = global.arenaMiddleX + 175;
-		globalvar rightY; rightY = global.arenaMiddleY;
-		globalvar topX; topX = global.arenaMiddleX;
-		globalvar topY; topY = global.arenaMiddleY - 145;
-		if (position == 1)
-		{
-			x = leftX;	y = leftY;
-		}
-		if (position == 2)
-		{
-			x = topX;	y = topY;
-		}
-		if (position == 3)
-		{
-			x = topX;	y = topY;
-		}
-	}
 	if (gameMaster.chosenBoss == Boss.FlameGate && global.player.class != Character.AgentOfGod)
 	{
 		x = global.arenaMiddleX;
@@ -1516,7 +1495,7 @@ if (hp <= 0 && phase == maxPhase && gameMaster.menu != Menues.Death && gameMaste
 	if (gameMaster.chosenBoss != Boss.ArenaKing  || gameMaster.chosenBoss != Boss.BossRushReward)
 	{
 		gameMaster.chosenBoss += 1;
-		var boss = instance_create_depth(global.arenaMiddleX+175,global.arenaMiddleY,-global.arenaMiddleY,obj_allBoss);
+		instance_create_depth(global.arenaMiddleX+175,global.arenaMiddleY,-global.arenaMiddleY,obj_allBoss);
 	}
 	instance_destroy();
 }

@@ -22,16 +22,6 @@ if (gameMaster.chosenClass == Character.Pyromancer && gameMaster.pyromancerProgr
 	visible = false;
 	mask_index = spr_prop_cup;
 }
-if (gameMaster.chosenClass == Character.Shopkeeper && gameMaster.shopkeeperProgress < bossOnThisCard)
-{
-	visible = false;
-	mask_index = spr_prop_cup;
-}
-if (gameMaster.chosenClass == Character.TheRedWarrior && gameMaster.theRedWarriorProgress < bossOnThisCard)
-{
-	visible = false;
-	mask_index = spr_prop_cup;
-}
 if (gameMaster.chosenClass == Character.PlaugeWalker && gameMaster.plaugeWalkerProgress < bossOnThisCard-1)
 {
 	visible = false;
@@ -42,11 +32,7 @@ if (gameMaster.chosenClass == Character.AngelSlayer && gameMaster.angelSlayerPro
 	visible = false;
 	mask_index = spr_prop_cup;
 }
-if (gameMaster.chosenClass == Character.RainbowSlime && gameMaster.rainbowSlimeProgress < bossOnThisCard)
-{
-	visible = false;
-	mask_index = spr_prop_cup;
-}
+
 if (gameMaster.chosenClass == Character.Graveling && gameMaster.gravelingProgress < bossOnThisCard)
 {
 	visible = false;

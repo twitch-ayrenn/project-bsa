@@ -76,7 +76,6 @@ drawArea = false;
 rapidFireStacks = 0;
 canRapidAttack = true;
 spawnThingOnce = true;
-position = 1;
 dashSpeed = 0;
 alarm5Timer = 0;
 activateAlarm5 = false;

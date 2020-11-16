@@ -4,7 +4,6 @@ destroy = true;
 range = 10*30;
 stacks = 0;
 chase = false;
-lockOn = 0;
 stickOn = false;
 maxSize = 1;
 minSize = 0.2;

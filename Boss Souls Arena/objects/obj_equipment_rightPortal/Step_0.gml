@@ -9,6 +9,7 @@ if (tpPlayer == true)
 	tpPlayer = false;
 	player.x = obj_equipment_leftPortal.x;
 	player.y = obj_equipment_leftPortal.y;
+	if (global.itemSelected[Boss.AngelSlayerRekZul] == true){global.player.canAttack = true; global.player.leftClickCooldownLeft = 0;}
 }
 if (tpPlayerProjectile == true)
 {

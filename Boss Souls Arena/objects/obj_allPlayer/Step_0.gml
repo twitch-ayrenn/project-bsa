@@ -740,6 +740,8 @@ if (mouse_x < x)
 				var holyGround = instance_create_depth(x,y,depth,obj_holyGround);
 				if (global.autoAim == true && instance_exists(obj_allBoss)){holyGround.x = obj_allBoss.x; holyGround.y = obj_allBoss.y ;}
 				holyGround.image_blend = c_aqua;
+				
+				if (global.itemSelected[Boss.AngelSlayerRekZul] == true){global.player.canAttack = true; global.player.leftClickCooldownLeft = 0;}
 			}
 		}
 	}
@@ -858,7 +860,7 @@ if (mouse_x < x)
 			}
 		}
 		#endregion
-		#region
+		#region 
 		if (global.itemSelected[Boss.DeathKing] == true && distance_to_point(mouse_x,mouse_y) <= teleportRange && place_free(mouse_x,mouse_y))
 		{
 			var tpEffect = instance_create_depth(x,y,depth,obj_tpEffect);
@@ -871,6 +873,7 @@ if (mouse_x < x)
 					
 			x = mouse_x;
 			y = mouse_y;
+			if (global.itemSelected[Boss.AngelSlayerRekZul] == true){global.player.canAttack = true; global.player.leftClickCooldownLeft = 0;}
 		}
 		#endregion
 		#region T52 Slime armor
@@ -1246,7 +1249,7 @@ if (mouse_x < x)
 		if (global.itemSelected[Boss.BloodKnightDavid] == true)
 		{
 			shield = true;
-			var damageToTarget = hp*0.5;
+			var damageToTarget = hp*0.30;
 			var damageText = instance_create_depth(x+irandom_range(-8,8),y+irandom_range(-5,5),depth-10,obj_textMaker);
 			damageText.color = c_maroon;
 			damageText.text = damageToTarget/10;

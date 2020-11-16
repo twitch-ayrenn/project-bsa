@@ -50,7 +50,6 @@ state = States.BeforeFight;
 idleSprite = 0;
 walkSprite = 0;
 deadSprite = 0;
-hatSprite = 0;
 instance_create_depth(x,y,1,obj_allCursor);
 playerSize = 1;
 normalAlpha = 1;

@@ -85,7 +85,6 @@ enum Boss
 	CDR = 406,
 	SummoningPower = 407,
 }
-global.bossAmount = 18;
 enum Character
 {
 	ShadowAssassin,
@@ -124,9 +123,6 @@ global.player = obj_allPlayer;
 //pricing
 global.relase = true;//true
 global.deBugg = false;//false
-//save
-//game balance
-global.dD = 1;
 //colors
 global.orange = make_color_rgb(255,140,0);
 global.goldColor = make_color_rgb(218,165,32);
@@ -141,21 +137,18 @@ global.greenOutline = make_color_rgb(0,70,0);
 //mainMenu text vars and settings
 playColor = global.darkYellow;
 playSize = 1;
-playArenaColor = global.darkYellow;
-playArenaSize = 1;
+playArenaColor = global.darkYellow;;
 clearColor = c_maroon;
 clearSize = 1;
 fightColor = c_maroon;
 fightSize = 1;
 settingsColor = global.darkYellow;
-settingsSize = 1;
 creditsColor = global.darkYellow;
 controllsColor = global.darkYellow;
 //settings
 global.musicOn = false;
 global.musicVolume = 0.25;
 global.soundOn = true;
-global.ambientOn = false;
 global.ShowInfo = false;
 global.colorBlindIcons = false;
 global.colorBlindText = false;
@@ -163,7 +156,6 @@ global.autoAim = false;
 global.screenShake = true;
 global.dashTowardsMove = false;
 global.seeAbilitiesInGame = true;
-global.showExtraItemInfo = false;
 //tutorial
 global.tutorial = true;
 global.tutorialBoss = true;
@@ -178,7 +170,6 @@ global.abilityAttackKey = mb_right;
 global.dashAttackKey = vk_space;
 global.ultimateAttackKey = ord("E");
 //
-global.deBuggerInfo = false;
 global.showDD = false;
 global.showFps = false;
 fpsShowTimerStacks = 0;
@@ -241,14 +232,6 @@ bossPlaugeWalkerUnlocked = true;
 bossAngelSlayerUnlocked = true;
 bossAgentOfGodUnlocked = true;
 bossGravelingUnlocked = true;
-//Completed CHaracters
-completedAssassin = false;
-completedBloodKnight = false;
-completedPlagueWalker = false;
-completedPyromancer = false;
-completedAngelSlayer = false;
-completedAgentOfGod = false;
-complatedGraveling = false;
 //Items
 assassinItems[100] = false;
 bloodKnightItems[100] = false;
