@@ -1379,7 +1379,7 @@ if (menu == Menues.BossSlain)
 #region Death / Lost
 if (menu == Menues.Death)
 {
-	deathAlpha += clamp(0.5/30,0,1);
+	deathAlpha += clamp(1/30,0,1);
 	draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,deathAlpha);
 	
 	draw_set_halign(fa_center);
@@ -1394,7 +1394,7 @@ if (menu == Menues.Death)
 	
 	if (queLeave == true)
 	{
-		if (leaveTranistionAlpha < 1){leaveTranistionAlpha += clamp(1/30,0,1);}
+		if (leaveTranistionAlpha < 1){leaveTranistionAlpha += clamp(0.75/30,0,1);}
 		draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,leaveTranistionAlpha);
 	}
 	if (leaveTranistionAlpha == 1)

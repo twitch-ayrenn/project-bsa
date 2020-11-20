@@ -3783,6 +3783,14 @@
             }
         },
         {
+            "Key": "a26d7faa-499b-481c-a275-64951a1a4a32",
+            "Value": {
+                "id": "27ba6e87-ac0c-425e-85c9-9c12b1fb57aa",
+                "resourcePath": "objects\\obj_prop_plagueling\\obj_prop_plagueling.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "a2ae2b7b-0aba-4344-b705-41ac6ef3bd92",
             "Value": {
                 "id": "1301444f-a0fc-469e-8586-49e32a75f626",
