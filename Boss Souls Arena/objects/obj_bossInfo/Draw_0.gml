@@ -39,7 +39,7 @@ if(showBossInfo == Boss.BloodZombie)
 {
 	//Name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(x+2,y+2,"The Blood Harvester",0.08,0.08,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(x+2,y+2,"Blood Harvester",0.08,0.08,0,c_red,c_red,c_maroon,c_maroon,1);
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
@@ -70,7 +70,7 @@ if(showBossInfo == Boss.FlameWisp)
 {
 	//Name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(x+2,y+2,"Wisp Sister Anna",0.08,0.08,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(x+2,y+2,"Flame Wisp",0.08,0.08,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
@@ -78,7 +78,7 @@ if(showBossInfo == Boss.FlameWisp)
 	draw_text_transformed_color(x+3,y+startY+4*2,"brainless idiot zombie but An elemental",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
 	draw_text_transformed_color(x+3,y+startY+4*3,"of pure fire and rage, she burns",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
 	draw_text_transformed_color(x+3,y+startY+4*4,"anything in her way. Captured to",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*5,"become a fighter at my arena. Anna",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*5,"become a fighter at my arena. This wisp",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
 	draw_text_transformed_color(x+3,y+startY+4*6,"might shoot massive fireballs that seek",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
 	draw_text_transformed_color(x+3,y+startY+4*7,"her target so be ready to run.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
 	draw_text_transformed_color(x+3,y+startY+4*8,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
@@ -101,7 +101,7 @@ if(showBossInfo == Boss.TheCorrupter)
 {
 	//Name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(x+2,y+2,"The Corrupter",0.08,0.08,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	draw_text_transformed_color(x+2,y+2,"Corrupter",0.08,0.08,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
@@ -163,7 +163,7 @@ if(showBossInfo == Boss.WispSisterJulia)
 {
 	//Name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(x+2,y+2,"Wisp Sister Julia",0.08,0.08,0,c_aqua,c_aqua,c_teal,c_teal,1);
+	draw_text_transformed_color(x+2,y+2,"Soul Wisp",0.08,0.08,0,c_aqua,c_aqua,c_teal,c_teal,1);
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
@@ -225,7 +225,7 @@ if(showBossInfo == Boss.AngelSlayerRekZul)
 {
 	//Name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(x+2,y+2,"Angel Slayer Rekzul",0.08,0.08,0,c_red,c_red,c_maroon,c_maroon,1);
+	draw_text_transformed_color(x+2,y+2,"Angel Slayer Demon",0.08,0.08,0,c_red,c_red,c_maroon,c_maroon,1);
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
@@ -256,7 +256,7 @@ if(showBossInfo == Boss.KnightWitchYi)
 {
 	//Name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(x+2,y+2,"The Knight Witch",0.08,0.08,0,c_lime,c_lime,c_green,c_green,1);
+	draw_text_transformed_color(x+2,y+2,"Knight Witch",0.08,0.08,0,c_lime,c_lime,c_green,c_green,1);
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
@@ -287,7 +287,7 @@ if(showBossInfo == Boss.AngelKnightOscar)
 {
 	//Name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(x+2,y+2,"Angel Knight Oscar",0.08,0.08,0,c_aqua,c_aqua,c_silver,c_silver,1);
+	draw_text_transformed_color(x+2,y+2,"Angel Knight",0.08,0.08,0,c_aqua,c_aqua,c_silver,c_silver,1);
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
@@ -318,7 +318,7 @@ if(showBossInfo == Boss.DemonLordRekTaar)
 {
 	//Name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(x+2,y+2,"Demon General Rektaar",0.07,0.07,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(x+2,y+2,"The Demon General",0.07,0.07,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
@@ -349,7 +349,7 @@ if(showBossInfo == Boss.Gravekeeper)
 {
 	//Name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(x+2,y+2,"The Gravekeeper",0.08,0.08,0,c_white,c_white,c_silver,c_silver,1);
+	draw_text_transformed_color(x+2,y+2,"Gravekeeper",0.08,0.08,0,c_white,c_white,c_silver,c_silver,1);
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
@@ -442,7 +442,7 @@ if(showBossInfo == Boss.WispSisters)
 {
 	//Name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(x+2,y+2,"Wisp Sisters",0.08,0.08,0,global.orange,c_aqua,c_teal,c_orange,1);
+	draw_text_transformed_color(x+2,y+2,"The Wisp Sisters",0.08,0.08,0,global.orange,c_aqua,c_teal,c_orange,1);
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
@@ -499,12 +499,12 @@ if(showBossInfo == Boss.DemonQueensHead)
 	draw_text_transformed_color(x+3,y+startY+4*20,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
 }
 #endregion
-#region The Death King
+#region The Lord Of Death
 if(showBossInfo == Boss.DeathKing)
 {
 	//Name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(x+2,y+2,"Death King",0.08,0.08,0,c_dkgray,global.goldColor,global.goldColor,c_dkgray,1);
+	draw_text_transformed_color(x+2,y+2,"The Lord Of Death",0.08,0.08,0,c_dkgray,global.goldColor,global.goldColor,c_dkgray,1);
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
@@ -535,7 +535,7 @@ if(showBossInfo == Boss.SlimeQueen)
 {
 	//Name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(x+2,y+2,"Slime Queen Terra",0.08,0.08,0,c_lime,global.goldColor,global.goldColor,c_lime,1);
+	draw_text_transformed_color(x+2,y+2,"The Slime Queen",0.08,0.08,0,c_lime,global.goldColor,global.goldColor,c_lime,1);
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
