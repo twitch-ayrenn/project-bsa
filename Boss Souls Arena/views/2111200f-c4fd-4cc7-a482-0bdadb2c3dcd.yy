@@ -10,7 +10,8 @@
         "7df01c87-32fd-428e-9061-acfeafaf53e4",
         "1da1cee1-c635-4826-87ec-94d7992012aa",
         "a053f907-2b36-4ce9-adc3-cc5913403ede",
-        "e48df017-4b3b-4bb6-b76f-eb3541d213d7"
+        "e48df017-4b3b-4bb6-b76f-eb3541d213d7",
+        "7fa3c28b-6563-4868-ad5d-2b2b960d5317"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_knightWitch",

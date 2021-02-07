@@ -65,6 +65,7 @@ if (gameMaster.chosenClass == Character.AngelSlayer){chanceToCome = gameMaster.a
 if (gameMaster.chosenClass == Character.PlaugeWalker){chanceToCome = gameMaster.plaugeWalkerProgress*4;}
 if (gameMaster.chosenClass == Character.Graveling){chanceToCome = gameMaster.gravelingProgress*4;}
 chanceToCome += 10;
+if (gameMaster.chosenBoss == Boss.BloodZombie){chanceToCome += 50;}
 if (probability >= chanceToCome)
 {
 	instance_destroy();

@@ -2,7 +2,7 @@
 if (state == CameraStates.preFightView)
 {
 	follow = obj_allBoss;
-	cameraSpeed = 50;
+	cameraSpeed = 40;
 }
 if (state == CameraStates.PlayerView)
 {

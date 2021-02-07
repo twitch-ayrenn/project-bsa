@@ -12,7 +12,8 @@
         "520cbd8e-bf81-4709-987d-12ccfb40450c",
         "b432e5ac-3ba3-4c86-8023-c8e22b3aaa0f",
         "8f3fb7b8-c7f9-44d6-a93a-5ef351baffae",
-        "957deee9-1fb8-438f-930b-8e587e703f37"
+        "957deee9-1fb8-438f-930b-8e587e703f37",
+        "2ec0f0eb-5693-49e2-a739-11f24471683f"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_wispSisterJanna",

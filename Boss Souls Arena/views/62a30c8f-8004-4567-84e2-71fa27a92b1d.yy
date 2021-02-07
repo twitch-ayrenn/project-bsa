@@ -10,7 +10,8 @@
         "751df4e3-8e21-4fff-9a20-e437caf68c9c",
         "c750c719-e7b2-4efa-ac36-b0bb275b28af",
         "1e405c16-eb67-41ed-bb9d-d76fc4621a3b",
-        "f82ecb8d-04e1-40d6-a856-18cd8f5953ad"
+        "f82ecb8d-04e1-40d6-a856-18cd8f5953ad",
+        "59e373f8-6711-4ea7-b4e1-9bcf97946ab5"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_deathKing",

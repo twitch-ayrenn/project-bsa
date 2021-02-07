@@ -10,7 +10,8 @@
         "233377f1-68c4-4603-8f65-a10eb38faa49",
         "afa3334c-4043-4e4e-b7bb-db5cd206fbc7",
         "238a83c5-e394-423e-b2c8-0187ad20c300",
-        "12f74f31-8335-4fbd-8a60-c038f70067f8"
+        "12f74f31-8335-4fbd-8a60-c038f70067f8",
+        "feeb0093-b6ad-4cdd-87b9-d7d78dd812b6"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_bloodArmyGeneral",

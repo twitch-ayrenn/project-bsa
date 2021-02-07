@@ -12,26 +12,24 @@ if(showBossInfo == Boss.NoBoss)
 	
 	//description
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(x+3,y+startY+4*1,"The boss crystal in the middle and",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*2,"your opponents eyes indicate which",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*3,"attack your opponent will Do.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*4," ",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*5,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*6,"Maroon: Standard Attack.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*7,"Magenta / Hot Pink: Circle Attack.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*8,"Blue: Area Denial.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*9,"Aqua Blue: Cone Attack.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*10,"Red: Massive projectile.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(x+3,y+startY+4*11,"Yellow: Chase Attack\"Run\".",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*12,"Light Blue: Multiple",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*13,"Sucsesive Attacks.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*14,"Orange: Beam Attack",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*15,"Purple: Teleport Attack.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*16,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*17,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*18,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*19,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
-	draw_text_transformed_color(x+3,y+startY+4*20,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*01,"Choose a boss. Every boss you defeat",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*02,"will unlock one or more bosses for you",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*03,"to fight. If you are stuck on a boss you",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*04,"can skip that boss but you wont recive",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*05,"rewards until that boss is defeated.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*06,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*07,"The boss crystal in the middle and",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*08,"your opponents eyes indicate which",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*09,"attack your opponent will Do.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*10,"",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*11,"Magenta / Hot Pink: Circle Attack.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*12,"Blue: Area Denial.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*13,"Aqua Blue: Cone Attack.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*14,"Red: Massive projectile.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(x+3,y+startY+4*15,"Yellow: Chase Attack\"Run\".",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*16,"Light Blue: Multiple Sucsesive Attacks.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*17,"Orange: Beam Attack",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
+	draw_text_transformed_color(x+3,y+startY+4*18,"Purple: Teleport Attack.",textScale,textScale,0,c_white,c_white,c_white,c_white,1);	
 }
 #endregion
 #region The Blood Harvester

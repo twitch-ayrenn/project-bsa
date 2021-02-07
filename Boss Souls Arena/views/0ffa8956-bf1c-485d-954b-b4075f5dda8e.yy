@@ -7,7 +7,8 @@
         "a3b1a336-9a7c-43de-89e0-d9b8ad1285b9",
         "d6ca8905-e8c5-44cc-a6de-1eabb45efa84",
         "ff2afa58-3fb2-4229-abc7-b23ab54f64c8",
-        "cfaa76cb-df9c-4e60-96b8-e6efc1426142"
+        "cfaa76cb-df9c-4e60-96b8-e6efc1426142",
+        "4e8ba12a-92b8-4c19-b8b0-ed72b127e0f3"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_theCorrupter",

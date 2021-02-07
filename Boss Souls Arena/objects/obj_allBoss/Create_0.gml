@@ -100,6 +100,7 @@ rapidFireSprite = 0;
 zoneSprite = 0;
 tauntSprite = 0;
 healSprite = 0;
+cdSprite = 0;
 isHit = false;
 #endregion
 #region Bosses
@@ -125,6 +126,7 @@ isHit = false;
 			normalSprite = spr_boss_bloodZombie_nA;
 			circleSprite = spr_boss_bloodZombie_cir;
 			gooSprite = spr_boss_bloodZombie_goo;
+			cdSprite = spr_boss_bloodZombie_cd;
 		}
 		#endregion
 		#region Wisp Sister Anna / Old Flame Wisp
@@ -149,6 +151,7 @@ isHit = false;
 			circleSprite = spr_boss_flameWisp_circleAttack;
 			oneShotSprite = spr_boss_flameWisp_oneShot;
 			chaseSprite = spr_boss_flameWisp_chaseAttack;
+			cdSprite = spr_boss_flameWisp_cd;
 		}
 		#endregion
 		#region TheCorrupter
@@ -172,6 +175,7 @@ isHit = false;
 			beamSprite = spr_boss_theCorrupter_beam;
 			gooSprite = spr_boss_theCorrupter_goo;
 			rapidFireSprite = spr_boss_theCorrupter_rapidFire;
+			cdSprite = spr_boss_theCorrupter_cd;
 		}
 		#endregion
 	#endregion
@@ -200,6 +204,7 @@ isHit = false;
 			teleportSprite = spr_boss_wispSisterJulia_teleport;
 			rapidFireSprite = spr_boss_wispSisterJulia_rapidFire;
 			chaseSprite = spr_boss_wispSisterJulia_chase;
+			cdSprite = spr_boss_wispSisterJulia_cd;
 		}
 		#endregion
 		#region Flame Gate
@@ -223,6 +228,7 @@ isHit = false;
 			gooSprite = spr_boss_demonGate_goo;
 			oneShotSprite = spr_boss_demonGate_oneShot;
 			coneSprite = spr_boss_demonGate_cone;
+			cdSprite = spr_boss_demonGate_cd;
 			
 			x = global.arenaMiddleX;
 			y = global.arenaMiddleY-140;
@@ -251,6 +257,7 @@ isHit = false;
 			normalSprite = spr_boss_deathKinght_normalAttack;
 			chaseSprite = spr_boss_deathKinght_chase;
 			teleportSprite = spr_boss_deathKinght_teleport;
+			cdSprite = spr_boss_deathKinght_cd;
 			//boss Specfic
 			var scythe = instance_create_depth(x,y,depth,obj_bossMeleeWeapon);
 			scythe.sprite_index = spr_deathKnightScythe;
@@ -283,6 +290,7 @@ isHit = false;
 			teleportSprite = spr_angelSlayerRekZul_teleport;
 			zoneSprite = spr_angelSlayerRekZul_zone;
 			chaseSprite = spr_angelSlayerRekZul_chase;
+			cdSprite = spr_angelSlayerRekZul_cd;
 			//boss specifc
 			alarm5Timer = (0.15)*30;
 			xBeamSpawn = 0;
@@ -312,6 +320,7 @@ isHit = false;
 			rapidFireSprite = spr_boss_knightWitch_rapidFire;
 			tauntSprite = spr_boss_knightWitch_taunt;
 			coneSprite = spr_boss_knightWitch_cone;
+			cdSprite = spr_boss_knightWitch_cd;
 			//boss specifc
 			knightWitchGooSize = 0.14;
 		}
@@ -339,7 +348,7 @@ isHit = false;
 			beamSprite = spr_boss_angelKnightOscar_beam;
 			coneSprite = spr_boss_angelKnightOscar_cone;
 			rapidFireSprite = spr_boss_angelKnightOscar_rapidFire;
-			healSprite = spr_boss_angelKnightOscar_heal;
+			cdSprite = spr_boss_angelKnightOscar_cd;
 			//boss specifc
 		}
 		#endregion
@@ -366,6 +375,7 @@ isHit = false;
 			oneShotSprite = spr_boss_demonGeneral_oneShot;
 			gooSprite = spr_boss_demonGeneral_goo;
 			rapidFireSprite = spr_boss_demonGeneral_rapidFire;
+			cdSprite = spr_boss_demonGeneral_cd;
 			//Specific
 			x = global.arenaMiddleX;
 			y = global.arenaMiddleY;
@@ -401,6 +411,7 @@ isHit = false;
 			healSprite = spr_boss_theGraveKeeper_heal;
 			chaseSprite = spr_boss_theGraveKeeper_chase;
 			normalSprite = spr_boss_theGraveKeeper_normal;
+			cdSprite = spr_boss_theGraveKeeper_cd;
 			//boss Specfic
 			x = global.arenaMiddleX;
 			y = global.arenaMiddleY;
@@ -447,6 +458,7 @@ isHit = false;
 			chaseSprite = spr_boss_bloodArmyGeneral_chase;
 			gooSprite = spr_boss_bloodArmyGeneral_goo;
 			teleportSprite = spr_boss_bloodArmyGeneral_teleport;
+			cdSprite = spr_boss_bloodArmyGeneral_cd;
 			//boss Specfic
 			var spinBeam = instance_create_depth(x,y,depth+1,obj_spinBeam);
 			spinBeam.image_blend = c_red;
@@ -476,6 +488,7 @@ isHit = false;
 			chaseSprite = spr_boss_statueOfCorruption_chase;
 			circleSprite = spr_boss_statueOfCorruption_circle;
 			beamSprite = spr_boss_statueOfCorruption_beam;
+			cdSprite = spr_boss_statueOfCorruption_cd;
 			//boss Specfic
 			x = global.arenaMiddleX;
 			y = global.arenaMiddleY;
@@ -561,11 +574,13 @@ isHit = false;
 			janaPhase1Circle = spr_boss_flameWisp_circleAttack;
 			janaPhase1Cone = spr_boss_flameWisp_cone;
 			janaPhase1OneShot = spr_boss_flameWisp_oneShot;
+			janaPhase1Cd = spr_boss_flameWisp_cd;
 			
 			janaPhase2Circle = spr_boss_wispSisterJulia_circle;
 			janaPhase2Chase = spr_boss_wispSisterJulia_chase;
 			janaPhase2Teleport = spr_boss_wispSisterJulia_teleport;
 			janaPhase2Goo = spr_boss_wispSisterJulia_goo;
+			janaPhase2Cd = spr_boss_wispSisterJulia_cd;
 			
 			janaPhase3Circle = spr_boss_jana_circle;
 			janaPhase3Cone = spr_boss_jana_cone;
@@ -573,6 +588,7 @@ isHit = false;
 			janaPhase3Chase = spr_boss_jana_chase;
 			janaPhase3Teleport = spr_boss_jana_teleport;
 			janaPhase3Goo = spr_boss_jana_goo;
+			janaPhase3Cd = spr_boss_jana_cd;
 			
 			rapidFireSprite = spr_boss_jana_rapidFire;
 			#endregion
@@ -584,6 +600,7 @@ isHit = false;
 			teleportSprite = janaPhase2Teleport;
 			chaseSprite = janaPhase2Chase;
 			rapidFireSprite = rapidFireSprite;
+			cdSprite = janaPhase1Cd;
 			
 		}
 		#endregion
@@ -615,6 +632,7 @@ isHit = false;
 			teleportSprite = spr_boss_demonQueensHead_teleport;
 			beamSprite = spr_boss_demonQueensHead_beam;
 			circleSprite = spr_boss_demonQueensHead_circle;
+			cdSprite = spr_boss_demonQueensHead_cd;
 			//boss Specfic
 			var horn = instance_create_depth(x,y,depth+1,obj_demonQueensHorn);
 			horn.image_xscale = image_xscale;
@@ -649,6 +667,7 @@ isHit = false;
 			teleportSprite = spr_boss_deathKing_teleport;
 			beamSprite = spr_boss_deathKing_beam;
 			coneSprite = spr_boss_deathKing_cone;
+			cdSprite = spr_boss_deathKing_cd;
 			//boss Specfic
 			teleportX = choose(-75,75);
 			teleportY = choose(-75,75);
@@ -684,6 +703,7 @@ isHit = false;
 			coneSprite = spr_boss_slimeQueen_cone;
 			circleSprite = spr_boss_slimeQueen_circle;
 			gooSprite = spr_boss_slimeQueen_goo;
+			cdSprite = spr_boss_slimeQueen_cd;
 			//boss Specfic
 			x -= 25;
 		}
@@ -721,6 +741,7 @@ isHit = false;
 		teleportSprite = spr_boss_arenaKing_teleport;
 		gooSprite = spr_boss_arenaKing_goo;
 		coneSprite = spr_boss_arenaKing_cone;
+		cdSprite = spr_boss_arenaKing_cd;
 		//boss Specfic
 		var sword = instance_create_depth(x,y,depth,obj_bossMeleeWeapon);
 		sword.sprite_index = spr_kingsEdge_spin;

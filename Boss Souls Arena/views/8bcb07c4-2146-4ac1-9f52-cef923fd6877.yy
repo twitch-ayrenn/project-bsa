@@ -11,7 +11,8 @@
         "2085a673-1389-4eca-95fc-f247cb70e772",
         "ae6c1939-3456-422d-b7ee-c9a5d75303bc",
         "197c5d87-3aaf-4eca-a273-d1b401845771",
-        "6475f77e-c6ab-4772-8fa9-1ee8766268e7"
+        "6475f77e-c6ab-4772-8fa9-1ee8766268e7",
+        "f315df29-43ba-4bc5-ade3-be98fef71e19"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_slimeQueen",

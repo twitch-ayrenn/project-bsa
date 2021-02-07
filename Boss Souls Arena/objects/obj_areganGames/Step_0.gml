@@ -4,7 +4,7 @@ if (turnBackGroundWhite == true)
 {
 	turnBackGroundWhite = false;
 
-	alarm[0] = (3)*30;
+	alarm[0] = (0.5)*30;
 }
 if (skip == true)
 {

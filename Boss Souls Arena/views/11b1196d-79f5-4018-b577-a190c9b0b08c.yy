@@ -9,7 +9,8 @@
         "d53e5f1b-1040-4bbd-8698-bc526e7d3b02",
         "22047f5b-7786-4ba0-a15a-5fd9b5dadc37",
         "a1392503-7de9-4151-9671-0036cc7de1ff",
-        "d082c0e8-6411-4957-9cd4-1f17d2388a77"
+        "d082c0e8-6411-4957-9cd4-1f17d2388a77",
+        "60106380-3df5-4b98-a38e-addec9ccccce"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_wispSisterJulia",

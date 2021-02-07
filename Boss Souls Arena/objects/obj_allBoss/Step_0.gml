@@ -185,14 +185,14 @@ if (fall == true)
 			var corruptKlot = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
 			//Main
 			corruptKlot.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
-			corruptKlot.speed = 6;
+			corruptKlot.speed = 5;
 			corruptKlot.image_angle = corruptKlot.direction;
 			//Visual
 			corruptKlot.image_alpha = 0.85;
 			corruptKlot.image_blend = global.lightBlue;
 			corruptKlot.sprite_index = spr_bloodKlott;
-			corruptKlot.image_xscale = 1.1;
-			corruptKlot.image_yscale = 1.1;
+			corruptKlot.image_xscale = 1;
+			corruptKlot.image_yscale = 1;
 			corruptKlot.effectType = Effect.Flare;
 		
 			alarm[2] = (0.75)*30;
@@ -648,7 +648,7 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul && phase == 1){attack = choose(Atks.CircleAttack,Atks.BeamAttack,Atks.TeleportAttack);}
 	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul && phase == 2){attack = choose(Atks.CircleAttack,Atks.BeamAttack,Atks.ZoneAttack,Atks.TeleportAttack);}
 	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul && phase == 3){attack = choose(Atks.CircleAttack,Atks.ZoneAttack,Atks.TeleportAttack,Atks.ChaseAttack);}
-	if (gameMaster.chosenBoss == Boss.KnightWitchYi && phase == 1){attack = choose(Atks.CircleAttack,Atks.BeamAttack,Atks.ConeAttack,Atks.GooSpawn,Atks.RapidFire,Atks.TauntAttack);}
+	if (gameMaster.chosenBoss == Boss.KnightWitchYi && phase == 1){attack = choose(Atks.CircleAttack,Atks.BeamAttack,Atks.ConeAttack,Atks.GooSpawn,Atks.RapidFire);}
 	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && phase == 1){attack = choose(Atks.ConeAttack,Atks.CircleAttack);}
 	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && phase == 2){attack = choose(Atks.ConeAttack,Atks.CircleAttack,Atks.BeamAttack);}
 	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && phase == 3){attack = choose(Atks.ConeAttack,Atks.CircleAttack,Atks.BeamAttack,Atks.RapidFire);}
@@ -1254,6 +1254,7 @@ if (hp <= 0 && phase == 1 && phase != maxPhase)
 	if (gameMaster.chosenBoss == Boss.WispSisters)
 	{
 		circleSprite = janaPhase2Circle;
+		cdSprite = janaPhase2Cd;
 	}
 	#endregion
 	#region SlimeQueen
@@ -1290,6 +1291,7 @@ if (hp <= 0 && phase == 2 && phase != maxPhase)
 		gooSprite = janaPhase3Goo;
 		teleportSprite = janaPhase3Teleport;
 		chaseSprite = janaPhase3Chase;
+		cdSprite = janaPhase3Cd;
 	}
 	#endregion
 	#region SlimeQueen

@@ -55,6 +55,9 @@ playerSize = 1;
 normalAlpha = 1;
 drawCharge = false;
 drawChargeFrame = 0;
+//UI
+hpLastFrame = 0;
+hitVinjetAlpha = 0;
 #endregion
 #region class system
 	#region Shadow Assassin

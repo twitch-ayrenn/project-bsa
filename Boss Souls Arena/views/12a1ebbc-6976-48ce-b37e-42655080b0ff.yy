@@ -8,7 +8,8 @@
         "32731ba2-89b6-4742-807c-f84ecf96f580",
         "acb34985-412c-43c5-9b13-c0d3c0ddf5cf",
         "d09107a4-1645-42b5-bc63-f3a7f0011427",
-        "ce753253-a99d-4245-a27e-e2c3691973be"
+        "ce753253-a99d-4245-a27e-e2c3691973be",
+        "cbb87252-135e-4120-922c-1a533cd01f84"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_wispSisterAnna",

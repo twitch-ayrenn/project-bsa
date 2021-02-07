@@ -1,5 +1,7 @@
 /// @description Code
 #region Vars
+if (hpLastFrame > hp && place_meeting(x,y,obj_enemyProjectile)){hitVinjetAlpha = 1;}
+hpLastFrame = hp;
 weaponDirection = point_direction(x,y,mouse_x,mouse_y);
 if (hp > maxHp){hp = maxHp;}
 depth = -y;

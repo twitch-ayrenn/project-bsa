@@ -204,4 +204,6 @@ if (hp < 0.65*maxHp)
 {
 	draw_sprite_ext(spr_lowHealthVinjet,0,0,0,4.2,4.2,0,c_red,1.2-(hp/maxHp));
 }
+draw_sprite_ext(spr_lowHealthVinjet,0,0,0,4.2,4.2,0,c_red,hitVinjetAlpha);
+hitVinjetAlpha -= 0.1;
 #endregion

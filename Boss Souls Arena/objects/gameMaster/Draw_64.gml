@@ -1263,8 +1263,8 @@ if (menu == Menues.Play)
 	{
 		if (global.player.state == States.Tutorial && obj_allBoss.state == BossStates.Tutorial && global.tutorialPlayer == true)
 		{
-			if (playerTutorialAlpha < 1 && tutorialFadeOut == false){playerTutorialAlpha += clamp(0.3/30,0,1);}
-			if (tutorialFadeOut == true && playerTutorialAlpha > 0){playerTutorialAlpha -= clamp(0.5/30,0,1);}
+			if (playerTutorialAlpha < 1 && tutorialFadeOut == false){playerTutorialAlpha += clamp(0.4/30,0,1);}
+			if (tutorialFadeOut == true && playerTutorialAlpha > 0){playerTutorialAlpha -= clamp(0.6/30,0,1);}
 			draw_sprite_ext(spr_tutorial_player,0,0,0,0.8333*10,0.8333*10,0,c_white,playerTutorialAlpha - 0.15);
 			draw_set_halign(fa_center);
 			var xText = 800;
@@ -1314,23 +1314,23 @@ if (menu == Menues.Play)
 	var cX = 800;//center x
 	var cY = 450-350;
 	var nameSize = 1.3;
-	if(chosenBoss == Boss.BloodZombie){draw_text_transformed_color(cX,cY,"The Blood Harvester",nameSize,nameSize,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);}
-	if(chosenBoss == Boss.FlameWisp){draw_text_transformed_color(cX,cY,"Wisp Sister Anna",nameSize,nameSize,0,global.orange,global.orange,c_orange,c_orange,fightAlpha);}
-	if(chosenBoss == Boss.TheCorrupter){draw_text_transformed_color(cX,cY,"The Corrupter",nameSize,nameSize,0,c_purple,c_purple,c_black,c_black,fightAlpha);}
+	if(chosenBoss == Boss.BloodZombie){draw_text_transformed_color(cX,cY,"Blood Harvester",nameSize,nameSize,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);}
+	if(chosenBoss == Boss.FlameWisp){draw_text_transformed_color(cX,cY,"Flame Wisp",nameSize,nameSize,0,global.orange,global.orange,c_orange,c_orange,fightAlpha);}
+	if(chosenBoss == Boss.TheCorrupter){draw_text_transformed_color(cX,cY,"Corrupter",nameSize,nameSize,0,c_purple,c_purple,c_black,c_black,fightAlpha);}
 	if(chosenBoss == Boss.FlameGate){draw_text_transformed_color(cX,cY,"Eye of Hell",nameSize,nameSize,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);}
-	if(chosenBoss == Boss.WispSisterJulia){draw_text_transformed_color(cX,cY,"Wisp Sister Julia",nameSize,nameSize,0,c_aqua,c_aqua,c_teal,c_teal,fightAlpha);}
+	if(chosenBoss == Boss.WispSisterJulia){draw_text_transformed_color(cX,cY,"Soul Wisp",nameSize,nameSize,0,c_aqua,c_aqua,c_teal,c_teal,fightAlpha);}
 	if(chosenBoss == Boss.DeathKnight){draw_text_transformed_color(cX,cY,"Death Knight",nameSize,nameSize,0,c_silver,c_silver,c_gray,c_gray,fightAlpha);}
-	if(chosenBoss == Boss.AngelSlayerRekZul){draw_text_transformed_color(cX,cY,"Angel Slayer Rekzul",nameSize,nameSize,0,c_maroon,c_maroon,c_black,c_black,fightAlpha);}
-	if(chosenBoss == Boss.KnightWitchYi){draw_text_transformed_color(cX,cY,"Knight Witch Gi",nameSize,nameSize,0,c_red,c_red,c_black,c_black,fightAlpha);}
-	if(chosenBoss == Boss.AngelKnightOscar){draw_text_transformed_color(cX,cY,"Angel Knight Oscar",nameSize,nameSize,0,c_aqua,c_aqua,c_silver,c_silver,fightAlpha);}
-	if(chosenBoss == Boss.DemonLordRekTaar){draw_text_transformed_color(cX,cY,"Demon General Rektaar",nameSize,nameSize,0,global.orange,global.orange,c_yellow,c_yellow,fightAlpha);}
-	if(chosenBoss == Boss.Gravekeeper){draw_text_transformed_color(cX,cY,"The Gravekeeper",nameSize,nameSize,0,c_white,c_white,c_silver,c_silver,fightAlpha);}
+	if(chosenBoss == Boss.AngelSlayerRekZul){draw_text_transformed_color(cX,cY,"Angel Slayer",nameSize,nameSize,0,c_maroon,c_maroon,c_black,c_black,fightAlpha);}
+	if(chosenBoss == Boss.KnightWitchYi){draw_text_transformed_color(cX,cY,"Knight Witch",nameSize,nameSize,0,c_red,c_red,c_black,c_black,fightAlpha);}
+	if(chosenBoss == Boss.AngelKnightOscar){draw_text_transformed_color(cX,cY,"Angel Knight",nameSize,nameSize,0,c_aqua,c_aqua,c_silver,c_silver,fightAlpha);}
+	if(chosenBoss == Boss.DemonLordRekTaar){draw_text_transformed_color(cX,cY,"The Demon General",nameSize,nameSize,0,global.orange,global.orange,c_yellow,c_yellow,fightAlpha);}
+	if(chosenBoss == Boss.Gravekeeper){draw_text_transformed_color(cX,cY,"Gravekeeper",nameSize,nameSize,0,c_white,c_white,c_silver,c_silver,fightAlpha);}
 	if(chosenBoss == Boss.BloodKnightDavid){draw_text_transformed_color(cX,cY,"Blood Army General",nameSize,nameSize,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);}
 	if(chosenBoss == Boss.StatueOfCorruption){draw_text_transformed_color(cX,cY,"Statue Of Corruption",nameSize,nameSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,fightAlpha);}
-	if(chosenBoss == Boss.WispSisters){draw_text_transformed_color(cX,cY,"Wisp Sisters",nameSize,nameSize,0,global.orange,c_aqua,c_aqua,global.orange,fightAlpha);}
+	if(chosenBoss == Boss.WispSisters){draw_text_transformed_color(cX,cY,"The Wisp Sisters",nameSize,nameSize,0,global.orange,c_aqua,c_aqua,global.orange,fightAlpha);}
 	if(chosenBoss == Boss.DemonQueensHead){draw_text_transformed_color(cX,cY,"Demon Queens Head",nameSize,nameSize,0,c_red,c_red,c_red,c_red,fightAlpha);}
-	if(chosenBoss == Boss.DeathKing){draw_text_transformed_color(cX,cY,"Death King",nameSize,nameSize,0,c_black,global.goldColor,global.goldColor,c_black,fightAlpha);}
-	if(chosenBoss == Boss.SlimeQueen){draw_text_transformed_color(cX,cY,"Slime Queen",nameSize,nameSize,0,c_lime,global.goldColor,global.goldColor,c_lime,fightAlpha);}
+	if(chosenBoss == Boss.DeathKing){draw_text_transformed_color(cX,cY,"The Lord Of Death",nameSize,nameSize,0,c_black,global.goldColor,global.goldColor,c_black,fightAlpha);}
+	if(chosenBoss == Boss.SlimeQueen){draw_text_transformed_color(cX,cY,"The Slime Queen",nameSize,nameSize,0,c_lime,global.goldColor,global.goldColor,c_lime,fightAlpha);}
 	if(chosenBoss == Boss.ArenaKing){draw_text_transformed_color(cX,cY,"The Arena King",nameSize,nameSize,0,c_yellow,c_yellow,global.goldColor,global.goldColor,fightAlpha);}
 	draw_set_halign(fa_left);
 	if (transitionAlpha == 0 && instance_exists(obj_allBoss) && instance_exists(global.player) && instance_exists(obj_camera) && checkOnce == true)
@@ -1379,7 +1379,7 @@ if (menu == Menues.BossSlain)
 #region Death / Lost
 if (menu == Menues.Death)
 {
-	deathAlpha += clamp(1/30,0,1);
+	deathAlpha += clamp(1.5/30,0,1);
 	draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,deathAlpha);
 	
 	draw_set_halign(fa_center);
