@@ -203,25 +203,26 @@ if (attack == Atks.ChaseAttack)
 		infernalBall.image_yscale = 2.25;
 		infernalBall.effectType = Effect.Smoke;
 		infernalBall.chase = true;
-		infernalBall.range = (6.5)*30;
+		infernalBall.range = (6.25)*30;
 		
 		if (gameMaster.chosenBoss == Boss.ArenaKing && gameMaster.chosenClass != Character.AngelSlayer)
 		{
-			infernalBall.image_blend = global.goldColor;
+			infernalBall.image_blend = c_yellow;
+			infernalBall.speed = 2.2;
 			var infernalBall = instance_create_depth(kingCloneX,kingCloneY,depth+1,obj_enemyProjectile);
 			//Main
 			infernalBall.direction = point_direction(kingCloneX,kingCloneY,obj_allPlayer.x,obj_allPlayer.y);
-			infernalBall.speed = 2.25;
+			infernalBall.speed = 2.1;
 			infernalBall.image_angle = infernalBall.direction+90;
 			//Visual
 			infernalBall.image_alpha = 0.85;
-			infernalBall.image_blend = global.goldColor;
+			infernalBall.image_blend = c_yellow;
 			infernalBall.sprite_index = spr_fireBall;
 			infernalBall.image_xscale = 2.5;
 			infernalBall.image_yscale = 2.5;
 			infernalBall.effectType = Effect.Smoke;
 			infernalBall.chase = true;
-			infernalBall.range = (6.5)*30;
+			infernalBall.range = (6.25)*30;
 		}
 	}
 }
@@ -266,7 +267,7 @@ if (attack == Atks.BeamAttack)
 		beam.sprite_index = spr_beam;
 		beam.image_xscale = 0.25;
 		beam.image_yscale = 20;
-		beam.maxSize = 2;
+		beam.maxSize = 1.75;
 		beam.minSize = 0.25;
 		beam.stickOn = true;
 		beam.range = 2*30;
@@ -349,13 +350,13 @@ if (attack == Atks.GooSpawn)
 		if (spawnThingOnce == true)
 		{
 			spawnThingOnce = false;
-			var gooGround = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY+135,-5,obj_enemyProjectile);
+			var gooGround = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY+145,-5,obj_enemyProjectile);
 			//Main
-			gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+			gooGround.direction = 0;
 			gooGround.speed = 0;
-			gooGround.image_angle = 90;
+			gooGround.image_angle = 0;
 			//Visual
-			gooGround.image_alpha = 0.75;
+			gooGround.image_alpha = 0.55;
 			gooGround.image_blend = c_orange;
 			gooGround.sprite_index = spr_gooGround;
 			gooGround.image_xscale = 0.32;
@@ -369,7 +370,7 @@ if (attack == Atks.GooSpawn)
 			{
 				if (sprite_index == gooSprite)
 				{
-					image_xscale += clamp(0.12,0,2.5);
+					image_xscale += clamp(0.12,0,2);
 					image_yscale = image_xscale;
 				}
 			}
@@ -391,8 +392,8 @@ if (attack == Atks.OneShotAttack)
 		infernalBall.image_alpha = 0.85;
 		infernalBall.image_blend = global.orange;
 		infernalBall.sprite_index = spr_fireBall;
-		infernalBall.image_xscale = 3.5;
-		infernalBall.image_yscale = 3.5;
+		infernalBall.image_xscale = 3.25;
+		infernalBall.image_yscale = 3.25;
 		infernalBall.effectType = Effect.Spark;
 	}
 }
@@ -405,21 +406,21 @@ if (attack == Atks.ConeAttack)
 		
 		var coneWide = 45;
 		var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.5;
-		var coneAmount = 15;
+		var coneAmount = 12;
 		repeat(coneAmount)
 		{
 			var fireBolt = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
 			//Main
 			fireBolt.direction = coneAtkFW;
-			fireBolt.speed = 5;
+			fireBolt.speed = 4.5;
 			
 			fireBolt.image_angle = fireBolt.direction+90;
 			//Visual
 			fireBolt.image_alpha = 0.85;
 			fireBolt.sprite_index = spr_fireBall;
 			fireBolt.image_blend = global.orange;
-			fireBolt.image_xscale = 1.2;
-			fireBolt.image_yscale = 1.2;
+			fireBolt.image_xscale = 1.1;
+			fireBolt.image_yscale = 1.1;
 			fireBolt.effectType = Effect.Flare;
 			coneAtkFW += (coneWide/coneAmount);
 			
@@ -1456,7 +1457,7 @@ if (attack == Atks.OneShotAttack)
 		bat.speed = 7;
 		//Visual
 		bat.image_alpha = 0.8;
-		bat.image_blend = c_red;
+		bat.image_blend = c_maroon;
 		bat.sprite_index = spr_bat;
 		bat.image_xscale = 1.5;
 		bat.image_yscale = 1.5;
@@ -1691,17 +1692,18 @@ if (attack == Atks.RapidFire)
 #region Teleport
 if (attack == Atks.TeleportAttack)
 {
-	if (gameMaster.chosenBoss == Boss.DemonQueensHead)
+	if (gameMaster.chosenBoss == Boss.DemonQueensHead )
 	{
 		var playerX = global.player.x;
 		var playerY = global.player.y;
+		if (global.player.x > 400 && global.player.x < 835 && global.player.y > 435 && global.player.y < 760)
+		{
+			global.player.x = x;
+			global.player.y = y;
 	
-		global.player.x = x;
-		global.player.y = y;
-	
-		x = playerX;
-		y = playerY;
-	
+			x = playerX;
+			y = playerY;
+		}
 		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
 			//Main
 			gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
@@ -1761,8 +1763,8 @@ if (attack == Atks.GooSpawn)
 		gooGround.image_alpha = 1;
 		gooGround.image_blend = global.goldColor;
 		gooGround.sprite_index = spr_gooGround;
-		gooGround.image_xscale = 0.35;
-		gooGround.image_yscale = 0.35;
+		gooGround.image_xscale = 0.30;
+		gooGround.image_yscale = 0.30;
 		gooGround.destroy = false;
 		gooGround.effectType = Effect.NoEffect;
 		
@@ -1773,8 +1775,8 @@ if (attack == Atks.GooSpawn)
 		gooGroundClone.image_alpha = 1;
 		gooGroundClone.image_blend = global.goldColor;
 		gooGroundClone.sprite_index = spr_gooGround;
-		gooGroundClone.image_xscale = 0.35;
-		gooGroundClone.image_yscale = 0.35;
+		gooGroundClone.image_xscale = 0.30;
+		gooGroundClone.image_yscale = 0.30;
 		gooGroundClone.destroy = false;
 		gooGroundClone.effectType = Effect.NoEffect;
 		

@@ -9,7 +9,7 @@ with (global.player)
 {
 	if (place_meeting(x,y,obj_gravekeeperRange))
 	{
-		gravekeeperSpeed = 1.2;	
+		gravekeeperSpeed = 1.3;	
 	}
 	if !(place_meeting(x,y,obj_gravekeeperRange))
 	{

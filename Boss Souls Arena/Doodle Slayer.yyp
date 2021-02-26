@@ -3290,7 +3290,7 @@
             "Key": "8c7089a3-08e7-4761-abb7-f0cfc826bca8",
             "Value": {
                 "id": "91e654df-e432-4087-bd54-c87d74388b0a",
-                "resourcePath": "sprites\\spr_loot_steamportHeart\\spr_loot_steamportHeart.yy",
+                "resourcePath": "sprites\\spr_loot_dungeonHeart\\spr_loot_dungeonHeart.yy",
                 "resourceType": "GMSprite"
             }
         },

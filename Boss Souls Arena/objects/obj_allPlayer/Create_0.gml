@@ -1,6 +1,11 @@
 /// @description Vars
 randomize();
 class = gameMaster.chosenClass;
+save_gif = false;
+count = 0;
+gif_image = 0;
+everyThirdFrame = 0;
+time = 0;
 #region Attacks and cooldown
 //left
 canLeftClick = true;
@@ -35,7 +40,7 @@ moveSpeed = 2;
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
 moveDirection = 0; 
-global.damage = 1*1.5;
+global.damage = 1*5;
 baseLifeSteal = 0.8;
 global.lifeSteal = baseLifeSteal;
 dashSpeed = 5;
@@ -80,10 +85,10 @@ hitVinjetAlpha = 0;
 		if (global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
 		{
 			var shadowRange = instance_create_depth(x,y,1,obj_shadowAttackRange);
-			shadowRange.image_xscale *= 1+(gameMaster.bonusDash/100);
+			shadowRange.image_xscale *= 1;
 			shadowRange.image_yscale = shadowRange.image_xscale;
 		}
-		daggerAmount = 12;
+		daggerAmount = 10;
 		normalAlpha = 0.85;
 	}
 	#endregion
@@ -93,7 +98,7 @@ hitVinjetAlpha = 0;
 		leftClickCooldown = (8)*30;
 		rightClickCooldown = (11)*30;
 		dashCooldown = (3.5)*30;
-		ultCooldown = (16)*30;
+		ultCooldown = (16)*30;//16
 		idleSprite = spr_player_theMage;
 		walkSprite = spr_player_theMage_walking;
 		deadSprite = spr_player_theMage_dead;
@@ -142,7 +147,7 @@ hitVinjetAlpha = 0;
 		leftClickCooldown = (9)*30;
 		rightClickCooldown = (9)*30;
 		dashCooldown = (9)*30;
-		ultCooldown = (14)*30;//12
+		ultCooldown = (1)*30;//14
 		idleSprite = spr_player_agentOfGod_idle;
 		walkSprite = spr_player_agentOfGod_walking;
 		deadSprite = spr_player_agentOfGod_dead;
@@ -430,7 +435,7 @@ if (global.itemSelected[Boss.SlimeQueen] == true)
 	t52Time = (7)*30;
 	t52Stacks = 0;
 	maxHp = hp;
-	slimeArmorHp = maxHp*1.2;
+	slimeArmorHp = maxHp*1.3;
 }
 t52Active = false;
 t52Speed = 1;
@@ -439,10 +444,6 @@ t52Speed = 1;
 if (global.itemSelected[Boss.ArenaKing] == true)
 {
 	instance_create_depth(x,y,depth,obj_equipment_crownGround);
-	if (class == Character.ShadowAssassin){idleSprite = spr_player_theAssasin_hat; walkSprite = spr_player_theAssasin_walking_hat;}
-	if (class == Character.Pyromancer){idleSprite = spr_player_theMage_hat; walkSprite = spr_player_theMage_walking_hat;}
-	if (class == Character.AngelSlayer){idleSprite = spr_player_angelSlayer_idle_hat; walkSprite = spr_player_angelSlayer_walking_hat;}
-	if (class == Character.PlaugeWalker){idleSprite = spr_player_plagueWalker_idle_hat; walkSprite = spr_player_plaugeWalker_walking_hat;}
 }
 #endregion
 #region Boss Rush
@@ -475,7 +476,7 @@ blackOutAlpha = 0;
 #region maxValues
 if (class == Character.Pyromancer){leftClickCooldown = (8)*30; coneShotAmount = int64(global.damage*2);}
 if (class == Character.BloodKnight){hp += gameMaster.bonusHealth;}
-if (class == Character.AngelSlayer){hp = 100;}
+if (class == Character.AngelSlayer && hp > 150){hp = 150;}
 actualBKDashSpeed = 0; actualASDashSpeed = 0;//needs to exist or else it crashes 
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;

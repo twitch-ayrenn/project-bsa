@@ -15,6 +15,10 @@ if (gameMaster.menu == Menues.BossSlain || gameMaster.menu == Menues.Death)
 if (gameMaster.menu == Menues.BossSlain && point_distance(global.player.x,global.player.y,830,600) <= 20 && gameMaster.queLeave == false||
 gameMaster.menu == Menues.BossSlain && point_distance(global.player.x,global.player.y,400,600) <= 20 && gameMaster.queLeave == false)
 {
-	gameMaster.queLeave = true;
-	gameMaster.leaveTranistionAlpha = 0;
+	if (obj_rewardChest.kingSuprise == false)
+	{
+		gameMaster.queLeave = true;
+		gameMaster.leaveTranistionAlpha = 0;
+		global.playMenuMusic = true;
+	}
 }

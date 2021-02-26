@@ -10,12 +10,14 @@ if (instance_exists(obj_allBoss))
 		global.damage = global.player.damageInCircle;
 		global.lifeSteal = global.player.lifestealInCircle;
 		image_index = 1;
+		alpha = 0.3;
 	}
 	else
 	{
 		global.damage = global.player.damageOutSideCircle;
 		global.lifeSteal = global.player.lifestealOutsideCircle;
 		image_index = 0;
+		alpha = 0.1;
 	}
 }
 if (!place_meeting(x,y,global.player) && instance_exists(obj_allBoss) && global.player.meteorStun == 1 && global.iFrame == false)

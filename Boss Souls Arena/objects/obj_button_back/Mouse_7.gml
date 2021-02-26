@@ -76,9 +76,13 @@ if (gameMaster.menu == Menues.Settings)
 }
 if (gameMaster.menu == Menues.BossSlain && gameMaster.queLeave == false)
 {
-	gameMaster.queLeave = true;
-	gameMaster.leaveTranistionAlpha = 0;
-	global.playMenuMusic = true;
+	if (obj_rewardChest.kingSuprise == false)
+	{
+		gameMaster.queLeave = true;
+		gameMaster.leaveTranistionAlpha = 0;
+		global.playMenuMusic = true;
+
+	}
 }
 if (gameMaster.menu == Menues.Death && gameMaster.queLeave == false)
 {

@@ -43,7 +43,40 @@ randomize();
 #region Alive
 if (state == States.Idle || state == States.Walking)
 {
-image_angle = 0;
+#region Jifs
+if (save_gif == true)
+{
+	var gifSize = 600;
+	var gifLength = (8)*30;
+	if (count == 0)
+	{
+	    gif_image = gif_open(gifSize, gifSize);
+	}
+	else if count < gifLength
+	{
+		if (everyThirdFrame == 0)
+		{
+			everyThirdFrame++;
+			gif_add_surface(gif_image, application_surface, 6/100,(1600/2)-(gifSize/2),(900/2)-(gifSize/2),2);	
+		}
+		else
+		{
+			everyThirdFrame++;
+		}
+		if (everyThirdFrame >= 3){everyThirdFrame = 0;}
+	}
+	else
+	{
+		var randomId = string(irandom_range(1000,9999));
+	    gif_save(gif_image, "gameplay" + randomId + ".gif");
+	    count = 0;
+	    save_gif = false;
+		show_debug_message(string(time/30))
+	}
+	count++;
+	time++;
+}
+#endregion
 #region Movement
 actualSpeed = (moveSpeed + gravelingSpeed)*bPSpeed*global.playerBossSlow*meteorStun*gravekeeperSpeed*shieldSpeed*agentSpeed*slayerSpeed*bfSpeed*t52Speed*gravelingAreaSpeed*plagueSpeed;
 var actualSpeedBefore = actualSpeed;
@@ -97,6 +130,7 @@ if (direction >= 270 && !place_free(x-speed-1,y) || direction < 90 && !place_fre
 }
 #endregion
 #region Visuals
+image_angle = 0;
 if (!(keyboard_check(ord("W"))) && !(keyboard_check(ord("S"))) && !(keyboard_check(ord("D"))) && !(keyboard_check(ord("A"))))
 {
 	state = States.Idle;
@@ -138,10 +172,6 @@ if (mouse_x < x)
 					var tpEffect = instance_create_depth(x,y,depth,obj_tpEffect);
 					tpEffect.image_blend = c_fuchsia;
 					image_alpha = 0;
-					if (global.soundOn == true)
-					{
-						audio_play_sound(snd_teleport,Prioity.Low,false);
-					}
 					
 					x = mouse_x;
 					y = mouse_y;
@@ -603,8 +633,8 @@ if (mouse_x < x)
 	#region Pyromancer
 	if (class == Character.Pyromancer)
 	{
-		var coneWide = 45;
-		var coneAmount = 6;
+		var coneWide = 40;
+		var coneAmount = 5;
 		if (mouse_check_button(mb_right) && canRightClick == true && meteorStun != 0 
 		|| keyboard_check(ord("2")) && canRightClick == true && meteorStun != 0)
 		{
@@ -628,8 +658,8 @@ if (mouse_x < x)
 				
 				//Visual
 				fireBolt.image_alpha = 0.85;
-				fireBolt.image_xscale = 0.9;
-				fireBolt.image_yscale = 0.9;
+				fireBolt.image_xscale = 1;
+				fireBolt.image_yscale = 1;
 				fireBolt.effectType = Effect.Flare;
 				fireBolt.charge = 1;
 				fireBolt.isRightClick = true;
@@ -661,10 +691,10 @@ if (mouse_x < x)
 				fireBolt.image_angle = fireBolt.direction+90;
 				//Visual
 				fireBolt.image_alpha = 0.85;
-				fireBolt.image_xscale = 0.9;
-				fireBolt.image_yscale = 0.9;
+				fireBolt.image_xscale = 1;
+				fireBolt.image_yscale = 1;
 				fireBolt.effectType = Effect.Flare;
-				fireBolt.charge = 1;
+				fireBolt.charge = 1.2;
 				coneAtkFW += (coneWide/coneAmount);
 			}
 		}
@@ -1238,7 +1268,7 @@ if (mouse_x < x)
 			walkSprite = t52Walking;
 			t52Stacks = t52Time;
 			t52Active = true;
-			t52Speed = 0.80;
+			t52Speed = 0.70;
 			var oldMaxHp = maxHp;
 			if (class != Character.AngelSlayer)
 			{

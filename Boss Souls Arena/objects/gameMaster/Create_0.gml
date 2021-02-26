@@ -4,7 +4,7 @@
 //dont use Save.dat, always use a new verisor//Save.dat.full0.3
 //global.saveFile = "Save.alpha.0.65"; gaygang release
 menu = 0;
-global.saveFile = "Save.Beta.0.1";
+global.saveFile = "Save.Beta.V.12";//13
 if (file_exists(global.saveFile) == true)
 {
 	//game_load(global.saveFile);
@@ -120,7 +120,7 @@ chosenClass = 0;
 chosenBoss = 0;
 chosenMode = 0;
 global.player = obj_allPlayer;
-//pricing
+//Versions
 global.relase = false;//true
 global.deBugg = true;//false
 //colors
@@ -146,7 +146,7 @@ settingsColor = global.darkYellow;
 creditsColor = global.darkYellow;
 controllsColor = global.darkYellow;
 //settings
-global.musicOn = false;
+global.musicOn = false;//true
 global.musicVolume = 0.25;
 global.soundOn = true;
 global.ShowInfo = false;
@@ -157,8 +157,8 @@ global.screenShake = true;
 global.dashTowardsMove = false;
 global.seeAbilitiesInGame = true;
 //tutorial
-global.tutorial = true;
-global.tutorialBoss = true;
+global.tutorial = false;
+global.tutorialBoss = false;
 global.tutorialPlayer = false;
 //controlls
 global.moveUpKey = ord("W");
@@ -171,7 +171,8 @@ global.dashAttackKey = vk_space;
 global.ultimateAttackKey = ord("E");
 //
 global.showDD = false;
-global.showFps = false;
+global.showFps = true;
+global.camSize = 4;
 fpsShowTimerStacks = 0;
 fpsShow = "";
 fullscreen = true;

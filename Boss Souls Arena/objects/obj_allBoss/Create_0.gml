@@ -1,4 +1,5 @@
 /// @description Vars
+bossTime = 0;
 #region States
 enum BossStates
 {
@@ -207,11 +208,12 @@ isHit = false;
 			cdSprite = spr_boss_wispSisterJulia_cd;
 		}
 		#endregion
-		#region Flame Gate
+		#region Eye Of Hell
 		if (gameMaster.chosenBoss == Boss.FlameGate) 
 		{
 			//stats
-			phase1Hp = tier2Hp*0.9; phase1Ms = 0; phase1Dmg = 35;
+			phase1Hp = tier2Hp*0.25; phase1Ms = 0; phase1Dmg = 25;
+			phase2Hp = tier2Hp*0.75; phase2Ms = 0; phase2Dmg = 35;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -219,9 +221,9 @@ isHit = false;
 			//attacks and phase
 			tier = 2;
 			phase = 1;
-			maxPhase = 1;
+			maxPhase = 2;
 			//visual
-			size = 2;
+			size = 1.85;
 			alpha = 1;
 			idleSprite = spr_boss_demonGate_idle;
 			rapidFireSprite = spr_boss_demonGate_rapidFire;
@@ -301,7 +303,8 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.KnightWitchYi) 
 		{
 			//stats
-			phase1Hp = tier3Hp*0.9; phase1Ms = 1.25; phase1Dmg = 32.5;
+			phase1Hp = tier3Hp*0.3; phase1Ms = 1.15; phase1Dmg = 30;
+			phase2Hp = tier3Hp*0.6; phase2Ms = 1.25; phase2Dmg = 32.5;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -309,7 +312,7 @@ isHit = false;
 			//attacks and phase
 			tier = 3;
 			phase = 1;
-			maxPhase = 1;
+			maxPhase = 2;
 			//visual
 			size = 1.35;
 			alpha = 1;
@@ -713,12 +716,12 @@ isHit = false;
 	if (gameMaster.chosenBoss == Boss.ArenaKing) 
 	{
 		//stats
-		phase1Hp = tier6Hp*0.15; phase1Ms = 1; phase1Dmg = 20;
-		phase2Hp = tier6Hp*0.15; phase2Ms = 1.2; phase2Dmg = 22.5;
-		phase3Hp = tier6Hp*0.15; phase3Ms = 1.4; phase3Dmg = 25;
-		phase4Hp = tier6Hp*0.15; phase4Ms = 1.6; phase4Dmg = 27.5;
-		phase5Hp = tier6Hp*0.15; phase5Ms = 1.8; phase5Dmg = 30;
-		phase6Hp = tier6Hp*0.25; phase6Ms = 2; phase6Dmg = 32.5;
+		phase1Hp = tier6Hp*0.14; phase1Ms = 1; phase1Dmg = 20;
+		phase2Hp = tier6Hp*0.14; phase2Ms = 1.2; phase2Dmg = 22.5;
+		phase3Hp = tier6Hp*0.14; phase3Ms = 1.4; phase3Dmg = 25;
+		phase4Hp = tier6Hp*0.14; phase4Ms = 1.6; phase4Dmg = 27.5;
+		phase5Hp = tier6Hp*0.14; phase5Ms = 1.8; phase5Dmg = 30;
+		phase6Hp = tier6Hp*0.30; phase6Ms = 2; phase6Dmg = 32.5;
 		hp = phase1Hp;
 		global.bossDamage = phase1Dmg;
 		moveSpeed = phase1Ms;

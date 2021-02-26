@@ -7,7 +7,7 @@ enum CameraStates
 }
 state = CameraStates.preFightView;
 camera = camera_create();
-camSize = 4;
+camSize = global.camSize;//4 // 2.5 for gifs
 cameraSpeed = 50;
 playerCameraSpeed = 1;
 

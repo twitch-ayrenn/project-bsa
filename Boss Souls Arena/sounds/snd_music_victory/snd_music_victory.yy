@@ -8,7 +8,7 @@
     "bitRate": 128,
     "kind": 0,
     "preload": false,
-    "sampleRate": 44100,
+    "sampleRate": 48000,
     "type": 0,
     "volume": 0.2
 }

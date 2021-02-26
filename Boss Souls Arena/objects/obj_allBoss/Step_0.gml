@@ -8,8 +8,8 @@ if (startUpVars == true)
 }
 randomize();
 var sizeX = size;
-if (x < global.player.x && distance_to_object(global.player) > 3){sizeX = size;}
-if (x > global.player.x && distance_to_object(global.player) > 3){sizeX = -size;}
+if (x < global.player.x && distance_to_object(global.player) > 4){sizeX = size;}
+if (x > global.player.x && distance_to_object(global.player) > 4){sizeX = -size;}
 image_xscale = sizeX;
 image_yscale = size;
 if (hp <= 0){hp = 0;}
@@ -79,6 +79,7 @@ if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
 #region Fighting
 if (state == BossStates.Fighting)
 {
+	bossTime += 1/30;
 #region Movement
 actualSpeed = moveSpeed;
 if (moveType == MovementType.WalkingTowards && fall == false)
@@ -105,7 +106,7 @@ if (moveType == MovementType.StandingStill)
 	if (gameMaster.chosenBoss == Boss.FlameGate && global.player.class != Character.AgentOfGod)
 	{
 		x = global.arenaMiddleX;
-		y = global.arenaMiddleY-140;
+		y = global.arenaMiddleY-120;
 	}
 	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar && global.player.class != Character.AgentOfGod)
 	{
@@ -224,7 +225,7 @@ if (fall == true)
 		}
 	}
 	#endregion
-	#region Demon Gate
+	#region Eye of Hell
 	if (gameMaster.chosenBoss == Boss.FlameGate)
 	{
 		if (rapidFireStacks > 0 && canRapidAttack == true)
@@ -240,19 +241,19 @@ if (fall == true)
 				var fireBolt = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
 				//Main
 				fireBolt.direction = coneAtkFW;
-				fireBolt.speed = 5;
+				fireBolt.speed = 4.5;
 				fireBolt.image_angle = fireBolt.direction+90;
 				//Visual
 				fireBolt.image_alpha = 0.8;
 				fireBolt.sprite_index = spr_fireBall;
 				fireBolt.image_blend = global.orange;
-				fireBolt.image_xscale = 1;
-				fireBolt.image_yscale = 1;
+				fireBolt.image_xscale = 0.9;
+				fireBolt.image_yscale = 0.9;
 				fireBolt.effectType = Effect.Flare;
 				coneAtkFW += (coneWide/coneAmount);
 			}
 		
-			alarm[2] = (0.65)*30;
+			alarm[2] = (0.7)*30;
 		}
 	}
 	#endregion
@@ -433,6 +434,7 @@ if (fall == true)
 		
 			var angleBk = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
 			var circleAmount = 14;
+			if (gameMaster.chosenBoss == Boss.ArenaKing){ circleAmount = 12}
 			repeat(circleAmount)
 			{
 				var swordShot = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
@@ -446,6 +448,7 @@ if (fall == true)
 				swordShot.image_blend = global.lightBlue;
 				swordShot.image_xscale = 0.7;
 				swordShot.image_yscale = 0.7;
+				if (gameMaster.chosenBoss == Boss.ArenaKing){swordShot.image_xscale = 0.6; swordShot.image_yscale = 0.6;}
 				swordShot.effectType = Effect.Flare;
 				angleBk += (360/circleAmount);
 				
@@ -454,7 +457,7 @@ if (fall == true)
 			if (gameMaster.chosenBoss == Boss.ArenaKing)
 			{
 				var angleBk = point_direction(kingCloneX,kingCloneY,obj_allPlayer.x,obj_allPlayer.y);
-				var circleAmount = 14;
+				var circleAmount = 12;
 				repeat(circleAmount)
 				{
 					var swordShot = instance_create_depth(kingCloneX,kingCloneY,depth+1,obj_enemyProjectile);
@@ -466,8 +469,8 @@ if (fall == true)
 					swordShot.image_alpha = 0.85;
 					swordShot.sprite_index = spr_fireBall;
 					swordShot.image_blend = global.goldColor;
-					swordShot.image_xscale = 0.7;
-					swordShot.image_yscale = 0.7;
+					swordShot.image_xscale = 0.6;
+					swordShot.image_yscale = 0.6;
 					swordShot.effectType = Effect.Flare;
 					angleBk += (360/circleAmount);
 				}
@@ -556,7 +559,7 @@ if (fall == true)
 		}
 	}
 	#endregion
-	#region Death King
+	#region Lord of death
 	if (gameMaster.chosenBoss == Boss.DeathKing)
 	{
 		if (rapidFireStacks > 0 && canRapidAttack == true)
@@ -576,7 +579,7 @@ if (fall == true)
 				//Visual
 				fireBolt.image_alpha = 1;
 				fireBolt.sprite_index = spr_bat;
-				fireBolt.image_blend = c_gray;
+				fireBolt.image_blend = c_dkgray;
 				fireBolt.image_xscale = 0.75;
 				fireBolt.image_yscale = 0.75;
 				fireBolt.effectType = Effect.NoEffect;
@@ -630,12 +633,19 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.WispSisterJulia && phase == 1){attack = choose(Atks.CircleAttack,Atks.ChaseAttack,Atks.GooSpawn);}
 	if (gameMaster.chosenBoss == Boss.WispSisterJulia && phase == 2){attack = choose(Atks.CircleAttack,Atks.ChaseAttack,Atks.GooSpawn,Atks.TeleportAttack);}
 	if (gameMaster.chosenBoss == Boss.WispSisterJulia && phase == 3){attack = choose(Atks.RapidFire);}
-	if (gameMaster.chosenBoss == Boss.FlameGate && phase == 1){attack = choose(Atks.RapidFire,Atks.RapidFire,Atks.ConeAttack,Atks.OneShotAttack,Atks.GooSpawn);
-	with(obj_enemyProjectile){if (sprite_index == gooSprite && image_xscale >= 2.5){with(obj_allBoss){attack = choose(Atks.RapidFire,Atks.RapidFire,Atks.ConeAttack,Atks.OneShotAttack);}}}}
-	if (gameMaster.chosenClass == Character.ShadowAssassin || gameMaster.chosenClass == Character.AngelSlayer)
+	if (phase == 1)
 	{
-		if (gameMaster.chosenBoss == Boss.FlameGate && phase == 1){attack = choose(Atks.RapidFire,Atks.ConeAttack,Atks.OneShotAttack,Atks.GooSpawn);
-		with(obj_enemyProjectile){if (sprite_index == gooSprite && image_xscale >= 2.5){with(obj_allBoss){attack = choose(Atks.RapidFire,Atks.ConeAttack,Atks.OneShotAttack);}}}}
+		if (gameMaster.chosenBoss == Boss.FlameGate){attack = choose(Atks.RapidFire,Atks.ConeAttack,Atks.GooSpawn);}
+	}
+	if (phase == 2)
+	{
+		if (gameMaster.chosenBoss == Boss.FlameGate){attack = choose(Atks.RapidFire,Atks.RapidFire,Atks.ConeAttack,Atks.OneShotAttack,Atks.GooSpawn);
+		with(obj_enemyProjectile){if (sprite_index == gooSprite && image_xscale >= 2.5){with(obj_allBoss){attack = choose(Atks.RapidFire,Atks.RapidFire,Atks.ConeAttack,Atks.OneShotAttack);}}}}
+		if (gameMaster.chosenClass == Character.ShadowAssassin || gameMaster.chosenClass == Character.AngelSlayer)
+		{
+			if (gameMaster.chosenBoss == Boss.FlameGate){attack = choose(Atks.RapidFire,Atks.ConeAttack,Atks.OneShotAttack,Atks.GooSpawn);
+			with(obj_enemyProjectile){if (sprite_index == gooSprite && image_xscale >= 2.5){with(obj_allBoss){attack = choose(Atks.RapidFire,Atks.ConeAttack,Atks.OneShotAttack);}}}}
+		}
 	}
 	
 	if (gameMaster.chosenBoss == Boss.DeathKnight && phase == 1){attack = choose(Atks.NormalShot);}
@@ -648,7 +658,8 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul && phase == 1){attack = choose(Atks.CircleAttack,Atks.BeamAttack,Atks.TeleportAttack);}
 	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul && phase == 2){attack = choose(Atks.CircleAttack,Atks.BeamAttack,Atks.ZoneAttack,Atks.TeleportAttack);}
 	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul && phase == 3){attack = choose(Atks.CircleAttack,Atks.ZoneAttack,Atks.TeleportAttack,Atks.ChaseAttack);}
-	if (gameMaster.chosenBoss == Boss.KnightWitchYi && phase == 1){attack = choose(Atks.CircleAttack,Atks.BeamAttack,Atks.ConeAttack,Atks.GooSpawn,Atks.RapidFire);}
+	if (gameMaster.chosenBoss == Boss.KnightWitchYi && phase == 1){attack = choose(Atks.CircleAttack,Atks.BeamAttack,Atks.ConeAttack,Atks.GooSpawn);}
+	if (gameMaster.chosenBoss == Boss.KnightWitchYi && phase == 2){attack = choose(Atks.CircleAttack,Atks.BeamAttack,Atks.ConeAttack,Atks.GooSpawn,Atks.RapidFire);}
 	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && phase == 1){attack = choose(Atks.ConeAttack,Atks.CircleAttack);}
 	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && phase == 2){attack = choose(Atks.ConeAttack,Atks.CircleAttack,Atks.BeamAttack);}
 	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && phase == 3){attack = choose(Atks.ConeAttack,Atks.CircleAttack,Atks.BeamAttack,Atks.RapidFire);}
@@ -658,10 +669,10 @@ if(chooseAnAttack == true)
 	#endregion
 	#region Tier4 Bosses
 	if (gameMaster.chosenBoss == Boss.Gravekeeper && phase == 1){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.ConeAttack); alpha = 0; x += choose(50,0,-50); y += choose(50,0,-50);}
-	if (gameMaster.chosenBoss == Boss.Gravekeeper && phase == 2 && instance_exists(obj_healZone) == false){attack = choose(Atks.ChaseAttack,Atks.NormalShot,Atks.HealAttack); alpha = 0; x += choose(50,0,-50); y += choose(50,0,-50);}
-	if (gameMaster.chosenBoss == Boss.Gravekeeper && phase == 2 && instance_exists(obj_healZone) == true){attack = choose(Atks.ChaseAttack,Atks.NormalShot); alpha = 0; x += choose(50,0,-50); y += choose(50,0,-50);}
-	if (gameMaster.chosenBoss == Boss.Gravekeeper && phase == 3 && instance_exists(obj_healZone) == false){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.ConeAttack,Atks.ChaseAttack,Atks.NormalShot,Atks.HealAttack); alpha = 0; x += choose(50,0,-50); y += choose(50,0,-50);}
-	if (gameMaster.chosenBoss == Boss.Gravekeeper && phase == 3 && instance_exists(obj_healZone) == true){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.ConeAttack,Atks.ChaseAttack,Atks.NormalShot); alpha = 0; x += choose(50,0,-50); y += choose(50,0,-50);}
+	if (gameMaster.chosenBoss == Boss.Gravekeeper && phase == 2){attack = choose(Atks.ChaseAttack,Atks.NormalShot); alpha = 0; x += choose(50,0,-50); y += choose(50,0,-50);}
+	if (gameMaster.chosenBoss == Boss.Gravekeeper && phase == 2){attack = choose(Atks.ChaseAttack,Atks.NormalShot); alpha = 0; x += choose(50,0,-50); y += choose(50,0,-50);}
+	if (gameMaster.chosenBoss == Boss.Gravekeeper && phase == 3){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.ConeAttack,Atks.ChaseAttack,Atks.NormalShot); alpha = 0; x += choose(50,0,-50); y += choose(50,0,-50);}
+	if (gameMaster.chosenBoss == Boss.Gravekeeper && phase == 3){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.ConeAttack,Atks.ChaseAttack,Atks.NormalShot); alpha = 0; x += choose(50,0,-50); y += choose(50,0,-50);}
 	if (gameMaster.chosenBoss == Boss.BloodKnightDavid && phase == 1){attack = choose(Atks.RapidFire,Atks.ConeAttack,Atks.ChaseAttack);}
 	if (gameMaster.chosenBoss == Boss.BloodKnightDavid && phase == 2){attack = choose(Atks.RapidFire,Atks.ConeAttack,Atks.GooSpawn);}
 	if (gameMaster.chosenBoss == Boss.BloodKnightDavid && phase == 3){attack = choose(Atks.RapidFire,Atks.ConeAttack,Atks.GooSpawn,Atks.OneShotAttack);}
@@ -1391,6 +1402,7 @@ if (hp <= 0 && phase == 5 && phase != maxPhase && gameMaster.chosenBoss == Boss.
 }
 if (hp <= 0 && phase == maxPhase && gameMaster.menu != Menues.Death && gameMaster.chosenMode == Menues.Campaign)
 {
+	show_debug_message("Boss Fight Time: " + string(bossTime))
 	//boss
 	if (instance_exists(par_bossStuff)){with(par_bossStuff){instance_destroy();}}
 	global.campaignDifficulty += 0.05;

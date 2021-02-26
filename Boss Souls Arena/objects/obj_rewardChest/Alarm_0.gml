@@ -20,7 +20,7 @@ if (gameMaster.chosenBoss == Boss.ArenaKing && kingSuprise == true)
 	var king = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY-10,depth-1,obj_allBoss);
 	with (king)
 	{	
-		phase6Hp = tier6Hp*0.25;
+		phase6Hp = tier6Hp*0.3;
 		phase6Ms = 2;	
 		phase6Dmg = 32.5;
 		moveType = MovementType.WalkingTowards;
@@ -70,5 +70,6 @@ if (gameMaster.chosenBoss == Boss.ArenaKing && kingSuprise == true)
 		image_yscale = size;
 		timeAfterIndicate = (1.25)*30;
 		attackCooldown = (3.5)*30;
-	}	
+	}
+	instance_destroy();
 }

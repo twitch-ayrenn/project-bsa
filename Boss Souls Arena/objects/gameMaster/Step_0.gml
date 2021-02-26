@@ -26,14 +26,6 @@ if (menu == Menues.Play && room == rm_arena)
 }
 //proggresion
 if (global.itemSlots > 6){global.itemSlots = 6; global.maxItemSlots = 6;}
-//settings
-if (keyboard_check_released(ord("I")))
-{	
-	if (global.ShowInfo == false)
-	{
-		global.ShowInfo = true;
-	}
-}
 if (keyboard_check_released(ord("F")) && fullscreen == true)
 {
 	fullscreen = false;
@@ -62,6 +54,20 @@ if (keyboard_check_released(vk_escape))
 if (menu == Menues.Main)
 {
 	chosenBoss = Boss.NoBoss;
+}
+var doOnce = true;
+if (keyboard_check_released(ord("F")))
+{
+	if (window_get_fullscreen() && doOnce)	
+	{
+		doOnce = false;
+		window_set_fullscreen(false);	
+	}
+	if (window_get_fullscreen() == false && doOnce)	
+	{
+		doOnce = false;
+		window_set_fullscreen(true);	
+	}
 }
 // DeathScreen go away auto
 if (menu == Menues.Death)

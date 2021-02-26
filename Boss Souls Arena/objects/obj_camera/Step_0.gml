@@ -27,12 +27,12 @@ if (follow != noone)
 
 if (global.screenShake == true)
 {
-	x += random_range(-clamp(shake_remain,0,10),clamp(shake_remain,0,10));
-	y += random_range(-clamp(shake_remain,0,10),clamp(shake_remain,0,10));
+	x += random_range(-clamp(shake_remain,0,8),clamp(shake_remain,0,8));
+	y += random_range(-clamp(shake_remain,0,8),clamp(shake_remain,0,8));
 
 }
 shake_remain = max(0,shake_remain-((1/shake_length)*shake_magnitude));
-shake_remain = clamp(shake_remain,0,10000);
+shake_remain = clamp(shake_remain,0,8);
 
 var vm = matrix_build_lookat(x,y,-10000,x,y,0,0,1,0);
 camera_set_view_mat(camera,vm);
