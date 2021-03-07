@@ -40,7 +40,7 @@ moveSpeed = 2;
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
 moveDirection = 0; 
-global.damage = 1*5;
+global.damage = 1*1;
 baseLifeSteal = 0.8;
 global.lifeSteal = baseLifeSteal;
 dashSpeed = 5;
@@ -141,13 +141,14 @@ hitVinjetAlpha = 0;
 	}
 	#endregion
 	#region Agent Of God Tira
+	actualAGDashSpeed = 0;
 	if (class == Character.AgentOfGod)
 	{
 		hp = 100;
-		leftClickCooldown = (9)*30;
-		rightClickCooldown = (9)*30;
-		dashCooldown = (9)*30;
-		ultCooldown = (1)*30;//14
+		leftClickCooldown = (6)*30;
+		rightClickCooldown = (8)*30;//8
+		dashCooldown = (8)*30;
+		ultCooldown = (12)*30;
 		idleSprite = spr_player_agentOfGod_idle;
 		walkSprite = spr_player_agentOfGod_walking;
 		deadSprite = spr_player_agentOfGod_dead;
@@ -159,7 +160,20 @@ hitVinjetAlpha = 0;
 		agentSpeed = 1;
 		machineGunStacks = 0;
 		machineGunTimes = 0;
-		instance_create_depth(global.arenaMiddleX,global.arenaMiddleY,depth,obj_holyBeam);
+		agentPassiveStacks = 0;
+		if (global.itemSelected[Boss.DeathKnight] == false)
+		{
+			instance_create_depth(x,y,depth+1,obj_godsword);
+		}
+		actualAGDashSpeed = 0;
+		aGDashStop = (0.4)*30;
+		aGDashStopLeft = 0;
+		//
+		doConeShot = false;
+		coneShotAmount = 10*5;
+		coneShotTimes = 0;
+		coneShotTime = (0.1)*30;
+		coneShotStacks = 0;
 	}
 	#endregion
 	#region Angel Slayer
@@ -357,7 +371,7 @@ if (global.itemSelected[Boss.AngelSlayerRekZul] == true)
 if (global.itemSelected[Boss.DeathKnight] == true && global.itemSelected[Boss.DemonLordRekTaar] == false)
 {
 	instance_create_depth(x,y,depth+1,obj_equipment_deathScythe);
-	var extraDamage = global.damage*6*(1+(gameMaster.bonusFirerate/100));
+	var extraDamage = global.damage*5*(1+(gameMaster.bonusFirerate/100));
 	global.deathScyhteDamage = extraDamage;
 	leftClickCooldown = (3)*30;
 }

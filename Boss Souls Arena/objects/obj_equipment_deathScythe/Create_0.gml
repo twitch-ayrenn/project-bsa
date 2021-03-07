@@ -6,3 +6,4 @@ spinSpeed = 40;
 currentAngle = 0;
 canDealDamage = true;
 timeBeforeNextSpin = 0.15;
+ogSprite = sprite_index;

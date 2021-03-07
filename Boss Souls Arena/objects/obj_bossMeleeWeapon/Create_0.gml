@@ -4,6 +4,7 @@ enum MeleeWeaponStates
 	idle,
 	SpinOnce,
 	SpinChase,
+	Strike,
 }
 state = 0;
 spinTimes = 0;

@@ -583,6 +583,14 @@
             }
         },
         {
+            "Key": "158ac2be-92f2-4a23-96c4-6f33efeeb4ac",
+            "Value": {
+                "id": "6addb78f-2132-40b6-801f-21301313d3bb",
+                "resourcePath": "sprites\\spr_zombieGround\\spr_zombieGround.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "15bfed79-fc9f-4c63-a5ae-31a074562643",
             "Value": {
                 "id": "739fa90e-0888-4222-9845-321518f82e15",
@@ -1207,6 +1215,14 @@
             }
         },
         {
+            "Key": "2ed43b85-9619-4c11-bc8c-38eefc735548",
+            "Value": {
+                "id": "7c5618df-ed53-4708-9e0a-16d20afcc11a",
+                "resourcePath": "sprites\\spr_bossBar211\\spr_bossBar211.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "2f3c339a-78a6-45f6-9b8e-84aab6e065e1",
             "Value": {
                 "id": "cf664b61-6361-4cf6-96f8-7d588f2c7972",
@@ -1639,6 +1655,14 @@
             }
         },
         {
+            "Key": "40959c06-4f47-4374-bb51-7477ecabbfa4",
+            "Value": {
+                "id": "b666c049-a4ce-423f-b12a-0817bc020eb7",
+                "resourcePath": "sprites\\spr_godsword\\spr_godsword.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "40d0bea7-435e-49f5-b20c-1cc69bf2634c",
             "Value": {
                 "id": "3dc85c39-3fd2-4d2e-9bac-4d96347d75b7",
@@ -1931,6 +1955,14 @@
             "Value": {
                 "id": "2a18f5f9-b8db-4ca4-ae59-1015bf953549",
                 "resourcePath": "sprites\\spr_faithDestroyer\\spr_faithDestroyer.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "506c2af4-dbca-4124-9249-f27a1bca6383",
+            "Value": {
+                "id": "50839430-91e5-43ff-9545-0fd708cc7d51",
+                "resourcePath": "sprites\\spr_bossPhases\\spr_bossPhases.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3023,6 +3055,14 @@
             }
         },
         {
+            "Key": "81f53aa3-a90d-46be-ba0e-5ea56150a3a7",
+            "Value": {
+                "id": "f9d88644-7fd4-49d7-8200-9b4acd866f32",
+                "resourcePath": "sprites\\spr_equipment_deathScythe_strike\\spr_equipment_deathScythe_strike.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "822f7504-10b9-46f6-aa37-21cdc1417d48",
             "Value": {
                 "id": "866aca59-b78e-418c-bd2b-9deb1ba87cf4",
@@ -3035,6 +3075,14 @@
             "Value": {
                 "id": "0c564d59-1ff2-4c82-8359-440197cff7f2",
                 "resourcePath": "sprites\\spr_firebolt\\spr_firebolt.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "82a46a5b-0032-4e1e-909a-44bf9cbd5520",
+            "Value": {
+                "id": "54170b81-ad58-4a8f-9294-a91f9d0fb33f",
+                "resourcePath": "sprites\\spr_godsword_projectile\\spr_godsword_projectile.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3431,6 +3479,14 @@
             }
         },
         {
+            "Key": "928b2314-b4f6-40f9-a23e-dc595517d97f",
+            "Value": {
+                "id": "11a17d76-57b1-48df-a157-db12165443ea",
+                "resourcePath": "sprites\\spr_equipment_netherPortal_right1\\spr_equipment_netherPortal_right1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "92bbb040-816d-4fd5-baf8-9f080646a392",
             "Value": {
                 "id": "c30202c3-8dba-43be-b1b3-706064827c00",
@@ -3492,6 +3548,14 @@
                 "id": "35eab099-b877-4ee9-a0ce-1c0c950b5efa",
                 "resourcePath": "sounds\\snd_music_victory\\snd_music_victory.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "953f42b4-11ff-48ea-a146-896d8bbbd063",
+            "Value": {
+                "id": "d72bfef2-6c49-435b-ad75-f6210ad27a27",
+                "resourcePath": "sprites\\spr_godsword_speed\\spr_godsword_speed.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -4052,6 +4116,14 @@
                 "id": "e230de57-80cf-4c9e-a033-d623c7c9c8cf",
                 "resourcePath": "objects\\obj_button_settings_reset\\obj_button_settings_reset.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "ae32e8b8-a30d-4f87-818d-655b31147ed3",
+            "Value": {
+                "id": "fcd11500-7f1d-4fb1-ab78-112b4783b5af",
+                "resourcePath": "sprites\\spr_firebolt_big2\\spr_firebolt_big2.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -4895,6 +4967,14 @@
             }
         },
         {
+            "Key": "cdce493f-90ce-4ce8-96a9-939c83a3bd50",
+            "Value": {
+                "id": "62894b93-08e4-4e7d-b461-038305d437d0",
+                "resourcePath": "sprites\\spr_healthBarNew221\\spr_healthBarNew221.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "cde0eb45-bbf7-428e-be5e-d7fa2a9ad0e2",
             "Value": {
                 "id": "0916e624-2dfb-44bd-a899-dfc58731cef9",
@@ -5372,6 +5452,14 @@
                 "id": "6bd91ca2-a9ca-4ab0-9ce0-2dc2050b451c",
                 "resourcePath": "objects\\obj_button_exit\\obj_button_exit.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "df0d89f8-2f59-4e23-a080-a5c2ea472f5d",
+            "Value": {
+                "id": "3725da91-edf4-48aa-acad-668fc689e197",
+                "resourcePath": "sprites\\spr_healthBarNew22\\spr_healthBarNew22.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -6227,6 +6315,14 @@
             "Value": {
                 "id": "4338f0c9-12fe-4dab-b9bf-5376bb0e2f52",
                 "resourcePath": "objects\\obj_camera\\obj_camera.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "fda15941-3abc-4ff0-b019-470c1ba0ebee",
+            "Value": {
+                "id": "df2d50a1-2d03-447a-9ed7-0adec5082da8",
+                "resourcePath": "objects\\obj_godsword\\obj_godsword.yy",
                 "resourceType": "GMObject"
             }
         },

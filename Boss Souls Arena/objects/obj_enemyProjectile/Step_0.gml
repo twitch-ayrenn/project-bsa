@@ -72,7 +72,8 @@ if (stickOn == true)
 	if (gameMaster.chosenBoss == Boss.DeathKing)
 	{
 		x = global.arenaMiddleX;	
-		y = global.arenaMiddleY-400;
+		y = global.arenaMiddleY+400;
+		depth = -y-1000;
 	}
 	
 }

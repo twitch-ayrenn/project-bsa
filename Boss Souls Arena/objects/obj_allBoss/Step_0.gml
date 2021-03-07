@@ -1022,9 +1022,9 @@ if(chooseAnAttack == true)
 		#region DeathKing
 		if (gameMaster.chosenBoss == Boss.DeathKing)
 		{
-			var beam = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY-400,depth+1,obj_enemyProjectile);
+			var beam = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY+400,depth+1,obj_enemyProjectile);
 			//Main
-			beam.image_angle = 60-90;
+			beam.image_angle = -60-90;
 			//Visual
 			beam.image_alpha = 0.85;
 			beam.image_blend = global.orange;
@@ -1035,14 +1035,14 @@ if(chooseAnAttack == true)
 			beam.minSize = 0.25;
 			beam.stickOn = true;
 			beam.beamChase = true;
-			beam.turningSpeed = -15;
+			beam.turningSpeed = 15;
 			beam.range = 12*30;
 			beam.destroy = true;
 			beam.effectType = Effect.NoEffect;
 			
-			var beam1 = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY-400,depth+1,obj_enemyProjectile);
+			var beam1 = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY+400,depth+1,obj_enemyProjectile);
 			//Main
-			beam1.image_angle = 120-90;
+			beam1.image_angle = -120-90;
 			//Visual
 			beam1.image_alpha = 0.85;
 			beam1.image_blend = global.orange;
@@ -1053,28 +1053,10 @@ if(chooseAnAttack == true)
 			beam1.minSize = 0.25;
 			beam1.stickOn = true;
 			beam1.beamChase = true;
-			beam1.turningSpeed = -15;
+			beam1.turningSpeed = 15;
 			beam1.range = 12*30;
 			beam1.destroy = true;
 			beam1.effectType = Effect.NoEffect;
-			
-			var beam2 = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY-400,depth+1,obj_enemyProjectile);
-			//Main
-			beam2.image_angle = 180-90;
-			//Visual
-			beam2.image_alpha = 0.85;
-			beam2.image_blend = global.orange;
-			beam2.sprite_index = spr_beam;
-			beam2.image_xscale = 0.5;
-			beam2.image_yscale = 50;
-			beam2.maxSize = 2.5;
-			beam2.minSize = 0.25;
-			beam2.stickOn = true;
-			beam2.beamChase = true;
-			beam2.turningSpeed = -15;
-			beam2.range = 12*30;
-			beam2.destroy = true;
-			beam2.effectType = Effect.NoEffect;
 		}
 		#endregion
 		#region Arena King

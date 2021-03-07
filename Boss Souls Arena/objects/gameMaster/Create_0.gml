@@ -4,7 +4,7 @@
 //dont use Save.dat, always use a new verisor//Save.dat.full0.3
 //global.saveFile = "Save.alpha.0.65"; gaygang release
 menu = 0;
-global.saveFile = "Save.Beta.V.12";//13
+global.saveFile = "Save.Beta.V.14";//13
 if (file_exists(global.saveFile) == true)
 {
 	//game_load(global.saveFile);

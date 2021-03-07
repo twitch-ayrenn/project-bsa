@@ -10,11 +10,11 @@ if (distance_to_point(obj_allPlayer.x,obj_allPlayer.y) < 15)
 }
 if (state == 0)
 {
-	sprite_index = spr_equipment_zombieHead_idle;	
+	sprite_index = spr_equipment_zombieHead_idle;
+	image_alpha = 1;
 }
 if (state == 1)
 {
-	x = obj_equipment_bloodPuddle.x-2;
-	y = obj_equipment_bloodPuddle.y-3;
-	sprite_index = spr_equipment_zombieHead_active;
+	image_alpha = 0;
+	sprite_index = spr_equipment_zombieHead_idle;
 }

@@ -11,7 +11,10 @@
         "a47eb217-297b-4592-8d57-439b0fd23a07",
         "44c79917-6614-4deb-9514-70e0cf693ac5",
         "1f1634f4-72af-4c92-a2e6-63a21cf9c79c",
-        "4aed5a74-fea4-4c68-8a55-f287917e4fd7"
+        "4aed5a74-fea4-4c68-8a55-f287917e4fd7",
+        "40959c06-4f47-4374-bb51-7477ecabbfa4",
+        "953f42b4-11ff-48ea-a146-896d8bbbd063",
+        "82a46a5b-0032-4e1e-909a-44bf9cbd5520"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_theAgentOfGodTira",

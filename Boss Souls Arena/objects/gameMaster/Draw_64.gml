@@ -259,7 +259,7 @@ if (menu == Menues.BossLoot)
 	var spdCalc = 20 + bonusSpeed + previewSpeed
 	var spdText = "Movement Speed: " + string(20 + bonusSpeed + previewSpeed);
 	var dlCalc = 1 + (0 + bonusDash + previewDash)*0.01;
-	var dlText = "Mobility Bonus: " + string(0 + bonusDash + previewDash) + "%";
+	var dlText = "Dash Distance: " + string(0 + bonusDash + previewDash) + "%";
 	var dmgCalc = 10 + bonusDamage + previewDamage;
 	if (global.itemSelected[Boss.AngelKnightOscar] == true){dmgCalc *= 0.55;}
 	var dmgText = "Damage Scaling: " + string(int64(dmgCalc*10)-100)  + "%";
@@ -358,12 +358,12 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1)
 		}
 		#endregion
-		#region Mobility Bonus
+		#region Dash Distance
 		if (itemShowInfoFor == Boss.DashLength)
 		{
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Increases the length of your dash and",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"how far you can teleport.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Increases the length of your dash.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -376,7 +376,7 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+15*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		
 			draw_set_font(fnt_menu_fill);
-			var ItemName = "Mobility Bonus"
+			var ItemName = "Dash Distance"
 			draw_text_transformed_color(infoTextX,330,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1)
 		}
 		#endregion
@@ -498,7 +498,7 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Your ultimate spawns an area that",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"increases your speed and damages",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"enemies that stand in the area.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			var bztext = "[Area Damage]: " + string(int64(dmgCalc)) + "/second";
+			var bztext = "[Area Damage]: " + string(int64(dmgCalc*5));
 			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,bztext,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			var bztext2 = "[Speed Increase]: " +  string(50) + "%";
 			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,bztext2,itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
@@ -631,7 +631,7 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"It always has an attack speed of 1 ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,"attack every 3 seconds. All extra",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+7*itemTextSeparationY,"[Attack Speed] is converted to damage.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			var bztext = "[Scythe Damage]: " + string(int64(dmgCalc*6*firerateCalc));
+			var bztext = "[Scythe Damage]: " + string(int64(dmgCalc*5*firerateCalc));
 			draw_text_transformed_color(infoTextX,350+8*itemTextSeparationY,bztext,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_set_font(fnt_menu_fill);
 			draw_text_transformed_color(infoTextX,350+9.6*itemTextSeparationY,"Item Stats",itemTextSize*4,itemTextSize*4,0,global.orange,global.orange,c_yellow,c_yellow,1);
@@ -967,8 +967,8 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,350+1*itemTextSeparationY,"Replaces ultimate with a dash that ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+2*itemTextSeparationY,"deals massive damage to enemies you",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,350+3*itemTextSeparationY,"dash trough. The dash damage and ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"range is increased by [Movement Speed]",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"and [Mobility Bonus].",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+4*itemTextSeparationY,"range is increased by [Speed] and",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,350+5*itemTextSeparationY,"[Dash Distance].",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			var shText = "Cooldown [" + string(int64(18/(1+cdCalc)))  + "] seconds."
 			draw_text_transformed_color(infoTextX,350+6*itemTextSeparationY,shText,itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 			var akctext = "[Dash Damage]: " + string(int64(spdCalc*6*dlCalc));

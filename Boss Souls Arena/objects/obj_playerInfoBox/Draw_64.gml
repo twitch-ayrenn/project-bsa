@@ -3,6 +3,10 @@ draw_rectangle_color(65,250,570,255,global.orange,global.orange,c_yellow,c_yello
 var sep = 18.3;
 var startY = 270;
 var startX = 65;
+var barStartX = startX;
+var barLength = barStartX+505;
+var barStartY = startY+445;
+var barThickness = 25;
 #region Camapaign Info
 if (playerShowInfoFor == Character.NoCharacterCampaign)
 {
@@ -31,6 +35,20 @@ if (playerShowInfoFor == Character.NoCharacterCampaign)
 	draw_text_transformed_color(startX,startY+sep*15,"have to be as aggresive and relentless as",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*16,"your opponents - The Arena King",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
+	var progression = ((((gameMaster.pyromancerProgress-1)/1.5)/18)+(((gameMaster.assassinProgress-1)/1.5)/18)+(((gameMaster.bloodKnightProgress-1)/1.5)/18)+(((gameMaster.angelSlayerProgress-1)/1.5)/18)+(((gameMaster.agentOfGodProgress-1)/1.5)/18)+(((gameMaster.gravelingProgress-1)/1.5)/18)+(((gameMaster.plaugeWalkerProgress-1)/1.5)/18))/7;
+	
+	progression = clamp(progression,0,1);
+	draw_set_alpha(0.85);
+	draw_line_width_color(barStartX,barStartY+12.5,barStartX+progression*505,barStartY+12.5,barThickness,global.orange,c_yellow);
+	draw_set_alpha(1);
+	draw_rectangle_color(barStartX,barStartY,barLength,barStartY+25,c_silver,c_silver,c_white,c_white,true);
+	draw_rectangle_color(barStartX+0.5,barStartY+0.5,barLength-1,barStartY+barThickness-1,c_white,c_white,c_silver,c_silver,true);
+	draw_set_font(fnt_NewNormalText);
+	draw_set_valign(fa_center);
+	draw_set_halign(fa_center);
+	draw_text_transformed_color(barLength/2+35,barStartY+17.5,"Game Completion: " + string(int64(progression*100)) +"%",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_set_valign(fa_left);
+	draw_set_halign(fa_top);
 }
 #endregion
 #region Arena Rush Info
@@ -99,6 +117,20 @@ if (playerShowInfoFor == Character.Pyromancer)
 	draw_text_transformed_color(startX,startY+sep*20,"Become a big meteor that falls from the sky.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*21,"Deal damage to enemies hit by the meteor or",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*22,"the fiery ground it leaves.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	
+	var progression = (((gameMaster.pyromancerProgress-1)/1.5)/18);
+	progression = clamp(progression,0,1);
+	draw_set_alpha(0.85);
+	draw_line_width_color(barStartX,barStartY+12.5,barStartX+progression*505,barStartY+12.5,barThickness,global.orange,c_yellow);
+	draw_set_alpha(1);
+	draw_rectangle_color(barStartX,barStartY,barLength,barStartY+25,c_silver,c_silver,c_white,c_white,true);
+	draw_rectangle_color(barStartX+0.5,barStartY+0.5,barLength-1,barStartY+barThickness-1,c_white,c_white,c_silver,c_silver,true);
+	draw_set_font(fnt_NewNormalText);
+	draw_set_valign(fa_center);
+	draw_set_halign(fa_center);
+	draw_text_transformed_color(barLength/2+35,barStartY+17.5,"Character Progression: " + string(int64(progression*100)) +"%",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_set_valign(fa_left);
+	draw_set_halign(fa_top);
 }
 #endregion
 #region The Shadow Assasiin
@@ -106,18 +138,18 @@ if (playerShowInfoFor == Character.ShadowAssassin)
 {	
 	//name
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,202,"Shady The Shadow Assassin",0.45,0.45,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+	draw_text_transformed_color(startX,202,"Shady The Shadow Assassin",0.4,0.4,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*00-5,"Passive:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*01,"You can use your attack instantly after using",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*02,"an ability.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*01,"You can attack instantly after using other",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*02,"abilities. Your sorounded with a shadow circle.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*04.5-5,"Attack - Left Click: ",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*05.5,"Click inside the purple circle to teleport and",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*05.5,"Click inside the shadow circle to teleport and",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*06.5,"throw knives around you. You do not take ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*07.5,"damage when touching an enemy. Max damage",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*08.5,"is dealt when clicking on an enemy.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
@@ -126,8 +158,8 @@ if (playerShowInfoFor == Character.ShadowAssassin)
 	draw_text_transformed_color(startX,startY+sep*11-5,"Ability - Right Click:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*12,"Summon a shadow of yourself, it also throws",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*13,"knives when you attack and also has a purple",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*14,"circle that you can teleport to.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*13,"knives when you attack and also has a shadow",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*14,"circle.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*16.5-5,"Dash - Space:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
@@ -139,6 +171,20 @@ if (playerShowInfoFor == Character.ShadowAssassin)
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*21,"Restore all your health and reset all your ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*22,"attack and ability cooldowns.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	
+	var progression = (((gameMaster.assassinProgress-1)/1.5)/18);
+	progression = clamp(progression,0,1);
+	draw_set_alpha(0.85);
+	draw_line_width_color(barStartX,barStartY+12.5,barStartX+progression*505,barStartY+12.5,barThickness,global.orange,c_yellow);
+	draw_set_alpha(1);
+	draw_rectangle_color(barStartX,barStartY,barLength,barStartY+25,c_silver,c_silver,c_white,c_white,true);
+	draw_rectangle_color(barStartX+0.5,barStartY+0.5,barLength-1,barStartY+barThickness-1,c_white,c_white,c_silver,c_silver,true);
+	draw_set_font(fnt_NewNormalText);
+	draw_set_valign(fa_center);
+	draw_set_halign(fa_center);
+	draw_text_transformed_color(barLength/2+35,barStartY+17.5,"Character Progression: " + string(int64(progression*100)) +"%",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_set_valign(fa_left);
+	draw_set_halign(fa_top);
 }
 #endregion
 #region The Blood Knight
@@ -178,6 +224,20 @@ if (playerShowInfoFor == Character.BloodKnight)
 	draw_text_transformed_color(startX,startY+sep*19,"Shoot an uncontrollable blood beam towards",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*20,"mouse direction. It deals massive damage.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*21,"",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	
+	var progression = (((gameMaster.bloodKnightProgress-1)/1.5)/18);
+	progression = clamp(progression,0,1);
+	draw_set_alpha(0.85);
+	draw_line_width_color(barStartX,barStartY+12.5,barStartX+progression*505,barStartY+12.5,barThickness,global.orange,c_yellow);
+	draw_set_alpha(1);
+	draw_rectangle_color(barStartX,barStartY,barLength,barStartY+25,c_silver,c_silver,c_white,c_white,true);
+	draw_rectangle_color(barStartX+0.5,barStartY+0.5,barLength-1,barStartY+barThickness-1,c_white,c_white,c_silver,c_silver,true);
+	draw_set_font(fnt_NewNormalText);
+	draw_set_valign(fa_center);
+	draw_set_halign(fa_center);
+	draw_text_transformed_color(barLength/2+35,barStartY+17.5,"Character Progression: " + string(int64(progression*100)) +"%",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_set_valign(fa_left);
+	draw_set_halign(fa_top);
 }
 #endregion
 #region The Plaguewalker
@@ -218,6 +278,20 @@ if (playerShowInfoFor == Character.PlaugeWalker)
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*21,"Summons a big zombie. The zombie plaguelings",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*22,"over time.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+
+	var progression = (((gameMaster.plaugeWalkerProgress-1)/1.5)/18);
+	progression = clamp(progression,0,1);
+	draw_set_alpha(0.85);
+	draw_line_width_color(barStartX,barStartY+12.5,barStartX+progression*505,barStartY+12.5,barThickness,global.orange,c_yellow);
+	draw_set_alpha(1);
+	draw_rectangle_color(barStartX,barStartY,barLength,barStartY+25,c_silver,c_silver,c_white,c_white,true);
+	draw_rectangle_color(barStartX+0.5,barStartY+0.5,barLength-1,barStartY+barThickness-1,c_white,c_white,c_silver,c_silver,true);
+	draw_set_font(fnt_NewNormalText);
+	draw_set_valign(fa_center);
+	draw_set_halign(fa_center);
+	draw_text_transformed_color(barLength/2+35,barStartY+17.5,"Character Progression: " + string(int64(progression*100)) +"%",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_set_valign(fa_left);
+	draw_set_halign(fa_top);
 }
 #endregion
 #region The Agent Of God
@@ -230,9 +304,9 @@ if (playerShowInfoFor == Character.AgentOfGod)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*00-5,"Passive:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*01,"A holy beam from above follows your mouse",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*02,"cursor and deals damage to enemies. Dealing",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*03,"damage to an enemy increases your speed.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*01,"Every second a projectiles falls down at your",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*02,"cursor dealing damage. Attack speed reduces",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*03,"the cooldown of this power.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*05.5-5,"Attack - Left Click: ",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
@@ -242,20 +316,35 @@ if (playerShowInfoFor == Character.AgentOfGod)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*09-5,"Ability - Right Click:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*10,"Teleport yourself to cursor and place a holy",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*11,"ground which deals damage to your enemies.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*10,"Strike forward with the Godsword dealing",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*11,"damage to enemies hit by the strike. Hiting an",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*12,"enemy reduces the cooldown by 75%.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*13.5-5,"Dash - Space:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*14.5-5,"Dash - Space:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*14.5,"Dash a long distance and fire a massive holy",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*15.5,"fireball towards the direction of your dash.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*15.5,"Dash, fire a massive holy fireball towards",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*16.5,"the direction of your dash.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*18-5,"Ultimate - R:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*19-5,"Ultimate - R:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*19,"Breathe holy fire towards mouse cursor for 5 ",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*20,"seconds.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*20,"Breathe holy fire towards mouse cursor for 5",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*21,"seconds.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+
+	var progression = (((gameMaster.agentOfGodProgress-1)/1.5)/18);
+	progression = clamp(progression,0,1);
+	draw_set_alpha(0.85);
+	draw_line_width_color(barStartX,barStartY+12.5,barStartX+progression*505,barStartY+12.5,barThickness,global.orange,c_yellow);
+	draw_set_alpha(1);
+	draw_rectangle_color(barStartX,barStartY,barLength,barStartY+25,c_silver,c_silver,c_white,c_white,true);
+	draw_rectangle_color(barStartX+0.5,barStartY+0.5,barLength-1,barStartY+barThickness-1,c_white,c_white,c_silver,c_silver,true);
+	draw_set_font(fnt_NewNormalText);
+	draw_set_valign(fa_center);
+	draw_set_halign(fa_center);
+	draw_text_transformed_color(barLength/2+35,barStartY+17.5,"Character Progression: " + string(int64(progression*100)) +"%",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_set_valign(fa_left);
+	draw_set_halign(fa_top);
 }
 #endregion
 #region The Graveling
@@ -287,14 +376,28 @@ if (playerShowInfoFor == Character.Graveling)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*14.5-5,"Ability 2 - Space:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*15.5,"Place an area that damages enemies and boosts",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*16.5,"your speed when standing inside the area.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	
+	draw_text_transformed_color(startX,startY+sep*15.5,"Dash, place an area which damages enemies",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*16.5,"and increases your speed.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	//Dash, place an area which damages enemies and increases your speed.
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*19-5,"Ultimate - R:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*20,"Dash and deal massive damage to enemies.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*21,"More movement speed equals more damage.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+
+	var progression = (((gameMaster.gravelingProgress-1)/1.5)/18);
+	progression = clamp(progression,0,1);
+	draw_set_alpha(0.85);
+	draw_line_width_color(barStartX,barStartY+12.5,barStartX+progression*505,barStartY+12.5,barThickness,global.orange,c_yellow);
+	draw_set_alpha(1);
+	draw_rectangle_color(barStartX,barStartY,barLength,barStartY+25,c_silver,c_silver,c_white,c_white,true);
+	draw_rectangle_color(barStartX+0.5,barStartY+0.5,barLength-1,barStartY+barThickness-1,c_white,c_white,c_silver,c_silver,true);
+	draw_set_font(fnt_NewNormalText);
+	draw_set_valign(fa_center);
+	draw_set_halign(fa_center);
+	draw_text_transformed_color(barLength/2+35,barStartY+17.5,"Character Progression: " + string(int64(progression*100)) +"%",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_set_valign(fa_left);
+	draw_set_halign(fa_top);
 }
 #endregion
 #region The Angel Slayer
@@ -331,6 +434,20 @@ if (playerShowInfoFor == Character.AngelSlayer)
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*17,"Gain 50% movement speed and attack",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*18,"constantly for 6 seconds. During this time you",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*19,"cant use any ability.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*19,"cant use any abilities.",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+
+	var progression = (((gameMaster.angelSlayerProgress-1)/1.5)/18);
+	progression = clamp(progression,0,1);
+	draw_set_alpha(0.85);
+	draw_line_width_color(barStartX,barStartY+12.5,barStartX+progression*505,barStartY+12.5,barThickness,global.orange,c_yellow);
+	draw_set_alpha(1);
+	draw_rectangle_color(barStartX,barStartY,barLength,barStartY+25,c_silver,c_silver,c_white,c_white,true);
+	draw_rectangle_color(barStartX+0.5,barStartY+0.5,barLength-1,barStartY+barThickness-1,c_white,c_white,c_silver,c_silver,true);
+	draw_set_font(fnt_NewNormalText);
+	draw_set_valign(fa_center);
+	draw_set_halign(fa_center);
+	draw_text_transformed_color(barLength/2+35,barStartY+17.5,"Character Progression: " + string(int64(progression*100)) +"%",0.075,0.075,0,c_white,c_white,c_white,c_white,1);
+	draw_set_valign(fa_left);
+	draw_set_halign(fa_top);
 }
 #endregion

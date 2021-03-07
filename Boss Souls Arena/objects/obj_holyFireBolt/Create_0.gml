@@ -3,4 +3,6 @@
 destroy = true;
 timeToDestroy = (10)*30;
 image_blend = c_aqua;
+dontDestroy = false;
+type = 1;
 //sound

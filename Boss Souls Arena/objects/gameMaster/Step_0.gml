@@ -70,10 +70,15 @@ if (keyboard_check_released(ord("F")))
 	}
 }
 // DeathScreen go away auto
-if (menu == Menues.Death)
+if (menu == Menues.Death || menu == Menues.BossSlain)
 {
 	autoGoToMenuStacks++;
-	if (autoGoToMenuStacks >= (4)*30)
+	if (menu == Menues.Death && autoGoToMenuStacks >= (4)*30)
+	{
+		autoGoToMenuStacks = 0;
+		queLeave = true;	
+	}
+	if (menu == Menues.BossSlain && autoGoToMenuStacks >= (12)*30)
 	{
 		autoGoToMenuStacks = 0;
 		queLeave = true;	
