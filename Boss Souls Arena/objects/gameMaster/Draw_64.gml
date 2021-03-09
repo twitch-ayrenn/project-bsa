@@ -259,7 +259,7 @@ if (menu == Menues.BossLoot)
 	var spdCalc = 20 + bonusSpeed + previewSpeed
 	var spdText = "Movement Speed: " + string(20 + bonusSpeed + previewSpeed);
 	var dlCalc = 1 + (0 + bonusDash + previewDash)*0.01;
-	var dlText = "Dash Distance: " + string(0 + bonusDash + previewDash) + "%";
+	var dlText = "Extra Dash Distance: " + string(0 + bonusDash + previewDash) + "%";
 	var dmgCalc = 10 + bonusDamage + previewDamage;
 	if (global.itemSelected[Boss.AngelKnightOscar] == true){dmgCalc *= 0.55;}
 	var dmgText = "Damage Scaling: " + string(int64(dmgCalc*10)-100)  + "%";

@@ -40,7 +40,8 @@ moveSpeed = 2;
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
 moveDirection = 0; 
-global.damage = 1*1;
+global.damage = 1;
+if (global.relase == true && global.deBugg == false){global.damage = 1;}
 baseLifeSteal = 0.8;
 global.lifeSteal = baseLifeSteal;
 dashSpeed = 5;

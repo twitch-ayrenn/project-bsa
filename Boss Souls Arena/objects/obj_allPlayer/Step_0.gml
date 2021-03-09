@@ -818,7 +818,7 @@ if (mouse_x < x)
 			}
 		}
 		if (aGDashStopLeft > 0){aGDashStopLeft--;}
-		if (aGDashStopLeft <= 0)
+		if (aGDashStopLeft <= 0 && actualAGDashSpeed > 0)
 		{
 			actualAGDashSpeed -= dashSpeed*3.25;
 			with (obj_godsword){state = MeleeWeaponStates.idle;}
@@ -1760,7 +1760,7 @@ if (mouse_x < x)
 if (class == Character.AgentOfGod)
 {
 	agentPassiveStacks++
-	if (agentPassiveStacks >= (1)*30*leftClickCooldown/(leftClickCooldown*(1 + gameMaster.bonusFirerate/100)))
+	if (agentPassiveStacks >= (2)*30*leftClickCooldown/(leftClickCooldown*(1 + gameMaster.bonusFirerate/100)))
 	{
 		agentPassiveStacks = 0;
 		

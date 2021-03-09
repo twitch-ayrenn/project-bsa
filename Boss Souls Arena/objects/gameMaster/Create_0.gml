@@ -4,14 +4,17 @@
 //dont use Save.dat, always use a new verisor//Save.dat.full0.3
 //global.saveFile = "Save.alpha.0.65"; gaygang release
 menu = 0;
-global.saveFile = "Save.Beta.V.14";//13
-if (file_exists(global.saveFile) == true)
+//Versions
+global.relase = false;//true
+global.deBugg = true;//false
+global.saveFile = "Save.Beta.V.15";//13
+if (file_exists(global.saveFile) == true && global.deBugg == false)
 {
-	//game_load(global.saveFile);
+	game_load(global.saveFile);
 }
-if (file_exists(global.saveFile) == false)
+if (file_exists(global.saveFile) == false && global.deBugg == false)
 {
-	//game_save(global.saveFile);
+	game_save(global.saveFile);
 }
 room_goto(rm_beforeGame);
 enum Menues
@@ -120,9 +123,7 @@ chosenClass = 0;
 chosenBoss = 0;
 chosenMode = 0;
 global.player = obj_allPlayer;
-//Versions
-global.relase = false;//true
-global.deBugg = true;//false
+
 //colors
 global.orange = make_color_rgb(255,140,0);
 global.goldColor = make_color_rgb(218,165,32);
@@ -146,7 +147,7 @@ settingsColor = global.darkYellow;
 creditsColor = global.darkYellow;
 controllsColor = global.darkYellow;
 //settings
-global.musicOn = false;//true
+global.musicOn = true;//true
 global.musicVolume = 0.25;
 global.soundOn = true;
 global.ShowInfo = false;
@@ -155,7 +156,7 @@ global.colorBlindText = false;
 global.autoAim = false;
 global.screenShake = true;
 global.dashTowardsMove = false;
-global.seeAbilitiesInGame = true;
+global.seeAbilitiesInGame = false;
 //tutorial
 global.tutorial = false;
 global.tutorialBoss = false;
@@ -182,7 +183,7 @@ backColor = c_maroon;
 backSize = 1;
 global.slidingSpeed = 2.5;
 global.campaignDifficulty = 1;
-global.maxDifficulty = 1.25;
+global.maxDifficulty = 1.35;
 global.minDifficulty = 0.75;
 //Alpha 
 deathAlpha = 0;
@@ -305,6 +306,7 @@ if (global.deBugg == true)
 	global.itemCrown = true;
 	global.itemBossRush = true;
 	global.itemAllCampaign = true;
+	global.musicOn = false;
 }
 if (global.relase == true)
 {

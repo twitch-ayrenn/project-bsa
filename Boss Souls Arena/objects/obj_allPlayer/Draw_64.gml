@@ -183,22 +183,25 @@ draw_set_halign(fa_left);
 
 
 //cursor
-var cursorSize = 2;
-//left click
-if (canLeftClick == true){draw_sprite_part_ext(spr_newCursor1,0,0,20,33,5,device_mouse_x_to_gui(0)-40,device_mouse_y_to_gui(0)-5,cursorSize,cursorSize,leftClickColor,1);}
-if (canLeftClick == false){draw_sprite_part_ext(spr_newCursor1,0,0,20,33,5,device_mouse_x_to_gui(0)-40,device_mouse_y_to_gui(0)-5,cursorSize,cursorSize,c_dkgray,1);}
-//ult
-if (canUlt == true){draw_sprite_part_ext(spr_newCursor1,0,0,0,41,20,device_mouse_x_to_gui(0)-39,device_mouse_y_to_gui(0)-45,cursorSize,cursorSize,ultColor,1);}
-if (canUlt == false){draw_sprite_part_ext(spr_newCursor1,0,0,0,41,20,device_mouse_x_to_gui(0)-39,device_mouse_y_to_gui(0)-45,cursorSize,cursorSize,c_dkgray,1);}
-//rightclick
-if (canRightClick == true){draw_sprite_part_ext(spr_newCursor1,0,33,20,8,5,device_mouse_x_to_gui(0)+26,device_mouse_y_to_gui(0)-5,cursorSize,cursorSize,rightClickColor,1);}
-if (canRightClick == false){draw_sprite_part_ext(spr_newCursor1,0,33,20,8,5,device_mouse_x_to_gui(0)+26,device_mouse_y_to_gui(0)-5,cursorSize,cursorSize,c_dkgray,1);}
-//dash
-if (canDash == true){draw_sprite_part_ext(spr_newCursor1,0,0,25,41,17,device_mouse_x_to_gui(0)-40,device_mouse_y_to_gui(0)+5,cursorSize,cursorSize,dashColor,1);}
-if (canDash == false){draw_sprite_part_ext(spr_newCursor1,0,0,25,41,17,device_mouse_x_to_gui(0)-40,device_mouse_y_to_gui(0)+5,cursorSize,cursorSize,c_dkgray,1);}
+var cursorSize = 4;
+draw_sprite_ext(spr_newCursor12,0,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),cursorSize,cursorSize,0,c_white,1);
+if (canLeftClick == true){draw_sprite_ext(spr_newCursor12,1,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),cursorSize,cursorSize,0,leftClickColor,1);}
+else{draw_sprite_ext(spr_newCursor12,1,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),cursorSize,cursorSize,0,c_gray,1);}
+if (canUlt == true){draw_sprite_ext(spr_newCursor12,2,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),cursorSize,cursorSize,0,ultColor,1);}
+else{draw_sprite_ext(spr_newCursor12,2,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),cursorSize,cursorSize,0,c_gray,1);}
+if (canRightClick == true){draw_sprite_ext(spr_newCursor12,3,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),cursorSize,cursorSize,0,rightClickColor,1);}
+else{draw_sprite_ext(spr_newCursor12,3,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),cursorSize,cursorSize,0,c_gray,1);}
+if (canDash == true){draw_sprite_ext(spr_newCursor12,4,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),cursorSize,cursorSize,0,dashColor,1);}
+else{draw_sprite_ext(spr_newCursor12,4,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),cursorSize,cursorSize,0,c_gray,1);}
 if (gameMaster.chosenClass == Character.Pyromancer && drawCharge)
-{
-	draw_healthbar(device_mouse_x_to_gui(0)-50,device_mouse_y_to_gui(0)+40,device_mouse_x_to_gui(0)+50,device_mouse_y_to_gui(0)+50,(charge/maxCharge)*100,c_black,c_orange,global.orange,0,true,true);
+{	
+	draw_healthbar(device_mouse_x_to_gui(0)-40,device_mouse_y_to_gui(0)+40,device_mouse_x_to_gui(0)+45,device_mouse_y_to_gui(0)+50,(charge/maxCharge)*100,c_black,c_orange,global.orange,0,true,false);
+	draw_sprite_ext(spr_newCursor12,5,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),cursorSize,cursorSize,0,c_white,1);
+}
+if (gameMaster.chosenClass == Character.AgentOfGod)
+{	
+	draw_healthbar(device_mouse_x_to_gui(0)-40,device_mouse_y_to_gui(0)+40,device_mouse_x_to_gui(0)+45,device_mouse_y_to_gui(0)+50,(agentPassiveStacks/((2)*30*leftClickCooldown/(leftClickCooldown*(1 + gameMaster.bonusFirerate/100))))*100,c_black,c_teal,c_aqua,0,true,false);
+	draw_sprite_ext(spr_newCursor12,5,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),cursorSize,cursorSize,0,c_white,1);
 }
 //Low Health Vinjett
 if (hp < 0.65*maxHp)
