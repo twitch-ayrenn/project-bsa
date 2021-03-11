@@ -184,7 +184,7 @@ backSize = 1;
 global.slidingSpeed = 2.5;
 global.campaignDifficulty = 1;
 global.maxDifficulty = 1.35;
-global.minDifficulty = 0.75;
+global.minDifficulty = 0.8;
 //Alpha 
 deathAlpha = 0;
 transitionAlpha = 0;

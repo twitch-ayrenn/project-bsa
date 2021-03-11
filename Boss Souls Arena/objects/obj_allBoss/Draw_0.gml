@@ -56,7 +56,10 @@ if (drawArea == true)
 			draw_line_width_color(global.arenaMiddleX+50,y+1000,global.arenaMiddleX+50,y-1000,1,c_lime,c_lime);
 			draw_line_width_color(global.arenaMiddleX+25,y+1000,global.arenaMiddleX+25,y-1000,1,c_lime,c_lime);
 		}
-		
+		if (attack == Atks.ChaseAttack)
+		{
+			draw_line_width_color(x,y,x+600,y,1,c_yellow,c_yellow);
+		}
 	}
 	#endregion
 	#region Knight witch yi
@@ -74,6 +77,12 @@ if (drawArea == true)
 	{
 		draw_line_width_color(x-600,y,x+600,y,1,global.orange,global.orange);
 		draw_line_width_color(x,y-600,x,y+600,1,global.orange,global.orange);
+	}
+	#endregion
+	#region Blood Army General
+	if (gameMaster.chosenBoss == Boss.BloodKnightDavid && attack == Atks.RapidFire)
+	{
+		draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,c_aqua,c_aqua);
 	}
 	#endregion
 	#region Statue Of Corruption
@@ -156,22 +165,18 @@ if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
 {
 	if (phase == 2 || phase == 3)
 	{
-		draw_sprite_ext(spr_demonPortal_1,0,global.arenaMiddleX-175,global.arenaMiddleY,1,1,rotation1,c_white,0.85);
-		draw_sprite_ext(spr_demonPortal_2,0,global.arenaMiddleX-175,global.arenaMiddleY,1,1,rotation2,c_white,0.85);
-		draw_sprite_ext(spr_demonPortal_3,0,global.arenaMiddleX-175,global.arenaMiddleY,1,1,rotation3,c_white,0.85);
+		draw_sprite_ext(sprite_index,image_index,global.arenaMiddleX-175,global.arenaMiddleY,size,size,0,c_white,0.75);
 	}
 	if (phase == 3)
 	{	
-		draw_sprite_ext(spr_demonPortal_1,0,global.arenaMiddleX+175,global.arenaMiddleY,1,1,rotation1+35,c_white,0.85);
-		draw_sprite_ext(spr_demonPortal_2,0,global.arenaMiddleX+175,global.arenaMiddleY,1,1,rotation2+35,c_white,0.85);
-		draw_sprite_ext(spr_demonPortal_3,0,global.arenaMiddleX+175,global.arenaMiddleY,1,1,rotation3+35,c_white,0.85);
+		draw_sprite_ext(sprite_index,image_index,global.arenaMiddleX+175,global.arenaMiddleY,-size,size,0,c_white,0.75);
 	}
 }
 #endregion
 #region Arena King
 if (gameMaster.chosenBoss == Boss.ArenaKing)
 {
-	draw_sprite_ext(spr_boss_arenaKing_idle,image_index,kingCloneX,kingCloneY,image_xscale,image_yscale,0,c_gray,clamp(image_alpha-0.25,0,0.75));	
+	draw_sprite_ext(spr_boss_arenaKing_idle,image_index,kingCloneX,kingCloneY,image_xscale,image_yscale,0,c_gray,clamp(image_alpha-0.30,0,0.75));	
 }
 #endregion
 

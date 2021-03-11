@@ -17,9 +17,9 @@ if (instance_exists(obj_allBoss))
 if (swapPlaces == true)
 {
 	swapPlaces = false;
-	
-	pointToStandX = global.arenaMiddleX +irandom_range(-150,150);
-	pointToStandY = global.arenaMiddleY + irandom_range(-150,150);
+	var rRange = 50;
+	pointToStandX = clamp(global.player.x +irandom_range(-rRange,rRange),450,750);
+	pointToStandY = clamp(global.player.y+ irandom_range(-rRange,rRange),500,725);
 	
 	alarm[0] = (7)*30;
 }

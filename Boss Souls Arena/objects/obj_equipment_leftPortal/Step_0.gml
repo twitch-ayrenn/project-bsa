@@ -70,3 +70,11 @@ if (onCooldown == true && alarmCheck == true)
 	alarmCheck = false;
 	alarm[0] = (global.portalTime)*30;
 }
+var this = id;
+with (obj_enemyProjectile)
+{
+	if (place_meeting(x,y,this) && sprite_index == spr_gooGround)
+	{
+		instance_destroy();
+	}
+}

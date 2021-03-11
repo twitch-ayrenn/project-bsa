@@ -18,8 +18,8 @@ phase3Hp = 0; phase3Ms = 0; phase3Dmg = 0;
 phase4Hp = 0; phase4Ms = 0; phase4Dmg = 0;
 phase5Hp = 0; phase5Ms = 0; phase5Dmg = 0;
 phase6Hp = 0; phase6Ms = 0; phase6Dmg = 0;
-tier1Hp = 400; tier2Hp = 700; tier3Hp = 1000;
-tier4Hp = 1400; tier5Hp = 1800; tier6Hp = 2000;
+tier1Hp = 450; tier2Hp = 800; tier3Hp = 1100;
+tier4Hp = 1500; tier5Hp = 1800; tier6Hp = 2000;
 hp = 0;
 maxHp = hp;
 global.bossDamage = 10;
@@ -304,7 +304,7 @@ isHit = false;
 		{
 			//stats
 			phase1Hp = tier3Hp*0.3; phase1Ms = 1.15; phase1Dmg = 30;
-			phase2Hp = tier3Hp*0.6; phase2Ms = 1.25; phase2Dmg = 32.5;
+			phase2Hp = tier3Hp*0.5; phase2Ms = 1.25; phase2Dmg = 32.5;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -371,7 +371,7 @@ isHit = false;
 			phase = 1;
 			maxPhase = 3;
 			//visual
-			size = 1;
+			size = 1.25;
 			alpha = 1;
 			idleSprite = spr_boss_demonGeneral_idle;
 			beamSprite = spr_boss_demonGeneral_beam;
@@ -613,8 +613,8 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.DemonQueensHead) 
 		{
 			//stats
-			phase1Hp = tier5Hp*0.25; phase1Ms = 0.75; phase1Dmg = 20;
-			phase2Hp = tier5Hp*0.15; phase2Ms = 0.75; phase2Dmg = 20;
+			phase1Hp = tier5Hp*0.20; phase1Ms = 0.75; phase1Dmg = 20;
+			phase2Hp = tier5Hp*0.2; phase2Ms = 0.75; phase2Dmg = 20;
 			phase3Hp = tier5Hp*0.2; phase3Ms = 0.75; phase3Dmg = 20;
 			phase4Hp = tier5Hp*0.4; phase4Ms = 1; phase4Dmg = 30;
 			hp = phase1Hp;
@@ -683,9 +683,9 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.SlimeQueen) 
 		{
 			//stats
-			phase1Hp = tier5Hp*0.25; phase1Ms = 1; phase1Dmg = 32.5;
+			phase1Hp = tier5Hp*0.15; phase1Ms = 1; phase1Dmg = 32.5;
 			phase2Hp = tier5Hp*0.15; phase2Ms = 1.1; phase2Dmg = 37.5;
-			phase3Hp = tier5Hp*0.15; phase3Ms = 1.2; phase3Dmg = 42.5;
+			phase3Hp = tier5Hp*0.25; phase3Ms = 1.2; phase3Dmg = 42.5;
 			phase4Hp = 1500; phase4Ms = 0; phase4Dmg = 35;
 			phase5Hp = tier5Hp*0.45; phase5Ms = 1.3; phase5Dmg = 37.5;
 			hp = phase1Hp;
@@ -697,7 +697,7 @@ isHit = false;
 			phase = 1;
 			maxPhase = 5;
 			//visual
-			size = 2;
+			size = 1;
 			alpha = 1;
 			idleSprite = spr_boss_slimeQueen_idle;
 			oneShotSprite = spr_boss_slimeQueen_oneShot;

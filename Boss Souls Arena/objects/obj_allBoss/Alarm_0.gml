@@ -656,7 +656,7 @@ if (attack == Atks.GooSpawn)
 			gooGround.image_angle = 90;
 			//Visual
 			gooGround.image_alpha = 0.75;
-			gooGround.image_blend = global.orange;
+			gooGround.image_blend = c_maroon;
 			gooGround.sprite_index = spr_gooGround;
 			gooGround.image_xscale = 0.32;
 			gooGround.image_yscale = 0.32;
@@ -667,9 +667,9 @@ if (attack == Atks.GooSpawn)
 		{
 			with (obj_enemyProjectile)
 			{
-				if (sprite_index == gooSprite)
+				if (sprite_index == spr_gooGround)
 				{
-					image_xscale = clamp(image_xscale+0.12,0,2);
+					image_xscale = clamp(image_xscale+0.12,0,1.5);
 					image_yscale = image_xscale;
 				}
 			}
@@ -685,7 +685,7 @@ if (attack == Atks.OneShotAttack)
 		var infernalBall = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
 		//Main
 		infernalBall.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
-		infernalBall.speed = 5;
+		infernalBall.speed = 4.25;
 		infernalBall.image_angle = infernalBall.direction+90;
 		//Visual
 		infernalBall.image_alpha = 0.85;
@@ -699,7 +699,7 @@ if (attack == Atks.OneShotAttack)
 			var infernalBall = instance_create_depth(global.arenaMiddleX-175,global.arenaMiddleY,depth+1,obj_enemyProjectile);
 			//Main
 			infernalBall.direction = point_direction(global.arenaMiddleX-175,global.arenaMiddleY,obj_allPlayer.x,obj_allPlayer.y);
-			infernalBall.speed = 5;
+			infernalBall.speed = 4.5;
 			infernalBall.image_angle = infernalBall.direction+90;
 			//Visual
 			infernalBall.image_alpha = 0.85;
@@ -714,7 +714,7 @@ if (attack == Atks.OneShotAttack)
 			var infernalBall = instance_create_depth(global.arenaMiddleX+175,global.arenaMiddleY,depth+1,obj_enemyProjectile);
 			//Main
 			infernalBall.direction = point_direction(global.arenaMiddleX+175,global.arenaMiddleY,obj_allPlayer.x,obj_allPlayer.y);
-			infernalBall.speed = 5;
+			infernalBall.speed = 4.5;
 			infernalBall.image_angle = infernalBall.direction+90;
 			//Visual
 			infernalBall.image_alpha = 0.85;
@@ -795,7 +795,28 @@ if (attack == Atks.ConeAttack)
 #region ChaseAttack
 if (attack == Atks.ChaseAttack)
 {
-	
+	#region AngelSlayerRekZul
+	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
+	{
+		drawArea = false;
+		var beam = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+		//Main
+		beam.image_angle = -90;
+		//Visual
+		beam.image_alpha = 0.85;
+		beam.image_blend = c_yellow;
+		beam.sprite_index = spr_beam;
+		beam.image_xscale = 0.5;
+		beam.image_yscale = 20;
+		beam.maxSize = 2;
+		beam.minSize = 0.25;
+		beam.stickOn = true;
+		beam.beamChase = true;
+		beam.turningSpeed = 85;
+		beam.destroy = false;
+		beam.effectType = Effect.NoEffect;
+	}
+	#endregion
 }
 #endregion
 #region BeamAttack
@@ -893,9 +914,9 @@ if (attack == Atks.BeamAttack)
 				beam.minSize = 0.25;
 				beam.stickOn = true;
 				beam.beamChase = true;
-				beam.turningSpeed = 45;
+				beam.turningSpeed = 41;
 				beam.destroy = true;
-				beam.range = (2)*30; 
+				beam.range = (2.2)*30; 
 				beam.effectType = Effect.NoEffect;
 				angle += 360/amount;
 			}
@@ -919,9 +940,9 @@ if (attack == Atks.BeamAttack)
 				beam.minSize = 0.25;
 				beam.stickOn = true;
 				beam.beamChase = true;
-				beam.turningSpeed = -45;
+				beam.turningSpeed = -41;
 				beam.destroy = true;
-				beam.range = (2)*30; 
+				beam.range = (2.2)*30; 
 				beam.effectType = Effect.NoEffect;
 				angle += 360/amount;
 			}
@@ -1327,7 +1348,7 @@ if (attack == Atks.CircleAttack)
 			bloodKlot.image_angle = bloodKlot.direction;
 			//Visual
 			bloodKlot.image_alpha = 0.85;
-			bloodKlot.sprite_index = spr_bloodKlott;
+			bloodKlot.sprite_index = spr_fireBall;
 			bloodKlot.image_blend = c_maroon;
 			bloodKlot.image_xscale = 0.75;
 			bloodKlot.image_yscale = 0.75;
@@ -1348,7 +1369,7 @@ if (attack == Atks.CircleAttack)
 			bloodKlot.image_angle = bloodKlot.direction;
 			//Visual
 			bloodKlot.image_alpha = 1;
-			bloodKlot.sprite_index = spr_bloodKlott;
+			bloodKlot.sprite_index = spr_fireBall;
 			bloodKlot.image_blend = c_fuchsia;
 			bloodKlot.image_xscale = 1.3;
 			bloodKlot.image_yscale = 1.3;
@@ -1539,7 +1560,7 @@ if (attack == Atks.ConeAttack)
 	{	
 		var coneWide = 180;
 		var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.5;
-		var coneAmount = 56;
+		var coneAmount = 48;
 		repeat(coneAmount)
 		{
 			var fireBolt = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
@@ -1551,8 +1572,8 @@ if (attack == Atks.ConeAttack)
 			fireBolt.image_alpha = 0.85;
 			fireBolt.sprite_index = spr_fireBall;
 			fireBolt.image_blend = c_dkgray;
-			fireBolt.image_xscale = 0.8;
-			fireBolt.image_yscale = 0.8;
+			fireBolt.image_xscale = 1;
+			fireBolt.image_yscale = 1;
 			fireBolt.effectType = Effect.Flare;
 			coneAtkFW += (coneWide/coneAmount);
 		}
@@ -1617,14 +1638,14 @@ if (attack == Atks.ChaseAttack)
 		var bigSlime = instance_create_depth(obj_allPlayer.x,obj_allPlayer.y-200,depth+1,obj_enemyProjectile);
 		//Main
 		bigSlime.direction = 270;
-		bigSlime.speed = 10.5;
+		bigSlime.speed = 10;
 		//Visual
 		bigSlime.image_alpha = 1;
 		bigSlime.image_blend = c_lime;
 		bigSlime.sprite_index = spr_slime;
 		bigSlime.image_xscale = 1.5;
 		bigSlime.image_yscale = 1.5;
-		bigSlime.range = (0.80)*30;
+		bigSlime.range = (0.84)*30;
 		bigSlime.effectType = Effect.NoEffect;
 		
 		hp -= 45;
@@ -1804,7 +1825,7 @@ if (attack == Atks.TeleportAttack)
 }
 #endregion
 #endregion
-if (attack != Atks.RapidFire)
+if (attack != Atks.RapidFire && attack != Atks.ChaseAttack)
 {
 	attackColor = c_dkgray;
 	sprite_index = cdSprite;

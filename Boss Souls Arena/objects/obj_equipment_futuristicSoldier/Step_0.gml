@@ -47,5 +47,5 @@ if (shoot == true)
 		dagger.image_blend = c_silver;
 	}
 	
-	alarm[0] = global.fSFireRate*3*choose(0.75,1,1.25);
+	alarm[0] = global.fSFireRate*3*choose(0.9,1,1.1);
 }

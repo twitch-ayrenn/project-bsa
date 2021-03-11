@@ -87,6 +87,14 @@
             }
         },
         {
+            "Key": "02619ff8-f39d-4d6f-ae4f-6e5e72e46b87",
+            "Value": {
+                "id": "b4bd3908-513f-44ea-87da-c0b5d2345a94",
+                "resourcePath": "sprites\\spr_boss_bloodArmyGeneral_idle1\\spr_boss_bloodArmyGeneral_idle1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "028a5c78-f2cd-4144-bfe2-19e227344076",
             "Value": {
                 "id": "fa407c50-28f7-41e2-9457-d783c22d71e1",
@@ -2044,6 +2052,14 @@
                 "id": "f50c6aec-c5f3-4249-8831-cbdb6699a728",
                 "resourcePath": "views\\52dd31b4-63f7-4b07-bd3c-f52029ad9646.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "530c01cf-22e0-4d69-a8e6-3a6aec4a0130",
+            "Value": {
+                "id": "db34c259-f0c5-4dc5-a2fd-893c0d734a06",
+                "resourcePath": "sprites\\spr_loot_EdgeOfCorruption1\\spr_loot_EdgeOfCorruption1.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -5583,6 +5599,14 @@
             }
         },
         {
+            "Key": "e36e3604-73e8-4ecf-8d44-1a9382930682",
+            "Value": {
+                "id": "198b4ce6-cf7e-41cb-81a5-f26fd049f7d6",
+                "resourcePath": "sprites\\spr_boss_bloodArmyGeneral_cd\\spr_boss_bloodArmyGeneral_cd.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e3787643-d9be-43d3-bee4-2cb07ca1eb79",
             "Value": {
                 "id": "be602776-2fa8-4674-bed3-29acd31844d0",
@@ -6378,7 +6402,7 @@
             "Key": "feeb0093-b6ad-4cdd-87b9-d7d78dd812b6",
             "Value": {
                 "id": "f29dfaa3-785b-4c44-a520-f2f9d9ec925e",
-                "resourcePath": "sprites\\spr_boss_bloodArmyGeneral_cd\\spr_boss_bloodArmyGeneral_cd.yy",
+                "resourcePath": "sprites\\spr_boss_bloodArmyGeneral_cd1\\spr_boss_bloodArmyGeneral_cd1.yy",
                 "resourceType": "GMSprite"
             }
         },

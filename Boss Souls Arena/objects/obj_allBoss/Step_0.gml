@@ -905,27 +905,10 @@ if(chooseAnAttack == true)
 			}
 		}
 		#endregion
-		#region AngelSlayerRekZul
 		if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
 		{
-			var beam = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
-			//Main
-			beam.image_angle = -90;
-			//Visual
-			beam.image_alpha = 0.85;
-			beam.image_blend = c_yellow;
-			beam.sprite_index = spr_beam;
-			beam.image_xscale = 0.5;
-			beam.image_yscale = 20;
-			beam.maxSize = 2;
-			beam.minSize = 0.25;
-			beam.stickOn = true;
-			beam.beamChase = true;
-			beam.turningSpeed = 85;
-			beam.destroy = false;
-			beam.effectType = Effect.NoEffect;
+			drawArea = true;
 		}
-		#endregion
 		#region Gravekeeper
 		if (gameMaster.chosenBoss == Boss.Gravekeeper)
 		{
@@ -1024,7 +1007,7 @@ if(chooseAnAttack == true)
 		{
 			var beam = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY+400,depth+1,obj_enemyProjectile);
 			//Main
-			beam.image_angle = -60-90;
+			beam.image_angle = 180-90;
 			//Visual
 			beam.image_alpha = 0.85;
 			beam.image_blend = global.orange;
@@ -1036,13 +1019,13 @@ if(chooseAnAttack == true)
 			beam.stickOn = true;
 			beam.beamChase = true;
 			beam.turningSpeed = 15;
-			beam.range = 12*30;
+			beam.range = 13*30;
 			beam.destroy = true;
 			beam.effectType = Effect.NoEffect;
 			
 			var beam1 = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY+400,depth+1,obj_enemyProjectile);
 			//Main
-			beam1.image_angle = -120-90;
+			beam1.image_angle = 240-90;
 			//Visual
 			beam1.image_alpha = 0.85;
 			beam1.image_blend = global.orange;
@@ -1054,7 +1037,7 @@ if(chooseAnAttack == true)
 			beam1.stickOn = true;
 			beam1.beamChase = true;
 			beam1.turningSpeed = 15;
-			beam1.range = 12*30;
+			beam1.range = 13*30;
 			beam1.destroy = true;
 			beam1.effectType = Effect.NoEffect;
 		}
@@ -1260,6 +1243,7 @@ if (hp <= 0 && phase == 1 && phase != maxPhase)
 				instance_destroy();	
 			}
 		}
+		size += 0.25;
 	}
 	#endregion
 }
@@ -1297,6 +1281,7 @@ if (hp <= 0 && phase == 2 && phase != maxPhase)
 				instance_destroy();	
 			}
 		}
+		size += 0.25;
 	}
 	#endregion
 }
@@ -1335,6 +1320,7 @@ if (hp <= 0 && phase == 3 && phase != maxPhase)
 				instance_destroy();	
 			}
 		}
+		size += 0.5;
 	}
 	#endregion
 }

@@ -37,7 +37,7 @@ if (type = CrowdType.DoodleWithPants)
 if (type = CrowdType.CloakedDoodle)
 {
 	sprite_index = spr_crowd_cloaked_1;
-	bodyColor = choose(c_aqua,c_fuchsia,c_purple,c_red,global.skyBlue);
+	bodyColor = choose(c_teal,c_fuchsia,c_purple,c_maroon,global.skyBlue);
 	image_blend = bodyColor;
 	alpha = 0.75;
 	image_alpha = alpha;

@@ -40,7 +40,7 @@ moveSpeed = 2;
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
 moveDirection = 0; 
-global.damage = 1;
+global.damage = 3;
 if (global.relase == true && global.deBugg == false){global.damage = 1;}
 baseLifeSteal = 0.8;
 global.lifeSteal = baseLifeSteal;
@@ -316,7 +316,7 @@ if (global.itemSelected[Boss.StatueOfCorruption] == true && global.slot2 == fals
 {
 	itemsRolled = 0;
 	counter = 1;
-	while(itemsRolled < global.maxItemSlots + 2)
+	while(itemsRolled < global.maxItemSlots + 3)
 	{
 		if (counter == 6 || counter == 10){counter++;}
 		if (counter == 9 || counter == 13){counter += 2;}
@@ -357,7 +357,7 @@ if (global.itemSelected[Boss.WispSisterJulia] == true)
 		instance_create_depth(x+irandom_range(-5,5),y+irandom_range(-5,5),-y,obj_equipment_futuristicSoldier);	
 	}
 	global.fSFireRate = (1)*30;
-	global.fSFireRate *= 1 - clamp((gameMaster.bonusCooldown/100)*1.25,0,0.9);
+	global.fSFireRate *= 1 - clamp((gameMaster.bonusCooldown/100)*2,0,0.9);
 }
 #endregion
 #region Angel Slayer / Nether Portal
@@ -434,7 +434,7 @@ if (global.itemSelected[Boss.DeathKing] == true)
 		if (class != Character.Graveling)
 		{
 			var deathBatRange = instance_create_depth(x,y,depth,obj_deathBatRange);
-			deathBatRange.image_xscale *= 1+(gameMaster.bonusDash/100);
+			deathBatRange.image_xscale *= 1;
 			deathBatRange.image_yscale = deathBatRange.image_xscale;
 		}
 		teleportRange = 96;
