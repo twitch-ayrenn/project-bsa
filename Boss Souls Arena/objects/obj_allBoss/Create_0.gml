@@ -346,12 +346,12 @@ isHit = false;
 			//visual
 			size = 1;
 			alpha = 1;
-			idleSprite = spr_boss_angelKnightOscar_idle;
-			circleSprite = spr_boss_angelKnightOscar_circle;
-			beamSprite = spr_boss_angelKnightOscar_beam;
-			coneSprite = spr_boss_angelKnightOscar_cone;
-			rapidFireSprite = spr_boss_angelKnightOscar_rapidFire;
-			cdSprite = spr_boss_angelKnightOscar_cd;
+			idleSprite = spr_boss_angelKnight_idle;
+			circleSprite = spr_boss_angelKnight_circle;
+			beamSprite = spr_boss_angelKnight_beam;
+			coneSprite = spr_boss_angelKnight_cone;
+			rapidFireSprite = spr_boss_angelKnight_rapidFire;
+			cdSprite = spr_boss_angelKnight_cd;
 			//boss specifc
 		}
 		#endregion

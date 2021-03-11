@@ -595,7 +595,7 @@ if (attack == Atks.CircleAttack)
 	if (gameMaster.chosenBoss == Boss.AngelKnightOscar)
 	{
 		var angleBk = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
-		var circleAmount = 50;
+		var circleAmount = 40;
 		repeat(circleAmount)
 		{
 			var swordShot = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
@@ -607,8 +607,8 @@ if (attack == Atks.CircleAttack)
 			swordShot.image_alpha = 0.85;
 			swordShot.sprite_index = spr_fireBall;
 			swordShot.image_blend = c_fuchsia;
-			swordShot.image_xscale = 1;
-			swordShot.image_yscale = 1;
+			swordShot.image_xscale = 1.2;
+			swordShot.image_yscale = 1.2;
 			swordShot.effectType = Effect.Flare;
 			angleBk += (360/circleAmount);
 		}
@@ -784,8 +784,8 @@ if (attack == Atks.ConeAttack)
 			fireBolt.image_alpha = 0.85;
 			fireBolt.sprite_index = spr_fireBall;
 			fireBolt.image_blend = c_aqua;
-			fireBolt.image_xscale = 1;
-			fireBolt.image_yscale = 1;
+			fireBolt.image_xscale = 1.2;
+			fireBolt.image_yscale = 1.2;
 			fireBolt.effectType = Effect.Flare;
 			coneAtkFW += (coneWide/coneAmount);
 		}

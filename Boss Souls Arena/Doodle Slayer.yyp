@@ -255,6 +255,14 @@
             }
         },
         {
+            "Key": "0945bbd5-d8d4-43b5-a067-a3cb0219c163",
+            "Value": {
+                "id": "328ee1f3-3b18-49f5-9689-50e3b4e88602",
+                "resourcePath": "sprites\\spr_boss_angelKnight_idle\\spr_boss_angelKnight_idle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "097beb09-b1de-4ac0-892d-91ba81244f64",
             "Value": {
                 "id": "c4223495-0680-4ff3-a4ef-ccec917ef398",
@@ -1139,6 +1147,14 @@
             "Value": {
                 "id": "87dced55-ed61-4625-a2b8-418212874c30",
                 "resourcePath": "sprites\\spr_chaseDamage\\spr_chaseDamage.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "2b33ad27-075c-4914-82b1-e2d471ce5c70",
+            "Value": {
+                "id": "28a8f811-784d-4119-9027-da6f70cf4eec",
+                "resourcePath": "sprites\\spr_boss_angelKnight_cone\\spr_boss_angelKnight_cone.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2059,6 +2075,14 @@
             "Value": {
                 "id": "db34c259-f0c5-4dc5-a2fd-893c0d734a06",
                 "resourcePath": "sprites\\spr_loot_EdgeOfCorruption1\\spr_loot_EdgeOfCorruption1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "540a48d3-c5c1-486c-8c2e-ec5e616dde5d",
+            "Value": {
+                "id": "bd42b93f-4eaa-48a9-b3cd-7b3e1fe0098a",
+                "resourcePath": "sprites\\spr_boss_angelKnight_rapidFire\\spr_boss_angelKnight_rapidFire.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -4527,6 +4551,14 @@
             }
         },
         {
+            "Key": "b95e3ae2-2ec8-4f7c-8ca0-012511c7ff8a",
+            "Value": {
+                "id": "63d6ff6a-6c8a-4dd3-b193-7f7b49e8fc0e",
+                "resourcePath": "sprites\\sprite460\\sprite460.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b9cfa864-d87f-442c-b6f0-ac0b313aa921",
             "Value": {
                 "id": "42dcd997-bbdf-4598-a635-dbf3852b4a37",
@@ -4788,6 +4820,14 @@
                 "id": "c37b9e8a-9b45-4826-86a9-02440a6b00b3",
                 "resourcePath": "views\\c507b036-67ef-4f61-ae78-377d7638b400.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "c520eb99-1005-43bb-906f-de0760ddb46a",
+            "Value": {
+                "id": "cc57b0b9-7288-42e7-9967-a56197dd7272",
+                "resourcePath": "sprites\\spr_boss_angelKnight_cd\\spr_boss_angelKnight_cd.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -5083,6 +5123,14 @@
             "Value": {
                 "id": "b8f1c833-388b-4fe1-9d39-9182b996fe4e",
                 "resourcePath": "sprites\\spr_boss_theCorrupter_rapidFire\\spr_boss_theCorrupter_rapidFire.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "cfcf1094-c155-4cfb-b19d-cecb3dd93fd2",
+            "Value": {
+                "id": "f9e5f7b7-2208-4f0a-bd67-d9587164d3e7",
+                "resourcePath": "sprites\\spr_boss_angelKnight_beam\\spr_boss_angelKnight_beam.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -6019,6 +6067,14 @@
             "Value": {
                 "id": "bad5fe8b-b99c-4844-a5e3-5ae61ab8c6f9",
                 "resourcePath": "sprites\\spr_boss_angelKnightOscar_heal\\spr_boss_angelKnightOscar_heal.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f07f171a-03c0-4878-b23e-966565a3de60",
+            "Value": {
+                "id": "50027d12-0a46-405f-b075-383f5794e975",
+                "resourcePath": "sprites\\spr_boss_angelKnight_circle\\spr_boss_angelKnight_circle.yy",
                 "resourceType": "GMSprite"
             }
         },
