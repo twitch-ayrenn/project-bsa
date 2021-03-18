@@ -1214,10 +1214,22 @@ if (menu == Menues.BossSelect)
 	if (chosenClass == Character.AgentOfGod){progressionText = "Campaign Progression: " + string(int64(	(((agentOfGodProgress-1)/1.5)/18)*100	)	) + "%";}
 	if (chosenClass == Character.AngelSlayer){progressionText = "Campaign Progression: " + string(int64(	(((angelSlayerProgress-1)/1.5)/18)*100	)	) + "%";}
 
-	draw_text_transformed_color(cX,cY-45,progressionText,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,0.65);
-	draw_text_transformed_color(cX,cY,"Press A or D to scroll in this menu",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,0.65);
+
+	//draw_text_transformed_color(cX,cY-45,progressionText,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,0.65);
+	draw_text_transformed_color(cX,cY,"Press A or D to scroll in this menu",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_halign(fa_left);
-	
+
+	var progression = 0;
+	if (chosenClass == Character.ShadowAssassin){progression = (((assassinProgress-1)/1.5)/global.ca);}
+	if (chosenClass == Character.Pyromancer){progression = (((pyromancerProgress-1)/1.5)/global.ca);}
+	if (chosenClass == Character.BloodKnight){progression = (((bloodKnightProgress-1)/1.5)/global.ca);}
+	if (chosenClass == Character.PlaugeWalker){progression = (((plaugeWalkerProgress-1)/1.5)/global.ca);}
+	if (chosenClass == Character.Graveling){progression = (((gravelingProgress-1)/1.5)/global.ca);}
+	if (chosenClass == Character.AgentOfGod){progression = (((agentOfGodProgress-1)/1.5)/global.ca);}
+	if (chosenClass == Character.AngelSlayer){progression = (((angelSlayerProgress-1)/1.5)/global.ca);}
+	progression = clamp(progression,0,1);
+	draw_line_width_color(800-300-2,782.5,800-300+progression*600,782.5,26,global.orange,c_yellow);
+	draw_rectangle_color(800-300,770+0.5,800+300,770+25,c_white,c_white,c_white,c_white,true);
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);
 	

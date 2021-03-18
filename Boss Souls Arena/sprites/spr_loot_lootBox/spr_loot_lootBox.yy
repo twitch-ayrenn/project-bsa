@@ -48,6 +48,20 @@
                     "mvc": "1.0",
                     "FrameId": "015627a6-f694-443d-bb93-08eacc289ff8",
                     "LayerId": "d3c29dc6-069f-41f7-b17d-1b615c53a74e"
+                },
+                {
+                    "id": "1127131b-a9ee-41b8-b804-1f3338abe4c0",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "015627a6-f694-443d-bb93-08eacc289ff8",
+                    "LayerId": "e9efbd01-b68a-458b-9bf3-6a8fd27a78e5"
+                },
+                {
+                    "id": "e4c9e7dc-6632-4f1a-aec3-e63f50dd9a9f",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "015627a6-f694-443d-bb93-08eacc289ff8",
+                    "LayerId": "91034247-39a0-477f-9b50-97d949209bc7"
                 }
             ]
         }
@@ -57,15 +71,37 @@
     "height": 18,
     "layers": [
         {
-            "id": "d3c29dc6-069f-41f7-b17d-1b615c53a74e",
+            "id": "91034247-39a0-477f-9b50-97d949209bc7",
             "modelName": "GMImageLayer",
             "mvc": "1.0",
             "SpriteId": "ced4131d-fde7-4116-9d75-19eb580f8aed",
             "blendMode": 0,
-            "isLocked": true,
-            "name": "Layer 2",
+            "isLocked": false,
+            "name": "Layer 4",
             "opacity": 100,
             "visible": true
+        },
+        {
+            "id": "d3c29dc6-069f-41f7-b17d-1b615c53a74e",
+            "modelName": "GMImageLayer",
+            "mvc": "1.0",
+            "SpriteId": "ced4131d-fde7-4116-9d75-19eb580f8aed",
+            "blendMode": 2,
+            "isLocked": false,
+            "name": "Layer 2",
+            "opacity": 100,
+            "visible": false
+        },
+        {
+            "id": "e9efbd01-b68a-458b-9bf3-6a8fd27a78e5",
+            "modelName": "GMImageLayer",
+            "mvc": "1.0",
+            "SpriteId": "ced4131d-fde7-4116-9d75-19eb580f8aed",
+            "blendMode": 0,
+            "isLocked": false,
+            "name": "Layer 3",
+            "opacity": 100,
+            "visible": false
         },
         {
             "id": "0630bd32-1017-4834-8c23-38a837a30c66",

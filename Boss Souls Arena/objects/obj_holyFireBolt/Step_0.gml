@@ -1,7 +1,6 @@
 /// @description Insert description here
 image_alpha = 0.8;
 depth = -y-100;
-var this = id;
 if (destroy == true)
 {
 	destroy = false;

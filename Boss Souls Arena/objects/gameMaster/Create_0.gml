@@ -88,6 +88,7 @@ enum Boss
 	CDR = 406,
 	SummoningPower = 407,
 }
+global.ca = 18;
 enum Character
 {
 	ShadowAssassin,
@@ -166,10 +167,6 @@ global.moveUpKey = ord("W");
 global.moveDownKey = ord("S");
 global.moveLeftKey = ord("A");
 global.moveRightKey = ord("D");
-global.basicAttackKey = mb_left;
-global.abilityAttackKey = mb_right;
-global.dashAttackKey = vk_space;
-global.ultimateAttackKey = ord("E");
 //
 global.showDD = false;
 global.showFps = true;

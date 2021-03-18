@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "00a0e595-b244-4f80-a362-99d1ceb7d23b",
+            "Value": {
+                "id": "299ad4c3-bc18-4fd1-a880-c9edd4d07f86",
+                "resourcePath": "rooms\\rm_menu1\\rm_menu1.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "017d540f-1026-41c3-a7d1-235cf885c69a",
             "Value": {
                 "id": "a9ee8262-b514-4d21-8b18-a6503cfd4308",
@@ -2875,6 +2883,14 @@
             "Value": {
                 "id": "3dd010c7-f8bf-4862-a01e-287f259d4322",
                 "resourcePath": "sprites\\bossSoulsIcon\\bossSoulsIcon.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "7ab83576-d631-449c-a2a7-a922fd57e918",
+            "Value": {
+                "id": "6af3833e-8ddf-44a7-9f66-891a3a5c6376",
+                "resourcePath": "sprites\\spr_player_theBloodKnight1\\spr_player_theBloodKnight1.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5732,6 +5748,14 @@
                 "id": "c16ff5a9-875c-4290-b0f4-7bcf5e9e9bb5",
                 "resourcePath": "objects\\obj_visual_deathBat\\obj_visual_deathBat.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "e6232063-b78f-4e51-8188-7838effa42ee",
+            "Value": {
+                "id": "9a1bbf1c-b054-4c30-a591-d2a3d7d8186d",
+                "resourcePath": "sprites\\spr_ruby1\\spr_ruby1.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

@@ -72,7 +72,7 @@
             "isLocked": false,
             "name": "Layer 3",
             "opacity": 100,
-            "visible": true
+            "visible": false
         },
         {
             "id": "883d24ae-5a6c-40b5-b4a9-8902d882b170",
