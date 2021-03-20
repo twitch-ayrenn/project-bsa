@@ -271,6 +271,14 @@
             }
         },
         {
+            "Key": "09633105-0b23-49aa-865d-25451834d757",
+            "Value": {
+                "id": "91727856-98dc-412a-9fcb-58268021966d",
+                "resourcePath": "fonts\\font4\\font4.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "097beb09-b1de-4ac0-892d-91ba81244f64",
             "Value": {
                 "id": "c4223495-0680-4ff3-a4ef-ccec917ef398",
@@ -1031,6 +1039,14 @@
             }
         },
         {
+            "Key": "25d0effd-ce55-4cda-af3d-c266e3798532",
+            "Value": {
+                "id": "c713e675-2b92-48dc-8cf4-6070c6e5b2fa",
+                "resourcePath": "sprites\\sprite468\\sprite468.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "25f82b9c-c069-4172-a68e-6b3fd152c01e",
             "Value": {
                 "id": "67ae0f89-7550-4080-bfc9-5ed87eefca5b",
@@ -1655,6 +1671,14 @@
             }
         },
         {
+            "Key": "3f571226-dd14-4d6e-8cae-ff7412cda721",
+            "Value": {
+                "id": "0b246ece-db6b-48c5-af11-9f9a4712b501",
+                "resourcePath": "objects\\object217\\object217.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "3f5858ac-cce8-4ea3-b714-80fffd5943ab",
             "Value": {
                 "id": "50307e5f-fab9-4eee-92f0-f639e36dcde9",
@@ -2260,6 +2284,14 @@
                 "id": "0dd86867-57c4-487e-98bd-6bf3cd849b70",
                 "resourcePath": "sprites\\spr_boss_deathKing_cd\\spr_boss_deathKing_cd.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "5a0a131f-2ea4-4880-af87-573180a64572",
+            "Value": {
+                "id": "f0ae5979-a1da-48ef-87e8-495e848d2e96",
+                "resourcePath": "views\\5a0a131f-2ea4-4880-af87-573180a64572.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -4588,6 +4620,14 @@
                 "id": "0d2a3af0-9135-4ed0-93c5-8f4ba3185c87",
                 "resourcePath": "sprites\\spr_flameDash_bright\\spr_flameDash_bright.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ba89f527-4def-4494-8cb6-75a83163e9b5",
+            "Value": {
+                "id": "f6fcf06c-ddf1-40c5-89e6-e5a8b4764ee1",
+                "resourcePath": "objects\\object218\\object218.yy",
+                "resourceType": "GMObject"
             }
         },
         {

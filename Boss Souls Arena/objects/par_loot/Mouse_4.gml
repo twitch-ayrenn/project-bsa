@@ -9,13 +9,13 @@ if (global.itemSlots >= 1 && global.itemSelected[bossForThisItem] == false && gl
 	global.itemSelected[bossForThisItem] = true;
 	global.itemSlots -= 1;
 	thisItemSelected = true;
-	y = 124+9
-	if (global.slot1 == false && x == xstart){x = 090+9;global.slot1 = true;}	
-	if (global.slot2 == false && x == xstart){x = 110+9;global.slot2 = true;}
-	if (global.slot3 == false && x == xstart){x = 130+9;global.slot3 = true;}
-	if (global.slot4 == false && x == xstart){x = 150+9;global.slot4 = true;}
-	if (global.slot5 == false && x == xstart){x = 170+9;global.slot5 = true;}
-	if (global.slot6 == false && x == xstart){x = 190+9;global.slot6 = true;}
+	y = 124+9-2
+	if (global.slot1 == false && x == xstart){x = 076+9;global.slot1 = true;}	
+	if (global.slot2 == false && x == xstart){x = 102+9;global.slot2 = true;}
+	if (global.slot3 == false && x == xstart){x = 127+9;global.slot3 = true;}
+	if (global.slot4 == false && x == xstart){x = 152+9;global.slot4 = true;}
+	if (global.slot5 == false && x == xstart){x = 177+9;global.slot5 = true;}
+	if (global.slot6 == false && x == xstart){x = 203+9;global.slot6 = true;}
 	gameMaster.bonusHealth += bonusHealth;
 	gameMaster.bonusSpeed += bonusSpeed;
 	gameMaster.bonusDash += bonusDash;

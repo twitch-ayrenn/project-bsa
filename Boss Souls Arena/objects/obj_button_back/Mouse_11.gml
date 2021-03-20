@@ -2,6 +2,6 @@
 // You can write your code in this editor
 with (gameMaster)
 {
-	backColor = c_maroon;
-	backSize = 1;
+	backColor = global.darkYellow;
+	backSize = 0.7;
 }

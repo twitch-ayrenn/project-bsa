@@ -30,19 +30,19 @@ if (dealDamage == true)
 		{
 			var enemy = instance_nearest(x,y,par_enemy);
 			var player = instance_nearest(x,y,global.player);	
-			var damageDealt = global.damage*5;
+			var damageDealt = global.damage*2;
 			var damageText = instance_create_depth(enemy.x+irandom_range(-8,8),enemy.y+irandom_range(-5,5),enemy.depth-10,obj_textMaker);
 			damageText.color = c_white;
 			damageText.text = damageDealt;
-			hp -= global.damage*5;
+			hp -= global.damage*2;
 			
-			var amountHealed = global.damage*5*global.lifeSteal;
+			var amountHealed = global.damage*2*global.lifeSteal;
 			var healText = instance_create_depth(player.x+irandom_range(-8,8),player.y+irandom_range(-5,5),player.depth-10,obj_textMaker);
 			healText.color = c_lime;
 			healText.text = amountHealed;
 			with (player)
 			{
-				hp += global.damage*5*global.lifeSteal;
+				hp += global.damage*2*global.lifeSteal;
 			}
 		}
 	}

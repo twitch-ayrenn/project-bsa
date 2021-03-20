@@ -2,6 +2,6 @@
 // You can write your code in this editor
 with (gameMaster)
 {
-	clearColor = c_maroon;
-	clearSize = 1;
+	clearColor = global.darkYellow;
+	clearSize = 0.45;
 }

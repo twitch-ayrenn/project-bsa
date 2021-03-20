@@ -1,6 +1,6 @@
 /// @description Insert description here
 with (gameMaster)
 {
-	clearColor = c_red;
-	clearSize = 1.1;
+	clearColor = c_yellow;
+	clearSize = 0.5;
 }

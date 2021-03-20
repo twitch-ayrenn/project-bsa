@@ -2,6 +2,6 @@
 // You can write your code in this editor
 with (gameMaster)
 {
-	fightColor = c_maroon;
+	fightColor = global.darkYellow;
 	fightSize = 1;
 }

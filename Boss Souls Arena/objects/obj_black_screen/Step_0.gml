@@ -20,3 +20,4 @@ if (gameMaster.menu == Menues.PlayerSelect || gameMaster.menu == Menues.Credits 
 	visible = true;
 	if (image_alpha < 0.9){image_alpha += 1.1/30;}
 }
+visible = false;

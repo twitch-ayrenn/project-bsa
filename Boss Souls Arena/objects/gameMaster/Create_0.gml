@@ -124,7 +124,6 @@ chosenClass = 0;
 chosenBoss = 0;
 chosenMode = 0;
 global.player = obj_allPlayer;
-
 //colors
 global.orange = make_color_rgb(255,140,0);
 global.goldColor = make_color_rgb(218,165,32);
@@ -140,13 +139,18 @@ global.greenOutline = make_color_rgb(0,70,0);
 playColor = global.darkYellow;
 playSize = 1;
 playArenaColor = global.darkYellow;;
-clearColor = c_maroon;
-clearSize = 1;
-fightColor = c_maroon;
+clearColor = global.darkYellow;
+clearSize = 0.45;
+fightColor = global.darkYellow;
 fightSize = 1;
 settingsColor = global.darkYellow;
 creditsColor = global.darkYellow;
 controllsColor = global.darkYellow;
+statsColor = global.darkYellow;
+exitColor = global.darkYellow;
+exitSize = 0.7;
+backColor = global.darkYellow;
+backSize = 0.7;
 //settings
 global.musicOn = true;//true
 global.musicVolume = 0.25;
@@ -174,10 +178,7 @@ global.camSize = 4;
 fpsShowTimerStacks = 0;
 fpsShow = "";
 fullscreen = true;
-exitColor = c_maroon;
-exitSize = 1;
-backColor = c_maroon;
-backSize = 1;
+
 global.slidingSpeed = 2.5;
 global.campaignDifficulty = 1;
 global.maxDifficulty = 1.35;

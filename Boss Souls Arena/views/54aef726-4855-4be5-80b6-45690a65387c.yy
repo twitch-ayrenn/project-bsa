@@ -5,7 +5,8 @@
     "name": "54aef726-4855-4be5-80b6-45690a65387c",
     "children": [
         "e1464228-e980-4ec6-aa17-e7e732573f5c",
-        "7a67827b-2b73-433d-9e7f-84bf92eb11f8"
+        "7a67827b-2b73-433d-9e7f-84bf92eb11f8",
+        "ce39cac9-5fd9-4b25-8a87-67a4501bf09a"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_artwork",
