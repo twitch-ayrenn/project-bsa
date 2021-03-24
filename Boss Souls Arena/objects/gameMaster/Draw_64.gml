@@ -1,9 +1,12 @@
 /// @description Insert description here
 var clickOnce = true;
 var startX = 225;
+var debugBoxes = false;
+var gmx = device_mouse_x_to_gui(0);
+var gmy = device_mouse_y_to_gui(0);
 #region Main Menu
 if (menu == Menues.Main)
-{
+{	
 	var normalSize = 0.7;
 	var highlightSize = 0.8;
 	var campaignSize = normalSize;
@@ -20,14 +23,9 @@ if (menu == Menues.Main)
 	var creditsHover = false;
 	var exitGameSize = normalSize;
 	var exitHover = false;
-	
-	var debugBoxes = false;
 		
 	var startY = 300;
 	var sep = 85;
-	
-	var gmx = device_mouse_x_to_gui(0);
-	var gmy = device_mouse_y_to_gui(0);
 	
 	var x1,x2,y1,y2,place,t;
 	
@@ -320,7 +318,7 @@ if (menu == Menues.Main)
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
 	draw_text_transformed_color(startX,90,"Boss Souls",0.95,0.95,0,global.orange,global.orange,c_yellow,c_yellow,1);
-	draw_text_transformed_color(startX,186,"Arena",1.4,1.4,0,c_yellow,c_yellow,global.orange,global.orange,1);
+	draw_text_transformed_color(startX,195,"Arena",1.3,1.3,0,c_yellow,c_yellow,global.orange,global.orange,1);
 	
 	draw_line_width_color(startX,250-3,startX,250+3,425,global.orange,c_yellow);
 	
@@ -1135,79 +1133,128 @@ if (menu == Menues.Settings)
 	draw_set_valign(fa_center);
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,90,"Settings",0.9,0.9,0,c_gray,c_gray,c_white,c_white,1);
-	draw_text_transformed_color(startX-30,140,"And",0.4,0.4,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX-65,143,"And",0.4,0.4,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,190,"Options",0.9,0.9,0,c_white,c_white,c_gray,c_gray,1);
 	draw_set_halign(fa_left)
 	draw_set_valign(fa_top)
 	
-	var headlineSize = 0.5;
-	var settingSize = 0.35;
-	var sep = 50;
-	var startY = 190;
+	draw_line_width_color(startX,240-3,startX,240+3,425,c_gray,c_silver);
+	
+	var headlineSize = 0.4;
+	var settingSize = 0.25;
+	var sep = 32;
+	var startY = 265;
+	var x1,x2,y1,y2,place,t;
 	
 	var pressOnce = true;
-	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 70 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*1 && device_mouse_y_to_gui(0) <startY + sep*2-20)
+	place = 1;
+	x1 = 10;
+	y1 = startY + sep*place;
+	x2 = startX+200;
+	y2 = startY + sep*place+25;
+	if (debugBoxes){draw_rectangle_color(x1,y1,x2,y2,c_white,c_white,c_white,c_white,true);}
+	if (mouse_check_button_released(mb_left) && gmx > x1 && gmy > y1 && gmx < x2 && gmy < y2)
 	{
 		if (window_get_fullscreen() == false && pressOnce == true){window_set_fullscreen(true); pressOnce = false;}
 		if (window_get_fullscreen() == true && pressOnce == true){window_set_fullscreen(false); pressOnce = false;}
 	}
-	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 70 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*2 && device_mouse_y_to_gui(0) <startY + sep*3-20)
+	place = 2;
+	x1 = 10;
+	y1 = startY + sep*place;
+	x2 = startX+200;
+	y2 = startY + sep*place+25;
+	if (debugBoxes){draw_rectangle_color(x1,y1,x2,y2,c_white,c_white,c_white,c_white,true);}
+	if (mouse_check_button_released(mb_left) && gmx > x1 && gmy > y1 && gmx < x2 && gmy < y2)
 	{
 		if (global.screenShake == false && pressOnce == true){global.screenShake = true; pressOnce = false;}
 		if (global.screenShake == true && pressOnce == true){global.screenShake = false; pressOnce = false;}
 	}
-	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 70 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*3 && device_mouse_y_to_gui(0) <startY + sep*4-20)
+	place = 3;
+	x1 = 10;
+	y1 = startY + sep*place;
+	x2 = startX+200;
+	y2 = startY + sep*place+25;
+	if (debugBoxes){draw_rectangle_color(x1,y1,x2,y2,c_white,c_white,c_white,c_white,true);}
+	if (mouse_check_button_released(mb_left) && gmx > x1 && gmy > y1 && gmx < x2 && gmy < y2)
 	{
 		if (global.dashTowardsMove == false && pressOnce == true){global.dashTowardsMove = true; pressOnce = false;}
 		if (global.dashTowardsMove == true && pressOnce == true){global.dashTowardsMove = false; pressOnce = false;}
 	}
-	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 70 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*4 && device_mouse_y_to_gui(0) <startY + sep*5-20)
+	place = 4;
+	x1 = 10;
+	y1 = startY + sep*place;
+	x2 = startX+200;
+	y2 = startY + sep*place+25;
+	if (debugBoxes){draw_rectangle_color(x1,y1,x2,y2,c_white,c_white,c_white,c_white,true);}
+	if (mouse_check_button_released(mb_left) && gmx > x1 && gmy > y1 && gmx < x2 && gmy < y2)
 	{
 		if (global.autoAim == false && pressOnce == true){global.autoAim = true; pressOnce = false;}
 		if (global.autoAim == true && pressOnce == true){global.autoAim = false; pressOnce = false;}
 	}	
-	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 70 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*5 && device_mouse_y_to_gui(0) <startY + sep*6-20)
+	place = 5;
+	x1 = 10;
+	y1 = startY + sep*place;
+	x2 = startX+200;
+	y2 = startY + sep*place+25;
+	if (debugBoxes){draw_rectangle_color(x1,y1,x2,y2,c_white,c_white,c_white,c_white,true);}
+	if (mouse_check_button_released(mb_left) && gmx > x1 && gmy > y1 && gmx < x2 && gmy < y2)
 	{
 		if (global.colorBlindIcons == false && pressOnce == true){global.colorBlindIcons = true; pressOnce = false;}
 		if (global.colorBlindIcons == true && pressOnce == true){global.colorBlindIcons = false; pressOnce = false;}
 	}	
-	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 70 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*6 && device_mouse_y_to_gui(0) <startY + sep*7-20)
+	place = 6;
+	x1 = 10;
+	y1 = startY + sep*place;
+	x2 = startX+200;
+	y2 = startY + sep*place+25;
+	if (debugBoxes){draw_rectangle_color(x1,y1,x2,y2,c_white,c_white,c_white,c_white,true);}
+	if (mouse_check_button_released(mb_left) && gmx > x1 && gmy > y1 && gmx < x2 && gmy < y2)
 	{
 		if (global.colorBlindText == false && pressOnce == true){global.colorBlindText = true; pressOnce = false;}
 		if (global.colorBlindText == true && pressOnce == true){global.colorBlindText = false; pressOnce = false;}
-	}
-	
-	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 70 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*8 && device_mouse_y_to_gui(0) <startY + sep*9-20 && clickOnce)
+	}	
+	place = 9;
+	x1 = 10;
+	y1 = startY + sep*place;
+	x2 = startX+200;
+	y2 = startY + sep*place+25;
+	if (debugBoxes){draw_rectangle_color(x1,y1,x2,y2,c_white,c_white,c_white,c_white,true);}
+	if (mouse_check_button_released(mb_left) && gmx > x1 && gmy > y1 && gmx < x2 && gmy < y2)
 	{
 		clickOnce = false;
 		if (global.musicOn == false && pressOnce == true){global.musicOn = true; pressOnce = false;}
 		if (global.musicOn == true && pressOnce == true){global.musicOn = false; pressOnce = false;}
 	}	
-	if (mouse_check_button_released(mb_left) && device_mouse_x_to_gui(0) > 70 && device_mouse_x_to_gui(0) < 550 && device_mouse_y_to_gui(0) > startY + sep*9 && device_mouse_y_to_gui(0) <startY + sep*10-20)
+	place = 10;
+	x1 = 10;
+	y1 = startY + sep*place;
+	x2 = startX+200;
+	y2 = startY + sep*place+25;
+	if (debugBoxes){draw_rectangle_color(x1,y1,x2,y2,c_white,c_white,c_white,c_white,true);}
+	if (mouse_check_button_released(mb_left) && gmx > x1 && gmy > y1 && gmx < x2 && gmy < y2)
 	{
 		if (global.soundOn == false && pressOnce == true){global.soundOn = true; pressOnce = false;}
 		if (global.soundOn == true && pressOnce == true){global.soundOn = false; pressOnce = false;}
 	}	
 	
-	draw_text_transformed_color(70,startY + sep*0,"Gameplay",headlineSize,headlineSize,0,c_gray,c_gray,c_white,c_white,1);
-	if (window_get_fullscreen() == false){draw_text_transformed_color(80,startY + sep*1,"Fullscreen: Off | F Key To Fullscreen",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
-	if (window_get_fullscreen() == true){draw_text_transformed_color(80,startY + sep*1,"Fullscreen: On | F Key To Fullscreen",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
-	if (global.screenShake == false){draw_text_transformed_color(80,startY + sep*2,"Screen Shake: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
-	if (global.screenShake == true){draw_text_transformed_color(80,startY + sep*2,"Screen Shake: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
-	if (global.dashTowardsMove == false){draw_text_transformed_color(80,startY + sep*3,"Dash Towards Movement Direction: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
-	if (global.dashTowardsMove == true){draw_text_transformed_color(80,startY + sep*3,"Dash Towards Movement Direction: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
-	if (global.autoAim == false){draw_text_transformed_color(80,startY + sep*4,"Aim Assistance: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
-	if (global.autoAim == true){draw_text_transformed_color(80,startY + sep*4,"Aim Assistance: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
-	if (global.colorBlindIcons == false){draw_text_transformed_color(80,startY + sep*5,"Color Blind Attack Icons: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
-	if (global.colorBlindIcons == true){draw_text_transformed_color(80,startY + sep*5,"Color Blind Attack Icons: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
-	if (global.colorBlindText == false){draw_text_transformed_color(80,startY + sep*6,"Color Blind Attack Text: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
-	if (global.colorBlindText == true){draw_text_transformed_color(80,startY + sep*6,"Color Blind Attack Text: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
-	
-	draw_text_transformed_color(70,startY + sep*7,"Audio",0.5,0.5,0,c_gray,c_gray,c_white,c_white,1);
-	if (global.musicOn == false){draw_text_transformed_color(80,startY + sep*8,"Music: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
-	if (global.musicOn == true){draw_text_transformed_color(80,startY + sep*8,"Music: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
-	if (global.soundOn == false){draw_text_transformed_color(80,startY + sep*9,"Sound: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
-	if (global.soundOn == true){draw_text_transformed_color(80,startY + sep*9,"Sound: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+											draw_text_transformed_color(10,startY + sep*-0.5,"Gameplay",headlineSize,headlineSize,0,c_gray,c_gray,c_white,c_white,1);
+	if (window_get_fullscreen() == false){	draw_text_transformed_color(10,startY + sep*1,"Fullscreen: Off | F Key To Fullscreen",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (window_get_fullscreen() == true){	draw_text_transformed_color(10,startY + sep*1,"Fullscreen: On | F Key To Fullscreen",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.screenShake == false){		draw_text_transformed_color(10,startY + sep*2,"Screen Shake: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.screenShake == true){		draw_text_transformed_color(10,startY + sep*2,"Screen Shake: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.dashTowardsMove == false){	draw_text_transformed_color(10,startY + sep*3,"Dash Towards Movement Direction: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.dashTowardsMove == true){	draw_text_transformed_color(10,startY + sep*3,"Dash Towards Movement Direction: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.autoAim == false){			draw_text_transformed_color(10,startY + sep*4,"Aim Assistance: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.autoAim == true){			draw_text_transformed_color(10,startY + sep*4,"Aim Assistance: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.colorBlindIcons == false){	draw_text_transformed_color(10,startY + sep*5,"Color Blind Attack Icons: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.colorBlindIcons == true){	draw_text_transformed_color(10,startY + sep*5,"Color Blind Attack Icons: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.colorBlindText == false){	draw_text_transformed_color(10,startY + sep*6,"Color Blind Attack Text: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.colorBlindText == true){		draw_text_transformed_color(10,startY + sep*6,"Color Blind Attack Text: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+											draw_text_transformed_color(10,startY + sep*7.5,"Audio",headlineSize,headlineSize,0,c_gray,c_gray,c_white,c_white,1);
+	if (global.musicOn == false){			draw_text_transformed_color(10,startY + sep*9,"Music: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.musicOn == true){			draw_text_transformed_color(10,startY + sep*9,"Music: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.soundOn == false){			draw_text_transformed_color(10,startY + sep*10,"Sound: Off",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
+	if (global.soundOn == true){			draw_text_transformed_color(10,startY + sep*10,"Sound: On",settingSize,settingSize,0,c_gray,c_gray,c_white,c_white,1);}
 }
 #endregion
 #region Character Select
@@ -1273,6 +1320,7 @@ if (menu == Menues.Controlls)
 	var sep = 18;
 	var startY = 250;
 	
+	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(10,startY-5 + sep*0,"Controls",headlineSize,headlineSize,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText)
 	draw_text_transformed_color(10,startY + sep*1,"[Move]: Use [W] & [A] & [S] & [D] keys.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
@@ -1311,13 +1359,10 @@ if (menu == Menues.Controlls)
 #endregion
 #region Boss Select
 if (menu == Menues.BossSelect)
-{
-	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(50,50,"Select Fight",1.4,1.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
-	
+{	
 	draw_set_halign(fa_center);
 	var cX = 800;//center x
-	var cY = 450+375;
+	var cY = 450+350;
 	var progressionText = "";
 	if (chosenClass == Character.ShadowAssassin){progressionText = "Campaign Progression: " + string(int64(	(((assassinProgress-1)/1.5)/18)*100	)	) + "%";}
 	if (chosenClass == Character.Pyromancer){progressionText = "Campaign Progression: " + string(int64(	(((pyromancerProgress-1)/1.5)/18)*100	)	) + "%";}
@@ -1326,11 +1371,8 @@ if (menu == Menues.BossSelect)
 	if (chosenClass == Character.Graveling){progressionText = "Campaign Progression: " + string(int64(	(((gravelingProgress-1)/1.5)/18)*100	)	) + "%";}
 	if (chosenClass == Character.AgentOfGod){progressionText = "Campaign Progression: " + string(int64(	(((agentOfGodProgress-1)/1.5)/18)*100	)	) + "%";}
 	if (chosenClass == Character.AngelSlayer){progressionText = "Campaign Progression: " + string(int64(	(((angelSlayerProgress-1)/1.5)/18)*100	)	) + "%";}
-
-
-	//draw_text_transformed_color(cX,cY-45,progressionText,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,0.65);
-	draw_text_transformed_color(cX,cY,"Press A or D to scroll in this menu",0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
-	draw_set_halign(fa_left);
+	
+	draw_text_transformed_color(cX,cY,"Press the A or D keys to scroll left or right",0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);	
 
 	var progression = 0;
 	if (chosenClass == Character.ShadowAssassin){progression = (((assassinProgress-1)/1.5)/global.ca);}
@@ -1341,14 +1383,18 @@ if (menu == Menues.BossSelect)
 	if (chosenClass == Character.AgentOfGod){progression = (((agentOfGodProgress-1)/1.5)/global.ca);}
 	if (chosenClass == Character.AngelSlayer){progression = (((angelSlayerProgress-1)/1.5)/global.ca);}
 	progression = clamp(progression,0,1);
-	draw_line_width_color(800-300-2,782.5,800-300+progression*600,782.5,26,global.orange,c_yellow);
-	draw_rectangle_color(800-300,770+0.5,800+300,770+25,c_white,c_white,c_white,c_white,true);
-	
+	draw_set_alpha(0.85)
+	draw_line_width_color(800-300-2,777.5,800-300+progression*600,777.5,36,global.orange,c_yellow);
+	draw_rectangle_color(800-300,760+0.5,800+300,760+35,c_white,c_white,c_white,c_white,true);
+	draw_set_alpha(1)
+	draw_text_transformed_color(cX,765,"Campaign Progress: " + string(int64(progression*100)) + "%",0.25,0.25,0,c_silver,c_silver,c_white,c_white,1);
+	draw_set_halign(fa_left);
 	if (queFight == true)
 	{
 		if (fightTransitionAlpha < 1){fightTransitionAlpha += clamp(0.4/30,0,1)}
 		draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,fightTransitionAlpha);
-		if (fightTransitionAlpha == 1){room_goto(rm_arena);	menu = Menues.Play; transitionAlpha = 1;queFight = false;}
+		if (fightTransitionAlpha == 1 && global.tutorial == false){room_goto(rm_arena);	menu = Menues.Play; transitionAlpha = 1;queFight = false;}
+		if (fightTransitionAlpha == 1 && global.tutorial == true){room_goto(rm_tutorial);menu = Menues.Play; transitionAlpha = 1;queFight = false;}
 	}
 }
 #endregion
@@ -1356,78 +1402,85 @@ if (menu == Menues.BossSelect)
 if (menu == Menues.Play)
 {
 	//Tutorial
-	if (transitionAlpha > 0 && global.tutorialBoss == false){transitionAlpha -= clamp(0.5/30,0,1)}
-	if (global.tutorial == true)
+	if (room = rm_tutorial)
 	{
-		draw_sprite_ext(spr_tutorial_boss,0,0,0,0.8333*10,0.8333*10,0,c_white,transitionAlpha-0.15);
-		draw_sprite_ext(spr_arenaKingTutorial,0,1400,750,-10,10,0,c_white,transitionAlpha);
-		draw_set_halign(fa_center);
-		var xText = 800;
-		var yText = 580;
-		var textSize = 0.075;
-		var bigTextSize = textSize*1.5;
-		var TSY = 20;
-		
+		draw_set_alpha(0.8);
+		draw_rectangle_color(10,150,510,600,c_black,c_black,c_black,c_black,false);
+		draw_set_alpha(1);
+		draw_rectangle_color(10,150,510,600,global.orange,global.orange,c_yellow,c_yellow,true);
+		var headlineSize = 0.3;
+		var textSize = 0.061;
+		var sep = 18;
+		var startY = 160;
+	
+		draw_set_font(fnt_menu_fill);	
+		draw_text_transformed_color(20,startY-5 + sep*0,"Controls",headlineSize,headlineSize,0,global.orange,global.orange,c_yellow,c_yellow,1);
 		draw_set_font(fnt_NewNormalText)
-		draw_text_transformed_color(800,295,"This is your opponent",bigTextSize,bigTextSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
-		draw_text_transformed_color(800,yText+TSY*0,"Below is its health bar. The small red circles",textSize,textSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
-		draw_text_transformed_color(800,yText+TSY*1,"below it indicate how many phases the boss has.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
-		draw_text_transformed_color(800,yText+TSY*2,"The Crystal in the middle and your opponents eyes",textSize,textSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
-		draw_text_transformed_color(800,yText+TSY*3,"indicate which attack your opponent will do.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
-		draw_text_transformed_color(150,800,"Click Any Key",bigTextSize,bigTextSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
-		draw_text_transformed_color(150,830,"To Continue",bigTextSize,bigTextSize,0,c_white,c_white,c_silver,c_silver,transitionAlpha);
-		draw_set_halign(fa_left);
-		if (tutorialAlpha > 0){tutorialAlpha -= clamp(0.5/30,0,1)}
-		draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,tutorialAlpha);
-	}
-	if (instance_exists(global.player))
-	{
-		if (global.player.state == States.Tutorial && obj_allBoss.state == BossStates.Tutorial && global.tutorialPlayer == true)
+		draw_text_transformed_color(20,startY + sep*1,"[Move]: Use [W] & [A] & [S] & [D] keys",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+		draw_text_transformed_color(20,startY + sep*2,"[Attack]: Use [Left Click] or the [1] key",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+		draw_text_transformed_color(20,startY + sep*3,"[Ability]: Use [Right Click] or [2] key",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+		draw_text_transformed_color(20,startY + sep*4,"[Dash]: Use the [Space] key",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+		draw_text_transformed_color(20,startY + sep*5,"[Ultimate]: Use [Q] or [E] or [R]",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+		draw_text_transformed_color(20,startY + sep*6,"[Main Menu]: Use [ESC] to go back to menu",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+		
+		if (global.player.x < 390) 
 		{
-			if (playerTutorialAlpha < 1 && tutorialFadeOut == false){playerTutorialAlpha += clamp(0.4/30,0,1);}
-			if (tutorialFadeOut == true && playerTutorialAlpha > 0){playerTutorialAlpha -= clamp(0.6/30,0,1);}
-			draw_sprite_ext(spr_tutorial_player,0,0,0,0.8333*10,0.8333*10,0,c_white,playerTutorialAlpha - 0.15);
-			draw_set_halign(fa_center);
-			var xText = 800;
-			var yText = 30;
-			var textSize = 0.075;
-			var bigTextSize = textSize*1.5;
-			var TSY = 20;
-			
-			draw_set_font(fnt_NewNormalText)
-			draw_text_transformed_color(800,550,"This is you.",bigTextSize,bigTextSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			draw_text_transformed_color(xText,yText+TSY*0,"Controlls",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			draw_text_transformed_color(xText,yText+TSY*1,"Move with [W] & [A] & [S] & [D] keys.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			draw_text_transformed_color(xText,yText+TSY*2,"Attack with Left Click or 1",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			draw_text_transformed_color(xText,yText+TSY*3,"[Ability][1]: Right Click or 2",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			draw_text_transformed_color(xText,yText+TSY*4,"[Ability][2]: Space",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			draw_text_transformed_color(xText,yText+TSY*5,"[Ultimate]: Q or E or R",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			draw_text_transformed_color(xText,yText+TSY*6,"Ability cooldowns can be viewed in the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			draw_text_transformed_color(xText,yText+TSY*7,"upper left corner.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			
-			draw_text_transformed_color(xText,yText+TSY*9,"Healing",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			draw_text_transformed_color(xText,yText+TSY*10,"Health is indicated by the big red bar",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			draw_text_transformed_color(xText,yText+TSY*11,"in the upper left corner. You heal by",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			draw_text_transformed_color(xText,yText+TSY*12,"doing damage to your opponent. The best",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			draw_text_transformed_color(xText,yText+TSY*13,"way to to succeed in the arena is to be",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			draw_text_transformed_color(xText,yText+TSY*14,"aggresive and relentless.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-				
-			draw_sprite_ext(spr_arenaKingTutorial,0,1200,250,-10,10,0,c_white,playerTutorialAlpha);
-			draw_set_halign(fa_left);
-			draw_set_halign(fa_center);
-			draw_text_transformed_color(150,800,"Click Any Key",bigTextSize,bigTextSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			draw_text_transformed_color(150,830,"To Continue",bigTextSize,bigTextSize,0,c_white,c_white,c_silver,c_silver,playerTutorialAlpha);
-			draw_set_halign(fa_left);
+		draw_set_font(fnt_menu_fill);	
+		draw_text_transformed_color(20,startY-5 + sep*8,"Attack The Creates",headlineSize,headlineSize,0,global.orange,global.orange,c_yellow,c_yellow,1);
+		draw_set_font(fnt_NewNormalText)	
+		draw_text_transformed_color(20,startY + sep*9,"Attack the creates to proceed. Ability cooldowns",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+		draw_text_transformed_color(20,startY + sep*10,"and Health can be viewd in the upper left corner.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+		draw_text_transformed_color(20,startY + sep*11,"You heal by dealing damage to your opponent.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
 		}
-		if (tutorialFadeOut == true && playerTutorialAlpha == 0)
+		if (global.player.x < 450 && global.player.x >= 390) 
 		{
-			global.tutorialPlayer = false;
-			obj_allBoss.state = BossStates.Fighting;
-			global.player.state = States.Idle;
+		draw_set_font(fnt_menu_fill);	
+		draw_text_transformed_color(20,startY-5 + sep*8,"Dodge Damage",headlineSize,headlineSize,0,global.orange,global.orange,c_yellow,c_yellow,1);
+		draw_set_font(fnt_NewNormalText)	
+		draw_text_transformed_color(20,startY + sep*9,"You can dodge all damage by dashing. You can not be",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+		draw_text_transformed_color(20,startY + sep*10,"hit by projectules while mid dash. Use the [Space] ",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+		draw_text_transformed_color(20,startY + sep*11,"key to dash. Dash trough the projectiles to proceed.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+		}
+		if (global.player.x > 450&& global.player.x < 575) 
+		{
+		draw_set_font(fnt_menu_fill);	
+		draw_text_transformed_color(20,startY-5 + sep*8,"Kill Your Opponent",headlineSize,headlineSize,0,global.orange,global.orange,c_yellow,c_yellow,1);
+		draw_set_font(fnt_NewNormalText)	
+		draw_text_transformed_color(20,startY + sep*9,"Your opponents health is indicated by the healthbar",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+		draw_text_transformed_color(20,startY + sep*10,"below your character. The dots below the health bar ",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+		draw_text_transformed_color(20,startY + sep*11,"indicate how many phases the opponent has. The ",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);	
+		draw_text_transformed_color(20,startY + sep*12,"crystal in the middle indicates what type of attack ",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+		draw_text_transformed_color(20,startY + sep*13,"the opponent will do. All attacks are color coded so",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+		draw_text_transformed_color(20,startY + sep*14,"remember what color represent specific attacks. The ",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+		draw_text_transformed_color(20,startY + sep*15,"eye color of your opponent will also indicate attacks.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+		}
+		if (global.player.x > 575) 
+		{
+		draw_set_font(fnt_menu_fill);	
+		draw_text_transformed_color(20,startY-5 + sep*8,"How To Beat The Arena",headlineSize,headlineSize,0,global.orange,global.orange,c_yellow,c_yellow,1);
+		draw_set_font(fnt_NewNormalText)	
+		draw_text_transformed_color(20,startY + sep*9,"To win you must defeat your opponent. To beat the",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+		draw_text_transformed_color(20,startY + sep*10,"arena you must defeat me, the Arena King. Each",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+		draw_text_transformed_color(20,startY + sep*11,"opponent defeated will make you stronger and bring",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);	
+		draw_text_transformed_color(20,startY + sep*12,"you closer to fighting me. A fight you will lose.",textSize,textSize,0,c_white,c_white,c_silver,c_silver,1);
+		}
+		if (global.player.x > 650 && global.tutorial) 
+		{
+			global.tutorial = false;
+			chosenBoss = Boss.BloodZombie;
+			fightTransitionAlpha = 0;
+			queFight = true;
+		}
+		if (queFight == true)
+		{
+			if (fightTransitionAlpha < 1){fightTransitionAlpha += clamp(0.4/30,0,1)}
+			draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,fightTransitionAlpha);
+			if (fightTransitionAlpha == 1 && global.tutorial == false){room_goto(rm_arena);	menu = Menues.Play; transitionAlpha = 1;queFight = false;}
 		}
 	}
+	if (transitionAlpha > 0){transitionAlpha -= clamp(0.5/30,0,1)}
 	//Fade
-	if (global.tutorial == false){draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,transitionAlpha);}
+	draw_sprite_ext(spr_blackGround,0,0,0,1,1,0,c_white,transitionAlpha);
 	//Boss Text
 	draw_set_font(fnt_menu_fill);
 	if (fightAlpha > 0 && transitionAlpha < 0.75){fightAlpha -= clamp(0.3/30,0,1)}
@@ -1454,18 +1507,18 @@ if (menu == Menues.Play)
 	if(chosenBoss == Boss.SlimeQueen){draw_text_transformed_color(cX,cY,"The Slime Queen",nameSize,nameSize,0,c_lime,global.goldColor,global.goldColor,c_lime,fightAlpha);}
 	if(chosenBoss == Boss.ArenaKing){draw_text_transformed_color(cX,cY,"The Arena King",nameSize,nameSize,0,c_yellow,c_yellow,global.goldColor,global.goldColor,fightAlpha);}
 	draw_set_halign(fa_left);
-	if (transitionAlpha == 0 && instance_exists(obj_allBoss) && instance_exists(global.player) && instance_exists(obj_camera) && checkOnce == true)
+	if (transitionAlpha == 0 && instance_exists(global.player) && instance_exists(obj_camera) && checkOnce == true)
 	{
 		checkOnce = false;
-		obj_allBoss.state = BossStates.Fighting;
+		if (global.tutorial == false){obj_allBoss.state = BossStates.Fighting;}
 		global.player.state = States.Idle;
 		obj_camera.state = CameraStates.PlayerView;
-		if (global.tutorial == true)
+		/*if (global.tutorial == true)
 		{
 			global.player.state = States.Tutorial;
 			obj_allBoss.state = BossStates.Tutorial;
 			global.tutorialPlayer = true;
-		}
+		}*/
 	}
 }
 #endregion
@@ -1473,17 +1526,16 @@ if (menu == Menues.Play)
 if (menu == Menues.BossSlain)
 {
 	draw_set_halign(fa_center);
+	draw_set_valign(fa_center);
 	var cX = 800;//center x
-	var cY = 450-350;
+	var cY = 175;
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(cX,cY,"Victory!",2.5,2.5,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(cX,cY-35,"Boss",1.75,1.75,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(cX+5,cY+75,"Defeated",0.83,0.83,0,c_yellow,c_yellow,global.orange,global.orange,1);
+	draw_line_width_color(cX+5,cY-4-130,cX+5,cY-130+4,375,c_yellow,global.orange);
+	draw_line_width_color(cX+5,cY-4+120,cX+5,cY+120+4,375,global.orange,c_yellow);
 	draw_set_halign(fa_left);
-	
-	if (obj_rewardChest.kingSuprise == false)
-	{
-		draw_set_font(fnt_menu_fill);
-		draw_text_transformed_color(50,760,"Back",backSize,backSize,0,backColor,backColor,backColor,backColor,1);
-	}
+	draw_set_valign(fa_top);
 	
 	if (queLeave == true)
 	{
@@ -1530,7 +1582,7 @@ if (menu == Menues.Death)
 }
 #endregion
 #region Back Button
-if (menu != Menues.Main && menu != Menues.BeforeGame)
+if (menu != Menues.Main && menu != Menues.BeforeGame && menu != Menues.Play)
 {
 	draw_set_font(fnt_menu_fill)
 	draw_set_halign(fa_center);

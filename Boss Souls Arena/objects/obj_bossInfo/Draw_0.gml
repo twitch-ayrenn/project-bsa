@@ -26,6 +26,6 @@ if(showBossInfo == Boss.ArenaKing){			bossText = "The Arena King";}
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 draw_set_font(fnt_menu_fill);
-draw_text_transformed_color(x+2,y+2,bossText,0.12,0.12,0,global.orange,global.orange,c_yellow,c_yellow,1); 
+draw_text_transformed_color(x+2,y+2,bossText,0.2,0.2,0,global.orange,global.orange,c_yellow,c_yellow,1); 
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);

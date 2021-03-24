@@ -1,19 +1,20 @@
 /// @description Insert description here
 if (state == CameraStates.preFightView)
 {
-	follow = obj_allBoss;
 	cameraSpeed = 40;
+	if (distance_to_object(global.player) < 20)
+	{
+		state = CameraStates.PlayerView;
+		obj_allBoss.state = BossStates.Fighting;
+		global.player.state = States.Idle;
+	}
 }
 if (state == CameraStates.PlayerView)
 {
 	follow = global.player;
 	if(cameraSpeed > 1){cameraSpeed -= clamp(2/30,playerCameraSpeed,50);}
 }
-if (distance_to_object(global.player) < 1 && global.tutorial == true && quedTutorial == false)
-{
- 	quedTutorial = true;
-	gameMaster.quePlayerTutorial = true;
-}
+
 //
 x += (xTo - x)/cameraSpeed;
 y += (yTo - y)/cameraSpeed;

@@ -280,7 +280,7 @@ if (attack == Atks.RapidFire)
 {
 	if (gameMaster.chosenBoss == Boss.TheCorrupter)
 	{
-		rapidFireStacks += 5;
+		rapidFireStacks += 4;
 	}
 }
 #endregion
@@ -468,11 +468,11 @@ if (attack == Atks.RapidFire)
 {
 	if (gameMaster.chosenBoss == Boss.WispSisterJulia || gameMaster.chosenBoss == Boss.WispSisters)
 	{
-		rapidFireStacks += 10;
+		rapidFireStacks += 8;
 	}
 	if (gameMaster.chosenBoss == Boss.FlameGate)
 	{
-		rapidFireStacks += 8;
+		rapidFireStacks += 7;
 	}
 }
 #endregion
@@ -955,7 +955,7 @@ if (attack == Atks.RapidFire)
 {
 	if (gameMaster.chosenBoss == Boss.KnightWitchYi)
 	{
-		rapidFireStacks += 7;
+		rapidFireStacks += 6;
 		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
 		//Main
 		gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
@@ -973,11 +973,11 @@ if (attack == Atks.RapidFire)
 	}
 	if (gameMaster.chosenBoss == Boss.AngelKnightOscar)
 	{
-		rapidFireStacks += 5;
+		rapidFireStacks += 4;
 	}
 	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
 	{
-		rapidFireStacks += 8;
+		rapidFireStacks += 6;
 	}
 }
 #endregion
@@ -1280,15 +1280,15 @@ if (attack == Atks.RapidFire)
 {
 	if (gameMaster.chosenBoss == Boss.Gravekeeper)
 	{
-		rapidFireStacks += 8;
+		rapidFireStacks += 7;
 	}
 	if (gameMaster.chosenBoss == Boss.BloodKnightDavid)
 	{
-		rapidFireStacks += 5;
+		rapidFireStacks += 4;
 	}
 	if (gameMaster.chosenBoss == Boss.StatueOfCorruption || gameMaster.chosenBoss == Boss.ArenaKing)
 	{
-		rapidFireStacks += 8;
+		rapidFireStacks += 7;
 		if (gameMaster.chosenBoss == Boss.ArenaKing)
 		{
 			rapidFireStacks -= 2;
@@ -1698,15 +1698,15 @@ if (attack == Atks.RapidFire)
 {
 	if (gameMaster.chosenBoss == Boss.DemonQueensHead)
 	{
-		rapidFireStacks += 6;
+		rapidFireStacks += 5;
 	}
 	if (gameMaster.chosenBoss == Boss.DeathKing)
 	{
-		rapidFireStacks += 8;
+		rapidFireStacks += 7;
 	}
 	if (gameMaster.chosenBoss == Boss.SlimeQueen)
 	{
-		rapidFireStacks += 10;
+		rapidFireStacks += 8;
 	}
 }
 #endregion

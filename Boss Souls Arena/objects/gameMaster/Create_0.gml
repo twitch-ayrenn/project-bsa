@@ -7,7 +7,7 @@ menu = 0;
 //Versions
 global.relase = false;//true
 global.deBugg = true;//false
-global.saveFile = "Save.Beta.V.15";//13
+global.saveFile = "Save.Beta.V.19";
 if (file_exists(global.saveFile) == true && global.deBugg == false)
 {
 	game_load(global.saveFile);
@@ -68,13 +68,7 @@ enum Boss
 	SlimeQueen = 17, 
 	
 	ArenaKing = 18,
-	//canceld Bosses
-	TheMadWitches,//4
-	QueenSerpant,
-	StoneSerpant,
-	ShadowClan,
-	FrostQueenFalak,//6
-	LadyCorruption,
+	TargetDummy = 19,
 	//ExtraItems
 	CampaignReward = 19,
 	BossRushReward = 20,

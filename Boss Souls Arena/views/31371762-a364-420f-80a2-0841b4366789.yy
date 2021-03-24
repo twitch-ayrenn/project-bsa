@@ -24,7 +24,8 @@
         "af5b34a6-ed58-4e51-842c-0b2e1443788d",
         "3cbf60a9-28d4-4b6b-81a5-03ae7e8ec2e9",
         "78a08fc7-e0fa-488c-a384-5ae9b273ddbd",
-        "2b7fd2da-65b1-42d8-afba-91f0bd9bd1e7"
+        "2b7fd2da-65b1-42d8-afba-91f0bd9bd1e7",
+        "8a92782f-e153-4521-bcf9-f6f9afa81494"
     ],
     "filterType": "GMObject",
     "folderName": "grp_props",

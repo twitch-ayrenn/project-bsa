@@ -10,8 +10,12 @@ var darkGray = make_color_rgb(10,10,10);
 if (instance_exists(obj_allBoss))
 {
 	var B = obj_allBoss;
-	draw_healthbar(350,810,760,838,(B.hp/B.maxHp)*100,darkGray,c_maroon,c_red,1,true,true);
-	draw_healthbar(845,810,1240-1,838,(B.hp/B.maxHp)*100,darkGray,c_maroon,c_red,0,true,true);
+	//Health
+	draw_healthbar(365,810,760,838,(B.hp/B.maxHp)*100,darkGray,c_red,c_maroon,1,true,true);
+	draw_healthbar(845,810,1240-1,838,(B.hp/B.maxHp)*100,darkGray,c_red,c_maroon,0,true,true);
+	//Time Before Attack
+	draw_healthbar(365+30,805,760,810,(B.currentTimeBeforeTheAttack/B.timeAfterIndicate)*100,darkGray,c_olive,c_yellow,1,true,true);
+	draw_healthbar(845,805,1240-1-30,810,(B.currentTimeBeforeTheAttack/B.timeAfterIndicate)*100,darkGray,c_olive,c_yellow,0,true,true);
 	var bossBar = 0;
 	if (global.colorBlindIcons == true)
 	{

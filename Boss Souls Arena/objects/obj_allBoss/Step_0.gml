@@ -747,7 +747,7 @@ if(chooseAnAttack == true)
 		sprite_index = circleSprite;		
 		attackColor = c_fuchsia;
 		#region AngelSlayerRekZul
-		if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul  || gameMaster.chosenBoss == Boss.ArenaKing)
+		if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul || gameMaster.chosenBoss == Boss.ArenaKing)
 		{
 			drawArea = true;
 		}
@@ -1166,30 +1166,32 @@ if(chooseAnAttack == true)
 		}
 		#endregion
 	}
+ 
 	alarm[0] = timeAfterIndicate;
-	alarm[1] = attackCooldown*choose(1,1,1,1,2);
+	alarm[1] = attackCooldown*choose(1,1,1,1,1,2);
 	if (gameMaster.chosenBoss == Boss.SlimeQueen && phase == 4){alarm[0] = (0.85)*30;alarm[1] = (1)*30;}
 	if (gameMaster.chosenBoss == Boss.ArenaKing && attack == Atks.ChaseAttack){alarm[0] = (1.5)*30;}
+	currentTimeBeforeTheAttack = 0;
+	//Color Blind
 	if (global.colorBlindText == true)
 	{
 		var damageDealt = "";
-		if (attack == Atks.NormalShot){damageDealt = "Normal Attack";}
+		if (attack == Atks.NormalShot){damageDealt = "Standard Attack";}
 		if (attack == Atks.CircleAttack){damageDealt = "Circle Attack";}
 		if (attack == Atks.GooSpawn){damageDealt = "Goo Spawn";}
 		if (attack == Atks.ConeAttack){damageDealt = "Cone Attack";}
-		if (attack == Atks.OneShotAttack){damageDealt = "One Shot";}
+		if (attack == Atks.OneShotAttack){damageDealt = "Heavy Attack";}
 		if (attack == Atks.ChaseAttack){damageDealt = "Chase Attack";}
 		if (attack == Atks.RapidFire){damageDealt = "Rapid Fire Attacks";}
-		if (attack == Atks.BeamAttack){damageDealt = "Laser Beam Attack";}
-		if (attack == Atks.TeleportAttack){damageDealt = "Teleport Attack";}
-		if (attack == Atks.HealAttack){damageDealt = "Heal Attack";}
-		if (attack == Atks.ZoneAttack){damageDealt = "Be Ready To Run!";}
-		if (attack == Atks.TauntAttack){damageDealt = "Taunt Attack";}
+		if (attack == Atks.BeamAttack){damageDealt = "Laser Beam";}
+		if (attack == Atks.TeleportAttack){damageDealt = "Teleport";}
+		if (attack == Atks.ZoneAttack){damageDealt = "Run!";}
 		var damageText = instance_create_depth(x+irandom_range(-16,16),y+irandom_range(-13,13),depth-10,obj_textMaker);
 		damageText.color = c_fuchsia;
 		damageText.text = damageDealt;
 	}
 }
+currentTimeBeforeTheAttack++;
 #endregion
 }
 #endregion
@@ -1200,6 +1202,10 @@ if (hp <= 0 && phase == 1 && phase != maxPhase)
 	hp = phase2Hp;
 	moveSpeed = phase2Ms;
 	global.bossDamage = phase2Dmg;
+	if (gameMaster.chosenBoss == Boss.TargetDummy)
+	{
+		instance_destroy();	
+	}
 	#region The Corrupter 1
 	if (gameMaster.chosenBoss == Boss.TheCorrupter)
 	{

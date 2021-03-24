@@ -84,7 +84,7 @@ if (save_gif == true)
 }
 #endregion
 #region Movement
-actualSpeed = (moveSpeed + gravelingSpeed)*bPSpeed*global.playerBossSlow*meteorStun*gravekeeperSpeed*shieldSpeed*agentSpeed*slayerSpeed*bfSpeed*t52Speed*gravelingAreaSpeed*plagueSpeed;
+actualSpeed = (moveSpeed + gravelingSpeed)*bPSpeed*meteorStun*gravekeeperSpeed*shieldSpeed*agentSpeed*slayerSpeed*bfSpeed*t52Speed*gravelingAreaSpeed*plagueSpeed;
 var actualSpeedBefore = actualSpeed;
 if (keyboard_check(ord("A")) && keyboard_check(ord("S")) || keyboard_check(ord("A")) && keyboard_check(ord("W")) ||  keyboard_check(ord("D")) && keyboard_check(ord("S")) || keyboard_check(ord("D")) && keyboard_check(ord("W")))
 {
@@ -1501,7 +1501,7 @@ if (mouse_x < x)
 			var bloodTrail = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
 			bloodTrail.fadeSpeed = 0.25;
 			bloodTrail.sprite_index = spr_bloodBeamEffect;
-			bloodTrail.image_xscale = image_xscale*0.65;
+			bloodTrail.image_xscale = image_xscale*0.45;
 			bloodTrail.image_yscale = bloodTrail.image_xscale;
 			bloodTrail.objectToInheritFrom = id;
 		}

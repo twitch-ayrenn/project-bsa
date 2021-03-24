@@ -40,7 +40,7 @@ moveSpeed = 2;
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
 moveDirection = 0; 
-global.damage = 3;
+global.damage = 10;
 if (global.relase == true && global.deBugg == false){global.damage = 1;}
 baseLifeSteal = 0.8;
 global.lifeSteal = baseLifeSteal;
@@ -503,4 +503,5 @@ normalIdleSprite = idleSprite;
 normalWalkSprite = walkSprite;
 ultCooldownLeft = ultCooldown
 if (global.itemSelected[Boss.DeathKnight] == true){leftClickCooldown = (3)*30;}
+if (global.tutorial == true){hp = 50;}
 #endregion

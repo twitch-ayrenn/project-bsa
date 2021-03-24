@@ -18,8 +18,8 @@ phase3Hp = 0; phase3Ms = 0; phase3Dmg = 0;
 phase4Hp = 0; phase4Ms = 0; phase4Dmg = 0;
 phase5Hp = 0; phase5Ms = 0; phase5Dmg = 0;
 phase6Hp = 0; phase6Ms = 0; phase6Dmg = 0;
-tier1Hp = 450; tier2Hp = 800; tier3Hp = 1100;
-tier4Hp = 1500; tier5Hp = 1800; tier6Hp = 2000;
+tier1Hp = 500; tier2Hp = 800; tier3Hp = 1150;
+tier4Hp = 1550; tier5Hp = 2000; tier6Hp = 2500;
 hp = 0;
 maxHp = hp;
 global.bossDamage = 10;
@@ -80,8 +80,8 @@ spawnThingOnce = true;
 dashSpeed = 0;
 alarm5Timer = 0;
 activateAlarm5 = false;
-//DEBUFFS on player
-global.playerBossSlow = 1;
+currentTimeBeforeTheAttack = 0;
+timeBeforeTheAttack = (10)*60;
 #endregion
 #region Visuals
 size = 1;
@@ -106,6 +106,27 @@ isHit = false;
 #endregion
 #region Bosses
 	#region Tier 1 Done
+		#region Target Dummy
+		if (global.tutorial == true){gameMaster.chosenBoss = Boss.TargetDummy;}
+		if (gameMaster.chosenBoss == Boss.TargetDummy) 
+		{
+			//stats
+			phase1Hp = tier1Hp*0.10; phase1Ms = 1; phase1Dmg = 10;
+			phase2Hp = tier1Hp*0.55; phase2Ms = 1.5; phase2Dmg = 20;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.StandingStill;
+			//attacks and phase
+			tier = 1;
+			phase = 1;
+			maxPhase = 2;
+			//visual
+			size = 1;
+			alpha = 1;
+			idleSprite = spr_boss_targetDummy;
+		}
+		#endregion
 		#region BloodZombie
 		if (gameMaster.chosenBoss == Boss.BloodZombie) 
 		{
@@ -770,12 +791,12 @@ maxHp = hp;
 normalAlpha = alpha;
 image_xscale = size;
 image_yscale = size;
-if (tier == 1){ timeAfterIndicate = (2.5)*30;  attackCooldown = (5)*30;}
-if (tier == 2){ timeAfterIndicate = (2)*30;  attackCooldown = (4.5)*30;}
-if (tier == 3){ timeAfterIndicate = (1.75)*30;  attackCooldown = (4.25)*30;}
-if (tier == 4){ timeAfterIndicate = (1.5)*30;  attackCooldown = (4)*30;}
-if (tier == 5){ timeAfterIndicate = (1.25)*30;  attackCooldown = (3.75)*30;}
-if (tier == 6){ timeAfterIndicate = (1.25)*30;  attackCooldown = (3.5)*30;}
+if (tier == 1){ timeAfterIndicate = (2.00)*30;  attackCooldown = (4.50)*30;}
+if (tier == 2){ timeAfterIndicate = (1.78)*30;  attackCooldown = (4.25)*30;}
+if (tier == 3){ timeAfterIndicate = (1.60)*30;  attackCooldown = (4.00)*30;}
+if (tier == 4){ timeAfterIndicate = (1.40)*30;  attackCooldown = (3.75)*30;}
+if (tier == 5){ timeAfterIndicate = (1.25)*30;  attackCooldown = (3.50)*30;}
+if (tier == 6){ timeAfterIndicate = (1.15)*30;  attackCooldown = (3.25)*30;}
 #endregion
 
 

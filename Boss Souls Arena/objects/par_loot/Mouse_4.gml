@@ -15,7 +15,7 @@ if (global.itemSlots >= 1 && global.itemSelected[bossForThisItem] == false && gl
 	if (global.slot3 == false && x == xstart){x = 127+9;global.slot3 = true;}
 	if (global.slot4 == false && x == xstart){x = 152+9;global.slot4 = true;}
 	if (global.slot5 == false && x == xstart){x = 177+9;global.slot5 = true;}
-	if (global.slot6 == false && x == xstart){x = 203+9;global.slot6 = true;}
+	if (global.slot6 == false && x == xstart){x = 201+9;global.slot6 = true;}
 	gameMaster.bonusHealth += bonusHealth;
 	gameMaster.bonusSpeed += bonusSpeed;
 	gameMaster.bonusDash += bonusDash;
