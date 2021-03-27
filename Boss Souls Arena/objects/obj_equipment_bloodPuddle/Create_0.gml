@@ -9,5 +9,5 @@ with (obj_visual_zombieHead)
 {
 	state = 1;	
 }
-image_xscale = 1.25;
-image_yscale = 1.25;
+image_xscale = 1.15;
+image_yscale = 1.15;

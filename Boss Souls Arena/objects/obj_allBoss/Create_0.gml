@@ -18,8 +18,9 @@ phase3Hp = 0; phase3Ms = 0; phase3Dmg = 0;
 phase4Hp = 0; phase4Ms = 0; phase4Dmg = 0;
 phase5Hp = 0; phase5Ms = 0; phase5Dmg = 0;
 phase6Hp = 0; phase6Ms = 0; phase6Dmg = 0;
-tier1Hp = 500; tier2Hp = 800; tier3Hp = 1150;
-tier4Hp = 1550; tier5Hp = 2000; tier6Hp = 2500;
+//500 hp = 1 min gameplay
+tier1Hp = 500; tier2Hp = 1000; tier3Hp = 1400;
+tier4Hp = 2250; tier5Hp = 2500; tier6Hp = 2750;
 hp = 0;
 maxHp = hp;
 global.bossDamage = 10;
@@ -111,7 +112,7 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.TargetDummy) 
 		{
 			//stats
-			phase1Hp = tier1Hp*0.10; phase1Ms = 1; phase1Dmg = 10;
+			phase1Hp = tier1Hp*0.05; phase1Ms = 1; phase1Dmg = 10;
 			phase2Hp = tier1Hp*0.55; phase2Ms = 1.5; phase2Dmg = 20;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
@@ -131,8 +132,8 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.BloodZombie) 
 		{
 			//stats
-			phase1Hp = tier1Hp*0.35; phase1Ms = 1; phase1Dmg = 10;
-			phase2Hp = tier1Hp*0.55; phase2Ms = 1.5; phase2Dmg = 20;
+			phase1Hp = tier1Hp*0.35; phase1Ms = 1; phase1Dmg = 12.5;
+			phase2Hp = tier1Hp*0.65; phase2Ms = 1.25; phase2Dmg = 20;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -155,8 +156,8 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.FlameWisp) 
 		{
 			//stats
-			phase1Hp = tier1Hp*0.6; phase1Ms = 1; phase1Dmg = 15;
-			phase2Hp = tier1Hp*0.4; phase2Ms = 1.5; phase2Dmg = 25;
+			phase1Hp = tier1Hp*0.45; phase1Ms = 1; phase1Dmg = 15;
+			phase2Hp = tier1Hp*0.55; phase2Ms = 1.5; phase2Dmg = 25;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -180,8 +181,8 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.TheCorrupter) 
 		{
 			//stats
-			phase1Hp = tier1Hp*0.4; phase1Ms = 1.25; phase1Dmg = 25;
-			phase2Hp = tier1Hp*0.6; phase2Ms = 1.75; phase2Dmg = 30;
+			phase1Hp = tier1Hp*0.4; phase1Ms = 1.15; phase1Dmg = 25;
+			phase2Hp = tier1Hp*0.6; phase2Ms = 1.50; phase2Dmg = 30;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -206,9 +207,9 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.WispSisterJulia) 
 		{
 			//stats
-			phase1Hp = tier2Hp*0.20; phase1Ms = 1; phase1Dmg = 25;
-			phase2Hp = tier2Hp*0.6; phase2Ms = 1.5; phase2Dmg = 27.5;
-			phase3Hp = tier2Hp*0.375; phase3Ms = 2; phase3Dmg = 30;
+			phase1Hp = tier2Hp*0.30; phase1Ms = 1.25; phase1Dmg = 25;
+			phase2Hp = tier2Hp*0.50; phase2Ms = 1.50; phase2Dmg = 27.5;
+			phase3Hp = tier2Hp*0.20; phase3Ms = 1; phase3Dmg = 30;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -233,8 +234,8 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.FlameGate) 
 		{
 			//stats
-			phase1Hp = tier2Hp*0.25; phase1Ms = 0; phase1Dmg = 25;
-			phase2Hp = tier2Hp*0.75; phase2Ms = 0; phase2Dmg = 35;
+			phase1Hp = tier2Hp*0.30; phase1Ms = 0; phase1Dmg = 25;
+			phase2Hp = tier2Hp*0.70; phase2Ms = 0; phase2Dmg = 35;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -261,10 +262,10 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.DeathKnight) 
 		{
 			//stats
-			phase1Hp = tier2Hp*0.15; phase1Ms = 1.3; phase1Dmg = 30;
+			phase1Hp = tier2Hp*0.20; phase1Ms = 1.3; phase1Dmg = 30;
 			phase2Hp = tier2Hp*0.30; phase2Ms = 1.2; phase2Dmg = 30;
 			phase3Hp = tier2Hp*0.40; phase3Ms = 1.1; phase3Dmg = 25;
-			phase4Hp = tier2Hp*0.15; phase4Ms = 1; phase4Dmg = 27.5;
+			phase4Hp = tier2Hp*0.10; phase4Ms = 1; phase4Dmg = 27.5;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -294,8 +295,8 @@ isHit = false;
 		{
 			//stats
 			phase1Hp = tier3Hp*0.2; phase1Ms = 1; phase1Dmg = 37;
-			phase2Hp = tier3Hp*0.3; phase2Ms = 1.25; phase2Dmg = 42;
-			phase3Hp = tier3Hp*0.5; phase3Ms = 1.5; phase3Dmg = 47;
+			phase2Hp = tier3Hp*0.3; phase2Ms = 1.1; phase2Dmg = 40;
+			phase3Hp = tier3Hp*0.5; phase3Ms = 1.2; phase3Dmg = 42.5;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -324,8 +325,8 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.KnightWitchYi) 
 		{
 			//stats
-			phase1Hp = tier3Hp*0.3; phase1Ms = 1.15; phase1Dmg = 30;
-			phase2Hp = tier3Hp*0.5; phase2Ms = 1.25; phase2Dmg = 32.5;
+			phase1Hp = tier3Hp*0.35; phase1Ms = 0.6; phase1Dmg = 25;
+			phase2Hp = tier3Hp*0.5; phase2Ms = 0.7; phase2Dmg = 27.5;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -346,16 +347,16 @@ isHit = false;
 			coneSprite = spr_boss_knightWitch_cone;
 			cdSprite = spr_boss_knightWitch_cd;
 			//boss specifc
-			knightWitchGooSize = 0.14;
+			knightWitchGooSize = 0.05;
 		}
 		#endregion
 		#region AngelKnight
 		if (gameMaster.chosenBoss == Boss.AngelKnightOscar) 
 		{
 			//stats
-			phase1Hp = tier3Hp*0.20; phase1Ms = 1.2; phase1Dmg = 25;
-			phase2Hp = tier3Hp*0.30; phase2Ms = 1.4; phase2Dmg = 30;
-			phase3Hp = tier3Hp*0.5; phase3Ms = 1.4; phase3Dmg = 35;
+			phase1Hp = tier3Hp*0.20; phase1Ms = 0.9; phase1Dmg = 25;
+			phase2Hp = tier3Hp*0.35; phase2Ms = 1.0; phase2Dmg = 30;
+			phase3Hp = tier3Hp*0.45; phase3Ms = 1.1; phase3Dmg = 32.5;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -380,9 +381,9 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.DemonLordRekTaar)
 		{
 			//stats
-			phase1Hp = tier3Hp*0.20; phase1Ms = 0.5; phase1Dmg = 25;
-			phase2Hp = tier3Hp*0.45; phase2Ms = 0.5; phase2Dmg = 30;
-			phase3Hp = tier3Hp*0.35; phase3Ms = 0.5; phase3Dmg = 35;
+			phase1Hp = tier3Hp*0.55; phase1Ms = 0; phase1Dmg = 25;
+			phase2Hp = tier3Hp*0.25; phase2Ms = 0; phase2Dmg = 30;
+			phase3Hp = tier3Hp*0.20; phase3Ms = 0; phase3Dmg = 32.5;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -414,9 +415,9 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.Gravekeeper) 
 		{
 			//stats
-			phase1Hp = tier4Hp*0.25; phase1Ms = 1; phase1Dmg = 80;
-			phase2Hp = tier4Hp*0.30; phase2Ms = 1; phase2Dmg = 40;
-			phase3Hp = tier4Hp*0.45; phase3Ms = 1.1; phase3Dmg = 35;
+			phase1Hp = tier4Hp*0.25; phase1Ms = 0.8; phase1Dmg = 80;
+			phase2Hp = tier4Hp*0.30; phase2Ms = 1; phase2Dmg = 35;
+			phase3Hp = tier4Hp*0.45; phase3Ms = 0.8; phase3Dmg = 30;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -460,10 +461,10 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.BloodKnightDavid) 
 		{
 			//stats
-			phase1Hp = tier4Hp*0.2; phase1Ms = 1; phase1Dmg = 20;
-			phase2Hp = tier4Hp*0.2; phase2Ms = 1.1; phase2Dmg = 20;
-			phase3Hp = tier4Hp*0.45; phase3Ms = 1.2; phase3Dmg = 20;
-			phase4Hp = tier4Hp*0.15; phase4Ms = 0; phase4Dmg = 30;
+			phase1Hp = tier4Hp*0.2; phase1Ms = 0.8; phase1Dmg = 18;
+			phase2Hp = tier4Hp*0.25; phase2Ms = 0.9; phase2Dmg = 19;
+			phase3Hp = tier4Hp*0.45; phase3Ms = 1; phase3Dmg = 20;
+			phase4Hp = tier4Hp*0.10; phase4Ms = 0; phase4Dmg = 30;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -579,10 +580,10 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.WispSisters) 
 		{
 			//stats
-			phase1Hp = tier4Hp*0.20; phase1Ms = 1; phase1Dmg = 40;
-			phase2Hp = tier4Hp*0.20; phase2Ms = 1.5; phase2Dmg = 40;
-			phase3Hp = tier4Hp*0.45; phase3Ms = 2; phase3Dmg = 40;
-			phase4Hp = tier4Hp*0.45; phase4Ms = 2; phase4Dmg = 25;
+			phase1Hp = tier4Hp*0.25; phase1Ms = 1; phase1Dmg = 40;
+			phase2Hp = tier4Hp*0.25; phase2Ms = 1.25; phase2Dmg = 40;
+			phase3Hp = tier4Hp*0.60; phase3Ms = 1.75; phase3Dmg = 40;
+			phase4Hp = tier4Hp*0.20; phase4Ms = 1; phase4Dmg = 25;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -634,10 +635,10 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.DemonQueensHead) 
 		{
 			//stats
-			phase1Hp = tier5Hp*0.20; phase1Ms = 0.75; phase1Dmg = 20;
-			phase2Hp = tier5Hp*0.2; phase2Ms = 0.75; phase2Dmg = 20;
-			phase3Hp = tier5Hp*0.2; phase3Ms = 0.75; phase3Dmg = 20;
-			phase4Hp = tier5Hp*0.4; phase4Ms = 1; phase4Dmg = 30;
+			phase1Hp = tier5Hp*0.15; phase1Ms = 0.7; phase1Dmg = 22;
+			phase2Hp = tier5Hp*0.20; phase2Ms = 0.7; phase2Dmg = 23;
+			phase3Hp = tier5Hp*0.25; phase3Ms = 0.7; phase3Dmg = 24;
+			phase4Hp = tier5Hp*0.40; phase4Ms = 0.85; phase4Dmg = 25;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -668,11 +669,11 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.DeathKing) 
 		{
 			//stats
-			phase1Hp = tier5Hp*0.15; phase1Ms = 0.25; phase1Dmg = 25;
-			phase2Hp = tier5Hp*0.15; phase2Ms = 0.25; phase2Dmg = 27.5;
-			phase3Hp = tier5Hp*0.15; phase3Ms = 0.25; phase3Dmg = 32.5;
-			phase4Hp = tier5Hp*0.25; phase4Ms = 0.25; phase4Dmg = 37.5;
-			phase5Hp = tier5Hp*0.30; phase5Ms = 1.5; phase5Dmg = 27.5;
+			phase1Hp = tier5Hp*0.15; phase1Ms = 0.25; phase1Dmg = 24;
+			phase2Hp = tier5Hp*0.15; phase2Ms = 0.25; phase2Dmg = 25;
+			phase3Hp = tier5Hp*0.15; phase3Ms = 0.25; phase3Dmg = 27.5;
+			phase4Hp = tier5Hp*0.25; phase4Ms = 0.25; phase4Dmg = 30;
+			phase5Hp = tier5Hp*0.30; phase5Ms = 1.5; phase5Dmg = 32.5;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -704,11 +705,11 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.SlimeQueen) 
 		{
 			//stats
-			phase1Hp = tier5Hp*0.15; phase1Ms = 1; phase1Dmg = 32.5;
-			phase2Hp = tier5Hp*0.15; phase2Ms = 1.1; phase2Dmg = 37.5;
-			phase3Hp = tier5Hp*0.25; phase3Ms = 1.2; phase3Dmg = 42.5;
+			phase1Hp = tier5Hp*0.15; phase1Ms = 1; phase1Dmg = 30;
+			phase2Hp = tier5Hp*0.15; phase2Ms = 1.1; phase2Dmg = 35;
+			phase3Hp = tier5Hp*0.25; phase3Ms = 1.2; phase3Dmg = 40;
 			phase4Hp = 1500; phase4Ms = 0; phase4Dmg = 35;
-			phase5Hp = tier5Hp*0.45; phase5Ms = 1.3; phase5Dmg = 37.5;
+			phase5Hp = tier5Hp*0.45; phase5Ms = 1.3; phase5Dmg = 35;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -737,12 +738,12 @@ isHit = false;
 	if (gameMaster.chosenBoss == Boss.ArenaKing) 
 	{
 		//stats
-		phase1Hp = tier6Hp*0.14; phase1Ms = 1; phase1Dmg = 20;
-		phase2Hp = tier6Hp*0.14; phase2Ms = 1.2; phase2Dmg = 22.5;
-		phase3Hp = tier6Hp*0.14; phase3Ms = 1.4; phase3Dmg = 25;
-		phase4Hp = tier6Hp*0.14; phase4Ms = 1.6; phase4Dmg = 27.5;
-		phase5Hp = tier6Hp*0.14; phase5Ms = 1.8; phase5Dmg = 30;
-		phase6Hp = tier6Hp*0.30; phase6Ms = 2; phase6Dmg = 32.5;
+		phase1Hp = tier6Hp*0.10; phase1Ms = 1; phase1Dmg = 18;
+		phase2Hp = tier6Hp*0.12; phase2Ms = 1.2; phase2Dmg = 19;
+		phase3Hp = tier6Hp*0.14; phase3Ms = 1.4; phase3Dmg = 20;
+		phase4Hp = tier6Hp*0.16; phase4Ms = 1.6; phase4Dmg = 22.5;
+		phase5Hp = tier6Hp*0.18; phase5Ms = 1.8; phase5Dmg = 25;
+		phase6Hp = tier6Hp*0.30; phase6Ms = 2; phase6Dmg = 27.5;
 		hp = phase1Hp;
 		global.bossDamage = phase1Dmg;
 		moveSpeed = phase1Ms;
@@ -791,11 +792,11 @@ maxHp = hp;
 normalAlpha = alpha;
 image_xscale = size;
 image_yscale = size;
-if (tier == 1){ timeAfterIndicate = (2.00)*30;  attackCooldown = (4.50)*30;}
-if (tier == 2){ timeAfterIndicate = (1.78)*30;  attackCooldown = (4.25)*30;}
-if (tier == 3){ timeAfterIndicate = (1.60)*30;  attackCooldown = (4.00)*30;}
-if (tier == 4){ timeAfterIndicate = (1.40)*30;  attackCooldown = (3.75)*30;}
-if (tier == 5){ timeAfterIndicate = (1.25)*30;  attackCooldown = (3.50)*30;}
+if (tier == 1){ timeAfterIndicate = (2.00)*30;  attackCooldown = (4.00)*30;}
+if (tier == 2){ timeAfterIndicate = (1.80)*30;  attackCooldown = (3.85)*30;}
+if (tier == 3){ timeAfterIndicate = (1.60)*30;  attackCooldown = (3.70)*30;}
+if (tier == 4){ timeAfterIndicate = (1.40)*30;  attackCooldown = (3.55)*30;}
+if (tier == 5){ timeAfterIndicate = (1.25)*30;  attackCooldown = (3.40)*30;}
 if (tier == 6){ timeAfterIndicate = (1.15)*30;  attackCooldown = (3.25)*30;}
 #endregion
 

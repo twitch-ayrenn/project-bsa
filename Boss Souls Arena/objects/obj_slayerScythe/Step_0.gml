@@ -1,6 +1,6 @@
 /// @description Insert description here
 var target = instance_nearest(x,y,par_enemy);
-dmg = global.damage*7.5;
+dmg = global.damage*5;
 var demonShade = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
 	demonShade.fadeSpeed = 0.25;
 	demonShade.sprite_index = sprite_index;

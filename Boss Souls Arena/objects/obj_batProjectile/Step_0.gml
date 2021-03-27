@@ -25,21 +25,22 @@ if (instance_exists(obj_allBoss))
 	if (place_meeting(x,y,enemy))
 	{
 		var damageDealt = 1;
-		if (sprite_index == spr_batprojectile_long){damageDealt = 3;}
-		var damageText = instance_create_depth(enemy.x+irandom_range(-16,16),enemy.y+irandom_range(-13,13),enemy.depth-10,obj_textMaker);
+		if (sprite_index == spr_batprojectile_long){damageDealt = 5;}
+		var damageText = instance_create_depth(enemy.x+irandom_range(-18,18),enemy.y+irandom_range(-14,14),enemy.depth-10,obj_textMaker);
 		damageText.color = c_white;
 		damageText.text = damageDealt;
 		with (enemy)
 		{	
-			hp -= 1;
+			hp -= damageDealt;
 		}
 		var amountHealed = 1*global.lifeSteal;
-		var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
+		if (sprite_index == spr_batprojectile_long){amountHealed = 5*global.lifeSteal;}
+		var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-16,16),obj_allPlayer.y+irandom_range(-12,12),obj_allPlayer.depth-10,obj_textMaker);
 		healText.color = c_lime;
 		healText.text = amountHealed;
 		with (obj_allPlayer)
 		{
-			hp += 1*global.lifeSteal;
+			hp += amountHealed;
 		}
 		instance_destroy();
 	}

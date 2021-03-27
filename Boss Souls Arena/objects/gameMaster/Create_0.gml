@@ -7,7 +7,7 @@ menu = 0;
 //Versions
 global.relase = false;//true
 global.deBugg = true;//false
-global.saveFile = "Save.Beta.V.19";
+global.saveFile = "Save.Beta.V.34";
 if (file_exists(global.saveFile) == true && global.deBugg == false)
 {
 	game_load(global.saveFile);
@@ -167,7 +167,7 @@ global.moveLeftKey = ord("A");
 global.moveRightKey = ord("D");
 //
 global.showDD = false;
-global.showFps = true;
+global.showFps = false;
 global.camSize = 4;
 fpsShowTimerStacks = 0;
 fpsShow = "";
@@ -312,13 +312,12 @@ if (global.relase == true)
 	pyromancerProgress = 1;			plaugeWalkerProgress = 1;
 	angelSlayerProgress = 1;		agentOfGodProgress = 1;		
 	gravelingProgress = 1;
-
 	
 	//Unlocked
-	assassinUnlocked = false;		bloodKnightUnlocked = true;
-	pyromancerUnlocked = true;		plaugeWalkerUnlocked = false;
-	angelSlayerUnlocked = true;	agentOfGodUnlocked = false;	
-	gravelingUnlocked = false;
+	assassinUnlocked = true;		bloodKnightUnlocked = true;
+	pyromancerUnlocked = true;		plaugeWalkerUnlocked = true;
+	angelSlayerUnlocked = true;		agentOfGodUnlocked = true;	
+	gravelingUnlocked = true;
 	
 	//Boss Rush
 	bossAssassinUnlocked = false;

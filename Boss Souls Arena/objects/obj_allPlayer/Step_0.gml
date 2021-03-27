@@ -550,6 +550,8 @@ if (mouse_x < x)
 		#region DeathCap
 		if (instance_exists(obj_equipment_madHat))
 		{
+			var thisX = x;
+			var thisY = y;
 			with (obj_equipment_madHat)
 			{
 				var projectile = instance_create_depth(x,y,depth+1,obj_madBolt);

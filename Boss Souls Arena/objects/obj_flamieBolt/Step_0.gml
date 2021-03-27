@@ -11,22 +11,22 @@ if (place_meeting(x,y,obj_noGoZone)){instance_destroy();}
 var enemy = instance_nearest(x,y,par_enemy);
 if (place_meeting(x,y,enemy))
 {	
-	var damageDealt = global.damage*5;
+	var damageDealt = global.damage*6;
 	var damageText = instance_create_depth(enemy.x+irandom_range(-8,8),enemy.y+irandom_range(-5,5),enemy.depth-10,obj_textMaker);
 	damageText.color = c_white;
 	damageText.text = damageDealt;
 	with (enemy)
 	{	
-		hp -= global.damage*5;
+		hp -= global.damage*6;
 	}
-	with(obj_camera){shake_remain += 4;}
-	var amountHealed = global.damage*5*global.lifeSteal;
+	with(obj_camera){shake_remain += 3.5;}
+	var amountHealed = global.damage*6*global.lifeSteal;
 	var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
 	healText.color = c_lime;
 	healText.text = amountHealed;
 	with (obj_allPlayer)
 	{
-		hp += global.damage*5*global.lifeSteal;
+		hp += global.damage*6*global.lifeSteal;
 	}
 	instance_destroy();
 }

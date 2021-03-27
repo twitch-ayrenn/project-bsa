@@ -387,8 +387,8 @@ if (menu == Menues.BossLoot)
 	var textSize = 0.275;
 	var infoTextX = 300 + shoveInX;
 	var hpCalc = int64(100 + bonusHealth + previewHealth);
-	if (chosenClass == Character.BloodKnight){hpCalc *= 2;}
-	if (chosenClass == Character.AngelSlayer){hpCalc = 100;}
+	if (chosenClass == Character.BloodKnight){hpCalc *= 1.5;}
+	if (chosenClass == Character.AngelSlayer){hpCalc = clamp(hpCalc,0,150);}
 	var hpText = "Max Health: " + string(hpCalc);
 	var spdCalc = 20 + bonusSpeed + previewSpeed
 	var spdText = "Movement Speed: " + string(20 + bonusSpeed + previewSpeed);
@@ -399,7 +399,7 @@ if (menu == Menues.BossLoot)
 	var dmgText = "Damage Scaling: " + string(clamp(int64(dmgCalc*10)-100,0,999))  + "%";
 	var firerateCalc = 1 + ((bonusFirerate + previewFirerate)/100);
 	var frText = "Bonus Attack Speed: " + string(int64(firerateCalc*100-100)) + "%";
-	var lsText = "LifeSteal: " + string(80 + bonusLifeSteal + previewLifeSteal) + "%";//base is 75% for all damage
+	var lsText = "LifeSteal: " + string(75 + bonusLifeSteal + previewLifeSteal) + "%";//base is 75% for all damage
 	var conjureCalc = 1 + (bonusConjur + previewConjur)/100;
 	var cjText = "Summoning Power: " + string(int64(conjureCalc*100-100)) + "%";
 	var cdrCap = 0.5;
@@ -479,8 +479,8 @@ if (menu == Menues.BossLoot)
 		if (itemShowInfoFor == Boss.Speed)
 		{
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,"How fast you walk around. Some",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,startY+2*itemTextSeparationY,"bosses might require very high speed",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,"Speed determines how fast you walk around.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+2*itemTextSeparationY,"Some bosses might require very high speed",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+3*itemTextSeparationY,"to beat.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+5*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+7*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -501,8 +501,8 @@ if (menu == Menues.BossLoot)
 		if (itemShowInfoFor == Boss.DashLength)
 		{
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,"Increases the length of your dash.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,startY+2*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,"Dash Distance increases the length of your",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+2*itemTextSeparationY,"dash.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+3*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+5*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+7*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -523,12 +523,12 @@ if (menu == Menues.BossLoot)
 		if (itemShowInfoFor == Boss.Damage)
 		{
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,"Increases the damage of your",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,startY+2*itemTextSeparationY,"abilties.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,"Damage increases the damage of your abilties.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+2*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+3*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+4*itemTextSeparationY,"Exeptions are:",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+5*itemTextSeparationY,"Bloodknights summoned bats.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,startY+6*itemTextSeparationY,"Plaguewalkers leeches",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+6*itemTextSeparationY,"Plaguewalkers leeches.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+11*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+12*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -545,7 +545,7 @@ if (menu == Menues.BossLoot)
 		if (itemShowInfoFor == Boss.AttackSpeed)
 		{
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,"Reduces the time between attacks.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,"Attack Speed reduces the time between attacks.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+2*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+3*itemTextSeparationY,"Exeptions are:",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+4*itemTextSeparationY,"Pyromancer attacks.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -567,11 +567,11 @@ if (menu == Menues.BossLoot)
 		if (itemShowInfoFor == Boss.Lifesteal)
 		{
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,"You heal for all damage you do.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,startY+2*itemTextSeparationY,"The amount healed is lifesteal ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,startY+3*itemTextSeparationY,"precentage times the damage dealt.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,"Lifesteal heals you for all damage you do. ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+2*itemTextSeparationY,"The amount healed is lifesteal a precentage ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+3*itemTextSeparationY,"of the damage you deal.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+4*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,startY+5*itemTextSeparationY,"Your base life steal is 80%.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+5*itemTextSeparationY,"Your base life steal is 75%.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+8*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+11*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -589,11 +589,11 @@ if (menu == Menues.BossLoot)
 		if (itemShowInfoFor == Boss.CDR)
 		{
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,"Reduces the cooldown on your",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,startY+2*itemTextSeparationY,"abilities and ultimate ability. ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,startY+4*itemTextSeparationY,"Cooldown reduction is caped at",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,startY+5*itemTextSeparationY,"50% unless you have items that",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,startY+6*itemTextSeparationY,"increase the cap.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,"Cooldown Reduction reduces the cooldown",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+2*itemTextSeparationY,"of your abilities and ultimate ability. ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+4*itemTextSeparationY,"Cooldown reduction is caped at 50% unless ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+5*itemTextSeparationY,"you equip an item that increases the cap.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+6*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+8*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+11*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -611,11 +611,11 @@ if (menu == Menues.BossLoot)
 		if (itemShowInfoFor == Boss.SummoningPower)
 		{
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,"Summoning Power increases the power",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,startY+2*itemTextSeparationY,"of anything that has been summoned.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,startY+4*itemTextSeparationY,"This can either be by summoning more",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,startY+5*itemTextSeparationY,"things or increasing the damage or",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,startY+7*itemTextSeparationY,"the lifespan of the summoned thing.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,"Summoning Power increases the power of ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+2*itemTextSeparationY,"anything that has been summoned. This can",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+4*itemTextSeparationY,"either be by summoning more things or",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+5*itemTextSeparationY,"increasing the damage or the lifespan of",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+7*itemTextSeparationY,"the summoned creature.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+8*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+11*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -636,7 +636,7 @@ if (menu == Menues.BossLoot)
 			draw_set_font(fnt_NewNormalText);
 			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,"Your ultimate spawns an area. It increases your",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+2*itemTextSeparationY,"speed and damages enemies within the area.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			var bztext = "[Area Damage]: " + string(int64(dmgCalc*5));
+			var bztext = "[Total Area Damage]: " + string(int64(dmgCalc*7));
 			draw_text_transformed_color(infoTextX,startY+3*itemTextSeparationY,bztext,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			var bztext2 = "[Speed Increase]: " +  string(50) + "%";
 			draw_text_transformed_color(infoTextX,startY+4*itemTextSeparationY,bztext2,itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
@@ -661,12 +661,12 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,startY+3*itemTextSeparationY,"flame ball at your enemies. After a second ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+4*itemTextSeparationY,"Fry will disapear again. The spawn time is",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+5*itemTextSeparationY,"reduced by [Summoning Power] stat.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			var fText2 = "[Projectile Damage]: " + string(int64(dmgCalc*5))
+			var fText2 = "[Projectile Damage]: " + string(int64(dmgCalc*6))
 			draw_text_transformed_color(infoTextX,startY+6*itemTextSeparationY,fText2,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_set_font(fnt_menu_fill);
 			draw_text_transformed_color(infoTextX,startY+7.6*itemTextSeparationY,"Item Stats",itemTextSizeBig,itemTextSizeBig,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"+20% Damage ",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"+15% Damage ",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"+45% Summoning Power",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			
 		
@@ -690,8 +690,8 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,startY+6*itemTextSeparationY,"+10% Cooldown reduction",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_text_transformed_color(infoTextX,startY+7*itemTextSeparationY,"+10% Damage",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_text_transformed_color(infoTextX,startY+8*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"\" A horrible chill goes down your ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"spine...\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"\" A horrible chill goes down your spine...\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 		
 			//name
 			draw_set_font(fnt_menu_fill);
@@ -838,8 +838,8 @@ if (menu == Menues.BossLoot)
 			draw_set_font(fnt_NewNormalText);
 			draw_text_transformed_color(infoTextX,startY+6*itemTextSeparationY,"+40% Attack Speed",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_text_transformed_color(infoTextX,startY+7*itemTextSeparationY,"+2 Movement Speed",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"\"Perfectly balanced as all things",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"should be...\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"\"Perfectly balanced as all things should be...\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			
 		
 			//name
@@ -906,9 +906,9 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,startY+4.6*itemTextSeparationY,"Item Stats",itemTextSizeBig,itemTextSizeBig,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
 			draw_text_transformed_color(infoTextX,startY+6*itemTextSeparationY,"+100 Max Health",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
-			draw_text_transformed_color(infoTextX,startY+7*itemTextSeparationY,"-5 Movement Speed",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"\"Looking to protect yourself, or",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"deal some damage?\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+7*itemTextSeparationY,"-4 Movement Speed",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"\"Looking to protect yourself, or deal some",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"damage?\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			
 			//name
 			draw_set_font(fnt_menu_fill);
@@ -929,11 +929,11 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,startY+6.6*itemTextSeparationY,"Item Stats",itemTextSizeBig,itemTextSizeBig,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
 			draw_text_transformed_color(infoTextX,startY+08*itemTextSeparationY,"+20 Max Health +2 Movement Speed",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
-			draw_text_transformed_color(infoTextX,startY+09*itemTextSeparationY,"+30% Attack Speed +30% Damage ",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,startY+09*itemTextSeparationY,"+35% Attack Speed +25% Damage ",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"+ 5% Cooldown reduction",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_text_transformed_color(infoTextX,startY+11*itemTextSeparationY,"[Items that cant be found in the box]:",itemTextSize,itemTextSize,0,global.goldColor,global.goldColor,c_yellow,c_yellow,1);
-			draw_text_transformed_color(infoTextX,startY+12*itemTextSeparationY,"Death Scyhte, Broken Hourglass, The Last Wish",itemTextSize,itemTextSize,0,global.goldColor,global.goldColor,c_yellow,c_yellow,1);
-			draw_text_transformed_color(infoTextX,startY+13*itemTextSeparationY,"and Relic of The Past",itemTextSize,itemTextSize,0,global.goldColor,global.goldColor,c_yellow,c_yellow,1);
+			draw_text_transformed_color(infoTextX,startY+12*itemTextSeparationY,"Death Scyhte, Broken Hourglass, The Last ",itemTextSize,itemTextSize,0,global.goldColor,global.goldColor,c_yellow,c_yellow,1);
+			draw_text_transformed_color(infoTextX,startY+13*itemTextSeparationY,"Wish and Relic of The Past",itemTextSize,itemTextSize,0,global.goldColor,global.goldColor,c_yellow,c_yellow,1);
 			draw_text_transformed_color(infoTextX,startY+14*itemTextSeparationY,"\"Is this gambling?\"",itemTextSize,itemTextSize,0,global.goldColor,global.goldColor,c_yellow,c_yellow,1);
 			
 			//name
@@ -956,7 +956,8 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,startY+7.6*itemTextSeparationY,"Item Stats",itemTextSizeBig,itemTextSizeBig,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
 			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"+3% Lifesteal",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
-			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"+30% Damage Scaling",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"+25% Damage Scaling",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,startY+11*itemTextSeparationY,"-10% Dash Distance",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_fuchsia,c_fuchsia,1);
 			draw_text_transformed_color(infoTextX,startY+12*itemTextSeparationY,"\"If I have to choose between one evil",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+13*itemTextSeparationY,"and another, I rather not choose.\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			
@@ -980,8 +981,8 @@ if (menu == Menues.BossLoot)
 			draw_set_font(fnt_menu_fill);
 			draw_text_transformed_color(infoTextX,startY+6.6*itemTextSeparationY,"Item Stats",itemTextSizeBig,itemTextSizeBig,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,startY+8*itemTextSeparationY,"+20%  Attack Speed",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
-			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"+40% Damage",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,startY+8*itemTextSeparationY,"+30%  Attack Speed",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"+30% Damage",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_text_transformed_color(infoTextX,startY+11*itemTextSeparationY,"\"Weaponizing demons. For a brighter",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+12*itemTextSeparationY,"brighter Tomorrow!\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			
@@ -1028,9 +1029,9 @@ if (menu == Menues.BossLoot)
 			draw_set_font(fnt_menu_fill);
 			draw_text_transformed_color(infoTextX,startY+5.6*itemTextSeparationY,"Item Stats",itemTextSizeBig,itemTextSizeBig,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,startY+7*itemTextSeparationY,"+20 MaxHealth",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
-			draw_text_transformed_color(infoTextX,startY+8*itemTextSeparationY,"+20% Dash Distance",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
-			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"+2 Movement Speed",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+			draw_text_transformed_color(infoTextX,startY+7*itemTextSeparationY,"+30 MaxHealth",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
+			draw_text_transformed_color(infoTextX,startY+8*itemTextSeparationY,"+15% Dash Distance",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"+3 Movement Speed",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 			
 			//name
 			draw_set_font(fnt_menu_fill);

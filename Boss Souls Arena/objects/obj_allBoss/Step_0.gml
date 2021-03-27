@@ -187,11 +187,11 @@ if (fall == true)
 			//Main
 			corruptKlot.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
 			corruptKlot.speed = 5;
-			corruptKlot.image_angle = corruptKlot.direction;
+			corruptKlot.image_angle = corruptKlot.direction+90;
 			//Visual
 			corruptKlot.image_alpha = 0.85;
 			corruptKlot.image_blend = global.lightBlue;
-			corruptKlot.sprite_index = spr_bloodKlott;
+			corruptKlot.sprite_index = spr_fireBall;
 			corruptKlot.image_xscale = 1;
 			corruptKlot.image_yscale = 1;
 			corruptKlot.effectType = Effect.Flare;
@@ -567,7 +567,7 @@ if (fall == true)
 			canRapidAttack = false;
 			rapidFireStacks -= 1;
 		
-			var coneWide = 75;
+			var coneWide = 85;
 			var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.5;
 			var coneAmount = 4;
 			repeat(coneAmount)
@@ -580,8 +580,8 @@ if (fall == true)
 				fireBolt.image_alpha = 1;
 				fireBolt.sprite_index = spr_bat;
 				fireBolt.image_blend = c_dkgray;
-				fireBolt.image_xscale = 0.75;
-				fireBolt.image_yscale = 0.75;
+				fireBolt.image_xscale = 0.85;
+				fireBolt.image_yscale = 0.85;
 				fireBolt.effectType = Effect.NoEffect;
 				coneAtkFW += (coneWide/coneAmount);
 			}
@@ -1014,7 +1014,7 @@ if(chooseAnAttack == true)
 			beam.sprite_index = spr_beam;
 			beam.image_xscale = 0.5;
 			beam.image_yscale = 50;
-			beam.maxSize = 2.5;
+			beam.maxSize = 2;
 			beam.minSize = 0.25;
 			beam.stickOn = true;
 			beam.beamChase = true;
@@ -1032,7 +1032,7 @@ if(chooseAnAttack == true)
 			beam1.sprite_index = spr_beam;
 			beam1.image_xscale = 0.5;
 			beam1.image_yscale = 50;
-			beam1.maxSize = 2.5;
+			beam1.maxSize = 2;
 			beam1.minSize = 0.25;
 			beam1.stickOn = true;
 			beam1.beamChase = true;

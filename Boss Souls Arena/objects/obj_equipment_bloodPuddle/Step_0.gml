@@ -6,7 +6,7 @@ if (destroy == true)
 {
 	destroy = false;
 	
-	alarm[1] = (5)*30;
+	alarm[1] = (7)*30;
 }
 if (dealDamage == true)
 {

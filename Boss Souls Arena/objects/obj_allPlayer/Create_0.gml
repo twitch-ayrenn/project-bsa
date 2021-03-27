@@ -40,7 +40,7 @@ moveSpeed = 2;
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
 moveDirection = 0; 
-global.damage = 10;
+global.damage = 1;
 if (global.relase == true && global.deBugg == false){global.damage = 1;}
 baseLifeSteal = 0.8;
 global.lifeSteal = baseLifeSteal;
@@ -70,7 +70,7 @@ hitVinjetAlpha = 0;
 	if (class == Character.ShadowAssassin)
 	{
 		leftClickCooldown = (7)*30;
-		rightClickCooldown = (12)*30;
+		rightClickCooldown = (10)*30;
 		dashCooldown = (7)*30;
 		ultCooldown = (16)*30;
 		idleSprite = spr_player_theAssasin;
@@ -98,7 +98,7 @@ hitVinjetAlpha = 0;
 	{
 		leftClickCooldown = (8)*30;
 		rightClickCooldown = (11)*30;
-		dashCooldown = (3.5)*30;
+		dashCooldown = (3)*30;
 		ultCooldown = (16)*30;//16
 		idleSprite = spr_player_theMage;
 		walkSprite = spr_player_theMage_walking;
@@ -123,10 +123,10 @@ hitVinjetAlpha = 0;
 	if (class == Character.BloodKnight)
 	{
 		hp = 100*2;
-		leftClickCooldown = (1)*30;
-		rightClickCooldown = (7)*30;
+		leftClickCooldown = (0.8)*30;
+		rightClickCooldown = (10)*30;
 		dashCooldown = (3)*30;
-		ultCooldown = (15)*30;
+		ultCooldown = (14)*30;
 		idleSprite = spr_player_theBloodKnight;
 		walkSprite = spr_player_theBloodKnight_walking;
 		deadSprite = spr_player_theBloodKnight_dead;
@@ -149,7 +149,7 @@ hitVinjetAlpha = 0;
 		leftClickCooldown = (6)*30;
 		rightClickCooldown = (8)*30;//8
 		dashCooldown = (8)*30;
-		ultCooldown = (12)*30;
+		ultCooldown = (18)*30;
 		idleSprite = spr_player_agentOfGod_idle;
 		walkSprite = spr_player_agentOfGod_walking;
 		deadSprite = spr_player_agentOfGod_dead;
@@ -183,7 +183,7 @@ hitVinjetAlpha = 0;
 	if (class == Character.AngelSlayer)
 	{
 		hp = 100;
-		leftClickCooldown = (8)*30;
+		leftClickCooldown = (7)*30;
 		rightClickCooldown = (8)*30;
 		dashCooldown = (6)*30;
 		ultCooldown = (15)*30;
@@ -203,7 +203,7 @@ hitVinjetAlpha = 0;
 		shotOnce = false;
 		slayerSpeed = 1;
 		ultimateStacks = 0;
-		ultimateTime = (6)*30;
+		ultimateTime = (5)*30;
 		if (global.itemSelected[Boss.DeathKnight] == false)
 		{
 			instance_create_depth(x,y,depth+1,obj_slayerScythe);
@@ -490,7 +490,7 @@ blackOutAlpha = 0;
 #endregion
 #region maxValues
 if (class == Character.Pyromancer){leftClickCooldown = (8)*30; coneShotAmount = int64(global.damage*2);}
-if (class == Character.BloodKnight){hp += gameMaster.bonusHealth;}
+if (class == Character.BloodKnight){hp += gameMaster.bonusHealth*0.5;}
 if (class == Character.AngelSlayer && hp > 150){hp = 150;}
 actualBKDashSpeed = 0; actualASDashSpeed = 0;//needs to exist or else it crashes 
 normalSpeed = moveSpeed;
