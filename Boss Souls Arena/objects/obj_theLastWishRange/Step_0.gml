@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 depth = -5;
+image_xscale = 1.15;
+image_yscale = image_xscale;
 x = obj_equipment_theLastWish.x;
 y = obj_equipment_theLastWish.y;
 if (instance_exists(obj_allBoss))
@@ -10,14 +12,14 @@ if (instance_exists(obj_allBoss))
 		global.damage = global.player.damageInCircle;
 		global.lifeSteal = global.player.lifestealInCircle;
 		image_index = 1;
-		alpha = 0.3;
+		alpha = 0.35;
 	}
 	else
 	{
 		global.damage = global.player.damageOutSideCircle;
 		global.lifeSteal = global.player.lifestealOutsideCircle;
 		image_index = 0;
-		alpha = 0.1;
+		alpha = 0.10;
 	}
 }
 if (!place_meeting(x,y,global.player) && instance_exists(obj_allBoss) && global.player.meteorStun == 1 && global.iFrame == false)

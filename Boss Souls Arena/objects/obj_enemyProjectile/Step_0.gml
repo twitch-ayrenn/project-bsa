@@ -117,6 +117,7 @@ if (place_meeting(x,y,target) && sprite_index != spr_gooGround && global.iFrame 
 		gooGround.sprite_index = spr_gooGround;
 		gooGround.image_xscale = 0.15;
 		if (gameMaster.chosenBoss == Boss.ArenaKing){gooGround.image_xscale = 0.04 + image_xscale/30;}
+		if (gameMaster.chosenBoss == Boss.SlimeQueen){gooGround.image_xscale = 0.10;}
 		gooGround.image_yscale = gooGround.image_xscale;
 		gooGround.destroy = false;
 	}

@@ -78,7 +78,7 @@ if (menu == Menues.Death || menu == Menues.BossSlain)
 		autoGoToMenuStacks = 0;
 		queLeave = true;	
 	}
-	if (menu == Menues.BossSlain && autoGoToMenuStacks >= (12)*30)
+	if (menu == Menues.BossSlain && autoGoToMenuStacks >= (12)*30 && chosenBoss != Boss.ArenaKing)
 	{
 		autoGoToMenuStacks = 0;
 		queLeave = true;	

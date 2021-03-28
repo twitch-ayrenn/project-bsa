@@ -705,11 +705,11 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.SlimeQueen) 
 		{
 			//stats
-			phase1Hp = tier5Hp*0.15; phase1Ms = 1; phase1Dmg = 30;
-			phase2Hp = tier5Hp*0.15; phase2Ms = 1.1; phase2Dmg = 35;
-			phase3Hp = tier5Hp*0.25; phase3Ms = 1.2; phase3Dmg = 40;
+			phase1Hp = tier5Hp*0.10; phase1Ms = 0.7; phase1Dmg = 30;
+			phase2Hp = tier5Hp*0.20; phase2Ms = 0.8; phase2Dmg = 35;
+			phase3Hp = tier5Hp*0.25; phase3Ms = 0.9; phase3Dmg = 40;
 			phase4Hp = 1500; phase4Ms = 0; phase4Dmg = 35;
-			phase5Hp = tier5Hp*0.45; phase5Ms = 1.3; phase5Dmg = 35;
+			phase5Hp = tier5Hp*0.45; phase5Ms = 1; phase5Dmg = 35;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;

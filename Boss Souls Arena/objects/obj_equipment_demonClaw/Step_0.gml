@@ -1,5 +1,6 @@
 /// @description Insert description here
 depth = -y;
+var this = id;
 if (destroy == true)
 {
 	destroy = false;
@@ -15,6 +16,7 @@ if (image_index <= 4)
 		{
 			if(place_meeting(x,y,obj_equipment_demonClaw))
 			{
+				show_debug_message("dmg dealt")
 				var damageDealt = global.damage*10;
 				var damageText = instance_create_depth(x+irandom_range(-8,8),y+irandom_range(-5,5),depth-10,obj_textMaker);
 				damageText.color = c_white;
@@ -29,6 +31,7 @@ if (image_index <= 4)
 				{
 					hp += global.damage*10*global.lifeSteal;
 				}
+				this.canDealDamage = false;
 			}
 		}
 	}

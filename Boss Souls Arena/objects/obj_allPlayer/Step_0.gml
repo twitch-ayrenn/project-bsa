@@ -587,6 +587,14 @@ if (mouse_x < x)
 			}
 		}
 		#endregion
+		#region T52 Slime Armor
+		if (t52Active == true)
+		{
+			var slime = instance_create_depth(x,y,depth+1,obj_slimeProjectile);
+			slime.speed = 2;
+			slime.direction = point_direction(x,y,mouse_x,mouse_y);
+		}
+		#endregion
 		#region Campagin Reward
 		if (global.itemSelected[Boss.CampaignReward] == true)
 		{
@@ -1753,7 +1761,7 @@ if (mouse_x < x)
 	{
 		hellStacks = 0;
 		var demonQueen = instance_create_depth(obj_allBoss.x,obj_allBoss.y-250,-obj_allBoss.y-250,obj_demonQueen);
-		demonQueen.speed = 9;
+		demonQueen.speed = 16;
 		demonQueen.direction = 270;
 	}
 	#endregion

@@ -5,7 +5,7 @@ if (state == CameraStates.preFightView)
 	if (distance_to_object(global.player) < 20)
 	{
 		state = CameraStates.PlayerView;
-		obj_allBoss.state = BossStates.Fighting;
+		if (instance_exists(obj_allBoss)){obj_allBoss.state = BossStates.Fighting;}
 		global.player.state = States.Idle;
 	}
 }

@@ -1368,13 +1368,13 @@ if (attack == Atks.CircleAttack)
 			//Main
 			bloodKlot.direction = angleBk;
 			bloodKlot.speed = 5;
-			bloodKlot.image_angle = bloodKlot.direction;
+			bloodKlot.image_angle = bloodKlot.direction+90;
 			//Visual
 			bloodKlot.image_alpha = 1;
 			bloodKlot.sprite_index = spr_fireBall;
 			bloodKlot.image_blend = c_fuchsia;
-			bloodKlot.image_xscale = 1.3;
-			bloodKlot.image_yscale = 1.3;
+			bloodKlot.image_xscale = 1.2;
+			bloodKlot.image_yscale = 1.2;
 			bloodKlot.effectType = Effect.Smoke;
 			angleBk += (360/circleAmount);
 		}
@@ -1386,14 +1386,6 @@ if (attack == Atks.GooSpawn)
 {
 	if (gameMaster.chosenBoss == Boss.SlimeQueen)
 	{
-		with (obj_enemyProjectile)
-		{
-			if (sprite_index == gooSprite)
-			{
-				image_xscale = clamp(image_xscale*1.1,0,3);
-				image_yscale = image_xscale;
-			}
-		}
 		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
 		//Main
 		gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
@@ -1402,8 +1394,8 @@ if (attack == Atks.GooSpawn)
 		gooGround.image_alpha = 1;
 		gooGround.image_blend = c_green;
 		gooGround.sprite_index = spr_gooGround;
-		gooGround.image_xscale = 0.5;
-		gooGround.image_yscale = 0.5;
+		gooGround.image_xscale = 0.4;
+		gooGround.image_yscale = 0.4;
 		gooGround.destroy = false;
 		gooGround.effectType = Effect.NoEffect;
 		
@@ -1704,11 +1696,11 @@ if (attack == Atks.RapidFire)
 	}
 	if (gameMaster.chosenBoss == Boss.DeathKing)
 	{
-		rapidFireStacks += 7;
+		rapidFireStacks += 6;
 	}
 	if (gameMaster.chosenBoss == Boss.SlimeQueen)
 	{
-		rapidFireStacks += 8;
+		rapidFireStacks += 6;
 	}
 }
 #endregion

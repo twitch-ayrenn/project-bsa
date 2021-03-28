@@ -268,7 +268,7 @@ hitVinjetAlpha = 0;
 #endregion
 #region Stats
 hp += gameMaster.bonusHealth;
-if (class == Character.AngelSlayer){hp = 100;}
+if (class == Character.AngelSlayer && hp > 150){hp = 150;}
 moveSpeed += gameMaster.bonusSpeed/10;
 dashSpeed *= 1+(gameMaster.bonusDash/100);
 global.damage += gameMaster.bonusDamage/10;

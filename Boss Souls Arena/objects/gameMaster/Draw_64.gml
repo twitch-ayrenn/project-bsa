@@ -957,7 +957,7 @@ if (menu == Menues.BossLoot)
 			draw_set_font(fnt_NewNormalText);
 			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"+3% Lifesteal",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
 			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"+25% Damage Scaling",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
-			draw_text_transformed_color(infoTextX,startY+11*itemTextSeparationY,"-10% Dash Distance",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_fuchsia,c_fuchsia,1);
+			draw_text_transformed_color(infoTextX,startY+11*itemTextSeparationY,"-15% Dash Distance",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_fuchsia,c_fuchsia,1);
 			draw_text_transformed_color(infoTextX,startY+12*itemTextSeparationY,"\"If I have to choose between one evil",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+13*itemTextSeparationY,"and another, I rather not choose.\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			
