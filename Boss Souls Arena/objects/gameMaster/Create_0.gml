@@ -5,9 +5,9 @@
 //global.saveFile = "Save.alpha.0.65"; gaygang release
 menu = 0;
 //Versions
-global.relase = false;//true
-global.deBugg = true;//false
-global.saveFile = "Save.Beta.V.34";
+global.relase = true;//true
+global.deBugg = false;//false
+global.saveFile = "Save.Beta.V.39";
 if (file_exists(global.saveFile) == true && global.deBugg == false)
 {
 	game_load(global.saveFile);

@@ -699,17 +699,17 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,titleStartY,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 		}
 		#endregion
-		#region DemonGate
+		#region Eye Of Hell
 		if (itemShowInfoFor == Boss.FlameGate)
 		{
 			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,"Dashing causes a demon claw to burst from",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+2*itemTextSeparationY,"the ground. When erupting it deals massive",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+3*itemTextSeparationY,"damage to enemies hit. The demon claw",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			var dhText = "blocks all projectiles. It lasts for [" + string(hpCalc/75) + "]";
+			var dhText = "blocks all projectiles. It lasts for [" + string(hpCalc/80) + "]";
 			draw_text_transformed_color(infoTextX,startY+4*itemTextSeparationY,dhText,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+5*itemTextSeparationY,"seconds. The time the claw stays up scales",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+6*itemTextSeparationY,"with your [Max Health].",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);		
-			var fText2 = "[Claw Damage]: " + string(int64(dmgCalc*10))
+			var fText2 = "[Claw Damage]: " + string(int64(dmgCalc*8))
 			draw_text_transformed_color(infoTextX,startY+7*itemTextSeparationY,fText2,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_set_font(fnt_menu_fill);
 			draw_text_transformed_color(infoTextX,startY+8.6*itemTextSeparationY,"Item Stats",itemTextSizeBig,itemTextSizeBig,0,global.orange,global.orange,c_yellow,c_yellow,1);

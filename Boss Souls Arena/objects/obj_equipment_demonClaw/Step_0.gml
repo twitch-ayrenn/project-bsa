@@ -17,19 +17,19 @@ if (image_index <= 4)
 			if(place_meeting(x,y,obj_equipment_demonClaw))
 			{
 				show_debug_message("dmg dealt")
-				var damageDealt = global.damage*10;
+				var damageDealt = global.damage*8;
 				var damageText = instance_create_depth(x+irandom_range(-8,8),y+irandom_range(-5,5),depth-10,obj_textMaker);
 				damageText.color = c_white;
 				damageText.text = damageDealt;
-				hp -= global.damage*10;
+				hp -= global.damage*8;
 				
-				var amountHealed = global.damage*10*global.lifeSteal;
+				var amountHealed = global.damage*8*global.lifeSteal;
 				var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
 				healText.color = c_lime;
 				healText.text = amountHealed;
 				with (obj_allPlayer)
 				{
-					hp += global.damage*10*global.lifeSteal;
+					hp += global.damage*8*global.lifeSteal;
 				}
 				this.canDealDamage = false;
 			}

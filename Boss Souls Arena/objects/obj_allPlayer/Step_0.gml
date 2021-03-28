@@ -85,7 +85,7 @@ if (save_gif == true)
 #endregion
 #region Movement
 actualSpeed = (moveSpeed + gravelingSpeed)*bPSpeed*meteorStun*gravekeeperSpeed*shieldSpeed*agentSpeed*slayerSpeed*bfSpeed*t52Speed*gravelingAreaSpeed*plagueSpeed;
-var actualSpeedBefore = actualSpeed;
+actualSpeedBefore = actualSpeed;
 if (keyboard_check(ord("A")) && keyboard_check(ord("S")) || keyboard_check(ord("A")) && keyboard_check(ord("W")) ||  keyboard_check(ord("D")) && keyboard_check(ord("S")) || keyboard_check(ord("D")) && keyboard_check(ord("W")))
 {
 	actualSpeed = actualSpeed*0.85;
@@ -355,7 +355,7 @@ if (mouse_x < x)
 			if (global.itemSelected[Boss.FlameGate] == true)
 			{
 				var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
-				horn.destroyTime = (maxHp/75)*30;
+				horn.destroyTime = (maxHp/80)*30;
 			}
 			#endregion
 			#region the last wish
@@ -741,7 +741,7 @@ if (mouse_x < x)
 			if (global.itemSelected[Boss.FlameGate] == true)
 			{
 				var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
-				horn.destroyTime = (maxHp/75)*30;
+				horn.destroyTime = (maxHp/80)*30;
 			}
 			#endregion
 			#region Demon general rektaar
@@ -801,7 +801,7 @@ if (mouse_x < x)
 				if (global.itemSelected[Boss.FlameGate] == true)
 				{
 					var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
-					horn.destroyTime = (maxHp/75)*30;
+					horn.destroyTime = (maxHp/80)*30;
 				}
 				#endregion
 				#region Demon general rektaar
@@ -861,7 +861,7 @@ if (mouse_x < x)
 			if (global.itemSelected[Boss.FlameGate] == true)
 			{
 				var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
-				horn.destroyTime = (maxHp/75)*30;
+				horn.destroyTime = (maxHp/80)*30;
 			}
 			#endregion
 			#region the last wish
@@ -894,6 +894,8 @@ if (mouse_x < x)
 	#region Graveling
 	if (class == Character.Graveling)
 	{
+		graveShotAmount = int64(actualSpeedBefore);
+		
 		if (mouse_check_button(mb_right) && canRightClick == true
 		|| keyboard_check(ord("2")) && canRightClick == true)
 		{
@@ -901,17 +903,48 @@ if (mouse_x < x)
 			rightClickCooldownLeft = rightClickCooldown;
 			activateRightClickItem = true;
 			
-			gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);
-			var amountHealed = actualSpeedBefore*10;
-			var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
-			healText.color = c_lime;
-			healText.text = amountHealed/10;
-			hp = clamp(hp + actualSpeedBefore*10.5,0,maxHp);
+			doGraveShot = true;
+			graveShotTimes = graveShotAmount;
+			graveAngle = point_direction(x,y,mouse_x,mouse_y);
+					
+			var graveBolt = instance_create_depth(x,y,depth-1,obj_graveBolt);
+			graveBolt.direction = graveAngle;
+			if (global.autoAim == true && instance_exists(obj_allBoss)){graveBolt.direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
+			graveBolt.speed = actualSpeedBefore*3;
+			graveBolt.image_angle = graveBolt.direction+90;
+			// Visual
+			graveBolt.image_xscale = 0.85;
+			graveBolt.image_yscale = graveBolt.image_xscale;
+			graveBolt.image_alpha = 0.85;
+			graveBolt.image_blend = c_yellow;
+			graveBolt.timeToDestroy = (0.25)*30;
 			
-			var particle = instance_create_depth(x,y,depth+1,obj_particle_healing_small);
-			particle.objectToFollow = id;
+			gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);
+		}
+		if (doGraveShot == true && graveShotTimes > 0)
+		{
+			graveShotStacks++;	
+		}
+		if (graveShotStacks >= graveShotTime)
+		{
+			graveShotStacks = 0;
+			graveShotTimes--;
+			doGraveShot = true;
+			
+			var graveBolt = instance_create_depth(x,y,depth-1,obj_graveBolt);
+			graveBolt.direction = graveAngle;
+			if (global.autoAim == true && instance_exists(obj_allBoss)){graveBolt.direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
+			graveBolt.speed = actualSpeedBefore*3;
+			graveBolt.image_angle = graveBolt.direction+90;
+			// Visual
+			graveBolt.image_xscale = 0.85;
+			graveBolt.image_yscale = graveBolt.image_xscale;
+			graveBolt.image_alpha = 0.85;
+			graveBolt.image_blend = c_yellow;
+			graveBolt.timeToDestroy = (0.25)*30;
 		}
 	}
+	
 	#endregion
 	#region Plaguewalker
 	if (class == Character.PlaugeWalker)
@@ -1210,6 +1243,28 @@ if (mouse_x < x)
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			if (global.dashTowardsMove){direction = moveDirection;}
 			gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);
+			
+			#region DemonHorn
+			if (global.itemSelected[Boss.FlameGate] == true)
+			{
+				var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
+				horn.destroyTime = (maxHp/80)*30;
+			}
+			#endregion
+			#region the last wish
+			if (global.itemSelected[Boss.WispSisters] == true && instance_exists(obj_equipment_theLastWish) == false)
+			{
+				instance_create_depth(x,y,depth,obj_equipment_theLastWish);
+			}
+			if (global.itemSelected[Boss.WispSisters] == true && instance_exists(obj_equipment_theLastWish) == true)
+			{
+				with (obj_equipment_theLastWish)
+				{
+					x = global.player.x;
+					y = global.player.y;
+				}
+			}
+			#endregion
 		}
 		
 		if (GDashStopLeft > 0)
@@ -1302,6 +1357,27 @@ if (mouse_x < x)
 		if (class == Character.AngelSlayer){canLeftClick = true;	leftClickCooldownLeft = 0;}
 		if (class == Character.Pyromancer){instance_create_depth(x,y,-y,obj_pyroPortal); instance_create_depth(x,y,-y,obj_portal_bottom);}
 		if (class == Character.Graveling){gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);}
+		#region DemonHorn
+		if (global.itemSelected[Boss.FlameGate] == true)
+		{
+			var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
+			horn.destroyTime = (maxHp/80)*30;
+		}
+		#endregion
+		#region the last wish
+		if (global.itemSelected[Boss.WispSisters] == true && instance_exists(obj_equipment_theLastWish) == false)
+		{
+			instance_create_depth(x,y,depth,obj_equipment_theLastWish);
+		}
+		if (global.itemSelected[Boss.WispSisters] == true && instance_exists(obj_equipment_theLastWish) == true)
+		{
+			with (obj_equipment_theLastWish)
+			{
+				x = global.player.x;
+				y = global.player.y;
+			}
+		}
+		#endregion
 	}
 	if (sPHDashStopLeft > 0)
 	{
@@ -1606,7 +1682,6 @@ if (mouse_x < x)
 			
 			gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);
 			var deadGround = instance_create_depth(x,y,depth,obj_deadGround);
-			deadGround.destroyTimer = (2 + actualSpeedBefore)*30;
 			deadGround.image_blend = c_olive;
 		}
 		if (speed > 0)
@@ -1784,7 +1859,6 @@ if (class == Character.AgentOfGod)
 			bigBolt.image_yscale = bigBolt.image_xscale;
 			bigBolt.dontDestroy = true;
 	}
-		
 }
 #endregion
 #region Cooldowns

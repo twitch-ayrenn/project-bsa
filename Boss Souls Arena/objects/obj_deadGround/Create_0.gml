@@ -4,4 +4,4 @@ image_blend = c_silver;
 dealDamage = true;
 damageTimer = (1)*30;
 destroy = true;
-destroyTimer = 6*30;
+destroyTimer = 4*30;

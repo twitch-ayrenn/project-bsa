@@ -207,6 +207,11 @@ if (gameMaster.chosenClass == Character.AgentOfGod)
 	draw_healthbar(device_mouse_x_to_gui(0)-40,device_mouse_y_to_gui(0)+40,device_mouse_x_to_gui(0)+45,device_mouse_y_to_gui(0)+50,(agentPassiveStacks/((2)*30*leftClickCooldown/(leftClickCooldown*(1 + gameMaster.bonusFirerate/100))))*100,c_black,c_teal,c_aqua,0,true,false);
 	draw_sprite_ext(spr_newCursor12,5,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),cursorSize,cursorSize,0,c_white,1);
 }
+if (gameMaster.chosenClass == Character.Graveling)
+{	
+	draw_sprite_ext(spr_newCursor12,6,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),cursorSize,cursorSize,0,dashColor,1);
+	draw_text_transformed_color(device_mouse_x_to_gui(0)+38,device_mouse_y_to_gui(0)-44,string(int64(actualSpeedBefore)),0.15*0.35,0.15*0.35,0,c_white,c_white,c_white,c_white,1);
+}
 //Low Health Vinjett
 if (hp < 0.65*maxHp)
 {

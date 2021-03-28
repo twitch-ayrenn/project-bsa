@@ -198,7 +198,7 @@ if (playerShowInfoFor == Character.BloodKnight)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*00-5,"Passive: ",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*01,"Double [Base Health] and [Health] from items.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*01,"50% Bonus [Base Health] and [Health] from items.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*3.5-5,"Attack - Left Click:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);

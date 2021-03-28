@@ -812,7 +812,7 @@ if (attack == Atks.ChaseAttack)
 		beam.minSize = 0.25;
 		beam.stickOn = true;
 		beam.beamChase = true;
-		beam.turningSpeed = 85;
+		beam.turningSpeed = 110;
 		beam.destroy = false;
 		beam.effectType = Effect.NoEffect;
 	}
@@ -1141,11 +1141,11 @@ if (attack == Atks.OneShotAttack)
 		//Main
 		infernalBall.direction = point_direction(obj_allPlayer.x,obj_allPlayer.y-200,obj_allPlayer.x,obj_allPlayer.y);
 		infernalBall.speed = 8;
-		infernalBall.image_angle = infernalBall.direction;
+		infernalBall.image_angle = infernalBall.direction+90;
 		//Visual
 		infernalBall.image_alpha = 0.8;
 		infernalBall.image_blend = c_red;
-		infernalBall.sprite_index = spr_bloodKlott;
+		infernalBall.sprite_index = spr_fireBall;
 		infernalBall.image_xscale = 2.3;
 		infernalBall.image_yscale = 2.3;
 		infernalBall.effectType = Effect.Flare;
@@ -1166,7 +1166,7 @@ if (attack == Atks.ConeAttack)
 			//Main
 			fireBolt.direction = coneAtkFW;
 			fireBolt.speed = 3;
-			fireBolt.image_angle = fireBolt.direction+90;
+			fireBolt.image_angle = fireBolt.direction;
 			//Visual
 			fireBolt.image_alpha = 0.85;
 			fireBolt.sprite_index = spr_graveScythe_projectile;
@@ -1188,7 +1188,7 @@ if (attack == Atks.ConeAttack)
 			//Main
 			fireBolt.direction = coneAtkFW;
 			fireBolt.speed = 5;
-			fireBolt.image_angle = fireBolt.direction;
+			fireBolt.image_angle = fireBolt.direction+90;
 			//Visual
 			fireBolt.image_alpha = 0.85;
 			fireBolt.sprite_index = spr_fireBall;

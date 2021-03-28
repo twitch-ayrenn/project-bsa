@@ -39,6 +39,7 @@ hp = 100;
 moveSpeed = 2;
 normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
+actualSpeedBefore = moveSpeed;
 moveDirection = 0; 
 global.damage = 1;
 if (global.relase == true && global.deBugg == false){global.damage = 1;}
@@ -124,9 +125,9 @@ hitVinjetAlpha = 0;
 	{
 		hp = 100*2;
 		leftClickCooldown = (0.8)*30;
-		rightClickCooldown = (10)*30;
-		dashCooldown = (3)*30;
-		ultCooldown = (14)*30;
+		rightClickCooldown = (11)*30;
+		dashCooldown = (4)*30;
+		ultCooldown = (13)*30;
 		idleSprite = spr_player_theBloodKnight;
 		walkSprite = spr_player_theBloodKnight_walking;
 		deadSprite = spr_player_theBloodKnight_dead;
@@ -219,7 +220,7 @@ hitVinjetAlpha = 0;
 		hp = 100;
 		leftClickCooldown = (3)*30; // 3
 		rightClickCooldown = (6)*30;// 6
-		dashCooldown = (4)*30;// 6
+		dashCooldown = (5)*30;// 6
 		ultCooldown = (12)*30; // 12
 		idleSprite = spr_player_graveling;
 		walkSprite = spr_player_graveling;
@@ -238,6 +239,13 @@ hitVinjetAlpha = 0;
 		GDashStopLeft = 0;
 		instance_create_depth(x,y,depth,obj_gravelingRange);
 		dashDamage = false;
+		doGraveShot = false;
+		graveShotAmount = 1;
+		graveShotTimes = 0;
+		graveShotTime = (0.4)*30;
+		graveShotTime *= graveShotTime/(graveShotTime*(1 + gameMaster.bonusFirerate/100));
+		graveShotStacks = 0;
+		graveAngle = 0;
 	}
 	#endregion
 	#region PlaugeWalker
@@ -375,6 +383,7 @@ if (global.itemSelected[Boss.DeathKnight] == true && global.itemSelected[Boss.De
 	var extraDamage = global.damage*5*(1+(gameMaster.bonusFirerate/100));
 	global.deathScyhteDamage = extraDamage;
 	leftClickCooldown = (3)*30;
+	leftClickColor = c_maroon;
 }
 #endregion
 #region Angel Knight Oscar/ultra Rapid Fire Hourglass
@@ -389,6 +398,7 @@ if (global.itemSelected[Boss.DemonLordRekTaar] == true)
 	instance_create_depth(x,y,depth+1,obj_visual_demonPortal);
 	leftClickCooldown = (6)*30;
 	leftClickCooldown *= 1 - (gameMaster.bonusFirerate/100);
+	leftClickColor = c_maroon;
 }
 #endregion
 #region Gravekeeper
@@ -470,7 +480,7 @@ if (global.itemSelected[Boss.BossRushReward] == true)
 {
 	ultCooldown = (18)*30;
 	ultCooldown *= 1 - clamp((gameMaster.bonusCooldown/100),0,cdrCap);
-	ultColor = c_silver;
+	ultColor = c_teal;
 	
 	actualSPHDashSpeed = 0;
 	sPHDashStop = (0.4)*30;
