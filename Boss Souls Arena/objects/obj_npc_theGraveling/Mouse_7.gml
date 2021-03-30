@@ -6,7 +6,7 @@ if (gameMaster.gravelingUnlocked == true && gameMaster.menu == Menues.PlayerSele
 	{
 		if (gravelingProgress < 2){menu = Menues.BossSelect;chosenClass = Character.Graveling;}
 		if (gravelingProgress > 1){menu = Menues.BossLoot;  chosenClass = Character.Graveling;}
-		global.itemSlots = int64(1 + ((gravelingProgress-1)/4));
+		global.itemSlots = int64(1 + ((gravelingProgress-1)/global.itemSlotProgression));
 		global.maxItemSlots = global.itemSlots;
 	}
 	with(par_loot){reset = true;}

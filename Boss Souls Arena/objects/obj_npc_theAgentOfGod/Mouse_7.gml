@@ -6,7 +6,7 @@ if (gameMaster.agentOfGodUnlocked == true && gameMaster.menu == Menues.PlayerSel
 	{
 		if (agentOfGodProgress < 2){menu = Menues.BossSelect; chosenClass = Character.AgentOfGod;}
 		if (agentOfGodProgress > 1){menu = Menues.BossLoot;   chosenClass = Character.AgentOfGod;}
-		global.itemSlots = int64(1 + ((agentOfGodProgress-1)/4));
+		global.itemSlots = int64(1 + ((agentOfGodProgress-1)/global.itemSlotProgression));
 		global.maxItemSlots = global.itemSlots;
 	}
 	with(par_loot){reset = true;}

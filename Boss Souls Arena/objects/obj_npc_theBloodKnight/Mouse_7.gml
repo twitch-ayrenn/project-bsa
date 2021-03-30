@@ -6,7 +6,7 @@ if (gameMaster.bloodKnightUnlocked == true && gameMaster.menu == Menues.PlayerSe
 	{
 		if (bloodKnightProgress < 2){menu = Menues.BossSelect;chosenClass = Character.BloodKnight;}
 		if (bloodKnightProgress > 1){menu = Menues.BossLoot;  chosenClass = Character.BloodKnight;}
-		global.itemSlots = int64(1 + ((bloodKnightProgress-1)/4));
+		global.itemSlots = int64(1 + ((bloodKnightProgress-1)/global.itemSlotProgression));
 		global.maxItemSlots = global.itemSlots;
 	}
 	with(par_loot){reset = true;}

@@ -7,7 +7,7 @@ menu = 0;
 //Versions
 global.relase = true;//true
 global.deBugg = false;//false
-global.saveFile = "Save.Beta.V.39";
+global.saveFile = "Save.Beta.V.41";
 if (file_exists(global.saveFile) == true && global.deBugg == false)
 {
 	game_load(global.saveFile);
@@ -209,7 +209,8 @@ angelSlayerProgress = 1;
 agentOfGodProgress = 1;
 gravelingProgress = 1;
 totalProgress = 0;
-global.progressAmount = 1.5;
+global.progressAmount = 1.35;
+global.itemSlotProgression = 3.5;
 //Unlocks
 assassinUnlocked = true;
 bloodKnightUnlocked = true;

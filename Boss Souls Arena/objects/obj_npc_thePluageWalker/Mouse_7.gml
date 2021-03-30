@@ -6,7 +6,7 @@ if (gameMaster.plaugeWalkerUnlocked == true && gameMaster.menu == Menues.PlayerS
 	{
 		if (plaugeWalkerProgress < 2){menu = Menues.BossSelect;chosenClass = Character.PlaugeWalker;}
 		if (plaugeWalkerProgress > 1){menu = Menues.BossLoot;  chosenClass = Character.PlaugeWalker;}
-		global.itemSlots = int64(1 + ((plaugeWalkerProgress-1)/4));
+		global.itemSlots = int64(1 + ((plaugeWalkerProgress-1)/global.itemSlotProgression));
 		global.maxItemSlots = global.itemSlots;
 	}
 	with(par_loot){reset = true;}
