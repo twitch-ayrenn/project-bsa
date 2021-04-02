@@ -39,7 +39,14 @@ if (playerShowInfoFor == Character.NoCharacterCampaign)
 	draw_text_transformed_color(startX,startY+sep*15,"have to be as aggresive and relentless as",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*16,"your opponents - The Arena King",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
-	var progression = ((((gameMaster.pyromancerProgress-1)/1.5)/18)+(((gameMaster.assassinProgress-1)/1.5)/18)+(((gameMaster.bloodKnightProgress-1)/1.5)/18)+(((gameMaster.angelSlayerProgress-1)/1.5)/18)+(((gameMaster.agentOfGodProgress-1)/1.5)/18)+(((gameMaster.gravelingProgress-1)/1.5)/18)+(((gameMaster.plaugeWalkerProgress-1)/1.5)/18))/7;
+	var progression = 
+	((((gameMaster.pyromancerProgress-1)/global.progressAmount)/global.ca)
+	+(((gameMaster.assassinProgress-1)/global.progressAmount)/global.ca)
+	+(((gameMaster.bloodKnightProgress-1)/global.progressAmount)/global.ca)
+	+(((gameMaster.angelSlayerProgress-1)/global.progressAmount)/global.ca)
+	+(((gameMaster.agentOfGodProgress-1)/global.progressAmount)/global.ca)
+	+(((gameMaster.gravelingProgress-1)/global.progressAmount)/global.ca)
+	+(((gameMaster.plaugeWalkerProgress-1)/global.progressAmount)/global.ca))/7;
 	
 	progression = clamp(progression,0,1);
 	draw_set_alpha(0.85);
@@ -88,38 +95,38 @@ if (playerShowInfoFor == Character.Pyromancer)
 	color1 = global.orange;
 	color2 = c_orange;
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*00-5,"Passive:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*00-5,"Passive",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*01,"Each ability and attack summons a flame",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*02,"portal that shoots firebolts where you aim.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*03,"Portals grow stronger with [Summoning Power].",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*05.5-5,"Attack - Left Click:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*05.5-5,"Attack - Left Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*6.5,"Shoot a fireball. Hold to charge a stronger",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*7.5,"fireball thats bigger and deals more damage.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*8.5,"Attack Speed reduces charge time.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*11-5,"Ability - Right Click: ",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*11-5,"Ability - Right Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*12,"Breathe waves of fireballs. Wave amoumt",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*13,"increases with the damage stat.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*15.5-5,"Dash - Space: ",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*15.5-5,"Dash - Space",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*16.5,"Dash a long distance.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*19-5,"Ultimate - R:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*19-5,"Ultimate - R",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*20,"Become a big meteor that falls from the sky.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*21,"Deal damage to enemies hit by the meteor or",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*22,"the fiery ground it leaves.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
-	var progression = (((gameMaster.pyromancerProgress-1)/1.5)/18);
+	var progression = (((gameMaster.pyromancerProgress-1)/global.progressAmount)/global.ca);
 	progression = clamp(progression,0,1);
 	draw_set_alpha(0.85);
 	draw_line_width_color(barStartX,barStartY+12.5,barStartX+progression*barLengthValue,barStartY+12.5,barThickness,global.orange,c_yellow);
@@ -142,13 +149,13 @@ if (playerShowInfoFor == Character.ShadowAssassin)
 	color2 = c_purple;
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*00-5,"Passive:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*00-5,"Passive",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*01,"You can attack instantly after using other",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*02,"abilities. Your sorounded with a shadow circle.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*04.5-5,"Attack - Left Click: ",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*04.5-5,"Attack - Left Click ",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*05.5,"Click inside the shadow circle to teleport and",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*06.5,"throw knives around you. You do not take ",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
@@ -156,24 +163,24 @@ if (playerShowInfoFor == Character.ShadowAssassin)
 	draw_text_transformed_color(startX,startY+sep*08.5,"is dealt when clicking on an enemy.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*11-5,"Ability - Right Click:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*11-5,"Ability - Right Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*12,"Summon a shadow of yourself, it also throws",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*13,"knives when you attack and also has a shadow",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*14,"circle.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*16.5-5,"Dash - Space:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*16.5-5,"Dash - Space",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*17.5,"Dash, make the purple circles deal damage.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*20-5,"Ultimate - R:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*20-5,"Ultimate - R",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*21,"Restore all your health and reset all your ",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*22,"attack and ability cooldowns.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
-	var progression = (((gameMaster.assassinProgress-1)/1.5)/18);
+	var progression = (((gameMaster.assassinProgress-1)/global.progressAmount)/global.ca);
 	progression = clamp(progression,0,1);
 	draw_set_alpha(0.85);
 	draw_line_width_color(barStartX,barStartY+12.5,barStartX+progression*barLengthValue,barStartY+12.5,barThickness,global.orange,c_yellow);
@@ -196,37 +203,37 @@ if (playerShowInfoFor == Character.BloodKnight)
 	color2 = c_maroon;
 
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*00-5,"Passive: ",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*00-5,"Passive",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*01,"50% Bonus [Base Health] and [Health] from items.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*3.5-5,"Attack - Left Click:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*3.5-5,"Attack - Left Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*4.5,"Summon bats. [Summoning Power] increases",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*5.5,"the amount of bats summoned.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*08-5,"Ability - Right Click: ",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*08-5,"Ability - Right Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*09,"Charge and deal damage to enemies in your",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*10,"way. You do not take damage when touching",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*11,"an enemy. This ability counts as a dash.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*13.5-5,"Dash - Space:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*13.5-5,"Dash - Space",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*14.5,"Dash, summon a giant bat. [Summoning Power]",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*15.5,"increases the damage the bat deals.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*18-5,"Ultimate - R:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*18-5,"Ultimate - R",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*19,"Shoot an uncontrollable blood beam towards",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*20,"mouse direction. It deals massive damage.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*21,"",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
-	var progression = (((gameMaster.bloodKnightProgress-1)/1.5)/18);
+	var progression = (((gameMaster.bloodKnightProgress-1)/global.progressAmount)/global.ca);
 	progression = clamp(progression,0,1);
 	draw_set_alpha(0.85);
 	draw_line_width_color(barStartX,barStartY+12.5,barStartX+progression*barLengthValue,barStartY+12.5,barThickness,global.orange,c_yellow);
@@ -244,43 +251,42 @@ if (playerShowInfoFor == Character.BloodKnight)
 #region The Plaguewalker
 if (playerShowInfoFor == Character.PlaugeWalker)
 {
-	title = "Plaegi The Plaguewalker";
+	title = "Plaegi The Plaguemancer";
 	color1 = c_lime;
 	color2 = c_green;
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*00-5,"Passive: ",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*00-5,"Passive",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*01,"The disease around you deals damage to",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*02,"enemies and heals your summonings. Some",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*03,"summonings will lose health over time.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*01,"Whenever you attack, cast an ability or ultimate",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*02,"you can dash again.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*05.5-5,"Attack - Left Click:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*4.5-5,"Attack - Left Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*06.5,"Summon a leech that deals damage to enemies",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*07.5,"over time or heals your non permanent",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*08.5,"summonings over time.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*5.5,"Summon plaguelings. [Summoning Power]",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*6.5,"increases the amount of plaguelings summoned.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*11-5,"Ability - Right Click: ",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*9-5,"Ability - Right Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*12,"Summon plaguelings. [Summoning Power]",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*13,"increases the amount of plaguelings summoned. ",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*10,"Shoot a massive plaguebolt. Recast ability to ",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*11,"to teleport to plaguebolt. This destroys the bolt.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*15.5-5,"Dash - Space: ",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*13.5-5,"Dash - Space",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*16.5,"Dash, summon a Wisp that deals damage to",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*17.5,"enemies in its circle and increases your speed.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*14.5,"Dash a long distance",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*20-5,"Ultimate - R: ",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*17-5,"Ultimate - R",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*21,"Summons a big zombie. The zombie plaguelings",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*22,"over time.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*18,"Conjure a plaguestorm for 6 seconds. The Storm",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*19,"damages enemies and summons [18] plaguelings",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*20,"over the course of the storm. [Summoning Power]",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*21,"increases the amount summoned.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 
-	var progression = (((gameMaster.plaugeWalkerProgress-1)/1.5)/18);
+	var progression = (((gameMaster.plaugeWalkerProgress-1)/global.progressAmount)/global.ca);
 	progression = clamp(progression,0,1);
 	draw_set_alpha(0.85);
 	draw_line_width_color(barStartX,barStartY+12.5,barStartX+progression*barLengthValue,barStartY+12.5,barThickness,global.orange,c_yellow);
@@ -303,37 +309,37 @@ if (playerShowInfoFor == Character.AgentOfGod)
 	color2 = c_silver;
 
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*00-5,"Passive:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*00-5,"Passive",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*01,"Every second a projectiles falls down at your",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*02,"cursor dealing damage. Attack speed reduces",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*03,"the cooldown of this power.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*05.5-5,"Attack - Left Click: ",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*05.5-5,"Attack - Left Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*06.5,"Shoot a big holy fireball.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*09-5,"Ability - Right Click:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*09-5,"Ability - Right Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*10,"Strike forward with the Godsword dealing",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*11,"damage to enemies hit by the strike. Hiting an",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*12,"enemy reduces the cooldown by 75%.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*14.5-5,"Dash - Space:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*14.5-5,"Dash - Space",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*15.5,"Dash, fire a massive holy fireball towards",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*16.5,"the direction of your dash.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*19-5,"Ultimate - R:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*19-5,"Ultimate - R",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*20,"Breathe holy fire towards mouse cursor for 5",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*21,"seconds.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 
-	var progression = (((gameMaster.agentOfGodProgress-1)/1.5)/18);
+	var progression = (((gameMaster.agentOfGodProgress-1)/global.progressAmount)/global.ca);
 	progression = clamp(progression,0,1);
 	draw_set_alpha(0.85);
 	draw_line_width_color(barStartX,barStartY+12.5,barStartX+progression*barLengthValue,barStartY+12.5,barThickness,global.orange,c_yellow);
@@ -356,37 +362,38 @@ if (playerShowInfoFor == Character.Graveling)
 	color2 = c_dkgray;
 
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*00-5,"Passive:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*00-5,"Passive",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*01,"Gain speed with every attack and ability.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*02,"Speed increases the power of your attack &",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*03,"abilities. The range of your attack & ultimate",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*04,"is shown by the circle around you.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*03,"abilities. The range of your attacks & ultimate",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*04,"is shown by the range indicator around you.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*06.5-5,"Attack - Left Click:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*06.5-5,"Attack - Left Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*07.5,"Shot a burst of  firebolts in a cone. The",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*08.5,"amount of firebolts is increased by speed.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*11-5,"Ability 1 - Right Click:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*11-5,"Ability - Right Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*12,"Heal yourself. The heal is increased by speed.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*12,"Shoot firebolts in a direction. The amount",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*13,"of firebolts is increased by speed.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*14.5-5,"Ability 2 - Space:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*15.5-5,"Dash - Space",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*15.5,"Dash, place an area which damages enemies",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*16.5,"and increases your speed.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*16.5,"Dash, place an area which damages enemies",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*17.5,"and increases your movement speed.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	//Dash, place an area which damages enemies and increases your speed.
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*19-5,"Ultimate - R:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*20-5,"Ultimate - R",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*20,"Dash and deal massive damage to enemies.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*21,"More movement speed equals more damage.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*21,"Dash and deal massive damage to enemies.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*22,"The damage increases with movement speed.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 
-	var progression = (((gameMaster.gravelingProgress-1)/1.5)/18);
+	var progression = (((gameMaster.gravelingProgress-1)/global.progressAmount)/global.ca);
 	progression = clamp(progression,0,1);
 	draw_set_alpha(0.85);
 	draw_line_width_color(barStartX,barStartY+12.5,barStartX+progression*barLengthValue,barStartY+12.5,barThickness,global.orange,c_yellow);
@@ -409,35 +416,35 @@ if (playerShowInfoFor == Character.AngelSlayer)
 	color2 = c_black;
 
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*00-5,"Passive: ",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*00-5,"Passive",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*01,"You can use your attack instantly after using",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*02,"an ability & you cant have more than 150 HP.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*04.5-5,"Attack - Left Click: ",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*04.5-5,"Attack - Left Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*05.5,"Dash forward then Slash in with you scythe.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*08-5,"Ability - Right Click: ",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*08-5,"Ability - Right Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*09,"Dash Back and summon a massive demon.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*10,"[Summoning Power] increases the damage dealt.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*12.5-5,"Dash - Space: ",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*12.5-5,"Dash - Space",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*13.5,"Dash a long distance.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*16-5,"Ultimate - R:",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*16-5,"Ultimate - R",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*17,"Gain 50% movement speed and attack",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*18,"constantly for 6 seconds. During this time you",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*19,"cant use any abilities.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 
-	var progression = (((gameMaster.angelSlayerProgress-1)/1.5)/18);
+	var progression = (((gameMaster.angelSlayerProgress-1)/global.progressAmount)/global.ca);
 	progression = clamp(progression,0,1);
 	draw_set_alpha(0.85);
 	draw_line_width_color(barStartX,barStartY+12.5,barStartX+progression*barLengthValue,barStartY+12.5,barThickness,global.orange,c_yellow);

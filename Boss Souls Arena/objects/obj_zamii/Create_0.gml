@@ -5,6 +5,6 @@ shoot = true;
 sizeX = 1;
 sizeY = 1;
 startUpVars = true;
-hp = 10;
+hp = 3;
 maxHp = hp;
 destroy = true;

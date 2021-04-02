@@ -19,8 +19,8 @@ phase4Hp = 0; phase4Ms = 0; phase4Dmg = 0;
 phase5Hp = 0; phase5Ms = 0; phase5Dmg = 0;
 phase6Hp = 0; phase6Ms = 0; phase6Dmg = 0;
 //500 hp = 1 min gameplay
-tier1Hp = 500; tier2Hp = 1000; tier3Hp = 1400;
-tier4Hp = 2250; tier5Hp = 2500; tier6Hp = 2750;
+tier1Hp = 450; tier2Hp = 950; tier3Hp = 1300;
+tier4Hp = 2100; tier5Hp = 2350; tier6Hp = 2600;
 hp = 0;
 maxHp = hp;
 global.bossDamage = 10;
@@ -182,7 +182,7 @@ isHit = false;
 		{
 			//stats
 			phase1Hp = tier1Hp*0.4; phase1Ms = 1.15; phase1Dmg = 25;
-			phase2Hp = tier1Hp*0.6; phase2Ms = 1.50; phase2Dmg = 30;
+			phase2Hp = tier1Hp*0.6; phase2Ms = 1.25; phase2Dmg = 30;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -207,9 +207,9 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.WispSisterJulia) 
 		{
 			//stats
-			phase1Hp = tier2Hp*0.30; phase1Ms = 1.25; phase1Dmg = 25;
-			phase2Hp = tier2Hp*0.50; phase2Ms = 1.50; phase2Dmg = 27.5;
-			phase3Hp = tier2Hp*0.20; phase3Ms = 1; phase3Dmg = 30;
+			phase1Hp = tier2Hp*0.35; phase1Ms = 1.2; phase1Dmg = 25;
+			phase2Hp = tier2Hp*0.50; phase2Ms = 1.4; phase2Dmg = 27.5;
+			phase3Hp = tier2Hp*0.15; phase3Ms = 1; phase3Dmg = 27.5;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -582,8 +582,8 @@ isHit = false;
 			//stats
 			phase1Hp = tier4Hp*0.25; phase1Ms = 1; phase1Dmg = 40;
 			phase2Hp = tier4Hp*0.25; phase2Ms = 1.25; phase2Dmg = 40;
-			phase3Hp = tier4Hp*0.60; phase3Ms = 1.75; phase3Dmg = 40;
-			phase4Hp = tier4Hp*0.20; phase4Ms = 1; phase4Dmg = 25;
+			phase3Hp = tier4Hp*0.50; phase3Ms = 1.5; phase3Dmg = 40;
+			phase4Hp = tier4Hp*0.15; phase4Ms = 1; phase4Dmg = 25;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;

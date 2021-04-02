@@ -5,6 +5,17 @@ if (gameMaster.chosenBoss == Boss.Gravekeeper)
 	draw_sprite_ext(spr_darkness,0,0,0,2,2,0,c_black,blackOutAlpha);
 }
 #endregion
+#region
+if (gameMaster.chosenClass == Character.PlaugeWalker)
+{
+	if (plagueStormActive)
+	{
+		if (plagueStormStacks > (plagueStormDuration/2)){plagueAlpha = clamp(plagueAlpha+0.95/(90),0.05,1);}
+		if (plagueStormStacks < (plagueStormDuration/2)){plagueAlpha = clamp(plagueAlpha-0.95/(90),0.05,1);}
+		draw_sprite_ext(spr_plagueStorm,0,0,0,4.2,4.2,0,c_green,plagueAlpha);
+	}
+}
+#endregion
 #region AllBosses
 var darkGray = make_color_rgb(10,10,10);
 if (instance_exists(obj_allBoss))
@@ -184,8 +195,6 @@ draw_text_transformed_color(uiHP_X+105+15,84+13+12.5,"M1",0.15*0.35,0.15*0.35,0,
 draw_text_transformed_color(uiHP_X+164+45+1,81+13+5,"Space",0.12*0.35,0.12*0.35,0,c_white,c_white,c_white,c_white,1);
 draw_text_transformed_color(uiHP_X+224+55,84+13+12.5,"M2",0.15*0.35,0.15*0.35,0,c_white,c_white,c_white,c_white,1);
 draw_set_halign(fa_left);
-
-
 //cursor
 var cursorSize = 4;
 draw_sprite_ext(spr_newCursor12,0,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),cursorSize,cursorSize,0,c_white,1);
@@ -211,6 +220,14 @@ if (gameMaster.chosenClass == Character.Graveling)
 {	
 	draw_sprite_ext(spr_newCursor12,6,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),cursorSize,cursorSize,0,dashColor,1);
 	draw_text_transformed_color(device_mouse_x_to_gui(0)+38,device_mouse_y_to_gui(0)-44,string(int64(actualSpeedBefore)),0.15*0.35,0.15*0.35,0,c_white,c_white,c_white,c_white,1);
+}
+if (gameMaster.chosenClass == Character.PlaugeWalker)
+{
+	if (plagueStormActive)
+	{
+		draw_healthbar(device_mouse_x_to_gui(0)-40,device_mouse_y_to_gui(0)+40,device_mouse_x_to_gui(0)+45,device_mouse_y_to_gui(0)+50,(plagueStormStacks/plagueStormDuration)*100,c_black,c_green,c_lime,0,true,false);
+		draw_sprite_ext(spr_newCursor12,5,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),cursorSize,cursorSize,0,c_white,1);
+	}	
 }
 //Low Health Vinjett
 if (hp < 0.65*maxHp)

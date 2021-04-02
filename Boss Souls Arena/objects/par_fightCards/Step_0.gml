@@ -22,17 +22,12 @@ if (gameMaster.chosenClass == Character.Pyromancer && gameMaster.pyromancerProgr
 	visible = false;
 	mask_index = spr_prop_cup;
 }
-if (gameMaster.chosenClass == Character.PlaugeWalker && gameMaster.plaugeWalkerProgress < bossOnThisCard-1)
+if (gameMaster.chosenClass == Character.PlaugeWalker && gameMaster.plaugeWalkerProgress < bossOnThisCard)
 {
 	visible = false;
 	mask_index = spr_prop_cup;
 }
 if (gameMaster.chosenClass == Character.AngelSlayer && gameMaster.angelSlayerProgress < bossOnThisCard)
-{
-	visible = false;
-	mask_index = spr_prop_cup;
-}
-if (gameMaster.chosenClass == Character.AgentOfGod && gameMaster.agentOfGodProgress < bossOnThisCard)
 {
 	visible = false;
 	mask_index = spr_prop_cup;

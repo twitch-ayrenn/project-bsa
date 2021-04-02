@@ -10,7 +10,8 @@
         "a1894977-ac3d-44b3-a996-e9587ddc90f4",
         "188ac05b-79ec-447c-a9ed-287e1222c0e6",
         "2cbf6063-f10e-4b84-a40f-c21c8fa3a000",
-        "1637de7e-9c11-4a07-8e33-2a0c49d69405"
+        "1637de7e-9c11-4a07-8e33-2a0c49d69405",
+        "0f48314b-e02d-4e8f-a66c-bd2246f916db"
     ],
     "filterType": "GMObject",
     "folderName": "grp_plagueWalker",

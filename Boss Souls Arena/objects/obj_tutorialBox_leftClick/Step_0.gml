@@ -8,7 +8,7 @@ if (room == rm_arena)
 if (place_meeting(x-5,y,obj_daggerProjectile) || place_meeting(x-5,y,nearestFireBolt) && nearestFireBolt.isAttack
 ||  place_meeting(x-5,y,obj_batProjectile) || place_meeting(x-5,y,obj_holyFireBolt) 
 || place_meeting(x,y,obj_slayerScythe) && obj_slayerScythe.state == MeleeWeaponStates.SpinOnce ||
-place_meeting(x-5,y,obj_graveBolt) || place_meeting(x-5,y,obj_leech))
+place_meeting(x-5,y,obj_graveBolt) || place_meeting(x-5,y,obj_plaguelings))
 {
 	instance_destroy();
 }

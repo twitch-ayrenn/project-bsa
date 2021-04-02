@@ -31,10 +31,11 @@ if (shoot == true)
 	repeat(int64(1*global.player.conjurationPower))
 	{
 		var doodlings = instance_create_depth(x+irandom_range(-separation,separation),y+irandom_range(-separation,separation),depth+1,obj_plaguelings);
-		doodlings.speed = 3;
+		doodlings.speed = 4;
+		doodlings.sprite_index = choose(spr_plagueling,spr_plaguer);
 		doodlings.direction = point_direction(x,y,mouse_x,mouse_y);
 		doodlings.destroyTime = 10*30;
 	}
 	
-	alarm[0] = (0.5)*30;
+	alarm[0] = (0.9)*30;
 }

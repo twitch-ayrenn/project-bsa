@@ -705,7 +705,7 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,"Dashing causes a demon claw to burst from",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+2*itemTextSeparationY,"the ground. When erupting it deals massive",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+3*itemTextSeparationY,"damage to enemies hit. The demon claw",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			var dhText = "blocks all projectiles. It lasts for [" + string(hpCalc/80) + "]";
+			var dhText = "blocks all projectiles. It lasts for [" + string(0.4+hpCalc/200) + "]";
 			draw_text_transformed_color(infoTextX,startY+4*itemTextSeparationY,dhText,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+5*itemTextSeparationY,"seconds. The time the claw stays up scales",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+6*itemTextSeparationY,"with your [Max Health].",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);		

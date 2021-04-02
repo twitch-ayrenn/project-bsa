@@ -211,17 +211,17 @@ if (fall == true)
 			var fireball = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
 			//Main
 			fireball.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
-			fireball.speed = 6;
+			fireball.speed = 5.5;
 			fireball.image_angle = fireball.direction+90;
 			//Visual
 			fireball.image_alpha = 0.85;
 			fireball.image_blend = c_aqua;
 			fireball.sprite_index = spr_fireBall;
-			fireball.image_xscale = 1;
-			fireball.image_yscale = 1;
+			fireball.image_xscale = 1.1;
+			fireball.image_yscale = 1.1;
 			fireball.effectType = Effect.Flare;
 		
-			alarm[2] = (0.65)*30;
+			alarm[2] = (0.75)*30;
 		}
 	}
 	#endregion
@@ -233,8 +233,8 @@ if (fall == true)
 			canRapidAttack = false;
 			rapidFireStacks -= 1;
 		
-			var coneWide = 45;
-			var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-coneWide*0.34;
+			var coneWide = 50;
+			var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-coneWide/3;
 			var coneAmount = 3;
 			repeat(coneAmount)
 			{
@@ -303,8 +303,8 @@ if (fall == true)
 			corruptKlot.image_alpha = 0.85;
 			corruptKlot.image_blend = c_fuchsia;
 			corruptKlot.sprite_index = spr_swordShot;
-			corruptKlot.image_xscale = 1.15;
-			corruptKlot.image_yscale = 1.15;
+			corruptKlot.image_xscale = 1.10;
+			corruptKlot.image_yscale = 1.10;
 			corruptKlot.effectType = Effect.NoEffect;
 		
 			alarm[2] = (0.65)*30;
@@ -335,7 +335,7 @@ if (fall == true)
 			var fireBalls = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
 			//Main
 			fireBalls.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
-			fireBalls.speed = 6;
+			fireBalls.speed = 5;
 			fireBalls.image_angle = fireBalls.direction+90;
 			//Visual
 			fireBalls.image_alpha = 0.85;
@@ -350,7 +350,7 @@ if (fall == true)
 				var fireBalls2 = instance_create_depth(global.arenaMiddleX-175,global.arenaMiddleY,depth+1,obj_enemyProjectile);
 				//Main
 				fireBalls2.direction = point_direction(global.arenaMiddleX-175,global.arenaMiddleY,obj_allPlayer.x,obj_allPlayer.y);
-				fireBalls2.speed = 6;
+				fireBalls2.speed = 5;
 				fireBalls2.image_angle = fireBalls2.direction+90;
 				//Visual
 				fireBalls2.image_alpha = 0.85;
@@ -365,7 +365,7 @@ if (fall == true)
 				var fireBalls3 = instance_create_depth(global.arenaMiddleX+175,global.arenaMiddleY,depth+1,obj_enemyProjectile);
 				//Main
 				fireBalls3.direction = point_direction(global.arenaMiddleX+175,global.arenaMiddleY,obj_allPlayer.x,obj_allPlayer.y);
-				fireBalls3.speed = 6;
+				fireBalls3.speed = 5;
 				fireBalls3.image_angle = fireBalls3.direction+90;
 				//Visual
 				fireBalls3.image_alpha = 0.85;
@@ -395,7 +395,7 @@ if (fall == true)
 			var graveScyhte = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
 			//Main
 			graveScyhte.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
-			graveScyhte.speed = 4.5;
+			graveScyhte.speed = 4.25;
 			graveScyhte.image_angle = graveScyhte.direction+90;
 			//Visual
 			graveScyhte.image_alpha = 0.85;

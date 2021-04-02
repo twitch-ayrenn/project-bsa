@@ -53,7 +53,7 @@ if (state == States.Idle || state == States.Walking)
 if (save_gif == true)
 {
 	var gifSize = 600;
-	var gifLength = (8)*30;
+	var gifLength = (10)*30;
 	if (count == 0)
 	{
 	    gif_image = gif_open(gifSize, gifSize);
@@ -63,7 +63,7 @@ if (save_gif == true)
 		if (everyThirdFrame == 0)
 		{
 			everyThirdFrame++;
-			gif_add_surface(gif_image, application_surface, 6/100,(1600/2)-(gifSize/2),(900/2)-(gifSize/2),2);	
+			gif_add_surface(gif_image, application_surface, 6/100,(1600/2)-(gifSize/2),(900/2)-(gifSize/2),3);	
 		}
 		else
 		{
@@ -84,7 +84,7 @@ if (save_gif == true)
 }
 #endregion
 #region Movement
-actualSpeed = (moveSpeed + gravelingSpeed)*bPSpeed*meteorStun*gravekeeperSpeed*shieldSpeed*agentSpeed*slayerSpeed*bfSpeed*t52Speed*gravelingAreaSpeed*plagueSpeed;
+actualSpeed = (moveSpeed + gravelingSpeed)*bPSpeed*meteorStun*gravekeeperSpeed*shieldSpeed*agentSpeed*slayerSpeed*bfSpeed*t52Speed*gravelingAreaSpeed;
 actualSpeedBefore = actualSpeed;
 if (keyboard_check(ord("A")) && keyboard_check(ord("S")) || keyboard_check(ord("A")) && keyboard_check(ord("W")) ||  keyboard_check(ord("D")) && keyboard_check(ord("S")) || keyboard_check(ord("D")) && keyboard_check(ord("W")))
 {
@@ -355,7 +355,7 @@ if (mouse_x < x)
 			if (global.itemSelected[Boss.FlameGate] == true)
 			{
 				var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
-				horn.destroyTime = (maxHp/80)*30;
+				horn.destroyTime = 0.4+(maxHp/hornTime)*30;
 			}
 			#endregion
 			#region the last wish
@@ -424,33 +424,18 @@ if (mouse_x < x)
 			leftClickCooldownLeft = leftClickCooldown;
 			activateLeftClickItem = true;
 			
-			var leech = instance_create_depth(x,y,depth+1,obj_leech);
-			leech.speed = 5;
-			leech.direction = point_direction(x,y,mouse_x,mouse_y);
-			if (global.autoAim == true)
+			canDash = true;
+			dashCooldownLeft = 0;
+					
+			var separation = 35;
+			repeat(int64(plaguelingAmount*conjurationPower))
 			{
-				var	nearestWisp = noone;
-				var wispDistance = 1000;
-				if (instance_exists(obj_plagueWisp)){nearestWisp = instance_nearest(x,y,obj_plagueWisp); wispDistance = distance_to_object(nearestWisp);}
-				var	nearestBoss = noone;
-				var bossDistance = 1000;
-				if (instance_exists(obj_allBoss)){nearestBoss = instance_nearest(x,y,obj_allBoss); bossDistance = distance_to_object(nearestBoss);}
-				var	nearestZamii = noone;
-				var zamiiDistance = 1000;
-				if (instance_exists(obj_zamii)){nearestZamii = instance_nearest(x,y,obj_zamii); zamiiDistance = distance_to_object(nearestZamii);}
-				var nearestTarget = min(wispDistance,bossDistance,zamiiDistance);
-				var target = noone;
-				if (nearestTarget == wispDistance){target = nearestWisp;}
-				if (nearestTarget == bossDistance){target = nearestBoss;}
-				if (nearestTarget == zamiiDistance){target = nearestZamii;}
-				leech.direction = point_direction(x,y,target.x,target.y);
+				var doodlings = instance_create_depth(x+irandom_range(-separation,separation),y+irandom_range(-separation,separation),depth+1,obj_plaguelings);
+				doodlings.speed = 3;
+				doodlings.sprite_index = choose(spr_plagueling,spr_plaguer);
+				doodlings.direction = point_direction(x,y,mouse_x,mouse_y);
+				doodlings.destroyTime = 10*30;
 			}
-			leech.image_angle = leech.direction-90;
-			
-			//Visual
-			leech.image_xscale = 0.45 + conjurationPower/10;
-			leech.image_yscale = 0.45 + conjurationPower/10;
-			leech.destroyTime = (4)*30*conjurationPower;
 		}
 	}
 	#endregion
@@ -741,7 +726,7 @@ if (mouse_x < x)
 			if (global.itemSelected[Boss.FlameGate] == true)
 			{
 				var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
-				horn.destroyTime = (maxHp/80)*30;
+				horn.destroyTime = 0.4+(maxHp/hornTime)*30;
 			}
 			#endregion
 			#region Demon general rektaar
@@ -801,7 +786,7 @@ if (mouse_x < x)
 				if (global.itemSelected[Boss.FlameGate] == true)
 				{
 					var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
-					horn.destroyTime = (maxHp/80)*30;
+					horn.destroyTime = 0.4+(maxHp/hornTime)*30;
 				}
 				#endregion
 				#region Demon general rektaar
@@ -861,7 +846,7 @@ if (mouse_x < x)
 			if (global.itemSelected[Boss.FlameGate] == true)
 			{
 				var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
-				horn.destroyTime = (maxHp/80)*30;
+				horn.destroyTime = 0.4+(maxHp/hornTime)*30;
 			}
 			#endregion
 			#region the last wish
@@ -949,21 +934,43 @@ if (mouse_x < x)
 	#region Plaguewalker
 	if (class == Character.PlaugeWalker)
 	{
-		if (mouse_check_button(mb_right) && canRightClick == true
+		if (mouse_check_button_released(mb_right)
+		|| keyboard_check(ord("2")))
+		{
+			if (instance_exists(obj_plagueball))
+			{
+				var bolt = instance_nearest(x,y,obj_plagueball);
+				if (bolt.x > 400+10 && bolt.x < 810-10 && bolt.y > 430+10 && bolt.y < 710-10)
+				{
+					x = bolt.x;
+					y = bolt.y;
+					
+					instance_destroy(bolt);
+				}
+			}
+		}
+		if (mouse_check_button_released(mb_right) && canRightClick == true
 		|| keyboard_check(ord("2")) && canRightClick == true)
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
 			activateRightClickItem = true;
 			
-			var separation = 30;
-			repeat(int64(plaguelingAmount*conjurationPower))
-			{
-				var doodlings = instance_create_depth(x+irandom_range(-separation,separation),y+irandom_range(-separation,separation),depth+1,obj_plaguelings);
-				doodlings.speed = 3;
-				doodlings.direction = point_direction(x,y,mouse_x,mouse_y);
-				doodlings.destroyTime = 10*30;
-			}
+			canDash = true;
+			dashCooldownLeft = 0;
+			
+			if (instance_exists(obj_plagueball) == false)
+			{ 
+				var bigBolt = instance_create_depth(x,y,depth+1,obj_plagueball);
+				bigBolt.speed = 6;
+				bigBolt.direction = point_direction(x,y,mouse_x,mouse_y);
+				if (global.autoAim == true && instance_exists(obj_allBoss)){bigBolt.direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
+				bigBolt.image_angle = bigBolt.direction+90;
+				//Visual
+				bigBolt.image_xscale = 1.25;
+				bigBolt.image_yscale = bigBolt.image_xscale;
+				bigBolt.image_blend = c_lime;
+			}			
 		}
 	}
 	#endregion
@@ -1248,7 +1255,7 @@ if (mouse_x < x)
 			if (global.itemSelected[Boss.FlameGate] == true)
 			{
 				var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
-				horn.destroyTime = (maxHp/80)*30;
+				horn.destroyTime =  0.4+(maxHp/hornTime)*30;
 			}
 			#endregion
 			#region the last wish
@@ -1305,10 +1312,52 @@ if (mouse_x < x)
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
 			activateUltItem = true;
+					
+			canDash = true;
+			dashCooldownLeft = 0;
 			
-			var zamii = instance_create_depth(x,y,depth,obj_zamii);
-			zamii.image_xscale =  0.65 + 0.35*conjurationPower;
-			zamii.image_yscale = zamii.image_xscale;
+			plagueStormActive = true;
+			plagueStormStacks = plagueStormDuration;
+		}
+		if (plagueStormActive == true)
+		{
+			if(plagueStormStacks == int64((1.75)*30) || plagueStormStacks == int64((2.5)*30)  || plagueStormStacks == int64((3.25)*30)  
+			|| plagueStormStacks == int64((4)*30) || plagueStormStacks == int64((4.75)*30)  || plagueStormStacks == int64((5.5)*30))
+			{
+				if (instance_exists(obj_allBoss))
+				{
+					var enemy = instance_nearest(x,y,par_enemy);
+					var damageDealt = global.damage*4;
+					var damageText = instance_create_depth(enemy.x+irandom_range(-16,16),enemy.y+irandom_range(-13,13),enemy.depth-10,obj_textMaker);
+					damageText.color = c_white;
+					damageText.text = damageDealt;
+					with (enemy)
+					{	
+						hp -= global.damage*4;
+					}
+					var amountHealed = global.damage*global.lifeSteal*4;
+					var healText = instance_create_depth(x+irandom_range(-8,8),y+irandom_range(-5,5),depth-10,obj_textMaker);
+					healText.color = c_lime;
+					healText.text = amountHealed;
+					hp += global.damage*global.lifeSteal*4;
+				}
+				repeat(int64(3*conjurationPower))
+				{
+					var separation = 250;
+					var doodlings = instance_create_depth(global.arenaMiddleX+irandom_range(-separation,separation)*3,global.arenaMiddleY+irandom_range(-300,300),depth+1,obj_plaguelings);
+					doodlings.speed = random_range(3.6,4.4)+4;
+					doodlings.sprite_index = spr_plagueCarrier;
+					doodlings.direction = point_direction(x,y,mouse_x,mouse_y);
+					doodlings.destroyTime = 20*30;
+				}
+			}
+			
+			plagueStormStacks -= 1;
+			if (plagueStormStacks <= 0)
+			{
+				plagueStormActive = false;
+				plagueStormStacks = 0;
+			}
 		}
 	}
 	#endregion
@@ -1361,7 +1410,7 @@ if (mouse_x < x)
 		if (global.itemSelected[Boss.FlameGate] == true)
 		{
 			var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
-			horn.destroyTime = (maxHp/80)*30;
+			horn.destroyTime =  0.4+(maxHp/hornTime)*30;
 		}
 		#endregion
 		#region the last wish
@@ -1707,26 +1756,27 @@ if (mouse_x < x)
 			canDash = false;
 			dashCooldownLeft = dashCooldown;
 			activateDashItem = true;
-			dashStopLeft = dashStop;
+			dashStopLeft = dashStop*2;
 			actualDashSpeed = dashSpeed;
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			if (global.dashTowardsMove){direction = moveDirection;}
-			
-			var plagueWisp = instance_create_depth(x,y,depth,obj_plagueWisp);
-			plagueWisp.image_xscale = 0.75;
-			plagueWisp.image_yscale = plagueWisp.image_xscale;
 		}
 		if (speed > 0)
 		{
+			image_alpha = 0;
 			var poisonTrail = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
-			poisonTrail.fadeSpeed = 0.075;
+			poisonTrail.fadeSpeed = 0.05;
 			poisonTrail.sprite_index = spr_firebolt_big;
 			poisonTrail.image_xscale = image_xscale;
 			poisonTrail.image_yscale = image_yscale;
 			poisonTrail.image_angle = direction+90;
 			poisonTrail.image_blend = c_lime;
-			poisonTrail.image_alpha = 0.75;	
+			poisonTrail.image_alpha = 0.5;	
 			poisonTrail.objectToInheritFrom = id;
+		}
+		else
+		{
+			image_alpha = normalAlpha;	
 		}
 	}
 	#endregion
@@ -1738,7 +1788,7 @@ if (mouse_x < x)
 		if (global.itemSelected[Boss.FlameGate] == true)
 		{
 			var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
-			horn.destroyTime = (maxHp/75)*30;
+			horn.destroyTime = 0.4+(maxHp/hornTime)*30;
 		}
 		#endregion
 		#region the last wish

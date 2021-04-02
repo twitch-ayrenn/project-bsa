@@ -14,9 +14,9 @@
         "e3027e10-d9ee-41eb-b80c-83165536265f",
         "64e05a50-6754-4d76-9815-b6c560ed3ecd",
         "d7f81df3-49d4-4fdf-88bb-ac893d059fe3",
-        "028de98f-6066-4810-9a77-5121b64e9565",
         "643ebacb-0daf-4d6d-85c0-e1e6ae6e6561",
-        "8004cbcd-7200-4ca8-b43b-ea25a397cc7d"
+        "8004cbcd-7200-4ca8-b43b-ea25a397cc7d",
+        "28926a0e-1aad-4b73-b3c4-483dcba28c73"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_thePlagueWalker",

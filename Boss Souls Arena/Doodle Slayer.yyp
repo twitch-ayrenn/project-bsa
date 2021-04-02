@@ -119,14 +119,6 @@
             }
         },
         {
-            "Key": "028de98f-6066-4810-9a77-5121b64e9565",
-            "Value": {
-                "id": "cd4f0387-ae04-4fa6-8de3-e003b5fe6029",
-                "resourcePath": "sprites\\spr_plagueGround\\spr_plagueGround.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "02b20250-0ae6-4ea2-b6d0-59098c2f69cc",
             "Value": {
                 "id": "1e3884a7-fc9d-426c-9e91-642a8ac49ee1",
@@ -443,6 +435,14 @@
             "Value": {
                 "id": "edb71b68-9c13-4d2b-b570-76a7034a1545",
                 "resourcePath": "objects\\obj_fightCard_theArenaKing\\obj_fightCard_theArenaKing.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "0f48314b-e02d-4e8f-a66c-bd2246f916db",
+            "Value": {
+                "id": "cf881673-125f-4583-bf72-2b5c48012df5",
+                "resourcePath": "objects\\obj_plagueball\\obj_plagueball.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1116,6 +1116,14 @@
                 "id": "e2dc1ebd-02d4-45f3-a981-9c8ba45443bf",
                 "resourcePath": "objects\\obj_item_futuristicSoldier\\obj_item_futuristicSoldier.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "28926a0e-1aad-4b73-b3c4-483dcba28c73",
+            "Value": {
+                "id": "8b9c66a3-7150-48be-b6c3-0000e505eb54",
+                "resourcePath": "sprites\\spr_plagueStorm\\spr_plagueStorm.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

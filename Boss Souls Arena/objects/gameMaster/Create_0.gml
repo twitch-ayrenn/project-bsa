@@ -7,7 +7,7 @@ menu = 0;
 //Versions
 global.relase = true;//true
 global.deBugg = false;//false
-global.saveFile = "Save.Beta.V.41";
+global.saveFile = "Save.Beta.V.50";
 if (file_exists(global.saveFile) == true && global.deBugg == false)
 {
 	game_load(global.saveFile);
@@ -82,7 +82,7 @@ enum Boss
 	CDR = 406,
 	SummoningPower = 407,
 }
-global.ca = 18;
+global.ca = 18;//Boss Amount
 enum Character
 {
 	ShadowAssassin,

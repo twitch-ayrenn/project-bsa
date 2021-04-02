@@ -41,7 +41,7 @@ normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
 actualSpeedBefore = moveSpeed;
 moveDirection = 0; 
-global.damage = 15;
+global.damage = 1;
 if (global.relase == true && global.deBugg == false){global.damage = 1;}
 baseLifeSteal = 0.8;
 global.lifeSteal = baseLifeSteal;
@@ -70,9 +70,9 @@ hitVinjetAlpha = 0;
 	#region Shadow Assassin
 	if (class == Character.ShadowAssassin)
 	{
-		leftClickCooldown = (7)*30;
+		leftClickCooldown = (8)*30;
 		rightClickCooldown = (10)*30;
-		dashCooldown = (7)*30;
+		dashCooldown = (9)*30;
 		ultCooldown = (16)*30;
 		idleSprite = spr_player_theAssasin;
 		walkSprite = spr_player_theAssasin_walking;
@@ -83,7 +83,6 @@ hitVinjetAlpha = 0;
 		ultColor = c_fuchsia;
 		//character specific
 		teleportRange = 96;
-		teleportRange *= 1 + (gameMaster.bonusDash/100);
 		if (global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
 		{
 			var shadowRange = instance_create_depth(x,y,1,obj_shadowAttackRange);
@@ -91,7 +90,7 @@ hitVinjetAlpha = 0;
 			shadowRange.image_yscale = shadowRange.image_xscale;
 		}
 		daggerAmount = 10;
-		normalAlpha = 0.85;
+		normalAlpha = 0.80;
 	}
 	#endregion
 	#region Pyromancer
@@ -249,14 +248,13 @@ hitVinjetAlpha = 0;
 	}
 	#endregion
 	#region PlaugeWalker
-	plagueSpeed = 1;
 	if (class == Character.PlaugeWalker)
 	{
 		hp = 100;
-		leftClickCooldown = (2)*30; // 2
-		rightClickCooldown = (6)*30;// 6
-		dashCooldown = (10)*30;// 12
-		ultCooldown = (18)*30; // 18
+		leftClickCooldown = (6)*30;
+		rightClickCooldown = (10)*30;
+		dashCooldown = (10)*30;
+		ultCooldown = (15)*30;//15
 		idleSprite = spr_player_plagueWalker_idle;
 		walkSprite = spr_player_plagueWalker_walking;
 		deadSprite = spr_player_plagueWalker_dead;
@@ -266,10 +264,10 @@ hitVinjetAlpha = 0;
 		ultColor = c_lime;
 		//character specific
 		plaguelingAmount = 4;
-		var plagueRange = instance_create_depth(mouse_y,mouse_x,depth,obj_plagueGround);
-		plagueRange.objectToFollow = id;
-		plagueRange.image_xscale *= 0.8 + 0.15 * (gameMaster.bonusConjur/100);
-		plagueRange.image_yscale = plagueRange.image_xscale;
+		plagueStormActive = false;
+		plagueStormStacks = 0;
+		plagueStormDuration = (6)*30;
+		plagueAlpha = 0.05;
 		
 	}
 	#endregion
@@ -349,6 +347,9 @@ summonFlamie = false;
 summonFlamieTime = clamp(9/conjurationPower,3,9)*30;
 summonFlamieStacks = 0;
 if (global.itemSelected[Boss.FlameWisp] == true){summonFlamie = true;}
+#endregion
+#region Eye of hell
+hornTime = 200;
 #endregion
 #region The Corrupter / Edge Of Corruption
 edgeOfCorruptionCharge = 0;
