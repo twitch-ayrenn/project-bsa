@@ -27,7 +27,7 @@ if (type = CrowdType.Demon)
 if (type = CrowdType.DoodleWithPants)
 {
 	sprite_index = spr_crowd_body_new_1;
-	bodyColor = choose(c_navy,c_teal,c_purple,c_maroon,global.darkYellow);
+	bodyColor = choose(c_navy,c_teal,c_purple,c_maroon,c_olive);
 	image_blend = bodyColor;
 	eyeSprite = choose(spr_crowd_eye_1,spr_crowd_eye_2,spr_crowd_eye_3,spr_crowd_eye_4,spr_crowd_eye_5);
 	eyeColor = bodyColor;
@@ -37,7 +37,7 @@ if (type = CrowdType.DoodleWithPants)
 if (type = CrowdType.CloakedDoodle)
 {
 	sprite_index = spr_crowd_cloaked_1;
-	bodyColor = choose(c_navy,c_teal,c_purple,c_maroon,global.darkYellow);
+	bodyColor = choose(c_navy,c_teal,c_purple,c_maroon,c_olive);
 	image_blend = bodyColor;
 	alpha = 0.75;
 	image_alpha = alpha;
@@ -45,7 +45,7 @@ if (type = CrowdType.CloakedDoodle)
 if (type == CrowdType.Slime)
 {
 	sprite_index = spr_crowdSlime;
-	bodyColor = choose(c_navy,c_teal,c_purple,c_maroon,global.darkYellow);
+	bodyColor = choose(c_navy,c_teal,c_purple,c_maroon,c_olive);
 	image_blend = bodyColor;
 	alpha = 1;
 	image_alpha = alpha;

@@ -1,4 +1,5 @@
 /// @description Insert description here
+var showUi = false;
 #region Bosses
 if (gameMaster.chosenBoss == Boss.Gravekeeper)
 {
@@ -18,7 +19,7 @@ if (gameMaster.chosenClass == Character.PlaugeWalker)
 #endregion
 #region AllBosses
 var darkGray = make_color_rgb(10,10,10);
-if (instance_exists(obj_allBoss))
+if (instance_exists(obj_allBoss) && showUi)
 {
 	var B = obj_allBoss;
 	//Health
@@ -170,30 +171,33 @@ if (instance_exists(obj_allBoss))
 }
 #endregion
 #region Player Ui
-var uiHP_X = 45;
-var uiHp_Y = 45;
-var uiHP_Thick = 15;
-draw_set_alpha(0.75);
-draw_healthbar(uiHP_X,uiHp_Y,uiHP_X+200+maxHp*1,uiHp_Y+uiHP_Thick,100,c_dkgray,c_dkgray,c_dkgray,0,false,true);
-draw_set_alpha(1);
-draw_healthbar(uiHP_X,uiHp_Y,uiHP_X+200+maxHp*1,uiHp_Y+uiHP_Thick,(hp / maxHp) * 100,c_dkgray,c_maroon,c_red,0,false,true);
-//ult
-draw_healthbar(uiHP_X,uiHp_Y+30,uiHP_X+60-1,uiHp_Y+90-1,(ultCooldownLeft / ultCooldown) * 100,ultColor,c_dkgray,c_dkgray,3,true,false);
-//leftClick
-draw_healthbar(uiHP_X+80,uiHp_Y+30,uiHP_X+125-1,uiHp_Y+75-1,(leftClickCooldownLeft / leftClickCooldown) * 100,leftClickColor,c_dkgray,c_dkgray,3,true,false);
-//dash
-draw_healthbar(uiHP_X+145,uiHp_Y+30,uiHP_X+220,uiHp_Y+60,(dashCooldownLeft / dashCooldown) * 100,dashColor,c_dkgray,c_dkgray,3,true,false);
-//rightCLick
-draw_healthbar(uiHP_X+240,uiHp_Y+30,uiHP_X+285-1,uiHp_Y+75-1,(rightClickCooldownLeft / rightClickCooldown) * 100,rightClickColor,c_dkgray,c_dkgray,3,true,false);
+if (showUi)
+{
+	var uiHP_X = 45;
+	var uiHp_Y = 45;
+	var uiHP_Thick = 15;
+	draw_set_alpha(0.75);
+	draw_healthbar(uiHP_X,uiHp_Y,uiHP_X+200+maxHp*1,uiHp_Y+uiHP_Thick,100,c_dkgray,c_dkgray,c_dkgray,0,false,true);
+	draw_set_alpha(1);
+	draw_healthbar(uiHP_X,uiHp_Y,uiHP_X+200+maxHp*1,uiHp_Y+uiHP_Thick,(hp / maxHp) * 100,c_dkgray,c_maroon,c_red,0,false,true);
+	//ult
+	draw_healthbar(uiHP_X,uiHp_Y+30,uiHP_X+60-1,uiHp_Y+90-1,(ultCooldownLeft / ultCooldown) * 100,ultColor,c_dkgray,c_dkgray,3,true,false);
+	//leftClick
+	draw_healthbar(uiHP_X+80,uiHp_Y+30,uiHP_X+125-1,uiHp_Y+75-1,(leftClickCooldownLeft / leftClickCooldown) * 100,leftClickColor,c_dkgray,c_dkgray,3,true,false);
+	//dash
+	draw_healthbar(uiHP_X+145,uiHp_Y+30,uiHP_X+220,uiHp_Y+60,(dashCooldownLeft / dashCooldown) * 100,dashColor,c_dkgray,c_dkgray,3,true,false);
+	//rightCLick
+	draw_healthbar(uiHP_X+240,uiHp_Y+30,uiHP_X+285-1,uiHp_Y+75-1,(rightClickCooldownLeft / rightClickCooldown) * 100,rightClickColor,c_dkgray,c_dkgray,3,true,false);
 
-draw_sprite_ext(spr_healthBarNew221,0,uiHP_X-5,uiHp_Y-5,5,5,0,c_white,1);
+	draw_sprite_ext(spr_healthBarNew221,0,uiHP_X-5,uiHp_Y-5,5,5,0,c_white,1);
 
-draw_set_halign(fa_center);
-draw_set_font(fnt_NewNormalText);
-draw_text_transformed_color(uiHP_X+044+10+2.5,87+13+22.5,"E",0.20*0.35,0.20*0.35,0,c_white,c_white,c_white,c_white,1);
-draw_text_transformed_color(uiHP_X+105+15,84+13+12.5,"M1",0.15*0.35,0.15*0.35,0,c_white,c_white,c_white,c_white,1);
-draw_text_transformed_color(uiHP_X+164+45+1,81+13+5,"Space",0.12*0.35,0.12*0.35,0,c_white,c_white,c_white,c_white,1);
-draw_text_transformed_color(uiHP_X+224+55,84+13+12.5,"M2",0.15*0.35,0.15*0.35,0,c_white,c_white,c_white,c_white,1);
+	draw_set_halign(fa_center);
+	draw_set_font(fnt_NewNormalText);
+	draw_text_transformed_color(uiHP_X+044+10+2.5,87+13+22.5,"E",0.20*0.35,0.20*0.35,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(uiHP_X+105+15,84+13+12.5,"M1",0.15*0.35,0.15*0.35,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(uiHP_X+164+45+1,81+13+5,"Space",0.12*0.35,0.12*0.35,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(uiHP_X+224+55,84+13+12.5,"M2",0.15*0.35,0.15*0.35,0,c_white,c_white,c_white,c_white,1);
+}
 draw_set_halign(fa_left);
 //cursor
 var cursorSize = 4;

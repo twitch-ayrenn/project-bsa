@@ -262,10 +262,10 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.DeathKnight) 
 		{
 			//stats
-			phase1Hp = tier2Hp*0.20; phase1Ms = 1.3; phase1Dmg = 30;
-			phase2Hp = tier2Hp*0.30; phase2Ms = 1.2; phase2Dmg = 30;
-			phase3Hp = tier2Hp*0.40; phase3Ms = 1.1; phase3Dmg = 25;
-			phase4Hp = tier2Hp*0.10; phase4Ms = 1; phase4Dmg = 27.5;
+			phase1Hp = tier2Hp*0.020; phase1Ms = 1.3; phase1Dmg = 30;
+			phase2Hp = tier2Hp*0.030; phase2Ms = 1.2; phase2Dmg = 30;
+			phase3Hp = tier2Hp*0.0425; phase3Ms = 1.1; phase3Dmg = 25;
+			phase4Hp = tier2Hp*0.0075; phase4Ms = 1; phase4Dmg = 27.5;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -798,6 +798,7 @@ if (tier == 3){ timeAfterIndicate = (1.60)*30;  attackCooldown = (3.70)*30;}
 if (tier == 4){ timeAfterIndicate = (1.40)*30;  attackCooldown = (3.55)*30;}
 if (tier == 5){ timeAfterIndicate = (1.25)*30;  attackCooldown = (3.40)*30;}
 if (tier == 6){ timeAfterIndicate = (1.15)*30;  attackCooldown = (3.25)*30;}
+if (gameMaster.chosenMode == Menues.BossRush){maxHp *= 0.8; hp = maxHp;}
 #endregion
 
 

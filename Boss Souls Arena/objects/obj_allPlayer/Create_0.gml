@@ -41,9 +41,9 @@ normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
 actualSpeedBefore = moveSpeed;
 moveDirection = 0; 
-global.damage = 1;
+global.damage = 1.5;//1
 if (global.relase == true && global.deBugg == false){global.damage = 1;}
-baseLifeSteal = 0.8;
+baseLifeSteal = 0.35;//0.75
 global.lifeSteal = baseLifeSteal;
 dashSpeed = 5;
 meteorStun = 1;

@@ -343,9 +343,9 @@ if (menu == Menues.Main)
 	
 	//Beta
 	draw_set_alpha(0.75)
-	draw_rectangle_color(1275,735,1575,875,c_black,c_black,c_black,c_black,false);
+	//draw_rectangle_color(1275,735,1575,875,c_black,c_black,c_black,c_black,false);
 	draw_set_alpha(1)
-	draw_text_ext_transformed_color(1290,750,"Private Beta Build. Thanks so so much for playing<3 Hope you enjoy the game:D",100,1000,0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	//draw_text_ext_transformed_color(1285,745,"In Development. Thanks so so much for playing<3 Hope you enjoy the game.\nAlso I need a publisher.",100,1100,0.25,0.25,0,global.orange,global.orange,c_yellow,c_yellow,1);
 }
 #endregion
 #region Boss Loot
@@ -1596,7 +1596,7 @@ if (menu != Menues.Main && menu != Menues.BeforeGame && menu != Menues.Play)
 	{
 		if (obj_rewardChest.kingSuprise == false)
 		{
-			draw_text_transformed_color(50,810,"Back",backSize,backSize,0,global.orange,global.orange,backColor,backColor,1);
+			draw_text_transformed_color(90,810,"Back",backSize,backSize,0,global.orange,global.orange,backColor,backColor,1);
 		}
 	}
 	draw_set_halign(fa_left)

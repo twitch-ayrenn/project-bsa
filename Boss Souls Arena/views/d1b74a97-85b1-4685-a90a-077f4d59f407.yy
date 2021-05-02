@@ -8,7 +8,8 @@
         "b28ee9b7-68e5-4c7b-b85b-1b6bab72e068",
         "10c7b79f-0b0d-474b-ab13-f88708003217",
         "fbc2b026-82e0-4ba3-81f2-1e47c16eb14f",
-        "e6411592-a50d-4007-9be9-aa4a95849085"
+        "e6411592-a50d-4007-9be9-aa4a95849085",
+        "b14e86aa-312f-42ef-831e-0724762ed023"
     ],
     "filterType": "GMSprite",
     "folderName": "grp_world",
