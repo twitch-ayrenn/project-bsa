@@ -339,8 +339,8 @@ if (mouse_x < x)
 	#region Angel Slayer
 	if (class == Character.AngelSlayer)
 	{
-		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false && slayerSpeed = 1
-		|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false && slayerSpeed = 1)
+		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false
+		|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
 		{
 			canLeftClick = false;
 			leftClickCooldownLeft = leftClickCooldown;
@@ -829,8 +829,8 @@ if (mouse_x < x)
 	#region Angel Slayer
 	if (class == Character.AngelSlayer)
 	{
-		if (mouse_check_button(mb_right) && canRightClick == true && slayerSpeed = 1
-		|| keyboard_check(ord("2")) && canRightClick == true && slayerSpeed = 1)
+		if (mouse_check_button(mb_right) && canRightClick == true
+		|| keyboard_check(ord("2")) && canRightClick == true)
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
@@ -1199,33 +1199,19 @@ if (mouse_x < x)
 			ultCooldownLeft = ultCooldown;
 			activateUltItem = true;
 			
-			slayerSpeed = 1.50;
+			canRightClick = true;
+			rightClickCooldownLeft = 0;
+			canLeftClick = true;
+			leftClickCooldownLeft = 0;
+			canDash = true;
+			dashCooldownLeft = 0;
+			
 			ultimateStacks = ultimateTime;
 		}
 		if (ultimateStacks > 0){ultimateStacks--;}
-		if (ultimateStacks <= 0 && slayerSpeed > 1)
+		if (ultimateStacks <= 0)
 		{
 			ultimateStacks = 0;
-			slayerSpeed = 1;
-			if (global.itemSelected[Boss.DeathKnight] == false)
-			{
-				obj_slayerScythe.state = MeleeWeaponStates.idle;
-			}
-			if (global.itemSelected[Boss.DeathKnight] == true)
-			{
-				obj_equipment_deathScythe.state = MeleeWeaponStates.idle;
-			}
-		}
-		if (slayerSpeed > 1)
-		{
-			if (global.itemSelected[Boss.DeathKnight] == false)
-			{
-				obj_slayerScythe.state = MeleeWeaponStates.SpinChase;
-			}
-			if (global.itemSelected[Boss.DeathKnight] == true)
-			{
-				obj_equipment_deathScythe.state = MeleeWeaponStates.SpinChase;
-			}
 		}
 	}
 	#endregion
@@ -1677,7 +1663,7 @@ if (mouse_x < x)
 	#region Angel Slayer
 	if (class == Character.AngelSlayer)
 	{
-		if (keyboard_check(vk_space) && canDash == true && slayerSpeed == 1)
+		if (keyboard_check(vk_space) && canDash == true)
 		{
 			canDash = false;
 			dashCooldownLeft = dashCooldown;
@@ -1686,10 +1672,16 @@ if (mouse_x < x)
 			actualDashSpeed = slayerDashSpeed*2.5;
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			if (global.dashTowardsMove){direction = moveDirection;}
+			dashDamage = true;
 			
 			canLeftClick = true;
 			leftClickCooldownLeft = 0;
 		}
+		if (slayerSpeedStacks > 0)
+		{
+			slayerSpeedStacks--;
+		}
+		if (slayerSpeedStacks == 0){slayerSpeed = 1;}
 		if (speed == 0)
 		{
 			var demonShade = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
@@ -1713,6 +1705,26 @@ if (mouse_x < x)
 			demonShade.image_alpha = image_alpha;
 			demonShade.image_speed = image_speed;
 			demonShade.image_alpha = 1;
+			if (dashDamage && place_meeting(x,y,obj_allBoss))
+			{
+				dashDamage = false;	
+				slayerSpeed = 1.30;
+				slayerSpeedStacks = (3)*30;
+				var dmg = global.damage*3;
+				
+				var damageToTarget = dmg;
+				var damageText = instance_create_depth(obj_allBoss.x+irandom_range(-8,8),obj_allBoss.y+irandom_range(-5,5),obj_allBoss.depth-10,obj_textMaker);
+				damageText.color = c_white;
+				damageText.text = damageToTarget;
+				obj_allBoss.hp -= damageToTarget;
+				with(obj_camera){shake_remain += 3;}
+		
+				var amountHealed = dmg*global.lifeSteal;
+				var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
+				healText.color = c_lime;
+				healText.text = amountHealed;
+				hp += dmg*global.lifeSteal;
+			}
 		}
 	}
 	#endregion

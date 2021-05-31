@@ -3231,6 +3231,14 @@
             }
         },
         {
+            "Key": "82f1a67a-ccec-4a05-a7c6-6ebc956a1e5c",
+            "Value": {
+                "id": "8ec560ea-c8ae-4f1e-8a83-2811560e44ed",
+                "resourcePath": "sprites\\spr_slayerSctyhe_clone\\spr_slayerSctyhe_clone.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8338fc4f-b210-4d15-a8b2-6a09f600a602",
             "Value": {
                 "id": "17dadc99-1506-4de0-b9aa-5b7aa3419783",

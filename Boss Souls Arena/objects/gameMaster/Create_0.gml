@@ -5,9 +5,9 @@
 //global.saveFile = "Save.alpha.0.65"; gaygang release
 menu = 0;
 //Versions
-global.relase = false;//true
-global.deBugg = true;//false
-global.saveFile = "Save.Beta.V.56";
+global.relase = true;//true
+global.deBugg = false;//false
+global.saveFile = "Save.Alpha.V.58";
 if (file_exists(global.saveFile) == true && global.deBugg == false)
 {
 	game_load(global.saveFile);
@@ -318,7 +318,7 @@ if (global.relase == true)
 	assassinUnlocked = false;		bloodKnightUnlocked = false;
 	pyromancerUnlocked = true;		plaugeWalkerUnlocked = false;
 	angelSlayerUnlocked = true;		agentOfGodUnlocked = false;	
-	gravelingUnlocked = true;
+	gravelingUnlocked = false;
 	
 	//Boss Rush
 	bossAssassinUnlocked = false;

@@ -1,6 +1,10 @@
 /// @description Insert description here
 var target = instance_nearest(x,y,par_enemy);
-dmg = global.damage*5;
+dmg = global.damage*3;
+if (obj_allPlayer.ultimateStacks > 0)
+{
+	dmg = global.damage*6;
+}
 var demonShade = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
 	demonShade.fadeSpeed = 0.25;
 	demonShade.sprite_index = sprite_index;
@@ -19,7 +23,6 @@ if (state == MeleeWeaponStates.idle)
 {
 	image_angle = global.player.weaponDirection-135+180;
 	image_index = 0;
-
 }
 if (state == MeleeWeaponStates.SpinOnce)
 {

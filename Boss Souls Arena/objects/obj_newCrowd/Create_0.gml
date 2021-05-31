@@ -10,6 +10,8 @@ enum CrowdType
 	Knight,
 }
 type = choose(CrowdType.Demon,CrowdType.DoodleWithPants,CrowdType.CloakedDoodle,CrowdType.Slime);
+type = choose(CrowdType.Demon);
+if (gameMaster.chosenBoss == Boss.SlimeQueen){type = choose(CrowdType.Slime);}
 alpha = choose(1,1,1,1,0.75);
 image_alpha = alpha;
 size = image_xscale;

@@ -1,5 +1,5 @@
 /// @description Insert description here
-var showUi = false;
+var showUi = true;
 #region Bosses
 if (gameMaster.chosenBoss == Boss.Gravekeeper)
 {

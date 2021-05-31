@@ -183,10 +183,10 @@ hitVinjetAlpha = 0;
 	if (class == Character.AngelSlayer)
 	{
 		hp = 100;
-		leftClickCooldown = (7)*30;
-		rightClickCooldown = (8)*30;
+		leftClickCooldown = (5)*30;
+		rightClickCooldown = (4)*30;
 		dashCooldown = (6)*30;
-		ultCooldown = (15)*30;
+		ultCooldown = (14)*30;//14
 		idleSprite = spr_player_angelSlayer_idle;
 		walkSprite = spr_player_angelSlayer_walking;
 		deadSprite = spr_player_angelSlayer_dead;
@@ -202,12 +202,14 @@ hitVinjetAlpha = 0;
 		slashOnce = false;
 		shotOnce = false;
 		slayerSpeed = 1;
+		slayerSpeedStacks = 0;
 		ultimateStacks = 0;
-		ultimateTime = (5)*30;
+		ultimateTime = (4)*30;
 		if (global.itemSelected[Boss.DeathKnight] == false)
 		{
 			instance_create_depth(x,y,depth+1,obj_slayerScythe);
 		}
+		dashDamage = false;
 	}
 	#endregion
 	#region Graveling
