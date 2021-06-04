@@ -84,6 +84,10 @@ if (beamChase == true)
 if (goToBoss == true && instance_exists(obj_allBoss))
 {
 	move_towards_point(obj_allBoss.x,obj_allBoss.y,speed);
+	if (sprite_index == spr_fireBall)
+	{
+		image_angle = direction+90;
+	}
 	if (place_meeting(x,y,obj_allBoss))
 	{
 		instance_destroy();	

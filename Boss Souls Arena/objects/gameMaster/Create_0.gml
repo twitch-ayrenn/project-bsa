@@ -5,9 +5,9 @@
 //global.saveFile = "Save.alpha.0.65"; gaygang release
 menu = 0;
 //Versions
-global.relase = true;//true
-global.deBugg = false;//false
-global.saveFile = "Save.Alpha.V.58";
+global.relase = false;//true
+global.deBugg = true;//false
+global.saveFile = "Save.Alpha.V.61";
 if (file_exists(global.saveFile) == true && global.deBugg == false)
 {
 	game_load(global.saveFile);
@@ -57,21 +57,23 @@ enum Boss
 	KnightWitchYi = 8,
 	AngelKnightOscar = 9,
 	DemonLordRekTaar = 10,
+	Headless = 11,
 	
-	Gravekeeper = 11,//4
-    BloodKnightDavid = 12,
-	StatueOfCorruption = 13,
-	WispSisters = 14,
+	Gravekeeper = 12,//4
+    BloodKnightDavid = 13,
+	StatueOfCorruption = 14,
+	WispSisters = 15,
 
-	DemonQueensHead = 15,// 3
-	DeathKing = 16,
-	SlimeQueen = 17, 
+	FaithDestroyer = 16,
+	DemonQueensHead = 17,// 3
+	DeathKing = 18,
+	SlimeQueen = 19, 
 	
-	ArenaKing = 18,
-	TargetDummy = 19,
+	ArenaKing = 20,
+	TargetDummy = 21,
 	//ExtraItems
-	CampaignReward = 19,
-	BossRushReward = 20,
+	CampaignReward = 22,
+	BossRushReward = 23,
 	//Info
 	Health = 400,
 	Speed = 401,
@@ -156,6 +158,7 @@ global.autoAim = false;
 global.screenShake = true;
 global.dashTowardsMove = false;
 global.seeAbilitiesInGame = false;
+global.hardcore = false;
 //tutorial
 global.tutorial = false;
 global.tutorialBoss = false;
@@ -177,6 +180,7 @@ global.slidingSpeed = 2.5;
 global.campaignDifficulty = 1;
 global.maxDifficulty = 1.35;
 global.minDifficulty = 0.8;
+
 //Alpha 
 deathAlpha = 0;
 transitionAlpha = 0;

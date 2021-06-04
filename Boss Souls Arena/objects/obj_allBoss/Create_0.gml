@@ -18,9 +18,8 @@ phase3Hp = 0; phase3Ms = 0; phase3Dmg = 0;
 phase4Hp = 0; phase4Ms = 0; phase4Dmg = 0;
 phase5Hp = 0; phase5Ms = 0; phase5Dmg = 0;
 phase6Hp = 0; phase6Ms = 0; phase6Dmg = 0;
-//500 hp = 1 min gameplay
-tier1Hp = 450; tier2Hp = 950; tier3Hp = 1300;
-tier4Hp = 2100; tier5Hp = 2350; tier6Hp = 2600;
+tier1Hp = 400; tier2Hp = 850; tier3Hp = 1200;
+tier4Hp = 1900; tier5Hp = 2100; tier6Hp = 2400;
 hp = 0;
 maxHp = hp;
 global.bossDamage = 10;
@@ -73,7 +72,7 @@ enum Atks
 }
 timeAfterIndicate = (3)*30;
 attackCooldown = (6)*30;
-attackColor = c_white;
+attackColor = c_dkgray;
 drawArea = false;
 rapidFireStacks = 0;
 canRapidAttack = true;
@@ -143,7 +142,7 @@ isHit = false;
 			phase = 1;
 			maxPhase = 2;
 			//visual
-			size = 1.5;
+			size = 1.6;
 			alpha = 1;
 			idleSprite = spr_boss_bloodZombie_idle;
 			normalSprite = spr_boss_bloodZombie_nA;
@@ -167,7 +166,7 @@ isHit = false;
 			phase = 1;
 			maxPhase = 2;
 			//visual
-			size = 1.5;
+			size = 1.6;
 			alpha = 0.85;
 			idleSprite = spr_boss_flameWisp_idle;
 			coneSprite = spr_boss_flameWisp_cone;
@@ -219,7 +218,7 @@ isHit = false;
 			phase = 1;
 			maxPhase = 3;
 			//visual
-			size = 1.5;
+			size = 1.6;
 			alpha = 0.85;
 			idleSprite = spr_boss_wispSisterJulia_idle;
 			circleSprite = spr_boss_wispSisterJulia_circle;
@@ -245,7 +244,7 @@ isHit = false;
 			phase = 1;
 			maxPhase = 2;
 			//visual
-			size = 1.85;
+			size = 1.9;
 			alpha = 1;
 			idleSprite = spr_boss_demonGate_idle;
 			rapidFireSprite = spr_boss_demonGate_rapidFire;
@@ -306,7 +305,7 @@ isHit = false;
 			phase = 1;
 			maxPhase = 3;
 			//visual
-			size = 1.5;
+			size = 1.65;
 			alpha = 1;
 			idleSprite = spr_angelSlayerRekZul_idle;
 			circleSprite = spr_angelSlayerRekZul_circle;
@@ -336,7 +335,7 @@ isHit = false;
 			phase = 1;
 			maxPhase = 2;
 			//visual
-			size = 1.35;
+			size = 1.45;
 			alpha = 1;
 			idleSprite = spr_boss_knightWitch_idle;
 			circleSprite = spr_boss_knightWitch_circle;
@@ -366,7 +365,7 @@ isHit = false;
 			phase = 1;
 			maxPhase = 3;
 			//visual
-			size = 1;
+			size = 1.5;
 			alpha = 1;
 			idleSprite = spr_boss_angelKnight_idle;
 			circleSprite = spr_boss_angelKnight_circle;
@@ -393,7 +392,7 @@ isHit = false;
 			phase = 1;
 			maxPhase = 3;
 			//visual
-			size = 1.25;
+			size = 1.3;
 			alpha = 1;
 			idleSprite = spr_boss_demonGeneral_idle;
 			beamSprite = spr_boss_demonGeneral_beam;
@@ -407,6 +406,36 @@ isHit = false;
 			rotation1 = 0;
 			rotation2 = 0;
 			rotation3 = 0;
+		}
+		#endregion
+		#region Headless
+		if (gameMaster.chosenBoss == Boss.Headless) 
+		{
+			//stats
+			phase1Hp = tier3Hp*0.25; phase1Ms = 0.3; phase1Dmg = 30;
+			phase2Hp = tier3Hp*0.3; phase2Ms = 0.3; phase2Dmg = 32.5;
+			phase3Hp = tier3Hp*0.45; phase3Ms = 0.3; phase3Dmg = 35;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.WalkingTowards;
+			//attacks and phase
+			tier = 3;
+			phase = 1;
+			maxPhase = 3;
+			//visual
+			size = 2;
+			alpha = 1;
+			idleSprite = spr_boss_headless_idle;
+			circleSprite = spr_boss_headless_circle;
+			gooSprite = spr_boss_headless_goo;
+			coneSprite = spr_boss_headless_cone;
+			oneShotSprite = spr_boss_headless_oneshot;
+			teleportSprite = spr_boss_headless_teleport;
+			cdSprite = spr_boss_headless_cd;
+			//boss specifc
+			headlessRange = 2*30;
+			headlessProjectileSpeed = 5;
 		}
 		#endregion
 	#endregion
@@ -427,7 +456,7 @@ isHit = false;
 			phase = 1;
 			maxPhase = 3;
 			//visual
-			size = 1.5;
+			size = 1.6;
 			alpha = 0.75;
 			idleSprite = spr_boss_theGraveKeeper_idle;
 			oneShotSprite = spr_boss_theGraveKeeper_oneShot;
@@ -593,7 +622,7 @@ isHit = false;
 			phase = 1;
 			maxPhase = 4;
 			//visual
-			size = 1.5;
+			size = 1.7;
 			alpha = 0.85;
 			#region Wisp Sister Sprites
 			janaPhase1Circle = spr_boss_flameWisp_circleAttack;
@@ -631,6 +660,41 @@ isHit = false;
 		#endregion
 	#endregion 
 	#region Tier 5 Done
+		#region Faith Destroyer
+		if (gameMaster.chosenBoss == Boss.FaithDestroyer) 
+		{
+			//stats
+			phase1Hp = tier5Hp*0.10; phase1Ms = 0; phase1Dmg = 30;
+			phase2Hp = tier5Hp*0.20; phase2Ms = 0; phase2Dmg = 35;
+			phase3Hp = tier5Hp*0.25; phase3Ms = 0; phase3Dmg = 40;
+			phase4Hp = tier5Hp*0.25; phase4Ms = 0; phase4Dmg = 40;
+			phase5Hp = tier5Hp*0.45; phase5Ms = 0; phase5Dmg = 35;
+			hp = phase1Hp;
+			global.bossDamage = phase1Dmg;
+			moveSpeed = phase1Ms;
+			moveType = MovementType.WalkingTowards;
+			//attacks and phase
+			tier = 5;
+			phase = 1;
+			maxPhase = 5;
+			//visual
+			size = 1;
+			alpha = 1;
+			idleSprite = spr_boss_faithDestroyer_idle;
+			oneShotSprite = spr_boss_faithDestroyer_oneshot;
+			chaseSprite = spr_boss_faithDestroyer_chase;
+			beamSprite = spr_boss_faithDestroyer_beam;
+			zoneSprite = spr_boss_faithDestroyer_zone;
+			coneSprite = spr_boss_faithDestroyer_cone;
+			teleportSprite = spr_boss_faithDestroyer_teleport;
+			circleSprite = spr_boss_faithDestroyer_circle;
+			cdSprite = spr_boss_faithDestroyer_cd;
+			//boss Specfic
+			x = global.arenaMiddleX;
+			y = global.arenaMiddleY + 100;
+			faithBeamSize = 4;
+		}
+		#endregion
 		#region Demon Queens Head
 		if (gameMaster.chosenBoss == Boss.DemonQueensHead) 
 		{
@@ -719,7 +783,7 @@ isHit = false;
 			phase = 1;
 			maxPhase = 5;
 			//visual
-			size = 1;
+			size = 1.25;
 			alpha = 1;
 			idleSprite = spr_boss_slimeQueen_idle;
 			oneShotSprite = spr_boss_slimeQueen_oneShot;
@@ -792,11 +856,11 @@ maxHp = hp;
 normalAlpha = alpha;
 image_xscale = size;
 image_yscale = size;
-if (tier == 1){ timeAfterIndicate = (2.00)*30;  attackCooldown = (4.00)*30;}
-if (tier == 2){ timeAfterIndicate = (1.80)*30;  attackCooldown = (3.85)*30;}
-if (tier == 3){ timeAfterIndicate = (1.60)*30;  attackCooldown = (3.70)*30;}
-if (tier == 4){ timeAfterIndicate = (1.40)*30;  attackCooldown = (3.55)*30;}
-if (tier == 5){ timeAfterIndicate = (1.25)*30;  attackCooldown = (3.40)*30;}
+if (tier == 1){ timeAfterIndicate = (1.90)*30;  attackCooldown = (3.85)*30;}
+if (tier == 2){ timeAfterIndicate = (1.70)*30;  attackCooldown = (3.75)*30;}
+if (tier == 3){ timeAfterIndicate = (1.55)*30;  attackCooldown = (3.60)*30;}
+if (tier == 4){ timeAfterIndicate = (1.40)*30;  attackCooldown = (3.50)*30;}
+if (tier == 5){ timeAfterIndicate = (1.25)*30;  attackCooldown = (3.37)*30;}
 if (tier == 6){ timeAfterIndicate = (1.15)*30;  attackCooldown = (3.25)*30;}
 if (gameMaster.chosenMode == Menues.BossRush){maxHp *= 0.8; hp = maxHp;}
 #endregion

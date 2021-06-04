@@ -16,7 +16,7 @@ if (drawArea == true)
 	}
 	#endregion
 	#region Angel Slayer
-	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul )
+	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul || gameMaster.chosenBoss == Boss.FaithDestroyer)
 	{
 		if (attack == Atks.BeamAttack)
 		{
@@ -38,7 +38,7 @@ if (drawArea == true)
 			draw_line_width_color(x,y,x+600,y+1040,1,c_fuchsia,c_fuchsia);//330
 			draw_line_width_color(x,y,x+600,y,1,c_fuchsia,c_fuchsia);//360
 		}
-		if (attack == Atks.ZoneAttack)
+		if (attack == Atks.ZoneAttack && gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
 		{
 			draw_line_width_color(global.arenaMiddleX-200,y+1000,global.arenaMiddleX-200,y-1000,1,c_lime,c_lime);
 			draw_line_width_color(global.arenaMiddleX-175,y+1000,global.arenaMiddleX-175,y-1000,1,c_lime,c_lime);
@@ -68,21 +68,15 @@ if (drawArea == true)
 		draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,global.orange,global.orange);
 	}
 	#endregion
-	#region Angel Knight Oscar
-	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && attack == Atks.RapidFire)
+	#region Angel Knight Oscar || Blood Knight
+	if (gameMaster.chosenBoss == Boss.AngelKnightOscar || gameMaster.chosenBoss == Boss.BloodKnightDavid)
 	{
-		draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,c_aqua,c_aqua);
+		if (attack == Atks.RapidFire){draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,c_aqua,c_aqua);}
 	}
 	if (gameMaster.chosenBoss == Boss.AngelKnightOscar && attack == Atks.BeamAttack)
 	{
 		draw_line_width_color(x-600,y,x+600,y,1,global.orange,global.orange);
 		draw_line_width_color(x,y-600,x,y+600,1,global.orange,global.orange);
-	}
-	#endregion
-	#region Blood Army General
-	if (gameMaster.chosenBoss == Boss.BloodKnightDavid && attack == Atks.RapidFire)
-	{
-		draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,c_aqua,c_aqua);
 	}
 	#endregion
 	#region Statue Of Corruption

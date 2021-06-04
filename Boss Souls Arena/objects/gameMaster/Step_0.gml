@@ -1,5 +1,10 @@
 /// @description code
 depth = -1000;
+gamepad_set_axis_deadzone(0,0.5);
+gamepad_set_axis_deadzone(1,0.5);
+gamepad_set_axis_deadzone(2,0.5);
+gamepad_set_axis_deadzone(3,0.5);
+if (global.hardcore == true){global.campaignDifficulty = clamp(global.campaignDifficulty,1.1,1.35);}
 //mennues
 if (room == rm_beforeGame)
 {

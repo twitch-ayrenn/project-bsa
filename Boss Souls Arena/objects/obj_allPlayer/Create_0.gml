@@ -13,11 +13,13 @@ leftClickCooldown = 0;
 leftClickCooldownLeft = 0;
 leftClickColor = c_white;
 weaponDirection = 0;
+isLeftClicking = false;
 //right
 canRightClick = true;
 rightClickCooldown = 0;
 rightClickCooldownLeft = 0;
 rightClickColor = c_white;
+isRightClicking = false;
 //dash
 canDash = true;
 dashSpeed = 0;
@@ -28,11 +30,13 @@ dashCooldown = 0;
 dashCooldownLeft = 0;
 global.iFrame = false;
 dashColor = c_white;
+isDashing = false;
 //ult
 canUlt = false;//false default
 ultCooldown = 0;
 ultCooldownLeft = 0;
 ultColor = c_white;
+isUlting = false;
 #endregion
 #region Stats
 hp = 100;
@@ -41,15 +45,15 @@ normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
 actualSpeedBefore = moveSpeed;
 moveDirection = 0; 
-global.damage = 1.5;//1
-if (global.relase == true && global.deBugg == false){global.damage = 1;}
+global.damage = 2;//1
 baseLifeSteal = 0.35;//0.75
+if (global.relase == true && global.deBugg == false){global.damage = 1; baseLifeSteal = 0.75;}
 global.lifeSteal = baseLifeSteal;
 dashSpeed = 5;
 meteorStun = 1;
 global.noDamage = false;
 noDamageStacks = 0;
-noDamageTime = (0.1)*30;
+noDamageTime = (0.2)*30;
 agentSpeed = 1;
 #endregion
 #region visuals and animation
@@ -113,7 +117,7 @@ hitVinjetAlpha = 0;
 		doConeShot = false;
 		coneShotAmount = int64(global.damage*2);
 		coneShotTimes = 0;
-		coneShotTime = (0.4)*30;
+		coneShotTime = (0.3)*30;
 		coneShotStacks = 0;
 		meteorStun = 1;
 		meteor = 0;

@@ -418,31 +418,32 @@ if (playerShowInfoFor == Character.AngelSlayer)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*00-5,"Passive",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*01,"You can use your attack instantly after using",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*02,"an ability & you cant have more than 150 HP.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*01,"Killie wields a scythe & can attack again after ",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*02,"using abilities & you cant have more than 150 HP.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*04.5-5,"Attack - Left Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*05.5,"Dash forward then Slash in with you scythe.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*05.5,"Dash forward then Slash with your scythe.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*08-5,"Ability - Right Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*09,"Dash Back and summon a massive demon.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*09,"Dash Back & summon a demon that deals damage.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	draw_text_transformed_color(startX,startY+sep*10,"[Summoning Power] increases the damage dealt.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*12.5-5,"Dash - Space",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*13.5,"Dash a long distance.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*13.5,"Dash & dashing trough enemies you deal",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*14.5,"damage and increases your speed.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*16-5,"Ultimate - R",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*17-5,"Ultimate - R",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*17,"Gain 50% movement speed and attack",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*18,"constantly for 6 seconds. During this time you",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*19,"cant use any abilities.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*18,"Gain an addtional scythe for 4 seconds and ",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*19,"reset all your abilities. During this time",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*20,"you deal double damage with attacks.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 
 	var progression = (((gameMaster.angelSlayerProgress-1)/global.progressAmount)/global.ca);
 	progression = clamp(progression,0,1);

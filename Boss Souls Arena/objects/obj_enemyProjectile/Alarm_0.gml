@@ -5,7 +5,8 @@ if (boomerang == false)
 }
 if (boomerang == true)
 {
-	goToBoss = true;	
+	goToBoss = true;
+	speed *= 1.25;
 }
 #region BloodZombie Pool
 if(gameMaster.chosenBoss == Boss.SlimeQueen)

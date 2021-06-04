@@ -86,33 +86,45 @@ if (save_gif == true)
 #region Movement
 actualSpeed = (moveSpeed + gravelingSpeed)*bPSpeed*meteorStun*gravekeeperSpeed*shieldSpeed*agentSpeed*slayerSpeed*bfSpeed*t52Speed*gravelingAreaSpeed;
 actualSpeedBefore = actualSpeed;
-if (keyboard_check(ord("A")) && keyboard_check(ord("S")) || keyboard_check(ord("A")) && keyboard_check(ord("W")) ||  keyboard_check(ord("D")) && keyboard_check(ord("S")) || keyboard_check(ord("D")) && keyboard_check(ord("W")))
+if (keyboard_check(ord("A")) && keyboard_check(ord("S")) || keyboard_check(ord("A")) && keyboard_check(ord("W")) || keyboard_check(ord("D")) && keyboard_check(ord("S")) || keyboard_check(ord("D")) && keyboard_check(ord("W")))
 {
 	actualSpeed = actualSpeed*0.85;
 }
-if (keyboard_check(ord("W")) && place_free(x,y-actualSpeed))
+if (keyboard_check(ord("W")))
 {
-	y -= actualSpeed;
-	state = States.Walking;
 	moveDirection = 90;
+	if (place_free(x,y-actualSpeed))
+	{
+		y -= actualSpeed;
+		state = States.Walking;	
+	}
 }
-if (keyboard_check(ord("S")) && place_free(x,y+actualSpeed))
+if (keyboard_check(ord("S")))
 {
-	y += actualSpeed;
-	state = States.Walking;
 	moveDirection = 270;
+	if (place_free(x,y+actualSpeed))
+	{
+		y += actualSpeed;
+		state = States.Walking;
+	}
 }
-if (keyboard_check(ord("D")) && place_free(x+actualSpeed,y))
+if (keyboard_check(ord("D")))
 {
-	x += actualSpeed;
-	state = States.Walking;
 	moveDirection = 0;
+	if (place_free(x+actualSpeed,y))
+	{
+		x += actualSpeed;
+		state = States.Walking;
+	}
 }
-if (keyboard_check(ord("A")) && place_free(x-actualSpeed,y))
+if (keyboard_check(ord("A"))) 
 {
-	x -= actualSpeed;
-	state = States.Walking;
 	moveDirection = 180;
+	if (place_free(x-actualSpeed,y))
+	{
+		x -= actualSpeed;
+		state = States.Walking;
+	}
 }
 if (keyboard_check(ord("W")) && keyboard_check(ord("D"))){moveDirection = 45;}
 if (keyboard_check(ord("S")) && keyboard_check(ord("D"))){moveDirection = 315;}
@@ -160,13 +172,19 @@ if (mouse_x < x)
 #endregion
 #region LeftClick
 	var aimBotDistance = 50;
+	if (keyboard_check(ord("1")) || mouse_check_button(mb_left))
+	{
+		isLeftClicking = true;
+	}
+	else
+	{
+		isLeftClicking = false;
+	}
 	#region ShadowAssassin
 	if (class == Character.ShadowAssassin)
 	{
-		
-		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false
-		|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
-		{
+		if (isLeftClicking && canLeftClick && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
+		{	
 			if (instance_exists(obj_shadow))
 			{
 				if (distance_to_point(mouse_x,mouse_y) <= teleportRange && place_free(mouse_x,mouse_y) || point_distance(obj_shadow.x,obj_shadow.y,mouse_x,mouse_y) <= teleportRange && place_free(mouse_x,mouse_y))
@@ -174,6 +192,7 @@ if (mouse_x < x)
 					canLeftClick = false;
 					leftClickCooldownLeft = leftClickCooldown;
 					activateLeftClickItem = true;
+					isLeftClicking = false;
 				
 					var tpEffect = instance_create_depth(x,y,depth,obj_tpEffect);
 					tpEffect.image_blend = c_fuchsia;
@@ -218,6 +237,7 @@ if (mouse_x < x)
 					canLeftClick = false;
 					leftClickCooldownLeft = leftClickCooldown;
 					activateLeftClickItem = true;
+					isLeftClicking = false;
 				
 					instance_create_depth(x,y,depth,obj_tpEffect);
 					image_alpha = 0;
@@ -249,23 +269,23 @@ if (mouse_x < x)
 	#region Pyromancer
 	if (class == Character.Pyromancer)
 	{
-		if (canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && meteorStun != 0 && global.itemSelected[Boss.DemonLordRekTaar] == false)
+		if (isLeftClicking && canLeftClick && global.itemSelected[Boss.DeathKnight] == false && meteorStun != 0 && global.itemSelected[Boss.DemonLordRekTaar] == false)
 		{
-			if (mouse_check_button(mb_left)
-			|| keyboard_check(ord("1")))
-			{
-				charge += 1*(1+(gameMaster.bonusFirerate/100));
-				moveSpeed = 0;
-				drawCharge = true;
-			}
-			if (mouse_check_button_released(mb_left) || charge >= maxCharge || mouse_check_button(mb_left) && mouse_check_button(mb_right) 
-			|| mouse_check_button(mb_left) && keyboard_check(vk_space) || mouse_check_button(mb_left) && keyboard_check(ord("E")) 
-			|| mouse_check_button(mb_left) && keyboard_check_released(ord("1")) || mouse_check_button(mb_left) && keyboard_check(ord("2"))
-			|| mouse_check_button(mb_left) && keyboard_check_released(ord("R")) || mouse_check_button(mb_left) && keyboard_check_released(ord("Q")))
+			charge += 1*(1+(gameMaster.bonusFirerate/100));
+			moveSpeed = 0;
+			drawCharge = true;
+			if (mouse_check_button_released(mb_left)
+			|| keyboard_check_released(ord("1"))
+			|| gamepad_button_check_released(0,gp_shoulderrb)
+			|| charge >= maxCharge 
+			|| isRightClicking 
+			|| isDashing 
+			|| isUlting)
 			{
 				canLeftClick = false;
 				leftClickCooldownLeft = leftClickCooldown;
-				activateLeftClickItem = true;	
+				activateLeftClickItem = true;
+				isLeftClicking = false;
 				
 				var infernalBall = instance_create_depth(x,y,depth+1,obj_firebolt)
 				infernalBall.speed = 4 + charge/35;
@@ -290,12 +310,12 @@ if (mouse_x < x)
 	#region Bloodknight
 	if (class == Character.BloodKnight)
 	{
-		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false
-		|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
+		if (isLeftClicking && canLeftClick && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
 		{
 			canLeftClick = false;
 			leftClickCooldownLeft = leftClickCooldown;
 			activateLeftClickItem = true;
+			isLeftClicking = false;
 			
 			repeat(int64(batAmount*conjurationPower))
 			{
@@ -314,12 +334,12 @@ if (mouse_x < x)
 	#region Agent of God Tira
 	if (class == Character.AgentOfGod)
 	{
-		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false
-		|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
+		if (isLeftClicking && canLeftClick && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
 		{
 			canLeftClick = false;
 			leftClickCooldownLeft = leftClickCooldown;
 			activateLeftClickItem = true;
+			isLeftClicking = false;
 			
 			var bigBolt = instance_create_depth(x,y,depth+1,obj_holyFireBolt);
 			bigBolt.speed = 8;
@@ -339,12 +359,12 @@ if (mouse_x < x)
 	#region Angel Slayer
 	if (class == Character.AngelSlayer)
 	{
-		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false
-		|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
+		if (isLeftClicking && canLeftClick && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
 		{
 			canLeftClick = false;
 			leftClickCooldownLeft = leftClickCooldown;
 			activateLeftClickItem = true;
+			isLeftClicking = false;
 			
 			ASDashStopLeft = ASDashStop;
 			actualASDashSpeed = slayerDashSpeed;
@@ -387,12 +407,12 @@ if (mouse_x < x)
 	#region Graveling
 	if (class == Character.Graveling)
 	{
-		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false
-		|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
+		if (isLeftClicking && canLeftClick && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
 		{
 			canLeftClick = false;
 			leftClickCooldownLeft = leftClickCooldown;
 			activateLeftClickItem = true;
+			isLeftClicking = false;
 			
 			gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);
 			var graveAccuracy = 15;
@@ -417,12 +437,12 @@ if (mouse_x < x)
 	#region Plague Walker
 	if (class == Character.PlaugeWalker)
 	{
-		if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false
-		|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
+		if (isLeftClicking && canLeftClick && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
 		{
 			canLeftClick = false;
 			leftClickCooldownLeft = leftClickCooldown;
 			activateLeftClickItem = true;
+			isLeftClicking = false;
 			
 			canDash = true;
 			dashCooldownLeft = 0;
@@ -441,8 +461,7 @@ if (mouse_x < x)
 	#endregion
 	#region Items
 	#region Death Scythe
-	if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == true && global.itemSelected[Boss.DemonLordRekTaar] == false
-	|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DeathKnight] == true && global.itemSelected[Boss.DemonLordRekTaar] == false)
+	if (isLeftClicking && canLeftClick && global.itemSelected[Boss.DeathKnight] == true && global.itemSelected[Boss.DemonLordRekTaar] == false)
 	{
 		obj_equipment_deathScythe.state = MeleeWeaponStates.SpinOnce;
 		obj_equipment_deathScythe.spinTimes = 1;
@@ -481,8 +500,7 @@ if (mouse_x < x)
 	}
 	#endregion
 	#region Demon Portal
-	if (mouse_check_button(mb_left) && canLeftClick == true && global.itemSelected[Boss.DemonLordRekTaar] == true
-	|| keyboard_check(ord("1")) && canLeftClick == true && global.itemSelected[Boss.DemonLordRekTaar] == true)
+	if (isLeftClicking && canLeftClick && global.itemSelected[Boss.DemonLordRekTaar] == true)
 	{
 		with (obj_visual_demonPortal)
 		{
@@ -535,8 +553,6 @@ if (mouse_x < x)
 		#region DeathCap
 		if (instance_exists(obj_equipment_madHat))
 		{
-			var thisX = x;
-			var thisY = y;
 			with (obj_equipment_madHat)
 			{
 				var projectile = instance_create_depth(x,y,depth+1,obj_madBolt);
@@ -609,15 +625,23 @@ if (mouse_x < x)
 	#endregion
 #endregion
 #region RightClick
+	if (keyboard_check(ord("2")) || mouse_check_button(mb_right))
+	{
+		isRightClicking = true;	
+	}
+	else
+	{
+		isRightClicking = false;	
+	}
 	#region ShadowAssassin
 	if (class == Character.ShadowAssassin)
 	{
-		if (mouse_check_button(mb_right) && canRightClick == true && place_free(mouse_x,mouse_y)
-		|| keyboard_check(ord("2"))) && canRightClick == true && place_free(mouse_x,mouse_y)
+		if (isRightClicking && canRightClick && place_free(mouse_x,mouse_y))
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
 			activateRightClickItem = true;
+			isRightClicking = false;
 			
 			canLeftClick = true;
 			leftClickCooldownLeft = 0;
@@ -640,12 +664,12 @@ if (mouse_x < x)
 	{
 		var coneWide = 40;
 		var coneAmount = 5;
-		if (mouse_check_button(mb_right) && canRightClick == true && meteorStun != 0 
-		|| keyboard_check(ord("2")) && canRightClick == true && meteorStun != 0)
+		if (isRightClicking && canRightClick && meteorStun != 0)
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
 			activateRightClickItem = true;
+			isRightClicking = false;
 			
 			doConeShot = true;
 			coneShotTimes = coneShotAmount;
@@ -656,11 +680,9 @@ if (mouse_x < x)
 			{
 				var fireBolt = instance_create_depth(x,y,depth+1,obj_firebolt);
 				//Main
-				fireBolt.direction = coneAtkFW;
-				
+				fireBolt.direction = coneAtkFW;				
 				fireBolt.speed = 7;
-				fireBolt.image_angle = fireBolt.direction+90;
-				
+				fireBolt.image_angle = fireBolt.direction+90;			
 				//Visual
 				fireBolt.image_alpha = 0.85;
 				fireBolt.image_xscale = 1;
@@ -685,13 +707,13 @@ if (mouse_x < x)
 			coneShotTimes--;
 			doConeShot = true;
 		
-			var coneAtkFW = point_direction(x,y,mouse_x,mouse_y)-coneWide*0.5;
+			var coneAtkFW = point_direction(x,y,mouse_x,mouse_y)-coneWide*0.5;		
 			if (global.autoAim == true && instance_exists(obj_allBoss)){coneAtkFW = point_direction(x,y,obj_allBoss.x,obj_allBoss.y)-coneWide*0.5;}
 			repeat(coneAmount)
 			{
 				var fireBolt = instance_create_depth(x,y,depth+1,obj_firebolt);
 				//Main
-				fireBolt.direction = coneAtkFW;
+				fireBolt.direction = coneAtkFW;			
 				fireBolt.speed = 7;
 				fireBolt.image_angle = fireBolt.direction+90;
 				//Visual
@@ -708,12 +730,12 @@ if (mouse_x < x)
 	#region Bloodknight
 	if (class == Character.BloodKnight)
 	{
-		if (mouse_check_button(mb_right) && canRightClick == true
-		|| keyboard_check(ord("2")) && canRightClick == true)
+		if (isRightClicking && canRightClick)
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
 			activateRightClickItem = true;
+			isRightClicking = false;
 			
 			instance_create_depth(x,y,depth-1,obj_bloodKnightDash);
 			
@@ -762,15 +784,15 @@ if (mouse_x < x)
 	#region Agent Of God
 	if (class == Character.AgentOfGod)
 	{
-		if (mouse_check_button(mb_right) && canRightClick == true
-		|| keyboard_check(ord("2")) && canRightClick == true)
+		if (isRightClicking && canRightClick)
 		{
 			if (place_free(mouse_x,mouse_y))
 			{
 				canRightClick = false;
 				rightClickCooldownLeft = rightClickCooldown;
 				activateRightClickItem = true;
-				
+				isRightClicking = false;
+			
 				aGDashStopLeft = aGDashStop;
 				actualAGDashSpeed = dashSpeed*3.25;
 				direction = point_direction(x,y,mouse_x,mouse_y);
@@ -829,12 +851,12 @@ if (mouse_x < x)
 	#region Angel Slayer
 	if (class == Character.AngelSlayer)
 	{
-		if (mouse_check_button(mb_right) && canRightClick == true
-		|| keyboard_check(ord("2")) && canRightClick == true)
+		if (isRightClicking && canRightClick)
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
 			activateRightClickItem = true;
+			isRightClicking = false;
 			
 			canLeftClick = true;
 			leftClickCooldownLeft = 0;
@@ -881,12 +903,12 @@ if (mouse_x < x)
 	{
 		graveShotAmount = int64(actualSpeedBefore);
 		
-		if (mouse_check_button(mb_right) && canRightClick == true
-		|| keyboard_check(ord("2")) && canRightClick == true)
+		if (isRightClicking && canRightClick)
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
 			activateRightClickItem = true;
+			isRightClicking = false;
 			
 			doGraveShot = true;
 			graveShotTimes = graveShotAmount;
@@ -934,8 +956,7 @@ if (mouse_x < x)
 	#region Plaguewalker
 	if (class == Character.PlaugeWalker)
 	{
-		if (mouse_check_button_released(mb_right)
-		|| keyboard_check(ord("2")))
+		if (isRightClicking && canRightClick)
 		{
 			if (instance_exists(obj_plagueball))
 			{
@@ -949,12 +970,12 @@ if (mouse_x < x)
 				}
 			}
 		}
-		if (mouse_check_button_released(mb_right) && canRightClick == true
-		|| keyboard_check(ord("2")) && canRightClick == true)
+		if (isRightClicking && canRightClick)
 		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
 			activateRightClickItem = true;
+			isRightClicking = false;
 			
 			canDash = true;
 			dashCooldownLeft = 0;
@@ -1023,16 +1044,23 @@ if (mouse_x < x)
 	#endregion
 #endregion
 #region Ult
+	if (keyboard_check(ord("E")) || keyboard_check(ord("R")) || keyboard_check(ord("Q")))
+	{
+		isUlting = true;
+	}
+	else
+	{
+		isUlting = false;
+	}
 	#region ShadowAssassin
 	if (class == Character.ShadowAssassin)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
-		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
-		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
+		if (isUlting && canUlt && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
 			activateUltItem = true;
+			isUlting = false;
 			
 			canRightClick = true;
 			rightClickCooldownLeft = 0;
@@ -1056,31 +1084,46 @@ if (mouse_x < x)
 	#region Pyromancer
 	if (class == Character.Pyromancer)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true && place_free(mouse_x,mouse_y) && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
-		|| keyboard_check(ord("Q")) && canUlt == true && place_free(mouse_x,mouse_y) && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
-		|| keyboard_check(ord("R")) && canUlt == true && place_free(mouse_x,mouse_y) && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
+		if (instance_exists(obj_allBoss))
 		{
-			canUlt = false;
-			ultCooldownLeft = ultCooldown;
-			activateUltItem = true;
+			if (isUlting && canUlt && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
+			{
+				canUlt = false;
+				ultCooldownLeft = ultCooldown;
+				activateUltItem = true;
+				isUlting = false;
 			
-			meteorStun = 0;
-			targetX = mouse_x;
-			targetY = mouse_y;
+				meteorStun = 0;
+				if (place_free(mouse_x,mouse_y) && global.autoAim == false)
+				{
+					targetX = mouse_x;
+					targetY = mouse_y;
+				}
+				if (place_free(obj_allBoss.x,obj_allBoss.y) && global.autoAim)
+				{
+					targetX = obj_allBoss.x;
+					targetY = obj_allBoss.y;	
+				}	
+				else
+				{
+					targetX = x;
+					targetY = y;
+				}
 			
-			meteor = instance_create_depth(targetX+50,targetY-400,-1000,obj_firebolt);
-			meteor.direction = 260;
-			meteor.image_angle = meteor.direction+90;
-			meteor.image_alpha = 0.75;
-			meteor.speed = 6;
-			meteor.image_xscale = 1.45;
-			meteor.image_yscale = meteor.image_xscale;
-			meteor.charge = 15;
-			meteor.isMeteor = true;
-			meteor.sprite_index = spr_firebolt_meteor;
+				meteor = instance_create_depth(targetX+50,targetY-400,-1000,obj_firebolt);
+				meteor.direction = 260;
+				meteor.image_angle = meteor.direction+90;
+				meteor.image_alpha = 0.75;
+				meteor.speed = 6;
+				meteor.image_xscale = 1.45;
+				meteor.image_yscale = meteor.image_xscale;
+				meteor.charge = 15;
+				meteor.isMeteor = true;
+				meteor.sprite_index = spr_firebolt_meteor;
 			
-			instance_create_depth(x,y,-y,obj_pyroPortal);
-			instance_create_depth(x,y,-y,obj_portal_bottom);
+				instance_create_depth(x,y,-y,obj_pyroPortal);
+				instance_create_depth(x,y,-y,obj_portal_bottom);
+			}
 		}
 		if (meteorStun == 0 && instance_exists(meteor))
 		{
@@ -1108,14 +1151,12 @@ if (mouse_x < x)
 	#region BloodKnight
 	if (class == Character.BloodKnight)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
-		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
-		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
+		if (isUlting && canUlt && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
 			activateUltItem = true;
-			
+			isUlting = false;
 			
 			instance_create_depth(x,y,depth+1,obj_bloodBeamEffect);
 			var bloodBeam = instance_create_depth(x,y,depth+2,obj_bloodBeam);
@@ -1131,13 +1172,12 @@ if (mouse_x < x)
 	{
 		var coneWide = 25;
 		var coneAmount = 3;
-		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
-		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
-		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
+		if (isUlting && canUlt && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
 			activateUltItem = true;
+			isUlting = false;
 			
 			with(obj_camera){shake_remain += 2;}
 			doConeShot = true;
@@ -1191,13 +1231,12 @@ if (mouse_x < x)
 	#region Angel Slayer
 	if (class == Character.AngelSlayer)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
-		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
-		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
+		if (isUlting && canUlt && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
 			activateUltItem = true;
+			isUlting = false;
 			
 			canRightClick = true;
 			rightClickCooldownLeft = 0;
@@ -1208,7 +1247,10 @@ if (mouse_x < x)
 			
 			ultimateStacks = ultimateTime;
 		}
-		if (ultimateStacks > 0){ultimateStacks--;}
+		if (ultimateStacks > 0)
+		{
+			ultimateStacks--;
+		}
 		if (ultimateStacks <= 0)
 		{
 			ultimateStacks = 0;
@@ -1222,13 +1264,12 @@ if (mouse_x < x)
 		obj_gravelingRange.image_yscale = obj_gravelingRange.image_xscale;
 		teleportRange = 6 * actualSpeedBefore * 4 * (1+gameMaster.bonusDash/100);
 		
-		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
-		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
-		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
+		if (isUlting && canUlt && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
 			activateUltItem = true;
+			isUlting = false;
 			
 			GDashStopLeft = GDashStop;
 			dashDamage = true;
@@ -1291,13 +1332,12 @@ if (mouse_x < x)
 	#region Plaguewalker
 	if (class == Character.PlaugeWalker)
 	{
-		if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
-		|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false
-		|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
+		if (isUlting && canUlt && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
 		{
 			canUlt = false;
 			ultCooldownLeft = ultCooldown;
 			activateUltItem = true;
+			isUlting = false;
 					
 			canDash = true;
 			dashCooldownLeft = 0;
@@ -1349,9 +1389,7 @@ if (mouse_x < x)
 	#endregion
 	#region Items
 	#region Big Fucking Blast 9000
-	if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == true && global.itemSelected[Boss.BossRushReward] == false
-	|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == true && global.itemSelected[Boss.BossRushReward] == false
-	|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.DemonQueensHead] == true && global.itemSelected[Boss.BossRushReward] == false)
+	if (isUlting && canUlt && global.itemSelected[Boss.DemonQueensHead] == true && global.itemSelected[Boss.BossRushReward] == false)
 	{
 		canUlt = false;
 		ultCooldownLeft = ultCooldown;
@@ -1374,9 +1412,7 @@ if (mouse_x < x)
 	}
 	#endregion
 	#region Steamport Heart
-	if (keyboard_check(ord("E")) && canUlt == true && global.itemSelected[Boss.BossRushReward] == true
-	|| keyboard_check(ord("R")) && canUlt == true && global.itemSelected[Boss.BossRushReward] == true
-	|| keyboard_check(ord("Q")) && canUlt == true && global.itemSelected[Boss.BossRushReward] == true)
+	if (isUlting && canUlt && global.itemSelected[Boss.BossRushReward] == true)
 	{
 		canUlt = false;
 		ultCooldownLeft = ultCooldown;
@@ -1530,10 +1566,18 @@ if (mouse_x < x)
 	#endregion
 #endregion
 #region Dash
+	if (keyboard_check(vk_space))
+	{
+		isDashing = true;
+	}
+	else
+	{
+		isDashing = false;	
+	}
 	#region Shadow Assassin
 	if (class == Character.ShadowAssassin)
 	{
-		if (keyboard_check(vk_space) && canDash == true)
+		if (isDashing && canDash)
 		{
 			canDash = false;
 			dashCooldownLeft = dashCooldown;
@@ -1542,6 +1586,7 @@ if (mouse_x < x)
 			actualDashSpeed = dashSpeed;
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			if (global.dashTowardsMove){direction = moveDirection;}
+			isDashing = false;
 			
 			canLeftClick = true;
 			leftClickCooldownLeft = 0;
@@ -1565,12 +1610,13 @@ if (mouse_x < x)
 	#region Pyromancer
 	if (class == Character.Pyromancer)
 	{
-		if (keyboard_check(vk_space) && canDash == true && meteorStun != 0)
+		if (isDashing && canDash && meteorStun != 0)
 		{
 			canDash = false;
 			dashCooldownLeft = dashCooldown;
 			activateDashItem = true;
 			dashStopLeft = dashStop;
+			isDashing = false;
 			global.iFrame = true;
 			actualDashSpeed = dashSpeed*2;
 			direction = point_direction(x,y,mouse_x,mouse_y);
@@ -1596,7 +1642,7 @@ if (mouse_x < x)
 	#region Bloodknight
 	if (class == Character.BloodKnight)
 	{
-		if (keyboard_check(vk_space) && canDash == true)
+		if (isDashing && canDash)
 		{
 			canDash = false;
 			dashCooldownLeft = dashCooldown;
@@ -1605,6 +1651,7 @@ if (mouse_x < x)
 			actualDashSpeed = dashSpeed;
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			if (global.dashTowardsMove){direction = moveDirection;}
+			isDashing = false;
 			
 			repeat(int64(1*conjurationPower))
 			{
@@ -1631,7 +1678,7 @@ if (mouse_x < x)
 	#region Agent Of God
 	if (class == Character.AgentOfGod)
 	{
-		if (keyboard_check(vk_space) && canDash == true)
+		if (isDashing && canDash)
 		{
 			canDash = false;
 			dashCooldownLeft = dashCooldown;
@@ -1640,6 +1687,7 @@ if (mouse_x < x)
 			actualDashSpeed = dashSpeed;
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			if (global.dashTowardsMove){direction = moveDirection;}
+			isDashing = false;
 			
 			var holyBolt = instance_create_depth(x,y,depth+1,obj_holyBlast);
 			holyBolt.speed = dashSpeed*2.75;
@@ -1663,7 +1711,7 @@ if (mouse_x < x)
 	#region Angel Slayer
 	if (class == Character.AngelSlayer)
 	{
-		if (keyboard_check(vk_space) && canDash == true)
+		if (isDashing && canDash)
 		{
 			canDash = false;
 			dashCooldownLeft = dashCooldown;
@@ -1672,6 +1720,7 @@ if (mouse_x < x)
 			actualDashSpeed = slayerDashSpeed*2.5;
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			if (global.dashTowardsMove){direction = moveDirection;}
+			isDashing = false;
 			dashDamage = true;
 			
 			canLeftClick = true;
@@ -1699,6 +1748,7 @@ if (mouse_x < x)
 			var demonShade = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
 			demonShade.fadeSpeed = 0.1;//0.05
 			demonShade.sprite_index = spr_particle_demonTrail;
+			if (ultimateStacks > 0){demonShade.sprite_index = spr_particle_demonTrail_ult;}
 			demonShade.image_xscale = image_xscale;
 			demonShade.image_yscale = image_yscale;
 			demonShade.image_angle = image_angle;
@@ -1731,7 +1781,7 @@ if (mouse_x < x)
 	#region Graveling
 	if (class == Character.Graveling)
 	{
-		if (keyboard_check(vk_space) && canDash == true)
+		if (isDashing && canDash)
 		{
 			canDash = false;
 			dashCooldownLeft = dashCooldown;
@@ -1740,6 +1790,7 @@ if (mouse_x < x)
 			actualDashSpeed = dashSpeed;
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			if (global.dashTowardsMove){direction = moveDirection;}
+			isDashing = false;
 			
 			gravelingSpeed = clamp(gravelingSpeed+0.5,0,gravlingMaxSpeed);
 			var deadGround = instance_create_depth(x,y,depth,obj_deadGround);
@@ -1763,7 +1814,7 @@ if (mouse_x < x)
 	#region Plaguewalker
 	if (class == Character.PlaugeWalker)
 	{
-		if (keyboard_check(vk_space) && canDash == true && slayerSpeed == 1)
+		if (isDashing && canDash)
 		{
 			canDash = false;
 			dashCooldownLeft = dashCooldown;
@@ -1772,6 +1823,7 @@ if (mouse_x < x)
 			actualDashSpeed = dashSpeed;
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			if (global.dashTowardsMove){direction = moveDirection;}
+			isDashing = false;
 		}
 		if (speed > 0)
 		{

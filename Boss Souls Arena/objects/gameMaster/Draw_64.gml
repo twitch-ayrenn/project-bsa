@@ -655,7 +655,7 @@ if (menu == Menues.BossLoot)
 		#region Flame Wisp
 		if (itemShowInfoFor == Boss.FlameWisp)
 		{
-			var fText = "Fry apears every [" + string(int64(clamp(9/conjureCalc,3,9))) + "] seconds. Walk to Flamie"
+			var fText = "Fry apears every [" + string(int64(clamp(9/conjureCalc,3,9))) + "] seconds. Walk to Fry"
 			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,fText,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+2*itemTextSeparationY,"within a second and Fry will shoot a giant",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+3*itemTextSeparationY,"flame ball at your enemies. After a second ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -666,7 +666,7 @@ if (menu == Menues.BossLoot)
 			draw_set_font(fnt_menu_fill);
 			draw_text_transformed_color(infoTextX,startY+7.6*itemTextSeparationY,"Item Stats",itemTextSizeBig,itemTextSizeBig,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"+15% Damage ",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"+12.5% Damage ",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"+45% Summoning Power",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			
 		
@@ -956,7 +956,7 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,startY+7.6*itemTextSeparationY,"Item Stats",itemTextSizeBig,itemTextSizeBig,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
 			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"+3% Lifesteal",itemTextSize,itemTextSize,0,c_lime,c_lime,c_green,c_green,1);
-			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"+25% Damage Scaling",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"+22.5% Damage Scaling",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_text_transformed_color(infoTextX,startY+11*itemTextSeparationY,"-15% Dash Distance",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_fuchsia,c_fuchsia,1);
 			draw_text_transformed_color(infoTextX,startY+12*itemTextSeparationY,"\"If I have to choose between one evil",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+13*itemTextSeparationY,"and another, I rather not choose.\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -982,7 +982,7 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,startY+6.6*itemTextSeparationY,"Item Stats",itemTextSizeBig,itemTextSizeBig,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
 			draw_text_transformed_color(infoTextX,startY+8*itemTextSeparationY,"+30%  Attack Speed",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
-			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"+30% Damage",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"+20% Damage",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_text_transformed_color(infoTextX,startY+11*itemTextSeparationY,"\"Weaponizing demons. For a brighter",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+12*itemTextSeparationY,"brighter Tomorrow!\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			

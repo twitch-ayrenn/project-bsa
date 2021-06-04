@@ -557,6 +557,28 @@ if (attack == Atks.CircleAttack)
 			}
 		}
 	}
+	if (gameMaster.chosenBoss == Boss.Headless)
+	{
+		var angleBk = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		var circleAmount = 15;
+		repeat(circleAmount)
+		{
+			var bloodKlot = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			bloodKlot.direction = angleBk;
+			bloodKlot.speed = headlessProjectileSpeed;
+			bloodKlot.image_angle = bloodKlot.direction+90;
+			//Visual
+			bloodKlot.image_alpha = 0.85;
+			bloodKlot.sprite_index = spr_fireBall;
+			bloodKlot.image_blend = c_fuchsia;
+			bloodKlot.image_xscale = 1.05;
+			bloodKlot.image_yscale = 1.05;
+			bloodKlot.boomerang = true;
+			bloodKlot.range = headlessRange;
+			angleBk += (360/circleAmount);
+		}
+	}
 	if (gameMaster.chosenBoss == Boss.KnightWitchYi)
 	{
 		var angleBk = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
@@ -675,6 +697,24 @@ if (attack == Atks.GooSpawn)
 			}
 		}
 	}
+	if (gameMaster.chosenBoss == Boss.Headless)
+	{
+		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
+		//Main
+		gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		gooGround.speed = 1;
+		gooGround.image_angle = irandom_range(0,360);
+		//Visual
+		gooGround.image_alpha = 1;
+		gooGround.image_blend = c_maroon;
+		gooGround.sprite_index = spr_gooGround;
+		gooGround.image_xscale = 0.25;
+		gooGround.image_yscale = 0.25;
+		gooGround.destroy = true;
+		gooGround.boomerang = true;
+		gooGround.range = headlessRange*6;
+		if (instance_exists(obj_indicator)){var nearestIndicator = instance_nearest(x,y,obj_indicator); instance_destroy(nearestIndicator);}
+	}
 }
 #endregion
 #region OneShot
@@ -725,6 +765,22 @@ if (attack == Atks.OneShotAttack)
 			infernalBall.effectType = Effect.Spark;
 		}
 	}
+	if (gameMaster.chosenBoss == Boss.Headless)
+	{
+		var infernalBall = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+		//Main
+		infernalBall.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		infernalBall.speed = headlessProjectileSpeed;
+		infernalBall.image_angle = infernalBall.direction+90;
+		//Visual
+		infernalBall.image_alpha = 0.85;
+		infernalBall.image_blend = c_red;
+		infernalBall.sprite_index = spr_fireBall;
+		infernalBall.image_xscale = 2.25;
+		infernalBall.image_yscale = 2.25;
+		infernalBall.boomerang = true;
+		infernalBall.range = headlessRange;
+	}
 }
 #endregion
 #region ConeAttack
@@ -767,6 +823,29 @@ if (attack == Atks.ConeAttack)
 		gooGround.destroy = false;
 		gooGround.effectType = Effect.NoEffect;
 		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
+	}
+	if (gameMaster.chosenBoss == Boss.Headless)
+	{
+		var coneWide = 90;
+		var coneAtkFW = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-90*0.5;
+		var coneAmount = 5;
+		repeat(coneAmount)
+		{
+			var fireBolt = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			fireBolt.direction = coneAtkFW;
+			fireBolt.speed = headlessProjectileSpeed;
+			fireBolt.image_angle = fireBolt.direction+90;
+			//Visual
+			fireBolt.image_alpha = 0.85;
+			fireBolt.sprite_index = spr_fireBall;
+			fireBolt.image_blend = c_aqua;
+			fireBolt.image_xscale = 1.05;
+			fireBolt.image_yscale = 1.05;
+			fireBolt.boomerang = true;
+			fireBolt.range = headlessRange;
+			coneAtkFW += (coneWide/coneAmount);
+		}
 	}
 	if (gameMaster.chosenBoss == Boss.AngelKnightOscar)
 	{	
@@ -986,7 +1065,7 @@ if (attack == Atks.TeleportAttack)
 {
 	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
 	{
-		alpha = 1;
+		alpha = normalAlpha;
 		
 		var xTp = obj_allPlayer.x + choose(-200,-150,-100,100,150,200);
 		var yTp = obj_allPlayer.y + choose(-150,-100,100,150);
@@ -1005,6 +1084,11 @@ if (attack == Atks.TeleportAttack)
 		gooGround.image_yscale = 0.20;
 		gooGround.destroy = false;
 		gooGround.effectType = Effect.NoEffect;
+	}
+	if (gameMaster.chosenBoss == Boss.Headless)
+	{
+		alpha = normalAlpha;
+		chooseAnAttack = true;
 	}
 }
 #endregion
@@ -1041,12 +1125,6 @@ if (attack == Atks.TauntAttack)
 		gooGround.effectType = Effect.NoEffect;
 		if (instance_exists(obj_indicator)){instance_destroy(obj_indicator);}
 	}
-}
-#endregion
-#region Heal Attack
-if (attack == Atks.HealAttack)
-{
-	
 }
 #endregion
 #endregion
@@ -1337,6 +1415,33 @@ if (attack == Atks.NormalShot)
 #region CircleAttacks
 if (attack == Atks.CircleAttack)
 {
+	if (gameMaster.chosenBoss == Boss.FaithDestroyer)
+	{
+		drawArea = false;
+		var beamCircleAngle = 0;
+		var circleBeams = 12;
+		repeat(circleBeams)
+		{
+			var beam = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+			//Main
+			beam.image_angle = beamCircleAngle+90;
+			//Visual
+			beam.image_alpha = 0.85;
+			beam.image_blend = c_fuchsia;
+			beam.sprite_index = spr_beam;
+			beam.image_xscale = 0.2;
+			beam.image_yscale = 20;
+			beam.maxSize = 1.25+size/faithBeamSize;
+			beam.minSize = 0.2+size/(faithBeamSize*2);
+			beam.stickOn = true;
+			beam.beamChase = true;
+			beam.turningSpeed = 41/2;
+			beam.destroy = true;
+			beam.range = (2.2)*30; 
+			beam.effectType = Effect.NoEffect;
+			beamCircleAngle += 360/circleBeams;
+		}
+	}
 	if (gameMaster.chosenBoss == Boss.DemonQueensHead)
 	{
 		var angleBk = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
@@ -1406,6 +1511,40 @@ if (attack == Atks.GooSpawn)
 #region OneShot
 if (attack == Atks.OneShotAttack)
 {
+	if (gameMaster.chosenBoss == Boss.FaithDestroyer)
+	{
+		drawArea = false;
+		var beam = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+		//Main
+		beam.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		beam.speed = 4;
+		beam.image_angle = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-90+90;
+		//Visual
+		beam.image_alpha = 0.85;
+		beam.image_blend = c_red;
+		beam.sprite_index = spr_beam;
+		beam.image_xscale = 0.25;
+		beam.image_yscale = 20;
+		beam.range = 10*60;
+		beam.maxSize = 2.0+size/faithBeamSize;
+		beam.minSize = 0.25+size/(faithBeamSize*2);
+		
+		var beam = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+		//Main
+		beam.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
+		beam.speed = 4;
+		beam.image_angle = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-90-90;
+		//Visual
+		beam.image_alpha = 0.85;
+		beam.image_blend = c_red;
+		beam.sprite_index = spr_beam;
+		beam.image_xscale = 0.25;
+		beam.image_yscale = 20;
+		beam.range = 10*60;
+		beam.maxSize = 2.0+size/faithBeamSize;
+		beam.minSize = 0.25+size/(faithBeamSize*2);
+		
+	}
 	#region Demon Queens Head
 	if (gameMaster.chosenBoss == Boss.DemonQueensHead)
 	{
@@ -1476,7 +1615,7 @@ if (attack == Atks.OneShotAttack)
 		bat.sprite_index = spr_bat;
 		bat.image_xscale = 1.5;
 		bat.image_yscale = 1.5;
-		bat.range = 4*10;
+		bat.range = 1.3*10;
 		bat.boomerang = true;
 		bat.effectType = Effect.NoEffect;
 	}
@@ -1649,6 +1788,24 @@ if (attack == Atks.ChaseAttack)
 #region BeamAttack
 if (attack == Atks.BeamAttack)
 {
+	if (gameMaster.chosenBoss == Boss.FaithDestroyer)
+	{
+		drawArea = false;
+		var beam = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+		//Main
+		beam.image_angle = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-90;
+		//Visual
+		beam.image_alpha = 0.85;
+		beam.image_blend = global.orange;
+		beam.sprite_index = spr_beam;
+		beam.image_xscale = 0.25;
+		beam.image_yscale = 20;
+		beam.maxSize = 2.5+size/faithBeamSize;
+		beam.minSize = 0.25+size/(faithBeamSize*2);
+		beam.stickOn = true;
+		beam.range = 2.5*30;
+		beam.effectType = Effect.NoEffect;
+	}
 	if (gameMaster.chosenBoss == Boss.DemonQueensHead)
 	{
 		var beam = instance_create_depth(x-20,y-29,depth+1,obj_enemyProjectile);
@@ -1748,18 +1905,6 @@ if (attack == Atks.TeleportAttack)
 #endregion
 #region ZoneAttack
 if (attack == Atks.ZoneAttack)
-{
-	
-}
-#endregion
-#region TauntAttack
-if (attack == Atks.TauntAttack)
-{
-	
-}
-#endregion
-#region Heal Attack
-if (attack == Atks.HealAttack)
 {
 	
 }

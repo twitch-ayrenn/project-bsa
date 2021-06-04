@@ -666,6 +666,9 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar && phase == 1){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.GooSpawn);}
 	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar && phase == 2){attack = choose(Atks.BeamAttack,Atks.OneShotAttack,Atks.RapidFire,Atks.GooSpawn);}
 	if (gameMaster.chosenBoss == Boss.DemonLordRekTaar && phase == 3){attack = choose(Atks.BeamAttack,Atks.OneShotAttack,Atks.RapidFire);}
+	if (gameMaster.chosenBoss == Boss.Headless && phase == 1){attack = choose(Atks.ConeAttack,Atks.CircleAttack,Atks.GooSpawn);}
+	if (gameMaster.chosenBoss == Boss.Headless && phase == 2){attack = choose(Atks.ConeAttack,Atks.CircleAttack,Atks.GooSpawn,Atks.OneShotAttack);}
+	if (gameMaster.chosenBoss == Boss.Headless && phase == 3){attack = choose(Atks.ConeAttack,Atks.CircleAttack,Atks.GooSpawn,Atks.OneShotAttack,Atks.TeleportAttack);}
 	#endregion
 	#region Tier4 Bosses
 	if (gameMaster.chosenBoss == Boss.Gravekeeper && phase == 1){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.ConeAttack); alpha = 0; x += choose(50,0,-50); y += choose(50,0,-50);}
@@ -686,6 +689,13 @@ if(chooseAnAttack == true)
 	if (gameMaster.chosenBoss == Boss.WispSisters && phase == 4){attack = Atks.RapidFire;}
 	#endregion
 	#region Tier5 Bosses
+	//Faith Destroyer
+	if (gameMaster.chosenBoss == Boss.FaithDestroyer && phase == 1){attack = choose(Atks.OneShotAttack,Atks.CircleAttack,Atks.BeamAttack);}
+	if (gameMaster.chosenBoss == Boss.FaithDestroyer && phase == 2){attack = choose(Atks.OneShotAttack,Atks.CircleAttack,Atks.BeamAttack,Atks.ZoneAttack);}
+	if (gameMaster.chosenBoss == Boss.FaithDestroyer && phase == 3){attack = choose(Atks.OneShotAttack,Atks.CircleAttack,Atks.BeamAttack,Atks.ZoneAttack,Atks.ChaseAttack);}
+	if (gameMaster.chosenBoss == Boss.FaithDestroyer && phase == 4){attack = choose(Atks.OneShotAttack,Atks.CircleAttack,Atks.BeamAttack,Atks.ZoneAttack,Atks.ChaseAttack,Atks.TeleportAttack);}
+	if (gameMaster.chosenBoss == Boss.FaithDestroyer && phase == 5){attack = choose(Atks.OneShotAttack,Atks.CircleAttack,Atks.ConeAttack,Atks.ZoneAttack,Atks.ChaseAttack,Atks.TeleportAttack);}
+	
 	if (gameMaster.chosenBoss == Boss.DemonQueensHead && phase == 1 && global.player.meteorStun == 1){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.BeamAttack,Atks.ChaseAttack);}
 	if (gameMaster.chosenBoss == Boss.DemonQueensHead && phase == 2 && global.player.meteorStun == 1){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.BeamAttack,Atks.ChaseAttack,Atks.TeleportAttack);}
 	if (gameMaster.chosenBoss == Boss.DemonQueensHead && phase >= 3 && global.player.meteorStun == 1){attack = choose(Atks.OneShotAttack,Atks.RapidFire,Atks.BeamAttack,Atks.ChaseAttack,Atks.TeleportAttack,Atks.CircleAttack);}
@@ -746,8 +756,9 @@ if(chooseAnAttack == true)
 	{
 		sprite_index = circleSprite;		
 		attackColor = c_fuchsia;
-		#region AngelSlayerRekZul
-		if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul || gameMaster.chosenBoss == Boss.ArenaKing)
+		#region AngelSlayerRekZul || Arena King  || Statue Of Corruption || Faith Destroyer
+		if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul || gameMaster.chosenBoss == Boss.ArenaKing 
+		|| gameMaster.chosenBoss == Boss.StatueOfCorruption || gameMaster.chosenBoss == Boss.FaithDestroyer)
 		{
 			drawArea = true;
 		}
@@ -761,12 +772,6 @@ if(chooseAnAttack == true)
 			indicator.image_yscale = 0.085;
 			indicator.image_blend = c_maroon;
 			indicator.follow = true;
-		}
-		#endregion
-		#region Statue Of Corruption
-		if (gameMaster.chosenBoss == Boss.StatueOfCorruption)
-		{
-			drawArea = true;
 		}
 		#endregion
 		#region Arena King
@@ -1168,7 +1173,7 @@ if(chooseAnAttack == true)
 	}
  
 	alarm[0] = timeAfterIndicate;
-	alarm[1] = attackCooldown*choose(1,1,1,1,1,2);
+	alarm[1] = attackCooldown*choose(1,1,1,1,1.5);
 	if (gameMaster.chosenBoss == Boss.SlimeQueen && phase == 4){alarm[0] = (0.85)*30;alarm[1] = (1)*30;}
 	if (gameMaster.chosenBoss == Boss.ArenaKing && attack == Atks.ChaseAttack){alarm[0] = (1.5)*30;}
 	currentTimeBeforeTheAttack = 0;
@@ -1249,7 +1254,13 @@ if (hp <= 0 && phase == 1 && phase != maxPhase)
 				instance_destroy();	
 			}
 		}
-		size += 0.25;
+		size += 0.20;
+	}
+	#endregion
+	#region Faith Destroyer
+	if (gameMaster.chosenBoss == Boss.FaithDestroyer)
+	{
+		size = clamp(size+0.1,1,2);
 	}
 	#endregion
 }
@@ -1287,7 +1298,13 @@ if (hp <= 0 && phase == 2 && phase != maxPhase)
 				instance_destroy();	
 			}
 		}
-		size += 0.25;
+		size += 0.20;
+	}
+	#endregion
+	#region Faith Destroyer
+	if (gameMaster.chosenBoss == Boss.FaithDestroyer)
+	{
+		size = clamp(size+0.1,1,2);
 	}
 	#endregion
 }
@@ -1326,7 +1343,13 @@ if (hp <= 0 && phase == 3 && phase != maxPhase)
 				instance_destroy();	
 			}
 		}
-		size += 0.5;
+		size += 0.4;
+	}
+	#endregion
+	#region Faith Destroyer
+	if (gameMaster.chosenBoss == Boss.FaithDestroyer)
+	{
+		size = clamp(size+0.1,1,2);
 	}
 	#endregion
 }
@@ -1349,6 +1372,12 @@ if (hp <= 0 && phase == 4 && phase != maxPhase)
 		
 		fall = true;
 		jump = false;
+	}
+	#endregion
+	#region Faith Destroyer
+	if (gameMaster.chosenBoss == Boss.FaithDestroyer)
+	{
+		size = clamp(size+2,1,2.25);
 	}
 	#endregion
 }
