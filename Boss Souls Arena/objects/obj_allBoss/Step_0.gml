@@ -1122,6 +1122,15 @@ if(chooseAnAttack == true)
 		{
 			alpha = 0;
 		}
+		#region FaithDestroyer
+		if (gameMaster.chosenBoss == Boss.FaithDestroyer)
+		{
+			var xTp = global.arenaMiddleX + irandom_range(-150,150);
+			var yTp = global.arenaMiddleY + irandom_range(-150,150);
+			if (place_empty(xTp,y,obj_noGoZone)){x = xTp;}
+			if (place_empty(x,yTp,obj_noGoZone)){y = yTp;}
+		}
+		#endregion
 	}
 	if (attack == Atks.ZoneAttack)
 	{
@@ -1260,7 +1269,7 @@ if (hp <= 0 && phase == 1 && phase != maxPhase)
 	#region Faith Destroyer
 	if (gameMaster.chosenBoss == Boss.FaithDestroyer)
 	{
-		size = clamp(size+0.1,1,2);
+		size = clamp(size+0.15,1,1.75);
 	}
 	#endregion
 }
@@ -1304,7 +1313,7 @@ if (hp <= 0 && phase == 2 && phase != maxPhase)
 	#region Faith Destroyer
 	if (gameMaster.chosenBoss == Boss.FaithDestroyer)
 	{
-		size = clamp(size+0.1,1,2);
+		size = clamp(size+0.15,1,1.75);
 	}
 	#endregion
 }
@@ -1349,7 +1358,11 @@ if (hp <= 0 && phase == 3 && phase != maxPhase)
 	#region Faith Destroyer
 	if (gameMaster.chosenBoss == Boss.FaithDestroyer)
 	{
-		size = clamp(size+0.1,1,2);
+		size = clamp(size+0.15,1,1.75);
+		var xTp = obj_allPlayer.x + choose(-200,-150,-100,100,150,200);
+		var yTp = obj_allPlayer.y + choose(-150,-100,100,150);
+		if (place_empty(xTp,y,obj_noGoZone)){x = xTp;}
+		if (place_empty(x,yTp,obj_noGoZone)){y = yTp;}
 	}
 	#endregion
 }
@@ -1377,7 +1390,7 @@ if (hp <= 0 && phase == 4 && phase != maxPhase)
 	#region Faith Destroyer
 	if (gameMaster.chosenBoss == Boss.FaithDestroyer)
 	{
-		size = clamp(size+2,1,2.25);
+		size = clamp(size+1,1,2);
 	}
 	#endregion
 }

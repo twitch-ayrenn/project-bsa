@@ -370,7 +370,7 @@ if (menu == Menues.BossLoot)
 	//draw_line_width_color(line2X,200,line2X,200+500,5,global.orange,c_yellow);
 	
 	var itemXIncrease = 150;
-	draw_text_transformed_color(450,75,"Available Items",0.35,0.35,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(450,25,"Available Items",0.35,0.35,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_text_transformed_color(450,670,"Item Slots: " + string(global.maxItemSlots),0.35,0.35,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	var itemSlotSize = 0.25;
 	var itemSlotY = 860;
@@ -391,11 +391,11 @@ if (menu == Menues.BossLoot)
 	if (chosenClass == Character.AngelSlayer){hpCalc = clamp(hpCalc,0,150);}
 	var hpText = "Max Health: " + string(hpCalc);
 	var spdCalc = 20 + bonusSpeed + previewSpeed
-	var spdText = "Movement Speed: " + string(20 + bonusSpeed + previewSpeed);
+	var spdText = "Bonus Speed: " + string(0 +bonusSpeed + previewSpeed);
 	var dlCalc = 1 + (0 + bonusDash + previewDash)*0.01;
-	var dlText = "Extra Dash Distance: " + string(0 + bonusDash + previewDash) + "%";
+	var dlText = "Bonus Dash Distance: " + string(0 + bonusDash + previewDash) + "%";
 	var dmgCalc = 10 + bonusDamage + previewDamage;
-	if (global.itemSelected[Boss.AngelKnightOscar] == true){dmgCalc *= 0.55;}
+	if (global.itemSelected[Boss.AngelKnightOscar] == true){dmgCalc *= 0.85;}
 	var dmgText = "Damage Scaling: " + string(clamp(int64(dmgCalc*10)-100,0,999))  + "%";
 	var firerateCalc = 1 + ((bonusFirerate + previewFirerate)/100);
 	var frText = "Bonus Attack Speed: " + string(int64(firerateCalc*100-100)) + "%";
@@ -661,12 +661,12 @@ if (menu == Menues.BossLoot)
 			draw_text_transformed_color(infoTextX,startY+3*itemTextSeparationY,"flame ball at your enemies. After a second ",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+4*itemTextSeparationY,"Fry will disapear again. The spawn time is",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+5*itemTextSeparationY,"reduced by [Summoning Power] stat.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			var fText2 = "[Projectile Damage]: " + string(int64(dmgCalc*6))
+			var fText2 = "[Projectile Damage]: " + string(int64(dmgCalc*7))
 			draw_text_transformed_color(infoTextX,startY+6*itemTextSeparationY,fText2,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_set_font(fnt_menu_fill);
 			draw_text_transformed_color(infoTextX,startY+7.6*itemTextSeparationY,"Item Stats",itemTextSizeBig,itemTextSizeBig,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"+12.5% Damage ",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"+10% Damage ",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"+45% Summoning Power",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			
 		
@@ -727,20 +727,20 @@ if (menu == Menues.BossLoot)
 		if (itemShowInfoFor == Boss.WispSisterJulia)
 		{
 			draw_set_font(fnt_NewNormalText);
-			var soldierAmount = int64(clamp(2*conjureCalc,2,100))
+			var soldierAmount = int64(clamp(1*conjureCalc,2,100))
 			var soldierText= "Summon [" + string(soldierAmount) +"] futuristic soldiers. They shoot"
 			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,soldierText,itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+2*itemTextSeparationY,"where you aim. The amount of soldiers",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+3*itemTextSeparationY,"increase with [Summoning Power]. Their",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+4*itemTextSeparationY,"firerate scales with [Cooldown Reduction].",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			var fsAs = 3/(1+cdCalc*2);
+			var fsAs = 1.5/(1+cdCalc*2);
 			var bztext = "[Soldier Dps]: " + string(int64((dmgCalc/fsAs)*soldierAmount));
 			draw_text_transformed_color(infoTextX,startY+5*itemTextSeparationY,bztext,itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 			draw_set_font(fnt_menu_fill);
 			draw_text_transformed_color(infoTextX,startY+6.6*itemTextSeparationY,"Item Stats",itemTextSizeBig,itemTextSizeBig,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,startY+8*itemTextSeparationY,"+30% Summoning Power",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
-			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"+7.5% Cooldown reduction",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,startY+8*itemTextSeparationY,"+45% Summoning Power",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"+5% Cooldown reduction",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
 
 			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"\"I know we are losing...",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+11*itemTextSeparationY,"...I want to know if we lost.\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
@@ -830,14 +830,14 @@ if (menu == Menues.BossLoot)
 		if (itemShowInfoFor == Boss.AngelKnightOscar)
 		{
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,"Your abilities and ultimate has a 35% reduced",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,"Your abilities and ultimate has a 25% reduced",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+2*itemTextSeparationY,"cooldown. However your damage is reduced by",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
-			draw_text_transformed_color(infoTextX,startY+3*itemTextSeparationY,"40%. Increases max cooldown reduction to 60%.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+3*itemTextSeparationY,"15%. Increases cooldown reduction cap to 60%.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_set_font(fnt_menu_fill);
 			draw_text_transformed_color(infoTextX,startY+4.6*itemTextSeparationY,"Item Stats",itemTextSizeBig,itemTextSizeBig,0,global.orange,global.orange,c_yellow,c_yellow,1);
 			draw_set_font(fnt_NewNormalText);
-			draw_text_transformed_color(infoTextX,startY+6*itemTextSeparationY,"+40% Attack Speed",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
-			draw_text_transformed_color(infoTextX,startY+7*itemTextSeparationY,"+2 Movement Speed",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
+			draw_text_transformed_color(infoTextX,startY+6*itemTextSeparationY,"+25% Attack Speed",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,startY+7*itemTextSeparationY,"+4 Movement Speed",itemTextSize,itemTextSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,1);
 			draw_text_transformed_color(infoTextX,startY+9*itemTextSeparationY,"\"Perfectly balanced as all things should be...\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			draw_text_transformed_color(infoTextX,startY+10*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
 			
@@ -872,6 +872,25 @@ if (menu == Menues.BossLoot)
 			draw_set_font(fnt_menu_fill);
 			var ItemName = "Permanent Item: " + "Imp Portal"
 			draw_text_transformed_color(infoTextX,titleStartY+10,ItemName,0.3,0.3,0,global.orange,global.orange,c_yellow,c_yellow,1);
+		}
+		#endregion
+		#region Headless
+		if (itemShowInfoFor == Boss.Headless)
+		{
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,startY+1*itemTextSeparationY,"You can attack twice with each attack.",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_set_font(fnt_menu_fill);
+			draw_text_transformed_color(infoTextX,startY+2.6*itemTextSeparationY,"Item Stats",itemTextSizeBig,itemTextSizeBig,0,global.orange,global.orange,c_yellow,c_yellow,1);
+			draw_set_font(fnt_NewNormalText);
+			draw_text_transformed_color(infoTextX,startY+4*itemTextSeparationY,"+40% Attack Speed",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,startY+5*itemTextSeparationY,"-40 Max Health",itemTextSize,itemTextSize,0,c_red,c_red,c_maroon,c_maroon,1);
+			draw_text_transformed_color(infoTextX,startY+6*itemTextSeparationY,"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+			draw_text_transformed_color(infoTextX,startY+7*itemTextSeparationY,"\"Hesitation Is Defeat\"",itemTextSize,itemTextSize,0,c_white,c_white,c_white,c_white,1);
+		
+			//name
+			draw_set_font(fnt_menu_fill);
+			var ItemName = "Orb Of Corruption";
+			draw_text_transformed_color(infoTextX,titleStartY,ItemName,0.4,0.4,0,global.orange,global.orange,c_yellow,c_yellow,1);
 		}
 		#endregion
 		#region Gravekeeper
@@ -1489,21 +1508,23 @@ if (menu == Menues.Play)
 	var cX = 800;//center x
 	var cY = 450-350;
 	var nameSize = 1.3;
-	if(chosenBoss == Boss.BloodZombie){draw_text_transformed_color(cX,cY,"Blood Harvester",nameSize,nameSize,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);}
-	if(chosenBoss == Boss.FlameWisp){draw_text_transformed_color(cX,cY,"Flame Wisp",nameSize,nameSize,0,global.orange,global.orange,c_orange,c_orange,fightAlpha);}
-	if(chosenBoss == Boss.TheCorrupter){draw_text_transformed_color(cX,cY,"Corrupter",nameSize,nameSize,0,c_purple,c_purple,c_black,c_black,fightAlpha);}
-	if(chosenBoss == Boss.FlameGate){draw_text_transformed_color(cX,cY,"Eye of Hell",nameSize,nameSize,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);}
-	if(chosenBoss == Boss.WispSisterJulia){draw_text_transformed_color(cX,cY,"Soul Wisp",nameSize,nameSize,0,c_aqua,c_aqua,c_teal,c_teal,fightAlpha);}
-	if(chosenBoss == Boss.DeathKnight){draw_text_transformed_color(cX,cY,"Death Knight",nameSize,nameSize,0,c_silver,c_silver,c_gray,c_gray,fightAlpha);}
-	if(chosenBoss == Boss.AngelSlayerRekZul){draw_text_transformed_color(cX,cY,"Angel Slayer",nameSize,nameSize,0,c_maroon,c_maroon,c_black,c_black,fightAlpha);}
-	if(chosenBoss == Boss.KnightWitchYi){draw_text_transformed_color(cX,cY,"Knight Witch",nameSize,nameSize,0,c_red,c_red,c_black,c_black,fightAlpha);}
-	if(chosenBoss == Boss.AngelKnightOscar){draw_text_transformed_color(cX,cY,"Angel Knight",nameSize,nameSize,0,c_aqua,c_aqua,c_silver,c_silver,fightAlpha);}
+	if(chosenBoss == Boss.BloodZombie){draw_text_transformed_color(cX,cY,"The Blood Harvester",nameSize,nameSize,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);}
+	if(chosenBoss == Boss.FlameWisp){draw_text_transformed_color(cX,cY,"The Flame Wisp",nameSize,nameSize,0,global.orange,global.orange,c_orange,c_orange,fightAlpha);}
+	if(chosenBoss == Boss.TheCorrupter){draw_text_transformed_color(cX,cY,"The Corrupter",nameSize,nameSize,0,c_purple,c_purple,c_black,c_black,fightAlpha);}
+	if(chosenBoss == Boss.FlameGate){draw_text_transformed_color(cX,cY,"The Eye of Hell",nameSize,nameSize,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);}
+	if(chosenBoss == Boss.WispSisterJulia){draw_text_transformed_color(cX,cY,"The Soul Wisp",nameSize,nameSize,0,c_aqua,c_aqua,c_teal,c_teal,fightAlpha);}
+	if(chosenBoss == Boss.DeathKnight){draw_text_transformed_color(cX,cY,"The Death Knight",nameSize,nameSize,0,c_silver,c_silver,c_gray,c_gray,fightAlpha);}
+	if(chosenBoss == Boss.AngelSlayerRekZul){draw_text_transformed_color(cX,cY,"The Angel Slayer",nameSize,nameSize,0,c_maroon,c_maroon,c_black,c_black,fightAlpha);}
+	if(chosenBoss == Boss.KnightWitchYi){draw_text_transformed_color(cX,cY,"The Knight Witch",nameSize,nameSize,0,c_red,c_red,c_black,c_black,fightAlpha);}
+	if(chosenBoss == Boss.AngelKnightOscar){draw_text_transformed_color(cX,cY,"The Angel Knight",nameSize,nameSize,0,c_aqua,c_aqua,c_silver,c_silver,fightAlpha);}
 	if(chosenBoss == Boss.DemonLordRekTaar){draw_text_transformed_color(cX,cY,"The Demon General",nameSize,nameSize,0,global.orange,global.orange,c_yellow,c_yellow,fightAlpha);}
-	if(chosenBoss == Boss.Gravekeeper){draw_text_transformed_color(cX,cY,"Gravekeeper",nameSize,nameSize,0,c_white,c_white,c_silver,c_silver,fightAlpha);}
+	if(chosenBoss == Boss.Headless){draw_text_transformed_color(cX,cY,"The Headless Consumer",nameSize,nameSize,0,c_purple,c_purple,c_black,c_black,fightAlpha);}
+	if(chosenBoss == Boss.Gravekeeper){draw_text_transformed_color(cX,cY,"The Gravekeeper",nameSize,nameSize,0,c_white,c_white,c_silver,c_silver,fightAlpha);}
 	if(chosenBoss == Boss.BloodKnightDavid){draw_text_transformed_color(cX,cY,"Blood Army General",nameSize,nameSize,0,c_red,c_red,c_maroon,c_maroon,fightAlpha);}
 	if(chosenBoss == Boss.StatueOfCorruption){draw_text_transformed_color(cX,cY,"Statue Of Corruption",nameSize,nameSize,0,c_fuchsia,c_fuchsia,c_purple,c_purple,fightAlpha);}
 	if(chosenBoss == Boss.WispSisters){draw_text_transformed_color(cX,cY,"The Wisp Sisters",nameSize,nameSize,0,global.orange,c_aqua,c_aqua,global.orange,fightAlpha);}
 	if(chosenBoss == Boss.DemonQueensHead){draw_text_transformed_color(cX,cY,"Demon Queens Head",nameSize,nameSize,0,c_red,c_red,c_red,c_red,fightAlpha);}
+	if(chosenBoss == Boss.FaithDestroyer){draw_text_transformed_color(cX,cY,"The Faith Destroyer",nameSize,nameSize,0,c_red,c_red,c_red,c_red,fightAlpha);}
 	if(chosenBoss == Boss.DeathKing){draw_text_transformed_color(cX,cY,"The Lord Of Death",nameSize,nameSize,0,c_black,global.goldColor,global.goldColor,c_black,fightAlpha);}
 	if(chosenBoss == Boss.SlimeQueen){draw_text_transformed_color(cX,cY,"The Slime Queen",nameSize,nameSize,0,c_lime,global.goldColor,global.goldColor,c_lime,fightAlpha);}
 	if(chosenBoss == Boss.ArenaKing){draw_text_transformed_color(cX,cY,"The Arena King",nameSize,nameSize,0,c_yellow,c_yellow,global.goldColor,global.goldColor,fightAlpha);}

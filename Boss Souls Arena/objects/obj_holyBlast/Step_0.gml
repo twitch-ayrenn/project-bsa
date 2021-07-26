@@ -10,7 +10,7 @@ if (place_meeting(x,y,obj_noGoZone)){instance_destroy();}
 var enemy = instance_nearest(x,y,par_enemy);
 if (place_meeting(x,y,enemy))
 {	
-	with(obj_camera){shake_remain += 2;}
+	with(obj_camera){shake_remain += 3;}
 	
 	var damageDealt = global.damage*6;
 	var damageText = instance_create_depth(enemy.x+irandom_range(-8,8),enemy.y+irandom_range(-5,5),enemy.depth-10,obj_textMaker);

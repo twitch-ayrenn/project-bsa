@@ -261,10 +261,10 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.DeathKnight) 
 		{
 			//stats
-			phase1Hp = tier2Hp*0.020; phase1Ms = 1.3; phase1Dmg = 30;
-			phase2Hp = tier2Hp*0.030; phase2Ms = 1.2; phase2Dmg = 30;
-			phase3Hp = tier2Hp*0.0425; phase3Ms = 1.1; phase3Dmg = 25;
-			phase4Hp = tier2Hp*0.0075; phase4Ms = 1; phase4Dmg = 27.5;
+			phase1Hp = tier2Hp*0.20; phase1Ms = 1.3; phase1Dmg = 30;
+			phase2Hp = tier2Hp*0.30; phase2Ms = 1.2; phase2Dmg = 30;
+			phase3Hp = tier2Hp*0.425; phase3Ms = 1.1; phase3Dmg = 25;
+			phase4Hp = tier2Hp*0.075; phase4Ms = 1; phase4Dmg = 27.5;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -664,11 +664,11 @@ isHit = false;
 		if (gameMaster.chosenBoss == Boss.FaithDestroyer) 
 		{
 			//stats
-			phase1Hp = tier5Hp*0.10; phase1Ms = 0; phase1Dmg = 30;
-			phase2Hp = tier5Hp*0.20; phase2Ms = 0; phase2Dmg = 35;
-			phase3Hp = tier5Hp*0.25; phase3Ms = 0; phase3Dmg = 40;
-			phase4Hp = tier5Hp*0.25; phase4Ms = 0; phase4Dmg = 40;
-			phase5Hp = tier5Hp*0.45; phase5Ms = 0; phase5Dmg = 35;
+			phase1Hp = tier5Hp*0.10; phase1Ms = 0; phase1Dmg = 15;
+			phase2Hp = tier5Hp*0.15; phase2Ms = 0; phase2Dmg = 17;
+			phase3Hp = tier5Hp*0.20; phase3Ms = 0; phase3Dmg = 19;
+			phase4Hp = tier5Hp*0.25; phase4Ms = 0; phase4Dmg = 21;
+			phase5Hp = tier5Hp*0.30; phase5Ms = 0; phase5Dmg = 22;
 			hp = phase1Hp;
 			global.bossDamage = phase1Dmg;
 			moveSpeed = phase1Ms;
@@ -691,8 +691,8 @@ isHit = false;
 			cdSprite = spr_boss_faithDestroyer_cd;
 			//boss Specfic
 			x = global.arenaMiddleX;
-			y = global.arenaMiddleY + 100;
-			faithBeamSize = 4;
+			y = global.arenaMiddleY + 60;
+			faithBeamSize = 2;
 		}
 		#endregion
 		#region Demon Queens Head
@@ -862,7 +862,7 @@ if (tier == 3){ timeAfterIndicate = (1.55)*30;  attackCooldown = (3.60)*30;}
 if (tier == 4){ timeAfterIndicate = (1.40)*30;  attackCooldown = (3.50)*30;}
 if (tier == 5){ timeAfterIndicate = (1.25)*30;  attackCooldown = (3.37)*30;}
 if (tier == 6){ timeAfterIndicate = (1.15)*30;  attackCooldown = (3.25)*30;}
-if (gameMaster.chosenMode == Menues.BossRush){maxHp *= 0.8; hp = maxHp;}
+if (gameMaster.chosenMode == Menues.BossRush){maxHp *= 0.7; hp = maxHp;}
 #endregion
 
 

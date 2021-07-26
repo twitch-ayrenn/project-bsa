@@ -18,12 +18,17 @@ if (global.autoAim == true && instance_exists(obj_allBoss))
 {
 	if (distance_to_point(obj_allBoss.x,obj_allBoss.y) > stopDistance)
 	{
-		move_towards_point(obj_allBoss.x,obj_allBoss.y,global.player.moveSpeed*1)
+		move_towards_point(obj_allBoss.x,obj_allBoss.y,global.player.moveSpeed*1.2)
 	}
 	if (distance_to_point(obj_allBoss.x,obj_allBoss.y) <= stopDistance)
 	{
 		speed = 0;
 	}
+}
+if (destroy == true)
+{
+	destroy = false;
+	alarm[1] = (3)*30;	
 }
 if (dealDamage == true)
 {

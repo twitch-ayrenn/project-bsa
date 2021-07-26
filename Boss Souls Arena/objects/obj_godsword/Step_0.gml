@@ -1,7 +1,10 @@
 /// @description Insert description here
 var target = instance_nearest(x,y,par_enemy);
 var angle = global.player.weaponDirection+180;
-dmg = global.damage*5;
+image_alpha = obj_allPlayer.image_alpha;
+dmg = global.damage*4;
+if (damageType == 0){dmg = global.damage*4.5;}
+if (damageType == 1){dmg = global.damage*9;}
 if (global.player.speed > 0)
 {
 	var demonShade = instance_create_depth(x,y,depth,obj_particle_dash_characterFollow);
@@ -42,7 +45,6 @@ if (state == MeleeWeaponStates.Strike)
 		damageText.color = c_white;
 		damageText.text = damageToTarget;
 		target.hp -= damageToTarget;
-		with(obj_camera){shake_remain += 3;}
 		
 		var amountHealed = dmg*global.lifeSteal;
 		var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
@@ -50,9 +52,9 @@ if (state == MeleeWeaponStates.Strike)
 		healText.text = amountHealed;
 		global.player.hp += dmg*global.lifeSteal;
 		
-		global.player.rightClickCooldownLeft *= 0.2;
-		
-		alarm[1] = (0.25)*30;
+		if (damageType == 0){global.player.leftClickCooldownLeft *= 0.4; with(obj_camera){shake_remain += 2;}}
+		if (damageType == 1){with(obj_camera){shake_remain += 4;}}		
+		alarm[1] = (0.35)*30;
 	}
 }
 if (state == MeleeWeaponStates.SpinOnce)

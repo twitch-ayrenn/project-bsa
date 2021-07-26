@@ -37,6 +37,11 @@ if (gameMaster.chosenClass == Character.Graveling && gameMaster.gravelingProgres
 	visible = false;
 	mask_index = spr_prop_cup;
 }
+if (gameMaster.chosenClass == Character.AgentOfGod && gameMaster.agentOfGodProgress < bossOnThisCard)
+{
+	visible = false;
+	mask_index = spr_prop_cup;
+}
 if (gameMaster.menu != Menues.BossSelect)
 {
 	visible = false;

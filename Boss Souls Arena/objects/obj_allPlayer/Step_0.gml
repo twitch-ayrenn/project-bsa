@@ -84,7 +84,7 @@ if (save_gif == true)
 }
 #endregion
 #region Movement
-actualSpeed = (moveSpeed + gravelingSpeed)*bPSpeed*meteorStun*gravekeeperSpeed*shieldSpeed*agentSpeed*slayerSpeed*bfSpeed*t52Speed*gravelingAreaSpeed;
+actualSpeed = (moveSpeed + gravelingSpeed)*bPSpeed*meteorStun*beamStun*gravekeeperSpeed*shieldSpeed*slayerSpeed*bfSpeed*t52Speed*gravelingAreaSpeed;
 actualSpeedBefore = actualSpeed;
 if (keyboard_check(ord("A")) && keyboard_check(ord("S")) || keyboard_check(ord("A")) && keyboard_check(ord("W")) || keyboard_check(ord("D")) && keyboard_check(ord("S")) || keyboard_check(ord("D")) && keyboard_check(ord("W")))
 {
@@ -269,40 +269,45 @@ if (mouse_x < x)
 	#region Pyromancer
 	if (class == Character.Pyromancer)
 	{
-		if (isLeftClicking && canLeftClick && global.itemSelected[Boss.DeathKnight] == false && meteorStun != 0 && global.itemSelected[Boss.DemonLordRekTaar] == false)
+		if (canLeftClick && meteorStun != 0 && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
 		{
-			charge += 1*(1+(gameMaster.bonusFirerate/100));
-			moveSpeed = 0;
-			drawCharge = true;
-			if (mouse_check_button_released(mb_left)
-			|| keyboard_check_released(ord("1"))
-			|| gamepad_button_check_released(0,gp_shoulderrb)
-			|| charge >= maxCharge 
-			|| isRightClicking 
-			|| isDashing 
-			|| isUlting)
+			if (isLeftClicking)
 			{
-				canLeftClick = false;
-				leftClickCooldownLeft = leftClickCooldown;
-				activateLeftClickItem = true;
-				isLeftClicking = false;
+				charge += 1*(1+(gameMaster.bonusFirerate/100));
+				moveSpeed = 0;
+				drawCharge = true;
+				if (isDashing){isDashing = false;}
+			}
+			if (charge > 0)
+			{
+				if (mouse_check_button_released(mb_left)
+				|| keyboard_check_released(ord("1"))
+				|| charge >= maxCharge 
+				|| isRightClicking 
+				|| isDashing 
+				|| isUlting)
+				{
+					canLeftClick = false;
+					leftClickCooldownLeft = leftClickCooldown;
+					activateLeftClickItem = true;
+					isLeftClicking = false;
 				
-				var infernalBall = instance_create_depth(x,y,depth+1,obj_firebolt)
-				infernalBall.speed = 4 + charge/35;
-				infernalBall.direction = point_direction(x,y,mouse_x,mouse_y);
-				if (global.autoAim == true && instance_exists(obj_allBoss)){infernalBall.direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
-				infernalBall.image_angle = infernalBall.direction+90;
-				infernalBall.image_xscale = 0.25 + charge/50;
-				infernalBall.image_yscale = infernalBall.image_xscale;
-				infernalBall.charge = 1 + ((charge/2.5)-1);
-				infernalBall.isAttack = true;
+					var infernalBall = instance_create_depth(x,y,depth+1,obj_firebolt)
+					infernalBall.speed = 4 + charge/35;
+					infernalBall.direction = point_direction(x,y,mouse_x,mouse_y);
+					if (global.autoAim == true && instance_exists(obj_allBoss)){infernalBall.direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
+					infernalBall.image_angle = infernalBall.direction+90;
+					infernalBall.image_xscale = 0.25 + charge/50;
+					infernalBall.image_yscale = infernalBall.image_xscale;
+					infernalBall.charge = 1 + ((charge/2.5)-1);
+					infernalBall.isAttack = true;
 			
-				charge = 0;
-				moveSpeed = normalSpeed;
+					charge = 0;
+					moveSpeed = normalSpeed;
 				
-				instance_create_depth(x,y,-y,obj_pyroPortal);
-				instance_create_depth(x,y,-y,obj_portal_bottom);
-				
+					instance_create_depth(x,y,-y,obj_pyroPortal);
+					instance_create_depth(x,y,-y,obj_portal_bottom);				
+				}
 			}
 		}
 	}
@@ -334,25 +339,66 @@ if (mouse_x < x)
 	#region Agent of God Tira
 	if (class == Character.AgentOfGod)
 	{
-		if (isLeftClicking && canLeftClick && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false)
+		if (isLeftClicking && canLeftClick && global.itemSelected[Boss.DeathKnight] == false && global.itemSelected[Boss.DemonLordRekTaar] == false && beamStun != 0)
 		{
-			canLeftClick = false;
-			leftClickCooldownLeft = leftClickCooldown;
-			activateLeftClickItem = true;
-			isLeftClicking = false;
+			if (place_free(mouse_x,mouse_y))
+			{
+				canLeftClick = false;
+				leftClickCooldownLeft = leftClickCooldown;
+				activateLeftClickItem = true;
+				isLeftClicking = false;
 			
-			var bigBolt = instance_create_depth(x,y,depth+1,obj_holyFireBolt);
-			bigBolt.speed = 8;
-			bigBolt.direction = point_direction(x,y,mouse_x,mouse_y);
-			if (global.autoAim == true && instance_exists(obj_allBoss)){bigBolt.direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
-			bigBolt.image_angle = bigBolt.direction+90;
-			//Visual
-			bigBolt.image_xscale = 0.40 + global.damage/2;
-			bigBolt.image_yscale = bigBolt.image_xscale;
-			bigBolt.type = 4;
-			
-			obj_godsword.state = MeleeWeaponStates.SpinOnce;
-			obj_godsword.spinTimes += 1;
+				aGDashStopLeft = aGDashStop*0.6;
+				actualAGDashSpeed = dashSpeed*3;
+				direction = point_direction(x,y,mouse_x,mouse_y);
+				if (global.autoAim == true && instance_exists(obj_allBoss) && distance_to_object(obj_allBoss) <= aimBotDistance*2){direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
+				obj_godsword.state = MeleeWeaponStates.Strike;
+				obj_godsword.damageType = 0;
+				#region Death Scythe
+				if (global.itemSelected[Boss.DeathKnight] == true)
+				{
+					with(obj_equipment_deathScythe){state = MeleeWeaponStates.Strike;}
+				}
+				#endregion				
+				#region DemonHorn
+				if (global.itemSelected[Boss.FlameGate] == true)
+				{
+					var horn = instance_create_depth(x,y,-y,obj_equipment_demonClaw);
+					horn.destroyTime = 0.4+(maxHp/hornTime)*30;
+				}
+				#endregion
+				#region Demon general rektaar
+				if (global.itemSelected[Boss.DemonLordRekTaar] == true)
+				{
+					canLeftClick = true;
+					leftClickCooldownLeft = 0;
+				}
+				#endregion
+				#region the last wish
+				if (global.itemSelected[Boss.WispSisters] == true && instance_exists(obj_equipment_theLastWish) == false)
+				{
+					instance_create_depth(x,y,depth,obj_equipment_theLastWish);
+				}
+				if (global.itemSelected[Boss.WispSisters] == true && instance_exists(obj_equipment_theLastWish) == true)
+				{
+					with (obj_equipment_theLastWish)
+					{
+						x = global.player.x;
+						y = global.player.y;
+					}
+				}
+				#endregion
+			}			
+		}
+		if (aGDashStopLeft > 0){aGDashStopLeft--;}
+		if (aGDashStopLeft <= 0 && actualAGDashSpeed > 0)
+		{
+			actualAGDashSpeed -= dashSpeed*3;
+			with (obj_godsword){state = MeleeWeaponStates.idle;}
+			if (global.itemSelected[Boss.DeathKnight] == true)
+			{
+				with(obj_equipment_deathScythe){state = MeleeWeaponStates.idle;}
+			}
 		}
 	}
 	#endregion
@@ -401,6 +447,7 @@ if (mouse_x < x)
 			
 			obj_slayerScythe.state = MeleeWeaponStates.SpinOnce;
 			obj_slayerScythe.spinTimes += 1;
+			//obj_slayerScythe.canDealDamage = true;
 		}
 	}
 	#endregion
@@ -446,16 +493,16 @@ if (mouse_x < x)
 			
 			canDash = true;
 			dashCooldownLeft = 0;
-					
-			var separation = 35;
-			repeat(int64(plaguelingAmount*conjurationPower))
-			{
-				var doodlings = instance_create_depth(x+irandom_range(-separation,separation),y+irandom_range(-separation,separation),depth+1,obj_plaguelings);
-				doodlings.speed = 3;
-				doodlings.sprite_index = choose(spr_plagueling,spr_plaguer);
-				doodlings.direction = point_direction(x,y,mouse_x,mouse_y);
-				doodlings.destroyTime = 10*30;
-			}
+						
+			var bigBolt = instance_create_depth(x,y,depth+1,obj_plagueball);
+				bigBolt.speed = 5;
+				bigBolt.direction = point_direction(x,y,mouse_x,mouse_y);
+				if (global.autoAim == true && instance_exists(obj_allBoss)){bigBolt.direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
+				bigBolt.image_angle = bigBolt.direction+90;
+				//Visual
+				bigBolt.image_xscale = 1;
+				bigBolt.image_yscale = bigBolt.image_xscale;
+				bigBolt.image_blend = c_lime;
 		}
 	}
 	#endregion
@@ -606,6 +653,12 @@ if (mouse_x < x)
 			hellBolt.speed = 8;
 		}
 		#endregion
+		#region Headless
+		if (global.itemSelected[Boss.Headless] == true)
+		{
+			leftClickStacks++;
+		}
+		#endregion
 	}
 	#endregion
 	#region onGoingEffects
@@ -620,6 +673,15 @@ if (mouse_x < x)
 			
 				gravelingSpeed = clamp(gravelingSpeed - 0.5,0,1.5);
 			}
+		}
+	}
+	if (global.itemSelected[Boss.Headless] == true)
+	{
+		if (leftClickStacks >= leftClickStacksNeeded)
+		{
+			leftClickStacks = 0;
+
+			alarm[1] = (0.5)*30;
 		}
 	}
 	#endregion
@@ -685,8 +747,8 @@ if (mouse_x < x)
 				fireBolt.image_angle = fireBolt.direction+90;			
 				//Visual
 				fireBolt.image_alpha = 0.85;
-				fireBolt.image_xscale = 1;
-				fireBolt.image_yscale = 1;
+				fireBolt.image_xscale = 0.8;
+				fireBolt.image_yscale = 0.8;
 				fireBolt.effectType = Effect.Flare;
 				fireBolt.charge = 1;
 				fireBolt.isRightClick = true;
@@ -718,8 +780,8 @@ if (mouse_x < x)
 				fireBolt.image_angle = fireBolt.direction+90;
 				//Visual
 				fireBolt.image_alpha = 0.85;
-				fireBolt.image_xscale = 1;
-				fireBolt.image_yscale = 1;
+				fireBolt.image_xscale = 0.8;
+				fireBolt.image_yscale = 0.8;
 				fireBolt.effectType = Effect.Flare;
 				fireBolt.charge = 1.2;
 				coneAtkFW += (coneWide/coneAmount);
@@ -784,7 +846,7 @@ if (mouse_x < x)
 	#region Agent Of God
 	if (class == Character.AgentOfGod)
 	{
-		if (isRightClicking && canRightClick)
+		if (isRightClicking && canRightClick && beamStun != 0)
 		{
 			if (place_free(mouse_x,mouse_y))
 			{
@@ -792,18 +854,20 @@ if (mouse_x < x)
 				rightClickCooldownLeft = rightClickCooldown;
 				activateRightClickItem = true;
 				isRightClicking = false;
+				hp = 0.75*maxHp;
 			
-				aGDashStopLeft = aGDashStop;
-				actualAGDashSpeed = dashSpeed*3.25;
+				aGDashStopLeft = aGDashStop*0.8;
+				actualAGDashSpeed = dashSpeed*3;
 				direction = point_direction(x,y,mouse_x,mouse_y);
-				with(obj_godsword){state = MeleeWeaponStates.Strike;}
+				if (global.autoAim == true && instance_exists(obj_allBoss) && distance_to_object(obj_allBoss) <= aimBotDistance*2){direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
+				obj_godsword.state = MeleeWeaponStates.Strike;
+				obj_godsword.damageType = 1;
 				#region Death Scythe
 				if (global.itemSelected[Boss.DeathKnight] == true)
 				{
 					with(obj_equipment_deathScythe){state = MeleeWeaponStates.Strike;}
 				}
-				#endregion
-				if (global.autoAim == true && instance_exists(obj_allBoss) && distance_to_object(obj_allBoss) <= aimBotDistance*2){direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
+				#endregion				
 				#region DemonHorn
 				if (global.itemSelected[Boss.FlameGate] == true)
 				{
@@ -834,19 +898,7 @@ if (mouse_x < x)
 				#endregion
 			}
 		}
-		if (aGDashStopLeft > 0){aGDashStopLeft--;}
-		if (aGDashStopLeft <= 0 && actualAGDashSpeed > 0)
-		{
-			actualAGDashSpeed -= dashSpeed*3.25;
-			with (obj_godsword){state = MeleeWeaponStates.idle;}
-			#region Death Scythe
-			if (global.itemSelected[Boss.DeathKnight] == true)
-			{
-				with(obj_equipment_deathScythe){state = MeleeWeaponStates.idle;}
-			}
-		}
 	}
-	#endregion
 	#endregion
 	#region Angel Slayer
 	if (class == Character.AngelSlayer)
@@ -958,20 +1010,6 @@ if (mouse_x < x)
 	{
 		if (isRightClicking && canRightClick)
 		{
-			if (instance_exists(obj_plagueball))
-			{
-				var bolt = instance_nearest(x,y,obj_plagueball);
-				if (bolt.x > 400+10 && bolt.x < 810-10 && bolt.y > 430+10 && bolt.y < 710-10)
-				{
-					x = bolt.x;
-					y = bolt.y;
-					
-					instance_destroy(bolt);
-				}
-			}
-		}
-		if (isRightClicking && canRightClick)
-		{
 			canRightClick = false;
 			rightClickCooldownLeft = rightClickCooldown;
 			activateRightClickItem = true;
@@ -982,13 +1020,13 @@ if (mouse_x < x)
 			
 			if (instance_exists(obj_plagueball) == false)
 			{ 
-				var bigBolt = instance_create_depth(x,y,depth+1,obj_plagueball);
-				bigBolt.speed = 6;
-				bigBolt.direction = point_direction(x,y,mouse_x,mouse_y);
+				var bigBolt = instance_create_depth(global.arenaMiddleX,global.arenaMiddleY-500,depth+1,obj_plagueball);
+				bigBolt.speed = 11;
+				bigBolt.direction = point_direction(global.arenaMiddleX,global.arenaMiddleY-500,mouse_x,mouse_y);
 				if (global.autoAim == true && instance_exists(obj_allBoss)){bigBolt.direction = point_direction(x,y,obj_allBoss.x,obj_allBoss.y);}
 				bigBolt.image_angle = bigBolt.direction+90;
 				//Visual
-				bigBolt.image_xscale = 1.25;
+				bigBolt.image_xscale = 1.75;
 				bigBolt.image_yscale = bigBolt.image_xscale;
 				bigBolt.image_blend = c_lime;
 			}			
@@ -1104,7 +1142,7 @@ if (mouse_x < x)
 					targetX = obj_allBoss.x;
 					targetY = obj_allBoss.y;	
 				}	
-				else
+				else if (global.autoAim	)
 				{
 					targetX = x;
 					targetY = y;
@@ -1114,7 +1152,7 @@ if (mouse_x < x)
 				meteor.direction = 260;
 				meteor.image_angle = meteor.direction+90;
 				meteor.image_alpha = 0.75;
-				meteor.speed = 6;
+				meteor.speed = 8;
 				meteor.image_xscale = 1.45;
 				meteor.image_yscale = meteor.image_xscale;
 				meteor.charge = 15;
@@ -1170,8 +1208,6 @@ if (mouse_x < x)
 	#region Agent Of God
 	if (class == Character.AgentOfGod)
 	{
-		var coneWide = 25;
-		var coneAmount = 3;
 		if (isUlting && canUlt && global.itemSelected[Boss.DemonQueensHead] == false && global.itemSelected[Boss.BossRushReward] == false)
 		{
 			canUlt = false;
@@ -1179,54 +1215,39 @@ if (mouse_x < x)
 			activateUltItem = true;
 			isUlting = false;
 			
-			with(obj_camera){shake_remain += 2;}
-			doConeShot = true;
-			coneShotTimes = coneShotAmount;
+			beamStun = 0;
+			beamInvis = true;
+			global.iFrame = true;
 			
-			var coneAtkFW = point_direction(x,y,mouse_x,mouse_y)-coneWide*0.5;
-			if (global.autoAim == true && instance_exists(obj_allBoss)){coneAtkFW = point_direction(x,y,obj_allBoss.x,obj_allBoss.y)-coneWide*0.5;}
-			repeat(coneAmount)
-			{
-				var fireBolt = instance_create_depth(x,y,depth+1,obj_barageBolts);
-				//Main
-				fireBolt.direction = coneAtkFW;				
-				fireBolt.speed = 5.5;
-				fireBolt.image_angle = fireBolt.direction+90;
-				//Visual
-				fireBolt.image_alpha = 0.85;
-				fireBolt.image_xscale = 0.85;
-				fireBolt.image_yscale = 0.85;
-				coneAtkFW += (coneWide/coneAmount);
-			}
+			beam = instance_create_depth(mouse_x,mouse_y,-1000,obj_holyBeam);
+			beam.image_angle = 0;
+			beam.image_alpha = 0.75;
+			beam.image_xscale = 1;
+			beam.image_yscale = 1;
+			
+			alarm[0] = (4)*30;
 		}
-		if (doConeShot == true && coneShotTimes > 0)
+		if (beamInvis)
 		{
-			coneShotStacks++;	
+			global.iFrame = true;
 		}
-		if (coneShotStacks >= coneShotTime)
+		else
 		{
-			coneShotStacks = 0;
-			coneShotTimes--;
-			doConeShot = true;
-		
-			var coneAtkFW = point_direction(x,y,mouse_x,mouse_y)-coneWide*0.5;
-			if (global.autoAim == true && instance_exists(obj_allBoss)){coneAtkFW = point_direction(x,y,obj_allBoss.x,obj_allBoss.y)-coneWide*0.5;}
-			repeat(coneAmount)
-			{
-				var fireBolt = instance_create_depth(x,y,depth+1,obj_barageBolts);
-				//Main
-				fireBolt.direction = coneAtkFW;
-				fireBolt.speed = 5.5;
-				fireBolt.image_angle = fireBolt.direction+90;
-				//Visual
-				fireBolt.image_alpha = 0.85;
-				fireBolt.image_xscale = 0.85;
-				fireBolt.image_yscale = 0.85;
-				coneAtkFW += (coneWide/coneAmount);
-			}
+			global.iFrame = false;	
+		}
+		if (beamStun == 0 && instance_exists(obj_holyBeam))
+		{
+			global.iFrame = true;
+			image_alpha = 0;
+			x = global.arenaMiddleX;
+			y = global.arenaMiddleY;
+		}
+		else
+		{
+			image_alpha = normalAlpha;
+			beamStun = 1;
 		}
 	}
-
 	#endregion
 	#region Angel Slayer
 	if (class == Character.AngelSlayer)
@@ -1353,21 +1374,21 @@ if (mouse_x < x)
 				if (instance_exists(obj_allBoss))
 				{
 					var enemy = instance_nearest(x,y,par_enemy);
-					var damageDealt = global.damage*4;
+					var damageDealt = global.damage*3;
 					var damageText = instance_create_depth(enemy.x+irandom_range(-16,16),enemy.y+irandom_range(-13,13),enemy.depth-10,obj_textMaker);
 					damageText.color = c_white;
 					damageText.text = damageDealt;
 					with (enemy)
 					{	
-						hp -= global.damage*4;
+						hp -= global.damage*3;
 					}
-					var amountHealed = global.damage*global.lifeSteal*4;
+					var amountHealed = global.damage*global.lifeSteal*3;
 					var healText = instance_create_depth(x+irandom_range(-8,8),y+irandom_range(-5,5),depth-10,obj_textMaker);
 					healText.color = c_lime;
 					healText.text = amountHealed;
-					hp += global.damage*global.lifeSteal*4;
+					hp += global.damage*global.lifeSteal*3;
 				}
-				repeat(int64(3*conjurationPower))
+				repeat(int64(plaguelingAmount*conjurationPower))
 				{
 					var separation = 250;
 					var doodlings = instance_create_depth(global.arenaMiddleX+irandom_range(-separation,separation)*3,global.arenaMiddleY+irandom_range(-300,300),depth+1,obj_plaguelings);
@@ -1678,7 +1699,7 @@ if (mouse_x < x)
 	#region Agent Of God
 	if (class == Character.AgentOfGod)
 	{
-		if (isDashing && canDash)
+		if (isDashing && canDash && beamStun != 0)
 		{
 			canDash = false;
 			dashCooldownLeft = dashCooldown;
@@ -1690,11 +1711,11 @@ if (mouse_x < x)
 			isDashing = false;
 			
 			var holyBolt = instance_create_depth(x,y,depth+1,obj_holyBlast);
-			holyBolt.speed = dashSpeed*2.75;
+			holyBolt.speed = dashSpeed*2.85;
 			holyBolt.direction = direction;
 			holyBolt.image_angle = holyBolt.direction+90;
 			//Visual
-			holyBolt.image_xscale = 0.15 + global.damage/2;
+			holyBolt.image_xscale = 0.15 + global.damage/4;
 			holyBolt.image_yscale = holyBolt.image_xscale
 		}
 		if (speed > 0)
@@ -1824,6 +1845,16 @@ if (mouse_x < x)
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			if (global.dashTowardsMove){direction = moveDirection;}
 			isDashing = false;
+			
+			var separation = 35;
+			repeat(int64(plaguelingAmount*conjurationPower))
+			{
+				var doodlings = instance_create_depth(x+irandom_range(-separation,separation),y+irandom_range(-separation,separation),depth+1,obj_plaguelings);
+				doodlings.speed = 3;
+				doodlings.sprite_index = choose(spr_plagueling,spr_plaguer);
+				doodlings.direction = point_direction(x,y,mouse_x,mouse_y);
+				doodlings.destroyTime = 10*30;
+			}
 		}
 		if (speed > 0)
 		{
@@ -1959,13 +1990,13 @@ if (mouse_x < x)
 if (class == Character.AgentOfGod)
 {
 	agentPassiveStacks++
-	if (agentPassiveStacks >= (2)*30*leftClickCooldown/(leftClickCooldown*(1 + gameMaster.bonusFirerate/100)))
+	if (agentPassiveStacks >= (2)*30*leftClickCooldown/(leftClickCooldown*(1 + gameMaster.bonusFirerate/100)) && beamStun != 0)
 	{
 		agentPassiveStacks = 0;
 		
 		var bigBolt = instance_create_depth(mouse_x,mouse_y-300,depth+1,obj_holyFireBolt);
 		if (global.autoAim == true && instance_exists(obj_allBoss)){bigBolt.x = obj_allBoss.x; bigBolt.y = obj_allBoss.y-300;}
-			bigBolt.speed = 15;
+			bigBolt.speed = 16;
 			bigBolt.direction = 270;
 			bigBolt.image_angle = bigBolt.direction+90;
 			//Visual

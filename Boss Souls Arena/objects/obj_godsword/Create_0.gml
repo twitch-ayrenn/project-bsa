@@ -7,3 +7,4 @@ currentAngle = 0;
 canDealDamage = true;
 timeBeforeNextSpin = 0.15;
 angleBeforeStrike =0;
+damageType = 0;

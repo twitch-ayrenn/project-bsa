@@ -7,7 +7,7 @@ menu = 0;
 //Versions
 global.relase = false;//true
 global.deBugg = true;//false
-global.saveFile = "Save.Alpha.V.61";
+global.saveFile = "Save.Alpha.V.66";
 if (file_exists(global.saveFile) == true && global.deBugg == false)
 {
 	game_load(global.saveFile);
@@ -84,7 +84,7 @@ enum Boss
 	CDR = 406,
 	SummoningPower = 407,
 }
-global.ca = 18;//Boss Amount
+global.ca = 20;//Boss Amount
 enum Character
 {
 	ShadowAssassin,
@@ -321,7 +321,7 @@ if (global.relase == true)
 	//Unlocked
 	assassinUnlocked = false;		bloodKnightUnlocked = false;
 	pyromancerUnlocked = true;		plaugeWalkerUnlocked = false;
-	angelSlayerUnlocked = true;		agentOfGodUnlocked = false;	
+	angelSlayerUnlocked = true;		agentOfGodUnlocked = true;	
 	gravelingUnlocked = false;
 	
 	//Boss Rush

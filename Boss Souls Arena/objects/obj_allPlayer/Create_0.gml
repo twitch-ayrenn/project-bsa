@@ -45,8 +45,8 @@ normalSpeed = moveSpeed;
 actualSpeed = moveSpeed;
 actualSpeedBefore = moveSpeed;
 moveDirection = 0; 
-global.damage = 2;//1
-baseLifeSteal = 0.35;//0.75
+global.damage = 1;//1
+baseLifeSteal = 0.75;//0.75
 if (global.relase == true && global.deBugg == false){global.damage = 1; baseLifeSteal = 0.75;}
 global.lifeSteal = baseLifeSteal;
 dashSpeed = 5;
@@ -147,12 +147,13 @@ hitVinjetAlpha = 0;
 	#endregion
 	#region Agent Of God Tira
 	actualAGDashSpeed = 0;
+	beamStun = 1;
 	if (class == Character.AgentOfGod)
 	{
 		hp = 100;
-		leftClickCooldown = (6)*30;
-		rightClickCooldown = (8)*30;//8
-		dashCooldown = (8)*30;
+		leftClickCooldown = (7)*30;
+		rightClickCooldown = (7)*30;//8
+		dashCooldown = (7)*30;
 		ultCooldown = (18)*30;
 		idleSprite = spr_player_agentOfGod_idle;
 		walkSprite = spr_player_agentOfGod_walking;
@@ -163,8 +164,6 @@ hitVinjetAlpha = 0;
 		ultColor = c_aqua;
 		//character specific
 		agentSpeed = 1;
-		machineGunStacks = 0;
-		machineGunTimes = 0;
 		agentPassiveStacks = 0;
 		if (global.itemSelected[Boss.DeathKnight] == false)
 		{
@@ -173,12 +172,8 @@ hitVinjetAlpha = 0;
 		actualAGDashSpeed = 0;
 		aGDashStop = (0.4)*30;
 		aGDashStopLeft = 0;
-		//
-		doConeShot = false;
-		coneShotAmount = 10*5;
-		coneShotTimes = 0;
-		coneShotTime = (0.1)*30;
-		coneShotStacks = 0;
+		beamStun = 1;
+		beamInvis = false;
 	}
 	#endregion
 	#region Angel Slayer
@@ -258,9 +253,9 @@ hitVinjetAlpha = 0;
 	{
 		hp = 100;
 		leftClickCooldown = (6)*30;
-		rightClickCooldown = (10)*30;
-		dashCooldown = (10)*30;
-		ultCooldown = (15)*30;//15
+		rightClickCooldown = (9)*30;
+		dashCooldown = (9)*30;
+		ultCooldown = (16)*30;//15
 		idleSprite = spr_player_plagueWalker_idle;
 		walkSprite = spr_player_plagueWalker_walking;
 		deadSprite = spr_player_plagueWalker_dead;
@@ -269,7 +264,7 @@ hitVinjetAlpha = 0;
 		dashColor = c_green;
 		ultColor = c_lime;
 		//character specific
-		plaguelingAmount = 4;
+		plaguelingAmount = 3;
 		plagueStormActive = false;
 		plagueStormStacks = 0;
 		plagueStormDuration = (6)*30;
@@ -367,7 +362,7 @@ madHatAmount = int64(1*conjurationPower);
 #region Wisp Sister Julia / Futuristic Soldier
 if (global.itemSelected[Boss.WispSisterJulia] == true)
 {
-	repeat(int64(2*conjurationPower))
+	repeat(int64(1*conjurationPower))
 	{
 		instance_create_depth(x+irandom_range(-5,5),y+irandom_range(-5,5),-y,obj_equipment_futuristicSoldier);	
 	}
@@ -396,7 +391,7 @@ if (global.itemSelected[Boss.DeathKnight] == true && global.itemSelected[Boss.De
 #region Angel Knight Oscar/ultra Rapid Fire Hourglass
 if (global.itemSelected[Boss.AngelKnightOscar] == true)
 {
-	global.damage *= 0.55;
+	global.damage *= 0.85;
 }
 #endregion
 #region Demon General Rektaar
@@ -406,6 +401,13 @@ if (global.itemSelected[Boss.DemonLordRekTaar] == true)
 	leftClickCooldown = (6)*30;
 	leftClickCooldown *= 1 - (gameMaster.bonusFirerate/100);
 	leftClickColor = c_maroon;
+}
+#endregion
+#region Headless
+if (global.itemSelected[Boss.Headless] == true)
+{
+	leftClickStacks = 0;
+	leftClickStacksNeeded = 2;
 }
 #endregion
 #region Gravekeeper

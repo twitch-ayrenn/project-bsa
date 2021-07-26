@@ -15,5 +15,5 @@ if (canAttack == true)
 {
 	canAttack = false;
 	
-	alarm[0] = (0.9)*30;//1.65
+	alarm[0] = (0.75)*30;//1.65
 }

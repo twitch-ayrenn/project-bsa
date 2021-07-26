@@ -3,5 +3,6 @@
 dealDamage = true;
 damageTimer = (0.15)*30;
 image_blend = c_aqua;
+destroy = true;
 //image_xscale = 2;
 //image_yscale = 50;

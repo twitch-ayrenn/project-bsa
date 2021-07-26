@@ -10,6 +10,7 @@ minSize = 0.2;
 sizeChanger = 5
 beamChase = false;
 turningSpeed = 10;
+if (gameMaster.chosenBoss == Boss.FaithDestroyer){turningSpeed = 0;}
 dmg = 0;
 effectType = Effect.NoEffect
 gooSprite = spr_gooGround;

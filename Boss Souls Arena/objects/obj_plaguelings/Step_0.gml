@@ -26,8 +26,7 @@ if (instance_exists(obj_allBoss))
 	}
 	if (place_meeting(x,y,enemy))
 	{
-		var damageDealt = 3;
-		if (sprite_index == spr_plagueCarrier){damageDealt = 1;}
+		var damageDealt = global.damage;
 		var damageText = instance_create_depth(enemy.x+irandom_range(-16,16),enemy.y+irandom_range(-13,13),enemy.depth-10,obj_textMaker);
 		damageText.color = c_white;
 		damageText.text = damageDealt;
@@ -35,8 +34,7 @@ if (instance_exists(obj_allBoss))
 		{	
 			hp -= damageDealt;
 		}
-		var amountHealed = 3*global.lifeSteal;
-		if (sprite_index == spr_plagueCarrier){amountHealed = 1*global.lifeSteal;}
+		var amountHealed = global.damage*global.lifeSteal;
 		var healText = instance_create_depth(obj_allPlayer.x+irandom_range(-8,8),obj_allPlayer.y+irandom_range(-5,5),obj_allPlayer.depth-10,obj_textMaker);
 		healText.color = c_lime;
 		healText.text = amountHealed;

@@ -17,7 +17,7 @@ if (room == rm_arena && gameMaster.menu == Menues.Play && global.musicOn == true
 	}
 	if (gameMaster.chosenBoss == Boss.BloodZombie || 
 	gameMaster.chosenBoss == Boss.KnightWitchYi || gameMaster.chosenBoss == Boss.Gravekeeper || 
-	gameMaster.chosenBoss == Boss.DeathKing)
+	gameMaster.chosenBoss == Boss.DeathKing )
 	{
 		audio_stop_sound(snd_music_undead);
 		audio_play_sound(snd_music_undead,10,true);
@@ -32,7 +32,8 @@ if (room == rm_arena && gameMaster.menu == Menues.Play && global.musicOn == true
 		audio_sound_gain(snd_music_wisps,0,0);
 		audio_sound_gain(snd_music_wisps,global.musicVolume,(15)*1000);
 	}
-	if (gameMaster.chosenBoss == Boss.TheCorrupter || gameMaster.chosenBoss == Boss.StatueOfCorruption)
+	if (gameMaster.chosenBoss == Boss.TheCorrupter || gameMaster.chosenBoss == Boss.StatueOfCorruption
+	|| gameMaster.chosenBoss == Boss.Headless)
 	{
 		audio_stop_sound(snd_music_corruption);
 		audio_play_sound(snd_music_corruption,10,true);
@@ -48,7 +49,7 @@ if (room == rm_arena && gameMaster.menu == Menues.Play && global.musicOn == true
 		audio_sound_gain(snd_music_demon,global.musicVolume,(15)*1000);
 	}
 	if (gameMaster.chosenBoss == Boss.AngelKnightOscar || gameMaster.chosenBoss == Boss.BloodKnightDavid
-	|| gameMaster.chosenBoss == Boss.DeathKnight)//Knight
+	|| gameMaster.chosenBoss == Boss.DeathKnight || gameMaster.chosenBoss == Boss.FaithDestroyer)//Knight
 	{
 		audio_stop_sound(snd_music_angel);
 		audio_play_sound(snd_music_angel,10,true);

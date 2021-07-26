@@ -264,27 +264,28 @@ if (playerShowInfoFor == Character.PlaugeWalker)
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*4.5-5,"Attack - Left Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*5.5,"Summon plaguelings. [Summoning Power]",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*6.5,"increases the amount of plaguelings summoned.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*5.5,"Shoot a massive plaguebolt.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*9-5,"Ability - Right Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*8-5,"Ability - Right Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*10,"Shoot a massive plaguebolt. Recast ability to ",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*11,"to teleport to plaguebolt. This destroys the bolt.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*9,"Call down a massive plaguebolt that lands after",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*10,"a short delay.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*13.5-5,"Dash - Space",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*12.5-5,"Dash - Space",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*14.5,"Dash a long distance",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*13.5,"Dash, summon [3] plaguelings.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*17-5,"Ultimate - R",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*16-5,"Ultimate - R",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*18,"Conjure a plaguestorm for 6 seconds. The Storm",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*19,"damages enemies and summons [18] plaguelings",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*20,"over the course of the storm. [Summoning Power]",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*21,"increases the amount summoned.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*17,"Conjure a plaguestorm for 6 seconds. The Storm",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*18,"damages enemies and summons [18] plaguelings",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*19,"over the course of the storm. ",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	
+	draw_text_transformed_color(startX,startY+sep*21,"[Summoning Power] increases the amount of",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*22,"plaguestorm summoned.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 
 	var progression = (((gameMaster.plaugeWalkerProgress-1)/global.progressAmount)/global.ca);
 	progression = clamp(progression,0,1);
@@ -312,32 +313,32 @@ if (playerShowInfoFor == Character.AgentOfGod)
 	draw_text_transformed_color(startX,startY+sep*00-5,"Passive",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
 	draw_text_transformed_color(startX,startY+sep*01,"Every second a projectiles falls down at your",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*02,"cursor dealing damage. Attack speed reduces",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*03,"the cooldown of this power.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*02,"cursor. Attack speed increases the firerate of",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*03,"this ability",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
 	draw_text_transformed_color(startX,startY+sep*05.5-5,"Attack - Left Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*06.5,"Shoot a big holy fireball.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*06.5,"Light Attack. Dash forward and slash.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*07.5,"Hiting and enemy reduces the cooldown by 60%",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*09-5,"Ability - Right Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*10-5,"Ability - Right Click",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*10,"Strike forward with the Godsword dealing",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*11,"damage to enemies hit by the strike. Hiting an",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*12,"enemy reduces the cooldown by 75%.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*11,"Heavy Attack. Dash forward and slash.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*12,"This attacks has greater range and damage",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*13,"but costs 25% of your current health.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 	
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*14.5-5,"Dash - Space",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*15.5-5,"Dash - Space",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*15.5,"Dash, fire a massive holy fireball towards",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*16.5,"the direction of your dash.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*16.5,"Dash, fire a massive holy fireball towards",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*17.5,"the direction of your dash.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 
 	draw_set_font(fnt_menu_fill);
-	draw_text_transformed_color(startX,startY+sep*19-5,"Ultimate - R",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
+	draw_text_transformed_color(startX,startY+sep*20-5,"Ultimate - R",0.27,0.27,0,global.orange,global.orange,c_yellow,c_yellow,1);
 	draw_set_font(fnt_NewNormalText);
-	draw_text_transformed_color(startX,startY+sep*20,"Breathe holy fire towards mouse cursor for 5",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
-	draw_text_transformed_color(startX,startY+sep*21,"seconds.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
+	draw_text_transformed_color(startX,startY+sep*21,"Controll a beam from the heavens for 3 seconds.",textSize,textSize,0,c_white,c_white,c_white,c_white,1);
 
 	var progression = (((gameMaster.agentOfGodProgress-1)/global.progressAmount)/global.ca);
 	progression = clamp(progression,0,1);

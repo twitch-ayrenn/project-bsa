@@ -6,7 +6,7 @@ if (room == rm_arena)
 	depth = -900-y
 }
 if (place_meeting(x-5,y,obj_daggerProjectile) || place_meeting(x-5,y,nearestFireBolt) && nearestFireBolt.isAttack
-||  place_meeting(x-5,y,obj_batProjectile) || place_meeting(x-5,y,obj_holyFireBolt) 
+||  place_meeting(x-5,y,obj_batProjectile) || place_meeting(x-5,y,obj_godsword) && obj_godsword.state == MeleeWeaponStates.Strike
 || place_meeting(x,y,obj_slayerScythe) && obj_slayerScythe.state == MeleeWeaponStates.SpinOnce ||
 place_meeting(x-5,y,obj_graveBolt) || place_meeting(x-5,y,obj_plaguelings))
 {

@@ -15,10 +15,14 @@ if (drawArea == true)
 		}
 	}
 	#endregion
-	#region Angel Slayer
+	#region Angel Slayer || Faith Destroyer
 	if (gameMaster.chosenBoss == Boss.AngelSlayerRekZul || gameMaster.chosenBoss == Boss.FaithDestroyer)
 	{
 		if (attack == Atks.BeamAttack)
+		{
+			draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,global.orange,global.orange);
+		}
+		if (attack == Atks.ConeAttack && gameMaster.chosenBoss == Boss.FaithDestroyer)
 		{
 			draw_line_width_color(x,y,obj_allPlayer.x,obj_allPlayer.y,1,global.orange,global.orange);
 		}
@@ -56,7 +60,7 @@ if (drawArea == true)
 			draw_line_width_color(global.arenaMiddleX+50,y+1000,global.arenaMiddleX+50,y-1000,1,c_lime,c_lime);
 			draw_line_width_color(global.arenaMiddleX+25,y+1000,global.arenaMiddleX+25,y-1000,1,c_lime,c_lime);
 		}
-		if (attack == Atks.ChaseAttack)
+		if (attack == Atks.ChaseAttack && gameMaster.chosenBoss == Boss.AngelSlayerRekZul)
 		{
 			draw_line_width_color(x,y,x+600,y,1,c_yellow,c_yellow);
 		}

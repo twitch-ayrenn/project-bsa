@@ -701,17 +701,14 @@ if (attack == Atks.GooSpawn)
 	{
 		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
 		//Main
-		gooGround.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
-		gooGround.speed = 1;
 		gooGround.image_angle = irandom_range(0,360);
 		//Visual
 		gooGround.image_alpha = 1;
 		gooGround.image_blend = c_maroon;
 		gooGround.sprite_index = spr_gooGround;
-		gooGround.image_xscale = 0.25;
-		gooGround.image_yscale = 0.25;
+		gooGround.image_xscale = 0.56;
+		gooGround.image_yscale = 0.56;
 		gooGround.destroy = true;
-		gooGround.boomerang = true;
 		gooGround.range = headlessRange*6;
 		if (instance_exists(obj_indicator)){var nearestIndicator = instance_nearest(x,y,obj_indicator); instance_destroy(nearestIndicator);}
 	}
@@ -1319,7 +1316,7 @@ if (attack == Atks.ChaseAttack)
 		infernalBall.image_yscale = 1;
 		infernalBall.effectType = Effect.NoEffect;
 		infernalBall.chase = true;
-		infernalBall.range = (10)*30;
+		infernalBall.range = (7)*30;
 		if(phase == 2){hp -= 50;}
 	}
 }
@@ -1431,13 +1428,13 @@ if (attack == Atks.CircleAttack)
 			beam.sprite_index = spr_beam;
 			beam.image_xscale = 0.2;
 			beam.image_yscale = 20;
-			beam.maxSize = 1.25+size/faithBeamSize;
+			beam.maxSize = 0.5+size/faithBeamSize;
 			beam.minSize = 0.2+size/(faithBeamSize*2);
 			beam.stickOn = true;
 			beam.beamChase = true;
-			beam.turningSpeed = 41/2;
+			beam.turningSpeed = 13;
 			beam.destroy = true;
-			beam.range = (2.2)*30; 
+			beam.range = (1.7)*30; 
 			beam.effectType = Effect.NoEffect;
 			beamCircleAngle += 360/circleBeams;
 		}
@@ -1526,22 +1523,24 @@ if (attack == Atks.OneShotAttack)
 		beam.image_xscale = 0.25;
 		beam.image_yscale = 20;
 		beam.range = 10*60;
-		beam.maxSize = 2.0+size/faithBeamSize;
+		beam.beamChase = true;
+		beam.maxSize = 1.75+size/faithBeamSize;
 		beam.minSize = 0.25+size/(faithBeamSize*2);
 		
 		var beam = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
 		//Main
 		beam.direction = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y);
 		beam.speed = 4;
-		beam.image_angle = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-90-90;
+		beam.image_angle = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-90+90;
 		//Visual
 		beam.image_alpha = 0.85;
 		beam.image_blend = c_red;
 		beam.sprite_index = spr_beam;
 		beam.image_xscale = 0.25;
-		beam.image_yscale = 20;
+		beam.image_yscale = -20;
 		beam.range = 10*60;
-		beam.maxSize = 2.0+size/faithBeamSize;
+		beam.beamChase = true;
+		beam.maxSize = 1.75+size/faithBeamSize;
 		beam.minSize = 0.25+size/(faithBeamSize*2);
 		
 	}
@@ -1689,6 +1688,57 @@ if (attack == Atks.OneShotAttack)
 #region ConeAttack
 if (attack == Atks.ConeAttack)
 {
+	if (gameMaster.chosenBoss == Boss.FaithDestroyer)
+	{
+		drawArea = false;
+		var beam = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+		//Main
+		beam.image_angle = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-90;
+		//Visual
+		beam.image_alpha = 1;
+		beam.image_blend = global.orange;
+		beam.sprite_index = spr_beam;
+		beam.image_xscale = 0.25;
+		beam.image_yscale = 20;
+		beam.maxSize = 1.75+size/faithBeamSize;
+		beam.minSize = 0.25;
+		beam.stickOn = true;
+		beam.beamChase = true;
+		beam.turningSpeed = 3;
+		beam.range = 2*30;
+		
+		var beam = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+		//Main
+		beam.image_angle = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-90;
+		//Visual
+		beam.image_alpha = 1;
+		beam.image_blend = global.orange;
+		beam.sprite_index = spr_beam;
+		beam.image_xscale = 0.25;
+		beam.image_yscale = 20;
+		beam.maxSize = 1.75+size/faithBeamSize;
+		beam.minSize = 0.25;
+		beam.stickOn = true;
+		beam.beamChase = true;
+		beam.turningSpeed = -3;
+		beam.range = 2*30;
+		
+		var beam2 = instance_create_depth(x,y,depth+1,obj_enemyProjectile);
+		//Main
+		beam2.image_angle = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-90;
+		//Visual
+		beam2.image_alpha = 1;
+		beam2.image_blend = global.orange;
+		beam2.sprite_index = spr_beam;
+		beam2.image_xscale = 0.25;
+		beam2.image_yscale = 20;
+		beam2.maxSize = 1.75+size/faithBeamSize;
+		beam2.minSize = 0.25;
+		beam2.beamChase = true;
+		beam2.turningSpeed = 0;
+		beam2.stickOn = true;
+		beam2.range = 2*30;
+	}	
 	if (gameMaster.chosenBoss == Boss.DeathKing)
 	{	
 		var coneWide = 180;
@@ -1737,6 +1787,42 @@ if (attack == Atks.ConeAttack)
 #region ChaseAttack
 if (attack == Atks.ChaseAttack)
 {
+	if (gameMaster.chosenBoss == Boss.FaithDestroyer)
+	{
+		var beam = instance_create_depth(x,y,depth+50,obj_enemyProjectile);
+		//Main
+		beam.image_angle = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)-90-90;
+		//Visual
+		beam.image_alpha = 0.85;
+		beam.image_blend = c_red;
+		beam.sprite_index = spr_beam;
+		beam.image_xscale = 0.25;
+		beam.image_yscale = 100;
+		beam.range = (2.2)*30;
+		beam.destroy = true;
+		beam.turningSpeed = -41;
+		beam.beamChase = true;
+		beam.stickOn = true;
+		beam.maxSize = 1.5+size/faithBeamSize;
+		beam.minSize = 0.25+size/(faithBeamSize*2);
+		
+		var beam1 = instance_create_depth(x,y,depth+50,obj_enemyProjectile);
+		//Main
+		beam1.image_angle = point_direction(x,y,obj_allPlayer.x,obj_allPlayer.y)+90-90;
+		//Visual
+		beam1.image_alpha = 0.85;
+		beam1.image_blend = c_red;
+		beam1.sprite_index = spr_beam;
+		beam1.image_xscale = 0.25;
+		beam1.image_yscale = 100;
+		beam1.range = (2.2)*30;
+		beam1.destroy = true;
+		beam1.turningSpeed = 41;
+		beam1.beamChase = true;
+		beam1.stickOn = true;
+		beam1.maxSize = 1.5+size/faithBeamSize;
+		beam1.minSize = 0.25+size/(faithBeamSize*2);
+	}
 	if (gameMaster.chosenBoss == Boss.DemonQueensHead)
 	{
 		with (obj_indicator){followPlayer = false;}
@@ -1800,8 +1886,8 @@ if (attack == Atks.BeamAttack)
 		beam.sprite_index = spr_beam;
 		beam.image_xscale = 0.25;
 		beam.image_yscale = 20;
-		beam.maxSize = 2.5+size/faithBeamSize;
-		beam.minSize = 0.25+size/(faithBeamSize*2);
+		beam.maxSize = 2.25+size/faithBeamSize;
+		beam.minSize = 0.25;
 		beam.stickOn = true;
 		beam.range = 2.5*30;
 		beam.effectType = Effect.NoEffect;
@@ -1864,6 +1950,10 @@ if (attack == Atks.RapidFire)
 #region Teleport
 if (attack == Atks.TeleportAttack)
 {
+	if (gameMaster.chosenBoss == Boss.FaithDestroyer)
+	{
+		chooseAnAttack = true;
+	}
 	if (gameMaster.chosenBoss == Boss.DemonQueensHead )
 	{
 		var playerX = global.player.x;
@@ -1906,7 +1996,42 @@ if (attack == Atks.TeleportAttack)
 #region ZoneAttack
 if (attack == Atks.ZoneAttack)
 {
-	
+	if (gameMaster.chosenBoss == Boss.FaithDestroyer)
+	{
+		var beam = instance_create_depth(global.arenaMiddleX-300,global.arenaMiddleY+300,depth+1,obj_enemyProjectile);
+		//Main
+		beam.direction = 0;
+		beam.speed = 2.5;
+		beam.image_angle = 0;
+		//Visual
+		beam.image_alpha = 0.85;
+		beam.image_blend = c_red;
+		beam.sprite_index = spr_beam;
+		beam.image_xscale = 0.25;
+		beam.image_yscale = 100;
+		beam.range = 30*30;
+		beam.destroy = true;
+		beam.beamChase = true;
+		beam.maxSize = 1.0+size/faithBeamSize;
+		beam.minSize = 0.25+size/(faithBeamSize*2);
+		
+		var beam1 = instance_create_depth(global.arenaMiddleX-300,global.arenaMiddleY+300,depth+1,obj_enemyProjectile);
+		//Main
+		beam1.direction = 90;
+		beam1.speed = 2.5;
+		beam1.image_angle = 270;
+		//Visual
+		beam1.image_alpha = 0.85;
+		beam1.image_blend = c_red;
+		beam1.sprite_index = spr_beam;
+		beam1.image_xscale = 0.25;
+		beam1.image_yscale = 100;
+		beam1.range = 30*30;
+		beam1.destroy = true;
+		beam1.beamChase = true;
+		beam1.maxSize = 1.0+size/faithBeamSize;
+		beam1.minSize = 0.25+size/(faithBeamSize*2);
+	}
 }
 #endregion
 #endregion

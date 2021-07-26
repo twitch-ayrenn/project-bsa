@@ -75,7 +75,6 @@ if (stickOn == true)
 		y = global.arenaMiddleY+400;
 		depth = -y-1000;
 	}
-	
 }
 if (beamChase == true)
 {
@@ -108,7 +107,7 @@ if (place_meeting(x,y,target) && sprite_index != spr_gooGround && global.iFrame 
 	damageText.text = damageToTarget;
 	target.hp -= damageToTarget*global.campaignDifficulty;
 	#region Pool On hit
-	if(gameMaster.chosenBoss == Boss.BloodZombie  || gameMaster.chosenBoss == Boss.SlimeQueen || gameMaster.chosenBoss == Boss.ArenaKing)
+	if(gameMaster.chosenBoss == Boss.BloodZombie || gameMaster.chosenBoss == Boss.SlimeQueen || gameMaster.chosenBoss == Boss.ArenaKing)
 	{
 		var gooGround = instance_create_depth(x,y,-5,obj_enemyProjectile);
 		//Main
@@ -148,5 +147,11 @@ if (stacks >= (0.25)*30 && sprite_index == spr_beam && place_meeting(x,y,target)
 	damageText.text = damageToTarget;
 	target.hp -= damageToTarget*global.campaignDifficulty;
 	stacks = 0;
+	#region Faith Destroyer
+	if (gameMaster.chosenBoss == Boss.FaithDestroyer)
+	{
+		obj_allBoss.size = clamp(obj_allBoss.size+0.1,1,2);	
+	}
+	#endregion
 }
 #endregion

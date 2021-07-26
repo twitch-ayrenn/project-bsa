@@ -815,6 +815,14 @@
             }
         },
         {
+            "Key": "1c8cea86-d16d-442f-a3d8-bdb53dd341b6",
+            "Value": {
+                "id": "137c153f-d755-41dd-a298-5bdc0a4c2dc8",
+                "resourcePath": "sprites\\spr_fight_t4_demonQueensHead1\\spr_fight_t4_demonQueensHead1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1c945e91-f7f1-4805-a0b5-b40a6ca88f2a",
             "Value": {
                 "id": "744c90f6-2b06-4355-b9c3-f2da1c27fce2",
@@ -3607,6 +3615,14 @@
             }
         },
         {
+            "Key": "8d2446d5-4d63-4bff-a752-9fddba4e79db",
+            "Value": {
+                "id": "b888a53a-604d-4521-9070-f1f8480e2f67",
+                "resourcePath": "sprites\\spr_loot_orbOfCorruption\\spr_loot_orbOfCorruption.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8d42a6e2-1c44-4ae2-9d54-1dc483240f16",
             "Value": {
                 "id": "deb45e9b-6bfa-4a6b-86c6-619a781944d7",
@@ -4363,6 +4379,14 @@
             "Value": {
                 "id": "476e6f42-89ef-4ca7-99a6-9ad4b51818cd",
                 "resourcePath": "objects\\obj_demons\\obj_demons.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "ab042ff8-fa1b-495a-bcdc-1d8a8518adb1",
+            "Value": {
+                "id": "6e2e3377-2820-45db-9133-de2df366edab",
+                "resourcePath": "objects\\obj_item_orbOfCorruption\\obj_item_orbOfCorruption.yy",
                 "resourceType": "GMObject"
             }
         },
